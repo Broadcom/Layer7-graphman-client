@@ -126,10 +126,13 @@ module.exports = {
         console.log("  --input-source <input-file-or-gateway-profile>");
         console.log("    specify source input bundle file for comparison");
         console.log("    Use '@' special marker to treat the input as gateway profile name");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
         console.log("  --input-target <input-file-or-gateway-profile>");
         console.log("    specify target input bundle file for comparison");
         console.log("    Use '@' special marker to treat the input as gateway profile name");
+        console.log("    use '-' to read the bundle from the standard input");
+        console.log("    NOTE: only one of the source and target inputs can be read from the standard input");
         console.log();
         console.log("  --input-mappings <input-mappings-file>");
         console.log("    specify complex mappings between source and target environments");
@@ -140,6 +143,9 @@ module.exports = {
         console.log();
         console.log("  --output <output-file>");
         console.log("    specify the file to capture the diff bundle");
+        console.log("    when skipped, output will be written to the console.");
+        console.log("    NOTE: the report and id-mappings results also fall back to the console when their");
+        console.log("      respective output files are not specified; keep them as files when piping the diff bundle");
         console.log();
         console.log("  --output-report <output-report-file>");
         console.log("    specify the file to capture the diff report");
@@ -159,6 +165,9 @@ module.exports = {
         console.log("        decides whether to use nodef mappings (only for deletion).");
         console.log("      .renewEntities false|true");
         console.log("        decides whether to renew entities from the respective gateways when specified.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
     }
 }
@@ -284,7 +293,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
             const renewedReport = {inserts: results[0], updates: results[1], deletes: report.deletes, diffs: report.diffs, mappings: report.mappings};
             callback(renewedReport);
         } else {
-            const renewedReport = {inserts: {}, updates: {}, deletes: {}, diffs: {}, mappings: {goids: [], guids: []}};
+            const renewedReport = {inserts: results[0], updates: {}, deletes: report.deletes, diffs: {}, mappings: {goids: [], guids: []}};
             const multiLineTextDiffExtension = utils.extension("multiline-text-diff");
             const leftUpdateBundle = results[1];
             const rightUpdateBundle = results[2];

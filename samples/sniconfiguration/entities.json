@@ -1,0 +1,8 @@
+{
+  "sniConfigurations": [
+    {"name": "some-sni-config", "description": "some description", "enabled": true},
+    {"name": "multiline-sni-config", "description": "multi\nline description", "enabled": true},
+    {"name": "delete-by-input-sni-config-1", "description": "some description", "enabled": true},
+    {"name": "delete-by-input-sni-config-2", "description": "some description", "enabled": true}
+  ]
+}

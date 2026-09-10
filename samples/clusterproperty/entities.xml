@@ -1,0 +1,103 @@
+<!-- AI assistance has been used to generate some or all contents of this file. That includes, but is not limited to, new code, modifying existing code, stylistic edits. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-cwp</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012951de69</l7:Id>
+            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+            <l7:TimeStamp>2023-02-03T14:49:33.677+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951de69" version="0">
+                    <l7:Name>some-cwp</l7:Name>
+                    <l7:Value>some-value</l7:Value>
+                </l7:ClusterProperty>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>multiline-cwp</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012951de8c</l7:Id>
+            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+            <l7:TimeStamp>2023-02-03T14:49:33.677+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951de8c" version="1">
+                    <l7:Name>multiline-cwp</l7:Name>
+                    <l7:Value>hello,
+world!</l7:Value>
+                </l7:ClusterProperty>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-cwp-1</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012951df01</l7:Id>
+            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+            <l7:TimeStamp>2023-02-03T14:49:33.677+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df01" version="0">
+                    <l7:Name>delete-by-input-cwp-1</l7:Name>
+                    <l7:Value>some-value</l7:Value>
+                </l7:ClusterProperty>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-cwp-2</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012951df02</l7:Id>
+            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+            <l7:TimeStamp>2023-02-03T14:49:33.677+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df02" version="0">
+                    <l7:Name>delete-by-input-cwp-2</l7:Name>
+                    <l7:Value>some-value</l7:Value>
+                </l7:ClusterProperty>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-goid-cwp</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012951df03</l7:Id>
+            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df03" version="0">
+                    <l7:Name>delete-by-goid-cwp</l7:Name>
+                    <l7:Value>some-value</l7:Value>
+                </l7:ClusterProperty>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951de69" srcUri="https://127.0.0.1:8443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951de69" type="CLUSTER_PROPERTY">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951de8c" srcUri="https://127.0.0.1:8443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951de8c" type="CLUSTER_PROPERTY">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df01" srcUri="https://127.0.0.1:8443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df01" type="CLUSTER_PROPERTY">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df02" srcUri="https://127.0.0.1:8443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df02" type="CLUSTER_PROPERTY">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df03" srcUri="https://127.0.0.1:8443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df03" type="CLUSTER_PROPERTY">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

@@ -17,9 +17,12 @@ const FINE_LEVEL = 3;
 const DEBUG_LEVEL = 10;
 
 const SECRET_BASE64_PREFIX = "$b64.";
+const STDIN_MARKER = "-";
 
 let logLevel = INFO_LEVEL;
+let logSink = console.log;
 let wrapperDir = HOME_DIR;
+let stdinConsumed = false;
 
 const defaultExtn = {ref: {apply: function (input, context) {return input;}}};
 const extns = {};
@@ -41,6 +44,16 @@ module.exports = {
         else if (level === 'info' && logLevel === INFO_LEVEL) return true;
         else if (level === 'fine' && logLevel === FINE_LEVEL) return true;
         else return level === 'debug' && logLevel === DEBUG_LEVEL;
+    },
+
+    logTo: function (sink) {
+        if (sink === 'stderr') {
+            logSink = console.error;
+        } else if (sink === 'stdout') {
+            logSink = console.log;
+        } else if (sink) {
+            this.warn("unsupported log sink, " + sink);
+        }
     },
 
     logAt: function (level) {
@@ -170,7 +183,37 @@ module.exports = {
         return path ? putil.dirname(path) : ".";
     },
 
+    stdinMarker: function () {
+        return STDIN_MARKER;
+    },
+
+    readStdin: function () {
+        if (stdinConsumed) {
+            throw this.newError("standard input is already consumed, it can be read only once");
+        }
+
+        if (process.stdin.isTTY) {
+            throw this.newError("no data piped to the standard input");
+        }
+
+        stdinConsumed = true;
+        const data = fs.readFileSync(0, 'utf-8').trim();
+        if (!data) {
+            throw this.newError("no data piped to the standard input");
+        }
+
+        try {
+            return JSON.parse(data);
+        } catch (e) {
+            throw this.newError("standard input is not a valid json bundle, " + e.message);
+        }
+    },
+
     readFile: function (file) {
+        if (file === STDIN_MARKER) {
+            return this.readStdin();
+        }
+
         if (!fs.existsSync(file)) {
             throw "file doesn't exist, " + file;
         }
@@ -211,7 +254,7 @@ module.exports = {
         }
 
         if (this.loggingAt("debug") || (!e.message && !errors)) {
-            console.log(e);
+            logSink(e);
         }
     },
 
@@ -225,7 +268,7 @@ module.exports = {
             });
         }
 
-        console.log(text);
+        logSink(text);
     },
 
     error: function (message, ...args) {

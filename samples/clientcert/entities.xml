@@ -1,0 +1,103 @@
+<!-- AI assistance has been used to generate some or all contents of this file. That includes, but is not limited to, new code, modifying existing code, stylistic edits. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>gm-cc-user-1</l7:Name>
+            <l7:Id>a1b2c3d4e5f60002000000000000cc01</l7:Id>
+            <l7:Type>USER</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:User providerId="0000000000000000fffffffffffffffe" id="a1b2c3d4e5f60002000000000000cc01">
+                    <l7:Login>gm-cc-user-1</l7:Login>
+                    <l7:Password format="plain">7layer</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="accountExpiration">
+                            <l7:LongValue>-1</l7:LongValue>
+                        </l7:Property>
+                        <l7:Property key="enabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="name">
+                            <l7:StringValue>gm-cc-user-1</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:User>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>gm-cc-user-2</l7:Name>
+            <l7:Id>a1b2c3d4e5f60002000000000000cc02</l7:Id>
+            <l7:Type>USER</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:User providerId="0000000000000000fffffffffffffffe" id="a1b2c3d4e5f60002000000000000cc02">
+                    <l7:Login>gm-cc-user-2</l7:Login>
+                    <l7:Password format="plain">7layer</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="accountExpiration">
+                            <l7:LongValue>-1</l7:LongValue>
+                        </l7:Property>
+                        <l7:Property key="enabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="name">
+                            <l7:StringValue>gm-cc-user-2</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:User>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>gm-cc-del-user-1</l7:Name>
+            <l7:Id>a1b2c3d4e5f60002000000000000cc03</l7:Id>
+            <l7:Type>USER</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:User providerId="0000000000000000fffffffffffffffe" id="a1b2c3d4e5f60002000000000000cc03">
+                    <l7:Login>gm-cc-del-user-1</l7:Login>
+                    <l7:Password format="plain">7layer</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="accountExpiration">
+                            <l7:LongValue>-1</l7:LongValue>
+                        </l7:Property>
+                        <l7:Property key="enabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="name">
+                            <l7:StringValue>gm-cc-del-user-1</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:User>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>gm-cc-del-user-2</l7:Name>
+            <l7:Id>a1b2c3d4e5f60002000000000000cc04</l7:Id>
+            <l7:Type>USER</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:User providerId="0000000000000000fffffffffffffffe" id="a1b2c3d4e5f60002000000000000cc04">
+                    <l7:Login>gm-cc-del-user-2</l7:Login>
+                    <l7:Password format="plain">7layer</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="accountExpiration">
+                            <l7:LongValue>-1</l7:LongValue>
+                        </l7:Property>
+                        <l7:Property key="enabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="name">
+                            <l7:StringValue>gm-cc-del-user-2</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:User>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="a1b2c3d4e5f60002000000000000cc01" type="USER"/>
+        <l7:Mapping action="NewOrExisting" srcId="a1b2c3d4e5f60002000000000000cc02" type="USER"/>
+        <l7:Mapping action="NewOrExisting" srcId="a1b2c3d4e5f60002000000000000cc03" type="USER"/>
+        <l7:Mapping action="NewOrExisting" srcId="a1b2c3d4e5f60002000000000000cc04" type="USER"/>
+    </l7:Mappings>
+</l7:Bundle>

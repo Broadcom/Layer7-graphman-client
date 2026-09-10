@@ -1,0 +1,68 @@
+{
+  "services": [
+    {
+      "goid": "2f5bbe8f033df43a34cb8d9ae019bf0b",
+      "name": "some-web-api",
+      "resolutionPath": "/some-web-api",
+      "serviceType": "WEB_API",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "properties": [
+        {
+          "name": "enableWebSocket",
+          "value": "true"
+        },
+        {
+          "name": "overrideContentType",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "2048"
+        }
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"SGVsbG8sIFdvcmxkIQo=\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "165b02af039c73f4fcfdb1a0b2a3a80e",
+      "name": "some-web-api-2",
+      "resolutionPath": "/some-web-api-2",
+      "serviceType": "WEB_API",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"SGVsbG8sIFdvcmxkIQo=\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "3b5f7b141ce606d810d4398f5d8c8069",
+      "name": "some-web-api-3",
+      "resolutionPath": "/some-web-api-3",
+      "serviceType": "WEB_API",
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"SGVsbG8sIFdvcmxkIQo=\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ]
+}

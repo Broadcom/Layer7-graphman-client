@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- AI assistance has been used to generate some or all contents of this file. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>v2-http-update-1</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e001</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e001" version="0">
+                    <l7:Host>v2-http-update-1</l7:Host>
+                    <l7:Port>8081</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/update-1</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ConnectTimeout>100</l7:ConnectTimeout>
+                    <l7:ReadTimeout>50</l7:ReadTimeout>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>v2-http-update-2</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e002</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e002" version="0">
+                    <l7:Host>v2-http-update-2</l7:Host>
+                    <l7:Port>8082</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/update-2</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ConnectTimeout>100</l7:ConnectTimeout>
+                    <l7:ReadTimeout>50</l7:ReadTimeout>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>v2-http-delete-1</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e003</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e003" version="0">
+                    <l7:Host>v2-http-delete-1</l7:Host>
+                    <l7:Port>8083</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/delete-1</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>v2-http-delete-2</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e004</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e004" version="0">
+                    <l7:Host>v2-http-delete-2</l7:Host>
+                    <l7:Port>8084</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/delete-2</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>v2-http-goid-update</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e005</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e005" version="0">
+                    <l7:Host>v2-http-goid-update</l7:Host>
+                    <l7:Port>8085</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/goid-update</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ConnectTimeout>100</l7:ConnectTimeout>
+                    <l7:ReadTimeout>50</l7:ReadTimeout>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>v2-http-goid-delete</l7:Name>
+            <l7:Id>f09e10c4716574e06d1b6c012952e006</l7:Id>
+            <l7:Type>HTTP_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:HttpConfiguration id="f09e10c4716574e06d1b6c012952e006" version="0">
+                    <l7:Host>v2-http-goid-delete</l7:Host>
+                    <l7:Port>8086</l7:Port>
+                    <l7:Protocol>https</l7:Protocol>
+                    <l7:Path>/v2/goid-delete</l7:Path>
+                    <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                    <l7:ProxyUse>default</l7:ProxyUse>
+                </l7:HttpConfiguration>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e001" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e001" type="HTTP_CONFIGURATION"/>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e002" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e002" type="HTTP_CONFIGURATION"/>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e003" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e003" type="HTTP_CONFIGURATION"/>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e004" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e004" type="HTTP_CONFIGURATION"/>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e005" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e005" type="HTTP_CONFIGURATION"/>
+        <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012952e006" srcUri="https://127.0.0.1:8443/restman/1.0/httpConfigurations/f09e10c4716574e06d1b6c012952e006" type="HTTP_CONFIGURATION"/>
+    </l7:Mappings>
+</l7:Bundle>

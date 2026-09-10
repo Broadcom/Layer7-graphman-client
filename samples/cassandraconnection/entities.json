@@ -1,0 +1,55 @@
+{
+  "cassandraConnections": [
+    {
+      "name": "some-cassandra-connection",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point2"
+      ],
+      "port": 9042,
+      "compression": "NONE",
+      "username": "",
+      "sslEnabled": false
+    },
+    {
+      "name": "some-other-cassandra-connection",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point3"
+      ],
+      "port": 9043,
+      "compression": "LZ4",
+      "username": "some-user",
+      "securePasswordName": "some-pwd",
+      "sslEnabled": true,
+      "cipherSuites": [
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384"
+      ],
+      "properties": [
+        {
+          "name": "keepAlive",
+          "value": "true"
+        },
+        {
+          "name": "readTimeoutMillis",
+          "value": "12000"
+        }
+      ]
+    }
+  ],
+
+  "secrets": [
+    {
+      "name": "some-pwd",
+      "description": "some-description",
+      "secret": "JEw3RXYwMiRl9P1rkBDjp9tuz1yFuuqjPX7a8TPap3KrLjsO0EsoHw==",
+      "secretType": "PASSWORD",
+      "variableReferencable": true
+    }
+  ]
+}

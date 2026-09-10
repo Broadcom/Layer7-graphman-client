@@ -1,0 +1,20 @@
+{
+  "customKeyValues": [
+    {
+      "key": "SOME_DB_USERNAME",
+      "value": "Zm9yIHRlc3RpbmcgY3VzdG9ta2V5dmFsdWU="
+    },
+    {
+      "key": "SOME_DOMAIN_NAME",
+      "value": "dGVzdGd3YXBpLmJyb2FkY29tLmNvbQ=="
+    },
+    {
+      "key": "SOME_DB_PASSWORD",
+      "value": "c2hpdmFtQHdvcms="
+    },
+    {
+      "key": "SOME_TEST_ENV",
+      "value": "dGVzdC5pcGFkZHJlc3MuY29t"
+    }
+  ]
+}

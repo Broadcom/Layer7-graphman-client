@@ -1,0 +1,37 @@
+{
+  "globalResources": [
+    {
+      "systemId": "http://functional.test/some-test-dtd",
+      "publicId": "some-test-dtd",
+      "resourceType": "DTD",
+      "description": "Test DTD for functional tests",
+      "content": "<!DOCTYPE note [\n<!ELEMENT note (to,from,heading,body)>\n<!ELEMENT to (#PCDATA)>\n<!ELEMENT from (#PCDATA)>\n<!ELEMENT heading (#PCDATA)>\n<!ELEMENT body (#PCDATA)>\n]>"
+    },
+    {
+      "systemId": "http://functional.test/some-test-schema",
+      "resourceType": "XML_SCHEMA",
+      "description": "Test XML Schema for functional tests",
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"note\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"to\" type=\"xs:string\"/>\n        <xs:element name=\"from\" type=\"xs:string\"/>\n        <xs:element name=\"heading\" type=\"xs:string\"/>\n        <xs:element name=\"body\" type=\"xs:string\"/>\n      </xs:sequence>\n    </xs:complexType>\n  </xs:element>\n</xs:schema>"
+    },
+    {
+      "systemId": "http://functional.test/some-other-test-schema",
+      "resourceType": "XML_SCHEMA",
+      "description": "Other Test XML Schema for functional tests",
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n  <xs:element name=\"book\">\n    <xs:complexType>\n      <xs:sequence>\n        <xs:element name=\"title\" type=\"xs:string\"/>\n        <xs:element name=\"author\" type=\"xs:string\"/>\n        <xs:element name=\"year\" type=\"xs:integer\"/>\n      </xs:sequence>\n    </xs:complexType>\n  </xs:element>\n</xs:schema>"
+    },
+    {
+      "systemId": "http://functional.test/some-test-dtd-delete-by-input-1",
+      "publicId": "some-test-dtd-delete-by-input-1",
+      "resourceType": "DTD",
+      "description": "Delete-by-input fixture DTD 1 for functional tests",
+      "content": "<!ELEMENT deleteByInputOne (#PCDATA)>"
+    },
+    {
+      "systemId": "http://functional.test/some-test-dtd-delete-by-input-2",
+      "publicId": "some-test-dtd-delete-by-input-2",
+      "resourceType": "DTD",
+      "description": "Delete-by-input fixture DTD 2 for functional tests",
+      "content": "<!ELEMENT deleteByInputTwo (#PCDATA)>"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "httpConfigurations":[
+    {
+      "host" : "some-host",
+      "port" : 8443,
+      "protocol" :"HTTPS",
+      "path" :"/some-path",
+      "username":"some-user",
+      "securePasswordName":"some-pwd",
+      "ntlmHost": "some-ntlm-host",
+      "ntlmDomain":"some-ntlm-domain",
+      "tlsVersion" :"1.2",
+      "tlsKeystoreId":"00000000000000000000000000000002",
+      "tlsKeyAlias":"some-key",
+      "tlsKeyUse" :"DEFAULT",
+      "tlsCipherSuites":[
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384"
+      ],
+      "connectTimeout":1300,
+      "readTimeout":-1,
+      "proxyUse":"CUSTOM",
+      "proxyConfiguration":{
+        "host":"some-proxy-host",
+        "port":8181,
+        "username":"some-proxy-user",
+        "securePasswordName":"some-pwd"
+      }
+    } ,{
+      "host" : "someOther-host",
+      "port" : 8443,
+      "protocol" :"HTTPS",
+      "path" :"/someOther-path",
+      "username":"some-user",
+      "securePasswordName":"some-pwd",
+      "ntlmHost": "some-ntlm-host",
+      "ntlmDomain":"some-ntlm-domain",
+      "tlsVersion" :"1.2",
+      "tlsKeystoreId":"00000000000000000000000000000002",
+      "tlsKeyAlias":"some-key",
+      "tlsKeyUse" :"DEFAULT",
+      "tlsCipherSuites":[
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384"
+      ],
+      "connectTimeout":1300,
+      "readTimeout":-1,
+      "proxyUse":"CUSTOM",
+      "proxyConfiguration":{
+        "host":"some-new-proxy-host",
+        "port":8181,
+        "username":"some-new-proxy-user",
+        "securePasswordName":"some-pwd"
+      }
+    }
+  ]
+}

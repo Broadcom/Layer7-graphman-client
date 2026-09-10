@@ -1,0 +1,28 @@
+{
+  "clusterProperties": [
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d447fb",
+      "name": "some-cwp",
+      "checksum": "15efa8c44f1cca94bc4514d6ef90b7b5b01e5569",
+      "description": "some cluster property",
+      "hiddenProperty": false,
+      "value": "some-value"
+    },
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d447fd",
+      "name": "some-other-cwp",
+      "checksum": "cdc66fb93b8c97af467f0419526559b0f5dead30",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "some-other-value"
+    },
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d44801",
+      "name": "some-cwp-by-name",
+      "checksum": "8b3f9e7a1c2d5e6f0a1b2c3d4e5f60718293a4b5",
+      "description": "cluster property deleted by name",
+      "hiddenProperty": false,
+      "value": "some-value-by-name"
+    }
+  ]
+}

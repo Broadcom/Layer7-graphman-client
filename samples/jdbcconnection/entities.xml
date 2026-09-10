@@ -1,0 +1,216 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-jdbc-connection</l7:Name>
+            <l7:Id>36943aa823d438b8ec08f6ece0d178bb</l7:Id>
+            <l7:Type>JDBC_CONNECTION</l7:Type>
+            <l7:TimeStamp>2022-04-26T15:22:05.686+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:JDBCConnection id="36943aa823d438b8ec08f6ece0d178bb" version="0">
+                    <l7:Name>some-jdbc-connection</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="maximumPoolSize">
+                            <l7:IntegerValue>15</l7:IntegerValue>
+                        </l7:Property>
+                        <l7:Property key="minimumPoolSize">
+                            <l7:IntegerValue>3</l7:IntegerValue>
+                        </l7:Property>
+                    </l7:Properties>
+                    <l7:Extension>
+                        <l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+                        <l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+                        <l7:ConnectionProperties>
+                            <l7:Property key="EnableCancelTimeout">
+                                <l7:StringValue>false</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="user">
+                                <l7:StringValue>some-user</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="password">
+                                <l7:StringValue>password</l7:StringValue>
+                            </l7:Property>
+                        </l7:ConnectionProperties>
+                    </l7:Extension>
+                </l7:JDBCConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-jdbc-connection</l7:Name>
+            <l7:Id>46943aa823d438b8ec08f6ece0d178bc</l7:Id>
+            <l7:Type>JDBC_CONNECTION</l7:Type>
+            <l7:TimeStamp>2022-04-26T15:22:05.686+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:JDBCConnection id="46943aa823d438b8ec08f6ece0d178bc" version="0">
+                    <l7:Name>some-other-jdbc-connection</l7:Name>
+                    <l7:Enabled>false</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="maximumPoolSize">
+                            <l7:IntegerValue>20</l7:IntegerValue>
+                        </l7:Property>
+                        <l7:Property key="minimumPoolSize">
+                            <l7:IntegerValue>5</l7:IntegerValue>
+                        </l7:Property>
+                    </l7:Properties>
+                    <l7:Extension>
+                        <l7:DriverClass>org.postgresql.Driver</l7:DriverClass>
+                        <l7:JdbcUrl>jdbc:postgresql://some-other-host:5432/some-other-db</l7:JdbcUrl>
+                        <l7:ConnectionProperties>
+                            <l7:Property key="ssl">
+                                <l7:StringValue>true</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="user">
+                                <l7:StringValue>some-other-user</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="password">
+                                <l7:StringValue>password</l7:StringValue>
+                            </l7:Property>
+                        </l7:ConnectionProperties>
+                    </l7:Extension>
+                </l7:JDBCConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-sec-jdbc-connection</l7:Name>
+            <l7:Id>56943aa823d438b8ec08f6ece0d178bd</l7:Id>
+            <l7:Type>JDBC_CONNECTION</l7:Type>
+            <l7:TimeStamp>2026-03-16T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:JDBCConnection id="56943aa823d438b8ec08f6ece0d178bd" version="0">
+                    <l7:Name>some-sec-jdbc-connection</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="maximumPoolSize">
+                            <l7:IntegerValue>15</l7:IntegerValue>
+                        </l7:Property>
+                        <l7:Property key="minimumPoolSize">
+                            <l7:IntegerValue>3</l7:IntegerValue>
+                        </l7:Property>
+                    </l7:Properties>
+                    <l7:Extension>
+                        <l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+                        <l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+                        <l7:ConnectionProperties>
+                            <l7:Property key="EnableCancelTimeout">
+                                <l7:StringValue>true</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="user">
+                                <l7:StringValue>some-user</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="password">
+                                <l7:StringValue>${secpass.some-pwd.plaintext}</l7:StringValue>
+                            </l7:Property>
+                        </l7:ConnectionProperties>
+                    </l7:Extension>
+                </l7:JDBCConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-jdbc-connection-delete-by-input-1</l7:Name>
+            <l7:Id>66943aa823d438b8ec08f6ece0d178be</l7:Id>
+            <l7:Type>JDBC_CONNECTION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:JDBCConnection id="66943aa823d438b8ec08f6ece0d178be" version="0">
+                    <l7:Name>some-jdbc-connection-delete-by-input-1</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="maximumPoolSize">
+                            <l7:IntegerValue>15</l7:IntegerValue>
+                        </l7:Property>
+                        <l7:Property key="minimumPoolSize">
+                            <l7:IntegerValue>3</l7:IntegerValue>
+                        </l7:Property>
+                    </l7:Properties>
+                    <l7:Extension>
+                        <l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+                        <l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+                        <l7:ConnectionProperties>
+                            <l7:Property key="EnableCancelTimeout">
+                                <l7:StringValue>false</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="user">
+                                <l7:StringValue>some-user</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="password">
+                                <l7:StringValue>password</l7:StringValue>
+                            </l7:Property>
+                        </l7:ConnectionProperties>
+                    </l7:Extension>
+                </l7:JDBCConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-jdbc-connection-delete-by-input-2</l7:Name>
+            <l7:Id>76943aa823d438b8ec08f6ece0d178bf</l7:Id>
+            <l7:Type>JDBC_CONNECTION</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:JDBCConnection id="76943aa823d438b8ec08f6ece0d178bf" version="0">
+                    <l7:Name>some-jdbc-connection-delete-by-input-2</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="maximumPoolSize">
+                            <l7:IntegerValue>15</l7:IntegerValue>
+                        </l7:Property>
+                        <l7:Property key="minimumPoolSize">
+                            <l7:IntegerValue>3</l7:IntegerValue>
+                        </l7:Property>
+                    </l7:Properties>
+                    <l7:Extension>
+                        <l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+                        <l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+                        <l7:ConnectionProperties>
+                            <l7:Property key="EnableCancelTimeout">
+                                <l7:StringValue>false</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="user">
+                                <l7:StringValue>some-user</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="password">
+                                <l7:StringValue>password</l7:StringValue>
+                            </l7:Property>
+                        </l7:ConnectionProperties>
+                    </l7:Extension>
+                </l7:JDBCConnection>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="36943aa823d438b8ec08f6ece0d178bb" type="JDBC_CONNECTION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="46943aa823d438b8ec08f6ece0d178bc" type="JDBC_CONNECTION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="56943aa823d438b8ec08f6ece0d178bd" type="JDBC_CONNECTION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="66943aa823d438b8ec08f6ece0d178be" type="JDBC_CONNECTION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="76943aa823d438b8ec08f6ece0d178bf" type="JDBC_CONNECTION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

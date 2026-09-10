@@ -50,6 +50,7 @@ module.exports = {
         console.log();
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
         console.log("  --output <output-dir>");
         console.log("    specify the name of directory to explode into.");
@@ -61,6 +62,9 @@ module.exports = {
         console.log("          - 0, default level where the individual entities will be exploded into separate files");
         console.log("          - 1, wsdl resources and cert and key binary data (in p12 and pem formats) associated with the entities will be exploded into separate files");
         console.log("          - 2, policy code will be exploded into separate files");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
     }
 }

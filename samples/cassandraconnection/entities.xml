@@ -1,0 +1,149 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-cassandra-pwd</l7:Name>
+            <l7:Id>4a4c055365691617a259ca5ad3b8b96f</l7:Id>
+            <l7:Type>SECURE_PASSWORD</l7:Type>
+            <l7:TimeStamp>2022-04-26T17:29:03.399+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:StoredPassword id="4a4c055365691617a259ca5ad3b8b96f" version="1">
+                    <l7:Name>some-cassandra-pwd</l7:Name>
+                    <l7:Password>password</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="description">
+                            <l7:StringValue>test secure password</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="lastUpdated">
+                            <l7:DateValue>2022-04-26T17:28:44.150+05:30</l7:DateValue>
+                        </l7:Property>
+                        <l7:Property key="type">
+                            <l7:StringValue>Password</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="usageFromVariable">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:StoredPassword>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-cassandra-connection</l7:Name>
+            <l7:Id>4a4c055365691617a259ca5ad3b8b864</l7:Id>
+            <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2022-04-26T16:51:32.876+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CassandraConnection id="4a4c055365691617a259ca5ad3b8b864" version="0">
+                    <l7:Name>some-cassandra-connection</l7:Name>
+                    <l7:Keyspace>some-keyspace</l7:Keyspace>
+                    <l7:ContactPoint>some-contact-point1,some-contact-point2</l7:ContactPoint>
+                    <l7:Port>9042</l7:Port>
+                    <l7:Username>testUser</l7:Username>
+                    <l7:PasswordId>4a4c055365691617a259ca5ad3b8b96f</l7:PasswordId>
+                    <l7:Compression>NONE</l7:Compression>
+                    <l7:Ssl>false</l7:Ssl>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties/>
+                </l7:CassandraConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-cassandra-connection</l7:Name>
+            <l7:Id>5b5c055365691617a259ca5ad3b8b865</l7:Id>
+            <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2022-04-26T16:51:32.876+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CassandraConnection id="5b5c055365691617a259ca5ad3b8b865" version="0">
+                    <l7:Name>some-other-cassandra-connection</l7:Name>
+                    <l7:Keyspace>some-keyspace</l7:Keyspace>
+                    <l7:ContactPoint>some-contact-point1,some-contact-point3</l7:ContactPoint>
+                    <l7:Port>9043</l7:Port>
+                    <l7:Username>some-user</l7:Username>
+                    <l7:PasswordId>4a4c055365691617a259ca5ad3b8b96f</l7:PasswordId>
+                    <l7:Compression>LZ4</l7:Compression>
+                    <l7:Ssl>true</l7:Ssl>
+                    <l7:TlsCiphers>TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384</l7:TlsCiphers>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties>
+                        <l7:Property key="keepAlive">
+                            <l7:StringValue>true</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="readTimeoutMillis">
+                            <l7:StringValue>12000</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:CassandraConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-cassandra-connection-delete-by-input-1</l7:Name>
+            <l7:Id>4a4c055365691617a259ca5ad3b8b901</l7:Id>
+            <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2022-04-26T16:51:32.876+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CassandraConnection id="4a4c055365691617a259ca5ad3b8b901" version="0">
+                    <l7:Name>some-cassandra-connection-delete-by-input-1</l7:Name>
+                    <l7:Keyspace>some-keyspace</l7:Keyspace>
+                    <l7:ContactPoint>some-contact-point1,some-contact-point2</l7:ContactPoint>
+                    <l7:Port>9042</l7:Port>
+                    <l7:Username>testUser</l7:Username>
+                    <l7:PasswordId>4a4c055365691617a259ca5ad3b8b96f</l7:PasswordId>
+                    <l7:Compression>NONE</l7:Compression>
+                    <l7:Ssl>false</l7:Ssl>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties/>
+                </l7:CassandraConnection>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-cassandra-connection-delete-by-input-2</l7:Name>
+            <l7:Id>4a4c055365691617a259ca5ad3b8b902</l7:Id>
+            <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+            <l7:TimeStamp>2022-04-26T16:51:32.876+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CassandraConnection id="4a4c055365691617a259ca5ad3b8b902" version="0">
+                    <l7:Name>some-cassandra-connection-delete-by-input-2</l7:Name>
+                    <l7:Keyspace>some-keyspace</l7:Keyspace>
+                    <l7:ContactPoint>some-contact-point1,some-contact-point2</l7:ContactPoint>
+                    <l7:Port>9042</l7:Port>
+                    <l7:Username>testUser</l7:Username>
+                    <l7:PasswordId>4a4c055365691617a259ca5ad3b8b96f</l7:PasswordId>
+                    <l7:Compression>NONE</l7:Compression>
+                    <l7:Ssl>false</l7:Ssl>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Properties/>
+                </l7:CassandraConnection>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b96f" type="SECURE_PASSWORD"/>
+        <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b864" type="CASSANDRA_CONFIGURATION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="5b5c055365691617a259ca5ad3b8b865" type="CASSANDRA_CONFIGURATION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b901" type="CASSANDRA_CONFIGURATION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b902" type="CASSANDRA_CONFIGURATION">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

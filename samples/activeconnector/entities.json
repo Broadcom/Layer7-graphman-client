@@ -1,0 +1,447 @@
+{
+  "activeConnectors": [
+    {
+      "goid": "861c30489c47114e500f68032d712612",
+      "name": "some-kafka-consumer",
+      "connectorType": "KafkaClient",
+      "checksum": "7e64452a452321b73beb580f4c6d377e14440465",
+      "enabled": false,
+      "hardwiredServiceName": "some-kafka-consumer",
+      "properties": [
+        {
+          "name": "consumer.commitBatchSize",
+          "value": "100"
+        },
+        {
+          "name": "consumer.topicNames",
+          "value": "some-topic,some-other-topic"
+        },
+        {
+          "name": "consumer.resetPosition",
+          "value": "NONE"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "consumer.processMessagesMaxConcurrency",
+          "value": "10"
+        },
+        {
+          "name": "consumer.commitInterval",
+          "value": "5000"
+        },
+        {
+          "name": "consumer.pollTimeout",
+          "value": "1234"
+        },
+        {
+          "name": "consumer.consumerGroup",
+          "value": "some-consumer-group"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "consumer.pollMaxInterval",
+          "value": "300000"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "consumer.contentType",
+          "value": "application/octet-stream"
+        },
+        {
+          "name": "lastModifiedTimestamp",
+          "value": "2023-07-05T10:11:45.647135400+05:30[Asia/Calcutta]"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "role",
+          "value": "consumer"
+        },
+        {
+          "name": "consumer.processMessagesConcurrently",
+          "value": "true"
+        },
+        {
+          "name": "producer.role",
+          "value": "false"
+        },
+        {
+          "name": "consumer.pollMaxRecords",
+          "value": "123"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "consumer.commitAsync",
+          "value": "true"
+        },
+        {
+          "name": "consumer.role",
+          "value": "true"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "some-other-consumer-adv-prop",
+          "value": "some-other-consumer-adv-prop-value"
+        },
+        {
+          "name": "some-consumer-adv-prop",
+          "value": "some-consumer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae5",
+      "name": "some-kafka-producer",
+      "connectorType": "KafkaClient",
+      "checksum": "8272c3e64a62e3cea15cbae6673cb0a20254eb6c",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "producer.idempotence",
+          "value": "false"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "producer.retries",
+          "value": "123"
+        },
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "producer.acknowledgement",
+          "value": "1"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "some-other-producer-adv-prop",
+          "value": "some-other-producer-adv-prop-value"
+        },
+        {
+          "name": "some-producer-adv-prop",
+          "value": "some-producer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "861c30489c47114e500f68032d712610",
+      "name": "some-kafka-producer-consumer",
+      "connectorType": "KafkaClient",
+      "checksum": "518da6899e179676bcd7c87cd7f91441c33d63e6",
+      "enabled": false,
+      "hardwiredServiceName": "some-kafka-consumer",
+      "properties": [
+        {
+          "name": "consumer.commitBatchSize",
+          "value": "100"
+        },
+        {
+          "name": "consumer.topicNames",
+          "value": "some-topic,some-other-topic"
+        },
+        {
+          "name": "consumer.resetPosition",
+          "value": "NONE"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "producer.retries",
+          "value": "123"
+        },
+        {
+          "name": "consumer.processMessagesMaxConcurrency",
+          "value": "10"
+        },
+        {
+          "name": "consumer.commitInterval",
+          "value": "5000"
+        },
+        {
+          "name": "consumer.pollTimeout",
+          "value": "1234"
+        },
+        {
+          "name": "consumer.consumerGroup",
+          "value": "some-consumer-group"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "consumer.pollMaxInterval",
+          "value": "300000"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "consumer.contentType",
+          "value": "application/octet-stream"
+        },
+        {
+          "name": "lastModifiedTimestamp",
+          "value": "2023-07-05T10:11:52.132257+05:30[Asia/Calcutta]"
+        },
+        {
+          "name": "producer.idempotence",
+          "value": "false"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "role",
+          "value": "producer|consumer"
+        },
+        {
+          "name": "consumer.processMessagesConcurrently",
+          "value": "true"
+        },
+        {
+          "name": "producer.role",
+          "value": "true"
+        },
+        {
+          "name": "consumer.pollMaxRecords",
+          "value": "123"
+        },
+        {
+          "name": "producer.acknowledgement",
+          "value": "1"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "consumer.commitAsync",
+          "value": "true"
+        },
+        {
+          "name": "consumer.role",
+          "value": "true"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "producer.some-other-producer-adv-prop",
+          "value": "some-other-producer-adv-prop-value"
+        },
+        {
+          "name": "consumer.some-other-consumer-adv-prop",
+          "value": "some-other-consumer-adv-prop-value"
+        },
+        {
+          "name": "producer.some-producer-adv-prop",
+          "value": "some-producer-adv-prop-value"
+        },
+        {
+          "name": "consumer.some-consumer-adv-prop",
+          "value": "some-consumer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a9001",
+      "name": "some-kafka-producer-delete-by-input-1",
+      "connectorType": "KafkaClient",
+      "checksum": "3c7da0a3e6d81faa22a392e613328ac45decc8b7",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a9002",
+      "name": "some-kafka-producer-delete-by-input-2",
+      "connectorType": "KafkaClient",
+      "checksum": "fd977912eb6ff722d49983913253cd2c400db037",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+        }
+      ]
+    }
+  ],
+  "keys": [
+    {
+      "goid": "00000000000000000000000000000002:some-kafka-key",
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "some-kafka-key",
+      "checksum": "34e491071a91af674dfb20494a698a74c9d230da",
+      "keyType": "RSA",
+      "keySize": 2048,
+      "subjectDn": "CN=some-kafka-key",
+      "p12": "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",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIC9jCCAd6gAwIBAgIIWcftiksTO1wwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc29tZS1r\r\nYWZrYS1rZXkwHhcNMjMwNzA0MjMxMjU1WhcNMjgwNzAyMjMxMjU1WjAZMRcwFQYDVQQDEw5zb21l\r\nLWthZmthLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJjtDIBLD7JvLcgp3WBL\r\ntLsIhuTQyY/vlOp/FSx95AzzFkvRxOpApmRgzWDc5WQ72qyq+qYm/iAyCokJ4ih7SP35bJQ+VMIK\r\nVh06u0GmjbLnOFMm19u/d8ri//cE1r0ZEtvQ/QYLYNf3XYaGtJwkh39LqnBVAT/mX8ys6luUWJRp\r\nnBWGxcCJDdreSj/PFiQQM2wUUYmfc7DgIcCnm2lZx+GFddrf7vrLsbl7OauhpDH0IdMqEyRDO2uJ\r\nRBdg2GKLW17p+eJdTXT35vJO8mRItmdKw8n85TGcJ3XtNeZJMa4nuLxQOfva3Hv7Di1Wet8XPOdR\r\ntXV09ns3uzvtoKk1z2ECAwEAAaNCMEAwHQYDVR0OBBYEFGMxQ+Oigl/FKLlcThUSQRpVUMlQMB8G\r\nA1UdIwQYMBaAFGMxQ+Oigl/FKLlcThUSQRpVUMlQMA0GCSqGSIb3DQEBDAUAA4IBAQCSrc4wrZsB\r\nuMUxefqskCI+aP6v9fmkL/yycVr/W3SkoKV/DejDBWmzXmrzJOukhw7rUgd7IAjqL5h5uz/4uDmj\r\n6iJy02NwU3lE7sSYnKpRFcwAbafLxZIVr22lsCnFlXFz52RBwSNhUx3bj60bSbpuTeFEAbEmZHCd\r\nAEQM1BskyqMbxneyL1YK1fKLW8LJp36m8q2UuUeSRK1//LY+Qq01iXdNKwoAoPdbjvTRTtZjTQEK\r\nag3aK/uHOwqgqh2YIZESx3WAdSwkUF+oA8EsP0CBIkXg7CE2zd0ushafKkzrfnjxVpdeB5aEueoJ\r\nP+TtZJn6QxKZ6zuFQHfhwIHOV+Ua\n-----END CERTIFICATE-----\n"
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae2",
+      "name": "some-kafka-pwd",
+      "checksum": "af5f96de47b67d07bdfc92afc723d7df7fda2ad1",
+      "description": "",
+      "secret": "JEw3RXYwMyRC05WB7bMegU2PXD0y4ThD5dUe+4PwO8tQbrv+zEeJiA==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-07T22:00:10.615Z"
+    }
+  ],
+  "services": [
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8b29",
+      "guid": "188d6179-40a6-4225-a2bd-67c4a0d04431",
+      "name": "some-kafka-consumer",
+      "resolutionPath": "/some-kafka/consumer",
+      "serviceType": "WEB_API",
+      "checksum": "2cd93c28bd7129143b3aa1f3179aba8b3e2d4f79",
+      "version": 2,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"JHtyZXF1ZXN0LmthZmthLnRvcGljfToke3JlcXVlc3Qua2Fma2EucGFydGl0aW9ufToke3JlcXVlc3Qua2Fma2Eub2Zmc2V0fQ==\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae8",
+      "guid": "7f35a92a-3111-4de8-acdb-9e991b10f8fa",
+      "name": "some-kafka-producer",
+      "resolutionPath": "/some-kafka/producer",
+      "serviceType": "WEB_API",
+      "checksum": "81195f996ff805b1f889f4ef3a43af3881ff0df6",
+      "version": 2,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:KafkaRouting>\n            <L7p:AckTimeout stringValue=\"\"/>\n            <L7p:ClientConfigGoid goidValue=\"c73c9a1bee64808dc0f7fc52aa0a8ae5\"/>\n            <L7p:ClientConfigName stringValue=\"some-kafka-producer\"/>\n            <L7p:Topic stringValue=\"some-topic\"/>\n        </L7p:KafkaRouting>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

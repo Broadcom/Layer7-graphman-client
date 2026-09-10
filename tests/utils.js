@@ -47,6 +47,22 @@ module.exports = {
         return json;
     },
 
+    /**
+     * Runs the CLI with a payload piped to its standard input.
+     * Returns the raw streams instead of the --output file, as the point is to exercise the pipe.
+     */
+    graphmanWithInput: function (input, ...args) {
+        const isWin = process.platform === "win32";
+        const result = cp.spawnSync(tConfig.execFile, args, {
+            input: input,
+            stdio: ['pipe', 'pipe', 'pipe'],
+            shell: isWin,
+            encoding: 'utf8'
+        });
+
+        return {status: result.status, stdout: result.stdout || "", stderr: result.stderr || ""};
+    },
+
     expectArray: function (actual) {
         return {
             toContainEqual: function (...expected) {
@@ -58,6 +74,20 @@ module.exports = {
     
     readFileAsJson: function (path) {
         return JSON.parse(fs.readFileSync(path));
+    },
+
+    lookupEntityGoid: function (pluralName, matchFields) {
+        const listing = module.exports.graphman("export", "--using", `${pluralName}:summary`, "--gateway", "target-gateway");
+        const match = (listing[pluralName] || []).find(item =>
+            Object.keys(matchFields).every(k => item[k] === matchFields[k]));
+        return match && match.goid;
+    },
+
+    expectEntityDeleted: function (pluralName, matchFields) {
+        const listing = module.exports.graphman("export", "--using", `${pluralName}:summary`, "--gateway", "target-gateway");
+        expect(listing[pluralName]).not.toEqual(expect.arrayContaining([
+            expect.objectContaining(matchFields)
+        ]));
     }
 };
 

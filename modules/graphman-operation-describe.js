@@ -114,4 +114,10 @@ function printAvailableQueries() {
         utils.print(`         ${fieldInfo.name}`);
     });
     utils.print();
+
+    utils.info("available in-built mutations:");
+    metadata.types["Mutation"].fields.forEach(fieldInfo => {
+        utils.print(`         ${fieldInfo.name}`);
+    });
+    utils.print();
 }

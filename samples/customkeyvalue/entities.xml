@@ -1,0 +1,56 @@
+<!-- AI assistance has been used to generate some or all contents of this file. That includes, but is not limited to, new code, modifying existing code, stylistic edits. -->
+<!-- Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-ckv</l7:Name>
+            <l7:Id>625162d38c16b323dd0d9212a151fe01</l7:Id>
+            <l7:Type>CUSTOM_KEY_VALUE_STORE</l7:Type>
+            <l7:TimeStamp>2026-01-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CustomKeyValue id="625162d38c16b323dd0d9212a151fe01" version="0">
+                    <l7:StoreName>internalTransactional</l7:StoreName>
+                    <l7:Key>some-ckv</l7:Key>
+                    <l7:Value>c29tZS12YWx1ZQ==</l7:Value>
+                </l7:CustomKeyValue>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-ckv-1</l7:Name>
+            <l7:Id>625162d38c16b323dd0d9212a151fe02</l7:Id>
+            <l7:Type>CUSTOM_KEY_VALUE_STORE</l7:Type>
+            <l7:TimeStamp>2026-01-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CustomKeyValue id="625162d38c16b323dd0d9212a151fe02" version="0">
+                    <l7:StoreName>internalTransactional</l7:StoreName>
+                    <l7:Key>delete-by-input-ckv-1</l7:Key>
+                    <l7:Value>c29tZS12YWx1ZQ==</l7:Value>
+                </l7:CustomKeyValue>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-ckv-2</l7:Name>
+            <l7:Id>625162d38c16b323dd0d9212a151fe03</l7:Id>
+            <l7:Type>CUSTOM_KEY_VALUE_STORE</l7:Type>
+            <l7:TimeStamp>2026-01-01T00:00:00.000+00:00</l7:TimeStamp>
+            <l7:Resource>
+                <l7:CustomKeyValue id="625162d38c16b323dd0d9212a151fe03" version="0">
+                    <l7:StoreName>internalTransactional</l7:StoreName>
+                    <l7:Key>delete-by-input-ckv-2</l7:Key>
+                    <l7:Value>c29tZS12YWx1ZQ==</l7:Value>
+                </l7:CustomKeyValue>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="625162d38c16b323dd0d9212a151fe01"
+                    srcUri="https://127.0.0.1:8443/restman/1.0/customKeyValues/625162d38c16b323dd0d9212a151fe01"
+                    type="CUSTOM_KEY_VALUE_STORE"/>
+        <l7:Mapping action="NewOrExisting" srcId="625162d38c16b323dd0d9212a151fe02"
+                    srcUri="https://127.0.0.1:8443/restman/1.0/customKeyValues/625162d38c16b323dd0d9212a151fe02"
+                    type="CUSTOM_KEY_VALUE_STORE"/>
+        <l7:Mapping action="NewOrExisting" srcId="625162d38c16b323dd0d9212a151fe03"
+                    srcUri="https://127.0.0.1:8443/restman/1.0/customKeyValues/625162d38c16b323dd0d9212a151fe03"
+                    type="CUSTOM_KEY_VALUE_STORE"/>
+    </l7:Mappings>
+</l7:Bundle>

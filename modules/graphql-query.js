@@ -9,7 +9,7 @@ module.exports = {
         const queryFilename = utils.queryFile(queryPrefix + ".json", graphman.configuration().schemaVersion);
         const gql = utils.existsFile(queryFilename) ?
             utils.readFile(queryFilename) :
-            buildGraphQLQuery(queryPrefix, querySuffix);
+            buildGraphQL(queryPrefix, querySuffix);
 
         gql.variables = Object.assign(gql.variables || {}, variables);
         gql.options = options || {};
@@ -45,6 +45,12 @@ module.exports = {
         gql.options = options || {};
         return expandGraphQLQuery(gql);
     }
+}
+
+function buildGraphQL(queryPrefix, querySuffix) {
+    return graphman.queryFieldInfo(queryPrefix) ?
+        buildGraphQLQuery(queryPrefix, querySuffix) :
+        buildGraphQLMutation(queryPrefix);
 }
 
 /**
@@ -89,6 +95,82 @@ function buildGraphQLQuery(queryPrefix, querySuffix) {
             `}\n`,
         args: qArgs
     };
+}
+
+/**
+ * Builds a standard plural-based mutation (setXxx/updateXxx/deleteXxx) for known mutation fields
+ * @param mutationPrefix name of a captured Mutation field, e.g. setFolders, updateFolders, deleteFolders
+ * @returns {{query: string, args: string[]}}
+ */
+function buildGraphQLMutation(mutationPrefix) {
+    const fieldInfo = graphman.mutationFieldInfo(mutationPrefix);
+    const inputArg = fieldInfo && fieldInfo.args && fieldInfo.args.find(arg => arg.name === "input");
+    const pluralName = inputArg && pluralNameForMutation(mutationPrefix);
+
+    if (!inputArg || !pluralName) {
+        utils.warn("no matching mutation definition available from " + utils.queriesDir(utils.wrapperHome()));
+        throw "unrecognized mutation " + mutationPrefix;
+    }
+
+    const query = `mutation ${mutationPrefix}($${pluralName}: ${inputArg.dataType}) {\n` +
+        `  ${mutationPrefix}(input: $${pluralName}) {\n` +
+        `    detailedStatus {\n` +
+        `      action\n` +
+        `      status\n` +
+        `      description\n` +
+        `      source {\n` +
+        `        name\n` +
+        `        value\n` +
+        `      }\n` +
+        `      target {\n` +
+        `        name\n` +
+        `        value\n` +
+        `      }\n` +
+        `    }\n` +
+        `  }\n` +
+        `}\n` +
+        refFieldComment(inputArg.dataType);
+
+    return {query: query, args: [pluralName]};
+}
+
+/**
+ * Resolves the plural entity name (e.g. "folders") for a standard set/update/delete mutation field
+ * (e.g. "setFolders") by matching it against the known bundle type plural names.
+ */
+function pluralNameForMutation(mutationPrefix) {
+    const bundleTypes = graphman.schemaMetadata().bundleTypes;
+
+    for (const verb of ["set", "update", "delete"]) {
+        if (mutationPrefix.startsWith(verb) && mutationPrefix.length > verb.length) {
+            const suffix = mutationPrefix.substring(verb.length).toLowerCase();
+            const pluralName = Object.keys(bundleTypes).find(name => name.toLowerCase() === suffix);
+            if (pluralName) return pluralName;
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Builds a comment documenting the "ref" field of a PartialInput type (used by update/delete
+ * mutations to identify the existing entity), if applicable.
+ */
+function refFieldComment(inputDataType) {
+    const inputTypeName = inputDataType.match(/\w+/)[0];
+    if (!inputTypeName.endsWith("PartialInput")) return "";
+
+    const inputTypeInfo = graphman.typeInfoByTypeName(inputTypeName);
+    const refField = inputTypeInfo && inputTypeInfo.fields.find(f => f.name === "ref");
+    const refTypeInfo = refField && graphman.typeInfoByTypeName(refField.dataType);
+    if (!refTypeInfo) return "";
+
+    let comment = `# ${refField.dataType} - identify the existing entity to update/delete by one of:\n`;
+    refTypeInfo.fields.forEach(f => {
+        comment += `#   ${f.name}: ${f.dataType}\n`;
+    });
+
+    return comment;
 }
 
 /**

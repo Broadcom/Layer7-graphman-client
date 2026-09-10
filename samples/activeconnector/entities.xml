@@ -1,0 +1,507 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+	<l7:References>
+		<l7:Item>
+			<l7:Name>some-kafka-pwd</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+			<l7:Type>SECURE_PASSWORD</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.901+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:StoredPassword id="c73c9a1bee64808dc0f7fc52aa0a8ae2" version="1">
+					<l7:Name>some-kafka-pwd</l7:Name>
+					<l7:Password bundleKey="$L7C2$9fa1f,uRpjYTk0w+HuFJzgw55ALyUjP4YvipxRLf15sBb9GDc=$Xmx5IR0hN7y8d39rOWt0lVKpkqzDZp/PNTvStS0WIyy3MmApxzyvzAWOgvugNPQA5EphD5aPfGBIPD9vVoF7pFE8vG4In9CvdK4va8+l8iiMPtNreEjnWaVJ8gse0Ql8">$L7C2$1,ZgJFyKyUfgza3K7tceDAiOY+xGmd/wtwYhGPlaS9jIc=$f9478345+ycBp6lf839MCh+rfV14sgf6LUj+WDjCG/Y9fOlVE4yGJZ7Bup+86RYpKiPB3yh48nVpMceSf4meFg==</l7:Password>
+					<l7:Properties>
+						<l7:Property key="description">
+							<l7:StringValue></l7:StringValue>
+						</l7:Property>
+						<l7:Property key="lastUpdated">
+							<l7:DateValue>2023-07-05T05:45:41.833+05:30</l7:DateValue>
+						</l7:Property>
+						<l7:Property key="type">
+							<l7:StringValue>Password</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="usageFromVariable">
+							<l7:BooleanValue>false</l7:BooleanValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:StoredPassword>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-key</l7:Name>
+			<l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.920+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="some-kafka-key" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:some-kafka-key">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Dsome-kafka-key</l7:IssuerName>
+							<l7:SerialNumber>6469400567961828188</l7:SerialNumber>
+							<l7:SubjectName>CN%3Dsome-kafka-key</l7:SubjectName>
+							<l7:Encoded>MIIC9jCCAd6gAwIBAgIIWcftiksTO1wwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc29tZS1rYWZrYS1rZXkwHhcNMjMwNzA0MjMxMjU1WhcNMjgwNzAyMjMxMjU1WjAZMRcwFQYDVQQDEw5zb21lLWthZmthLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJjtDIBLD7JvLcgp3WBLtLsIhuTQyY/vlOp/FSx95AzzFkvRxOpApmRgzWDc5WQ72qyq+qYm/iAyCokJ4ih7SP35bJQ+VMIKVh06u0GmjbLnOFMm19u/d8ri//cE1r0ZEtvQ/QYLYNf3XYaGtJwkh39LqnBVAT/mX8ys6luUWJRpnBWGxcCJDdreSj/PFiQQM2wUUYmfc7DgIcCnm2lZx+GFddrf7vrLsbl7OauhpDH0IdMqEyRDO2uJRBdg2GKLW17p+eJdTXT35vJO8mRItmdKw8n85TGcJ3XtNeZJMa4nuLxQOfva3Hv7Di1Wet8XPOdRtXV09ns3uzvtoKk1z2ECAwEAAaNCMEAwHQYDVR0OBBYEFGMxQ+Oigl/FKLlcThUSQRpVUMlQMB8GA1UdIwQYMBaAFGMxQ+Oigl/FKLlcThUSQRpVUMlQMA0GCSqGSIb3DQEBDAUAA4IBAQCSrc4wrZsBuMUxefqskCI+aP6v9fmkL/yycVr/W3SkoKV/DejDBWmzXmrzJOukhw7rUgd7IAjqL5h5uz/4uDmj6iJy02NwU3lE7sSYnKpRFcwAbafLxZIVr22lsCnFlXFz52RBwSNhUx3bj60bSbpuTeFEAbEmZHCdAEQM1BskyqMbxneyL1YK1fKLW8LJp36m8q2UuUeSRK1//LY+Qq01iXdNKwoAoPdbjvTRTtZjTQEKag3aK/uHOwqgqh2YIZESx3WAdSwkUF+oA8EsP0CBIkXg7CE2zd0ushafKkzrfnjxVpdeB5aEueoJP+TtZJn6QxKZ6zuFQHfhwIHOV+Ua</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>RSA</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,uRpjYTk0w+HuFJzgw55ALyUjP4YvipxRLf15sBb9GDc=$Xmx5IR0hN7y8d39rOWt0lVKpkqzDZp/PNTvStS0WIyy3MmApxzyvzAWOgvugNPQA5EphD5aPfGBIPD9vVoF7pFE8vG4In9CvdK4va8+l8iiMPtNreEjnWaVJ8gse0Ql8" algorithm="RSA">$L7C2$1,ovdIFs4PSjcx6xvpEf4iZXPj61g46O5pYwi22wlbxaw=$J+iTfjYmGNUUX5pRFW8QWTDWkz4XgS4C/musu6/6sdiB+ng3BaLWu1N6b2mq+mqYqjPkGYAaT+1psL9Wkg+TfpT6w0pCOXMg4JZH7wr/5sEo2gJ2/TaAGNm6vGHccWEmX7hmDhEqclWtY3Nz6ZBSH7OD5KgvoM7VGT8DSfXd2e/C84/Nlt36kIPBarleO4CHGQz8AcuvVc2iqjWmtI7NckOZHOC6S4V5j4FjP1dsOFsQ4/BpSQ7HjvIJ2YksUyw+eGUZhZprQWEE8cA/We3ATDUf+HdrOqAB4EsqMxvWXfAKCktI03eOer2u5+Rd1h/d3GTSyuBU2DvT/GM+RJ9zE4qznJB8TEB/4hwENhMwQjt0VbJkPoObFYUHyl9/z+hDJs1/FzdX5oAxqa3R7cx9atyIz68OKITlOWsrcQ0qn+dYFRjmqANcUvqtHi/ouU90/JsAlBdOdP0ODcXQmtDkrE1pEpBWkAjKuZx/+fkbJ2jNoEZ/hXv33yC1d3hWTzb745hJOzY1SMBpq7wqS0bsMS73WjPLZMeXu+r8fMnADcOXRkhcFl6P8X3GoGQhH6BVXVz3ouOiEIi6Lr+9wD2mhT8GWHUqp1b6O+np+DFkFNKiE5dV9w0n2uS1jj3D1xI5drWQG06MHz8efaRfk6UqjFnTqGMb9KTBeuHfY8pOBFKr4cSP92c71xCEVWhxN7JFwJW1jY1c/c65U0cOAVOArl756QEUVww+z+eY1m3jurdX8GaxSGATpe1XTez8fLXdJn7Nakt04F+iid33xRDvyHO+ByuxMCN+du+LV25KKeHqy6BpvY/P4TZgX3lSZmq+uTyfJZWC8ORD83Oq7gQZikIyFYzWTZxVOu6oAxg7eb5+RTZV8CF+PoYyt3rFdedjLoNMxCw4ynag504XOh6+N9j+5Njaps5CVHdh9sjAOMsHOrcZtLMIkjFONom+sXuflwpNYdMnKxPJVMpTIsBtsdk7/0U9rfEUR0ehIrjEzsBQRzeFeODyT4qBxSVrbackLa1GDoCw6bRY+vQ/NsVldDuKIpVWcilJkLjzy6wHDzx3CXb5k1HMONt2BO2/Y3JNZ4PFANYwVgMVvCtSS775MnzYp8a04EndU/c3SMQ7XfUKe6l2s5OfxfMG5o9HVh3V71X8pC1hyjjPBLzrfMsAugnZQTt3I8cGFsyFxBziVGWt+4bZPmr8ZYNVur7qqYWX7Ncxg7KBYwLFQMzSSUY6vwYJQGyolb6e7tW14Ax6onsbOpgMyzkE7ZuWBUHeRl2qM6cababXmVrryzhQ04lQXyZG4MMO1AtQB4CRR/OAd0qPcV5IT4kEHUYByLTLcoLgiAWkbCtmi9It8XdzdwupJ+y+Z+Db+mFBMfJVL4fVdIY6ZqZCDJo8R5BVhvAEnS5+0jDpEbuba+WnzgTYxBLXHGd1y4MvioZx1ozIbBRhpuCqu8vTA14uL3MPVIk08BXXvwhaSqfFJ7IR30hOVYBKvTkbE1UEx59SdPyvpBDLtqP/PDDBI7IJG3DnBiQBL0N+g+QqglLq1SLPMYW9UmOmIWm3pnP5aAoXI2QfMWs94Y21ZC2eDfqlOIHbYrcFhZmzqWdXEZE5SyDPFc6xTTDrcDXwEzV7V3YGmkfIKj6tvoY4bQfZWbT1y/INrJLFJjqxHBcaETxV4ywK+NUdGKDfAy6Zt+rgNiGkB2cWB5h7qNk=</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-producer</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae5</l7:Id>
+			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a8ae5" version="1">
+					<l7:Name>some-kafka-producer</l7:Name>
+					<l7:Enabled>true</l7:Enabled>
+					<l7:Type>KafkaClient</l7:Type>
+					<l7:Properties>
+						<l7:Property key="kafka.authType">
+							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.bootstrapServers">
+							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.enableTls">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.keyStoreGoid">
+							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.passwordGoid">
+							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.privateKeyAlias">
+							<l7:StringValue>some-kafka-key</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.acknowledgement">
+							<l7:StringValue>1</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
+							<l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
+							<l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.idempotence">
+							<l7:StringValue>false</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.retries">
+							<l7:StringValue>123</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.role">
+							<l7:StringValue>producer</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsCipherSuites">
+							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsVersion">
+							<l7:StringValue>TLSv1.2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.username">
+							<l7:StringValue>some-kafka-user</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:ActiveConnector>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a9001</l7:Id>
+			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9001" version="1">
+					<l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
+					<l7:Enabled>true</l7:Enabled>
+					<l7:Type>KafkaClient</l7:Type>
+					<l7:Properties>
+						<l7:Property key="kafka.bootstrapServers">
+							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.role">
+							<l7:StringValue>producer</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:ActiveConnector>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a9002</l7:Id>
+			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9002" version="1">
+					<l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
+					<l7:Enabled>true</l7:Enabled>
+					<l7:Type>KafkaClient</l7:Type>
+					<l7:Properties>
+						<l7:Property key="kafka.bootstrapServers">
+							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.role">
+							<l7:StringValue>producer</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:ActiveConnector>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-producer-consumer</l7:Name>
+			<l7:Id>861c30489c47114e500f68032d712610</l7:Id>
+			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+			<l7:TimeStamp>2023-07-05T10:39:57.992+05:30</l7:TimeStamp>
+			<l7:Link rel="self" uri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610"/>
+			<l7:Resource>
+				<l7:ActiveConnector id="861c30489c47114e500f68032d712610" version="1">
+					<l7:Name>some-kafka-producer-consumer</l7:Name>
+					<l7:Enabled>false</l7:Enabled>
+					<l7:Type>KafkaClient</l7:Type>
+					<l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
+					<l7:Properties>
+						<l7:Property key="kafka.authType">
+							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.bootstrapServers">
+							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
+							<l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
+							<l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitAsync">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitBatchSize">
+							<l7:StringValue>100</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitInterval">
+							<l7:StringValue>5000</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.consumerGroup">
+							<l7:StringValue>some-consumer-group</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.contentType">
+							<l7:StringValue>application/octet-stream</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollMaxInterval">
+							<l7:StringValue>300000</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollMaxRecords">
+							<l7:StringValue>123</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollTimeout">
+							<l7:StringValue>1234</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.processMessagesConcurrently">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
+							<l7:StringValue>10</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.resetPosition">
+							<l7:StringValue>NONE</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.role">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.topicNames">
+							<l7:StringValue>some-topic,some-other-topic</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.enableTls">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.keyStoreGoid">
+							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.lastModifiedTimestamp">
+							<l7:StringValue>2023-07-05T10:11:52.132257+05:30[Asia/Calcutta]</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.passwordGoid">
+							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.privateKeyAlias">
+							<l7:StringValue>some-kafka-key</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.acknowledgement">
+							<l7:StringValue>1</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
+							<l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
+							<l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.idempotence">
+							<l7:StringValue>false</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.retries">
+							<l7:StringValue>123</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.role">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.role">
+							<l7:StringValue>producer|consumer</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsCipherSuites">
+							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsVersion">
+							<l7:StringValue>TLSv1.2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.username">
+							<l7:StringValue>some-kafka-user</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:ActiveConnector>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-consumer</l7:Name>
+			<l7:Id>861c30489c47114e500f68032d712612</l7:Id>
+			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+			<l7:TimeStamp>2023-07-05T10:39:57.992+05:30</l7:TimeStamp>
+			<l7:Link rel="self" uri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612"/>
+			<l7:Resource>
+				<l7:ActiveConnector id="861c30489c47114e500f68032d712612" version="3">
+					<l7:Name>some-kafka-consumer</l7:Name>
+					<l7:Enabled>false</l7:Enabled>
+					<l7:Type>KafkaClient</l7:Type>
+					<l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
+					<l7:Properties>
+						<l7:Property key="kafka.authType">
+							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.bootstrapServers">
+							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
+							<l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
+							<l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitAsync">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitBatchSize">
+							<l7:StringValue>100</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.commitInterval">
+							<l7:StringValue>5000</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.consumerGroup">
+							<l7:StringValue>some-consumer-group</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.contentType">
+							<l7:StringValue>application/octet-stream</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollMaxInterval">
+							<l7:StringValue>300000</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollMaxRecords">
+							<l7:StringValue>123</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.pollTimeout">
+							<l7:StringValue>1234</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.processMessagesConcurrently">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
+							<l7:StringValue>10</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.resetPosition">
+							<l7:StringValue>NONE</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.role">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.consumer.topicNames">
+							<l7:StringValue>some-topic,some-other-topic</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.enableTls">
+							<l7:StringValue>true</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.keyStoreGoid">
+							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.lastModifiedTimestamp">
+							<l7:StringValue>2023-07-05T10:11:45.647135400+05:30[Asia/Calcutta]</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.passwordGoid">
+							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.privateKeyAlias">
+							<l7:StringValue>some-kafka-key</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.producer.role">
+							<l7:StringValue>false</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.role">
+							<l7:StringValue>consumer</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsCipherSuites">
+							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.tlsVersion">
+							<l7:StringValue>TLSv1.2</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="kafka.username">
+							<l7:StringValue>some-kafka-user</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:ActiveConnector>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-producer</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae8</l7:Id>
+			<l7:Type>SERVICE</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.983+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:Service id="c73c9a1bee64808dc0f7fc52aa0a8ae8" version="2">
+					<l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="c73c9a1bee64808dc0f7fc52aa0a8ae8" version="2">
+						<l7:Name>some-kafka-producer</l7:Name>
+						<l7:Enabled>true</l7:Enabled>
+						<l7:ServiceMappings>
+							<l7:HttpMapping>
+								<l7:UrlPattern>/some-kafka/producer</l7:UrlPattern>
+								<l7:Verbs>
+									<l7:Verb>GET</l7:Verb>
+									<l7:Verb>POST</l7:Verb>
+									<l7:Verb>PUT</l7:Verb>
+									<l7:Verb>DELETE</l7:Verb>
+								</l7:Verbs>
+							</l7:HttpMapping>
+						</l7:ServiceMappings>
+						<l7:Properties>
+							<l7:Property key="hasRouting">
+								<l7:BooleanValue>true</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="internal">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="policyRevision">
+								<l7:LongValue>2</l7:LongValue>
+							</l7:Property>
+							<l7:Property key="soap">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="tracingEnabled">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="wssProcessingEnabled">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+						</l7:Properties>
+					</l7:ServiceDetail>
+					<l7:Resources>
+						<l7:ResourceSet tag="policy">
+							<l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+&lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+&lt;L7p:KafkaRouting&gt;
+	&lt;L7p:AckTimeout stringValue=&quot;&quot;/&gt;
+	&lt;L7p:ClientConfigGoid goidValue=&quot;c73c9a1bee64808dc0f7fc52aa0a8ae5&quot;/&gt;
+	&lt;L7p:ClientConfigName stringValue=&quot;some-kafka-producer&quot;/&gt;
+	&lt;L7p:Topic stringValue=&quot;some-topic&quot;/&gt;
+&lt;/L7p:KafkaRouting&gt;
+&lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+						</l7:ResourceSet>
+					</l7:Resources>
+				</l7:Service>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>some-kafka-consumer</l7:Name>
+			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
+			<l7:Type>SERVICE</l7:Type>
+			<l7:TimeStamp>2023-07-05T05:54:59.985+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:Service id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="2">
+					<l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="2">
+						<l7:Name>some-kafka-consumer</l7:Name>
+						<l7:Enabled>true</l7:Enabled>
+						<l7:ServiceMappings>
+							<l7:HttpMapping>
+								<l7:UrlPattern>/some-kafka/consumer</l7:UrlPattern>
+								<l7:Verbs>
+									<l7:Verb>GET</l7:Verb>
+									<l7:Verb>POST</l7:Verb>
+									<l7:Verb>PUT</l7:Verb>
+									<l7:Verb>DELETE</l7:Verb>
+								</l7:Verbs>
+							</l7:HttpMapping>
+						</l7:ServiceMappings>
+						<l7:Properties>
+							<l7:Property key="hasRouting">
+								<l7:BooleanValue>true</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="internal">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="policyRevision">
+								<l7:LongValue>2</l7:LongValue>
+							</l7:Property>
+							<l7:Property key="soap">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="tracingEnabled">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+							<l7:Property key="wssProcessingEnabled">
+								<l7:BooleanValue>false</l7:BooleanValue>
+							</l7:Property>
+						</l7:Properties>
+					</l7:ServiceDetail>
+					<l7:Resources>
+						<l7:ResourceSet tag="policy">
+							<l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+&lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+&lt;L7p:HardcodedResponse&gt;
+	&lt;L7p:Base64ResponseBody stringValue=&quot;JHtyZXF1ZXN0LmthZmthLnRvcGljfToke3JlcXVlc3Qua2Fma2EucGFydGl0aW9ufToke3JlcXVlc3Qua2Fma2Eub2Zmc2V0fQ==&quot;/&gt;
+	&lt;L7p:ResponseContentType stringValue=&quot;text/plain; charset=UTF-8&quot;/&gt;
+&lt;/L7p:HardcodedResponse&gt;
+&lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+						</l7:ResourceSet>
+					</l7:Resources>
+				</l7:Service>
+			</l7:Resource>
+		</l7:Item>
+	</l7:References>
+	<l7:Mappings>
+		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae2" srcUri="https://127.0.0.1:8443/restman/1.0/passwords/c73c9a1bee64808dc0f7fc52aa0a8ae2" type="SECURE_PASSWORD"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:some-kafka-key" srcUri="https://127.0.0.1:8443/restman/1.0/privateKeys/00000000000000000000000000000002:some-kafka-key" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae5" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a8ae5" type="SSG_ACTIVE_CONNECTOR"/>
+			<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9001" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9001" type="SSG_ACTIVE_CONNECTOR"/>
+			<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9002" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9002" type="SSG_ACTIVE_CONNECTOR"/>
+		<l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712612" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612" type="SSG_ACTIVE_CONNECTOR"/>
+		<l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712610" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610" type="SSG_ACTIVE_CONNECTOR"/>
+		<l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://127.0.0.1:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+			<l7:Properties>
+				<l7:Property key="FailOnNew">
+					<l7:BooleanValue>true</l7:BooleanValue>
+				</l7:Property>
+			</l7:Properties>
+		</l7:Mapping>
+		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae8" srcUri="https://127.0.0.1:8443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8ae8" type="SERVICE"/>
+		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8b29" srcUri="https://127.0.0.1:8443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8b29" type="SERVICE"/>
+	</l7:Mappings>
+</l7:Bundle>

@@ -42,6 +42,7 @@ module.exports = {
 
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
 
         console.log("  --output <output-file>");
@@ -69,6 +70,9 @@ module.exports = {
         console.log("    specify options as name-value pair(s) to customize the operation");
         console.log("      .bundleDefaultAction <action>");
         console.log("        default mapping action at the bundle level.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
         console.log("    NOTE:");
         console.log("      In the above, <action> refers to a valid entity mapping action.");

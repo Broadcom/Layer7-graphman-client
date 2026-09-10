@@ -1,0 +1,861 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>jms-destinations</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6013a</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:23.783Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d6013a" version="1">
+                            <l7:Name>jms-destinations</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jms-destination-1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60666</l7:Id>
+                    <l7:Type>JMS_ENDPOINT</l7:Type>
+                    <l7:TimeStamp>2026-02-11T10:28:56.081Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JMSDestination id="72adab14b763f12efb51ebb737d60666" version="1">
+                            <l7:JMSDestinationDetail id="72adab14b763f12efb51ebb737d60666" version="1">
+                                <l7:Name>jms-destination-1</l7:Name>
+                                <l7:DestinationName>dest1</l7:DestinationName>
+                                <l7:Inbound>false</l7:Inbound>
+                                <l7:Enabled>true</l7:Enabled>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="inbound.maximumSize">
+                                        <l7:LongValue>-1</l7:LongValue>
+                                    </l7:Property>
+                                    <l7:Property key="outbound.MessageType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="replyType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="type">
+                                        <l7:StringValue>Queue</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="useRequestCorrelationId">
+                                        <l7:BooleanValue>false</l7:BooleanValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                            </l7:JMSDestinationDetail>
+                            <l7:JMSConnection id="72adab14b763f12efb51ebb737d60664" version="0">
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="jndi.initialContextFactoryClassname">
+                                        <l7:StringValue>example-factory</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="jndi.providerUrl">
+                                        <l7:StringValue>jndi://url</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="queue.connectionFactoryName">
+                                        <l7:StringValue>example</l7:StringValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                                <l7:ContextPropertiesTemplate>
+                                    <l7:Property key="com.l7tech.server.jms.prop.connection.pool.enable">
+                                        <l7:StringValue>false</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.source">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.value">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                                        <l7:StringValue>false</l7:StringValue>
+                                    </l7:Property>
+                                </l7:ContextPropertiesTemplate>
+                            </l7:JMSConnection>
+                        </l7:JMSDestination>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>secret-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.571Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc77" version="1">
+                            <l7:Name>secret-2</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,X6YEPfT2fI5WorJCSymTqPZMVvt6enccKv2dOU4geMg=$GQmGunpszRtCxraBiwfsFWUVGLJ4cRVzfWoDS/HMm5yqxm5f4IsTsffjDwg+E7dkXRUeBax26EFZZ93gfH9+wdNVNwGte4tMoR4U3rohNZj6sc57PXYBuzi342bpAjnZ">$L7C2$1,mU9FmbyTiG0RGpHPYrufbPuaaux+YmMNGmu3bhpI7Io=$uYFH5eAs3gwpgGUYhBFG1xBTuQ+jh8K5rYQRDiv368eDnpWzFgPPj+FzgCO2QZV2aQikFlCq/4zpOpTrkrAAlg==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-02-25T11:23:54.437Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example1.io</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.572Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="example1.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example1.io">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
+    <l7:SerialNumber>16461789489081207431</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dexample1.io</l7:SubjectName>
+    <l7:Encoded>MIIC8TCCAdmgAwIBAgIJAOR0BlJv8cqHMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC2V4YW1wbGUxLmlvMB4XDTI2MDIxMTAzMjYwOVoXDTMxMDIxMDAzMjYwOVowFjEUMBIGA1UEAxMLZXhhbXBsZTEuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCRKIDcJrwMyh8dwQ0AGZzV8zWF2z8J/j0ytXyaaQYktDny65A3zbpgctjrk5FfOpIedZJ+6Aa3QdYYE/BwNuO2ReLjisg2qFYr0/5cIY6WaJYZv6Ryf/T+Rc3F5aBKI+kEdSEpS1KcHTr/kN/i6DaiBb5aaceemN/0XN5xlVBQBXIUDLs1435LBGIGCwoKFiy2siEq48xlNS6fzRjlB9xLAYmjg3pNJu7C+z/5GacMuu7mpb/PDU8422MSF4ZwPDymMJS4rjVbDVAgbm1XimpacO/aAec0vgNX7KmkGEDq9qp/TGausPMHxhpPrw+HP5x6ydq3TQQLpLbJRLfEdv5VAgMBAAGjQjBAMB0GA1UdDgQWBBTl8spBxQkx3uU87K9liIJ4aza2ezAfBgNVHSMEGDAWgBTl8spBxQkx3uU87K9liIJ4aza2ezANBgkqhkiG9w0BAQwFAAOCAQEAGUdeIPcFv6Wfq+af++U5Edr1PwmRT00WKj5fEZ+rTHJrErkWhHCqQ2fKrvivw1vbYNV7x7ZSbzdVr2Vo5YizOJ3OqTtJ0z99U3fVpuSFCmm4KZGkHcqjp8o9kUVUi4uy2+38844pzR4fU00PjVPLc5IqPm7c5oALAUzKwp6BKBLsY2u4HSzTSV2FJjg8TjAoVmV6U7FeKcklKZ/JbmDfjWT4A9c0uN4Ks1gEbHQFznlDy0w9V7pdonrMwz/tpH/B9VXt+HIiv/NL6mYDqm2ZVtRPim/+dmEIhKRLYTa5GoecnGzSUi9VAImL+OeGbc8TPdja00siss5lYB2lblP6Hw==</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,X6YEPfT2fI5WorJCSymTqPZMVvt6enccKv2dOU4geMg=$GQmGunpszRtCxraBiwfsFWUVGLJ4cRVzfWoDS/HMm5yqxm5f4IsTsffjDwg+E7dkXRUeBax26EFZZ93gfH9+wdNVNwGte4tMoR4U3rohNZj6sc57PXYBuzi342bpAjnZ" algorithm="RSA">$L7C2$1,L5J9xlqUDhxsfDdCp4CD0gUMMWq1blHBb3MprqFP5aU=$LS6Gz3RGIdFaFH6ns4qGGAA5E9BP2+/y0FyPRF/x3eHCtThdPf5WsV8dVsTAE1dc/7XwvUNknLrbyonhTz5O23Jp1kj4wZBlgXWs4Ccoeo4rVOUWRvfmsm2YkUfSwWq9F2mZ7Na/fVKTvB2XpLCVnHXW0Kq2gSECsEHTXbnlksy/a3k0OrU3nV0AQr7QRUziaQlrZ8dt1A1wHsisTPVxN4Hc++X11Qe5DYxVroB/Zf4xOaVUe7yA8cSmeKcs6Ou0zUbx3DgnA6VP+GYTxCahhpTbdM7FwRlxUyTRfwcYOleaCE86Jke00t306ecfcgOUuD8domLhUrMN3zYajfCeDcLWfUIx7CD5ThNQba5EnJ2wdzMGWchOLPHKknyinGnPvBO3cqGmPf+GKvWSZ1+aV/+WZQjxx/81Oh6iX9yyFrxpL0Psb9UPu2Mg+a4ca6E5tEEl0BIh8055yylrxstvaHoxYy4xxVbxXToFcoXK5hCur+GigDmn7zLqWUFw03MXn60S5xKFyqkfM64sOlwEcifS7nUCOWtxaMhjVcqeSkHonGnkbjeiw/bXr7itasxiivugOh4xBjEoBknEHKbFaIJDibQ3k8RQk6SLjlbFGYmUTc+0kxp/UOjghcOyLRM8dmM7GJblQKSuoQSVeREpG6coSyte9/h+PAiKdsxHA0DJQdg3PFu6KngaSI7Zrq3qCHH1R8nW1+4iLhYnzFiVcFkzdn1p3gIziwes7Ac0egL2T17dsIRdVS8frBU0KiRfqkwir05wmr7a9rDgr/Wj70QfiihUPcoNt+aeydn4xjyRtI1Kd0hkCk7bJp1ITGuWEa4pZIph+/ykOVY2CmKt7mfjgq9rbT4gOv4tE2pRSgyd6Olw0HHbZJQDOP3AHyMtMx/QEhhOP5LJuWTse0qX7k2yGClaPHi5HFwHuXlsweDBiBISOF8xeGyJWKnLqXaQSt1tfIW81VK62jvCL4s+CYVaEA8RPDQWSt+iZEZyKFwVVeEtKVbVtD1LJLN13OCBnlZ/W6XjVuxZkxxywB+dyIwiBSV0wyu8C4o7JK3HHXEtMuAo2EEX9bW4XZ983fFcjmpWcdBHzr0Mu1VVN7NkFvhfQBtGIT+vD7RRkocpitzwjUhhWQn5YuUkko12i6he+O1l5rytmEuJv8L+PfC53xek0NU0UbiGOKvuxUYWxdLMeu1L7tsSGUHFIe298VAwtAHBYKeZsoryebMmZeorR9PwiyvN9TT4nZYBp6XVtwUd1Vk/RCljkz4A7g8Q7BDTq9UjMMVBK47eLj+74EIQbMT8sYN1WKG2n3AhXXlqjHB+y9GTpGqWG8ZZKdyjrdJHyKipt0Q2xlLRVcMgV4C/HB2beTyd9uoGTfkVtEvcw4XE5YcrG2ClWGoe5IiG7KlYMRCqKCc/0qk25G4amz6gvzoQhFvy9DaQFxm3I7j8YuU2WijbToPLxHcSKSp4hm45PNSNZ39ap67nsNuPd02WGuTfZ2b4a55dsxPOd83kb++vBFJ2QBsSQL1io6uKfpTUnvJ2YlCXH16rfM9i0cOBmM8vsFC8KhBEdIuyg/ETLXaTT5wK/j1NFMSsGlo4//IvhsOS2U6ma4isVQAr4lyDWJEBbhuc+rvbr9ixftGLJA4BnaUpz6bAeRauh3EkZX6flOx7OWlHWKJww4N6aDWi4R4QcmpMd6AuLIOzvO/c9G8=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jms-destination-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6066b</l7:Id>
+                    <l7:Type>JMS_ENDPOINT</l7:Type>
+                    <l7:TimeStamp>2026-02-11T10:28:56.083Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JMSDestination id="72adab14b763f12efb51ebb737d6066b" version="1">
+                            <l7:JMSDestinationDetail id="72adab14b763f12efb51ebb737d6066b" version="1">
+                                <l7:Name>jms-destination-2</l7:Name>
+                                <l7:DestinationName>dest2</l7:DestinationName>
+                                <l7:Inbound>false</l7:Inbound>
+                                <l7:Enabled>true</l7:Enabled>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="inbound.maximumSize">
+                                        <l7:LongValue>-1</l7:LongValue>
+                                    </l7:Property>
+                                    <l7:Property key="outbound.MessageType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="replyType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="type">
+                                        <l7:StringValue>Queue</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="useRequestCorrelationId">
+                                        <l7:BooleanValue>false</l7:BooleanValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                            </l7:JMSDestinationDetail>
+                            <l7:JMSConnection id="72adab14b763f12efb51ebb737d60669" version="1">
+                                <l7:ProviderType>WebSphere MQ over LDAP</l7:ProviderType>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="jndi.initialContextFactoryClassname">
+                                        <l7:StringValue>example-factory</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="jndi.providerUrl">
+                                        <l7:StringValue>jndi://url</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="queue.connectionFactoryName">
+                                        <l7:StringValue>example</l7:StringValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                                <l7:ContextPropertiesTemplate>
+                                    <l7:Property key="com.l7tech.server.jms.prop.connection.pool.enable">
+                                        <l7:StringValue>false</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.source">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.value">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.customizer.class">
+                                        <l7:StringValue>com.l7tech.server.transport.jms.prov.MQSeriesCustomizer</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                                        <l7:StringValue>false</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.queue.ssgKeyAlias">
+                                        <l7:StringValue>example1.io</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.queue.ssgKeystoreId">
+                                        <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.queue.useClientAuth">
+                                        <l7:StringValue>true</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.credentials">
+                                        <l7:StringValue>${secpass.secret-2.plaintext}</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.principal">
+                                        <l7:StringValue>user</l7:StringValue>
+                                    </l7:Property>
+                                </l7:ContextPropertiesTemplate>
+                            </l7:JMSConnection>
+                        </l7:JMSDestination>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>secret-3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.604Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc7a" version="1">
+                            <l7:Name>secret-3</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,X6YEPfT2fI5WorJCSymTqPZMVvt6enccKv2dOU4geMg=$GQmGunpszRtCxraBiwfsFWUVGLJ4cRVzfWoDS/HMm5yqxm5f4IsTsffjDwg+E7dkXRUeBax26EFZZ93gfH9+wdNVNwGte4tMoR4U3rohNZj6sc57PXYBuzi342bpAjnZ">$L7C2$1,37JcoAbkMFvTFWdKThUyfE/DUOLTIstv97Sft8XMDWg=$T4P/5LEEMb5mOnZdtmhA9N4Ipg+/GKhPnBFGeBoglLR6g+PHeUELzuHhjrn4QCqy8pAlurJ2sCN1T6BYJvyttg==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-02-25T11:23:54.440Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jms-destination-3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60670</l7:Id>
+                    <l7:Type>JMS_ENDPOINT</l7:Type>
+                    <l7:TimeStamp>2026-02-11T10:28:56.084Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JMSDestination id="72adab14b763f12efb51ebb737d60670" version="2">
+                            <l7:JMSDestinationDetail id="72adab14b763f12efb51ebb737d60670" version="2">
+                                <l7:Name>jms-destination-3</l7:Name>
+                                <l7:DestinationName>dest3</l7:DestinationName>
+                                <l7:Inbound>false</l7:Inbound>
+                                <l7:Enabled>true</l7:Enabled>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="inbound.maximumSize">
+                                        <l7:LongValue>-1</l7:LongValue>
+                                    </l7:Property>
+                                    <l7:Property key="outbound.MessageType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="password">
+                                        <l7:StringValue>${secpass.secret-3.plaintext}</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="replyType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="type">
+                                        <l7:StringValue>Queue</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="useRequestCorrelationId">
+                                        <l7:BooleanValue>false</l7:BooleanValue>
+                                    </l7:Property>
+                                    <l7:Property key="username">
+                                        <l7:StringValue>user3</l7:StringValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                            </l7:JMSDestinationDetail>
+                            <l7:JMSConnection id="72adab14b763f12efb51ebb737d6066e" version="1">
+                                <l7:ProviderType>WebLogic JMS</l7:ProviderType>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="jndi.initialContextFactoryClassname">
+                                        <l7:StringValue>example-factory</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="jndi.providerUrl">
+                                        <l7:StringValue>jndi://url</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="password">
+                                        <l7:StringValue>${secpass.secret-3.plaintext}</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="queue.connectionFactoryName">
+                                        <l7:StringValue>example</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="username">
+                                        <l7:StringValue>user3</l7:StringValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                                <l7:ContextPropertiesTemplate>
+                                    <l7:Property key="com.l7tech.server.jms.prop.connection.pool.enable">
+                                        <l7:StringValue>false</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.source">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.value">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                                        <l7:StringValue>true</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.id">
+                                        <l7:StringValue>34124900af309006ed45a0d3823e5759</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.credentials">
+                                        <l7:StringValue>${secpass.secret-2.plaintext}</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.principal">
+                                        <l7:StringValue>user</l7:StringValue>
+                                    </l7:Property>
+                                </l7:ContextPropertiesTemplate>
+                            </l7:JMSConnection>
+                        </l7:JMSDestination>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jms-destination-4</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60677</l7:Id>
+                    <l7:Type>JMS_ENDPOINT</l7:Type>
+                    <l7:TimeStamp>2026-03-05T00:00:50.921Z</l7:TimeStamp>
+                    <l7:Link rel="self" uri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60677"/>
+                    <l7:Resource>
+                        <l7:JMSDestination id="72adab14b763f12efb51ebb737d60677" version="0">
+                            <l7:JMSDestinationDetail id="72adab14b763f12efb51ebb737d60677" version="0">
+                                <l7:Name>jms-destination-4</l7:Name>
+                                <l7:DestinationName>dest4</l7:DestinationName>
+                                <l7:Inbound>true</l7:Inbound>
+                                <l7:Enabled>false</l7:Enabled>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="inbound.acknowledgementType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="inbound.maximumSize">
+                                        <l7:LongValue>-1</l7:LongValue>
+                                    </l7:Property>
+                                    <l7:Property key="outbound.MessageType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="replyType">
+                                        <l7:StringValue>AUTOMATIC</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="type">
+                                        <l7:StringValue>Queue</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="useRequestCorrelationId">
+                                        <l7:BooleanValue>false</l7:BooleanValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                            </l7:JMSDestinationDetail>
+                            <l7:JMSConnection id="4f9a954e17c2315010768e38d12233ed" version="0">
+                                <l7:ProviderType>WebLogic JMS</l7:ProviderType>
+                                <l7:Template>false</l7:Template>
+                                <l7:Properties>
+                                    <l7:Property key="jndi.initialContextFactoryClassname">
+                                        <l7:StringValue>example-factory</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="jndi.providerUrl">
+                                        <l7:StringValue>jndi://url</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="queue.connectionFactoryName">
+                                        <l7:StringValue>example</l7:StringValue>
+                                    </l7:Property>
+                                </l7:Properties>
+                                <l7:ContextPropertiesTemplate>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.source">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.contentType.value">
+                                        <l7:StringValue></l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.dedicated.consumer.bool">
+                                        <l7:StringValue>true</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.dedicated.consumer.size">
+                                        <l7:StringValue>1</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                                        <l7:StringValue>true</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.id">
+                                        <l7:StringValue>72adab14b763f12efb51ebb737d60681</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.credentials">
+                                        <l7:StringValue>${secpass.secret-2.plaintext}</l7:StringValue>
+                                    </l7:Property>
+                                    <l7:Property key="java.naming.security.principal">
+                                        <l7:StringValue>user</l7:StringValue>
+                                    </l7:Property>
+                                </l7:ContextPropertiesTemplate>
+                            </l7:JMSConnection>
+                        </l7:JMSDestination>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-jms-destinations</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6071c</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.628Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="138b2461-1c3c-4842-8fb5-53f7925621a8" id="72adab14b763f12efb51ebb737d6071c" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d6013a" guid="138b2461-1c3c-4842-8fb5-53f7925621a8" id="72adab14b763f12efb51ebb737d6071c" version="1">
+<l7:Name>sub-policy-with-jms-destinations</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-jms-destinations"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-2"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d6066b"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-3"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d60670"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-jms-destinations</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d606c4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.633Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="7e30274f-8093-4f87-bdfe-b100eacd93e4" id="72adab14b763f12efb51ebb737d606c4" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d6013a" guid="7e30274f-8093-4f87-bdfe-b100eacd93e4" id="72adab14b763f12efb51ebb737d606c4" version="1">
+<l7:Name>policy-with-jms-destinations</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-jms-destinations"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-1"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d60666"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-2"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d6066b"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="138b2461-1c3c-4842-8fb5-53f7925621a8"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-jms-destinations"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>hardwired-cluster-property</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60781</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.633Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="72adab14b763f12efb51ebb737d60781" version="1">
+                            <l7:Name>hardwired-cluster-property</l7:Name>
+                            <l7:Value>Hello, World!</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jms-destination-service</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60681</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.639Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="72adab14b763f12efb51ebb737d60681" version="3">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d6013a" id="72adab14b763f12efb51ebb737d60681" version="3">
+<l7:Name>jms-destination-service</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/jms-destination-service</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:SetVariable&gt;
+            &lt;L7p:Base64Expression stringValue="JHtnYXRld2F5LmhhcmR3aXJlZC1jbHVzdGVyLXByb3BlcnR5fQ=="/&gt;
+            &lt;L7p:VariableToSet stringValue="hardwired-cluster-property"/&gt;
+        &lt;/L7p:SetVariable&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-jms-destinations</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d606d8</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:21:24.646Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="72adab14b763f12efb51ebb737d606d8" version="3">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d6013a" id="72adab14b763f12efb51ebb737d606d8" version="3">
+<l7:Name>service-with-jms-destinations</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-jms-destinations</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-1"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d60666"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+        &lt;L7p:JmsRoutingAssertion&gt;
+            &lt;L7p:EndpointName stringValue="jms-destination-2"/&gt;
+            &lt;L7p:EndpointOid goidValue="72adab14b763f12efb51ebb737d6066b"/&gt;
+            &lt;L7p:RequestJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:RequestJmsMessagePropertyRuleSet&gt;
+            &lt;L7p:ResponseJmsMessagePropertyRuleSet jmsMessagePropertyRuleSet="included"&gt;
+                &lt;L7p:Rules jmsMessagePropertyRuleArray="included"/&gt;
+            &lt;/L7p:ResponseJmsMessagePropertyRuleSet&gt;
+        &lt;/L7p:JmsRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="138b2461-1c3c-4842-8fb5-53f7925621a8"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-jms-destinations"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6013a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6013a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60666" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60666" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example1.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example1.io" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6066b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d6066b" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60670" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60670" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6071c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6071c" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606c4" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d606c4" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60781" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/72adab14b763f12efb51ebb737d60781" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60681" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d60681" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606d8" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d606d8" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>jms-destinations</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6013a</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-jms-destinations</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d606c4</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jms-destinations</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6071c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jms-destination-service</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60681</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-jms-destinations</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d606d8</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jms-destination-1</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60666</l7:Id>
+                        <l7:Type>JMS_ENDPOINT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>secret-2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example1.io</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jms-destination-2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6066b</l7:Id>
+                        <l7:Type>JMS_ENDPOINT</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>secret-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example1.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>secret-3</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jms-destination-3</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60670</l7:Id>
+                        <l7:Type>JMS_ENDPOINT</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>secret-3</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>secret-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-jms-destinations</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6071c</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jms-destination-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6066b</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jms-destination-3</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60670</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-jms-destinations</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d606c4</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jms-destination-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60666</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jms-destination-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6066b</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jms-destinations</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6071c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>hardwired-cluster-property</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60781</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jms-destination-service</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60681</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>hardwired-cluster-property</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60781</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-jms-destinations</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d606d8</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jms-destination-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60666</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jms-destination-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6066b</l7:Id>
+<l7:Type>JMS_ENDPOINT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jms-destinations</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6071c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

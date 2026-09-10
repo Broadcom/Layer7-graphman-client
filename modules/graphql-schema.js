@@ -109,6 +109,27 @@ function buildV1(metadata, version, schemaVersion) {
     const reqSubTypes = {};
 
     reqSubTypes["Query"] = metadata.subTypes["Query"];
+    reqSubTypes["Mutation"] = metadata.subTypes["Mutation"];
+
+    // retain only the *PartialInput (and its "ref" field's *RefInput) types actually
+    // used by update*/delete* mutations, so 'describe' can surface the ref shape
+    reqSubTypes["Mutation"].fields.forEach(fieldInfo => {
+        const inputArg = fieldInfo.args && fieldInfo.args.find(arg => arg.name === "input");
+        const inputTypeName = inputArg && bareTypeName(inputArg.dataType);
+        const inputTypeInfo = inputTypeName && metadata.subTypes[inputTypeName];
+
+        if (inputTypeInfo && inputTypeName.endsWith("PartialInput") && !reqSubTypes[inputTypeName]) {
+            reqSubTypes[inputTypeName] = inputTypeInfo;
+            inspectTypeFields(metadata, inputTypeInfo, (subFieldInfo, subTypeInfo) => {
+                if (!reqSubTypes[subTypeInfo.typeName]) {
+                    reqSubTypes[subTypeInfo.typeName] = subTypeInfo;
+                    return true;
+                }
+
+                return false;
+            });
+        }
+    });
 
     Object.entries(metadata.types).forEach(([key, typeInfo]) => {
         inspectTypeFields(metadata, typeInfo, (fieldInfo, subTypeInfo) => {
@@ -136,12 +157,14 @@ function buildV1(metadata, version, schemaVersion) {
         }
     });
 
-    // sort the fields in Query sub-type
-    metadata.subTypes["Query"].fields.sort((a, b) => {
+    // sort the fields in Query and Mutation sub-types
+    const byName = (a, b) => {
         if (a.name < b.name) return -1;
         else if (a.name > b.name) return 1;
         else return 0;
-    });
+    };
+    metadata.subTypes["Query"].fields.sort(byName);
+    metadata.subTypes["Mutation"].fields.sort(byName);
 
     delete metadata.subTypes;
     delete metadata.processedFiles;
@@ -190,7 +213,9 @@ function parseSchemaFile(file, onTypeCallback) {
     const ref = {
         tInfo: null, //type-info
         mlcInfo: {}, // multi-line comment-info
-        mlc: false
+        mlc: false,
+        pendingFieldText: "", // buffers a field declaration whose args span multiple lines
+        pendingParenDepth: 0
     };
 
     for (const line of lines) {
@@ -207,10 +232,35 @@ function parseSchemaFile(file, onTypeCallback) {
         }
 
         if (ref.tInfo) { // covers both multi-line blocks and ones that fit on a single line
-            captureFieldInfoIfMatches(line, ref);
+            const fieldText = bufferFieldLine(line, ref);
+            if (fieldText !== null) captureFieldInfoIfMatches(fieldText, ref);
             finalizeTypeInfoIfClosed(line, ref, onTypeCallback);
         }
     }
+}
+
+/**
+ * Buffers a field declaration until any argument-list parens it opens are balanced, so a field
+ * whose arguments are spread across multiple lines (e.g. deleteServerModuleFiles) is captured as
+ * one logical line instead of being mis-parsed piecemeal, line by line.
+ */
+function bufferFieldLine(line, ref) {
+    const content = stripTrailingComment(line);
+    ref.pendingParenDepth += countChar(content, '(') - countChar(content, ')');
+    ref.pendingFieldText += (ref.pendingFieldText ? " " : "") + content;
+
+    if (ref.pendingParenDepth > 0) return null; // arg list still open, keep buffering
+
+    const fieldText = ref.pendingFieldText;
+    ref.pendingFieldText = "";
+    ref.pendingParenDepth = 0;
+    return fieldText;
+}
+
+function countChar(text, ch) {
+    let count = 0;
+    for (const c of text) if (c === ch) count++;
+    return count;
 }
 
 function finalizeTypeInfoIfClosed(line, ref, onTypeCallback) {
@@ -246,7 +296,7 @@ function captureMultiLineCommentInfo(line, ref) {
 }
 
 function captureTypeInfoIfMatches(line, ref) {
-    const match = line.match(/(type|enum|interface)\s+(\w+)/);
+    const match = line.match(/(type|enum|interface|input)\s+(\w+)/);
     if (match) {
         ref.tInfo = {category: match[1], typeName: match[2], fields: []};
         ref.tInfo.isL7Entity = ref.mlcInfo["is-l7-entity"];
@@ -272,7 +322,9 @@ function captureTypeInfoIfMatches(line, ref) {
 
 function captureFieldInfoIfMatches(line, ref) {
     const content = stripTrailingComment(line);
-    const fieldPattern = /\s+(\w+)\s*([(][^)]+[)])?\s*[:]\s*[\[]?(\w+)/g; // field declaration, <field-name>: <field-type>
+    // field declaration, <field-name>(<args>): <field-type>; the args group tolerates one level of
+    // nested parens, e.g. an inline "@deprecated(reason: \"...\")" directive on one of the arguments
+    const fieldPattern = /\s+(\w+)\s*([(](?:[^()]|[(][^()]*[)])*[)])?\s*[:]\s*[\[]?(\w+)/g;
     Array.from(content.matchAll(fieldPattern)).forEach(match => {
         ref.tInfo.fields.push({name: match[1], dataType: match[3].trim(), args: match[2] ? extractFieldArgs(match[2]) : undefined});
     });
@@ -327,6 +379,11 @@ function inspectTypeFields(metadata, typeInfo, callback) {
             }
         }
     }
+}
+
+function bareTypeName(dataType) {
+    const match = dataType.match(/\w+/);
+    return match ? match[0] : dataType;
 }
 
 function camelCaseNames(typeName) {
