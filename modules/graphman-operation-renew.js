@@ -97,6 +97,7 @@ module.exports = {
         console.log();
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
         console.log("  --gateway <name>");
         console.log("    specify the name of gateway profile from the graphman configuration.");
@@ -121,6 +122,9 @@ module.exports = {
         console.log("        use this option to include policy revisions for the exported service/policy entities.");
         console.log("      .includeMultipartFields false|true");
         console.log("        use this option to include multipart fields (filePartName) so that server module file will be fully exported.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
     }
 }

@@ -59,8 +59,9 @@ module.exports = {
         config.options = makeOptions(config.options || {});
         Object.assign(config.options, params.options);
 
-        // set the client log level
+        // set the client log level and sink
         utils.logAt(config.options.log);
+        utils.logTo(config.options.logSink);
 
         config.credentials = makeCredentials(config.credentials || {});
         config.proxies = makeProxies(config.proxies || {});
@@ -399,6 +400,7 @@ function loadConfig(configFile) {
 function makeOptions(options) {
     return Object.assign({
         "log": "info",
+        "logSink": "stdout",
         "schema": SCHEMA_VERSION,
         "policyCodeFormat": "xml",
         "keyFormat": "p12",

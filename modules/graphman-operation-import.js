@@ -114,6 +114,9 @@ module.exports = {
         console.log("    specify the name of input bundle file that contains gateway configuration");
         console.log("    optional when --variables.<name> is used to construct the input payload instead");
         console.log("    when both are specified, --variables takes precedence over --input for any overlapping keys");
+        console.log("    use '-' to read the bundle from the standard input");
+        console.log("    NOTE: when reading from the standard input, multipart files referenced by the bundle");
+        console.log("      are resolved relative to the current directory");
         console.log();
         console.log("  --input-id-mappings <input-id-mappings-file>");
         console.log("    specify the name of input file that contains id-mappings (i.e., goid/guid mapping differences identified between source and target environments)");
@@ -160,6 +163,9 @@ module.exports = {
         console.log("        to migrate the policies and services along with their revisions.");
         console.log("      .deleteEmptyParentFolders false|true");
         console.log("        to delete empty parent folders automatically.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
         console.log("    NOTE:");
         console.log("      Use 'delete-bundle' standard mutation-based query for deleting the entities.");
