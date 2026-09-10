@@ -284,7 +284,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
             const renewedReport = {inserts: results[0], updates: results[1], deletes: report.deletes, diffs: report.diffs, mappings: report.mappings};
             callback(renewedReport);
         } else {
-            const renewedReport = {inserts: {}, updates: {}, deletes: {}, diffs: {}, mappings: {goids: [], guids: []}};
+            const renewedReport = {inserts: results[0], updates: {}, deletes: report.deletes, diffs: {}, mappings: {goids: [], guids: []}};
             const multiLineTextDiffExtension = utils.extension("multiline-text-diff");
             const leftUpdateBundle = results[1];
             const rightUpdateBundle = results[2];
