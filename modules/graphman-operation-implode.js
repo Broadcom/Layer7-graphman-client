@@ -37,6 +37,13 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        package: "string",
+        sections: "array"
+    },
+
     usage: function () {
         console.log("implode --input <input-dir>");
         console.log("  [--output <output-file>]");

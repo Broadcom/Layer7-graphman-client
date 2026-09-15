@@ -67,6 +67,16 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        sections: "array",
+        filter: "opaque",
+        output: "string",
+        options: {
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("slice --input <input-file> [--sections <section> <section>...]");
         console.log("  [--output <output-file>]");

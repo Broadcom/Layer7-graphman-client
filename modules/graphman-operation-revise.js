@@ -56,6 +56,16 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        options: {
+            normalize: "boolean",
+            excludeGoids: "boolean",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("revise --input <input-file>");
         console.log("  [--output <output-file>]");

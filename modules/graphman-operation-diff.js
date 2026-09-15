@@ -104,6 +104,24 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        "input-source": "string",
+        "input-target": "string",
+        "input-mappings": "string",
+        "input-report": "string",
+        output: "string",
+        "output-report": "string",
+        "output-id-mappings": "string",
+        options: {
+            includeInserts: "boolean",
+            includeUpdates: "boolean",
+            includeDeletes: "boolean",
+            useNoDefMappings: "boolean",
+            renewEntities: "boolean",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("diff --input-source <input-file-or-gateway> --input-target <input-file-or-gateway>");
         console.log("  [--input-mappings <input-mappings-file>]");

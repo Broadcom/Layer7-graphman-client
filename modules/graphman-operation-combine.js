@@ -35,6 +35,14 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        inputs: "array",
+        output: "string",
+        options: {
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("combine --inputs <input-file> <input-file> ...");
         console.log("  [--output <output-file>]");

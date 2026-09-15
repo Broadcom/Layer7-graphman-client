@@ -96,6 +96,29 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        using: "string",
+        input: "string",
+        "input-id-mappings": "string",
+        gateway: "string",
+        output: "string",
+        options: {
+            comment: "string",
+            bundleDefaultAction: "string",
+            excludeGoids: "boolean",
+            forceDelete: "boolean",
+            forceAdminPasswordReset: "boolean",
+            replaceAllMatchingCertChain: "boolean",
+            activate: "boolean",
+            overrideReplaceRoleAssignees: "boolean",
+            overrideReplaceUserGroupMemberships: "boolean",
+            migratePolicyRevisions: "boolean",
+            deleteEmptyParentFolders: "boolean",
+            mappings: "opaque",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("import [--using <mutation>] [--input <input-file>] [--variables.<name> <value>,...]");
         console.log("  [--gateway <name>]");

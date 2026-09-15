@@ -37,6 +37,14 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        "init-home": "string",
+        options: {
+            revise: "boolean",
+            encodeSecrets: "boolean"
+        }
+    },
+
     usage: function () {
         console.log("config [--init-home <home-directory>]");
         console.log("  [--options.<name> <value>, ...]");

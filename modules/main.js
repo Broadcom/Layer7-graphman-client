@@ -27,6 +27,7 @@ module.exports = {
                 if (params.help) {
                     operation.usage();
                 } else {
+                    require("./args-validator").validate(params, args.slice(1), operation);
                     const config = graphman.configuration();
                     utils.extensions(config.options.extensions);
                     operation.run(operation.initParams(params, config));

@@ -30,6 +30,13 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        refresh: "boolean",
+        options: {
+            refresh: "boolean"
+        }
+    },
+
     usage: function () {
         console.log("schema");
         console.log("  [--refresh true|false]");

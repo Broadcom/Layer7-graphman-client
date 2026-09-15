@@ -87,6 +87,19 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        gateway: "string",
+        sections: "array",
+        output: "string",
+        options: {
+            useGoids: "boolean",
+            includePolicyRevisions: "boolean",
+            includeMultipartFields: "boolean",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("renew --input <input-file> --gateway <name> [--sections <section>...]");
         console.log("  [--output <output-file>]");

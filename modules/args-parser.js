@@ -16,7 +16,7 @@ module.exports = {
      * @return {boolean|*}
      */
     parse: function (args) {
-        const params = {__unknowns:[]};
+        const params = {};
         let argName, argValue;
 
         for (let arg of args) {
@@ -48,6 +48,39 @@ module.exports = {
         }
 
         return normalize(params);
+    },
+
+    /**
+     * Scans the CLI arguments and returns the dotted refs of flags that were
+     * given without an explicit value (i.e. defaulted to boolean true by parse()).
+     * @param args
+     * @return {string[]}
+     */
+    noValueRefs: function (args) {
+        const refs = [];
+        let argName, hasValue;
+
+        for (let arg of args) {
+            if (arg.startsWith("--")) {
+                if (argName && !hasValue) refs.push(argName);
+
+                if (arg.length > 2) {
+                    argName = arg.substring(2);
+                    const sepIndex = argName.indexOf("=");
+                    if (sepIndex !== -1) {
+                        argName = argName.substring(0, sepIndex);
+                        hasValue = true;
+                    } else {
+                        hasValue = false;
+                    }
+                }
+            } else if (argName) {
+                hasValue = true;
+            }
+        }
+
+        if (argName && !hasValue) refs.push(argName);
+        return refs;
     }
 }
 

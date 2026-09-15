@@ -107,6 +107,23 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        using: "string",
+        gateway: "string",
+        output: "string",
+        filter: "opaque",
+        options: {
+            bundleDefaultAction: "string",
+            excludeDependencies: "boolean",
+            excludeGoids: "boolean",
+            includePolicyRevisions: "boolean",
+            includeMultipartFields: "boolean",
+            excludeRolesIfRequired: "boolean",
+            mappings: "opaque",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("export --using <query> [--variables.<name> <value>,...] [--gateway <name>]");
         console.log("  [--output <output-file>]");

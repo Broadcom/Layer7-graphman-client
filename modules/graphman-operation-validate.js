@@ -25,6 +25,13 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        options: {
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("validate --input <input-file>");
         console.log();

@@ -41,6 +41,16 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        gateway: "string",
+        options: {
+            level: "number",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("explode --input <input-file>");
         console.log("  --output <output-dir>");

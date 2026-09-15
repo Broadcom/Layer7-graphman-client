@@ -31,6 +31,16 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        mappings: "opaque",
+        options: {
+            bundleDefaultAction: "string",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("mappings --input <input-file>");
         console.log("  [--output <output-file>]");

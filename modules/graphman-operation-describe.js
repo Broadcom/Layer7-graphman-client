@@ -26,6 +26,11 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        query: "string",
+        output: "string"
+    },
+
     usage: function () {
         console.log("describe [--query <query-name>]");
         console.log("  [--output <output-file>]");

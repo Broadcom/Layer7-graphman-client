@@ -24,6 +24,8 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {},
+
     usage: function () {
         // do nothing
     }
