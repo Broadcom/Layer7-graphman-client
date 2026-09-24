@@ -70,6 +70,13 @@ module.exports = {
             Object.assign(config.gateways[key], gateway);
         });
 
+        // override configured credentials details using params if specified
+        if (params.credentials) Object.keys(params.credentials).forEach(key =>{
+            const credential = params.credentials[key];
+            config.credentials[key] = config.credentials[key] || {};
+            Object.assign(config.credentials[key], credential);
+        }); 
+
         config.version = "v" + PACKAGE.version;
         config.defaultSchemaVersion = SCHEMA_VERSION;
         config.supportedSchemaVersions = SCHEMA_VERSIONS;
