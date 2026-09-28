@@ -156,3 +156,18 @@ test("generate diff bundle using existing report - with includeDeletes only  and
         expect.objectContaining({nodef: true, action: "DELETE", source: {thumbprintSha1: "MXAEyUit8a29J+JDoWfGY6lam34="}})
     ]));
 });
+
+test("generate diff bundle using existing report - with includeDeletes on a pre-11.1.1 schema", () => {
+    const output = graphman("diff",
+        "--input-report", "samples/diff-report.sample.json",
+        "--options.includeInserts", "false",
+        "--options.includeUpdates", "false",
+        "--options.includeDeletes", "true",
+        "--options.schema", "v11.1.00");
+
+    expect(output.properties.mappings.clusterProperties).toEqual(expect.arrayContaining([
+        expect.objectContaining({action: "DELETE", name: "cwp-delete-1"}),
+        expect.objectContaining({action: "DELETE", name: "cwp-delete-2"}),
+        expect.not.objectContaining({source: expect.anything()})
+    ]));
+});

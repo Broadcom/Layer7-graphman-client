@@ -115,14 +115,13 @@ module.exports = {
     mappingInstruction: function (action, entity, typeInfo, flags) {
         flags = flags || {};
 
-        return {
+        return applyMappingSource({
             "default": flags["default"],
             nodef: flags.nodef,
             failOnNew: flags.failOnNew,
             failOnExisting: flags.failOnExisting,
-            action: action,
-            source: this.toPartialEntity(entity, typeInfo)
-        };
+            action: action
+        }, entity, typeInfo);
     },
 
     overrideMappings: function (bundle, options) {
@@ -457,6 +456,14 @@ function sanitizeBaseUri(text) {
     return index !== -1 ? text.substring(index + 2) : text;
 }
 
+// gateways prior to v11.1.1 require identity fields at the top level of the mapping
+// instruction instead of nested under "source"; see modules/graphman.js SCHEMA_FEATURE_LIST.
+function applyMappingSource(instruction, entity, typeInfo) {
+    const target = graphman.supportsFeature("mappings-source") ? (instruction.source = {}) : instruction;
+    typeInfo.identityFields.forEach(field => target[field] = entity[field]);
+    return instruction;
+}
+
 let exportSanitizer = function () {
     return {
         sanitize: function (bundle, options) {
@@ -591,8 +598,7 @@ let exportSanitizer = function () {
 
         if (!instruction.action || !instruction.level || instruction.level === '0') return null;
 
-        let source = graphman.supportsFeature("mappings-source") ? (instruction["source"] = {}) : instruction;
-        typeInfo.identityFields.forEach(field => source[field] = obj[field]);
+        applyMappingSource(instruction, obj, typeInfo);
 
         if (dependencies) {
             if (options.excludeDependencies) {
