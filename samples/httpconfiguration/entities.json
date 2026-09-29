@@ -1,57 +1,212 @@
 {
-  "httpConfigurations":[
+  "httpConfigurations": [
     {
-      "host" : "some-host",
-      "port" : 8443,
-      "protocol" :"HTTPS",
-      "path" :"/some-path",
-      "username":"some-user",
-      "securePasswordName":"some-pwd",
-      "ntlmHost": "some-ntlm-host",
-      "ntlmDomain":"some-ntlm-domain",
-      "tlsVersion" :"1.2",
-      "tlsKeystoreId":"00000000000000000000000000000002",
-      "tlsKeyAlias":"some-key",
-      "tlsKeyUse" :"DEFAULT",
-      "tlsCipherSuites":[
+      "goid": "768c830e4b11dbcdb48644425c431adf",
+      "host": "http-config-custom-1",
+      "port": 1234,
+      "protocol": "HTTP",
+      "path": "/hello",
+      "checksum": "20ed2928844c4cb98623f4b25253d43feb64ff8e",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsKeyUse": "DEFAULT",
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "DEFAULT"
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ae0",
+      "host": "http-config-custom-2",
+      "port": 1234,
+      "protocol": "ANY",
+      "path": "/hello",
+      "checksum": "dbc14a1122bf47902495e27916de7c4b66a8d3c9",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsKeyUse": "DEFAULT",
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "DEFAULT"
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ae1",
+      "host": "http-config-custom-3",
+      "port": 1234,
+      "protocol": "ANY",
+      "path": "/hello",
+      "checksum": "501049ea8938777b860adc1909b673128cc801c8",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsKeyUse": "NONE",
+      "tlsCipherSuites": [
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_256_GCM_SHA384",
         "TLS_AES_128_GCM_SHA256",
-        "TLS_AES_256_GCM_SHA384"
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
       ],
-      "connectTimeout":1300,
-      "readTimeout":-1,
-      "proxyUse":"CUSTOM",
-      "proxyConfiguration":{
-        "host":"some-proxy-host",
-        "port":8181,
-        "username":"some-proxy-user",
-        "securePasswordName":"some-pwd"
-      }
-    } ,{
-      "host" : "someOther-host",
-      "port" : 8443,
-      "protocol" :"HTTPS",
-      "path" :"/someOther-path",
-      "username":"some-user",
-      "securePasswordName":"some-pwd",
-      "ntlmHost": "some-ntlm-host",
-      "ntlmDomain":"some-ntlm-domain",
-      "tlsVersion" :"1.2",
-      "tlsKeystoreId":"00000000000000000000000000000002",
-      "tlsKeyAlias":"some-key",
-      "tlsKeyUse" :"DEFAULT",
-      "tlsCipherSuites":[
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "DEFAULT"
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ae2",
+      "host": "http-config-custom-4",
+      "protocol": "HTTPS",
+      "checksum": "bfed0c66fe62f06033bfe3fe9d650498193fe46d",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsVersion": "TLSv1.3",
+      "tlsKeyUse": "CUSTOM",
+      "tlsKeystoreId": "00000000000000000000000000000002",
+      "tlsKeyAlias": "http-config-key1",
+      "tlsCipherSuites": [
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_256_GCM_SHA384",
         "TLS_AES_128_GCM_SHA256",
-        "TLS_AES_256_GCM_SHA384"
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
       ],
-      "connectTimeout":1300,
-      "readTimeout":-1,
-      "proxyUse":"CUSTOM",
-      "proxyConfiguration":{
-        "host":"some-new-proxy-host",
-        "port":8181,
-        "username":"some-new-proxy-user",
-        "securePasswordName":"some-pwd"
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "NONE"
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ae3",
+      "host": "http-config-custom-5",
+      "protocol": "HTTPS",
+      "checksum": "c22535ea2570d971e0a0b39e89a77f1fa8566245",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsVersion": "TLSv1.3",
+      "tlsKeyUse": "CUSTOM",
+      "tlsKeystoreId": "00000000000000000000000000000002",
+      "tlsKeyAlias": "http-config-key1",
+      "tlsCipherSuites": [
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
+      ],
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "CUSTOM",
+      "proxyConfiguration": {
+        "host": "proxy-host",
+        "port": 1221
       }
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ae4",
+      "host": "http-config-custom-6",
+      "protocol": "HTTPS",
+      "path": "/hello",
+      "checksum": "3b46582893aed206cf8c39968baf696858f8d0e4",
+      "username": "http-config-user",
+      "securePasswordName": "http-config-pwd-1",
+      "ntlmHost": "ntlm-host",
+      "ntlmDomain": "ntlm-domain",
+      "tlsVersion": "TLSv1.3",
+      "tlsKeyUse": "CUSTOM",
+      "tlsKeystoreId": "00000000000000000000000000000002",
+      "tlsKeyAlias": "http-config-key1",
+      "tlsCipherSuites": [
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
+      ],
+      "connectTimeout": 300000,
+      "readTimeout": 600000,
+      "followRedirects": true,
+      "proxyUse": "CUSTOM",
+      "proxyConfiguration": {
+        "host": "proxy-host",
+        "port": 1221,
+        "username": "proxy-user",
+        "securePasswordName": "http-config-pwd-2"
+      }
+    },
+    {
+      "goid": "768c830e4b11dbcdb48644425c431ade",
+      "host": "http-config-default",
+      "protocol": "ANY",
+      "checksum": "172a7097c557f23a19b917a360afb7cbf6fdfeb0",
+      "tlsKeyUse": "DEFAULT",
+      "connectTimeout": -1,
+      "readTimeout": -1,
+      "followRedirects": false,
+      "proxyUse": "DEFAULT"
+    }
+  ],
+  "keys": [
+    {
+      "goid": "00000000000000000000000000000002:http-config-key1",
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "http-config-key1",
+      "checksum": "5ee43853c11baf7238b35104bd5bca4c29187ad1",
+      "keyType": "RSA",
+      "keySize": 2048,
+      "subjectDn": "CN=http-config-key1",
+      "p12": "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",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIC+jCCAeKgAwIBAgIIVMyfBINUKnMwDQYJKoZIhvcNAQEMBQAwGzEZMBcGA1UEAxMQaHR0cC1j\r\nb25maWcta2V5MTAeFw0yNjA5MTAxNjIzMDhaFw0zMTA5MDkxNjIzMDhaMBsxGTAXBgNVBAMTEGh0\r\ndHAtY29uZmlnLWtleTEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCfRTiHgnKTPn03\r\n2Vy/EbqMbH4OJV/glcMgenplx6kNaOnlKdJGRRNzto4hCQQLRT1pE56W8w2C+72gF/Fwwypq/7tv\r\nQj6y/KNueM7NbYy1Y0J/MzSFGNHs4gqXz8YGYqAfZmjUg3EvR2XX8MIu6pD/ar7ImkQ2/J4KHqqx\r\n2SLk8efPsn8LrM4U56H1la3AD1nerDWPx+kzycuDHrJ2z1llVqiDwDxCd5KaFFbbuwHVV7Uxm3qf\r\nNDp7jCN1smVUjfQTiOdVPAPtaYuRL9J35yZuu5Ej/fmXHNaSKI4dbxb0gepdtTA9DoHp+wGBDpL1\r\n5Qcaijs5Bn+W8A2lJBbKZiKjAgMBAAGjQjBAMB0GA1UdDgQWBBSVJ2drnkzSBAzHuAcCxFTCK7ZD\r\nyjAfBgNVHSMEGDAWgBSVJ2drnkzSBAzHuAcCxFTCK7ZDyjANBgkqhkiG9w0BAQwFAAOCAQEASOHB\r\nf1bqGKKEyyaCk+4B3THorGVFTThsB28xPD6o4MOwr74sMr5FAXfP+6JLwVEU9zr0CCg2PkKDTDi2\r\n1DX48crlNOzybqzcVa7xcK6abtvYQxZaFCpSgjsdycCfHjiOeRucELXGw6ycQzsxBA3TNNO7ggq+\r\n+ijRdu5hVZCvSP7R6JVyxJQjHT+x/7dyDLWd6zytgFCP/hxCs1+mEVlsR90xskJbuFZKSl0sOcAc\r\nzqYJTTM7bkF24+54B9SB+YsbVmlWe/8mqY0xXz6YV4L7NiRhEGM6hnp/M2TMNSfsjhzoMYckvphO\r\n5hR8rbqvY5KBPGOhtlRv3SjI946ge91WCQ==\n-----END CERTIFICATE-----\n"
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "a3db3565871da28840b21d286c9f108a",
+      "name": "http-config-pwd-1",
+      "checksum": "5382e1330674361cb2b5b9b910d2ec06f42177cc",
+      "description": "",
+      "secret": "JEw3RXYwMyTHvYeF9jhbQ9W15j7abPgB1je1SK3HJndwI9Vp7D0plw==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-10T17:20:18.838Z"
+    },
+    {
+      "goid": "a3db3565871da28840b21d286c9f108b",
+      "name": "http-config-pwd-2",
+      "checksum": "b6b56768591f3fcc3be4e81acd4d48bfd2816de7",
+      "description": "",
+      "secret": "JEw3RXYwMySI5Qw/Gwxuj5OxeQFAC+6LJcrHI+eBJPQuUJd9wabCXg==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-10T17:24:52.401Z"
     }
   ]
 }
