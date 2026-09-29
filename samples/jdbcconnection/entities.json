@@ -1,0 +1,202 @@
+{
+  "jdbcConnections": [
+    {
+      "goid": "1f7fc76ab9627653dc51b248e61f3959",
+      "name": "jdbc-connection-custom-1",
+      "checksum": "80fe6e8088719580331756d76c436a58b522ff23",
+      "enabled": false,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc://url",
+      "username": "jdbc-user",
+      "password": "JEw3RXYwMyRYsvkoAczBrkH1t+2kTn2XCHovV+GeWcv1eu4lwqR4Xw==",
+      "minPoolSize": 30,
+      "maxPoolSize": 125,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        },
+        {
+          "name": "Prop2",
+          "value": "Val2"
+        },
+        {
+          "name": "c3p0.Prop3",
+          "value": "Val3"
+        }
+      ]
+    },
+    {
+      "goid": "1f7fc76ab9627653dc51b248e61f395a",
+      "name": "jdbc-connection-custom-2",
+      "checksum": "fade5e1db47e855cbdd095cc43f28d0476ba6789",
+      "enabled": false,
+      "driverClass": "oracle.jdbc.OracleDriver",
+      "jdbcUrl": "jdbc://url",
+      "username": "jdbc-user",
+      "password": "${secpass.jdbc-user-pwd.plaintext}",
+      "minPoolSize": 30,
+      "maxPoolSize": 125,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        },
+        {
+          "name": "Prop2",
+          "value": "Val2"
+        },
+        {
+          "name": "c3p0.Prop3",
+          "value": "Val3"
+        }
+      ]
+    },
+    {
+      "goid": "1f7fc76ab9627653dc51b248e61f395b",
+      "name": "jdbc-connection-custom-3",
+      "checksum": "d8a8a862f2b4c867a4cce249c3a2f0c07bbdf095",
+      "enabled": false,
+      "driverClass": "oracle.jdbc.OracleDriver",
+      "jdbcUrl": "jdbc://url",
+      "username": "jdbc-user123",
+      "password": "${secpass.jdbc-user123-pwd.plaintext}",
+      "minPoolSize": 30,
+      "maxPoolSize": 125,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        },
+        {
+          "name": "Prop2",
+          "value": "Val2"
+        },
+        {
+          "name": "c3p0.Prop3",
+          "value": "Val3"
+        }
+      ]
+    },
+    {
+      "goid": "1f7fc76ab9627653dc51b248e61f3958",
+      "name": "jdbc-connection-default",
+      "checksum": "9f1ba87fb8c0d4754c84d3910c22c2994f7daf39",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc://url",
+      "username": "",
+      "password": "",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "goid": "36943aa823d438b8ec08f6ece0d178bb",
+      "name": "some-jdbc-connection",
+      "checksum": "8162e18ce69d936cf0a7d17ee3adb5fd50dd999e",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
+      "username": "some-user",
+      "password": "JEw3RXYwMyRb0bNiGZF16n6CR4w4PSchNnmAZENSXvbxWm3A4UBOXA==",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "66943aa823d438b8ec08f6ece0d178be",
+      "name": "some-jdbc-connection-delete-by-input-1",
+      "checksum": "12cc87514215e8c23cc7e3e12cb217ed90d2cb5e",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
+      "username": "some-user",
+      "password": "JEw3RXYwMySd8Z4CPSSXXNwj7e5M/2bzjau1JJ2vyaknBQg4Rm5COg==",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "76943aa823d438b8ec08f6ece0d178bf",
+      "name": "some-jdbc-connection-delete-by-input-2",
+      "checksum": "93641766d2c5c78319451b0a2e7a7ccfb2356793",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
+      "username": "some-user",
+      "password": "JEw3RXYwMyTmDqcUE96NjCc1iziIHFTwC3pFuf3aRcB5n4poojzQ7A==",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "46943aa823d438b8ec08f6ece0d178bc",
+      "name": "some-other-jdbc-connection",
+      "checksum": "9fed1ddbe40f29137f66422ae28aad8005e826a1",
+      "enabled": false,
+      "driverClass": "org.postgresql.Driver",
+      "jdbcUrl": "jdbc:postgresql://some-other-host:5432/some-other-db",
+      "username": "some-other-user",
+      "password": "JEw3RXYwMyQNAT7or7lL7FAQfYWIDkzslIqNyd2o0yGBNIV1FTXd8g==",
+      "minPoolSize": 5,
+      "maxPoolSize": 20,
+      "properties": [
+        {
+          "name": "ssl",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "goid": "56943aa823d438b8ec08f6ece0d178bd",
+      "name": "some-sec-jdbc-connection",
+      "checksum": "8759c791440e4dd7813c67325335e3cf014aa575",
+      "enabled": true,
+      "driverClass": "com.mysql.jdbc.Driver",
+      "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
+      "username": "some-user",
+      "password": "${secpass.some-pwd.plaintext}",
+      "minPoolSize": 3,
+      "maxPoolSize": 15,
+      "properties": [
+        {
+          "name": "EnableCancelTimeout",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "c002ee2db07065e75ef013a8c117fc6f",
+      "name": "jdbc-user-pwd",
+      "checksum": "5ec900e85436e531a5dca0d3ab87eb3107fa1a06",
+      "description": "",
+      "secret": "JEw3RXYwMyS6TwLLkcnMsqhJivUarL8ETmrnsuNuLD+vL4kRqMATqQ==",
+      "secretType": "PASSWORD",
+      "variableReferencable": true,
+      "lastModifiedDate": "2026-09-29T14:19:42.991Z"
+    }
+  ]
+}
