@@ -1,507 +1,1972 @@
 <l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
-	<l7:References>
-		<l7:Item>
-			<l7:Name>some-kafka-pwd</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
-			<l7:Type>SECURE_PASSWORD</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.901+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:StoredPassword id="c73c9a1bee64808dc0f7fc52aa0a8ae2" version="1">
-					<l7:Name>some-kafka-pwd</l7:Name>
-					<l7:Password bundleKey="$L7C2$9fa1f,uRpjYTk0w+HuFJzgw55ALyUjP4YvipxRLf15sBb9GDc=$Xmx5IR0hN7y8d39rOWt0lVKpkqzDZp/PNTvStS0WIyy3MmApxzyvzAWOgvugNPQA5EphD5aPfGBIPD9vVoF7pFE8vG4In9CvdK4va8+l8iiMPtNreEjnWaVJ8gse0Ql8">$L7C2$1,ZgJFyKyUfgza3K7tceDAiOY+xGmd/wtwYhGPlaS9jIc=$f9478345+ycBp6lf839MCh+rfV14sgf6LUj+WDjCG/Y9fOlVE4yGJZ7Bup+86RYpKiPB3yh48nVpMceSf4meFg==</l7:Password>
-					<l7:Properties>
-						<l7:Property key="description">
-							<l7:StringValue></l7:StringValue>
-						</l7:Property>
-						<l7:Property key="lastUpdated">
-							<l7:DateValue>2023-07-05T05:45:41.833+05:30</l7:DateValue>
-						</l7:Property>
-						<l7:Property key="type">
-							<l7:StringValue>Password</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="usageFromVariable">
-							<l7:BooleanValue>false</l7:BooleanValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:StoredPassword>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-key</l7:Name>
-			<l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
-			<l7:Type>SSG_KEY_ENTRY</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.920+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:PrivateKey alias="some-kafka-key" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:some-kafka-key">
-					<l7:CertificateChain>
-						<l7:CertificateData>
-							<l7:IssuerName>CN%3Dsome-kafka-key</l7:IssuerName>
-							<l7:SerialNumber>6469400567961828188</l7:SerialNumber>
-							<l7:SubjectName>CN%3Dsome-kafka-key</l7:SubjectName>
-							<l7:Encoded>MIIC9jCCAd6gAwIBAgIIWcftiksTO1wwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc29tZS1rYWZrYS1rZXkwHhcNMjMwNzA0MjMxMjU1WhcNMjgwNzAyMjMxMjU1WjAZMRcwFQYDVQQDEw5zb21lLWthZmthLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJjtDIBLD7JvLcgp3WBLtLsIhuTQyY/vlOp/FSx95AzzFkvRxOpApmRgzWDc5WQ72qyq+qYm/iAyCokJ4ih7SP35bJQ+VMIKVh06u0GmjbLnOFMm19u/d8ri//cE1r0ZEtvQ/QYLYNf3XYaGtJwkh39LqnBVAT/mX8ys6luUWJRpnBWGxcCJDdreSj/PFiQQM2wUUYmfc7DgIcCnm2lZx+GFddrf7vrLsbl7OauhpDH0IdMqEyRDO2uJRBdg2GKLW17p+eJdTXT35vJO8mRItmdKw8n85TGcJ3XtNeZJMa4nuLxQOfva3Hv7Di1Wet8XPOdRtXV09ns3uzvtoKk1z2ECAwEAAaNCMEAwHQYDVR0OBBYEFGMxQ+Oigl/FKLlcThUSQRpVUMlQMB8GA1UdIwQYMBaAFGMxQ+Oigl/FKLlcThUSQRpVUMlQMA0GCSqGSIb3DQEBDAUAA4IBAQCSrc4wrZsBuMUxefqskCI+aP6v9fmkL/yycVr/W3SkoKV/DejDBWmzXmrzJOukhw7rUgd7IAjqL5h5uz/4uDmj6iJy02NwU3lE7sSYnKpRFcwAbafLxZIVr22lsCnFlXFz52RBwSNhUx3bj60bSbpuTeFEAbEmZHCdAEQM1BskyqMbxneyL1YK1fKLW8LJp36m8q2UuUeSRK1//LY+Qq01iXdNKwoAoPdbjvTRTtZjTQEKag3aK/uHOwqgqh2YIZESx3WAdSwkUF+oA8EsP0CBIkXg7CE2zd0ushafKkzrfnjxVpdeB5aEueoJP+TtZJn6QxKZ6zuFQHfhwIHOV+Ua</l7:Encoded>
-						</l7:CertificateData>
-					</l7:CertificateChain>
-					<l7:Properties>
-						<l7:Property key="keyAlgorithm">
-							<l7:StringValue>RSA</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="keyData">
-							<l7:StringValue bundleKey="$L7C2$9fa1f,uRpjYTk0w+HuFJzgw55ALyUjP4YvipxRLf15sBb9GDc=$Xmx5IR0hN7y8d39rOWt0lVKpkqzDZp/PNTvStS0WIyy3MmApxzyvzAWOgvugNPQA5EphD5aPfGBIPD9vVoF7pFE8vG4In9CvdK4va8+l8iiMPtNreEjnWaVJ8gse0Ql8" algorithm="RSA">$L7C2$1,ovdIFs4PSjcx6xvpEf4iZXPj61g46O5pYwi22wlbxaw=$J+iTfjYmGNUUX5pRFW8QWTDWkz4XgS4C/musu6/6sdiB+ng3BaLWu1N6b2mq+mqYqjPkGYAaT+1psL9Wkg+TfpT6w0pCOXMg4JZH7wr/5sEo2gJ2/TaAGNm6vGHccWEmX7hmDhEqclWtY3Nz6ZBSH7OD5KgvoM7VGT8DSfXd2e/C84/Nlt36kIPBarleO4CHGQz8AcuvVc2iqjWmtI7NckOZHOC6S4V5j4FjP1dsOFsQ4/BpSQ7HjvIJ2YksUyw+eGUZhZprQWEE8cA/We3ATDUf+HdrOqAB4EsqMxvWXfAKCktI03eOer2u5+Rd1h/d3GTSyuBU2DvT/GM+RJ9zE4qznJB8TEB/4hwENhMwQjt0VbJkPoObFYUHyl9/z+hDJs1/FzdX5oAxqa3R7cx9atyIz68OKITlOWsrcQ0qn+dYFRjmqANcUvqtHi/ouU90/JsAlBdOdP0ODcXQmtDkrE1pEpBWkAjKuZx/+fkbJ2jNoEZ/hXv33yC1d3hWTzb745hJOzY1SMBpq7wqS0bsMS73WjPLZMeXu+r8fMnADcOXRkhcFl6P8X3GoGQhH6BVXVz3ouOiEIi6Lr+9wD2mhT8GWHUqp1b6O+np+DFkFNKiE5dV9w0n2uS1jj3D1xI5drWQG06MHz8efaRfk6UqjFnTqGMb9KTBeuHfY8pOBFKr4cSP92c71xCEVWhxN7JFwJW1jY1c/c65U0cOAVOArl756QEUVww+z+eY1m3jurdX8GaxSGATpe1XTez8fLXdJn7Nakt04F+iid33xRDvyHO+ByuxMCN+du+LV25KKeHqy6BpvY/P4TZgX3lSZmq+uTyfJZWC8ORD83Oq7gQZikIyFYzWTZxVOu6oAxg7eb5+RTZV8CF+PoYyt3rFdedjLoNMxCw4ynag504XOh6+N9j+5Njaps5CVHdh9sjAOMsHOrcZtLMIkjFONom+sXuflwpNYdMnKxPJVMpTIsBtsdk7/0U9rfEUR0ehIrjEzsBQRzeFeODyT4qBxSVrbackLa1GDoCw6bRY+vQ/NsVldDuKIpVWcilJkLjzy6wHDzx3CXb5k1HMONt2BO2/Y3JNZ4PFANYwVgMVvCtSS775MnzYp8a04EndU/c3SMQ7XfUKe6l2s5OfxfMG5o9HVh3V71X8pC1hyjjPBLzrfMsAugnZQTt3I8cGFsyFxBziVGWt+4bZPmr8ZYNVur7qqYWX7Ncxg7KBYwLFQMzSSUY6vwYJQGyolb6e7tW14Ax6onsbOpgMyzkE7ZuWBUHeRl2qM6cababXmVrryzhQ04lQXyZG4MMO1AtQB4CRR/OAd0qPcV5IT4kEHUYByLTLcoLgiAWkbCtmi9It8XdzdwupJ+y+Z+Db+mFBMfJVL4fVdIY6ZqZCDJo8R5BVhvAEnS5+0jDpEbuba+WnzgTYxBLXHGd1y4MvioZx1ozIbBRhpuCqu8vTA14uL3MPVIk08BXXvwhaSqfFJ7IR30hOVYBKvTkbE1UEx59SdPyvpBDLtqP/PDDBI7IJG3DnBiQBL0N+g+QqglLq1SLPMYW9UmOmIWm3pnP5aAoXI2QfMWs94Y21ZC2eDfqlOIHbYrcFhZmzqWdXEZE5SyDPFc6xTTDrcDXwEzV7V3YGmkfIKj6tvoY4bQfZWbT1y/INrJLFJjqxHBcaETxV4ywK+NUdGKDfAy6Zt+rgNiGkB2cWB5h7qNk=</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:PrivateKey>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-producer</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae5</l7:Id>
-			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a8ae5" version="1">
-					<l7:Name>some-kafka-producer</l7:Name>
-					<l7:Enabled>true</l7:Enabled>
-					<l7:Type>KafkaClient</l7:Type>
-					<l7:Properties>
-						<l7:Property key="kafka.authType">
-							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.bootstrapServers">
-							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.enableTls">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.keyStoreGoid">
-							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.passwordGoid">
-							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.privateKeyAlias">
-							<l7:StringValue>some-kafka-key</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.acknowledgement">
-							<l7:StringValue>1</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
-							<l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
-							<l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.idempotence">
-							<l7:StringValue>false</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.retries">
-							<l7:StringValue>123</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.role">
-							<l7:StringValue>producer</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsCipherSuites">
-							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsVersion">
-							<l7:StringValue>TLSv1.2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.username">
-							<l7:StringValue>some-kafka-user</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:ActiveConnector>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a9001</l7:Id>
-			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9001" version="1">
-					<l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
-					<l7:Enabled>true</l7:Enabled>
-					<l7:Type>KafkaClient</l7:Type>
-					<l7:Properties>
-						<l7:Property key="kafka.bootstrapServers">
-							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.role">
-							<l7:StringValue>producer</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:ActiveConnector>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a9002</l7:Id>
-			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.921+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9002" version="1">
-					<l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
-					<l7:Enabled>true</l7:Enabled>
-					<l7:Type>KafkaClient</l7:Type>
-					<l7:Properties>
-						<l7:Property key="kafka.bootstrapServers">
-							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.role">
-							<l7:StringValue>producer</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:ActiveConnector>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-producer-consumer</l7:Name>
-			<l7:Id>861c30489c47114e500f68032d712610</l7:Id>
-			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
-			<l7:TimeStamp>2023-07-05T10:39:57.992+05:30</l7:TimeStamp>
-			<l7:Link rel="self" uri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610"/>
-			<l7:Resource>
-				<l7:ActiveConnector id="861c30489c47114e500f68032d712610" version="1">
-					<l7:Name>some-kafka-producer-consumer</l7:Name>
-					<l7:Enabled>false</l7:Enabled>
-					<l7:Type>KafkaClient</l7:Type>
-					<l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
-					<l7:Properties>
-						<l7:Property key="kafka.authType">
-							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.bootstrapServers">
-							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
-							<l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
-							<l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitAsync">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitBatchSize">
-							<l7:StringValue>100</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitInterval">
-							<l7:StringValue>5000</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.consumerGroup">
-							<l7:StringValue>some-consumer-group</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.contentType">
-							<l7:StringValue>application/octet-stream</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollMaxInterval">
-							<l7:StringValue>300000</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollMaxRecords">
-							<l7:StringValue>123</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollTimeout">
-							<l7:StringValue>1234</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.processMessagesConcurrently">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
-							<l7:StringValue>10</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.resetPosition">
-							<l7:StringValue>NONE</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.role">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.topicNames">
-							<l7:StringValue>some-topic,some-other-topic</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.enableTls">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.keyStoreGoid">
-							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.lastModifiedTimestamp">
-							<l7:StringValue>2023-07-05T10:11:52.132257+05:30[Asia/Calcutta]</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.passwordGoid">
-							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.privateKeyAlias">
-							<l7:StringValue>some-kafka-key</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.acknowledgement">
-							<l7:StringValue>1</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
-							<l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
-							<l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.idempotence">
-							<l7:StringValue>false</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.retries">
-							<l7:StringValue>123</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.role">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.role">
-							<l7:StringValue>producer|consumer</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsCipherSuites">
-							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsVersion">
-							<l7:StringValue>TLSv1.2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.username">
-							<l7:StringValue>some-kafka-user</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:ActiveConnector>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-consumer</l7:Name>
-			<l7:Id>861c30489c47114e500f68032d712612</l7:Id>
-			<l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
-			<l7:TimeStamp>2023-07-05T10:39:57.992+05:30</l7:TimeStamp>
-			<l7:Link rel="self" uri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612"/>
-			<l7:Resource>
-				<l7:ActiveConnector id="861c30489c47114e500f68032d712612" version="3">
-					<l7:Name>some-kafka-consumer</l7:Name>
-					<l7:Enabled>false</l7:Enabled>
-					<l7:Type>KafkaClient</l7:Type>
-					<l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
-					<l7:Properties>
-						<l7:Property key="kafka.authType">
-							<l7:StringValue>SCRAM-SHA-256</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.bootstrapServers">
-							<l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
-							<l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
-							<l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitAsync">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitBatchSize">
-							<l7:StringValue>100</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.commitInterval">
-							<l7:StringValue>5000</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.consumerGroup">
-							<l7:StringValue>some-consumer-group</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.contentType">
-							<l7:StringValue>application/octet-stream</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollMaxInterval">
-							<l7:StringValue>300000</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollMaxRecords">
-							<l7:StringValue>123</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.pollTimeout">
-							<l7:StringValue>1234</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.processMessagesConcurrently">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
-							<l7:StringValue>10</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.resetPosition">
-							<l7:StringValue>NONE</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.role">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.consumer.topicNames">
-							<l7:StringValue>some-topic,some-other-topic</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.enableTls">
-							<l7:StringValue>true</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.keyStoreGoid">
-							<l7:StringValue>00000000000000000000000000000002</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.lastModifiedTimestamp">
-							<l7:StringValue>2023-07-05T10:11:45.647135400+05:30[Asia/Calcutta]</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.passwordGoid">
-							<l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.privateKeyAlias">
-							<l7:StringValue>some-kafka-key</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.producer.role">
-							<l7:StringValue>false</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.role">
-							<l7:StringValue>consumer</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsCipherSuites">
-							<l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.tlsVersion">
-							<l7:StringValue>TLSv1.2</l7:StringValue>
-						</l7:Property>
-						<l7:Property key="kafka.username">
-							<l7:StringValue>some-kafka-user</l7:StringValue>
-						</l7:Property>
-					</l7:Properties>
-				</l7:ActiveConnector>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-producer</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae8</l7:Id>
-			<l7:Type>SERVICE</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.983+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:Service id="c73c9a1bee64808dc0f7fc52aa0a8ae8" version="2">
-					<l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="c73c9a1bee64808dc0f7fc52aa0a8ae8" version="2">
-						<l7:Name>some-kafka-producer</l7:Name>
-						<l7:Enabled>true</l7:Enabled>
-						<l7:ServiceMappings>
-							<l7:HttpMapping>
-								<l7:UrlPattern>/some-kafka/producer</l7:UrlPattern>
-								<l7:Verbs>
-									<l7:Verb>GET</l7:Verb>
-									<l7:Verb>POST</l7:Verb>
-									<l7:Verb>PUT</l7:Verb>
-									<l7:Verb>DELETE</l7:Verb>
-								</l7:Verbs>
-							</l7:HttpMapping>
-						</l7:ServiceMappings>
-						<l7:Properties>
-							<l7:Property key="hasRouting">
-								<l7:BooleanValue>true</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="internal">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="policyRevision">
-								<l7:LongValue>2</l7:LongValue>
-							</l7:Property>
-							<l7:Property key="soap">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="tracingEnabled">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="wssProcessingEnabled">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-						</l7:Properties>
-					</l7:ServiceDetail>
-					<l7:Resources>
-						<l7:ResourceSet tag="policy">
-							<l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
-&lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
-&lt;L7p:KafkaRouting&gt;
-	&lt;L7p:AckTimeout stringValue=&quot;&quot;/&gt;
-	&lt;L7p:ClientConfigGoid goidValue=&quot;c73c9a1bee64808dc0f7fc52aa0a8ae5&quot;/&gt;
-	&lt;L7p:ClientConfigName stringValue=&quot;some-kafka-producer&quot;/&gt;
-	&lt;L7p:Topic stringValue=&quot;some-topic&quot;/&gt;
-&lt;/L7p:KafkaRouting&gt;
-&lt;/wsp:All&gt;
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>mq-service1</l7:Name>
+                    <l7:Id>a975796f1c3d80060c8dc56385654611</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:33.951Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="a975796f1c3d80060c8dc56385654611" version="1">
+                            <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="a975796f1c3d80060c8dc56385654611" version="1">
+<l7:Name>mq-service1</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/mq-service1</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"/&gt;
 &lt;/wsp:Policy&gt;
 </l7:Resource>
-						</l7:ResourceSet>
-					</l7:Resources>
-				</l7:Service>
-			</l7:Resource>
-		</l7:Item>
-		<l7:Item>
-			<l7:Name>some-kafka-consumer</l7:Name>
-			<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
-			<l7:Type>SERVICE</l7:Type>
-			<l7:TimeStamp>2023-07-05T05:54:59.985+05:30</l7:TimeStamp>
-			<l7:Resource>
-				<l7:Service id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="2">
-					<l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="2">
-						<l7:Name>some-kafka-consumer</l7:Name>
-						<l7:Enabled>true</l7:Enabled>
-						<l7:ServiceMappings>
-							<l7:HttpMapping>
-								<l7:UrlPattern>/some-kafka/consumer</l7:UrlPattern>
-								<l7:Verbs>
-									<l7:Verb>GET</l7:Verb>
-									<l7:Verb>POST</l7:Verb>
-									<l7:Verb>PUT</l7:Verb>
-									<l7:Verb>DELETE</l7:Verb>
-								</l7:Verbs>
-							</l7:HttpMapping>
-						</l7:ServiceMappings>
-						<l7:Properties>
-							<l7:Property key="hasRouting">
-								<l7:BooleanValue>true</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="internal">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="policyRevision">
-								<l7:LongValue>2</l7:LongValue>
-							</l7:Property>
-							<l7:Property key="soap">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="tracingEnabled">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-							<l7:Property key="wssProcessingEnabled">
-								<l7:BooleanValue>false</l7:BooleanValue>
-							</l7:Property>
-						</l7:Properties>
-					</l7:ServiceDetail>
-					<l7:Resources>
-						<l7:ResourceSet tag="policy">
-							<l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
-&lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
-&lt;L7p:HardcodedResponse&gt;
-	&lt;L7p:Base64ResponseBody stringValue=&quot;JHtyZXF1ZXN0LmthZmthLnRvcGljfToke3JlcXVlc3Qua2Fma2EucGFydGl0aW9ufToke3JlcXVlc3Qua2Fma2Eub2Zmc2V0fQ==&quot;/&gt;
-	&lt;L7p:ResponseContentType stringValue=&quot;text/plain; charset=UTF-8&quot;/&gt;
-&lt;/L7p:HardcodedResponse&gt;
-&lt;/wsp:All&gt;
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-inbound-customize-1</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6816</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:33.952Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6816" version="1">
+                            <l7:Name>mq-inbound-customize-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:HardwiredId>a975796f1c3d80060c8dc56385654611</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_AES_128_GCM_SHA256</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundAcknowledgementType">
+    <l7:StringValue>ON_COMPLETION</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueueName">
+    <l7:StringValue>fail-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueuePutMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundGetMessageOptions">
+    <l7:StringValue>5678</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueueUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundOpenOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_NONE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="numberOfSacToCreate">
+    <l7:StringValue>120</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>text/xml</l7:StringValue>
+</l7:Property>
+<l7:Property key="requestSizeLimit">
+    <l7:StringValue>2621</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-pwd</l7:Name>
+                    <l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.271Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="9a45f1717f6f3a403e35e473df1da15e" version="1">
+                            <l7:Name>mq-pwd</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,DhqmqpJHMLV1uiTsfD5amXnQQSU0qcc0LYfxmxQvX4M=$UGWwV8dFaNqVZQZ2Idju0LcaPHNxCh9dZBjr2vApqxWuOeqBoQgZ4oMOvWenzMfeGXLxeEUytyVCnUu2kfJt1w==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-09T06:23:22.360Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-inbound-customize-2</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6817</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.272Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6817" version="0">
+                            <l7:Name>mq-inbound-customize-2</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:HardwiredId>a975796f1c3d80060c8dc56385654611</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_AES_128_GCM_SHA256</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundAcknowledgementType">
+    <l7:StringValue>ON_COMPLETION</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueueName">
+    <l7:StringValue>fail-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueuePutMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundGetMessageOptions">
+    <l7:StringValue>5678</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueueUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundOpenOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundReplyQueuePutMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_SPECIFIED_QUEUE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSecurePasswordOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15e</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSpecifiedReplyQueueName">
+    <l7:StringValue>reply-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeUserId">
+    <l7:StringValue>mq-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="numberOfSacToCreate">
+    <l7:StringValue>120</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>text/plain; charset=utf-8</l7:StringValue>
+</l7:Property>
+<l7:Property key="requestSizeLimit">
+    <l7:StringValue>0</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-key</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:mq-outbound-key</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.272Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="mq-outbound-key" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:mq-outbound-key">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dmq-outbound-key</l7:IssuerName>
+    <l7:SerialNumber>13816051190697854148</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dmq-outbound-key</l7:SubjectName>
+    <l7:Encoded>MIIC+TCCAeGgAwIBAgIJAL+8eVt8KITEMA0GCSqGSIb3DQEBDAUAMBoxGDAWBgNVBAMTD21xLW91dGJvdW5kLWtleTAeFw0yNjA5MDkwNTI0NDFaFw0zMTA5MDgwNTI0NDFaMBoxGDAWBgNVBAMTD21xLW91dGJvdW5kLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL8p75PewwMEpdPF2/8zML6AEYm7q+7z4ApD33Vf1Pek1Fd+x7tMQahrpLL5um0S2oMFgdP/gY1U/837aqqh+9rbkedBQTHQ019bqnz18+PyZHThX9Qo7L0WSl7kQVC3AW1eARGVy+Zyk7KrBD0vI8W35FNR2k+zH/GAjBRH+9ReEKIY7guK9u3l7siKVE4+dKcsVrwJe+he51M7aaAEu3l8qI/65VHgUhHNVErCoKnvTkA1eZ96YqAPIhXjbNNfKj/DJdi2UQ556Ks5NyyruOt0hBfWJ9ZnhvYQtdUqcXTv0l5ZPYhyNBoZs+GKaxHVZfT8nV9yTWQN6Q/XIOKEX68CAwEAAaNCMEAwHQYDVR0OBBYEFNDtBLX5JWCj8AnlTB5yVoPkToQ6MB8GA1UdIwQYMBaAFNDtBLX5JWCj8AnlTB5yVoPkToQ6MA0GCSqGSIb3DQEBDAUAA4IBAQCSsuYPioc5Vx0QPAf0OwuyT16AUVbTzSmSW2tGV4WJjEOc1LZ7yqT2D5Mykrqw9BkFaFQ1+Jp3X2OB0pkZFP7TGM4/k9YaPJfDte9O5TsqaPMtLOF8u4Brr1ayH49Ml7oq4mKpn8hYGTotJMIvzHYKFhHeZMDRsGer/+40dGz9pff2wNDyFJaGig49a+V5ixXqtXzsXtjeoMO77vYdev18iY6mkYw1+GC74uWFy/aN6BV1aNQ59bOQ5G0llvU0RbcusHU4hxH4/dOVrufqmB6qNYxKU+ZO/tAnvXB0ReXdfkFUssWw01dmjQfL0xfe2lP0h3Y95rY5n/30k9Hmfdjt</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y" algorithm="RSA">$L7C2$1,EVcmUifBkwCgkd9uRBlUXncb+2N3pBBjol+Esilyk04=$Zlcc8k11TeD+TJmCZOxDBf4VWs+qkXi3uS9qOjyb21sW8Bm588mG1a5tUD9owM133NO4mXLMmejKEERQzUyhWDu9wlMI824njXYF7L/NVThFOOPf5iXwQ4oneN2rraeWL3rnwui2JUW3ZK71Fjn/gdA70qN+5S6gVQ8eUALruQmjm26qgQlZbjh8INhtUV/ZrYg8pIVA4UrAGKn3KMxPglwAK5b5v7gscxXbHaY0cWiBfb/BczIT/RBmxrmD0vNwzio7+ui5/edGVOrX/R2EwUNvAMjMWvBmn/B21kNeMOcQNIYvkzRsRwPVJvKpJEaidqjHZZv7Wpske+Knn4Xh7B6IsspLjfWzTvuYPeQoVkKFCgsKd/E8EjxIh55hNXvYy9Ml2TuG9JOZEcqYFi3K7pYnFV1+aAw9VviGTEaBdEQJQUfvrPl7N9Rq4sCkfrKdKP5dqKySs8Q6q/VMAhN1IxBDFA0B6OmHuZIe2Jq7s65Orwll3tUjiKMgHv8hxueSocSes8wOiRjYvnZu7Vy445FKpCHEyBmJvZ13k4f8cSnetCyyXzp4buMLPkfknrZ0xzfdrvYS/9dbhWs2Isj3VWc4YI6Gg9SOiizq6+DGfDaTCKKB0SwbTnXxSfG+hn8oa1doSFEIKsPr6Xcp6dShuHEGUht47yvMWBEFZZWe4/x8QwIDlOx1KMopDDPsXnczcH5U/3P52vUfOC1q4DDZicHGgGldP4gNdAEIcTFOmMF9JESlXsyR9yAeNcFyb4zTQbqkXQw8Q2ypAzhs0ZX6YgmHr4dd2VIgNr7Ke+Nw7seROul3G9/uix0FfqtvoO3oOSsdNDBqjiaZacdKbVuFneTu0gh0qe1E9slCWCxh1OrUFHZPmQ1BY5WXnkz3XlpVY0XL0rYtRf0Sj4Ns5nMS42qx9RWvJ59bYVV4TToYXrUStuPHjL9+iVWG2Ju3uohdI/GDEWSwTkUDeP9vKoIcL05v2zVpZ5T5J3FOf6p2Q6Xm9CYRIQlVlJ8zinMO9UG1Qk2EeTDGoW3VXbgj/WHZxYYfSdZiZbzy+n9CMtprkKow8463gC28PRdLUOH3Gs+1pS3gkQZjb9HYPu4VXjYOd3bdq7iW4+75mjzGavFmf4LhrcZok71tbOOLkhbVN8jcf1SCurwDzrngJdUHOGgGVKwJtYMFUoo4HDD56I8048cApCJANcjjQrjePJMek/Gcaqz9o4bOYnQORjHardakdAa9pPGwHDBJZCGz2XBoPXEbKM9MHx2qvm06Zc8cOm5SbbHgQUhSdUnUhKGcFbc7EKyDrlTtosIgx46s5uDLX9Dnr8VWOvc7KuvYQFAwnJOJwoIlOdXwhFFnNa/22PL4Q3STu20lAA4nfvbS8dih3FfUu9knU5GUvULHlWSE2V7pfogOnH8TF3gyrFLZfTiTnNmf766fOmBRix6m7QDtP6Wq2O5xDSh7oTT+U2Fxt5gNaroN2UTeLbrIq62csRrhy/gQyF6yH9wA8UflSJblFLItjFshWbK+DVVD1gVIYwjFml1k7y80SM8UE73E1n3H8I6gVlvw+lRAkkT1oXKmbAvuhEMPItxX4IjPbzCCsZLmscOXxAAqlK0pmduHv26P+BQyRURxU+h1XiSmcNS9ie9CT2gxLWpPtZ5zWymePeCmLSli8bKct+LvByKwPxmtAzmi4/wHF+jMDw1vE3PVRUU=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-inbound-customize-3</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6818</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.272Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6818" version="0">
+                            <l7:Name>mq-inbound-customize-3</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:HardwiredId>a975796f1c3d80060c8dc56385654611</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_AES_128_GCM_SHA256</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundAcknowledgementType">
+    <l7:StringValue>ON_COMPLETION</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueueName">
+    <l7:StringValue>fail-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundFailedQueuePutMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundGetMessageOptions">
+    <l7:StringValue>5678</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueueUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundOpenOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundReplyQueuePutMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_SPECIFIED_QUEUE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSecurePasswordOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15e</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSpecifiedReplyQueueName">
+    <l7:StringValue>reply-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreAlias">
+    <l7:StringValue>mq-outbound-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreId">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeUserId">
+    <l7:StringValue>mq-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="numberOfSacToCreate">
+    <l7:StringValue>120</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>text/plain</l7:StringValue>
+</l7:Property>
+<l7:Property key="requestSizeLimit">
+    <l7:StringValue>0</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-inbound-default</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6815</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.272Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6815" version="0">
+                            <l7:Name>mq-inbound-default</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundAcknowledgementType">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueueUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-customized-1</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6811</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.272Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6811" version="1">
+                            <l7:Name>mq-outbound-customized-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_AES_256_GCM_SHA384</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxActive">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxIdle">
+    <l7:StringValue>456</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxWait">
+    <l7:StringValue>789</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsTemplateQueue">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundMessageFormat">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundReplyQueueGetMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundTemporaryQueueNamePattern">
+    <l7:StringValue>model-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSecurePasswordOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15e</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreAlias">
+    <l7:StringValue>mq-outbound-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreId">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeUserId">
+    <l7:StringValue>mq-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-customized-2</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6812</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6812" version="1">
+                            <l7:Name>mq-outbound-customized-2</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_AES_128_GCM_SHA256</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxActive">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxIdle">
+    <l7:StringValue>456</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxWait">
+    <l7:StringValue>789</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsTemplateQueue">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundMessageFormat">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundReplyQueueGetMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundTemporaryQueueNamePattern">
+    <l7:StringValue>model-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_SPECIFIED_QUEUE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSecurePasswordOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15e</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSpecifiedReplyQueueName">
+    <l7:StringValue>reply-wait</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreAlias">
+    <l7:StringValue>mq-outbound-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreId">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeUserId">
+    <l7:StringValue>mq-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-customized-3</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6813</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6813" version="0">
+                            <l7:Name>mq-outbound-customized-3</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeCipherSuite">
+    <l7:StringValue>TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsCopyCorrelationIdFromRequest">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslKeystoreUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxActive">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxIdle">
+    <l7:StringValue>456</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundConnectionPoolMaxWait">
+    <l7:StringValue>789</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsTemplateQueue">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundMessageFormat">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundReplyQueueGetMessageOptions">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundTemporaryQueueNamePattern">
+    <l7:StringValue>model-queue</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_SPECIFIED_QUEUE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSpecifiedReplyQueueName">
+    <l7:StringValue>reply-wait</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreAlias">
+    <l7:StringValue>mq-outbound-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeSslKeystoreId">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-default</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6810</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6810" version="0">
+                            <l7:Name>mq-outbound-default</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsTemplateQueue">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundMessageFormat">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_NONE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>mq-outbound-default-template</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6814</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6814" version="0">
+                            <l7:Name>mq-outbound-default-template</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>MqNative</l7:Type>
+                            <l7:Properties>
+<l7:Property key="MqNativeChannel">
+    <l7:StringValue>SYSTEM.DEF.SVRCONN</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeHostName">
+    <l7:StringValue>mq-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsFailedQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsOpenOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeInboundIsReplyQueuePutMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsQueueCredentialRequired">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeIsSslEnabled">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsReplyQueueGetMessageOptionsUsed">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundIsTemplateQueue">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeOutboundMessageFormat">
+    <l7:StringValue>AUTOMATIC</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativePort">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeQueueManagerName">
+    <l7:StringValue>mq-manager</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeReplyType">
+    <l7:StringValue>REPLY_NONE</l7:StringValue>
+</l7:Property>
+<l7:Property key="MqNativeTargetQueueName">
+    <l7:StringValue>mq</l7:StringValue>
+</l7:Property>
+<l7:Property key="inbound">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-sftp-pwd</l7:Name>
+                    <l7:Id>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="c84d9a1bee64808dc0f7fc52aa0a8bf3" version="0">
+                            <l7:Name>some-sftp-pwd</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,Tz3JG5ISNoT04LD2Qwh6N9XMWw1ia1pXmWYol/LNeCE=$OjfxS1IHtzvEvlBJOk72wVjMBE70f50LwI/uvER8C6X0g52/r4yWjOLa+twiebtJaIOtCxOewZzy5+94BACVrw==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-09T03:42:14.602Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-listener-customized-1</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b681a</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.273Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b681a" version="0">
+                            <l7:Name>sftp-listener-customized-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>SFTP</l7:Type>
+                            <l7:Properties>
+<l7:Property key="SftpDeleteOnReceive">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpDirectory">
+    <l7:StringValue>sftp-dir</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpHost">
+    <l7:StringValue>sftp-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpPort">
+    <l7:StringValue>22</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpSecurePasswordOid">
+    <l7:StringValue>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerFingerPrint">
+    <l7:StringValue>0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerUseDefaultKexAlgorithms">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpUsername">
+    <l7:StringValue>sftp-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="enableResponseMessages">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>text/xml; charset=utf-8</l7:StringValue>
+</l7:Property>
+<l7:Property key="pollingInterval">
+    <l7:StringValue>60</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-service1</l7:Name>
+                    <l7:Id>a975796f1c3d80060c8dc56385654610</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.275Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="a975796f1c3d80060c8dc56385654610" version="1">
+                            <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="a975796f1c3d80060c8dc56385654610" version="1">
+<l7:Name>sftp-service1</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/sftp-service1</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"/&gt;
 &lt;/wsp:Policy&gt;
 </l7:Resource>
-						</l7:ResourceSet>
-					</l7:Resources>
-				</l7:Service>
-			</l7:Resource>
-		</l7:Item>
-	</l7:References>
-	<l7:Mappings>
-		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae2" srcUri="https://127.0.0.1:8443/restman/1.0/passwords/c73c9a1bee64808dc0f7fc52aa0a8ae2" type="SECURE_PASSWORD"/>
-		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:some-kafka-key" srcUri="https://127.0.0.1:8443/restman/1.0/privateKeys/00000000000000000000000000000002:some-kafka-key" type="SSG_KEY_ENTRY"/>
-		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae5" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a8ae5" type="SSG_ACTIVE_CONNECTOR"/>
-			<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9001" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9001" type="SSG_ACTIVE_CONNECTOR"/>
-			<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9002" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9002" type="SSG_ACTIVE_CONNECTOR"/>
-		<l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712612" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612" type="SSG_ACTIVE_CONNECTOR"/>
-		<l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712610" srcUri="https://127.0.0.1:8443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610" type="SSG_ACTIVE_CONNECTOR"/>
-		<l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://127.0.0.1:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
-			<l7:Properties>
-				<l7:Property key="FailOnNew">
-					<l7:BooleanValue>true</l7:BooleanValue>
-				</l7:Property>
-			</l7:Properties>
-		</l7:Mapping>
-		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae8" srcUri="https://127.0.0.1:8443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8ae8" type="SERVICE"/>
-		<l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8b29" srcUri="https://127.0.0.1:8443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8b29" type="SERVICE"/>
-	</l7:Mappings>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-key</l7:Name>
+                    <l7:Id>9a45f1717f6f3a403e35e473df1da15f</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.276Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="9a45f1717f6f3a403e35e473df1da15f" version="1">
+                            <l7:Name>sftp-key</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,w0ge/SqstsJHz1UO7CXrvwhPYBABeolMAaElLssZwTs=$6c8HILmL20yR+t5m7PuALEfvuvJvIia+AMSTNx3s1Nl4/UXQmGYG0jK1lJOGrJI3M3RbRtQyBrlyY5hjzPD2kZuzF/vaHob196WWyjzuh2WwMV+R8du9X/XQ24T6EdPCOTcWC8UYeziPk+iNbWKsWaIlh4HXg7K4qvlvq1v+r3eX2OM4RNjI9/EZqqiHvuFYbeq2EvNjYKLru2zA3Uwqrvti3pkS9NA2ztj3vqcp8Mw3Bq/U919xddQevy9HkduNPQhV/NCHHv6YtYz1/hfY7KfTt6D7P5ZDkPlpEQTgSq5O8BuNyWPQb31MBljNvpDecu39Z5lgz8tWFbMR8swc5dCnra4BaDqKqMpNedWKpGmMWYVaqIJ7+BybRHnseWZ4uyQnPyxSWRlFcMtNEfuml1OBVPW1gT5pbxp8YswzUf1GAHQO0R7pd3brkaLLqpqefeuKaQ5QvfXNoY0K50nqHymyedR+zstip8sdaVUpS8iSaQUjB45szayedF+OSxA7vJsaas3DyvWp6V+51Q6srAtIWYpXgtpBZYrdWTqfyzOumnshh/SKJYG4rqRF68inm5yp9MRNXoAFckReVlFNKk8HT4NoYbbmRV4FwQkiXsgCDXNo3lOZ2he39D8gIjUQeMaWNnC3Rn/o5DdSACcUS2gLBcAhHqAygUE/TGR9ijuP/Ux6+uMqsph/nXofycKt/RQ5U5ugDzH6oO3kScpM470qFnx1paXXLzjD0OY09y9v4kDyhPYix+sUzguEp6sN49TEXxmxCqU9fV7JW9kSRSBKapF3jVDnymkz/JdXsHPZUPIZCdgX/eAMEO2Ru05Dv4G9KegEN2B5ZWJwYog3ZoPxu1WvreqJ7zTcRWWjRKApV9F+YGq5lppGhn+B5n33VZY3Esft4mG9v/QRWAbRuz7x3vzeS4vj7Ghv+AcpAowO+Jg8oaAhW4oBSAV/q6/NIwAKjOlaTwE2PZ59hMAKnjCFOIYaXv50OyN+Gt8QUvAsibqElirwbq4NLj87G73whqjEb3w8LzLpDbZayiJSBrA2ePAiiKEquu6jeBxfxFbURV8qtiM2HqFy5Q/e50O46COoLttT4htCgymvyDuJvVF6hVvRQ2KeZNJSTvagYajarE9S4h45fVrtN6YX7AVCJ7p9E5wR0Gp/9ow9uVX2VN98ZmKonaeZaeNSRSNfQaFKGIFY+Iq0eKmpiT4vCd3B0meM0+BnKNVbC0bNIFAupyUnunaYbOYjbifpqpEl9+/QpqlTMbUKzcJRvbcBIIj4c2r0wAIkRGbIyVAncKf4WlGPmyHs/67H9gwHyjRMrMqoV0GKwUWP8Aai7B3qS+gWNRM9VXNF/6pBJGBSHUwHr2e7ZtLh6lxarp/WyEKQSCMwmuv02d849EZk7JkFY5Az7zotXGBFUvADohDLNSYyKgK4IibvnM1D3sp6B3Gu/EIqxUk2ZxwMb1CinAfMuMwPvFWm5mzzcWsMoulgxmySgYGcEj3DFSm8C2Zeo4V5ROsomjAnKVJBrrFleywAa9Ztet8u9Ll5hcqb464/hh6O7JyreNt9hI2IgrVyH2ajCrbjsQ4SLuL0iMGbkqaaP0dxPnD9AUBENYSY6j3ftdMnO2s4UVrSzw+X+BDFBEhW1H65J8O6Z23uhnlaVWGik/3YxIdn6dKg3bHz7ZvUP2d5UfWtKZp6Kz9wplzFS+s+WK0nvPCVBHUtv7cb6ltUtVDngzckA85H6Ic9M/6qXJY04y6maYiniZsaL/Qx8a0wPQULlOTm0bkYbHhaFd3TptqqTz8jF2Ulx/bXk2HKH1fHHZ/i4NHGJmXrIFqLAtpth6xvJWOkJsh7N/PFVHUJxGKL1gT7HcH5EtzCQsRnK1Clj584lXV8+1bsBKCirOxWdi62FgG4XXJ2Px7AY8PMDVfHYfTqLGxCL+XLt9bNs0eHUTB2cCEYvXIfY03A4q6zZJnbyD6/yqN2vrwKDeD3BQkthXpM0c86OJgWNjb5fZU3pKLWh45e0ojKE3o/MbYmPy5/sFzqrBFzSZXLu4n7YbbeeXmFh2cjA93XIXAwmEIV5EJhxX5cCFYXLFwPvm5ylB9qhgJx7oQpdDpGVZtZC3Ow/7Rp0D8qWKCVH4DqlOqUePhROuARfMF3qy1nAk7OoIyAfOCIMDFWMJTbFXZDdSj5+1bA3MmzErIpuzChUCRb503F5fgtvK7p46JPtY/NcI3D4bpLSLWSLHbV8u4Rt8++xbq7vvsA1zPhb63AcmYcIGD6DpqwndGFHThN9p1jo1+PhZJ2HPuflw+sh6dgGp+8</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-09T07:01:00.144Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>PEM Private Key</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-listener-customized-2</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b681b</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.276Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b681b" version="0">
+                            <l7:Name>sftp-listener-customized-2</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>SFTP</l7:Type>
+                            <l7:HardwiredId>a975796f1c3d80060c8dc56385654610</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="SftpDeleteOnReceive">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpDirectory">
+    <l7:StringValue>sftp-dir</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpFileNamePattern">
+    <l7:StringValue>.xml</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpHost">
+    <l7:StringValue>sftp-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpPort">
+    <l7:StringValue>22</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpSecurePasswordKeyOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15f</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerFingerPrint">
+    <l7:StringValue>0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerKexAlgorithms">
+    <l7:StringValue>ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group14-sha256,diffie-hellman-group15-sha512,diffie-hellman-group16-sha512,diffie-hellman-group17-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerUseDefaultKexAlgorithms">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpUsername">
+    <l7:StringValue>sftp-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="adv1">
+    <l7:StringValue>val1</l7:StringValue>
+</l7:Property>
+<l7:Property key="adv2">
+    <l7:StringValue>val2</l7:StringValue>
+</l7:Property>
+<l7:Property key="enableResponseMessages">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>application/json; charset=utf-8</l7:StringValue>
+</l7:Property>
+<l7:Property key="pollingInterval">
+    <l7:StringValue>160</l7:StringValue>
+</l7:Property>
+<l7:Property key="requestSizeLimit">
+    <l7:StringValue>2621440</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-listener-customized-3</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b681c</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.276Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b681c" version="0">
+                            <l7:Name>sftp-listener-customized-3</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Type>SFTP</l7:Type>
+                            <l7:HardwiredId>a975796f1c3d80060c8dc56385654610</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="SftpDeleteOnReceive">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpDirectory">
+    <l7:StringValue>sftp-dir</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpFileNamePattern">
+    <l7:StringValue>.xml</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpHost">
+    <l7:StringValue>sftp-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpPort">
+    <l7:StringValue>2233</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpSecurePasswordKeyOid">
+    <l7:StringValue>9a45f1717f6f3a403e35e473df1da15f</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerFingerPrint">
+    <l7:StringValue>0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerKexAlgorithms">
+    <l7:StringValue>diffie-hellman-group18-sha512,diffie-hellman-group17-sha512,diffie-hellman-group16-sha512</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerUseDefaultKexAlgorithms">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpUsername">
+    <l7:StringValue>sftp-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="adv1">
+    <l7:StringValue>val1</l7:StringValue>
+</l7:Property>
+<l7:Property key="adv2">
+    <l7:StringValue>val2</l7:StringValue>
+</l7:Property>
+<l7:Property key="enableResponseMessages">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>application/json; charset=utf-8</l7:StringValue>
+</l7:Property>
+<l7:Property key="pollingInterval">
+    <l7:StringValue>160</l7:StringValue>
+</l7:Property>
+<l7:Property key="requestSizeLimit">
+    <l7:StringValue>0</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sftp-listener-default</l7:Name>
+                    <l7:Id>ce64b9991c57dbe3a23bac34691b6819</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.276Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="ce64b9991c57dbe3a23bac34691b6819" version="0">
+                            <l7:Name>sftp-listener-default</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>SFTP</l7:Type>
+                            <l7:Properties>
+<l7:Property key="SftpDeleteOnReceive">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpDirectory">
+    <l7:StringValue>sftp-dir</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpHost">
+    <l7:StringValue>sftp-host</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpPort">
+    <l7:StringValue>22</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpSecurePasswordOid">
+    <l7:StringValue>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpServerUseDefaultKexAlgorithms">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="SftpUsername">
+    <l7:StringValue>sftp-user</l7:StringValue>
+</l7:Property>
+<l7:Property key="enableResponseMessages">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="overrideContentType">
+    <l7:StringValue>text/xml; charset=utf-8</l7:StringValue>
+</l7:Property>
+<l7:Property key="pollingInterval">
+    <l7:StringValue>60</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-consumer</l7:Name>
+                    <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.279Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="1">
+                            <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="c73c9a1bee64808dc0f7fc52aa0a8b29" version="1">
+<l7:Name>some-kafka-consumer</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/some-kafka/consumer</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:HardcodedResponse&gt;
+            &lt;L7p:Base64ResponseBody stringValue="JHtyZXF1ZXN0LmthZmthLnRvcGljfToke3JlcXVlc3Qua2Fma2EucGFydGl0aW9ufToke3JlcXVlc3Qua2Fma2Eub2Zmc2V0fQ=="/&gt;
+            &lt;L7p:ResponseContentType stringValue="text/plain; charset=UTF-8"/&gt;
+        &lt;/L7p:HardcodedResponse&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-pwd</l7:Name>
+                    <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.279Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="c73c9a1bee64808dc0f7fc52aa0a8ae2" version="0">
+                            <l7:Name>some-kafka-pwd</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,uRBoiuOvBv+9WWHGi26+nkvHeFXLvyizk7zOF3XUENg=$BHp+fn8Fb7WR6nOT0Cvcfxqm1KRjqYKynRIfO93BkyiOSBqYy4AQAlk8j/Aa4n9NInLlfsBHhDFZwvnxeJMqew==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-09T03:35:24.617Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-key</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.279Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="some-kafka-key" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:some-kafka-key">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsome-kafka-key</l7:IssuerName>
+    <l7:SerialNumber>6469400567961828188</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dsome-kafka-key</l7:SubjectName>
+    <l7:Encoded>MIIC9jCCAd6gAwIBAgIIWcftiksTO1wwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc29tZS1rYWZrYS1rZXkwHhcNMjMwNzA0MjMxMjU1WhcNMjgwNzAyMjMxMjU1WjAZMRcwFQYDVQQDEw5zb21lLWthZmthLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJjtDIBLD7JvLcgp3WBLtLsIhuTQyY/vlOp/FSx95AzzFkvRxOpApmRgzWDc5WQ72qyq+qYm/iAyCokJ4ih7SP35bJQ+VMIKVh06u0GmjbLnOFMm19u/d8ri//cE1r0ZEtvQ/QYLYNf3XYaGtJwkh39LqnBVAT/mX8ys6luUWJRpnBWGxcCJDdreSj/PFiQQM2wUUYmfc7DgIcCnm2lZx+GFddrf7vrLsbl7OauhpDH0IdMqEyRDO2uJRBdg2GKLW17p+eJdTXT35vJO8mRItmdKw8n85TGcJ3XtNeZJMa4nuLxQOfva3Hv7Di1Wet8XPOdRtXV09ns3uzvtoKk1z2ECAwEAAaNCMEAwHQYDVR0OBBYEFGMxQ+Oigl/FKLlcThUSQRpVUMlQMB8GA1UdIwQYMBaAFGMxQ+Oigl/FKLlcThUSQRpVUMlQMA0GCSqGSIb3DQEBDAUAA4IBAQCSrc4wrZsBuMUxefqskCI+aP6v9fmkL/yycVr/W3SkoKV/DejDBWmzXmrzJOukhw7rUgd7IAjqL5h5uz/4uDmj6iJy02NwU3lE7sSYnKpRFcwAbafLxZIVr22lsCnFlXFz52RBwSNhUx3bj60bSbpuTeFEAbEmZHCdAEQM1BskyqMbxneyL1YK1fKLW8LJp36m8q2UuUeSRK1//LY+Qq01iXdNKwoAoPdbjvTRTtZjTQEKag3aK/uHOwqgqh2YIZESx3WAdSwkUF+oA8EsP0CBIkXg7CE2zd0ushafKkzrfnjxVpdeB5aEueoJP+TtZJn6QxKZ6zuFQHfhwIHOV+Ua</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y" algorithm="RSA">$L7C2$1,pFGxJ2I9Jam/Mgus581yfxYTIeXSmHhFS6d+SgX87bg=$lIEyY2UjtuZED0YVGlFem28C/jYpAHljtAjzuvlCc7/Q9GKlilaW/JJURxE4GqnnUqZNxF8qE0wiqkYiW9JdcORwuImvFsKE3XbmIbJwwJbdSMtw6ACQrO4NxYe1qwVAmJezombZ0nKXpghs5LIdF8rR+fMeJN69EpO46XPxDhVz/vhxuBp5qiIUVIo+1/CVHL9iLLLqmyWMp082id0RuhIsIVhuKpP5ubrOybaHaLA6jriYptxzIImDmDelaBC/RzHAC4QEFknOiF1ZK2MVOlPWA3jtCNzIzmMH3U4jFdI+0sLBDBX/ZrXEALufQIS5FhKRX+f1UimMj9nrGQiez+9BfWCCKYhHQFdmZA8vPaGg1go9v6eC56jycB1DIvUt5rOCE9L2nnyYGJzX4xE7/bvyagj0+U09mpY5yBiVY70mfeef7c1WuD9PKLXIdi0lPfO+TGL/fS2OaJPJkX+XPA82hv1ViERbE8vT27+MgIlcMltPHH9q747d80NX1miMfyQq3InqQiyTkVhkgQmRv5baBgxOaNAuVbmWGPXH2pWOFsP4Swghoz5L5A2iPvEuabdY6Fk8iag4zTpmoUUT9onqvu9OlEpTOQ4AAhdb6fcgSYAwPbqX1RYZwZk862FUXaxG2OW5FtpMVHEpu1xd4ArOfUcJ8O02TSuErhAX/Fap/ON5jNCB/sD7uBp7/6QB8he+Sdgs8FJaWXBOTqvXxEJAYyBtRizxLD2Ij/zzit8cVfaa/Go+UPEFMUsXAoaJG0Q5TduCwuGTNsbeU5xl5piplpRba0S2GxV2ZPm1Wks30o+pykgq3S5Nfb1F8PG1zsIl4c+8Ss4eCxhIsTXlPYKO6sIR4kCrSOhfJKVT96J90kygGMF4v24m5sLR0Xem6jDLjZKzHj5F4GdnOs9nvMEdzDZmQ4EyKsZ7JtfR1pJjNU7gbMk15F6rBFo7b8iaTlK1xnZjndC95bvL3wbh4OrQWhDk2SNmpoLN4hmSPzxCa1eapwdNf0U+EdlxDUNgrXToEyXjO6DZGbf4h9tTYMZ4UeEmG8RmqD4Qsy1BcYZOreVd+H+UsbYONXy2N0HOSuS+hxIyZRjDvJTT0x/g1ncOOFsVOgZza0ZjyUe4ZkJOuSVd/zipkrHFet7y2NFb/R/Z0PZnhM9wTxQdDKBDJwrwiVPBSV/TcVgHzreloZ3WnJMU9wWegYBWMLMQTp4RXraFlVUYO+bhg2NFyUFNMQquh7tf8bqrujUQGWRaJVnIfsmzMK5yp08Mc17B+/9EVW6T6Cj5RcEIgwOOErJPi3gNW02OkaU38EV2b96fRc5ZLOJSVmhNvDoYIumX4tZIfwrx2qX3r1SL6JmeEFMwk9Iv61kmfKjo8ZzB6yZKBEuUNcyKS03f82tw71UYJHUZ94bSrNpRXOuUIYDirJZjsmK4iXAwo+5Ek+ISWx4pJepKbGopV+UALk3ZB9zUFiHT2FJRsiWZ1K07Ng/SAxUuyjL7318m5/rXoprOAlvQ8pUj2wsvXHlKe2aIhKf1RylHh7yxmv1YW9dVrAjCWvgthqPYPou15QRaFtgvZcC4mafuPeyoFpHxz4rh9qdevP3pe+OkT4gcDF7mgHFqBsJGl7aT8MyNdVo10RbE8IkZ9XoVsb3z7ocYnfA+e/HnYrMog17GV5hYN81uHeriMImGSdM4i8wYcdct1K679dkH/Go=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-consumer</l7:Name>
+                    <l7:Id>861c30489c47114e500f68032d712612</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.280Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="861c30489c47114e500f68032d712612" version="0">
+                            <l7:Name>some-kafka-consumer</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Type>KafkaClient</l7:Type>
+                            <l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="kafka.authType">
+    <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.bootstrapServers">
+    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
+    <l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
+    <l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitAsync">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitBatchSize">
+    <l7:StringValue>100</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitInterval">
+    <l7:StringValue>5000</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.consumerGroup">
+    <l7:StringValue>some-consumer-group</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.contentType">
+    <l7:StringValue>application/octet-stream</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollMaxInterval">
+    <l7:StringValue>300000</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollMaxRecords">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollTimeout">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.processMessagesConcurrently">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
+    <l7:StringValue>10</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.resetPosition">
+    <l7:StringValue>NONE</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.role">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.topicNames">
+    <l7:StringValue>some-topic,some-other-topic</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.enableTls">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.keyStoreGoid">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.lastModifiedTimestamp">
+    <l7:StringValue>2023-07-05T10:11:45.647135400+05:30[Asia/Calcutta]</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.passwordGoid">
+    <l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.privateKeyAlias">
+    <l7:StringValue>some-kafka-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.role">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.role">
+    <l7:StringValue>consumer</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsCipherSuites">
+    <l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsVersion">
+    <l7:StringValue>TLSv1.2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.username">
+    <l7:StringValue>some-kafka-user</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-producer</l7:Name>
+                    <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae5</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.280Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a8ae5" version="0">
+                            <l7:Name>some-kafka-producer</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>KafkaClient</l7:Type>
+                            <l7:Properties>
+<l7:Property key="kafka.authType">
+    <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.bootstrapServers">
+    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.enableTls">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.keyStoreGoid">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.passwordGoid">
+    <l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.privateKeyAlias">
+    <l7:StringValue>some-kafka-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.acknowledgement">
+    <l7:StringValue>1</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
+    <l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
+    <l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.idempotence">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.retries">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.role">
+    <l7:StringValue>producer</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsCipherSuites">
+    <l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsVersion">
+    <l7:StringValue>TLSv1.2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.username">
+    <l7:StringValue>some-kafka-user</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-producer-consumer</l7:Name>
+                    <l7:Id>861c30489c47114e500f68032d712610</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.280Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="861c30489c47114e500f68032d712610" version="0">
+                            <l7:Name>some-kafka-producer-consumer</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Type>KafkaClient</l7:Type>
+                            <l7:HardwiredId>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:HardwiredId>
+                            <l7:Properties>
+<l7:Property key="kafka.authType">
+    <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.bootstrapServers">
+    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
+    <l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.advanced.some-other-consumer-adv-prop">
+    <l7:StringValue>some-other-consumer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitAsync">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitBatchSize">
+    <l7:StringValue>100</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.commitInterval">
+    <l7:StringValue>5000</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.consumerGroup">
+    <l7:StringValue>some-consumer-group</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.contentType">
+    <l7:StringValue>application/octet-stream</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollMaxInterval">
+    <l7:StringValue>300000</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollMaxRecords">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.pollTimeout">
+    <l7:StringValue>1234</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.processMessagesConcurrently">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.processMessagesMaxConcurrency">
+    <l7:StringValue>10</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.resetPosition">
+    <l7:StringValue>NONE</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.role">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.consumer.topicNames">
+    <l7:StringValue>some-topic,some-other-topic</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.enableTls">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.keyStoreGoid">
+    <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.lastModifiedTimestamp">
+    <l7:StringValue>2023-07-05T10:11:52.132257+05:30[Asia/Calcutta]</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.passwordGoid">
+    <l7:StringValue>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.privateKeyAlias">
+    <l7:StringValue>some-kafka-key</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.acknowledgement">
+    <l7:StringValue>1</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.advanced.some-other-producer-adv-prop">
+    <l7:StringValue>some-other-producer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.advanced.some-producer-adv-prop">
+    <l7:StringValue>some-producer-adv-prop-value</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.idempotence">
+    <l7:StringValue>false</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.retries">
+    <l7:StringValue>123</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.producer.role">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.role">
+    <l7:StringValue>producer|consumer</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsCipherSuites">
+    <l7:StringValue>TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.tlsVersion">
+    <l7:StringValue>TLSv1.2</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.username">
+    <l7:StringValue>some-kafka-user</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
+                    <l7:Id>c73c9a1bee64808dc0f7fc52aa0a9001</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.280Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9001" version="0">
+                            <l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>KafkaClient</l7:Type>
+                            <l7:Properties>
+<l7:Property key="kafka.bootstrapServers">
+    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.role">
+    <l7:StringValue>producer</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
+                    <l7:Id>c73c9a1bee64808dc0f7fc52aa0a9002</l7:Id>
+                    <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    <l7:TimeStamp>2026-09-09T07:16:34.280Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ActiveConnector id="c73c9a1bee64808dc0f7fc52aa0a9002" version="0">
+                            <l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Type>KafkaClient</l7:Type>
+                            <l7:Properties>
+<l7:Property key="kafka.bootstrapServers">
+    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+</l7:Property>
+<l7:Property key="kafka.role">
+    <l7:StringValue>producer</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ActiveConnector>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg.gateway:18443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654611" srcUri="https://ssg.gateway:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654611" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6816" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6816" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15e" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15e" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6817" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6817" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:mq-outbound-key" srcUri="https://ssg.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:mq-outbound-key" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6818" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6818" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6815" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6815" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6811" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6811" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6812" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6812" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6813" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6813" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6810" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6810" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6814" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6814" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c84d9a1bee64808dc0f7fc52aa0a8bf3" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/c84d9a1bee64808dc0f7fc52aa0a8bf3" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681a" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681a" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654610" srcUri="https://ssg.gateway:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654610" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15f" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15f" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681b" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681b" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681c" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681c" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6819" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6819" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8b29" srcUri="https://ssg.gateway:18443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8b29" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae2" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/c73c9a1bee64808dc0f7fc52aa0a8ae2" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:some-kafka-key" srcUri="https://ssg.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:some-kafka-key" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712612" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae5" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a8ae5" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712610" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9001" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9001" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9002" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9002" type="SSG_ACTIVE_CONNECTOR"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>mq-service1</l7:Name>
+                        <l7:Id>a975796f1c3d80060c8dc56385654611</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-inbound-customize-1</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6816</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>mq-service1</l7:Name>
+<l7:Id>a975796f1c3d80060c8dc56385654611</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-pwd</l7:Name>
+                        <l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-inbound-customize-2</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6817</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>mq-service1</l7:Name>
+<l7:Id>a975796f1c3d80060c8dc56385654611</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>mq-pwd</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-key</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:mq-outbound-key</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-inbound-customize-3</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6818</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>mq-service1</l7:Name>
+<l7:Id>a975796f1c3d80060c8dc56385654611</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>mq-pwd</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>mq-outbound-key</l7:Name>
+<l7:Id>00000000000000000000000000000002:mq-outbound-key</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-inbound-default</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6815</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-customized-1</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6811</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>mq-pwd</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>mq-outbound-key</l7:Name>
+<l7:Id>00000000000000000000000000000002:mq-outbound-key</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-customized-2</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6812</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>mq-pwd</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15e</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-customized-3</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6813</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-default</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6810</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>mq-outbound-default-template</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6814</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-sftp-pwd</l7:Name>
+                        <l7:Id>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-listener-customized-1</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b681a</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>some-sftp-pwd</l7:Name>
+<l7:Id>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-service1</l7:Name>
+                        <l7:Id>a975796f1c3d80060c8dc56385654610</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-key</l7:Name>
+                        <l7:Id>9a45f1717f6f3a403e35e473df1da15f</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-listener-customized-2</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b681b</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>sftp-service1</l7:Name>
+<l7:Id>a975796f1c3d80060c8dc56385654610</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sftp-key</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15f</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-listener-customized-3</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b681c</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>sftp-service1</l7:Name>
+<l7:Id>a975796f1c3d80060c8dc56385654610</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sftp-key</l7:Name>
+<l7:Id>9a45f1717f6f3a403e35e473df1da15f</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sftp-listener-default</l7:Name>
+                        <l7:Id>ce64b9991c57dbe3a23bac34691b6819</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>some-sftp-pwd</l7:Name>
+<l7:Id>c84d9a1bee64808dc0f7fc52aa0a8bf3</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-consumer</l7:Name>
+                        <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-pwd</l7:Name>
+                        <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-key</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-consumer</l7:Name>
+                        <l7:Id>861c30489c47114e500f68032d712612</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>some-kafka-consumer</l7:Name>
+<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>some-kafka-pwd</l7:Name>
+<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>some-kafka-key</l7:Name>
+<l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-producer</l7:Name>
+                        <l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae5</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>some-kafka-pwd</l7:Name>
+<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>some-kafka-key</l7:Name>
+<l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-producer-consumer</l7:Name>
+                        <l7:Id>861c30489c47114e500f68032d712610</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>some-kafka-consumer</l7:Name>
+<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8b29</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>some-kafka-pwd</l7:Name>
+<l7:Id>c73c9a1bee64808dc0f7fc52aa0a8ae2</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>some-kafka-key</l7:Name>
+<l7:Id>00000000000000000000000000000002:some-kafka-key</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-producer-delete-by-input-1</l7:Name>
+                        <l7:Id>c73c9a1bee64808dc0f7fc52aa0a9001</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-kafka-producer-delete-by-input-2</l7:Name>
+                        <l7:Id>c73c9a1bee64808dc0f7fc52aa0a9002</l7:Id>
+                        <l7:Type>SSG_ACTIVE_CONNECTOR</l7:Type>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
 </l7:Bundle>
