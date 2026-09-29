@@ -1,20 +1,22 @@
 {
   "customKeyValues": [
     {
-      "key": "SOME_DB_USERNAME",
-      "value": "Zm9yIHRlc3RpbmcgY3VzdG9ta2V5dmFsdWU="
+      "goid": "625162d38c16b323dd0d9212a151fe02",
+      "key": "delete-by-input-ckv-1",
+      "checksum": "4da40ac433e128e3ab2f5f7d0986c2db530c8cd4",
+      "value": "c29tZS12YWx1ZTE="
     },
     {
-      "key": "SOME_DOMAIN_NAME",
-      "value": "dGVzdGd3YXBpLmJyb2FkY29tLmNvbQ=="
+      "goid": "625162d38c16b323dd0d9212a151fe03",
+      "key": "delete-by-input-ckv-2",
+      "checksum": "1aad695f682d9810201e6170f891c91bd7de5820",
+      "value": "c29tZS12YWx1ZTI="
     },
     {
-      "key": "SOME_DB_PASSWORD",
-      "value": "c2hpdmFtQHdvcms="
-    },
-    {
-      "key": "SOME_TEST_ENV",
-      "value": "dGVzdC5pcGFkZHJlc3MuY29t"
+      "goid": "625162d38c16b323dd0d9212a151fe01",
+      "key": "some-ckv",
+      "checksum": "b0796ba7937475e4ea49b9e5ad847c47fa9e5762",
+      "value": "c29tZS12YWx1ZQ=="
     }
   ]
 }

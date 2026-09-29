@@ -24,7 +24,7 @@
                 <l7:CustomKeyValue id="625162d38c16b323dd0d9212a151fe02" version="0">
                     <l7:StoreName>internalTransactional</l7:StoreName>
                     <l7:Key>delete-by-input-ckv-1</l7:Key>
-                    <l7:Value>c29tZS12YWx1ZQ==</l7:Value>
+                    <l7:Value>c29tZS12YWx1ZTE=</l7:Value>
                 </l7:CustomKeyValue>
             </l7:Resource>
         </l7:Item>
@@ -37,7 +37,7 @@
                 <l7:CustomKeyValue id="625162d38c16b323dd0d9212a151fe03" version="0">
                     <l7:StoreName>internalTransactional</l7:StoreName>
                     <l7:Key>delete-by-input-ckv-2</l7:Key>
-                    <l7:Value>c29tZS12YWx1ZQ==</l7:Value>
+                    <l7:Value>c29tZS12YWx1ZTI=</l7:Value>
                 </l7:CustomKeyValue>
             </l7:Resource>
         </l7:Item>
