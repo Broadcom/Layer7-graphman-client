@@ -64,6 +64,14 @@ function checkUnknownAndTypes(obj, node, pathPrefix) {
             return;
         }
 
+        if (expected === "array" && value !== null && !Array.isArray(value)) {
+            obj[key] = [value];
+            if (!matchesType([value], expected)) {
+                fail(path, expected, value);
+            }
+            return;;
+        }
+
         if (!matchesType(value, expected)) {
             fail(path, expected, value);
         }

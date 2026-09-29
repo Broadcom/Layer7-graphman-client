@@ -81,16 +81,17 @@ function availableQueriesIn(path, callback) {
 }
 
 function describeQuery(queryName, options) {
-    utils.info("query", queryName);
-    if (queryName.indexOf("*") === -1) {
+    const [queryPrefix, querySuffix] = queryName.split(":");
+    utils.info("query", queryPrefix);
+    if (queryPrefix.indexOf("*") === -1) {
         const query = gql.generate(queryName, {}, Object.assign({describeQuery: true}, options));
         utils.print(query.query);
     } else {
-        const queryNames = graphman.queryNamesByPattern(queryName);
+        const queryNames = graphman.queryNamesByPattern(queryPrefix);
         if (queryNames.length === 0) {
             utils.info("no matches found");
         } else if (queryNames.length === 1) {
-            const query = gql.generate(queryNames[0], {}, Object.assign({describeQuery: true}, options));
+            const query = gql.generate(queryNames[0] + ":" + querySuffix, {}, Object.assign({describeQuery: true}, options));
             utils.print(query.query);
         } else {
             utils.info(`${queryNames.length} matches found`);
