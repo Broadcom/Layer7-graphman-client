@@ -1,12 +1,11 @@
-/*
- * Copyright (c)  2026. Broadcom Inc. and its subsidiaries. All Rights Reserved.
- */
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
 const gql = require("./graphql-query");
 const exporter = require("./graphman-operation-export");
 const graphman = require("./graphman");
+const summary = require("./graphman-summary");
 
 module.exports = {
     /**
@@ -34,6 +33,7 @@ module.exports = {
 
         const bundle = utils.readFile(params.input);
         const context = utils.buildOperationContext("renew", gateway, params.options);
+        const startDate = Date.now();
 
         Promise.all(this.renew(gateway, bundle, params.sections, params.options)).then(results => {
             const renewedBundle = {};
@@ -51,6 +51,7 @@ module.exports = {
             const finalBundle = utils.extension("post-renew").apply(renewedBundle, context);
             const sortedBundle = butils.sort(finalBundle);
             utils.writeResult(params.output, sortedBundle);
+            summary.report("renew", sortedBundle, startDate, Date.now());
         }).catch(error => {
             utils.error("errors encountered while renewing the entities", error);
             utils.print();
@@ -87,6 +88,19 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        gateway: "string",
+        sections: "array",
+        output: "string",
+        options: {
+            useGoids: "boolean",
+            includePolicyRevisions: "boolean",
+            includeMultipartFields: "boolean",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("renew --input <input-file> --gateway <name> [--sections <section>...]");
         console.log("  [--output <output-file>]");
@@ -97,6 +111,7 @@ module.exports = {
         console.log();
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
         console.log("  --gateway <name>");
         console.log("    specify the name of gateway profile from the graphman configuration.");
@@ -121,6 +136,9 @@ module.exports = {
         console.log("        use this option to include policy revisions for the exported service/policy entities.");
         console.log("      .includeMultipartFields false|true");
         console.log("        use this option to include multipart fields (filePartName) so that server module file will be fully exported.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
     }
 }

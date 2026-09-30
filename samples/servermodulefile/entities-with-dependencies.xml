@@ -1,0 +1,218 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>server-module-files</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6023a</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:39:08.872Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d6023a" version="1">
+                            <l7:Name>server-module-files</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>Delay</l7:Name>
+                    <l7:Id>34124900af309006ed45a0d3823e579d</l7:Id>
+                    <l7:Type>SERVER_MODULE_FILE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:39:08.885Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ServerModuleFile id="34124900af309006ed45a0d3823e579d" version="0">
+                            <l7:Name>Delay</l7:Name>
+                            <l7:ModuleType>Custom Assertion</l7:ModuleType>
+                            <l7:ModuleSha256>d9f599f4f3568e0566852e72e3c04b47eb56ba1368f0ab8166d73e67c4e5cee6</l7:ModuleSha256>
+                            <l7:ModuleData>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AAAAAAAAAAAABAAAAAAAAAAAABAA7UHIAAAAY29tL1BLAQIUAwoAAAAAAFFtUUYAAAAAAAAAAAAAAAALAAAAAAAAAAAAEADtQeoAAABjb20vbDd0ZWNoL1BLAQIUAwoAAAAAAFFtUUYAAAAAAAAAAAAAAAASAAAAAAAAAAAAEADtQRMBAABjb20vbDd0ZWNoL2N1c3RvbS9QSwECFAMKAAAAAABRbVFGAAAAAAAAAAAAAAAAGAAAAAAAAAAAABAA7UFDAQAAY29tL2w3dGVjaC9jdXN0b20vZGVsYXkvUEsBAhQDCgAAAAAAUW1RRgAAAAAAAAAAAAAAACAAAAAAAAAAAAAQAO1BeQEAAGNvbS9sN3RlY2gvY3VzdG9tL2RlbGF5L2NvbnNvbGUvUEsBAhQDCgAAAAAAUW1RRgAAAAAAAAAAAAAAACoAAAAAAAAAAAAQAO1BtwEAAGNvbS9sN3RlY2gvY3VzdG9tL2RlbGF5L2NvbnNvbGUvcmVzb3VyY2VzL1BLAQIUAwoAAAAIAFFtUUbXpej4FwMAALIGAAAtAAAAAAAAAAAAAACkgf8BAABjb20vbDd0ZWNoL2N1c3RvbS9kZWxheS9jb25zb2xlL0RlbGF5VUkuY2xhc3NQSwECFAMKAAAACABRbVFG6vlec+oBAABCBAAATwAAAAAAAAAAAAAApIFhBQAAY29tL2w3dGVjaC9jdXN0b20vZGVsYXkvY29uc29sZS9yZXNvdXJjZXMvRGVsYXlBc3NlcnRpb25Qcm9wZXJ0aWVzUGFuZWwkMS5jbGFzc1BLAQIUAwoAAAAIAFFtUUZi0r1w7QEAAEQEAABPAAAAAAAAAAAAAACkgbgHAABjb20vbDd0ZWNoL2N1c3RvbS9kZWxheS9jb25zb2xlL3Jlc291cmNlcy9EZWxheUFzc2VydGlvblByb3BlcnRpZXNQYW5lbCQyLmNsYXNzUEsBAhQDCgAAAAgAUW1RRuOMV2OYAwAAwQgAAE8AAAAAAAAAAAAAAKSBEgoAAGNvbS9sN3RlY2gvY3VzdG9tL2RlbGF5L2NvbnNvbGUvcmVzb3VyY2VzL0RlbGF5QXNzZXJ0aW9uUHJvcGVydGllc1BhbmVsJDMuY2xhc3NQSwECFAMKAAAACABRbVFG1mOi+zgCAABtBQAATwAAAAAAAAAAAAAApIEXDgAAY29tL2w3dGVjaC9jdXN0b20vZGVsYXkvY29uc29sZS9yZXNvdXJjZXMvRGVsYXlBc3NlcnRpb25Qcm9wZXJ0aWVzUGFuZWwkNC5jbGFzc1BLAQIUAwoAAAAIAFFtUUbXLWj6awkAAP8XAABNAAAAAAAAAAAAAACkgbwQAABjb20vbDd0ZWNoL2N1c3RvbS9kZWxheS9jb25zb2xlL3Jlc291cmNlcy9EZWxheUFzc2VydGlvblByb3BlcnRpZXNQYW5lbC5jbGFzc1BLAQIUAwoAAAAIAFFtUUY2dLUZ2AIAALYFAAAsAAAAAAAAAAAAAACkgZIaAABjb20vbDd0ZWNoL2N1c3RvbS9kZWxheS9EZWxheUFzc2VydGlvbi5jbGFzc1BLAQIUAwoAAAAIAFFtUUZDdFa5oAUAAH4MAAA0AAAAAAAAAAAAAACkgbQdAABjb20vbDd0ZWNoL2N1c3RvbS9kZWxheS9EZWxheVNlcnZpY2VJbnZvY2F0aW9uLmNsYXNzUEsBAhQDCgAAAAgAUW1RRivVoaGwAAAAuwEAABwAAAAAAAAAAAAAAKSBpiMAAGN1c3RvbV9hc3NlcnRpb25zLnByb3BlcnRpZXNQSwECFAMKAAAACABRbVFGmXAuS54AAACAAwAADAAAAAAAAAAAAAAApIGQJAAAcG9saWN5MTYuZ2lmUEsBAhQDCgAAAAgAUW1RRiIg2m4bAQAA9QMAAAwAAAAAAAAAAAAAAKSBWCUAAHBvbGljeTMyLmdpZlBLAQIUAwoAAAAAAFJtUUYAAAAAAAAAAAAAAAAPAAAAAAAAAAAAEAD//50mAABNRVRBLUlORi9tYXZlbi9QSwECFAMKAAAAAABSbVFGAAAAAAAAAAAAAAAAJwAAAAAAAAAAABAA///KJgAATUVUQS1JTkYvbWF2ZW4vY29tLmw3dGVjaC5jdXN0b20uZGVsYXkvUEsBAhQDCgAAAAAAUm1RRgAAAAAAAAAAAAAAADYAAAAAAAAAAAAQAP//DycAAE1FVEEtSU5GL21hdmVuL2NvbS5sN3RlY2guY3VzdG9tLmRlbGF5L0RlbGF5QXNzZXJ0aW9uL1BLAQIUAwoAAAAIAKVeUUZK6yUwDAEAACYCAAA9AAAAAAAAAAAAAACkgWMnAABNRVRBLUlORi9tYXZlbi9jb20ubDd0ZWNoLmN1c3RvbS5kZWxheS9EZWxheUFzc2VydGlvbi9wb20ueG1sUEsBAhQDCgAAAAgAUm1RRtBsbKp4AAAAfQAAAEQAAAAAAAAAAAAAAKSByigAAE1FVEEtSU5GL21hdmVuL2NvbS5sN3RlY2guY3VzdG9tLmRlbGF5L0RlbGF5QXNzZXJ0aW9uL3BvbS5wcm9wZXJ0aWVzUEsFBgAAAAAYABgAJwgAAKQpAAAAAA==</l7:ModuleData>
+                            <l7:Signature>
+<l7:Property key="cert">
+    <l7:StringValue>MIIBdjCCAR6gAwIBAgIJAOC+DREEgh+1MAkGByqGSM49BAEwGzEZMBcGA1UEAxMQcm9vdC5hcGltLmNhLmNvbTAeFw0xNTA4MDYyMzM5MTVaFw0zNTA4MDYyMzM5MTVaMCUxIzAhBgNVBAMTGnNpZ25lci5nYXRld2F5LmFwaW0uY2EuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWR6rsgeDYY4nCkqjy12QBZW/U/dkWbM0NSEJnWwwDeKMD8rKgPygMKfZ3Gwbr134cYoqRtuE8rnYo4Oyxnm+NKNCMEAwHQYDVR0OBBYEFA/F83obUYIYLHnnXI5fObo/EMDIMB8GA1UdIwQYMBaAFOv2T4eG9aq4dDj8dGqF6Vj340LwMAkGByqGSM49BAEDRwAwRAIgIQrtZLIEZ6IXxPleal0AnnGE0wgq2MHzaWHAOm72KIgCIAWbYPKedEjKKcxv5vHuvbjAdUp1JhrnvnTCEWM7Zus7</l7:StringValue>
+</l7:Property>
+<l7:Property key="signature">
+    <l7:StringValue>MEYCIQCUnOqIv80VboRVsy6Ffl4I8WYpLxvPAOb0U0EaByQ2pAIhAIi9CGNpmSZK6KyVMnNCXBdskTNwS5qACGvlospQHgTl</l7:StringValue>
+</l7:Property>
+                            </l7:Signature>
+                            <l7:Properties>
+<l7:Property key="moduleAssertions">
+    <l7:StringValue>DelayAssertion</l7:StringValue>
+</l7:Property>
+<l7:Property key="moduleFileName">
+    <l7:StringValue>DelayAssertion-sdk80-1.1-729.jar</l7:StringValue>
+</l7:Property>
+<l7:Property key="moduleSize">
+    <l7:StringValue>12769</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:ServerModuleFile>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-server-module-files</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60915</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:39:08.890Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="d9be3340-1be7-4249-b3a2-fe47280fa805" id="72adab14b763f12efb51ebb737d60915" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d6023a" guid="d9be3340-1be7-4249-b3a2-fe47280fa805" id="72adab14b763f12efb51ebb737d60915" version="1">
+<l7:Name>policy-with-server-module-files</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-server-module-files"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:CustomAssertion&gt;
+            &lt;L7p:base64SerializedValue&gt;rO0ABXNyADFjb20ubDd0ZWNoLnBvbGljeS5hc3NlcnRpb24uQ3VzdG9tQXNzZXJ0aW9uSG9sZGVyZtcreFwddTICAAlaAAxpc1VpQXV0b09wZW5MAApjYXRlZ29yaWVzdAAPTGphdmEvdXRpbC9TZXQ7TAAIY2F0ZWdvcnl0ACpMY29tL2w3dGVjaC9wb2xpY3kvYXNzZXJ0aW9uL2V4dC9DYXRlZ29yeTtMAA9jdXN0b21Bc3NlcnRpb250ADFMY29tL2w3dGVjaC9wb2xpY3kvYXNzZXJ0aW9uL2V4dC9DdXN0b21Bc3NlcnRpb247TAAUY3VzdG9tTW9kdWxlRmlsZU5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAA9kZXNjcmlwdGlvblRleHRxAH4ABEwAD3BhbGV0dGVOb2RlTmFtZXEAfgAETAAOcG9saWN5Tm9kZU5hbWVxAH4ABEwAHnJlZ2lzdGVyZWRDdXN0b21GZWF0dXJlU2V0TmFtZXEAfgAEeHIAJWNvbS5sN3RlY2gucG9saWN5LmFzc2VydGlvbi5Bc3NlcnRpb27bX2OZPL2isQIAAloAB2VuYWJsZWRMABBhc3NlcnRpb25Db21tZW50dAAvTGNvbS9sN3RlY2gvcG9saWN5L2Fzc2VydGlvbi9Bc3NlcnRpb24kQ29tbWVudDt4cAFwAXNyABFqYXZhLnV0aWwuSGFzaFNldLpEhZWWuLc0AwAAeHB3DAAAAAI/QAAAAAAAAXNyAChjb20ubDd0ZWNoLnBvbGljeS5hc3NlcnRpb24uZXh0LkNhdGVnb3J5WrCcZaFE/jUCAAJJAAVteUtleUwABm15TmFtZXEAfgAEeHAAAAALdAAQQ3VzdG9tQXNzZXJ0aW9uc3hwc3IAJmNvbS5sN3RlY2guY3VzdG9tLmRlbGF5LkRlbGF5QXNzZXJ0aW9u13KryuLuWYUCAAFMAA1kZWxheU1pbGxpU2VjcQB+AAR4cHQAAzEyM3QANDM0MTI0OTAwYWYzMDkwMDZlZDQ1YTBkMzgyM2U1NzlkZWRkOWViNWZkYTJiZTdhNi5qYXJ0AAVEZWxheXQABURlbGF5dAAFRGVsYXlw&lt;/L7p:base64SerializedValue&gt;
+        &lt;/L7p:CustomAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-server-module-files</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6092c</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:39:08.898Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="72adab14b763f12efb51ebb737d6092c" version="3">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d6023a" id="72adab14b763f12efb51ebb737d6092c" version="3">
+<l7:Name>service-with-server-module-files</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-server-module-files</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CustomAssertion&gt;
+            &lt;L7p:base64SerializedValue&gt;rO0ABXNyADFjb20ubDd0ZWNoLnBvbGljeS5hc3NlcnRpb24uQ3VzdG9tQXNzZXJ0aW9uSG9sZGVyZtcreFwddTICAAlaAAxpc1VpQXV0b09wZW5MAApjYXRlZ29yaWVzdAAPTGphdmEvdXRpbC9TZXQ7TAAIY2F0ZWdvcnl0ACpMY29tL2w3dGVjaC9wb2xpY3kvYXNzZXJ0aW9uL2V4dC9DYXRlZ29yeTtMAA9jdXN0b21Bc3NlcnRpb250ADFMY29tL2w3dGVjaC9wb2xpY3kvYXNzZXJ0aW9uL2V4dC9DdXN0b21Bc3NlcnRpb247TAAUY3VzdG9tTW9kdWxlRmlsZU5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAA9kZXNjcmlwdGlvblRleHRxAH4ABEwAD3BhbGV0dGVOb2RlTmFtZXEAfgAETAAOcG9saWN5Tm9kZU5hbWVxAH4ABEwAHnJlZ2lzdGVyZWRDdXN0b21GZWF0dXJlU2V0TmFtZXEAfgAEeHIAJWNvbS5sN3RlY2gucG9saWN5LmFzc2VydGlvbi5Bc3NlcnRpb27bX2OZPL2isQIAAloAB2VuYWJsZWRMABBhc3NlcnRpb25Db21tZW50dAAvTGNvbS9sN3RlY2gvcG9saWN5L2Fzc2VydGlvbi9Bc3NlcnRpb24kQ29tbWVudDt4cAFwAXNyABFqYXZhLnV0aWwuSGFzaFNldLpEhZWWuLc0AwAAeHB3DAAAAAI/QAAAAAAAAXNyAChjb20ubDd0ZWNoLnBvbGljeS5hc3NlcnRpb24uZXh0LkNhdGVnb3J5WrCcZaFE/jUCAAJJAAVteUtleUwABm15TmFtZXEAfgAEeHAAAAALdAAQQ3VzdG9tQXNzZXJ0aW9uc3hwc3IAJmNvbS5sN3RlY2guY3VzdG9tLmRlbGF5LkRlbGF5QXNzZXJ0aW9u13KryuLuWYUCAAFMAA1kZWxheU1pbGxpU2VjcQB+AAR4cHQAAzEyM3QANDM0MTI0OTAwYWYzMDkwMDZlZDQ1YTBkMzgyM2U1NzlkZWRkOWViNWZkYTJiZTdhNi5qYXJ0AAVEZWxheXQABURlbGF5dAAFRGVsYXlw&lt;/L7p:base64SerializedValue&gt;
+        &lt;/L7p:CustomAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6023a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6023a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="34124900af309006ed45a0d3823e579d" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/serverModuleFiles/34124900af309006ed45a0d3823e579d" type="SERVER_MODULE_FILE">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>moduleSha256</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60915" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60915" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6092c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d6092c" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>server-module-files</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6023a</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-server-module-files</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60915</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-server-module-files</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6092c</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>Delay</l7:Name>
+                        <l7:Id>34124900af309006ed45a0d3823e579d</l7:Id>
+                        <l7:Type>SERVER_MODULE_FILE</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-server-module-files</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60915</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>Delay</l7:Name>
+<l7:Id>34124900af309006ed45a0d3823e579d</l7:Id>
+<l7:Type>SERVER_MODULE_FILE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-server-module-files</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6092c</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>Delay</l7:Name>
+<l7:Id>34124900af309006ed45a0d3823e579d</l7:Id>
+<l7:Type>SERVER_MODULE_FILE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

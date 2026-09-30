@@ -1,0 +1,14 @@
+{
+  "sampleMessages": [
+    {
+      "name": "some_sample_msgs1_new",
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<empty>\n some_sample_msgs1_new...\n</empty>\n",
+      "serviceName": "some_sample_msg_service1"
+    },
+    {
+      "name": "some_sample_msgs2_new",
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<empty>\n some_sample_msgs2_new...\n</empty>\n",
+      "serviceName": "some_sample_msg_service2"
+    }
+  ]
+}

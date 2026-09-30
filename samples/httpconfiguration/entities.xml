@@ -1,0 +1,427 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>http-config-pwd-1</l7:Name>
+                    <l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:51.999Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="a3db3565871da28840b21d286c9f108a" version="1">
+                            <l7:Name>http-config-pwd-1</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh">$L7C2$1,vIguw0RJI22eHbE7kx/ri8AiPlJqR+aBxewWZQ6aZYo=$RH1P2NrXdFJhOyO0tfiZLFyKjDjTDDT0DRsAHyEaBfPuiUAE10PHoUhzeoe72z33kJlEEQfm01itwGtUbU3hdA==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-10T17:20:18.838Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>SSL</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.006Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="SSL" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:SSL">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsource.gateway</l7:IssuerName>
+    <l7:SerialNumber>7650945460828512785</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dsource.gateway</l7:SubjectName>
+    <l7:Encoded>MIIC9jCCAd6gAwIBAgIIai2eXDSSIhEwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc291cmNlLmdhdGV3YXkwHhcNMjYwOTEwMTYwNjQ3WhcNMzYwOTA3MTYwNjQ3WjAZMRcwFQYDVQQDEw5zb3VyY2UuZ2F0ZXdheTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKh6gbnA0ATpXVJhz53R9jSTRVN9FRWynxshm+bmtnhN0PdNY/B7CHW1OJbxlsmXGkf+S3kA6dyIUv6wALGzvhjFlNyKQ1ewj59jWUK3394gEiljD6a38PQr90rLo+Kv6Mi1e4dR+iBfFBpIL8OHX4RERXFBA7oGvsVOz5hbN2FTOV7TYiTzqT2wDq893wFUSPeL8qKrYFcsjhXORq46xNPklN4v619ixlFpOxRDzXaBT/JiLmw30bLTFjJPNVmI81uPsHqAH1DkiLp86ttkMeKhSmPFW3q8T9dqZXI/bsy3ilOuo67OdMaBrO+hghD/F8MDh9z4p8WqZdXtEloGFEkCAwEAAaNCMEAwHQYDVR0OBBYEFBOyZ7HnFmf+n+J8pTvCEchooiZ0MB8GA1UdIwQYMBaAFBOyZ7HnFmf+n+J8pTvCEchooiZ0MA0GCSqGSIb3DQEBDAUAA4IBAQASZL5c7BZiGEEKUXpa6GQ5m6oQpEycxuOYmeljpHWcoJzHqvff0MprZApL/gLgbhoNeorYFcALwxnTZHen2WtjtsafVKP6E0o1bAVgsHv4451ZXGJCWkgEVL0NKDi+StfFp0HF7GZNVYrWYPA0Jm2ED72mETBkh22L/Fi9TkQt3V6kv6iKntHqAxavlG0BhiSXtuKBzysQmLFRENQ3jbEXZWhRrOJACey7ECTdl0tNcXrrpai7EQvs9WLWP3A+mdZPwNu7CjeBs5eauLvNtPqMN8vXGC4+9vavxXSOfmZA1bH1vqc0hRlsfAgtAH6ujlbgGL2xWmBk5Rk4rlkYzLh6</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh" algorithm="RSA">$L7C2$1,6Z47/9I8A05Gg+gczDVzG5QUO1+A15imzV4Fx5Gd5SA=$PJgw5klz3uD/RrcUDacF3odpH0LWM2fEST61C/BLeqU0XhciPJ2BQczcqhU/sf0gS0+7/XMPZ0F0DF+A2dqR8ouj6eNlcxh9XMdendGxDibfO6FFepiU7Cy3te4ryIlx3u7xc09/ORHmq2Yr362i+sxdL5tfMKEWrsd/Y9qHj252QMVgTYt42Cw9jUyjU6TfhQGizQP5No37YnbgoiSIQYj+rwKYLWwAlZMY7AXpYyNB4tG32kgZrZzH9zl1f1G3zHTqdKHwvguvdD5+h7SaAmQ1FP0dLU0kJpMjBbHj9d1XyiDKJQmmEr401WUAPl0sEsX5DHF7z/5CfcAt/M3Bj+iaG7F42B8vkqp/vq7AWMct/DCFLUDjktJSbwVeRctPpfGox2TzSWovk9IFyhWM5F+bfltkPxOl2omN9Tr+UC6ynid0zsIXavAf7FoqjtZsakEpfgekTVcIWCFSes/5ZTLItiGs2eW+HoBVR7rsEU+zgK04rjzr41svfqL3p6eVRb8MrUO7cL9GAmW8YCRMnqftc9aRqDj7na1SgdcLpMxv+xnqyFowEbkOMqgAY6WDrkj6sQG8Xag493OpNpYv24cHIsQXBRJstNdjMOG/v5v9061N1sv0waifalwAadmeFOgtZMG74aGm00/JBaZkLyGL3XbcoHHDVo1rKbA3l2V6bBEHXPeE8SyNPrrBArBzkHDWIYJmoVkVbBS0D4LvKcE8hOP1ozxlccgi9f4Cyl8cx2D8LaJs8lIjkCr65JrJRNw4ngWOWDYdqz7uz76tKC35cRLB37uQPjHKpAwqrMB0+ST5kM3vBHjLDwR5lRue5++uEqSBHUGM7SHaXu+1+pSZDCYX8j7qv1e/Z41gP0res+JOIWkBzIeuBTXQL2BmvKSrf5kBxFHG75vzJt13V5DutKhrxHa36vin01YpUufm9vZ81I5FufYtq4hl+T1JJ5B9hjUWRF6FAcACiOolMnnSxzB9FxqVCO40BJgHhQmi+ao50tlM/IxwYMuchdd4HIiWmmYGDoXGOYxzYMIKGv+4oRD0llF+4zT6BnTQJMIhMI45oDoIFtecsSrNV1thAkVCV5mOLr7QOnF9O+W7ptnKCMMaTWCvuBgrRQ62NVbOUPvSJFBErokPwI50L0V8ARuvQkT+X6X1Be9WcJT2JBZmdYJ1ax2AAHcpuRQ3fMOpCHAnkyGhxqtjUotC/Vb1IzYBLLlKYW3nYkp4u64mYDx2+KGrcd5dLrG76Yg9u25J+Z1XRwsfn7zF/jmZ/s5NxDndJpQ12VGoZMOcnPzTX/tArQlKG8i74Q402ZWDWMkG4JX3sSgxeJ3V80Sww4IylA+8yvUwaXVzY+dx0kc44okNO7P8phQxy7kEs48rWNTM2FCHNWOM9+WEdX6GZ2wFsXdUAkLlxTLfzM62AV6v1xa2qOqYw5KnS/rLseWsaxWgnvWkY6zWDhYHT4UA51y4p9lhOTgudexnrA03FbQE7IA5REHQPpsY6GvoYDhKkXAjr0FHP3yPRPcMOnQdkVsr0E8sZ1a+9q4N528MXSGapNyeNZTeWMguc/34PhunRtbH6innvAe6r9LiejImhWO2cP7ko3KOzav7XyQzojkPufI9+//LUkn8GehbuiexXXbOSTd/Ry30Cgh+cfDwahrDYUYc/aH/LrMZXefCDxqXozyr8fUAS7ldPA2W9a9LtpY=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-1</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431adf</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.006Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431adf" version="0">
+                            <l7:Host>http-config-custom-1</l7:Host>
+                            <l7:Port>1234</l7:Port>
+                            <l7:Protocol>http</l7:Protocol>
+                            <l7:Path>/hello</l7:Path>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>default</l7:ProxyUse>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-2</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ae0</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.006Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ae0" version="0">
+                            <l7:Host>http-config-custom-2</l7:Host>
+                            <l7:Port>1234</l7:Port>
+                            <l7:Path>/hello</l7:Path>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>default</l7:ProxyUse>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-3</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ae1</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.006Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ae1" version="0">
+                            <l7:Host>http-config-custom-3</l7:Host>
+                            <l7:Port>1234</l7:Port>
+                            <l7:Path>/hello</l7:Path>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsKeyUse>none</l7:TlsKeyUse>
+                            <l7:TlsCipherSuites>TLS_CHACHA20_POLY1305_SHA256,TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</l7:TlsCipherSuites>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>default</l7:ProxyUse>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-key1</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:http-config-key1</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="http-config-key1" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:http-config-key1">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dhttp-config-key1</l7:IssuerName>
+    <l7:SerialNumber>6110433636166937203</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dhttp-config-key1</l7:SubjectName>
+    <l7:Encoded>MIIC+jCCAeKgAwIBAgIIVMyfBINUKnMwDQYJKoZIhvcNAQEMBQAwGzEZMBcGA1UEAxMQaHR0cC1jb25maWcta2V5MTAeFw0yNjA5MTAxNjIzMDhaFw0zMTA5MDkxNjIzMDhaMBsxGTAXBgNVBAMTEGh0dHAtY29uZmlnLWtleTEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCfRTiHgnKTPn032Vy/EbqMbH4OJV/glcMgenplx6kNaOnlKdJGRRNzto4hCQQLRT1pE56W8w2C+72gF/Fwwypq/7tvQj6y/KNueM7NbYy1Y0J/MzSFGNHs4gqXz8YGYqAfZmjUg3EvR2XX8MIu6pD/ar7ImkQ2/J4KHqqx2SLk8efPsn8LrM4U56H1la3AD1nerDWPx+kzycuDHrJ2z1llVqiDwDxCd5KaFFbbuwHVV7Uxm3qfNDp7jCN1smVUjfQTiOdVPAPtaYuRL9J35yZuu5Ej/fmXHNaSKI4dbxb0gepdtTA9DoHp+wGBDpL15Qcaijs5Bn+W8A2lJBbKZiKjAgMBAAGjQjBAMB0GA1UdDgQWBBSVJ2drnkzSBAzHuAcCxFTCK7ZDyjAfBgNVHSMEGDAWgBSVJ2drnkzSBAzHuAcCxFTCK7ZDyjANBgkqhkiG9w0BAQwFAAOCAQEASOHBf1bqGKKEyyaCk+4B3THorGVFTThsB28xPD6o4MOwr74sMr5FAXfP+6JLwVEU9zr0CCg2PkKDTDi21DX48crlNOzybqzcVa7xcK6abtvYQxZaFCpSgjsdycCfHjiOeRucELXGw6ycQzsxBA3TNNO7ggq++ijRdu5hVZCvSP7R6JVyxJQjHT+x/7dyDLWd6zytgFCP/hxCs1+mEVlsR90xskJbuFZKSl0sOcAczqYJTTM7bkF24+54B9SB+YsbVmlWe/8mqY0xXz6YV4L7NiRhEGM6hnp/M2TMNSfsjhzoMYckvphO5hR8rbqvY5KBPGOhtlRv3SjI946ge91WCQ==</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh" algorithm="RSA">$L7C2$1,90NSjtx9xe7ZBxVpgDOueWbATcTGXRSJ6QtdpA/UO5Y=$m+zV9Pyu2oKzUOwJVaX3v7YFY4b9apQdHFNwpHJpFk4/R9rzTo2wxbtWSPGFtCC0mSMjHJbUobSUI94EoVPVDgYQcSGZhVxMQ1Hab77RjSuDhQkuw8coh9h00Bw/XsOxQHHz93t8UvSvbTqpMYdeS8TrRwx65zRIrCq7DwLT0hEMXDeo28iqtKfxN+lqMdjAwZhRvDBbPKhtIrqNgGPe1cyQAcYms8em4hA+qgSg1A3kJ7vo3wxgd1OJjnm1+ePGtzcGoG3o3xhvSOMPFuvSlYIEoTAwlxJuXSsG8RPvkdjY3lngqWSsgxOiHB2hAZIKcQ6dOoAhWR4BxTzKTxk4CbSiqXUwxf2WSIQQw23hhyY9TSHWKJR/h5htkHmbL2jakupFmuI94azUK61/t4AzFegaAnZESYJU7pYG3ldsbeIb0fKT0sBzOb+jOVkj7YzGPEfz8qbuenpacTKSHGqe7Ch1gpg7TbnkWwWYEttURvbakkcXXGC6rNyJaHAdFEcp9AvEtqBeCXvsSkbak+1QoVz3sR4ju6YgJClzhbktjJrf6/GcxVj6mE8I83At2akN5VXIbZvGKb1I4JjWhXXL7Q+k3Amnvh0fDQdrmEp97UxvO4sv4NtEsm1vtyiy4UiZ+HlZIBCT+GJEX5nMzcY4pLU67wpJ64mcyb8zdy8CZ4WS6aRBF6V9CD6KIZUxXDv7tksAOwaPSqBrRfuYCG4Zo6CwcauPAVj7MrV8RyoDYPKz0NOItqZTDh5lYB3KfmtJL+YF3uN4kPHzmRJMasu7dJ1uSH9fHHy2h6U2/DKogTiWH/flIjVem7SmeFzsz/uLI2E2jWRyM7sTzerMlb5cSScHskGMMCmg727tjsSDTX1YoDVBlsDVpcUVwXNbsfesiHC3FSvg1SSX2ihffCTzqyObAg+HyANXqC+Fooul70Y/yICCOZOBKUr9cO7+Vdf5sduOAXNApDka/DFmXL4a/d8UlvBak57zHCr7JCfk8+NdG4gJ2YZ3KKWdmsZwftVm54f8scOAtjhRi6uCpoCoSrxVLhUKXh3foWYrUNUujD9nXm4iec1TL3jWzT7UkKJsManA4Gs42Zqq+t7XTCgbTtTe9SIPdYAwAWckEoP18jBPf+FS/QgKF9CPHf0qDfDjCAYMJlcOGxCtE/GBJIWoUMjRbERuVDfbrd77OdouFakkIG300Goirc/ixMTlS5isZ0igIO8i88hmO9chfLPUG7fiRDeKhdWjwY+s5IqqTGsAffCe5nQJgBLJ4odrTOH2/uGp7s3lE2U0hZfthHDihJ+Iw/HUi6xBM8XWVvsyVUOfz4fBnS67tV6qE/8F/MFzTXmwnbkWSwlA4Cxitvi17cAiTjcawTSOA1PHTxVgUt9Kx7u46biAMTKmG0dTMCEr7fu51w59K7WDw79HJ33GQ99KiYnoQvktGTZxs2clrgB7a5FH69M8vheIYHocxb/A6hdPN10SLLK3DeXIEGdP7e5OKpnhKSDrcRccwXxnwkctJLFkbREewng8V8gFlz7AkRXjcklG2xKloRWTpVsl7LzgwhS3EjAVoowKQqxAuxPxeHJtZ7FQJLo3o4Kk6b5dMOpxVf6C82US3gi9giqUN19f/IMunAohCw1AGkfl/rBzllBg+DmlOUj1WeR8d4trnCzHHKqlOKGTmLE8TGmc8l7sTREq36OOGv/5igYSQVc=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-4</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ae2</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ae2" version="0">
+                            <l7:Host>http-config-custom-4</l7:Host>
+                            <l7:Port>0</l7:Port>
+                            <l7:Protocol>https</l7:Protocol>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsVersion>TLSv1.3</l7:TlsVersion>
+                            <l7:TlsKeyUse>custom</l7:TlsKeyUse>
+                            <l7:TlsKeystoreId>00000000000000000000000000000002</l7:TlsKeystoreId>
+                            <l7:TlsKeystoreAlias>http-config-key1</l7:TlsKeystoreAlias>
+                            <l7:TlsCipherSuites>TLS_CHACHA20_POLY1305_SHA256,TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</l7:TlsCipherSuites>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>none</l7:ProxyUse>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-5</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ae3</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ae3" version="0">
+                            <l7:Host>http-config-custom-5</l7:Host>
+                            <l7:Port>0</l7:Port>
+                            <l7:Protocol>https</l7:Protocol>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsVersion>TLSv1.3</l7:TlsVersion>
+                            <l7:TlsKeyUse>custom</l7:TlsKeyUse>
+                            <l7:TlsKeystoreId>00000000000000000000000000000002</l7:TlsKeystoreId>
+                            <l7:TlsKeystoreAlias>http-config-key1</l7:TlsKeystoreAlias>
+                            <l7:TlsCipherSuites>TLS_CHACHA20_POLY1305_SHA256,TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</l7:TlsCipherSuites>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>custom</l7:ProxyUse>
+                            <l7:ProxyConfiguration>
+<l7:Host>proxy-host</l7:Host>
+<l7:Port>1221</l7:Port>
+                            </l7:ProxyConfiguration>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-pwd-2</l7:Name>
+                    <l7:Id>a3db3565871da28840b21d286c9f108b</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="a3db3565871da28840b21d286c9f108b" version="1">
+                            <l7:Name>http-config-pwd-2</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh">$L7C2$1,jhFxu9RBtDwwDK6EhDA5kdclmsf9wbAN5HokNFEIFiQ=$DFsYmHPgRmJiALAADUwqXv8YDNZNsXEUTrmDPgSe1I2jyqZWTjZjhLFzeq74uJHKySAhAjDQITYkWgvmm8Ihrg==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-10T17:24:52.401Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-custom-6</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ae4</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ae4" version="1">
+                            <l7:Host>http-config-custom-6</l7:Host>
+                            <l7:Port>0</l7:Port>
+                            <l7:Protocol>https</l7:Protocol>
+                            <l7:Path>/hello</l7:Path>
+                            <l7:Username>http-config-user</l7:Username>
+                            <l7:PasswordId>a3db3565871da28840b21d286c9f108a</l7:PasswordId>
+                            <l7:NtlmHost>ntlm-host</l7:NtlmHost>
+                            <l7:NtlmDomain>ntlm-domain</l7:NtlmDomain>
+                            <l7:TlsVersion>TLSv1.3</l7:TlsVersion>
+                            <l7:TlsKeyUse>custom</l7:TlsKeyUse>
+                            <l7:TlsKeystoreId>00000000000000000000000000000002</l7:TlsKeystoreId>
+                            <l7:TlsKeystoreAlias>http-config-key1</l7:TlsKeystoreAlias>
+                            <l7:TlsCipherSuites>TLS_CHACHA20_POLY1305_SHA256,TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</l7:TlsCipherSuites>
+                            <l7:ConnectTimeout>300000</l7:ConnectTimeout>
+                            <l7:ReadTimeout>600000</l7:ReadTimeout>
+                            <l7:FollowRedirects>true</l7:FollowRedirects>
+                            <l7:ProxyUse>custom</l7:ProxyUse>
+                            <l7:ProxyConfiguration>
+<l7:Host>proxy-host</l7:Host>
+<l7:Port>1221</l7:Port>
+<l7:Username>proxy-user</l7:Username>
+<l7:PasswordId>a3db3565871da28840b21d286c9f108b</l7:PasswordId>
+                            </l7:ProxyConfiguration>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>http-config-default</l7:Name>
+                    <l7:Id>768c830e4b11dbcdb48644425c431ade</l7:Id>
+                    <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-09-10T17:32:52.007Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:HttpConfiguration id="768c830e4b11dbcdb48644425c431ade" version="0">
+                            <l7:Host>http-config-default</l7:Host>
+                            <l7:Port>0</l7:Port>
+                            <l7:TlsKeyUse>default</l7:TlsKeyUse>
+                            <l7:ConnectTimeout>-1</l7:ConnectTimeout>
+                            <l7:ReadTimeout>-1</l7:ReadTimeout>
+                            <l7:FollowRedirects>false</l7:FollowRedirects>
+                            <l7:ProxyUse>default</l7:ProxyUse>
+                        </l7:HttpConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108a" srcUri="https://source.gateway:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://source.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431adf" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431adf" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae0" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae0" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae1" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae1" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:http-config-key1" srcUri="https://source.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:http-config-key1" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae2" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae2" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae3" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae3" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108b" srcUri="https://source.gateway:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108b" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae4" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae4" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ade" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ade" type="HTTP_CONFIGURATION"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>http-config-pwd-1</l7:Name>
+                        <l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>SSL</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431adf</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ae0</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ae1</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>http-config-key1</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:http-config-key1</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ae2</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>http-config-key1</l7:Name>
+<l7:Id>00000000000000000000000000000002:http-config-key1</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ae3</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>http-config-key1</l7:Name>
+<l7:Id>00000000000000000000000000000002:http-config-key1</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>http-config-pwd-2</l7:Name>
+                        <l7:Id>a3db3565871da28840b21d286c9f108b</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ae4</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-1</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>http-config-pwd-2</l7:Name>
+<l7:Id>a3db3565871da28840b21d286c9f108b</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>http-config-key1</l7:Name>
+<l7:Id>00000000000000000000000000000002:http-config-key1</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Id>768c830e4b11dbcdb48644425c431ade</l7:Id>
+                        <l7:Type>HTTP_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

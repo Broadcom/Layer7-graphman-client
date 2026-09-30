@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>email-listener-pwd</l7:Name>
+            <l7:Id>e676853df827149ba8def53a035084cd</l7:Id>
+            <l7:Type>SECURE_PASSWORD</l7:Type>
+            <l7:TimeStamp>2023-02-02T11:54:44.135+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:StoredPassword id="e676853df827149ba8def53a035084cd" version="4">
+                    <l7:Name>email-listener-pwd</l7:Name>
+                    <l7:Password>password</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="description">
+                            <l7:StringValue>some-description</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="lastUpdated">
+                            <l7:DateValue>2023-02-02T11:48:48.566+05:30</l7:DateValue>
+                        </l7:Property>
+                        <l7:Property key="type">
+                            <l7:StringValue>Password</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="usageFromVariable">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:StoredPassword>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-email-listener</l7:Name>
+            <l7:Id>255fbcde0ef8a709f7b21ef1067146f4</l7:Id>
+            <l7:Type>EMAIL_LISTENER</l7:Type>
+            <l7:TimeStamp>2023-02-02T11:40:14.836+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EmailListener id="255fbcde0ef8a709f7b21ef1067146f4" version="2">
+                    <l7:Name>some-email-listener</l7:Name>
+                    <l7:Active>true</l7:Active>
+                    <l7:Hostname>some-host</l7:Hostname>
+                    <l7:Port>110</l7:Port>
+                    <l7:ServerType>POP3</l7:ServerType>
+                    <l7:UseSsl>false</l7:UseSsl>
+                    <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
+                    <l7:Username>some-user</l7:Username>
+                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Folder>INBOX</l7:Folder>
+                    <l7:PollInterval>60</l7:PollInterval>
+                    <l7:Properties>
+                        <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EmailListener>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>customized-email-listener</l7:Name>
+            <l7:Id>255fbcde0ef8a709f7b21ef10671472c</l7:Id>
+            <l7:Type>EMAIL_LISTENER</l7:Type>
+            <l7:TimeStamp>2023-02-02T11:40:14.837+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EmailListener id="255fbcde0ef8a709f7b21ef10671472c" version="1">
+                    <l7:Name>customized-email-listener</l7:Name>
+                    <l7:Active>false</l7:Active>
+                    <l7:Hostname>some-host</l7:Hostname>
+                    <l7:Port>1993</l7:Port>
+                    <l7:ServerType>IMAP</l7:ServerType>
+                    <l7:UseSsl>true</l7:UseSsl>
+                    <l7:DeleteOnReceive>true</l7:DeleteOnReceive>
+                    <l7:Username>some-user</l7:Username>
+                    <l7:Password>${secpass.somepwd.plaintext}</l7:Password>
+                    <l7:Folder>some-folder</l7:Folder>
+                    <l7:PollInterval>120</l7:PollInterval>
+                    <l7:Properties>
+                        <l7:Property key="com.l7tech.server.email.prop.request.sizeLimit">
+                            <l7:StringValue>2048</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EmailListener>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-email-listener-1</l7:Name>
+            <l7:Id>255fbcde0ef8a709f7b21ef10671491d</l7:Id>
+            <l7:Type>EMAIL_LISTENER</l7:Type>
+            <l7:TimeStamp>2023-02-02T11:40:14.836+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EmailListener id="255fbcde0ef8a709f7b21ef10671491d" version="0">
+                    <l7:Name>delete-by-input-email-listener-1</l7:Name>
+                    <l7:Active>true</l7:Active>
+                    <l7:Hostname>some-host</l7:Hostname>
+                    <l7:Port>110</l7:Port>
+                    <l7:ServerType>POP3</l7:ServerType>
+                    <l7:UseSsl>false</l7:UseSsl>
+                    <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
+                    <l7:Username>some-user</l7:Username>
+                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Folder>INBOX</l7:Folder>
+                    <l7:PollInterval>60</l7:PollInterval>
+                    <l7:Properties>
+                        <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EmailListener>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-email-listener-2</l7:Name>
+            <l7:Id>255fbcde0ef8a709f7b21ef10671492e</l7:Id>
+            <l7:Type>EMAIL_LISTENER</l7:Type>
+            <l7:TimeStamp>2023-02-02T11:40:14.836+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EmailListener id="255fbcde0ef8a709f7b21ef10671492e" version="0">
+                    <l7:Name>delete-by-input-email-listener-2</l7:Name>
+                    <l7:Active>true</l7:Active>
+                    <l7:Hostname>some-host</l7:Hostname>
+                    <l7:Port>110</l7:Port>
+                    <l7:ServerType>POP3</l7:ServerType>
+                    <l7:UseSsl>false</l7:UseSsl>
+                    <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
+                    <l7:Username>some-user</l7:Username>
+                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Folder>INBOX</l7:Folder>
+                    <l7:PollInterval>60</l7:PollInterval>
+                    <l7:Properties>
+                        <l7:Property key="com.l7tech.server.jms.prop.hardwired.service.bool">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EmailListener>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="e676853df827149ba8def53a035084cd" type="SECURE_PASSWORD"/>
+        <l7:Mapping action="NewOrExisting" srcId="255fbcde0ef8a709f7b21ef1067146f4" type="EMAIL_LISTENER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="255fbcde0ef8a709f7b21ef10671472c" type="EMAIL_LISTENER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="255fbcde0ef8a709f7b21ef10671491d" type="EMAIL_LISTENER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="255fbcde0ef8a709f7b21ef10671492e" type="EMAIL_LISTENER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

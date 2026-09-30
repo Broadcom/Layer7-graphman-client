@@ -1,0 +1,330 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>rcpolicy1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f745</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.946Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5f745" version="1">
+                            <l7:Name>rcpolicy1</l7:Name>
+                            <l7:DefaultPolicy>false</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>false</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>false</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcp-signer1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f751</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.947Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5f751" version="0">
+                            <l7:Name>rcp-signer1</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Drcp-signer1</l7:IssuerName>
+<l7:SerialNumber>7755943296341974050</l7:SerialNumber>
+<l7:SubjectName>CN%3Drcp-signer1</l7:SubjectName>
+<l7:Encoded>MIIC8DCCAdigAwIBAgIIa6KlVdSJHCIwDQYJKoZIhvcNAQEMBQAwFjEUMBIGA1UEAxMLcmNwLXNpZ25lcjEwHhcNMjYwMjA1MTQyMzQzWhcNMzEwMjA0MTQyMzQzWjAWMRQwEgYDVQQDEwtyY3Atc2lnbmVyMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALtjst+fcpXBPK2gJpETYMMpRK5vUvXuzG6zF0aQHhz7eD4p/0dp0lD2md58t27DcOZGD244En1fBUzu/Uz6jAe3lQvVCmKENn/bB21jUZv/QApHy9zoyPS5VnHQzbmL300V3zAQY6DU0vN4P+fGxPsf1NABPSGqDXvKbI8MUJ6v5psQwUO4kIVU+oNoOpgoL4ks0Jk1J9UPc+LNzWDFk0Upem5J5k34nPvwWRRExCS9fgVujHisCdAUie8DhlMIxWAuzeGEAIEJg9q4BaeRs5LgALPZRmBQK0gc4M+akSBe7Ze3CsuSkpBgdQFKVgs7Y5wGPQAtTUBegzqRWwSSpKUCAwEAAaNCMEAwHQYDVR0OBBYEFHH/M09OplL5we7vX1LfQWIYmRIDMB8GA1UdIwQYMBaAFHH/M09OplL5we7vX1LfQWIYmRIDMA0GCSqGSIb3DQEBDAUAA4IBAQBuRQPPcvvrxdWjc4YEohB9iYbB/rgVBRycaKI7dlhsnN521qOFWMQK724nOyQObV8HZh0byW4/GirTefW2oaiy2BVwab0DZpZOT4ixdPIMWndWPKN6M+x7XP3GD+ABze6AEe6D3p4z6qnKjzM+NFoQY+9E5tKtR08mCdKk6GWJslNeBXkoLuXjngQQzhK2m3TTvO+phBh/aOYoP2phk/iOduU/yEIPhHp4s1PAzJOw9mMwIjm6/Kwg9L2FWcmfhMCa3zn9II4/sisyK//jkWCARIkXWWsypslqbnJW0C9P2BiM33TTNe6xR8bgzsecnjENa4UVANpksFsuQfXMrU4L</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcp-signer2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f754</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.947Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5f754" version="0">
+                            <l7:Name>rcp-signer2</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Drcp-signer2</l7:IssuerName>
+<l7:SerialNumber>9240300995732763446</l7:SerialNumber>
+<l7:SubjectName>CN%3Drcp-signer2</l7:SubjectName>
+<l7:Encoded>MIIC8TCCAdmgAwIBAgIJAIA8JMxkVvM2MA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3JjcC1zaWduZXIyMB4XDTI2MDIwNTE0MjM1MloXDTMxMDIwNDE0MjM1MlowFjEUMBIGA1UEAxMLcmNwLXNpZ25lcjIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC+ej+9yn1yMbvrrNj7+OgNGFa3n0Nu4XsIhmukd/18hFvEBP1Gc7uU5nr2kQ7mr6mqlKWAMmPaA/qor+X+vVYn/5iR0RaZtOEioeBfTiwGfh0mZaRR07+uc+tdxB5hhMnfsMRRY1UHfVwwBxfT/24yKOOfQlbtXEgViboe5dJYTn2OX/JCntbRuJiehSEMTNKwaNfgCr5g6Bs99cZgRgzcAeGF+2hdr3pbevbqkU6ZNzQa6pAjGJFDhn6WT44ztL67W5suGMzcCQ1wyGtRv0iIaUS6Q6eIZF9iz6NuvSVrgtcHTGCsFjAVD/K0GaGw6i+7CS0FFiCuodvXirwR3MpBAgMBAAGjQjBAMB0GA1UdDgQWBBR5CqzeGv0bdfmBg9Mgj63x7UUb9zAfBgNVHSMEGDAWgBR5CqzeGv0bdfmBg9Mgj63x7UUb9zANBgkqhkiG9w0BAQwFAAOCAQEAhjOtYCWpJQVYm/WKQriU4jrmLmcUKa1XYxVAw0buNsgcGTggsYlsBgwRpe+cTlvQwFBuwcr7zXhhbT2WQrWmSohjmgbu/8m2ujwie+7VyMVPXsI0dV1KB4ozsYPbYJMFI0wIDbas6XHGL816OlrRMXtJMp0R6e2JgA9sIF8oXDnzeKY+WkF/9qs4XY76S5mh2oBDs5QK9tm68aLA0sctlrK7ryaIGnBu/Ls9E13TWI/gj95yKaBxpEyOZ/ymm/bCMlIIPPhpIvuxwupRlP/yJakzPgd6zmrdx2y2eDj0CCwS1gHBpbJja7wqnX8hvQbvAoIkpZ4R8juCA9tYRObIXQ==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcpolicy2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f747</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.948Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5f747" version="3">
+                            <l7:Name>rcpolicy2</l7:Name>
+                            <l7:DefaultPolicy>true</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>true</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>true</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from URL</l7:Type>
+<l7:Url>http://example.com</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f751</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from URL</l7:Type>
+<l7:Url>http://example.com</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f751</l7:TrustedSigners>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f754</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>alice</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f749</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.948Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5f749" version="0">
+                            <l7:Name>alice</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dalice</l7:IssuerName>
+<l7:SerialNumber>6626205799810431871</l7:SerialNumber>
+<l7:SubjectName>CN%3Dalice</l7:SubjectName>
+<l7:Encoded>MIIC5DCCAcygAwIBAgIIW/UDEVpVe38wDQYJKoZIhvcNAQEMBQAwEDEOMAwGA1UEAxMFYWxpY2UwHhcNMjYwMjA1MTAwMzA4WhcNMzEwMjA0MTAwMzA4WjAQMQ4wDAYDVQQDEwVhbGljZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOlb98360dbraCBNxPK798I79iJIr3nLaiKJ+J70RnV9Bgr4tW0QrsYTdwIVvtWfbC8VtxymDi5nDKRYDvbQd3wSEsC/Le8nSKoDcSMRiKJyoBuzCHpAFVYzx+hw2OOKEtZ76o4QQrDCnH8frZZECYPAB69aJBuHlhEClLyUSbosVBw2PjRuxXPWSctFIB5qdEfhZqgR+Fc86J00VkQajtCOAQClnkfn6eMK2k5OmG3QdMvU7EPoigmHsDOUQJjIV5A4dL4iGouqxlknRasc06+NO7orwREnuLhgnze0ZE8MlgZGj1XlBer6WnrdcuGB5TF46elkvVFnY43FfDOvr4kCAwEAAaNCMEAwHQYDVR0OBBYEFJhCD4yRGeSDPFQMSaD7v05tKWYeMB8GA1UdIwQYMBaAFJhCD4yRGeSDPFQMSaD7v05tKWYeMA0GCSqGSIb3DQEBDAUAA4IBAQCuD6aWokXmiSPLsXBaDWm0sYKZjZkuuwxqVI9lvelagwiBT8Ab1pc1uH3x9d+wFS2/gV6y55uF7WzzFUUB+bUL2jJRBI94+dBqQXnRLOm7MqtcmzG8AE7+3ggq7WQXNTUua7Je7VIQrs3nAjbLLg9IQoCub6qkYP6ODklAZWFjHkZMaWkdN/sx2HbhU51KKkxQBcmGZQBBCRYRGQr7pva4PRBOWj9i69seMPYGnMy15h7fdH59Ye/sg8XxIaucP8E0XWa095U9dIec4ZlptAljCwSwwGQ6/1em7t9R6U+SwG3AkDAmNJV7RGS+MhhJzWvcOySE3gkHrAmBZbj/LeC4</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>AutoTrustSslKey</l7:Name>
+                    <l7:Id>b0ac5b9aad8bee68d8e2176b3ae64182</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.948Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="b0ac5b9aad8bee68d8e2176b3ae64182" version="0">
+                            <l7:Name>AutoTrustSslKey</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dssg112.broadcom.net</l7:IssuerName>
+<l7:SerialNumber>1706064130904947667</l7:SerialNumber>
+<l7:SubjectName>CN%3Dssg112.broadcom.net</l7:SubjectName>
+<l7:Encoded>MIIDADCCAeigAwIBAgIIF60oSbaf+9MwDQYJKoZIhvcNAQEMBQAwHjEcMBoGA1UEAxMTc3NnMTEyLmJyb2FkY29tLm5ldDAeFw0yNjAyMDUwOTM3NDVaFw0zNjAyMDMwOTM3NDVaMB4xHDAaBgNVBAMTE3NzZzExMi5icm9hZGNvbS5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDSNcm8Puxxy5oGnnpGaP1OSoauGxkkKQwgitR4WqO0i90dBTX9u4xGhaIjXuGEJZPrEg3e0HqaLkVuyL2akUBe4GuNikub3n7PwMr/nmkFR8KURmL3U2F0GNCTcm2FKdjJXPawG7hRth4xBILplwa53C4QG6QNJHF7unNqMyYWu3YOgNqQn6HqcE6IMdFZEDCk9KQpNhfTB6L/XkM35nT0S4jzT9NnIct0b+e6CRvoC0sPoUry6jXN8USSz+p4Tailg4lpb22i8UEyRhcITlnB0dE/wQnQG9W0jDsFkPQ+twYiqaPlTpn7SG0oHV06UGFYBwDDP6Cm75gvmyQKPwuDAgMBAAGjQjBAMB0GA1UdDgQWBBRsD3iCEvCOpa0Zhp7lMp6rREiIszAfBgNVHSMEGDAWgBRsD3iCEvCOpa0Zhp7lMp6rREiIszANBgkqhkiG9w0BAQwFAAOCAQEAW8FESZmjzzybJbiGEubPS4qM7cJKk8qX8K9z5Dmsrv7FC9pfYMTglEjUp3GfCTE4kz/a/9+WrPib7cn8FoutMtYrOjLrr7qoI/gbZXVSsJ+OZSQlL+sE9REdvCAkCj+MfC4XGpXTPKgshFNU1ucIxtR7ZF4jD5B2I0ibDLueZ9oXY7LDGf0ZNjDQeBn4/F2dhyr62mejOyoERz+nOyySpDBvStRtxNfHwH63M8N82JgcTJLcxXX+OIhU+1APT0ShSlv4pYx4oDV4+8tK7aP3707gwZ9Q45Jf1dSAKWYSAhrBYAxwI/r0lWbRqzpb5bEhqw4Zsn0/mTZcvGJgk43hRw==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcpolicy3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f74b</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.949Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5f74b" version="3">
+                            <l7:Name>rcpolicy3</l7:Name>
+                            <l7:DefaultPolicy>false</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>false</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>false</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>false</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f749</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f749</l7:TrustedSigners>
+<l7:TrustedSigners>b0ac5b9aad8bee68d8e2176b3ae64182</l7:TrustedSigners>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f751</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>false</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcpolicy-delete-by-input-1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fa01</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.950Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5fa01" version="1">
+                            <l7:Name>rcpolicy-delete-by-input-1</l7:Name>
+                            <l7:DefaultPolicy>false</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>false</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>false</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcpolicy-delete-by-input-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fa02</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:34:30.951Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5fa02" version="1">
+                            <l7:Name>rcpolicy-delete-by-input-2</l7:Name>
+                            <l7:DefaultPolicy>false</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>false</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>false</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f745" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f745" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f749" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f749" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="b0ac5b9aad8bee68d8e2176b3ae64182" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/b0ac5b9aad8bee68d8e2176b3ae64182" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f74b" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f74b" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa01" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa01" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa02" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa02" type="REVOCATION_CHECK_POLICY"/>
+            </l7:Mappings>
+</l7:Bundle>

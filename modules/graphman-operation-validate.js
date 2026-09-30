@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -25,11 +25,28 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        options: {
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("validate --input <input-file>");
         console.log();
         console.log("Validates the bundled entities.");
         console.log("Currently, it is limited to validating the policy code in JSON format.");
+        console.log();
+        console.log("  --input <input-file>");
+        console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
+        console.log();
+        console.log("  --options.<name> <value>");
+        console.log("    specify options as name-value pair(s) to customize the operation");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
     }
 }

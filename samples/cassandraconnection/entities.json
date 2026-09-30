@@ -1,0 +1,164 @@
+{
+  "cassandraConnections": [
+    {
+      "goid": "8379e047b25c23db49042913fd4553d5",
+      "name": "cassandraconnection-1",
+      "checksum": "6dc731b5ecb15e0b6ca94e0bd0c1d3632728eb85",
+      "enabled": false,
+      "keyspace": "keyspace",
+      "contactPoints": [
+        "local",
+        "local2"
+      ],
+      "port": 9042,
+      "compression": "LZ4",
+      "username": "cassandra-user",
+      "sslEnabled": true,
+      "cipherSuites": [
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256"
+      ],
+      "properties": [
+        {
+          "name": "driverConfig",
+          "value": "driver-config-1:val1"
+        }
+      ]
+    },
+    {
+      "goid": "8379e047b25c23db49042913fd4553d6",
+      "name": "cassandraconnection-2",
+      "checksum": "64b97067dd1ec7ef80875fa2e68f7729dfa487c9",
+      "enabled": true,
+      "keyspace": "keyspace",
+      "contactPoints": [
+        "local",
+        "local2"
+      ],
+      "port": 9043,
+      "compression": "LZ4",
+      "username": "cassandra-user",
+      "securePasswordName": "some-cassandra-pwd",
+      "sslEnabled": true,
+      "cipherSuites": [
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256"
+      ],
+      "properties": [
+        {
+          "name": "driverConfig",
+          "value": "driver-config-1:val1\ndriver-config-2:val2"
+        }
+      ]
+    },
+    {
+      "goid": "8379e047b25c23db49042913fd4553d4",
+      "name": "cassandraconnection-default",
+      "checksum": "73d1aff3dbf1379270b117e291e70705bfc72aeb",
+      "enabled": true,
+      "keyspace": "",
+      "contactPoints": [
+        "local"
+      ],
+      "port": 9042,
+      "compression": "NONE",
+      "username": "",
+      "sslEnabled": false
+    },
+    {
+      "goid": "4a4c055365691617a259ca5ad3b8b864",
+      "name": "some-cassandra-connection",
+      "checksum": "fe3444ef3e970a6362f6a57b46d64e4e34a7ed0c",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point2"
+      ],
+      "port": 9042,
+      "compression": "NONE",
+      "username": "testUser",
+      "securePasswordName": "some-cassandra-pwd",
+      "sslEnabled": false
+    },
+    {
+      "goid": "4a4c055365691617a259ca5ad3b8b901",
+      "name": "some-cassandra-connection-delete-by-input-1",
+      "checksum": "9f94d723719737de74c33de7211e74fda598d690",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point2"
+      ],
+      "port": 9042,
+      "compression": "NONE",
+      "username": "testUser",
+      "securePasswordName": "some-cassandra-pwd",
+      "sslEnabled": false
+    },
+    {
+      "goid": "4a4c055365691617a259ca5ad3b8b902",
+      "name": "some-cassandra-connection-delete-by-input-2",
+      "checksum": "2883c0c5edf7a5aaf6667b9e326877cd793f2180",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point2"
+      ],
+      "port": 9042,
+      "compression": "NONE",
+      "username": "testUser",
+      "securePasswordName": "some-cassandra-pwd",
+      "sslEnabled": false
+    },
+    {
+      "goid": "5b5c055365691617a259ca5ad3b8b865",
+      "name": "some-other-cassandra-connection",
+      "checksum": "c616e52c9a42fc551f8c045ecc990a4cfb71203e",
+      "enabled": true,
+      "keyspace": "some-keyspace",
+      "contactPoints": [
+        "some-contact-point1",
+        "some-contact-point3"
+      ],
+      "port": 9043,
+      "compression": "LZ4",
+      "username": "some-user",
+      "securePasswordName": "some-cassandra-pwd",
+      "sslEnabled": true,
+      "cipherSuites": [
+        "TLS_AES_128_GCM_SHA256",
+        "TLS_AES_256_GCM_SHA384"
+      ],
+      "properties": [
+        {
+          "name": "keepAlive",
+          "value": "true"
+        },
+        {
+          "name": "readTimeoutMillis",
+          "value": "12000"
+        }
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "4a4c055365691617a259ca5ad3b8b96f",
+      "name": "some-cassandra-pwd",
+      "checksum": "7fa7116bb7d74e7664fe5235976a2ec4e5f0b5bf",
+      "description": "test secure password",
+      "secret": "JEw3RXYwMyTPl5WfyEbld5rXdDqa8NY78GnThEtJi1Jnn/fXMIh2Gw==",
+      "secretType": "PASSWORD",
+      "variableReferencable": true,
+      "lastModifiedDate": "2026-09-28T02:34:29.966Z"
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "firewallRules": [
+    {
+      "name": "v2-fw-update-1",
+      "ordinal": 90,
+      "enabled": true,
+      "protocol": "tcp",
+      "port": "9001",
+      "action": "ACCEPT",
+      "properties": [
+        {
+          "name": "chain",
+          "value": "INPUT"
+        }
+      ]
+    },
+    {
+      "name": "v2-fw-update-2",
+      "ordinal": 91,
+      "enabled": true,
+      "protocol": "tcp",
+      "port": "9002",
+      "action": "ACCEPT",
+      "properties": [
+        {
+          "name": "chain",
+          "value": "INPUT"
+        }
+      ]
+    },
+    {
+      "name": "v2-fw-delete-1",
+      "ordinal": 92,
+      "enabled": true,
+      "protocol": "tcp",
+      "port": "9003",
+      "action": "ACCEPT",
+      "properties": [
+        {
+          "name": "chain",
+          "value": "INPUT"
+        }
+      ]
+    },
+    {
+      "name": "v2-fw-delete-2",
+      "ordinal": 93,
+      "enabled": true,
+      "protocol": "tcp",
+      "port": "9004",
+      "action": "ACCEPT",
+      "properties": [
+        {
+          "name": "chain",
+          "value": "INPUT"
+        }
+      ]
+    }
+  ]
+}

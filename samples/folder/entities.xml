@@ -1,0 +1,217 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-folder</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33854</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33854" version="0">
+                    <l7:Name>some-folder</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-folder</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33894</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33894" version="0">
+                    <l7:Name>some-other-folder</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>nested-folder</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c338d4</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="dae0adfad2fdd2c45bf07f92a8c33894" id="dae0adfad2fdd2c45bf07f92a8c338d4" version="0">
+                    <l7:Name>nested-folder</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-folder-1</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33901</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33901" version="0">
+                    <l7:Name>delete-by-input-folder-1</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>delete-by-input-folder-2</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33902</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33902" version="0">
+                    <l7:Name>delete-by-input-folder-2</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>update-by-input-folder-1</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33911</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33911" version="0">
+                    <l7:Name>update-by-input-folder-1</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>update-by-input-folder-2</l7:Name>
+            <l7:Id>dae0adfad2fdd2c45bf07f92a8c33912</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2023-10-10T12:37:38.566+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="dae0adfad2fdd2c45bf07f92a8c33912" version="0">
+                    <l7:Name>update-by-input-folder-2</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-policy1</l7:Name>
+                    <l7:Id>3a5b333e413ee8f1f18ba6d4c17d9ab0</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-01T12:05:12.587+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="d7f3655e-3fd7-451b-a7dd-6ad782e493da" id="3a5b333e413ee8f1f18ba6d4c17d9ab0" version="0">
+                            <l7:PolicyDetail folderId="dae0adfad2fdd2c45bf07f92a8c33894" guid="d7f3655e-3fd7-451b-a7dd-6ad782e493da" id="3a5b333e413ee8f1f18ba6d4c17d9ab0" version="0">
+<l7:Name>some-policy1</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-policy1"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-policy2</l7:Name>
+                    <l7:Id>3a5b333e413ee8f1f18ba6d4c17d9ac3</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-01T12:05:12.595+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="6f98bd02-6e8d-4dbc-bbf7-98ec94fa9e30" id="3a5b333e413ee8f1f18ba6d4c17d9ac3" version="0">
+                            <l7:PolicyDetail folderId="dae0adfad2fdd2c45bf07f92a8c338d4" guid="6f98bd02-6e8d-4dbc-bbf7-98ec94fa9e30" id="3a5b333e413ee8f1f18ba6d4c17d9ac3" version="0">
+<l7:Name>some-policy2</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-policy2"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://127.0.0.1:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="FailOnNew">
+                    <l7:BooleanValue>true</l7:BooleanValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33854" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33894" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c338d4" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33901" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33902" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33911" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="dae0adfad2fdd2c45bf07f92a8c33912" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>path</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+		<l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ab0" srcUri="https://source.gateway:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ab0" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ac3" srcUri="https://source.gateway:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ac3" type="POLICY"/>
+    </l7:Mappings>
+</l7:Bundle>

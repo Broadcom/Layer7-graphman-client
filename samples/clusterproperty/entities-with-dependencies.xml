@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>cluster-properties</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fbb8</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.609Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d5fbb8" version="1">
+                            <l7:Name>cluster-properties</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cluster-property1</l7:Name>
+                    <l7:Id>69f8c76181003609a344d6bd952fa317</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.610Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="69f8c76181003609a344d6bd952fa317" version="1">
+                            <l7:Name>cluster-property1</l7:Name>
+                            <l7:Value>Hello</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cluster-property2</l7:Name>
+                    <l7:Id>69f8c76181003609a344d6bd952fa319</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.610Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="69f8c76181003609a344d6bd952fa319" version="1">
+                            <l7:Name>cluster-property2</l7:Name>
+                            <l7:Value>World</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cluster-property3</l7:Name>
+                    <l7:Id>69f8c76181003609a344d6bd952fa31b</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.610Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="69f8c76181003609a344d6bd952fa31b" version="1">
+                            <l7:Name>cluster-property3</l7:Name>
+                            <l7:Value>Hello, World!</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-cluster-properties</l7:Name>
+                    <l7:Id>69f8c76181003609a344d6bd952fa31d</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.613Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="f1cae334-d1d6-4ca4-8212-927dcc2619d2" id="69f8c76181003609a344d6bd952fa31d" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fbb8" guid="f1cae334-d1d6-4ca4-8212-927dcc2619d2" id="69f8c76181003609a344d6bd952fa31d" version="1">
+<l7:Name>sub-policy-with-cluster-properties</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: sub-policy-with-cluster-properties"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:SetVariable&gt;
+            &lt;L7p:Base64Expression stringValue="JHtnYXRld2F5LmNsdXN0ZXItcHJvcGVydHkyfSske2dhdGV3YXkuY2x1c3Rlci1wcm9wZXJ0eTN9"/&gt;
+            &lt;L7p:VariableToSet stringValue="message"/&gt;
+        &lt;/L7p:SetVariable&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-cluster-properties</l7:Name>
+                    <l7:Id>69f8c76181003609a344d6bd952fa2fe</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.616Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="ec9b1da7-1d47-4759-a3d6-6b4901825bcb" id="69f8c76181003609a344d6bd952fa2fe" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fbb8" guid="ec9b1da7-1d47-4759-a3d6-6b4901825bcb" id="69f8c76181003609a344d6bd952fa2fe" version="1">
+<l7:Name>policy-with-cluster-properties</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-cluster-properties"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:SetVariable&gt;
+            &lt;L7p:Base64Expression stringValue="JHtnYXRld2F5LmNsdXN0ZXItcHJvcGVydHkxfSske2dhdGV3YXkuY2x1c3Rlci1wcm9wZXJ0eTJ9"/&gt;
+            &lt;L7p:VariableToSet stringValue="message"/&gt;
+        &lt;/L7p:SetVariable&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="f1cae334-d1d6-4ca4-8212-927dcc2619d2"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-cluster-properties"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-cluster-properties</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fb74</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:14:10.621Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="72adab14b763f12efb51ebb737d5fb74" version="3">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d5fbb8" id="72adab14b763f12efb51ebb737d5fb74" version="3">
+<l7:Name>service-with-cluster-properties</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-cluster-properties</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-cluster-properties"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:SetVariable&gt;
+            &lt;L7p:Base64Expression stringValue="JHtnYXRld2F5LmNsdXN0ZXItcHJvcGVydHkxfSske2dhdGV3YXkuY2x1c3Rlci1wcm9wZXJ0eTJ9"/&gt;
+            &lt;L7p:VariableToSet stringValue="message"/&gt;
+        &lt;/L7p:SetVariable&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="f1cae334-d1d6-4ca4-8212-927dcc2619d2"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-cluster-properties"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fbb8" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fbb8" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="69f8c76181003609a344d6bd952fa317" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/69f8c76181003609a344d6bd952fa317" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="69f8c76181003609a344d6bd952fa319" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/69f8c76181003609a344d6bd952fa319" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="69f8c76181003609a344d6bd952fa31b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/69f8c76181003609a344d6bd952fa31b" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="69f8c76181003609a344d6bd952fa31d" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/69f8c76181003609a344d6bd952fa31d" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="69f8c76181003609a344d6bd952fa2fe" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/69f8c76181003609a344d6bd952fa2fe" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fb74" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d5fb74" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>cluster-properties</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fbb8</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-cluster-properties</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa2fe</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cluster-properties</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa31d</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-cluster-properties</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fb74</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cluster-property1</l7:Name>
+                        <l7:Id>69f8c76181003609a344d6bd952fa317</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cluster-property2</l7:Name>
+                        <l7:Id>69f8c76181003609a344d6bd952fa319</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cluster-property3</l7:Name>
+                        <l7:Id>69f8c76181003609a344d6bd952fa31b</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-cluster-properties</l7:Name>
+                        <l7:Id>69f8c76181003609a344d6bd952fa31d</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cluster-property2</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa319</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cluster-property3</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa31b</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-cluster-properties</l7:Name>
+                        <l7:Id>69f8c76181003609a344d6bd952fa2fe</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cluster-property1</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa317</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cluster-property2</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa319</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cluster-properties</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa31d</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-cluster-properties</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fb74</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cluster-property1</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa317</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cluster-property2</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa319</l7:Id>
+<l7:Type>CLUSTER_PROPERTY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cluster-properties</l7:Name>
+<l7:Id>69f8c76181003609a344d6bd952fa31d</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

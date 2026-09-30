@@ -1,0 +1,155 @@
+<!-- Copyright © 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some_sample_msg_service1</l7:Name>
+            <l7:Id>648511b09294f6bda253c093c07f0b7a</l7:Id>
+            <l7:Type>SERVICE</l7:Type>
+            <l7:TimeStamp>2025-04-25T15:34:27.663+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Service id="648511b09294f6bda253c093c07f0b7a" version="2">
+                    <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="648511b09294f6bda253c093c07f0b7a" version="2">
+                        <l7:Name>some_sample_msg_service1</l7:Name>
+                        <l7:Enabled>true</l7:Enabled>
+                        <l7:ServiceMappings>
+                            <l7:HttpMapping>
+                                <l7:UrlPattern>/some_sample_msg_service1</l7:UrlPattern>
+                                <l7:Verbs>
+                                    <l7:Verb>GET</l7:Verb>
+                                    <l7:Verb>POST</l7:Verb>
+                                    <l7:Verb>PUT</l7:Verb>
+                                    <l7:Verb>DELETE</l7:Verb>
+                                </l7:Verbs>
+                            </l7:HttpMapping>
+                        </l7:ServiceMappings>
+                        <l7:Properties>
+                            <l7:Property key="hasRouting">
+                                <l7:BooleanValue>true</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="internal">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="policyRevision">
+                                <l7:LongValue>2</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="tracingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="wssProcessingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:ServiceDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                                &lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+                                &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:HardcodedResponse&gt;
+                                &lt;L7p:Base64ResponseBody stringValue=&quot;c2FtcGxlX21zZ19zZXJ2aWNlMQ==&quot;/&gt;
+                                &lt;L7p:ResponseContentType stringValue=&quot;text/plain; charset=UTF-8&quot;/&gt;
+                                &lt;/L7p:HardcodedResponse&gt;
+                                &lt;/wsp:All&gt;
+                                &lt;/wsp:Policy&gt;
+                            </l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Service>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_sample_msg_service2</l7:Name>
+            <l7:Id>648511b09294f6bda253c093c07f0bbb</l7:Id>
+            <l7:Type>SERVICE</l7:Type>
+            <l7:TimeStamp>2025-04-25T15:34:27.678+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Service id="648511b09294f6bda253c093c07f0bbb" version="2">
+                    <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="648511b09294f6bda253c093c07f0bbb" version="2">
+                        <l7:Name>some_sample_msg_service2</l7:Name>
+                        <l7:Enabled>true</l7:Enabled>
+                        <l7:ServiceMappings>
+                            <l7:HttpMapping>
+                                <l7:UrlPattern>/some_sample_msg_service2</l7:UrlPattern>
+                                <l7:Verbs>
+                                    <l7:Verb>GET</l7:Verb>
+                                    <l7:Verb>POST</l7:Verb>
+                                    <l7:Verb>PUT</l7:Verb>
+                                    <l7:Verb>DELETE</l7:Verb>
+                                </l7:Verbs>
+                            </l7:HttpMapping>
+                        </l7:ServiceMappings>
+                        <l7:Properties>
+                            <l7:Property key="hasRouting">
+                                <l7:BooleanValue>true</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="internal">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="policyRevision">
+                                <l7:LongValue>2</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="tracingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="wssProcessingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:ServiceDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                                &lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+                                &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                                &lt;L7p:HardcodedResponse&gt;
+                                &lt;L7p:Base64ResponseBody stringValue=&quot;c2FtcGxlX21zZ19zZXJ2aWNlMg==&quot;/&gt;
+                                &lt;L7p:ResponseContentType stringValue=&quot;text/plain; charset=UTF-8&quot;/&gt;
+                                &lt;/L7p:HardcodedResponse&gt;
+                                &lt;/wsp:All&gt;
+                                &lt;/wsp:Policy&gt;
+                            </l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Service>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_sample_msg1</l7:Name>
+            <l7:Id>35f01156cb9f2a0b7db62f7ac02da06a</l7:Id>
+            <l7:Type>SAMPLE_MESSAGE</l7:Type>
+            <l7:TimeStamp>2025-04-25T15:34:28.309+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:SampleMessage id="35f01156cb9f2a0b7db62f7ac02da06a" version="1">
+                    <l7:Name>some_sample_msg1</l7:Name>
+                    <l7:ServiceId>648511b09294f6bda253c093c07f0b7a</l7:ServiceId>
+                    <l7:Xml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;empty&gt; some_sample_msg1...&lt;/empty&gt;</l7:Xml>
+                </l7:SampleMessage>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_sample_msg2</l7:Name>
+            <l7:Id>35f01156cb9f2a0b7db62f7ac02da06c</l7:Id>
+            <l7:Type>SAMPLE_MESSAGE</l7:Type>
+            <l7:TimeStamp>2025-04-25T15:34:28.309+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:SampleMessage id="35f01156cb9f2a0b7db62f7ac02da06c" version="1">
+                    <l7:Name>some_sample_msg2</l7:Name>
+                    <l7:ServiceId>648511b09294f6bda253c093c07f0bbb</l7:ServiceId>
+                    <l7:Xml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;empty&gt; some_sample_msg2...&lt;/empty&gt;</l7:Xml>
+                </l7:SampleMessage>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="648511b09294f6bda253c093c07f0b7a" srcUri="https://127.0.0.1:8443/restman/1.0/services/648511b09294f6bda253c093c07f0b7a" type="SERVICE"/>
+        <l7:Mapping action="NewOrExisting" srcId="648511b09294f6bda253c093c07f0bbb" srcUri="https://127.0.0.1:8443/restman/1.0/services/648511b09294f6bda253c093c07f0bbb" type="SERVICE"/>
+        <l7:Mapping action="NewOrExisting" srcId="35f01156cb9f2a0b7db62f7ac02da06a" srcUri="https://127.0.0.1:8443/restman/1.0/sampleMessages/35f01156cb9f2a0b7db62f7ac02da06a" type="SAMPLE_MESSAGE"/>
+        <l7:Mapping action="NewOrExisting" srcId="35f01156cb9f2a0b7db62f7ac02da06c" srcUri="https://127.0.0.1:8443/restman/1.0/sampleMessages/35f01156cb9f2a0b7db62f7ac02da06c" type="SAMPLE_MESSAGE"/>
+    </l7:Mappings>
+</l7:Bundle>

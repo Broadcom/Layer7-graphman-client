@@ -1,0 +1,29 @@
+{
+  "genericEntities": [
+    {
+      "goid": "86d19ee14eb21a5b68999ba8aab0570a",
+      "name": "websocket1",
+      "checksum": "15fd809c4fa53d0026350e621bd4a0f6f34b5951",
+      "description": "websocket configuration",
+      "valueXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<java version=\"17.0.10\" class=\"java.beans.XMLDecoder\">\n <object class=\"com.l7tech.external.assertions.websocket.WebSocketConnectionEntity\">\n  <void property=\"connectionPolicyGOID\">\n   <object class=\"com.l7tech.objectmodel.Goid\">\n    <string>22034c9259ab08b39f383f9a968d1aef</string>\n   </object>\n  </void>\n  <void property=\"description\">\n   <string>websocket configuration</string>\n  </void>\n  <void property=\"id\">\n   <string>86d19ee14eb21a5b68999ba8aab0570a</string>\n  </void>\n  <void property=\"inboundClientAuth\">\n   <object class=\"java.lang.Enum\" method=\"valueOf\">\n    <class>com.l7tech.external.assertions.websocket.WebSocketConnectionEntity$ClientAuthType</class>\n    <string>REQUIRED</string>\n   </object>\n  </void>\n  <void property=\"inboundListenPort\">\n   <int>8085</int>\n  </void>\n  <void property=\"inboundMaxConnections\">\n   <int>50</int>\n  </void>\n  <void property=\"inboundMaxIdleTime\">\n   <int>1500</int>\n  </void>\n  <void property=\"inboundPolicyOID\">\n   <object class=\"com.l7tech.objectmodel.Goid\" id=\"Goid0\">\n    <string>0000000000000000ffffffffffffffff</string>\n   </object>\n  </void>\n  <void property=\"inboundPrivateKeyId\">\n   <object idref=\"Goid0\"/>\n  </void>\n  <void property=\"inboundSsl\">\n   <boolean>true</boolean>\n  </void>\n  <void property=\"name\">\n   <string>websocket1</string>\n  </void>\n  <void property=\"outboundClientAuthentication\">\n   <boolean>true</boolean>\n  </void>\n  <void property=\"outboundConnectionPolicyId\">\n   <object idref=\"Goid0\"/>\n  </void>\n  <void property=\"outboundPolicyOID\">\n   <object class=\"com.l7tech.objectmodel.Goid\">\n    <string>22034c9259ab08b39f383f9a968d1aef</string>\n   </object>\n  </void>\n  <void property=\"outboundPrivateKeyId\">\n   <object idref=\"Goid0\"/>\n  </void>\n  <void property=\"outboundSsl\">\n   <boolean>true</boolean>\n  </void>\n  <void property=\"outboundTlsProtocols\">\n   <array class=\"java.lang.String\" length=\"3\">\n    <void index=\"0\">\n     <string>TLSv1.3</string>\n    </void>\n    <void index=\"1\">\n     <string>TLSv1.2</string>\n    </void>\n    <void index=\"2\">\n     <string>TLSv1.1</string>\n    </void>\n   </array>\n  </void>\n  <void property=\"outboundUrl\">\n   <string>example.websocket.com</string>\n  </void>\n  <void property=\"valueXml\">\n   <string></string>\n  </void>\n  <void property=\"version\">\n   <int>15</int>\n  </void>\n </object>\n</java>\n",
+      "enabled": true,
+      "entityClassName": "com.l7tech.external.assertions.websocket.WebSocketConnectionEntity"
+    },
+    {
+      "goid": "24d6f136afbb852aee32eaf2ce342913",
+      "name": "xmpp1",
+      "checksum": "4044109d9519cc923e3657cf1586f822ecfe805f",
+      "valueXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<java version=\"17.0.10\" class=\"java.beans.XMLDecoder\">\n <object class=\"com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity\">\n  <void property=\"bindAddress\">\n   <string>0.0.0.0</string>\n  </void>\n  <void property=\"id\">\n   <string>24d6f136afbb852aee32eaf2ce342913</string>\n  </void>\n  <void property=\"legacySsl\">\n   <boolean>true</boolean>\n  </void>\n  <void property=\"messageReceivedServiceOid\">\n   <object class=\"com.l7tech.objectmodel.Goid\">\n    <string>22034c9259ab08b39f383f9a968d1aef</string>\n   </object>\n  </void>\n  <void property=\"name\">\n   <string>xmpp1</string>\n  </void>\n  <void property=\"sessionTerminatedServiceOid\">\n   <object class=\"com.l7tech.objectmodel.Goid\">\n    <string>22034c9259ab08b39f383f9a968d1b30</string>\n   </object>\n  </void>\n  <void property=\"valueXml\">\n   <string></string>\n  </void>\n  <void property=\"version\">\n   <int>2</int>\n  </void>\n </object>\n</java>\n",
+      "enabled": true,
+      "entityClassName": "com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity"
+    },
+    {
+      "goid": "1f3754486a47c392a679a8ad9636725f",
+      "name": "xmpp2",
+      "checksum": "618f0f217f174f0a0bbf32d4e335d9f8a8212a22",
+      "valueXml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<java version=\"17.0.10\" class=\"java.beans.XMLDecoder\">\n <object class=\"com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity\">\n  <void property=\"enabled\">\n   <boolean>false</boolean>\n  </void>\n  <void property=\"hostname\">\n   <string>apim.xmpphost.com</string>\n  </void>\n  <void property=\"inbound\">\n   <boolean>false</boolean>\n  </void>\n  <void property=\"legacySsl\">\n   <boolean>true</boolean>\n  </void>\n  <void property=\"messageReceivedServiceOid\">\n   <object class=\"com.l7tech.objectmodel.Goid\">\n    <string>22034c9259ab08b39f383f9a968d1aef</string>\n   </object>\n  </void>\n  <void property=\"name\">\n   <string>xmpp2</string>\n  </void>\n  <void property=\"port\">\n   <int>5221</int>\n  </void>\n  <void property=\"valueXml\">\n   <string></string>\n  </void>\n </object>\n</java>\n",
+      "enabled": false,
+      "entityClassName": "com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity"
+    }
+  ]
+}

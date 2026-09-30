@@ -1,0 +1,80 @@
+{
+  "emailListeners": [
+    {
+      "goid": "255fbcde0ef8a709f7b21ef10671472c",
+      "name": "customized-email-listener",
+      "checksum": "f1fabe59b079dc6c0a7e04f9cffee7c36fbdcaa3",
+      "enabled": false,
+      "serverType": "IMAP",
+      "hostname": "some-host",
+      "port": 1993,
+      "folder": "some-folder",
+      "deleteOnReceive": true,
+      "username": "some-user",
+      "password": "${secpass.somepwd.plaintext}",
+      "sslEnabled": true,
+      "pollInterval": 120,
+      "sizeLimit": 2048
+    },
+    {
+      "goid": "255fbcde0ef8a709f7b21ef10671491d",
+      "name": "delete-by-input-email-listener-1",
+      "checksum": "f68ba98df8e2305d8a24080cbb4fa47b44775e79",
+      "enabled": true,
+      "serverType": "POP3",
+      "hostname": "some-host",
+      "port": 110,
+      "folder": "INBOX",
+      "deleteOnReceive": false,
+      "username": "some-user",
+      "password": "JEw3RXYwMyTI4KM9krd18I20Ir0/tqTFmn4K6idoq24PyKSMzuCs3g==",
+      "sslEnabled": false,
+      "pollInterval": 60
+    },
+    {
+      "goid": "255fbcde0ef8a709f7b21ef10671492e",
+      "name": "delete-by-input-email-listener-2",
+      "checksum": "241dd27657d8d857d6dd24e5eebc0ef550fbb913",
+      "enabled": true,
+      "serverType": "POP3",
+      "hostname": "some-host",
+      "port": 110,
+      "folder": "INBOX",
+      "deleteOnReceive": false,
+      "username": "some-user",
+      "password": "JEw3RXYwMyTQU89D8U7dpcx0knpjxidtk2qN7gi3dxlWsp8HXsyy3g==",
+      "sslEnabled": false,
+      "pollInterval": 60
+    },
+    {
+      "goid": "255fbcde0ef8a709f7b21ef1067146f4",
+      "name": "some-email-listener",
+      "checksum": "d9e2ef9880498c4e2f32ef30c8feb800757c724c",
+      "enabled": true,
+      "serverType": "POP3",
+      "hostname": "some-host",
+      "port": 110,
+      "folder": "INBOX",
+      "deleteOnReceive": false,
+      "username": "some-user",
+      "password": "JEw3RXYwMyStvrbYsR5bF0IGiW2qUc2ljMKPpxfmi6KtpJL/Kb5Huw==",
+      "sslEnabled": false,
+      "pollInterval": 60
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "e676853df827149ba8def53a035084cd",
+      "name": "email-listener-pwd",
+      "checksum": "aa70c932b36eb2759e2f72e09836596f8fb75607",
+      "description": "some-description",
+      "secret": "JEw3RXYwMyRtRAr/EGYGMWPzRmS2AujM0ocyJ4Ft5kYvSFU0T1Irig==",
+      "secretType": "PASSWORD",
+      "variableReferencable": true,
+      "lastModifiedDate": "2026-09-07T22:26:49.926Z"
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -9,10 +9,14 @@ module.exports = {
      * Describes queries
      * @param params
      * @param params.query query name
+     * @param params.queries two or more query names to be combined into a single composite query
+     * @param params.queryArgs overrides for disambiguating colliding argument names across queries
      * @param params.options
      */
     run: function (params) {
-        if (params.query) {
+        if (params.queries && params.queries.length > 0) {
+            describeCompositeQuery(params.queries, params.queryArgs, params.options);
+        } else if (params.query) {
             describeQuery(params.query, params.options);
         } else {
             printAvailableQueries();
@@ -26,8 +30,15 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        query: "string",
+        queries: "array",
+        queryArgs: "opaque",
+        output: "string"
+    },
+
     usage: function () {
-        console.log("describe [--query <query-name>]");
+        console.log("describe [--query <query-name>] [--queries <query-name> <query-name> ...]");
         console.log("  [--output <output-file>]");
         console.log();
         console.log("Describes queries about their fields, arguments, etc.");
@@ -35,6 +46,16 @@ module.exports = {
         console.log("  --query <query-name>");
         console.log("    specify query name with/without wild-cards");
         console.log("    when no query name is specified, it lists out all the available queries")
+        console.log();
+        console.log("  --queries <query-name> <query-name> ...");
+        console.log("    specify two or more concrete query names (no wild-cards) to preview the composite query built by combining them");
+        console.log("    when two or more of the combined queries declare the same argument name (e.g. $name),");
+        console.log("    the later one(s) are automatically renamed by appending their 1-based position (e.g. $name2)");
+        console.log();
+        console.log("  --queryArgs.<position>.<arg-name> <new-arg-name>");
+        console.log("    override the automatic <arg-name><position> disambiguation for the query at the given");
+        console.log("    1-based position in --queries, either to give it a more meaningful name, or, by pointing");
+        console.log("    it back to a name already used by another query, to deliberately share that argument");
         console.log();
         console.log("  --output <output-file>");
         console.log("    specify the file to capture the important part of the described result");
@@ -76,22 +97,30 @@ function availableQueriesIn(path, callback) {
 }
 
 function describeQuery(queryName, options) {
-    utils.info("query", queryName);
-    if (queryName.indexOf("*") === -1) {
+    const [queryPrefix, querySuffix] = queryName.split(":");
+    utils.info("query", queryPrefix);
+    if (queryPrefix.indexOf("*") === -1) {
         const query = gql.generate(queryName, {}, Object.assign({describeQuery: true}, options));
         utils.print(query.query);
     } else {
-        const queryNames = graphman.queryNamesByPattern(queryName);
+        const queryNames = graphman.queryNamesByPattern(queryPrefix);
         if (queryNames.length === 0) {
             utils.info("no matches found");
         } else if (queryNames.length === 1) {
-            const query = gql.generate(queryNames[0], {}, Object.assign({describeQuery: true}, options));
+            const query = gql.generate(queryNames[0] + ":" + querySuffix, {}, Object.assign({describeQuery: true}, options));
             utils.print(query.query);
         } else {
             utils.info(`${queryNames.length} matches found`);
             Array.from(queryNames).forEach(item => utils.print(`         ${item}`));
         }
     }
+    utils.print();
+}
+
+function describeCompositeQuery(queryNames, queryArgs, options) {
+    utils.info("composite query", queryNames.join(", "));
+    const query = gql.generateComposite(queryNames, {}, Object.assign({describeQuery: true}, options), queryArgs);
+    utils.print(query.query);
     utils.print();
 }
 
@@ -111,6 +140,12 @@ function printAvailableQueries() {
     utils.info("available in-built queries:");
     const metadata = graphman.schemaMetadata();
     metadata.types["Query"].fields.forEach(fieldInfo => {
+        utils.print(`         ${fieldInfo.name}`);
+    });
+    utils.print();
+
+    utils.info("available in-built mutations:");
+    metadata.types["Mutation"].fields.forEach(fieldInfo => {
         utils.print(`         ${fieldInfo.name}`);
     });
     utils.print();
