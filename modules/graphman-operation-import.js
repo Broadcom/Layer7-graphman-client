@@ -4,6 +4,7 @@ const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
 const graphman = require("./graphman");
 const gql = require("./graphql-query");
+const summary = require("./graphman-summary");
 
 module.exports = {
     /**
@@ -79,8 +80,10 @@ module.exports = {
             request.headers["Content-Type"] = 'multipart/form-data; boundary='+boundary;
         }
 
+        const startDate = Date.now();
         graphman.invoke(request, opContext, function (data) {
             utils.writeResult(params.output, sanitizeMutationResult(data));
+            summary.report("import", inputBundle, startDate, Date.now());
         });
     },
 

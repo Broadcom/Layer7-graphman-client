@@ -5,6 +5,7 @@ const butils = require("./graphman-bundle");
 const gql = require("./graphql-query");
 const exporter = require("./graphman-operation-export");
 const graphman = require("./graphman");
+const summary = require("./graphman-summary");
 
 module.exports = {
     /**
@@ -32,6 +33,7 @@ module.exports = {
 
         const bundle = utils.readFile(params.input);
         const context = utils.buildOperationContext("renew", gateway, params.options);
+        const startDate = Date.now();
 
         Promise.all(this.renew(gateway, bundle, params.sections, params.options)).then(results => {
             const renewedBundle = {};
@@ -49,6 +51,7 @@ module.exports = {
             const finalBundle = utils.extension("post-renew").apply(renewedBundle, context);
             const sortedBundle = butils.sort(finalBundle);
             utils.writeResult(params.output, sortedBundle);
+            summary.report("renew", sortedBundle, startDate, Date.now());
         }).catch(error => {
             utils.error("errors encountered while renewing the entities", error);
             utils.print();

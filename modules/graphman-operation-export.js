@@ -4,6 +4,7 @@ const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
 const graphman = require("./graphman");
 const gql = require("./graphql-query");
+const summary = require("./graphman-summary");
 
 module.exports = {
     /**
@@ -43,12 +44,10 @@ module.exports = {
         this.export(gateway, query, (data, parts, opContext) => {
             const endDate = Date.now();
             if (params.onExportDataCallback) {
-                params.onExportDataCallback(data, parts, params, opContext);
+                params.onExportDataCallback(data, parts, params, opContext, endDate, startDate);
             } else {
-                onExportDataCallback(data, parts, params, opContext);
+                onExportDataCallback(data, parts, params, opContext, endDate, startDate);
             }
-            utils.fine("end time: " + endDate);
-            utils.fine("operation completed in " + (endDate - startDate) + " milliseconds");
         });
     },
 
@@ -97,7 +96,7 @@ module.exports = {
             params.variables.policyName = params.variables.policyName || params.variables.name || "?";
 
             const operation = this;
-            params.onExportDataCallback = function (data, parts, params, opContext) {
+            params.onExportDataCallback = function (data, parts, params, opContext, endDate, startDate) {
                 const encassConfigByName = data.data ? data.data.encassConfigByName : null;
                 const policyByName = data.data ? data.data.policyByName : null;
 
@@ -106,7 +105,7 @@ module.exports = {
                         delete data.data.policyByName;
                     }
 
-                    onExportDataCallback(data, parts, params, opContext);
+                    onExportDataCallback(data, parts, params, opContext, endDate, startDate);
                     return;
                 }
 
@@ -119,7 +118,7 @@ module.exports = {
                     return;
                 }
 
-                onExportDataCallback(data, parts, params, opContext);
+                onExportDataCallback(data, parts, params, opContext, endDate, startDate);
             };
         }
 
@@ -222,7 +221,7 @@ module.exports = {
     }
 }
 
-function onExportDataCallback(data, parts, params, opContext) {
+function onExportDataCallback(data, parts, params, opContext, endDate, startDate) {
     if (data.data) {
         if (data.errors) utils.warn("errors detected", data.errors);
 
@@ -230,9 +229,12 @@ function onExportDataCallback(data, parts, params, opContext) {
         data = butils.removeDuplicates(data);
         butils.filter(data, params.filter);
         data = utils.extension("post-export").apply(data, opContext);
-        utils.writeResult(params.output, butils.sort(data));
+        const sortedData = butils.sort(data);
+        utils.writeResult(params.output, sortedData);
 
         if (parts) utils.writePartsResult(utils.parentPath(params.output), parts);
+
+        summary.report("export", sortedData, startDate, endDate);
     } else {
         utils.info("unexpected data", data);
     }
