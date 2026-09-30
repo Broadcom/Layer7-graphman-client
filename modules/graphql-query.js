@@ -44,6 +44,21 @@ module.exports = {
         const gql = buildGraphQLQueryFor(entities, typeInfo, options);
         gql.options = options || {};
         return expandGraphQLQuery(gql);
+    },
+
+    /**
+     * Builds a single composite query out of two or more independently named queries, so that
+     * they can be executed against the gateway in one round-trip.
+     * @param queryNames names of the queries to be combined, e.g. ["clusterProperties", "sysinfo"]
+     * @param variables name-value pairs used in querying the configuration
+     * @param options name-value pairs used to customize the operation
+     * @param queryArgOverrides optional {"<position>": {"<originalArgName>": "<newArgName>"}} map,
+     *        used to pin the name of an argument for the query at that 1-based position instead
+     *        of relying on the automatic <name><position> disambiguation
+     */
+    generateComposite: function (queryNames, variables, options, queryArgOverrides) {
+        const generated = queryNames.map(name => this.generate(name, variables, options));
+        return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {});
     }
 }
 
@@ -259,6 +274,125 @@ function addFieldMethodArg(args, name, variable) {
 
 function pascalCasing(text) {
     return text.charAt(0).toUpperCase() + text.substring(1);
+}
+
+/**
+ * Merges two or more already-generated queries (or mutations) into a single composite document.
+ * Every combined name must resolve to the same operation keyword (all "query" or all
+ * "mutation"); mixing the two throws, since a single GraphQL document can only be one operation
+ * type. Colliding argument names (same name declared by more than one query) are
+ * auto-disambiguated by suffixing the query's 1-based position (e.g. $name -> $name2), unless the
+ * declarations are byte-for-byte identical (in which case they're intentionally shared, e.g. the
+ * common $includeAllDependencies/$includePolicyRevisions toggles), or the caller pinned an
+ * explicit name via queryArgOverrides.
+ * @param queryNames the original query names, used for error reporting
+ * @param generated the {query, variables, options} objects produced by generate() for each name
+ * @param options options shared across every generated query
+ * @param queryArgOverrides {"<position>": {"<originalArgName>": "<newArgName>"}} overrides
+ */
+function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides) {
+    const argDecls = new Map(); // finalName -> declText
+    const variables = {};
+    let body = "";
+    let keyword = null;
+    const trailers = [];
+
+    generated.forEach((gql, index) => {
+        const position = index + 1;
+        const overrides = (queryArgOverrides && queryArgOverrides[position]) || {};
+        const {keyword: docKeyword, argsHeader, body: queryBody, trailer} = splitGeneratedQuery(gql.query, queryNames[index]);
+
+        if (trailer && !trailers.includes(trailer)) trailers.push(trailer);
+
+        if (keyword === null) {
+            keyword = docKeyword;
+        } else if (keyword !== docKeyword) {
+            throw utils.newError(`cannot combine query and mutation names in the same composite: ${queryNames.join(", ")}`);
+        }
+
+        const renameMap = {}; // originalName -> finalName, scoped to this query
+
+        splitTokens(argsHeader).forEach(decl => {
+            if (decl.length === 0) return;
+
+            const originalName = decl.split(":")[0].trim().substring(1);
+            const isRequired = decl.indexOf("=") === -1;
+            const declTextFor = name => decl.replace(`$${originalName}`, `$${name}`);
+
+            let finalName = overrides[originalName] || originalName;
+            let finalDecl = declTextFor(finalName);
+
+            if (argDecls.has(finalName) && argDecls.get(finalName) !== finalDecl) {
+                if (overrides[originalName]) {
+                    throw utils.newError(`conflicting variable declaration for ${finalName} while building composite query (see --queryArgs.${position}.${originalName})`);
+                }
+
+                finalName = originalName + position;
+                finalDecl = declTextFor(finalName);
+
+                if (argDecls.has(finalName) && argDecls.get(finalName) !== finalDecl) {
+                    throw utils.newError(`unable to resolve conflicting variable declaration for ${originalName} in query '${queryNames[index]}' while building composite query; use --queryArgs.${position}.${originalName} <new-name> to disambiguate`);
+                }
+            } else if (!overrides[originalName] && isRequired && argDecls.has(finalName)) {
+                // required (identity) argument reused by an earlier query and not explicitly
+                // opted to be shared: always disambiguate, even though the declaration text matches
+                finalName = originalName + position;
+                finalDecl = declTextFor(finalName);
+            }
+
+            if (finalName !== originalName) renameMap[originalName] = finalName;
+            argDecls.set(finalName, finalDecl);
+        });
+
+        let renamedBody = queryBody;
+        Object.entries(renameMap).forEach(([originalName, finalName]) => {
+            renamedBody = renamedBody.replace(new RegExp(`\\$${originalName}\\b`, "g"), `$${finalName}`);
+        });
+        body += renamedBody;
+
+        Object.assign(variables, gql.variables);
+        Object.entries(renameMap).forEach(([originalName, finalName]) => {
+            if (variables[finalName] === undefined && gql.variables[originalName] !== undefined) {
+                variables[finalName] = gql.variables[originalName];
+            }
+        });
+    });
+
+    if (!options || !options.describeQuery) {
+        argDecls.forEach((declText, finalName) => {
+            if (variables[finalName] === undefined) utils.warn("missing variable: " + finalName);
+        });
+    }
+
+    const argsHeaderText = argDecls.size > 0 ? "(" + Array.from(argDecls.values()).join(", ") + ")" : "";
+    let query = beautifyGraphQLQuery({options: options || {}}, `${keyword} composite${argsHeaderText} {\n${body}\n}\n`);
+    if (trailers.length > 0) query += trailers.join("\n") + "\n";
+
+    return {query: query, variables: variables, options: options || {}};
+}
+
+/**
+ * Splits a generated query's (or mutation's) text into its operation keyword, argument
+ * declarations header, body, and trailer (e.g. the "# <Type> - identify the existing entity..."
+ * reference comment buildGraphQLMutation appends after standard update/delete mutations, see
+ * refFieldComment()), relying on beautifyGraphQLQuery() always closing the outermost brace on
+ * its own line, though not necessarily the very last line (a trailing comment may follow it).
+ */
+function splitGeneratedQuery(query, queryName) {
+    const lines = query.split("\n").filter(line => line.trim().length > 0);
+    const headerMatch = lines.length > 0 && lines[0].match(/^(query|mutation)\s+\S+\s*(?:\(([^]*)\))?\s*\{$/);
+    const closingIndex = lines.map(line => line.trim()).lastIndexOf("}");
+
+    if (!headerMatch || closingIndex <= 0) {
+        throw utils.newError(`unable to parse generated query for ${queryName} while building composite query`);
+    }
+
+    return {
+        keyword: headerMatch[1],
+        argsHeader: headerMatch[2] || "",
+        body: lines.slice(1, closingIndex).join("\n") + "\n",
+        trailer: lines.slice(closingIndex + 1).join("\n")
+    };
 }
 
 /**

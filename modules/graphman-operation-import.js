@@ -9,7 +9,9 @@ module.exports = {
     /**
      * Imports gateway configuration using a specified mutation.
      * @param params
-     * @param params.using mutation
+     * @param params.query mutation (alias: params.using, deprecated)
+     * @param params.queries two or more mutation names to be combined into a single composite mutation
+     * @param params.queryArgs overrides for disambiguating colliding argument names across mutations
      * @param params.input name of the input file containing the gateway configuration as bundle; optional
      *        when --variables is used to construct the input payload instead. When both are specified,
      *        --variables takes precedence over --input for any overlapping keys.
@@ -47,7 +49,20 @@ module.exports = {
 
         inputBundle = utils.extension("pre-import").apply(inputBundle, opContext);
 
-        const query = gql.generate(params.using, Object.assign(inputBundle, params.variables), params.options);
+        const combinedVariables = Object.assign(inputBundle, params.variables);
+
+        let query;
+        if (params.queries && params.queries.length > 0) {
+            const dupes = params.queries.filter((name, index) => params.queries.indexOf(name) !== index);
+            if (dupes.length > 0) {
+                throw utils.newError("duplicate query name(s) in --queries: " + dupes.join(", "));
+            }
+
+            query = gql.generateComposite(params.queries, combinedVariables, params.options, params.queryArgs);
+        } else {
+            query = gql.generate(params.using, combinedVariables, params.options);
+        }
+
         if (!query.query.startsWith("mutation")) {
             utils.info("invalid query for import operation", query);
             throw "invalid query for import operation";
@@ -70,6 +85,12 @@ module.exports = {
     },
 
     initParams: function (params, config) {
+        if (params.query !== undefined) {
+            params.using = params.query;
+        } else if (params.using !== undefined) {
+            utils.warn("--using is deprecated, use --query instead");
+        }
+
         params = Object.assign({
             using: "install-bundle",
             gateway: "default"
@@ -98,6 +119,9 @@ module.exports = {
 
     paramsSchema: {
         using: "string",
+        query: "string",
+        queries: "array",
+        queryArgs: "opaque",
         input: "string",
         "input-id-mappings": "string",
         gateway: "string",
@@ -120,7 +144,7 @@ module.exports = {
     },
 
     usage: function () {
-        console.log("import [--using <mutation>] [--input <input-file>] [--variables.<name> <value>,...]");
+        console.log("import [--query <mutation>] [--input <input-file>] [--variables.<name> <value>,...]");
         console.log("  [--gateway <name>]");
         console.log("  [--output <output-file>]");
         console.log("  [--options.<name> <value>,...]");
@@ -128,10 +152,23 @@ module.exports = {
         console.log("Imports gateway configuration using a mutation-based query.");
         console.log("If no query is specified, it will be defaulted to the 'install-bundle' standard mutation-based query.");
         console.log();
-        console.log("  --using <mutation>");
+        console.log("  --query <mutation>");
         console.log("    specify the name of mutation-based query");
         console.log("    this can also be an in-built plural-based mutation captured from the schema");
         console.log("    (e.g. setXxx, updateXxx, deleteXxx), without requiring a hand-authored query file");
+        console.log();
+        console.log("  (deprecated) --using <mutation>");
+        console.log("    use --query instead");
+        console.log();
+        console.log("  --queries <mutation> <mutation> ...");
+        console.log("    specify two or more mutation names to be combined into a single composite mutation, and import using it");
+        console.log("    when two or more of the combined mutations declare the same argument name (e.g. $folders),");
+        console.log("    the later one(s) are automatically renamed by appending their 1-based position (e.g. $folders2)");
+        console.log();
+        console.log("  --queryArgs.<position>.<arg-name> <new-arg-name>");
+        console.log("    override the automatic <arg-name><position> disambiguation for the mutation at the given");
+        console.log("    1-based position in --queries, either to give it a more meaningful name, or, by pointing");
+        console.log("    it back to a name already used by another mutation, to deliberately share that argument");
         console.log();
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");

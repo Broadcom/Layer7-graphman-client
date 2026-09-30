@@ -9,7 +9,9 @@ module.exports = {
     /**
      * Exports gateway configuration using a specified query. If the query doesn't exist, client tries to generate a query dynamically.
      * @param params
-     * @param params.using query
+     * @param params.query query (alias: params.using, deprecated)
+     * @param params.queries two or more query names to be combined into a single composite query
+     * @param params.queryArgs overrides for disambiguating colliding argument names across queries
      * @param params.variables name-value pairs used in querying the configuration
      * @param params.gateway name of the gateway profile
      * @param params.output name of the output file
@@ -23,7 +25,18 @@ module.exports = {
             throw utils.newError(`${gateway.name} gateway details are missing`);
         }
 
-        const query = gql.generate(params.using, params.variables, params.options);
+        let query;
+        if (params.queries && params.queries.length > 0) {
+            const dupes = params.queries.filter((name, index) => params.queries.indexOf(name) !== index);
+            if (dupes.length > 0) {
+                throw utils.newError("duplicate query name(s) in --queries: " + dupes.join(", "));
+            }
+
+            query = gql.generateComposite(params.queries, params.variables, params.options, params.queryArgs);
+        } else {
+            query = gql.generate(params.using, params.variables, params.options);
+        }
+
         const startDate = Date.now();
 
         utils.fine("start time: " + startDate);
@@ -54,6 +67,12 @@ module.exports = {
     },
 
     initParams: function (params, config) {
+        if (params.query !== undefined) {
+            params.using = params.query;
+        } else if (params.using !== undefined) {
+            utils.warn("--using is deprecated, use --query instead");
+        }
+
         params = Object.assign({
             using: "all",
             gateway: "default"
@@ -109,6 +128,9 @@ module.exports = {
 
     paramsSchema: {
         using: "string",
+        query: "string",
+        queries: "array",
+        queryArgs: "opaque",
         gateway: "string",
         output: "string",
         filter: "opaque",
@@ -125,7 +147,7 @@ module.exports = {
     },
 
     usage: function () {
-        console.log("export --using <query> [--variables.<name> <value>,...] [--gateway <name>]");
+        console.log("export [--query <query>] [--queries <query> <query> ...] [--variables.<name> <value>,...] [--gateway <name>]");
         console.log("  [--output <output-file>]");
         console.log("  [--filter.<section>.<field-name> <matching-criteria> <field-value>,...]");
         console.log("  [--options.<name> <value>,...]");
@@ -133,8 +155,21 @@ module.exports = {
         console.log("Exports gateway configuration using a specified query. If the query doesn't exist, client tries to generate a query dynamically.");
         console.log("If no query is specified, it will be defaulted to the 'all' query.");
         console.log();
-        console.log("  --using <query>");
+        console.log("  --query <query>");
         console.log("    specify the name of query used to export");
+        console.log();
+        console.log("  --queries <query> <query> ...");
+        console.log("    specify two or more query names to be combined into a single composite query, and export using it");
+        console.log("    when two or more of the combined queries declare the same argument name (e.g. $name),");
+        console.log("    the later one(s) are automatically renamed by appending their 1-based position (e.g. $name2)");
+        console.log();
+        console.log("  --queryArgs.<position>.<arg-name> <new-arg-name>");
+        console.log("    override the automatic <arg-name><position> disambiguation for the query at the given");
+        console.log("    1-based position in --queries, either to give it a more meaningful name, or, by pointing");
+        console.log("    it back to a name already used by another query, to deliberately share that argument");
+        console.log();
+        console.log("  (deprecated) --using <query>");
+        console.log("    use --query instead");
         console.log();
         console.log("  --variables.<name> <value>");
         console.log("    specify the name-value pair(s) for the variables section of the query used to export");
