@@ -17,6 +17,11 @@ pipeline {
             description: 'true to publish the build artifacts to the artifactory.',
             name: 'PUBLISH_TO_ARTIFACTORY'
         )
+        string(
+            name: 'CUSTOM_BUILD_NUMBER',
+            defaultValue: '',
+            description: 'Optional override for the build number used in the package version. Leave blank to use the Jenkins BUILD_NUMBER.'
+        )
     }
     stages {
         stage('Update Java') {
@@ -34,7 +39,14 @@ pipeline {
             steps {
                 echo "Building graphman-client ..."
                 script {
-                    sh './build.sh $BUILD_NUMBER $BRANCH_NAME'
+                    def customBuildNumber = params.CUSTOM_BUILD_NUMBER?.trim()
+                    def effectiveBuildNumber = customBuildNumber ? customBuildNumber : env.BUILD_NUMBER
+                    if (!(effectiveBuildNumber ==~ /^[0-9]+$/)) {
+                        error("CUSTOM_BUILD_NUMBER must be numeric, got: ${effectiveBuildNumber}")
+                    }
+                    withEnv(["EFFECTIVE_BUILD_NUMBER=${effectiveBuildNumber}"]) {
+                        sh './build.sh $EFFECTIVE_BUILD_NUMBER $BRANCH_NAME'
+                    }
                     sh "mkdir -p BuildArtifact"
                     sh "du -h"
                     sh "cp ./build/dist/layer7-graphman-* BuildArtifact"
