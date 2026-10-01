@@ -62,7 +62,7 @@ pipeline {
                    if [[ $BRANCH_NAME == release/v* ]]; then export ARTIFACTORY_ARTIFACT_NPM_PATH=$ARTIFACTORY_ARTIFACT_NPM_RELEASE_PATH; fi
                    artifactoryCredentials=$(echo -n $ARTIFACTORY_CREDS_USR:$ARTIFACTORY_CREDS_PSW|base64 --wrap=0)
                    echo registry=https://$ARTIFACTORY_ARTIFACT_NPM_PATH > ./.npmrc
-                   echo _auth=$artifactoryCredentials >> ./.npmrc
+                   echo //$ARTIFACTORY_ARTIFACT_NPM_PATH:_auth=$artifactoryCredentials >> ./.npmrc
                    echo email=$ARTIFACTORY_EMAIL >> ./.npmrc
                    echo always-auth=true >> ./.npmrc
                    cat ./.npmrc
