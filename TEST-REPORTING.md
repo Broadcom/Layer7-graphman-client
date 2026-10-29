@@ -593,6 +593,6 @@ npm install --save-dev jest-junit
 ## Support
 
 For issues or questions:
-- Open an issue on [GitHub](https://github.com/Layer7-Community/graphman-client/issues)
+- Open an issue on [GitHub](https://github.com/Broadcom/Layer7-graphman-client/issues)
 - Check existing test examples in `tests/` directory
 
