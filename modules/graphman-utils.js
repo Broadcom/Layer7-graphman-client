@@ -197,7 +197,7 @@ module.exports = {
         }
 
         stdinConsumed = true;
-        const data = fs.readFileSync(0, 'utf-8').trim();
+        const data = readStdinSync().trim();
         if (!data) {
             throw this.newError("no data piped to the standard input");
         }
@@ -440,6 +440,39 @@ module.exports = {
 
         return context;
     }
+}
+
+function readStdinSync() {
+    const chunks = [];
+    const buf = Buffer.alloc(65536);
+
+    // NOTE: on Unix, piping is not working with the below line of code
+    // fs.readFileSync(0, 'utf-8')
+
+    while (true) {
+        try {
+            const bytesRead = fs.readSync(0, buf, 0, buf.length, null);
+            if (bytesRead === 0) break;
+            chunks.push(Buffer.from(buf.subarray(0, bytesRead)));
+        } catch (e) {
+            // on Windows, piped stdin is non-blocking, so a read attempted before data
+            // has arrived in the pipe buffer fails with EAGAIN rather than blocking
+            if (e.code === 'EAGAIN') {
+                sleepSync(20);
+                continue;
+            }
+
+            if (e.code === 'EOF') break;
+            throw e;
+        }
+    }
+
+    return Buffer.concat(chunks).toString('utf-8');
+}
+
+function sleepSync(ms) {
+    const int32 = new Int32Array(new SharedArrayBuffer(4));
+    Atomics.wait(int32, 0, 0, ms);
 }
 
 function replaceNewLineMarkers(data) {
