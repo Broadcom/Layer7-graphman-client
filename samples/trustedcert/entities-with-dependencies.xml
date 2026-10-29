@@ -1,0 +1,906 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>trusted-certs</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fcc2</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.098Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d5fcc2" version="1">
+                            <l7:Name>trusted-certs</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example1.io</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.099Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdb9" version="0">
+                            <l7:Name>example1.io</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
+<l7:SerialNumber>16461789489081207431</l7:SerialNumber>
+<l7:SubjectName>CN%3Dexample1.io</l7:SubjectName>
+<l7:Encoded>MIIC8TCCAdmgAwIBAgIJAOR0BlJv8cqHMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC2V4YW1wbGUxLmlvMB4XDTI2MDIxMTAzMjYwOVoXDTMxMDIxMDAzMjYwOVowFjEUMBIGA1UEAxMLZXhhbXBsZTEuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCRKIDcJrwMyh8dwQ0AGZzV8zWF2z8J/j0ytXyaaQYktDny65A3zbpgctjrk5FfOpIedZJ+6Aa3QdYYE/BwNuO2ReLjisg2qFYr0/5cIY6WaJYZv6Ryf/T+Rc3F5aBKI+kEdSEpS1KcHTr/kN/i6DaiBb5aaceemN/0XN5xlVBQBXIUDLs1435LBGIGCwoKFiy2siEq48xlNS6fzRjlB9xLAYmjg3pNJu7C+z/5GacMuu7mpb/PDU8422MSF4ZwPDymMJS4rjVbDVAgbm1XimpacO/aAec0vgNX7KmkGEDq9qp/TGausPMHxhpPrw+HP5x6ydq3TQQLpLbJRLfEdv5VAgMBAAGjQjBAMB0GA1UdDgQWBBTl8spBxQkx3uU87K9liIJ4aza2ezAfBgNVHSMEGDAWgBTl8spBxQkx3uU87K9liIJ4aza2ezANBgkqhkiG9w0BAQwFAAOCAQEAGUdeIPcFv6Wfq+af++U5Edr1PwmRT00WKj5fEZ+rTHJrErkWhHCqQ2fKrvivw1vbYNV7x7ZSbzdVr2Vo5YizOJ3OqTtJ0z99U3fVpuSFCmm4KZGkHcqjp8o9kUVUi4uy2+38844pzR4fU00PjVPLc5IqPm7c5oALAUzKwp6BKBLsY2u4HSzTSV2FJjg8TjAoVmV6U7FeKcklKZ/JbmDfjWT4A9c0uN4Ks1gEbHQFznlDy0w9V7pdonrMwz/tpH/B9VXt+HIiv/NL6mYDqm2ZVtRPim/+dmEIhKRLYTa5GoecnGzSUi9VAImL+OeGbc8TPdja00siss5lYB2lblP6Hw==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>SSL</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.636Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="SSL" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:SSL">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3D10.52.38.140</l7:IssuerName>
+    <l7:SerialNumber>18087412404910475147</l7:SerialNumber>
+    <l7:SubjectName>CN%3D10.52.38.140</l7:SubjectName>
+    <l7:Encoded>MIIC8zCCAdugAwIBAgIJAPsDZcBErseLMA0GCSqGSIb3DQEBDAUAMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDAeFw0yNjAyMTkwNjAzMDJaFw0zNjAyMTcwNjAzMDJaMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ9M31+A08I1p/BV27d3Tug1GM8HX8EGWBGPZCP+3F4LuGH0hU8Q3C866MfOHX0gjTMboZQiuJYHh5lIutrzTsKmfG202YiXclYRZOf93SCl+4Modz7vOJXraAgfN74S3qO5QnD2BEqeMyThgnJjcQ3MEJQq9lsjTuYaQtwAKRRUuju0bMNCVUI7UYTxX3r52EtubSPRF5S7IZKSgMBGVP5jCTVhGVSC+UX1m4xoT9VJ4NQ7ml9D0mY+X6xnXgXRkLYZwWzdbGftoCrpfFJqcb1W7ssLoVTXILpI4RmP+/WN4E1B1e1nOb1QbDzqNP5w6EDYpX4YUNWnuMtpgeSr3JkCAwEAAaNCMEAwHQYDVR0OBBYEFKJ69hD1gfUa0MfN6VLgwV9xHn0zMB8GA1UdIwQYMBaAFKJ69hD1gfUa0MfN6VLgwV9xHn0zMA0GCSqGSIb3DQEBDAUAA4IBAQBipqs1Y8m7ajlxntVF4F4L0z8pvb2bQT5FJjs4MIHx152w866k88AvVnANSUcLmG7Ze89vpKwvh67nyz7NoRYPQ0Ia29UAD/ZIMYF6dnfVv2wTi03Z4CMXVgMM1H6+2SWGg5kd9rHl+/GxdbbfDyZRLsTu1tvQ/n7TE4G13qZMFY08gwUTvCaRNAYXtnT2o0Hm6jeeuXFoJs4sdY81dolj1DFmVJhEbEa2J0z0v+Bce8j88jXAJsdBRidA8WiufeHAE/qT5qdA0xV3F9dNsIo/VeyXIsXstsJcz2JpxYvvhKkiJY9Ze1au6FgJknld/OhOWv0sZzWsw2fZgBmsAeMc</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,tt9MSEEN7eZTqJLc+0BoEvNEUbw0BwgQ37gPI2ox0oI=$0svO7C5HH4+F1V8ZYBjhJJahHCES9D4M4g++x74LGCtWAwm4iPNnvrZOxtSGKdNDkiFUPrIrSp65/8K7f7gYWu0oi/HYnrayOcJNT9thOkGNQPiwt4J34F0B8R4vfsCZ" algorithm="RSA">$L7C2$1,MdNqjTx1HTMduzS2bbzVPkIbr2Fy9UoN06gBm7a5tw8=$rMP0ipq8//T9SG0owEhYZ0bJZp/gkSFJI2DHLFHk6TfJ6i8jFq2wfLxaNHJrf4ZxuqDOfVrMl7rdyXf3nky7wl8ZUA4I8bo7aJbpNjqsfMAoyUnhgPy55t9knOeQ/wqBIHNXqnH5p7tESvQl/mycHsGfK4mWhOy23PKb1NmyWOfBs8iKyrRsPp82AqIAC2GSmEksXeklbPdmEvykpx9x/0gk00uTEFj3XEEr1CQLmZWPIExD4LsViPTOjfe/OPZ8xmB74uSBdGZBE0rB26vYpRgg99S0KuDbCwwXfGkvg6OkndHmGKVKE6neNPERqz5w5JedNNlUGvUQM7U1kuGlBoosAuHpPpyl5dX3H180xYRVyJStV6/6vyo3Nrf9ChKOtrh5A4buBlEufi71/kue1Ca8D18uNnqMLtVS3rWzlnkbkQmOmDNjEzF2c9iI8y9e1HVQWzsUX90LO4lFI6Ok0SPVSk2gZ19MKkCeB+TEGldNNuSg5zLjaQC736aWg1kelKG4QIOyanFFb3S+lorb6SgE2cyEnyibxgWJBRb6vucuIMmrfcQv5GGoxHSIZUZMv+tBZa9+BlFNG3TVgVDZTGse3hEzHu39L5jVn/EQvZ8B1DTGv5qwP/N/jYb6zQfY4fvX5uVOgxCOb33nQ7tGkuBSkHJ1/hnDjoaWVqCjvOMnwAvtSJRcuCHYoZu7h9fthQgPAXC+M5D0sSKXsfy08J6Xx6487THcImWKrLmO3RCZ5m9HKNZt5mDfZdbJb8Z2woYbSLkXooPHDhXcgXzVPIXWCNVarnwNVgtraVYokl4nMeDwKMVBEDdzNkYgeaKOz7kqU0Ia4yExB+t9ujMem+1Qw3fMpSIGfyE84XLfQYv4buFsS1ViWLuMkkkrkitARDDEM97XweiJKPDmbXDeToH+eH3J2jJ4E0umZdUuleaZqRctts39FQxCkZKZPhZ51getxcbNs1IXxAoWObYBNpa8rDZbrNRXTL6FmoAFPfpiPwm7qAgVY97Rj1BMOhXsmuDcVfe/NDoO6XwiAQH7nhrGrnyxaUFdBPbo7aQhZ0cjKXVAU9L8K6QdblvCSqBJH2O1bVfYxYlT02npiLyGPL4nxUC8qYy3uMMw+rkk9RYZHHL43c9Sg8LDeBO66iXFWEpjGBNMnm6g6Jtq041ULFRzyepGiHjs8k2D1jG+5QXC+wzw4DrImS1hvXmYVmS5ZUx0YVLcCAzGS5p6tQA8chWY2tiBIkvRLNSd9phpBpMfomhdpaVuHz183z7pHGvFAZw3y024PacHzSzTh/COcfR7CFpl98MYz7bDQUhHjM1ZzxLPYBcOx30zLo0me/L1urs5qB5nz5H9On9VZxyj0pHqdyuueTdsaxWYn0rq2/z7XrgFyIg+PI+sU/4QfaYxJRSR4ia1QNWMIfVJBxCe8R2m6iaBs7MRbb7ImFR5H3rf+fL6/hbgQh9/8LB4JZ/dvFMxbP24SqvXpIISzt9KdN5FPRq9Cydw13gqjJXLMAP+A/XbBfCzm1CUeHrL/gpQJVFJILbkB6l5+iMZNjS2ku/HhgulOae3EsMJku4F4ccjZaEe97alROWWVoQFH3T9/K65IX3s3aPWC8e43nC2dvguKbFsY87hFjmqoDvFDOfnkdcdhuXapuF61ErYB3Y2JAMdP/yJS5/UeTT8XVc6DxskswzMP4PPeW4LKwW99vU=</l7:StringValue>
+</l7:Property>
+<l7:Property key="specialPurposes">
+    <l7:StringValue>Default SSL Key,Default Server SSL Key,Default Client SSL Key</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcp-signer1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f751</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.637Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5f751" version="0">
+                            <l7:Name>rcp-signer1</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Drcp-signer1</l7:IssuerName>
+<l7:SerialNumber>7755943296341974050</l7:SerialNumber>
+<l7:SubjectName>CN%3Drcp-signer1</l7:SubjectName>
+<l7:Encoded>MIIC8DCCAdigAwIBAgIIa6KlVdSJHCIwDQYJKoZIhvcNAQEMBQAwFjEUMBIGA1UEAxMLcmNwLXNpZ25lcjEwHhcNMjYwMjA1MTQyMzQzWhcNMzEwMjA0MTQyMzQzWjAWMRQwEgYDVQQDEwtyY3Atc2lnbmVyMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALtjst+fcpXBPK2gJpETYMMpRK5vUvXuzG6zF0aQHhz7eD4p/0dp0lD2md58t27DcOZGD244En1fBUzu/Uz6jAe3lQvVCmKENn/bB21jUZv/QApHy9zoyPS5VnHQzbmL300V3zAQY6DU0vN4P+fGxPsf1NABPSGqDXvKbI8MUJ6v5psQwUO4kIVU+oNoOpgoL4ks0Jk1J9UPc+LNzWDFk0Upem5J5k34nPvwWRRExCS9fgVujHisCdAUie8DhlMIxWAuzeGEAIEJg9q4BaeRs5LgALPZRmBQK0gc4M+akSBe7Ze3CsuSkpBgdQFKVgs7Y5wGPQAtTUBegzqRWwSSpKUCAwEAAaNCMEAwHQYDVR0OBBYEFHH/M09OplL5we7vX1LfQWIYmRIDMB8GA1UdIwQYMBaAFHH/M09OplL5we7vX1LfQWIYmRIDMA0GCSqGSIb3DQEBDAUAA4IBAQBuRQPPcvvrxdWjc4YEohB9iYbB/rgVBRycaKI7dlhsnN521qOFWMQK724nOyQObV8HZh0byW4/GirTefW2oaiy2BVwab0DZpZOT4ixdPIMWndWPKN6M+x7XP3GD+ABze6AEe6D3p4z6qnKjzM+NFoQY+9E5tKtR08mCdKk6GWJslNeBXkoLuXjngQQzhK2m3TTvO+phBh/aOYoP2phk/iOduU/yEIPhHp4s1PAzJOw9mMwIjm6/Kwg9L2FWcmfhMCa3zn9II4/sisyK//jkWCARIkXWWsypslqbnJW0C9P2BiM33TTNe6xR8bgzsecnjENa4UVANpksFsuQfXMrU4L</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcp-signer2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f754</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.637Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5f754" version="0">
+                            <l7:Name>rcp-signer2</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Drcp-signer2</l7:IssuerName>
+<l7:SerialNumber>9240300995732763446</l7:SerialNumber>
+<l7:SubjectName>CN%3Drcp-signer2</l7:SubjectName>
+<l7:Encoded>MIIC8TCCAdmgAwIBAgIJAIA8JMxkVvM2MA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3JjcC1zaWduZXIyMB4XDTI2MDIwNTE0MjM1MloXDTMxMDIwNDE0MjM1MlowFjEUMBIGA1UEAxMLcmNwLXNpZ25lcjIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC+ej+9yn1yMbvrrNj7+OgNGFa3n0Nu4XsIhmukd/18hFvEBP1Gc7uU5nr2kQ7mr6mqlKWAMmPaA/qor+X+vVYn/5iR0RaZtOEioeBfTiwGfh0mZaRR07+uc+tdxB5hhMnfsMRRY1UHfVwwBxfT/24yKOOfQlbtXEgViboe5dJYTn2OX/JCntbRuJiehSEMTNKwaNfgCr5g6Bs99cZgRgzcAeGF+2hdr3pbevbqkU6ZNzQa6pAjGJFDhn6WT44ztL67W5suGMzcCQ1wyGtRv0iIaUS6Q6eIZF9iz6NuvSVrgtcHTGCsFjAVD/K0GaGw6i+7CS0FFiCuodvXirwR3MpBAgMBAAGjQjBAMB0GA1UdDgQWBBR5CqzeGv0bdfmBg9Mgj63x7UUb9zAfBgNVHSMEGDAWgBR5CqzeGv0bdfmBg9Mgj63x7UUb9zANBgkqhkiG9w0BAQwFAAOCAQEAhjOtYCWpJQVYm/WKQriU4jrmLmcUKa1XYxVAw0buNsgcGTggsYlsBgwRpe+cTlvQwFBuwcr7zXhhbT2WQrWmSohjmgbu/8m2ujwie+7VyMVPXsI0dV1KB4ozsYPbYJMFI0wIDbas6XHGL816OlrRMXtJMp0R6e2JgA9sIF8oXDnzeKY+WkF/9qs4XY76S5mh2oBDs5QK9tm68aLA0sctlrK7ryaIGnBu/Ls9E13TWI/gj95yKaBxpEyOZ/ymm/bCMlIIPPhpIvuxwupRlP/yJakzPgd6zmrdx2y2eDj0CCwS1gHBpbJja7wqnX8hvQbvAoIkpZ4R8juCA9tYRObIXQ==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>rcpolicy2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f747</l7:Id>
+                    <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.638Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:RevocationCheckingPolicy id="72adab14b763f12efb51ebb737d5f747" version="1">
+                            <l7:Name>rcpolicy2</l7:Name>
+                            <l7:DefaultPolicy>true</l7:DefaultPolicy>
+                            <l7:ContinueOnServerUnavailable>true</l7:ContinueOnServerUnavailable>
+                            <l7:DefaultSuccess>true</l7:DefaultSuccess>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>CRL from URL</l7:Type>
+<l7:Url>http://example.com</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f751</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from certificate URL</l7:Type>
+<l7:Url>.*</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+                            </l7:RevocationCheckItems>
+                            <l7:RevocationCheckItems>
+<l7:Type>OCSP from URL</l7:Type>
+<l7:Url>http://example.com</l7:Url>
+<l7:AllowIssuerSignature>true</l7:AllowIssuerSignature>
+<l7:IncludeNonce>true</l7:IncludeNonce>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f751</l7:TrustedSigners>
+<l7:TrustedSigners>72adab14b763f12efb51ebb737d5f754</l7:TrustedSigners>
+                            </l7:RevocationCheckItems>
+                        </l7:RevocationCheckingPolicy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example2.io</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.639Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdbb" version="0">
+                            <l7:Name>example2.io</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dsigner-2</l7:IssuerName>
+<l7:SerialNumber>8697244857288879459</l7:SerialNumber>
+<l7:SubjectName>CN%3Dexample2.io</l7:SubjectName>
+<l7:Encoded>MIIECzCCAvOgAwIBAgIIeLLSHiNL7WMwDQYJKoZIhvcNAQEMBQAwEzERMA8GA1UEAxMIc2lnbmVyLTIwHhcNMjYwMjExMDMzMTUxWhcNMjgwMjExMDMzMTUxWjAWMRQwEgYDVQQDEwtleGFtcGxlMi5pbzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALNUwITg6A/dRsCpfOzYJnNj2u59Bn3nyjkaEaNBtKTnBs5of0vmE+ZE1pEBAR7Ootcte7Bx+drW/mthhahudV01ybDDxXRaOUvz3BboNVoMpWvQqWLWXvvK0mRK1xP5Vf4qx4i1hqmqS9JiKVKHmtxEIFb+JLhbXMVOPW4oa+c6n4f4dzkIkD0qC0EYnyYgI29c/5UCnM8a8A3RvN6Dzm2TgX1Plilwyx1yOelvNecPufbhUkwk9uKfdX61jJMrncNaragQy3TJEJN+JuZf9ZRFlsRm/mvDuBHL+2cWORZSZCOupWSn/AwJk4h/WChPN4OLqtq8QrSmCkL6Cghw/jUD4anmAbqoP2p9wISD2cqUoav6yhqDgADjgaH3KolXiS/sWkAHZyuApw4e2/5ZY2m0Gx8KQ0KmdM83085lEJvpBqZnPZSEw15ijXp6Hlosc8+5p4x7u80CoAfWxrqEZkUhKxE5Qnhoz3d4nnKSiRFHtU3pUFKmehabrGVYYZEeE3qwUpjzuU2plxOANsFGaFTfasE19Q6qyGARyMjZ7pVk7VK789ErxDiIJUrQWmlj2xWLqvKOajxBhA6o76Jb4dmLC10b23pyOZawuN465PDdpuJIGoK1E0urG5sUw8gKrt3MEHw/b20b+YiPmjAyRoos/yght+ELr43iF+nPP5CNAgMBAAGjYDBeMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBR8Jo4GhB4tYuIUVIqYCXbht4beHzAfBgNVHSMEGDAWgBSshQDc5wR8ThRqAwicS6GjDmFPQTANBgkqhkiG9w0BAQwFAAOCAQEAcxaqjzB8/WLEBKmlmLsjHjfOOBYTJUwtekPMlk8FJXP/n7su+Y8V5jrRx3fy3/DNnq+OiOg5nQpWtXmLC06foqvFZtFTpmQHaYbJaQwTqWtQwbeIF59OErcb5sR0fqfFcBecctnn2gca8rUdl+MgEp2Ehml31cEPqlBWhA1shwvxMDpnHBQKDEZ9Wn0xdlUV9G2W8WfmvKwCHDU7Mz2Y5oUnaByliDi6l8Fuh6e33yxHxYPnoeKeB6fL7noo3jpyOZJoasDyAUc8PSVqj5n5yBGA4CHu4TFij05UMnpcSwYUGgOB1rMQDyFfuPrA06B8kgW0pv2HQnhuFcFQVzZAmg==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:RevocationCheckingPolicyReference id="72adab14b763f12efb51ebb737d5f747" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/revocationCheckingPolicies"/>
+                            </l7:Extension>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>signer-1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fdc1</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.640Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdc1" version="0">
+                            <l7:Name>signer-1</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dsigner-1</l7:IssuerName>
+<l7:SerialNumber>3770493482398638684</l7:SerialNumber>
+<l7:SubjectName>CN%3Dsigner-1</l7:SubjectName>
+<l7:Encoded>MIIDDjCCAfagAwIBAgIINFN72GZL4lwwDQYJKoZIhvcNAQEMBQAwEzERMA8GA1UEAxMIc2lnbmVyLTEwHhcNMjYwMjExMDMyNzA2WhcNMzEwMjEwMDMyNzA2WjATMREwDwYDVQQDEwhzaWduZXItMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALNwo5b7jSuY2+Tv5nmkiAbrOCu3ATx98TFptWDVVBELWJzGqDayXEw11/boN8HMy3YqhWss+aEX8NVWQoTCksCuogcbySjv/BmuJHyzny3B96rjObiJoEE7C0OXJ/Ah+suS0Qj1Xc//HZrxjnkJXbegJvfcqa85P3qO2bu9n0xXEwYgTTXUs7jnLUAVHVhjKTRwxfNtn7MUFsu2Eqp7tAFHhmP99ZAEpDLfGJa5cph0XRDL2JgSN7vkIeH86B1lEDmDhu1iPtu3pIeRCV+7GHv3GHHmx5i7/iuX6EiAgESdczSoFdMoaJPsf6gGGXP9AoFiABvNJjHel8a0Cq0jCfUCAwEAAaNmMGQwEgYDVR0TAQH/BAgwBgEB/wIBATAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFMZViM7XOxk5hrZ13vftu6xwY8WlMB8GA1UdIwQYMBaAFMZViM7XOxk5hrZ13vftu6xwY8WlMA0GCSqGSIb3DQEBDAUAA4IBAQAqExVJOOPRdNaomUzd3WmXIM1VHrAoUCVa0zalpsAKwE0hk8vZZc6Km8qWotTMJXxmErp+YoaTdgMyxIkhPTfYyUeFVLNnNtIYX/eA3fRmaGSjgbAHY4FGyAaXJffQJRerJ85SRG0cYLq/o/CeLNZn4VxIKAxS16Vza6oB7d+HIVfBblqVGvokPqnQHypBeYPyxzrfWzl7T462VAnw44YuwjxNBMcqyIJqNlRIzDrH1Ya0WCgzlaM1S8yQK9EX6VAMBWu22HjYDIgqCiCbVNsal7NoH2b07m8XfleQz85AQlJkRcNnZhFDUB8xNewQNwXhuNGbfP1SPiP6EarRT2St</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example3.io</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fdbd</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.640Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdbd" version="0">
+                            <l7:Name>example3.io</l7:Name>
+                            <l7:CertificateData>
+<l7:IssuerName>CN%3Dsigner-3</l7:IssuerName>
+<l7:SerialNumber>6346902833205812396</l7:SerialNumber>
+<l7:SubjectName>CN%3Dexample3.io</l7:SubjectName>
+<l7:Encoded>MIIBgDCCASWgAwIBAgIIWBS6f90nHKwwCgYIKoZIzj0EAwMwEzERMA8GA1UEAxMIc2lnbmVyLTMwHhcNMjYwMjExMDMzMjUxWhcNMjgwMjExMDMzMjUxWjAWMRQwEgYDVQQDEwtleGFtcGxlMy5pbzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCSYUj9dMrldVarDH7w7IgLW91E5Az1Q2NkNK+O7x5K2BV+QR5luGr1GoRE8TWZswXyX/HVoyMRnL8xGQ0s239OjYDBeMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBSmb7J+bXZKDJA7sXhkFm1plzILSzAfBgNVHSMEGDAWgBQjh5zsJzPJkQc7u59l5hsuEaQALjAKBggqhkjOPQQDAwNJADBGAiEA/5ta+DADeWe8wZyG984CNXkfXLHkxqlW+5y8akbvRXQCIQDKBddv77dTL6jOcQwqmDS2w4tiIec8N/k7IjpGCcZxEA==</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+<l7:Property key="revocationCheckingEnabled">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustAnchor">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlAttestingEntity">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedAsSamlIssuer">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningClientCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSigningServerCerts">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="trustedForSsl">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+<l7:Property key="verifyHostname">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-trusted-certs</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fdc6</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.648Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="9b9bc4cc-cfac-4a47-87c5-e1d1341f849c" id="72adab14b763f12efb51ebb737d5fdc6" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fcc2" guid="9b9bc4cc-cfac-4a47-87c5-e1d1341f849c" id="72adab14b763f12efb51ebb737d5fdc6" version="1">
+<l7:Name>sub-policy-with-trusted-certs</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdbb"/&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdc1"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example2.io"/&gt;
+                &lt;L7p:item stringValue="signer-1"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example3.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdbd"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example3.io"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-trusted-certs</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fd84</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.656Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="33eb7f09-07df-4edf-a32b-74f269df1ad0" id="72adab14b763f12efb51ebb737d5fd84" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fcc2" guid="33eb7f09-07df-4edf-a32b-74f269df1ad0" id="72adab14b763f12efb51ebb737d5fd84" version="1">
+<l7:Name>policy-with-trusted-certs</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdb9"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example1.io"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdbb"/&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdc1"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example2.io"/&gt;
+                &lt;L7p:item stringValue="signer-1"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="9b9bc4cc-cfac-4a47-87c5-e1d1341f849c"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-trusted-certs"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-trusted-certs</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fde2</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:30:42.667Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="72adab14b763f12efb51ebb737d5fde2" version="3">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d5fcc2" id="72adab14b763f12efb51ebb737d5fde2" version="3">
+<l7:Name>service-with-trusted-certs</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-trusted-certs</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdb9"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example1.io"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:TlsTrustedCertGoids goidArrayValue="included"&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdbb"/&gt;
+                &lt;L7p:item goidValue="72adab14b763f12efb51ebb737d5fdc1"/&gt;
+            &lt;/L7p:TlsTrustedCertGoids&gt;
+            &lt;L7p:TlsTrustedCertNames stringArrayValue="included"&gt;
+                &lt;L7p:item stringValue="example2.io"/&gt;
+                &lt;L7p:item stringValue="signer-1"/&gt;
+            &lt;/L7p:TlsTrustedCertNames&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="9b9bc4cc-cfac-4a47-87c5-e1d1341f849c"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-trusted-certs"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fcc2" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fcc2" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdb9" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdb9" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdbb" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdbb" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdc1" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdc1" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdbd" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdbd" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdc6" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fdc6" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd84" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fd84" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fde2" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d5fde2" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>trusted-certs</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fcc2</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-trusted-certs</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fd84</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-trusted-certs</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc6</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-trusted-certs</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fde2</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example1.io</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>SSL</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>rcp-signer1</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5f751</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>rcp-signer2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5f754</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>rcpolicy2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5f747</l7:Id>
+                        <l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>rcp-signer1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5f751</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>rcp-signer2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5f754</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example2.io</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>rcpolicy2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5f747</l7:Id>
+<l7:Type>REVOCATION_CHECK_POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>signer-1</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fdc1</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example3.io</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fdbd</l7:Id>
+                        <l7:Type>TRUSTED_CERT</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-trusted-certs</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fdc6</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>signer-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc1</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example3.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdbd</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-trusted-certs</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fd84</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>example1.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>signer-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc1</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-trusted-certs</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc6</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-trusted-certs</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fde2</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>example1.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>signer-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc1</l7:Id>
+<l7:Type>TRUSTED_CERT</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-trusted-certs</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fdc6</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

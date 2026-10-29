@@ -1,0 +1,756 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>keys</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fd02</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:56.801Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d5fd02" version="1">
+                            <l7:Name>keys</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>SSL</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.343Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="SSL" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:SSL">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3D10.52.38.140</l7:IssuerName>
+    <l7:SerialNumber>18087412404910475147</l7:SerialNumber>
+    <l7:SubjectName>CN%3D10.52.38.140</l7:SubjectName>
+    <l7:Encoded>MIIC8zCCAdugAwIBAgIJAPsDZcBErseLMA0GCSqGSIb3DQEBDAUAMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDAeFw0yNjAyMTkwNjAzMDJaFw0zNjAyMTcwNjAzMDJaMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ9M31+A08I1p/BV27d3Tug1GM8HX8EGWBGPZCP+3F4LuGH0hU8Q3C866MfOHX0gjTMboZQiuJYHh5lIutrzTsKmfG202YiXclYRZOf93SCl+4Modz7vOJXraAgfN74S3qO5QnD2BEqeMyThgnJjcQ3MEJQq9lsjTuYaQtwAKRRUuju0bMNCVUI7UYTxX3r52EtubSPRF5S7IZKSgMBGVP5jCTVhGVSC+UX1m4xoT9VJ4NQ7ml9D0mY+X6xnXgXRkLYZwWzdbGftoCrpfFJqcb1W7ssLoVTXILpI4RmP+/WN4E1B1e1nOb1QbDzqNP5w6EDYpX4YUNWnuMtpgeSr3JkCAwEAAaNCMEAwHQYDVR0OBBYEFKJ69hD1gfUa0MfN6VLgwV9xHn0zMB8GA1UdIwQYMBaAFKJ69hD1gfUa0MfN6VLgwV9xHn0zMA0GCSqGSIb3DQEBDAUAA4IBAQBipqs1Y8m7ajlxntVF4F4L0z8pvb2bQT5FJjs4MIHx152w866k88AvVnANSUcLmG7Ze89vpKwvh67nyz7NoRYPQ0Ia29UAD/ZIMYF6dnfVv2wTi03Z4CMXVgMM1H6+2SWGg5kd9rHl+/GxdbbfDyZRLsTu1tvQ/n7TE4G13qZMFY08gwUTvCaRNAYXtnT2o0Hm6jeeuXFoJs4sdY81dolj1DFmVJhEbEa2J0z0v+Bce8j88jXAJsdBRidA8WiufeHAE/qT5qdA0xV3F9dNsIo/VeyXIsXstsJcz2JpxYvvhKkiJY9Ze1au6FgJknld/OhOWv0sZzWsw2fZgBmsAeMc</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x40RmbaBeu/+aEQQNMFu3k5uFjFefV5moNxLfL71xL0=$8z+Jrm0v2MJQZpDNrw6jHhVet69lVuR0Wajk9L7S1k+F+llOCK+KhwlQSBnwxEc7a6+EpHtJ9yyd3N83i8herdxM4XxgJdCLpsJ+xdTfUogocZlmJu16cV7JvhFyh+i0" algorithm="RSA">$L7C2$1,NO0FMKmSrbuYDfMTASwo8eVnteAoV1CJkW2iop++6P4=$K/M2MHCTszVxkFsQwxOsKRys428fntlsPtdTDqCG6jR6mhhc3FV8/abECbRJ1XO2LYsEESiqIE6aqaFJGIwtAlzLiil87ogAll3eFlmZ2ghbH0c8nmczZS9HJXjzYz0Ge2Wgvnw1cn0ZDO/90jx1SHECAlvYJHe5NyJrmRBRdTxXZe76bbH5IVON22/R0pahl7j4KYQRJxdVRwfIODQwdkDlluOcLSmxsG40b9aQ/85qrNcVTNHmnkLLRIFRayF+DDE5uk/9cm8mB+Wc3ge4abFH6tJ0RFOwK3bwjenbJJ2OPgK7W1L9jGtMrX7zEY4V4wzojvfh07C74kuv7oAryi2kNWcO8GGvXJ06qinoci5MMMVTYBoVupcX3x8+L0L8cZr3OykCiO84EDMvsuZu0s1FRudh+bI3ZRyhXmQCJK5SXKnVG7+63iTzn4/x+jrNwgu2Z35F0XjqZwUqsKkH/dtK7qYzrrdmlD0ZWJ2XLPMTt4JDGVLdJnqssh67zuoRZTplUsjnkBoBKdO1HdfFWY8gzyvaaNGudHgVhIziyb/odeQWEertAHcc3QFHkefat6xr3qoSXXuwbRn9LufmP0RZXU5ubwkHD45sAbtBFRN43YBwGW+bl5qsGiKQhTNa9+Ok+WA6F8az3a+pEZW4N/YaBUuEBb2z9FPM1uIAu1Bgb77OdhjMI8MsxErCPLvLwozfRV5zsAd8c8OFBGjdRYy4TCOCIv8MJHJUZmdvL//s6os4kSn7+wXS/EMsysFChMNNK1DSv/9cy5NyQC1agpvdXJvK0QhwhPYwMWD8F36/fd3EDSPd16puRZdCQFAULCh0MXBNoeSOPiLp1+X1qeHcxhmVDZXVrSQvSuNngI5GfqHbYY1Fn8ozlv2rsK9mptaz4ffF1oUi8/Cd0x48wKgngK1S5wANuFTLoUy0DgMwapZCF4zV56GdQ4jNcHZKOjd6BPh6VeACtrJtVDBsWfcyvd9kv7/INNA0STP7NuTyQ3r3S88VcMX98UQBmh96r5VjXEoXMfcu5cE0yhLs8Acou42Y6mJDMRPDd3hQUsSHD/q1iv2UqoBRrHcE8XjN6HGbranzOKMG3TK7onpANjMcuuYRXZQTRdJjSpFwLbkOBaDPm7/XYiENIru7xPI7/vvkEAk6ZnHXRvNPL8F5b7+vrb6SxcdjqmQ53oTvoI0yLyO+PA++PGpdJ2BD7eyeRoRKRu40DGVImSeJNfQ8Jh8OCluKcb9K7Cesc+enyP761Ov555r+pHfPJsPE2N7TehOB8PYq/6Wqr//bsjYVRy3h0YT5nmj5GK5wxKhtNE+iyuzUaB9J3R2ls7X8mRuk7GUVI8bIWWSOGEaXkVy1WoF5cEocmzwJXnxGX3IwAkMGfVi96fDJU69TKIH2K0fQCv3+NdoWJUYmlED0HmLsKuZvPFt20f/kdPIBbzDu2R47d2v5/CwRUSGlA2LQXMpVJJru+zUPId3J6fwC3CxMcsejJ3XYwoQaIXdTDYXWM23fDT8rTkgGavtUnZWantnwUy30EN1sJRGlxL5ZYteUAt5/seYyZpxc4zjE9x9wQyQ+2WGhsJ66hYdWMJwn1B4ZzPDBWVoD0SeqCtb4hAehk3R04iOl0EjBpZiyGyJ5Nh4sXanVXBruS3OH+9JpJZfG8Jqyeoh8fnzqcwzraoiypcdPXsM3IOHt4RTBrolRufE=</l7:StringValue>
+</l7:Property>
+<l7:Property key="specialPurposes">
+    <l7:StringValue>Default SSL Key,Default Server SSL Key,Default Client SSL Key</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example1.io</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.344Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="example1.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example1.io">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
+    <l7:SerialNumber>16461789489081207431</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dexample1.io</l7:SubjectName>
+    <l7:Encoded>MIIC8TCCAdmgAwIBAgIJAOR0BlJv8cqHMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC2V4YW1wbGUxLmlvMB4XDTI2MDIxMTAzMjYwOVoXDTMxMDIxMDAzMjYwOVowFjEUMBIGA1UEAxMLZXhhbXBsZTEuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCRKIDcJrwMyh8dwQ0AGZzV8zWF2z8J/j0ytXyaaQYktDny65A3zbpgctjrk5FfOpIedZJ+6Aa3QdYYE/BwNuO2ReLjisg2qFYr0/5cIY6WaJYZv6Ryf/T+Rc3F5aBKI+kEdSEpS1KcHTr/kN/i6DaiBb5aaceemN/0XN5xlVBQBXIUDLs1435LBGIGCwoKFiy2siEq48xlNS6fzRjlB9xLAYmjg3pNJu7C+z/5GacMuu7mpb/PDU8422MSF4ZwPDymMJS4rjVbDVAgbm1XimpacO/aAec0vgNX7KmkGEDq9qp/TGausPMHxhpPrw+HP5x6ydq3TQQLpLbJRLfEdv5VAgMBAAGjQjBAMB0GA1UdDgQWBBTl8spBxQkx3uU87K9liIJ4aza2ezAfBgNVHSMEGDAWgBTl8spBxQkx3uU87K9liIJ4aza2ezANBgkqhkiG9w0BAQwFAAOCAQEAGUdeIPcFv6Wfq+af++U5Edr1PwmRT00WKj5fEZ+rTHJrErkWhHCqQ2fKrvivw1vbYNV7x7ZSbzdVr2Vo5YizOJ3OqTtJ0z99U3fVpuSFCmm4KZGkHcqjp8o9kUVUi4uy2+38844pzR4fU00PjVPLc5IqPm7c5oALAUzKwp6BKBLsY2u4HSzTSV2FJjg8TjAoVmV6U7FeKcklKZ/JbmDfjWT4A9c0uN4Ks1gEbHQFznlDy0w9V7pdonrMwz/tpH/B9VXt+HIiv/NL6mYDqm2ZVtRPim/+dmEIhKRLYTa5GoecnGzSUi9VAImL+OeGbc8TPdja00siss5lYB2lblP6Hw==</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x40RmbaBeu/+aEQQNMFu3k5uFjFefV5moNxLfL71xL0=$8z+Jrm0v2MJQZpDNrw6jHhVet69lVuR0Wajk9L7S1k+F+llOCK+KhwlQSBnwxEc7a6+EpHtJ9yyd3N83i8herdxM4XxgJdCLpsJ+xdTfUogocZlmJu16cV7JvhFyh+i0" algorithm="RSA">$L7C2$1,E6GtLX+kbDD5n3mZ6RIC2CrMaumbvCOFDjexhj+iyWU=$nRMJlv1uIbNx6E9zRqtugmKF/RfeEO0ZqzfiGRC1foPwP0sXglnVB4yFcmnl9gXVWkVOHzCKs6V6ipAwpx8AEdmc9Ozu9edouZHTJOm5z3db+01oVhHcpc+bsUw6CPGhcy+NUodfPH0uqGh7HBuwHCoNGsiq2dOU3uwL6T3kiCTxNQAuyhK1asq3JGsEciDG7LeGDPAQiWum76N6AgcMxpmpOPz2w2J8eEnG7dbn9LH8Uaalp6INLjPiR02yKn9WW8o+s+7XpjLWEI3JiwfnbK1IypPXFJDXEpcHzmAHQgu9i4IK1v4w0AFoyFVqp5ZMI8CN+XXf8jXRxcx8Oa5od19ipM5kUssGkzKynVpijA6zcMgzscGl1TLlA1uAmYnKZeV123KVHa5LOIpnCCrop1r9FE/MZywfSccMu58urfbeayH8e33uHP9i/hMSeiSFZ3JPDESgQWo2fCaix3MamBJ4y9Vlj9/JbmpNscPwV57AivRFZXzRM7jYm8v0g738pDlYSajEBIxzs8f2SXJ7dZMqlNrpbLCisXDwDYgxbDYUHPgD4UiRxyflr08Q9GsP1Sbfzf/wOPhvGADZdCiN7u0zb1XBy+CffDcuWRzeyl7BVo8xcqXJFMPChL6Q2WRykAeC+IanT+u4zsZKGqh1veJdJ4lZ8vRW4KSMneWCXp02KFGxj93LIT55XGDTrLWpAl/ARvVMLAuRiGkEq1/rDZQAT8VQJxTP16tlMMDb/vXE+sgwr4rXNZd6rE9Sbwl2ZpFpBk99o/rnsFqICpgE/M0xscm4rm2+uMQIAROXaz1cCWlWkGqUYPe62b7aqSDB/xnjiLbWkl1EtI+4Ux2htmnvbfhikK7CWzPc/feiXBEc6Rjzj9CpQQZLsT0WKqDBLOiAZ2i+5r66b1RouP5Lm3fUuyFFd2O1zjnc89P5AZ/xgJX8WTQLAtU4gevqTYXH2Sdja4bjffWOsnR03lrqMZlswC1AJ7sWp5e5oZZ+5l29jKu6TewRcFkzRD7g/zo6zkVMXpaotJHHyHyYojDCJcbMRplC03kQkpsDKQvqciT/gMaFeEaF+0lYDarXqBb7v3cS2DT1fZJp3/3cRFASB5Tl13Ibxk5+0Sv81vzYkaVcFR1JCo6t1rm0wcbx97kedOTQBVWCPCgMlHTEqiUuJEgLSmCySZ8Q5Xg1y/H4lXOmyzjNoB7QypFlsc5DcKAROq1tjqv/xmlNmG4pl+lnYnyWYpg6AwTOkGKphpqljOhkclfexeYviJEl2ZZcZVKm57DBIsonkQaUp3VJqLKRffihR4R/t4GfrT/DvHExl06SNWEQ/U0VoOHUeVGI9LM+n22nqHa27cSlfI2oqdYZGrmXXsqs5JmDrsfqMkpC7PMgQZ3UHngsSIABevTQ5tDiuGf9kRITExTa8Uvzv6QisDkQ/agaJ5H5l+OAaiGatALVCF56ToWMe7njiN1lnyF4zOXJmp5puZJWRg51WLMpvtVtlNWlsKGdegUPSzwA5rqXdHqB/zwoKTDuCaTSLXpuIYiHzQii1DTJcGQG3EZS4EV4WdKijfD8GEVAGtHVmNb/v9opUtx91fB0YRlmCH9jfa0JUnEyjq7zZAWUTL4uWg5IRsvFzZc2dMavxNczSyIHIJ1GsHadHPEDoi+y64/1ZoND5SMPlmnAnDydcgoLGiD3kkgSW8SG48tpUSD1fus=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example2.io</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.344Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="example2.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example2.io">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsigner-2</l7:IssuerName>
+    <l7:SerialNumber>8697244857288879459</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dexample2.io</l7:SubjectName>
+    <l7:Encoded>MIIECzCCAvOgAwIBAgIIeLLSHiNL7WMwDQYJKoZIhvcNAQEMBQAwEzERMA8GA1UEAxMIc2lnbmVyLTIwHhcNMjYwMjExMDMzMTUxWhcNMjgwMjExMDMzMTUxWjAWMRQwEgYDVQQDEwtleGFtcGxlMi5pbzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALNUwITg6A/dRsCpfOzYJnNj2u59Bn3nyjkaEaNBtKTnBs5of0vmE+ZE1pEBAR7Ootcte7Bx+drW/mthhahudV01ybDDxXRaOUvz3BboNVoMpWvQqWLWXvvK0mRK1xP5Vf4qx4i1hqmqS9JiKVKHmtxEIFb+JLhbXMVOPW4oa+c6n4f4dzkIkD0qC0EYnyYgI29c/5UCnM8a8A3RvN6Dzm2TgX1Plilwyx1yOelvNecPufbhUkwk9uKfdX61jJMrncNaragQy3TJEJN+JuZf9ZRFlsRm/mvDuBHL+2cWORZSZCOupWSn/AwJk4h/WChPN4OLqtq8QrSmCkL6Cghw/jUD4anmAbqoP2p9wISD2cqUoav6yhqDgADjgaH3KolXiS/sWkAHZyuApw4e2/5ZY2m0Gx8KQ0KmdM83085lEJvpBqZnPZSEw15ijXp6Hlosc8+5p4x7u80CoAfWxrqEZkUhKxE5Qnhoz3d4nnKSiRFHtU3pUFKmehabrGVYYZEeE3qwUpjzuU2plxOANsFGaFTfasE19Q6qyGARyMjZ7pVk7VK789ErxDiIJUrQWmlj2xWLqvKOajxBhA6o76Jb4dmLC10b23pyOZawuN465PDdpuJIGoK1E0urG5sUw8gKrt3MEHw/b20b+YiPmjAyRoos/yght+ELr43iF+nPP5CNAgMBAAGjYDBeMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBR8Jo4GhB4tYuIUVIqYCXbht4beHzAfBgNVHSMEGDAWgBSshQDc5wR8ThRqAwicS6GjDmFPQTANBgkqhkiG9w0BAQwFAAOCAQEAcxaqjzB8/WLEBKmlmLsjHjfOOBYTJUwtekPMlk8FJXP/n7su+Y8V5jrRx3fy3/DNnq+OiOg5nQpWtXmLC06foqvFZtFTpmQHaYbJaQwTqWtQwbeIF59OErcb5sR0fqfFcBecctnn2gca8rUdl+MgEp2Ehml31cEPqlBWhA1shwvxMDpnHBQKDEZ9Wn0xdlUV9G2W8WfmvKwCHDU7Mz2Y5oUnaByliDi6l8Fuh6e33yxHxYPnoeKeB6fL7noo3jpyOZJoasDyAUc8PSVqj5n5yBGA4CHu4TFij05UMnpcSwYUGgOB1rMQDyFfuPrA06B8kgW0pv2HQnhuFcFQVzZAmg==</l7:Encoded>
+</l7:CertificateData>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsigner-1</l7:IssuerName>
+    <l7:SerialNumber>16475961871615932976</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dsigner-2</l7:SubjectName>
+    <l7:Encoded>MIIDCTCCAfGgAwIBAgIJAOSmYAdijDowMA0GCSqGSIb3DQEBDAUAMBMxETAPBgNVBAMTCHNpZ25lci0xMB4XDTI2MDIxMTAzMzA1NloXDTI4MDIxMTAzMzA1NlowEzERMA8GA1UEAxMIc2lnbmVyLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDhuLwJUBv4Cw5U1gCIzXDopzEjATdcMuMGWavTElCVjiTmyuYY08aGDX1rUKdwn0rLiPfOBLuF5pVym8akvafW/kOojLOowv8B0jUlcI4IaX+XZ+IBFLdtGQgP7GUarsNhw24Ucw5x4IrHQ79qbPFn/mQV8YAmuXaDByhWikEBSAqy+ipYoF4Ajqd29rkSyDiJqpt9wMfg9Sc4+7wHESx+E/8BH7c025AyBiGbFdmxahxgR7+YmnRL8OnP41qKcsoyKwqvItfpIaAos2zt3R/HDvN6QVxFTDyqZzvBXaEJXOzhvxiJgujYyuWcVUcuYCc8JpypUt1m5TKeybEArvyvAgMBAAGjYDBeMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBSshQDc5wR8ThRqAwicS6GjDmFPQTAfBgNVHSMEGDAWgBTGVYjO1zsZOYa2dd737buscGPFpTANBgkqhkiG9w0BAQwFAAOCAQEARazdy8Ajs1YXVa+eK7UmibeY+3eAmYw9hZeGqUAt48/Acn9xe6KLzidqBNvPwlEPwOIy3dS4HWJsS8fh07tS37NPl41A1HYWXuMpHlzCX6L+Ihn5rr/EGnXFRitjDFaF/g3QwjsW7FMtzkZUk8C5nLeMcUItxsKNysDhKXBaXT1oTq+yVUKwhHwXY3KOVg/68esfN6y1mjsaPhBFrvGeNebtDpTuOU6pmpR8DGHiSjbI2vxwSYbKZghhB7p3w8yNjdK1W0LRt3oqbocc+hTcO4MRGDv6qhNlYTQUyROUKgTcN1FJM1ZdcsZJmfBQQFSkeFnZiqpB64/K4LJLs4z07Q==</l7:Encoded>
+</l7:CertificateData>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsigner-1</l7:IssuerName>
+    <l7:SerialNumber>3770493482398638684</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dsigner-1</l7:SubjectName>
+    <l7:Encoded>MIIDDjCCAfagAwIBAgIINFN72GZL4lwwDQYJKoZIhvcNAQEMBQAwEzERMA8GA1UEAxMIc2lnbmVyLTEwHhcNMjYwMjExMDMyNzA2WhcNMzEwMjEwMDMyNzA2WjATMREwDwYDVQQDEwhzaWduZXItMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALNwo5b7jSuY2+Tv5nmkiAbrOCu3ATx98TFptWDVVBELWJzGqDayXEw11/boN8HMy3YqhWss+aEX8NVWQoTCksCuogcbySjv/BmuJHyzny3B96rjObiJoEE7C0OXJ/Ah+suS0Qj1Xc//HZrxjnkJXbegJvfcqa85P3qO2bu9n0xXEwYgTTXUs7jnLUAVHVhjKTRwxfNtn7MUFsu2Eqp7tAFHhmP99ZAEpDLfGJa5cph0XRDL2JgSN7vkIeH86B1lEDmDhu1iPtu3pIeRCV+7GHv3GHHmx5i7/iuX6EiAgESdczSoFdMoaJPsf6gGGXP9AoFiABvNJjHel8a0Cq0jCfUCAwEAAaNmMGQwEgYDVR0TAQH/BAgwBgEB/wIBATAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFMZViM7XOxk5hrZ13vftu6xwY8WlMB8GA1UdIwQYMBaAFMZViM7XOxk5hrZ13vftu6xwY8WlMA0GCSqGSIb3DQEBDAUAA4IBAQAqExVJOOPRdNaomUzd3WmXIM1VHrAoUCVa0zalpsAKwE0hk8vZZc6Km8qWotTMJXxmErp+YoaTdgMyxIkhPTfYyUeFVLNnNtIYX/eA3fRmaGSjgbAHY4FGyAaXJffQJRerJ85SRG0cYLq/o/CeLNZn4VxIKAxS16Vza6oB7d+HIVfBblqVGvokPqnQHypBeYPyxzrfWzl7T462VAnw44YuwjxNBMcqyIJqNlRIzDrH1Ya0WCgzlaM1S8yQK9EX6VAMBWu22HjYDIgqCiCbVNsal7NoH2b07m8XfleQz85AQlJkRcNnZhFDUB8xNewQNwXhuNGbfP1SPiP6EarRT2St</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>RSA</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x40RmbaBeu/+aEQQNMFu3k5uFjFefV5moNxLfL71xL0=$8z+Jrm0v2MJQZpDNrw6jHhVet69lVuR0Wajk9L7S1k+F+llOCK+KhwlQSBnwxEc7a6+EpHtJ9yyd3N83i8herdxM4XxgJdCLpsJ+xdTfUogocZlmJu16cV7JvhFyh+i0" algorithm="RSA">$L7C2$1,O4mer/i9/qaHBHBEQFPmTDhxk3XDEtOv7+maS0JZME4=$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</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>example3.io</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.345Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:PrivateKey alias="example3.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example3.io">
+                            <l7:CertificateChain>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsigner-3</l7:IssuerName>
+    <l7:SerialNumber>6346902833205812396</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dexample3.io</l7:SubjectName>
+    <l7:Encoded>MIIBgDCCASWgAwIBAgIIWBS6f90nHKwwCgYIKoZIzj0EAwMwEzERMA8GA1UEAxMIc2lnbmVyLTMwHhcNMjYwMjExMDMzMjUxWhcNMjgwMjExMDMzMjUxWjAWMRQwEgYDVQQDEwtleGFtcGxlMy5pbzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCSYUj9dMrldVarDH7w7IgLW91E5Az1Q2NkNK+O7x5K2BV+QR5luGr1GoRE8TWZswXyX/HVoyMRnL8xGQ0s239OjYDBeMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgXgMB0GA1UdDgQWBBSmb7J+bXZKDJA7sXhkFm1plzILSzAfBgNVHSMEGDAWgBQjh5zsJzPJkQc7u59l5hsuEaQALjAKBggqhkjOPQQDAwNJADBGAiEA/5ta+DADeWe8wZyG984CNXkfXLHkxqlW+5y8akbvRXQCIQDKBddv77dTL6jOcQwqmDS2w4tiIec8N/k7IjpGCcZxEA==</l7:Encoded>
+</l7:CertificateData>
+<l7:CertificateData>
+    <l7:IssuerName>CN%3Dsigner-3</l7:IssuerName>
+    <l7:SerialNumber>18056509072807136770</l7:SerialNumber>
+    <l7:SubjectName>CN%3Dsigner-3</l7:SubjectName>
+    <l7:Encoded>MIIBgzCCASmgAwIBAgIJAPqVm1WQSY4CMAoGCCqGSM49BAMDMBMxETAPBgNVBAMTCHNpZ25lci0zMB4XDTI2MDIxMTAzMjgzNFoXDTMxMDIxMDAzMjgzNFowEzERMA8GA1UEAxMIc2lnbmVyLTMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARFbztlSsEg2nQwyegGAwCroMpjQpbaXKxcW4v5Y6jKq6pLwPuhY/Mq8cyTOljXyHjViJCqmLMGDctTND8vu05go2YwZDASBgNVHRMBAf8ECDAGAQH/AgEBMA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUI4ec7CczyZEHO7ufZeYbLhGkAC4wHwYDVR0jBBgwFoAUI4ec7CczyZEHO7ufZeYbLhGkAC4wCgYIKoZIzj0EAwMDSAAwRQIhAJUYZZQhqMH0pn3XRejedkvmjZOdImtGJfYhFpgfDe6XAiBuV3BTehU9WpIgzNCTCQXWvyVHpFVH6HJA/zVgjY/BUw==</l7:Encoded>
+</l7:CertificateData>
+                            </l7:CertificateChain>
+                            <l7:Properties>
+<l7:Property key="keyAlgorithm">
+    <l7:StringValue>EC</l7:StringValue>
+</l7:Property>
+<l7:Property key="keyData">
+    <l7:StringValue bundleKey="$L7C2$9fa1f,x40RmbaBeu/+aEQQNMFu3k5uFjFefV5moNxLfL71xL0=$8z+Jrm0v2MJQZpDNrw6jHhVet69lVuR0Wajk9L7S1k+F+llOCK+KhwlQSBnwxEc7a6+EpHtJ9yyd3N83i8herdxM4XxgJdCLpsJ+xdTfUogocZlmJu16cV7JvhFyh+i0" algorithm="EC">$L7C2$1,sk5kJrvf6wXGGCu8AQRUI4JQzMoU67QkXTbYDSZU3X0=$9eF2UtlsdB76DARf6MLQSUOGKumoq3BdBatYaKk/EaIV8tLIhB3mR8eGnxkcZSxFXcrv3BH5N+0cM1cGNumLEc15OPVsO7uytUqrR7zBIWHUQaarLMy4dsKqsCkG/q9j37ldUgMMZEscAoUGiO/TKxGoA9bxaMsAEcYZ1KfeIFY=</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:PrivateKey>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-keys</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fe3c</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.349Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="57565dc8-05df-4a3d-8249-d2cc0c4dc5b0" id="72adab14b763f12efb51ebb737d5fe3c" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fd02" guid="57565dc8-05df-4a3d-8249-d2cc0c4dc5b0" id="72adab14b763f12efb51ebb737d5fe3c" version="1">
+<l7:Name>sub-policy-with-keys</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example3.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example3.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-keys</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fe26</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.355Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="edf93b14-2271-43fa-a0f1-a2c4c747ceb9" id="72adab14b763f12efb51ebb737d5fe26" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fd02" guid="edf93b14-2271-43fa-a0f1-a2c4c747ceb9" id="72adab14b763f12efb51ebb737d5fe26" version="1">
+<l7:Name>policy-with-keys</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example1.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="57565dc8-05df-4a3d-8249-d2cc0c4dc5b0"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-keys"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-no-keys</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fe55</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.362Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="bf968967-9cc9-402c-b930-d3b4af77ba38" id="72adab14b763f12efb51ebb737d5fe55" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d5fd02" guid="bf968967-9cc9-402c-b930-d3b4af77ba38" id="72adab14b763f12efb51ebb737d5fe55" version="1">
+<l7:Name>policy-with-no-keys</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesNoKey booleanValue="true"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-keys</l7:Name>
+                    <l7:Id>5db3a5b3a9b52c23066ea07be5c66d9f</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T12:29:57.376Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="5db3a5b3a9b52c23066ea07be5c66d9f" version="2">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d5fd02" id="5db3a5b3a9b52c23066ea07be5c66d9f" version="2">
+<l7:Name>service-with-keys</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-keys</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>true</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>2</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example1.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
+            &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+            &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="57565dc8-05df-4a3d-8249-d2cc0c4dc5b0"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-keys"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd02" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd02" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example1.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example1.io" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example2.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example2.io" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example3.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example3.io" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe3c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe3c" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe26" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe26" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe55" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe55" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66d9f" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66d9f" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>keys</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fd02</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-keys</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fe26</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-keys</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fe3c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>policy-with-no-keys</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fe55</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-keys</l7:Name>
+<l7:Id>5db3a5b3a9b52c23066ea07be5c66d9f</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>SSL</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example1.io</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example2.io</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>example3.io</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+                        <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-keys</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fe3c</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example3.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-keys</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fe26</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example1.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-keys</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fe3c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-no-keys</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fe55</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-keys</l7:Name>
+                        <l7:Id>5db3a5b3a9b52c23066ea07be5c66d9f</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>SSL</l7:Name>
+<l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example1.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>example2.io</l7:Name>
+<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Type>SSG_KEY_ENTRY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-keys</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fe3c</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

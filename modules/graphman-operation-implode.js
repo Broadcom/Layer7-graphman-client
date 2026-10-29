@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
@@ -35,6 +35,13 @@ module.exports = {
             params.sections = [params.sections];
         }
         return params;
+    },
+
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        package: "string",
+        sections: "array"
     },
 
     usage: function () {

@@ -11,8 +11,8 @@
         "test:report": "jest -runInBand --reporters=default --reporters=jest-html-reporters",
         "test:ci": "jest --runInBand --ci --coverage --maxWorkers=2 --reporters=default --reporters=jest-junit"
     },
-    "repository": "https://github.com/Layer7-Community/graphman-client",
-    "homepage": "https://github.com/Layer7-Community/graphman-client#readme",
+    "repository": "https://github.com/Broadcom/Layer7-graphman-client",
+    "homepage": "https://github.com/Broadcom/Layer7-graphman-client#readme",
     "bin": {
         "graphman": "./cli-main.js"
     },

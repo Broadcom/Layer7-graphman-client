@@ -1,0 +1,171 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+	<l7:References>
+		<l7:Item>
+			<l7:Name>rsa-alice</l7:Name>
+			<l7:Id>00000000000000000000000000000002:rsa-alice</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.049+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="rsa-alice" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:rsa-alice">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Drsa-alice</l7:IssuerName>
+							<l7:SerialNumber>9810481322551613652</l7:SerialNumber>
+							<l7:SubjectName>CN%3Drsa-alice</l7:SubjectName>
+							<l7:Encoded>MIIC7TCCAdWgAwIBAgIJAIgl1MjiSxjUMA0GCSqGSIb3DQEBDAUAMBQxEjAQBgNVBAMTCXJzYS1hbGljZTAeFw0yMzEwMTUxMTM5NDNaFw0yODEwMTMxMTM5NDNaMBQxEjAQBgNVBAMTCXJzYS1hbGljZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANh65Olz1A/8MYkIEpj2sWNRb37Usi2tnxh521swQWRvw647LjYaWwQ3AQzV0zCLKEp3lAsQYcv5A46SHyQfSu9O8wB8CBm7mflYq1a7lc7/5Gtbi7aFk1tjt8fxKLVvrYS032MbHF5Vp7YHo82Ht219w1uH+pzYhWm7GG0+9dGf6J293wMRpgF5EzcNcY2eqVaRT2v1eL8Km+KTCNcTjs8a08U8pp+tm3f6dqddGYi1tz8yt/UJ5Ipe5Z/KSKQ4BmlDPg5Svhtnnhnp2xRTgRt065WbFxhFbM9OfSzMcJ6NIM1+sjdj5Dj2Q9iEOxzz5V/LL4zyB3qNsGet6G7NGK8CAwEAAaNCMEAwHQYDVR0OBBYEFMrpew6BmI0SRpqY0lr5y1llfxQZMB8GA1UdIwQYMBaAFMrpew6BmI0SRpqY0lr5y1llfxQZMA0GCSqGSIb3DQEBDAUAA4IBAQCaG/uK7tJW6LvP3pRy2idw/NcpquSWyzOwySzBNHdIBRilnqpXzdchPf4Abwgh6whLct5I0DSsHZfdrUxGhRTlQ8A5Kgafmlr6W3/sXqDxwMomRQW34mYfxiL8cuCXAISiU7x/nPQl3P3H8sstByknpqTJq2vnSBC3sKkhi9c+2J7Rm1EPwrNSWX4W7ZQG6xZBWsTE40erWwuJJqg/T633KOizqUXmLR8j4JoI8xMo6WeSXPnrjneYgFC9E7++w9IkypY0dxQuZ36iBikWvlvOihIV/1xWQAFsGxi9ymrIraxShh8pyd6RzZrtz6fAHKfSQCfj8I4Rj8Ofa97+p3By</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>RSA</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="RSA">$L7C2$1,vfLdozhNFV+PiA/PBmbl2zL+dLTykKs5ZLDilCGu1ag=$sicLOug3HZ7QQKKXhAZP0fSZnuEH2zYRplhNklmDQ89n5qs83cyY0JqZfmjqTLW3dibwWHJUr+/IiJQNEDOiSFIwwkPFOcQh2TpqwHIH7fFacxZwSurqfEcWafwO+bOeqN4P/31LLyGGKL9TVlMdRvxBZvk+iCI7xPUmNtdFETC4/qZNbQfHpUMCrP9aTYiAZ4iGkDwgJa/1I4tT0qTaB8pGd54yLTeuVA/VjqdR0S0acLMeYwFccEf8lBirailIDP7NaQlfMhaOWHUH/EXBhSa8eCagOd6XYjbemyIQ0gFcjjqJYxXxxCgIycvu9dXjSkx+ix4Nc2DkTngn6h7+RoyTCv4sqyKIMiJmGj3ehgoUvkhFBShANU/WVkUqIq+MpNVG8EEbHZGabetx1DuzAdaI0i8WmHFlZ1ql5+YCKrOegLgk7D7FrpPm3cLxFD5NWYQ8VYSrXYfoAumcNuXPu504A0mF7/TZbS8FwAADnD1z5V7QS2Wgwo/IMSRdCS0VnqC4oOKO2n94nxKL8Hgsz3t9G1K2wqZMMU8GcKahil5kbAYiJt4kbLIP6a3nb2PjJfUa7krFOAzPt4hRmOwvtW3FEe58XkA8ZW449Qyv00fnV48JqH1CN1xHbAKKT3YprEAk8xFjnzezdIS3gA9YELrVJFkF8bCz2k9c40s7gj0a9hctESxHBxo1QpwajlfJdVLvgXWl4Y4eCwkwq2kM1WKZzp1kn7dgnpvTmgabXBHiiuLFWgqSowYOB6CREwC4cFnpFow7jUMHxlyxyhYisknHoESc5fbBXkb9/WQjRNGXawETBQiqCqPXnYbvN5Cuy1kkjRFR2008ENkw8dmnlw9fRUQh19Kjnn+l69oETh8Y185kD3VT/UwmM++kS0RDpr8t9fgHSFttl1hL07YKmc1Sj1y4x+kgPCviIUCpQIHlyEs2Xp3QQRcTGwYLJNGRc3ytWuyC/VbrpMV60fnGlTxoLEDkAA1e6I0r0ngwAADVM10pn9xS5i59gfTim0Wu2CpDtMxP/sNtHp4NaBA9bMnYPe42IYL8MuYhRu2UdkrNDMTuJaMHkU+CV0dj9qIT0VAdq3lHqi+V3PNZZDl4dV15M0AWtCZgdjGhwQUeY2vCCktdo6CKNZhAQBxDzAIsv2qylz4dW1/g6dhSOAogT2ekFWFmdwkLNsBlyL4WY+USeyElgwM8gCnw3dtAIrDqZKKeYQpZHIu/jYfh//nkoh24Z5+PT8jII7DUnStdG700AIoanHBoDEWPR7FdYqYOi+zubEQRstIaWT/IF5GX5r20+lFi/UCAbbtnUlNSPG5sMU4/56eDrKt5DgxqiXXClSfoBIh+Fqa63HLnriHfb9Eazx45qPMbI1cYRpICYpaMv9mGKsgqgfJYwk+6yu9VsweBImX9fC7M7dxst9REeG1pHjDxQV5VAgKy0RC8S/RVfwHn79QdHar96lS4cn4lsziqmb9nMjASLcicXob/qkYTFVDhVIHG587sUsBj7FB8x1nqXHZxJAglL0oHHefZABlMiilkjlgPvzAFKlC1pkEa9efPaaOufD6WEKEQ5+J0mY62+n6eEp8rYkNrYLYa6Oggf0lHzB+MtVUEUSTG/EyXxz8eQNz+K3Chnkb4ezSv+IMfIykD8kipZllZDJP0nxhdejrHuY65pTMsSTMjlp/DtjdHqRwJOC2x8yrZWZ8=</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>rsa-bob</l7:Name>
+			<l7:Id>00000000000000000000000000000002:rsa-bob</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.050+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="rsa-bob" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:rsa-bob">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Drsa-bob</l7:IssuerName>
+							<l7:SerialNumber>17021316009334655569</l7:SerialNumber>
+							<l7:SubjectName>CN%3Drsa-bob</l7:SubjectName>
+							<l7:Encoded>MIID6TCCAlGgAwIBAgIJAOw33LpKD8pRMA0GCSqGSIb3DQEBDAUAMBIxEDAOBgNVBAMTB3JzYS1ib2IwHhcNMjMxMDE1MTE0MDM1WhcNMjgxMDEzMTE0MDM1WjASMRAwDgYDVQQDEwdyc2EtYm9iMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAw7GVq9LR54ZvYM9r6YLv9M88/vZ9pKR27PNXk1rbtQ7Y5swzaVzB9AqlzAOAHs1Jx9jLqQixyg8yop8G4nAW99LoVlDOedVW5DHPR5GnmChSYzaseMTnEMlZpU2JKb3k9TfAJuIw6kqBnktVbdUpU19kHLBbTI/+wJsISPHmbPBjbvREWjq+UvKFO2AVJ/TbbSbYed9gDzgqAWk/9/IoWZv/9HJR8OxpUpgqsdZdJtwZ4I+yVsTmHarX3kMk96zDXmAlERgbZMVTkMg9xv8Mrj4Z9+jBdS1YAWu/KFE3+VcR1+6oQQqG3xlCJSUXDVigM/2gwQZtjTFyUorVlZb4ZjIlmH/a65E6lFSoba2o6ZsVinMwBKGwhGFYbBX9P8Lw3oSSwjX28JIyu5/8zDmavJG1eTXZW6uuyA1ob0kGLkt+xmJYex4CDuezwz1WtAFKvMqmUCO5BQFtyk/K54F/0FzF5eVuEqcLyEarTiM9ug0JyRbcwhRKzNFJUfRySDmTAgMBAAGjQjBAMB0GA1UdDgQWBBTsgGElfOQ8kxMbdsheCcfCXf3KgjAfBgNVHSMEGDAWgBTsgGElfOQ8kxMbdsheCcfCXf3KgjANBgkqhkiG9w0BAQwFAAOCAYEApsioz4e234AF2qupB5SMulFEvXbh0hpK2zb5zzG7slu/HxPpbl7dqw8JXnH4D59hdKre63tsgz/Y7j6Fowi4WGCkhItLUqywxDiQ2fo1pPgsRCfPeLT6mN7pbzo1vyu1hKITrzsCTKCaCkc60p5YecEECkCpz8QuApYNi2iyjJQHvSus52E4f4xFi4RGbiojjKwUwL01rAg9ITpmnaJhPtpf/t22xCr0rxtVGEmMfnruYRTlJtDvb53zIpFgOwx0tqZI80RB7q597daprw0yFGLDgaFpKlgyLWYVMHXtjJh29n8OK9U587MTDME3STwIWgLiXLt3MmtXhfm2oYTaEeN3WCVj+FCv/J59CL5OaTAcWuYHPDE+JI4YmeOJB81QtbtWUfH+ltSRYhhtLA7lY4x8mFXi9Y3iC2RC4K36e41s1SvKWSi7y0sazKiqhwQEdU2hpDZ11i2V8qiZ3n48sDpKrUDveQU3Hkfy7/64JhNJIWCuWtjwmU+DT430A/qV</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>RSA</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="RSA">$L7C2$1,lQE0tS5gOTJ4IoKoddNmA513G5qF9hBqWGl1K1cxakU=$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</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>rsa-signer</l7:Name>
+			<l7:Id>00000000000000000000000000000002:rsa-signer</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.050+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="rsa-signer" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:rsa-signer">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Drsa-signer</l7:IssuerName>
+							<l7:SerialNumber>6692885343061516055</l7:SerialNumber>
+							<l7:SubjectName>CN%3Drsa-signer</l7:SubjectName>
+							<l7:Encoded>MIIFEjCCAvqgAwIBAgIIXOHnwlOZnxcwDQYJKoZIhvcNAQEMBQAwFTETMBEGA1UEAxMKcnNhLXNpZ25lcjAeFw0yMzEwMTUxMTQxNDJaFw0yODEwMTMxMTQxNDJaMBUxEzARBgNVBAMTCnJzYS1zaWduZXIwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCNBYrHNrFDpXuCxUICuB1fwZBx8Ry9nrZ4hQMKfZwDZxbggrMOGY1FHO6HljQsDP81+bRsRD3MWSB8ZF7FGu3KPOZZJ1vMQRFsEmM4i2b852G13ViBWTX4Y3CO0nrCUPMBhS3YWJlBcII5fSepvV9c2beKJHRGjZQj6pB0ZAmEUevynktSmV497MxOKAAXuJQkEZ3oIWY2dw9qnl8RBB1qER15g2tw9aPL1LzuNd+jh6kdu09X0Kgz6hnMoAq95Tl6RNLAJGq9oRLArCBlwzv/ueT8+yVrPwW+hcy7gBlFwGAvKFtTrMwzaW3vT5P8sJTbwHySBVFmH+WtEqKddPhWDhlNp74+ULzfXT0vJ+7lW0uo8iXdCAocnFIyPwUwn5l8hgbBrwWrzAx08mrYgmk/i4mw5Mc4cNE1vmZB6ehr7UZXiKJMW0UDMLNfDLNWJQgxSWVSO+MH0WrZg3odX4cRcLzSts0gs4VzA5MxNYixdrjCWKcVpQ5sJy9mnjUxIW6Mo6gmPD3vhg/F3LMSbulvQGWxZLOOtwbUjsUeNRu5eITzUTk9S9SZrq+NZCmCM3soNXsqZNky3tMgqH72j4hMs6J/g8+fshzTAaaaEf2YmX2NeQc80kZO96bv38tCy1JTTAAmSNMPKOch97Hbxeefffku3uJpDtIDcq7rVw5DOwIDAQABo2YwZDASBgNVHRMBAf8ECDAGAQH/AgEBMA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUvlCorThhG+Z0tGDulFUQGspjvpQwHwYDVR0jBBgwFoAUvlCorThhG+Z0tGDulFUQGspjvpQwDQYJKoZIhvcNAQEMBQADggIBAG6D1qeh5QoRgRjYIOugzIINCDOf4mxJDlVqEcUGIw+vrgy91YXmgshW1Hc9XN19bdPdHo+RyyR6A8WP5/zXhshrXjK+mrsk7IMaBNsOLlKGtjHy1YIXjlifj1eGoJ4WDeD8IwJcmLxiNX9lTlV9WLXPMjbE3quPDrWlhR7J9cXdfmRc2eTvudJAwErJDHTBOOB+cg16NPXm8qkbuRwyTNEnvQsU05K1d3lDnav64156lquoBjWhar54hsRnl8J8MmKmRcEU9+IlfytCO0vtpM7Zi+xdkEmWxDk2oLOd5B+eaf5lWUnKfnFQeA332mZatCRCCQsN92Mu47DzZJvN0Vo+6Drv5UA2AS/9iwRhyI8/UyPaFdJNy9o7RxQcovHiMtw4fx6Lhl8Gml3s8HhX1s3UWDmfiFql7krGBEzdgx+LZ0O6roeaxHiYNOQlNXHjvWW+PuBU7Tp/PaPu1VN+4Ow1hLVppTkDLvj3XwxpEhs0xLzZW9aicia2BuyG8A/ZIhcNrpk1CUlMsHwXu6TlAlX9wjaemUshrg+SE6WVkh4VPbNBrUJuRNoN3sfNzE//WKGUh+5sQHoA3qZVnqYYmBQD1szC24mA6G1/WizHxyfS3SCbNyAt03KBrSew9KL6ip3isLkaNtgPXX09cKJroKCN7Cy4a1YcG8Lbjtlf/PTX</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>RSA</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="RSA">$L7C2$1,+0kXlb8Q/Nl4vr6RWguywW4zYYZcvAv+aOoMkKvvXXg=$1FQ5wmJq3jyFWW7QTdj55XzBg+Rva/c/J78XVpLbKVKEOnfS7eIn4Xim6BzurOoevrs7PnFXuMdI5BoVFKgjZRzW5H3mLITDwp8PzChIqXwWeYsGbQz6FUfENlzcV2ZG3vXkQENfvMm5x+/b1bYo+mfUQEBRPs6wKToLy8wwpYlgwBQ3bjUtiU8d/u7bdXtNrd6zKe7aeBzd1iYOJEuwohiTsd6HQ5izk0T9wPBkKXR7j5BDfYjThyQyI/CgWv20M3p/OlCPaJ8+V/uI5iwBZDujCTRFbvQthLzUnuou2ZupVq8E03lT4V0qtZ9/hNhyV+y4JdXlKyeYgRE9K1NAsB2elv70cmaJWby1PT7hnOmMzfWxHAA2tbUDo5qNKicJOSmaqcYRD1tVsibzl/ORIY91yZm1gCEfIF+SLJhk6LrTHGW5OhDNTIW3sWnp5ikq656USaTjt5D2BP4yrMQd9RazmH1Ww6x+syod7WZ2BmuM0jxKrCMHvXUm4LY6DyE6/kj8c0F+h73+RrXeKpj9cMW/Vx7cbETye+QVkkh+SfsZsABztlvfcMaBc55IaY+avLwwu/8TR2aIjiRV9HwMM/amoi+ydx7zjQvTV1WdfoE+CFt/viAN2RnuFEFUoBC6hSaNvRLjTG2PxFdnlRO9GZpiVPObSU34xoLClJtEOft6Lgk4uEf3wWfBQfLjEEH9fXs5cJZvdAvkDtDQNlxN+Z7kUbOuATnRu/e5F3ZF1jTbWIovatDmLU7IRT4KVrJVeFaugXLI4ZZz50ltnFptcjUwWe/YKUQyWIpV2l/UyF3IlQEg9WlzzCd89rIwcXkcLQTbKGRYfX5S+GKSqmiolWs2/uxxs3yDn5OADuDjk1scJFaKm/rY4CMbKZkU5vVKLzFgE89/3sxIUJi3+EqxH2Lj17hiNrHzQanAZoZv/PCXiPdBBMzNmzmUqqbIe8UobGi5uQDQKWMRpyg3rsYYV2rF6W60r7VzpnKEwZDGianSbYhAa+rfBqwPzmO9unvezO7fDpgpKKnjynPmJehGj891PEklWnGBVyN75K2QmDB2CYz7ASGyAr92hBiCx5o6RQh46nBxKM9xnnqIPS+DPfX8ipzsEQDH+7bqt1jhndkzcoJ5YlNIXRhdYNc3dLlAsBtd8A9gzxgoejOlNdxE5P7+rDhUPl9vxOfx8AkLUyBAU+5RF/Qj1T2BgufQuGqiSWShBl//vygmbVocd6ICRdf07e+8r3URejefbMrxQuULT/KoF8PFXu+ViZj2+m7PFjQ1K5pDVGzvS1Mp1T924ISJ/Bgw5B+4aGd4XPLQcjNxs5pHhDnnPd/cMYlHAMSjohuBAbp+nJO97ewFhhsb9+K8180xFoNmTSX6xoShUehQq41eXWKPcW55hjT4h00HMuWpCe/5o9gG6aWA9qy1gz2ecuThGjvchfRFU2uZ+HzCkos0QFutJm4ludT4mdj+39K7dr+xqQOHUvQej+MyD0KIyq/Bv5wmklZ1Q5u2tMDQt09hqLozYNGBLfuqMl50CogXDWO680lkcY8+BkWFw2jNI+6WNY5wqjG9uRwG8Y5JF4JvMzfeXGph/ILYwWivBbHlBdSRs/1myfnWCcd3NVKSXw9342rIZcd59yyxQwm+sU3qC6faBlb4sJHc9F6orc39hPk+q5InYwUTqGgxIooVdwum8HJDWJd1g4xOZQx4yT//wDIx4OnjEKrkW5KOOXZDck08wT0Pwa47UInznG0Uj01zVX1r0eLq3d4PeOYoCXJZSlm8m580EXciYHh8l5jBpGeeYJKjw7Lj6lFx2X3BLDGOmoS9O/D9GghrLCbO5RDNt0+d7gQ4KABmGwjLGt7tGQPOTHWWyiy6hvUwT/DnMGlPIGsTWu/l9T7hE4qnCJBMfhxAZ8ABsDapvZoB2AJHLBfO+/wGewwGMqEwxvdXGVv4I8tQUVSfqS1t/DyqvJujOJ8sbmOLznZZ8+MPxYLfAr5drrRDo/NiEKiRrtl2426/re+SX77C2Ffyb2L4p1Xyi8gye/fBwjXE/HcNctgrhpbYlPWFmCTXKaj3HzJpG3dWboSz+Efl9h7TO2Jw3ICBOig7uVLMM3mKpHmyGIWzMdqhxJtYhAQvF/6Dgojfaf+RVA/2EaT7hOCJXQHm6CjS9iTY8ttmUQyP+KjZHJW12rkn2EIStwsogjFJ4/AoRq9xOgQQUglx69t5/qr4pFdCBHMfJzeK7MSVhn3mgnYgSFHjfv1yBdRdt9V+8XBOP6cuZ8tc1ORy8mIZy3YUA4wHWYY0DUC3OgARVnm7VRn6iIyMXP0fzrkdxjR42pUjNtfFj3bqTW5haEZcntXgw6aNxZCqB64e2xTdMIM0zO9cdczbW9v4iR+jn7UQ7538OnBRNQr02dUYFBxI8KPktMfGrK0D3IZfnArYv5E1Lo/LFBDQCFkJI/Q9uG8sap71Dmaj8ynynz+7c/Pj+Sg8Y43cgBA4/k7zt2NYsKKqG0et2cMxg7TUoB1vDO3yvArbpGpbxI8YW+ePjBpbth1VsX2PLQDBiTglORyulIqCOIcY+ZimfgmwRwebTcFSvfOBsHFv1F1nnxJMbziO8iiLhKNqllQFHQwqfYdq1vVU6N9FnShQBSI4Eof8ZhmyNAUrTMjxomk3cLbGpMhB4f6o0vAmvPqJOXuTNnlRrpxzSbZBLqvMhNt4J4FGecQyOM/guh/L1jtf8ni8z+B/gsJ9LpuWylzlUW9HHqmxjhMiHfsIb8JLz/0UN+xpMSqJ1RqfDMUh10YRByy0T98/RMS1DMVVaX4b/k86NLg80kY5U/gTJxRYSoiHbCN9CgQ+srJgwvxAlVwg8cKrkUNt2DQ1+wtp8B34Om3bKNk9nsLK/415vPMT2c/FoWl0XNdfjCG/aD6dJr6UqymczGRFtYZpy7sFnuuNvvfItkeTP8Bxc3zoVJ8/bV4we2do+l3p9l39hqDjGD9fMVe7ri34aKCp9P6IfTYH3vgf3ynJtKrEgHGmbr0Q8rOEToL3arG+qtxBCgySQdy/HtDXBxYwCZuo/lenu+p38F7zAmNoak4bvtsmr8jul0iYWh9TOwOX6PZR/bVEaoschKAIxMRmKiG26x4GE+Cce+bL0v0ZLG6DjujMbgJNtCB8TKgXLFRMeFnyMwvwNV/wLIZqc4GtDnVwHqdVD06euCOh+jMklM2tqDilzJWMU2WAzO3sMoLTj3q3YRx+3Kybo2GomJL0DOA=</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="specialPurposes">
+							<l7:StringValue>Default CA Key</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>ec-alice</l7:Name>
+			<l7:Id>00000000000000000000000000000002:ec-alice</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.050+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="ec-alice" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:ec-alice">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Dec-alice</l7:IssuerName>
+							<l7:SerialNumber>1265664259034925076</l7:SerialNumber>
+							<l7:SubjectName>CN%3Dec-alice</l7:SubjectName>
+							<l7:Encoded>MIIBajCCAQmgAwIBAgIIEZCK8BSvSBQwCgYIKoZIzj0EAwMwEzERMA8GA1UEAxMIZWMtYWxpY2UwHhcNMjMxMDE1MTE0MDU5WhcNMjgxMDEzMTE0MDU5WjATMREwDwYDVQQDEwhlYy1hbGljZTBeMBAGByqGSM49AgEGBSuBBAARA0oABAG6PIfNKOQWcMWP6FrdLh4t7urqhBVNoiofuDGx8pjMV9w6bQPH72YGr59czhgEoJHDfbLaTdB3y62H0z6H6kyClbqD9LklRKNCMEAwHQYDVR0OBBYEFLic6IrcgN14o0ng/Es28AHEe++lMB8GA1UdIwQYMBaAFLic6IrcgN14o0ng/Es28AHEe++lMAoGCCqGSM49BAMDA08AMEwCJAHmlfXuVqVBSBE1a6OkLc+JP4a5E3L54asQ0fqMZJM5VmvV5QIkA73B8fwC+jQil2yzRB0a9ikw0bSn52b5A/qE8M3TFBgAoxX5</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>EC</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="EC">$L7C2$1,FwadrK2z5ObmH5iJ7kodtAJrx2zJR4YNHLwnZdm3mhY=$EUrgP8/GQ9ta/BdeeqPJJTDRl9TUPAygHBvkBbvV09Qkvhj4xN6yaRnmhRDP7RwXb865RMeaXqBS4XXYpYYyezb8gqR7bfcYEKFdUWwUt4gzl08OVzdt5uNbpWhzbGO82gOb8zppOaeZO4z2MKZytiAPzIjMVlhhpwxR39Ua3rc=</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>ec-bob</l7:Name>
+			<l7:Id>00000000000000000000000000000002:ec-bob</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.050+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="ec-bob" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:ec-bob">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Dec-bob</l7:IssuerName>
+							<l7:SerialNumber>7494877800005878277</l7:SerialNumber>
+							<l7:SubjectName>CN%3Dec-bob</l7:SubjectName>
+							<l7:Encoded>MIIBJzCB5qADAgECAghoAyemSE/CBTAJBgcqhkjOPQQBMBExDzANBgNVBAMTBmVjLWJvYjAeFw0yMzEwMTUxMTQxMjBaFw0yODEwMTMxMTQxMjBaMBExDzANBgNVBAMTBmVjLWJvYjBAMBAGByqGSM49AgEGBSuBBAAPAywABAJznPbBJQO44VlO0Y1Jwg8d7SIMLgQVv8uFqJjwuex/P4KqHXBGmuD4GqNCMEAwHQYDVR0OBBYEFCwzXb5S1SdruPuOzlcP0g8pgO6OMB8GA1UdIwQYMBaAFCwzXb5S1SdruPuOzlcP0g8pgO6OMAkGByqGSM49BAEDMQAwLgIVAlX78YsFzAKoZ08Uo1sIgTfg2F6mAhUB8llo8W05KJ4t9BjjF4H4uDz8QDk=</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>EC</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="EC">$L7C2$1,qlVoU1VgFdiVtFDcfhN7ySOQ6vIjrRbUcG9LL2KRLlY=$ovn3XEys2t5vgDQ/MlW6M5MUwtUmZK5ZiC+IgLGuyHgJFsjtEl06Pe6o2z+XNFer1KZuDMEZ2H2Jp+X3Pl+jxyZJjvi2eNOAMa4QRpLkaFfQF4+47s+uXO4aCjemPW+f0dZvEkMujSvLE++zzl+fBw==</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+		<l7:Item>
+			<l7:Name>ec-signer</l7:Name>
+			<l7:Id>00000000000000000000000000000002:ec-signer</l7:Id>
+			<l7:Type>SSG_KEY_ENTRY</l7:Type>
+			<l7:TimeStamp>2023-10-15T18:33:59.050+05:30</l7:TimeStamp>
+			<l7:Resource>
+				<l7:PrivateKey alias="ec-signer" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:ec-signer">
+					<l7:CertificateChain>
+						<l7:CertificateData>
+							<l7:IssuerName>CN%3Dec-signer</l7:IssuerName>
+							<l7:SerialNumber>5059135258606397595</l7:SerialNumber>
+							<l7:SubjectName>CN%3Dec-signer</l7:SubjectName>
+							<l7:Encoded>MIIBhDCCASqgAwIBAgIIRjWotpfjaJswCgYIKoZIzj0EAwMwFDESMBAGA1UEAxMJZWMtc2lnbmVyMB4XDTIzMTAxNTExNDIwNloXDTI4MTAxMzExNDIwNlowFDESMBAGA1UEAxMJZWMtc2lnbmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcy8a3uTxk0McbmacPRXKeHYnCHrgTlCxQPZdtllp+Fsj98XDwOAC18zVfVLMYSrHK08dbf8imzp44LTbZHbbPqNmMGQwEgYDVR0TAQH/BAgwBgEB/wIBATAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFAJQjJ8dm2NhJlveTv9xnJkOLzb4MB8GA1UdIwQYMBaAFAJQjJ8dm2NhJlveTv9xnJkOLzb4MAoGCCqGSM49BAMDA0gAMEUCIQC/cFSzVEgocyQODsyRoqeTcrN2WWOg5YiXCRV4ZJQcuQIgdjFZQJTGZrdIvviJLdSJo6WK+ho0k0zzxUZD0FtoGuQ=</l7:Encoded>
+						</l7:CertificateData>
+					</l7:CertificateChain>
+					<l7:Properties>
+						<l7:Property key="keyAlgorithm">
+							<l7:StringValue>EC</l7:StringValue>
+						</l7:Property>
+						<l7:Property key="keyData">
+							<l7:StringValue bundleKey="$L7C2$9fa1f,U7/w0O1iQi4mcV60K2J64OaoZvF1zRxxgNlnGyUPOeg=$t8behyhlFTEcFnYzHMkPomE8kNhmShvs3+tlvPS8KRiqQsp/Zr0X/yk6p/crITV6P12s/xivokc1/7AlPRxf/15IDKKZtyaQBtdC7lQYBlBrINxzohIg7obKroEWrxNP" algorithm="EC">$L7C2$1,y10KOu4pLYB2kOG5p/O/c6xZHqWrahsgOSDbYu3GAPk=$eqs64FaNsvRh0lFlUCWeaMCumom54r6y5I1oGQB8LRvZWWQj7frbgyAzUM9hr+CAJDdu7Efxb6Dg8o90MyWUD3i1Zq05TN7Im8sIpiy0egYrY9OtA/S8fuiJbaTc+H1I5E4UhwRNR1Sp8eL8IPkLwrtHL2N4tuv4w9IIho/EKUU=</l7:StringValue>
+						</l7:Property>
+					</l7:Properties>
+				</l7:PrivateKey>
+			</l7:Resource>
+		</l7:Item>
+	</l7:References>
+	<l7:Mappings>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:rsa-alice" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:rsa-bob" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:rsa-signer" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:ec-alice" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:ec-bob" type="SSG_KEY_ENTRY"/>
+		<l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:ec-signer" type="SSG_KEY_ENTRY"/>
+	</l7:Mappings>
+</l7:Bundle>

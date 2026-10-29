@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -28,6 +28,13 @@ module.exports = {
     initParams: function (params, config) {
         params.options = Object.assign({refresh: false}, params.options);
         return params;
+    },
+
+    paramsSchema: {
+        refresh: "boolean",
+        options: {
+            refresh: "boolean"
+        }
     },
 
     usage: function () {

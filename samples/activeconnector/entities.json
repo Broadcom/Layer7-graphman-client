@@ -1,0 +1,1773 @@
+{
+  "activeConnectors": [
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6816",
+      "name": "mq-inbound-customize-1",
+      "connectorType": "MqNative",
+      "checksum": "2e4bb6866c842458d79d33d3814bd7bdc2d18ea0",
+      "enabled": true,
+      "hardwiredServiceName": "mq-service1",
+      "properties": [
+        {
+          "name": "inboundAcknowledgementType",
+          "value": "ON_COMPLETION"
+        },
+        {
+          "name": "isInbound",
+          "value": "true"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundFailedQueueName",
+          "value": "fail-queue"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "true"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "2621"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundGetMessageOptions",
+          "value": "5678"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_NONE"
+        },
+        {
+          "name": "numberOfSacToCreate",
+          "value": "120"
+        },
+        {
+          "name": "contentType",
+          "value": "text/xml"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_AES_128_GCM_SHA256"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "inboundIsFailedQueueUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "false"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundOpenOptions",
+          "value": "1234"
+        },
+        {
+          "name": "inboundFailedQueuePutMessageOptions",
+          "value": "1234"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6817",
+      "name": "mq-inbound-customize-2",
+      "connectorType": "MqNative",
+      "checksum": "6721bc7bacb2571686e5deb96dec248adf24137e",
+      "enabled": true,
+      "hardwiredServiceName": "mq-service1",
+      "properties": [
+        {
+          "name": "inboundAcknowledgementType",
+          "value": "ON_COMPLETION"
+        },
+        {
+          "name": "isInbound",
+          "value": "true"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundFailedQueueName",
+          "value": "fail-queue"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "false"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "0"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundGetMessageOptions",
+          "value": "5678"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_SPECIFIED_QUEUE"
+        },
+        {
+          "name": "specifiedReplyQueueName",
+          "value": "reply-queue"
+        },
+        {
+          "name": "numberOfSacToCreate",
+          "value": "120"
+        },
+        {
+          "name": "contentType",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_AES_128_GCM_SHA256"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "inboundIsFailedQueueUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "true"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundOpenOptions",
+          "value": "1234"
+        },
+        {
+          "name": "inboundReplyQueuePutMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "username",
+          "value": "mq-user"
+        },
+        {
+          "name": "inboundFailedQueuePutMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "mq-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6818",
+      "name": "mq-inbound-customize-3",
+      "connectorType": "MqNative",
+      "checksum": "b358a3f879a831fe9685d38fc1ee9f634a3c7df0",
+      "enabled": true,
+      "hardwiredServiceName": "mq-service1",
+      "properties": [
+        {
+          "name": "inboundAcknowledgementType",
+          "value": "ON_COMPLETION"
+        },
+        {
+          "name": "isInbound",
+          "value": "true"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundFailedQueueName",
+          "value": "fail-queue"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "false"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "0"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundGetMessageOptions",
+          "value": "5678"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_SPECIFIED_QUEUE"
+        },
+        {
+          "name": "specifiedReplyQueueName",
+          "value": "reply-queue"
+        },
+        {
+          "name": "numberOfSacToCreate",
+          "value": "120"
+        },
+        {
+          "name": "contentType",
+          "value": "text/plain"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_AES_128_GCM_SHA256"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "sslKeystoreAlias",
+          "value": "mq-outbound-key"
+        },
+        {
+          "name": "inboundIsFailedQueueUsed",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "true"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "sslKeystoreId",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "inboundOpenOptions",
+          "value": "1234"
+        },
+        {
+          "name": "inboundReplyQueuePutMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "username",
+          "value": "mq-user"
+        },
+        {
+          "name": "inboundFailedQueuePutMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "mq-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6815",
+      "name": "mq-inbound-default",
+      "connectorType": "MqNative",
+      "checksum": "8d9c5be73e32fdbd47c599712d3d1449b9e75806",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "inboundAcknowledgementType",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "isInbound",
+          "value": "true"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "inboundIsFailedQueueUsed",
+          "value": "false"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "true"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_AUTOMATIC"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6811",
+      "name": "mq-outbound-customized-1",
+      "connectorType": "MqNative",
+      "checksum": "9fa07e48bcff6b4f509bc7875fafc5e8c4c16d9f",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "isInbound",
+          "value": "false"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "true"
+        },
+        {
+          "name": "outboundReplyQueueGetMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundMessageFormat",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "outboundTemporaryQueueNamePattern",
+          "value": "model-queue"
+        },
+        {
+          "name": "outboundConnectionPoolMaxIdle",
+          "value": "456"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_AUTOMATIC"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "outboundConnectionPoolMaxWait",
+          "value": "789"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "sslKeystoreAlias",
+          "value": "mq-outbound-key"
+        },
+        {
+          "name": "outboundIsTemplateQueue",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "true"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "sslKeystoreId",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "outboundConnectionPoolMaxActive",
+          "value": "123"
+        },
+        {
+          "name": "username",
+          "value": "mq-user"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "mq-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6812",
+      "name": "mq-outbound-customized-2",
+      "connectorType": "MqNative",
+      "checksum": "83ba1fa163bdd2ac95ee0c25b1ba9684f241b161",
+      "enabled": false,
+      "properties": [
+        {
+          "name": "isInbound",
+          "value": "false"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundReplyQueueGetMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "true"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundMessageFormat",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "outboundTemporaryQueueNamePattern",
+          "value": "model-queue"
+        },
+        {
+          "name": "outboundConnectionPoolMaxIdle",
+          "value": "456"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_SPECIFIED_QUEUE"
+        },
+        {
+          "name": "specifiedReplyQueueName",
+          "value": "reply-wait"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_AES_128_GCM_SHA256"
+        },
+        {
+          "name": "outboundConnectionPoolMaxWait",
+          "value": "789"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "sslKeystoreAlias",
+          "value": "mq-outbound-key"
+        },
+        {
+          "name": "outboundIsTemplateQueue",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "true"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "sslKeystoreId",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "outboundConnectionPoolMaxActive",
+          "value": "123"
+        },
+        {
+          "name": "username",
+          "value": "mq-user"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "mq-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6813",
+      "name": "mq-outbound-customized-3",
+      "connectorType": "MqNative",
+      "checksum": "2fea39f0c04113d378229c638acaedaaabfd5525",
+      "enabled": false,
+      "properties": [
+        {
+          "name": "isInbound",
+          "value": "false"
+        },
+        {
+          "name": "isSslKeystoreUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundReplyQueueGetMessageOptions",
+          "value": "1234"
+        },
+        {
+          "name": "isCopyCorrelationIdFromRequest",
+          "value": "false"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundMessageFormat",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "outboundTemporaryQueueNamePattern",
+          "value": "model-queue"
+        },
+        {
+          "name": "outboundConnectionPoolMaxIdle",
+          "value": "456"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_SPECIFIED_QUEUE"
+        },
+        {
+          "name": "specifiedReplyQueueName",
+          "value": "reply-wait"
+        },
+        {
+          "name": "cipherSuite",
+          "value": "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256"
+        },
+        {
+          "name": "outboundConnectionPoolMaxWait",
+          "value": "789"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "sslKeystoreAlias",
+          "value": "mq-outbound-key"
+        },
+        {
+          "name": "outboundIsTemplateQueue",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "false"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "true"
+        },
+        {
+          "name": "sslKeystoreId",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "outboundConnectionPoolMaxActive",
+          "value": "123"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6810",
+      "name": "mq-outbound-default",
+      "connectorType": "MqNative",
+      "checksum": "d39ece3ff8ae3b27f2b5ed77849c83bb413e6179",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "isInbound",
+          "value": "false"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "outboundIsTemplateQueue",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundMessageFormat",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_NONE"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6814",
+      "name": "mq-outbound-default-template",
+      "connectorType": "MqNative",
+      "checksum": "7e31573819d69390af2465894f89b98b04f8af68",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "isInbound",
+          "value": "false"
+        },
+        {
+          "name": "hostName",
+          "value": "mq-host"
+        },
+        {
+          "name": "port",
+          "value": "1234"
+        },
+        {
+          "name": "channel",
+          "value": "SYSTEM.DEF.SVRCONN"
+        },
+        {
+          "name": "outboundIsTemplateQueue",
+          "value": "true"
+        },
+        {
+          "name": "inboundIsOpenOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "targetQueueName",
+          "value": "mq"
+        },
+        {
+          "name": "inboundIsReplyQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isQueueCredentialRequired",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "queueManagerName",
+          "value": "mq-manager"
+        },
+        {
+          "name": "outboundIsReplyQueueGetMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "isSslEnabled",
+          "value": "false"
+        },
+        {
+          "name": "inboundIsFailedQueuePutMessageOptionsUsed",
+          "value": "false"
+        },
+        {
+          "name": "outboundMessageFormat",
+          "value": "AUTOMATIC"
+        },
+        {
+          "name": "replyType",
+          "value": "REPLY_NONE"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b681a",
+      "name": "sftp-listener-customized-1",
+      "connectorType": "SFTP",
+      "checksum": "4e855553ef72a83e74414fd27a633c5f4077f267",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "contentType",
+          "value": "text/xml; charset=utf-8"
+        },
+        {
+          "name": "pollInterval",
+          "value": "60"
+        },
+        {
+          "name": "deleteOnReceive",
+          "value": "false"
+        },
+        {
+          "name": "serverFingerPrint",
+          "value": "0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55"
+        },
+        {
+          "name": "directory",
+          "value": "sftp-dir"
+        },
+        {
+          "name": "host",
+          "value": "sftp-host"
+        },
+        {
+          "name": "port",
+          "value": "22"
+        },
+        {
+          "name": "username",
+          "value": "sftp-user"
+        },
+        {
+          "name": "useDefaultKexAlgorithms",
+          "value": "true"
+        },
+        {
+          "name": "enableRespMessages",
+          "value": "true"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-sftp-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b681b",
+      "name": "sftp-listener-customized-2",
+      "connectorType": "SFTP",
+      "checksum": "ec444185501c01120bfbc3f8b3427e24061ecd39",
+      "enabled": true,
+      "hardwiredServiceName": "sftp-service1",
+      "properties": [
+        {
+          "name": "contentType",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "pollInterval",
+          "value": "160"
+        },
+        {
+          "name": "deleteOnReceive",
+          "value": "true"
+        },
+        {
+          "name": "serverFingerPrint",
+          "value": "0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55"
+        },
+        {
+          "name": "directory",
+          "value": "sftp-dir"
+        },
+        {
+          "name": "host",
+          "value": "sftp-host"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "2621440"
+        },
+        {
+          "name": "port",
+          "value": "22"
+        },
+        {
+          "name": "fileNamePattern",
+          "value": ".xml"
+        },
+        {
+          "name": "username",
+          "value": "sftp-user"
+        },
+        {
+          "name": "useDefaultKexAlgorithms",
+          "value": "false"
+        },
+        {
+          "name": "enableRespMessages",
+          "value": "true"
+        },
+        {
+          "name": "securePasswordKeyName",
+          "value": "sftp-key"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "SftpServerKexAlgorithms",
+          "value": "ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group14-sha256,diffie-hellman-group15-sha512,diffie-hellman-group16-sha512,diffie-hellman-group17-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1"
+        },
+        {
+          "name": "adv2",
+          "value": "val2"
+        },
+        {
+          "name": "adv1",
+          "value": "val1"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b681c",
+      "name": "sftp-listener-customized-3",
+      "connectorType": "SFTP",
+      "checksum": "070bca8ec2dcb798cc93fc9840591d0642f105e7",
+      "enabled": false,
+      "hardwiredServiceName": "sftp-service1",
+      "properties": [
+        {
+          "name": "contentType",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "pollInterval",
+          "value": "160"
+        },
+        {
+          "name": "deleteOnReceive",
+          "value": "true"
+        },
+        {
+          "name": "serverFingerPrint",
+          "value": "0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:44,0c:54:1d:3d:34:f1:11:00:00:22:11:00:00:22:33:55"
+        },
+        {
+          "name": "directory",
+          "value": "sftp-dir"
+        },
+        {
+          "name": "host",
+          "value": "sftp-host"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "0"
+        },
+        {
+          "name": "port",
+          "value": "2233"
+        },
+        {
+          "name": "fileNamePattern",
+          "value": ".xml"
+        },
+        {
+          "name": "username",
+          "value": "sftp-user"
+        },
+        {
+          "name": "useDefaultKexAlgorithms",
+          "value": "false"
+        },
+        {
+          "name": "enableRespMessages",
+          "value": "false"
+        },
+        {
+          "name": "securePasswordKeyName",
+          "value": "sftp-key"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "SftpServerKexAlgorithms",
+          "value": "diffie-hellman-group18-sha512,diffie-hellman-group17-sha512,diffie-hellman-group16-sha512"
+        },
+        {
+          "name": "adv2",
+          "value": "val2"
+        },
+        {
+          "name": "adv1",
+          "value": "val1"
+        }
+      ]
+    },
+    {
+      "goid": "ce64b9991c57dbe3a23bac34691b6819",
+      "name": "sftp-listener-default",
+      "connectorType": "SFTP",
+      "checksum": "32aa52fda35b880b4dc376ef8077095ddaf3d634",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "contentType",
+          "value": "text/xml; charset=utf-8"
+        },
+        {
+          "name": "pollInterval",
+          "value": "60"
+        },
+        {
+          "name": "deleteOnReceive",
+          "value": "false"
+        },
+        {
+          "name": "directory",
+          "value": "sftp-dir"
+        },
+        {
+          "name": "host",
+          "value": "sftp-host"
+        },
+        {
+          "name": "port",
+          "value": "22"
+        },
+        {
+          "name": "username",
+          "value": "sftp-user"
+        },
+        {
+          "name": "useDefaultKexAlgorithms",
+          "value": "true"
+        },
+        {
+          "name": "enableRespMessages",
+          "value": "true"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-sftp-pwd"
+        }
+      ]
+    },
+    {
+      "goid": "861c30489c47114e500f68032d712612",
+      "name": "some-kafka-consumer",
+      "connectorType": "KafkaClient",
+      "checksum": "7e64452a452321b73beb580f4c6d377e14440465",
+      "enabled": false,
+      "hardwiredServiceName": "some-kafka-consumer",
+      "properties": [
+        {
+          "name": "consumer.commitBatchSize",
+          "value": "100"
+        },
+        {
+          "name": "consumer.topicNames",
+          "value": "some-topic,some-other-topic"
+        },
+        {
+          "name": "consumer.resetPosition",
+          "value": "NONE"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "consumer.processMessagesMaxConcurrency",
+          "value": "10"
+        },
+        {
+          "name": "consumer.commitInterval",
+          "value": "5000"
+        },
+        {
+          "name": "consumer.pollTimeout",
+          "value": "1234"
+        },
+        {
+          "name": "consumer.consumerGroup",
+          "value": "some-consumer-group"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "consumer.pollMaxInterval",
+          "value": "300000"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "consumer.contentType",
+          "value": "application/octet-stream"
+        },
+        {
+          "name": "lastModifiedTimestamp",
+          "value": "2023-07-05T10:11:45.647135400+05:30[Asia/Calcutta]"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "role",
+          "value": "consumer"
+        },
+        {
+          "name": "consumer.processMessagesConcurrently",
+          "value": "true"
+        },
+        {
+          "name": "producer.role",
+          "value": "false"
+        },
+        {
+          "name": "consumer.pollMaxRecords",
+          "value": "123"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "consumer.commitAsync",
+          "value": "true"
+        },
+        {
+          "name": "consumer.role",
+          "value": "true"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "some-other-consumer-adv-prop",
+          "value": "some-other-consumer-adv-prop-value"
+        },
+        {
+          "name": "some-consumer-adv-prop",
+          "value": "some-consumer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae5",
+      "name": "some-kafka-producer",
+      "connectorType": "KafkaClient",
+      "checksum": "8272c3e64a62e3cea15cbae6673cb0a20254eb6c",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "producer.idempotence",
+          "value": "false"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "producer.retries",
+          "value": "123"
+        },
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "producer.acknowledgement",
+          "value": "1"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "some-other-producer-adv-prop",
+          "value": "some-other-producer-adv-prop-value"
+        },
+        {
+          "name": "some-producer-adv-prop",
+          "value": "some-producer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "861c30489c47114e500f68032d712610",
+      "name": "some-kafka-producer-consumer",
+      "connectorType": "KafkaClient",
+      "checksum": "518da6899e179676bcd7c87cd7f91441c33d63e6",
+      "enabled": false,
+      "hardwiredServiceName": "some-kafka-consumer",
+      "properties": [
+        {
+          "name": "consumer.commitBatchSize",
+          "value": "100"
+        },
+        {
+          "name": "consumer.topicNames",
+          "value": "some-topic,some-other-topic"
+        },
+        {
+          "name": "consumer.resetPosition",
+          "value": "NONE"
+        },
+        {
+          "name": "securePasswordName",
+          "value": "some-kafka-pwd"
+        },
+        {
+          "name": "privateKeyAlias",
+          "value": "some-kafka-key"
+        },
+        {
+          "name": "producer.retries",
+          "value": "123"
+        },
+        {
+          "name": "consumer.processMessagesMaxConcurrency",
+          "value": "10"
+        },
+        {
+          "name": "consumer.commitInterval",
+          "value": "5000"
+        },
+        {
+          "name": "consumer.pollTimeout",
+          "value": "1234"
+        },
+        {
+          "name": "consumer.consumerGroup",
+          "value": "some-consumer-group"
+        },
+        {
+          "name": "enableTls",
+          "value": "true"
+        },
+        {
+          "name": "keyStoreGoid",
+          "value": "00000000000000000000000000000002"
+        },
+        {
+          "name": "consumer.pollMaxInterval",
+          "value": "300000"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "value": "TLS_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+        },
+        {
+          "name": "username",
+          "value": "some-kafka-user"
+        },
+        {
+          "name": "consumer.contentType",
+          "value": "application/octet-stream"
+        },
+        {
+          "name": "lastModifiedTimestamp",
+          "value": "2023-07-05T10:11:52.132257+05:30[Asia/Calcutta]"
+        },
+        {
+          "name": "producer.idempotence",
+          "value": "false"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+        },
+        {
+          "name": "role",
+          "value": "producer|consumer"
+        },
+        {
+          "name": "consumer.processMessagesConcurrently",
+          "value": "true"
+        },
+        {
+          "name": "producer.role",
+          "value": "true"
+        },
+        {
+          "name": "consumer.pollMaxRecords",
+          "value": "123"
+        },
+        {
+          "name": "producer.acknowledgement",
+          "value": "1"
+        },
+        {
+          "name": "tlsVersion",
+          "value": "TLSv1.2"
+        },
+        {
+          "name": "consumer.commitAsync",
+          "value": "true"
+        },
+        {
+          "name": "consumer.role",
+          "value": "true"
+        },
+        {
+          "name": "authType",
+          "value": "SCRAM-SHA-256"
+        }
+      ],
+      "advancedProperties": [
+        {
+          "name": "producer.some-other-producer-adv-prop",
+          "value": "some-other-producer-adv-prop-value"
+        },
+        {
+          "name": "consumer.some-other-consumer-adv-prop",
+          "value": "some-other-consumer-adv-prop-value"
+        },
+        {
+          "name": "producer.some-producer-adv-prop",
+          "value": "some-producer-adv-prop-value"
+        },
+        {
+          "name": "consumer.some-consumer-adv-prop",
+          "value": "some-consumer-adv-prop-value"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a9001",
+      "name": "some-kafka-producer-delete-by-input-1",
+      "connectorType": "KafkaClient",
+      "checksum": "3c7da0a3e6d81faa22a392e613328ac45decc8b7",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+        }
+      ]
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a9002",
+      "name": "some-kafka-producer-delete-by-input-2",
+      "connectorType": "KafkaClient",
+      "checksum": "fd977912eb6ff722d49983913253cd2c400db037",
+      "enabled": true,
+      "properties": [
+        {
+          "name": "role",
+          "value": "producer"
+        },
+        {
+          "name": "bootstrapServers",
+          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+        }
+      ]
+    }
+  ],
+  "keys": [
+    {
+      "goid": "00000000000000000000000000000002:mq-outbound-key",
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "mq-outbound-key",
+      "checksum": "09d3b292cbdec5ae21b2e4bde3302fb31e9f802d",
+      "keyType": "RSA",
+      "keySize": 2048,
+      "subjectDn": "CN=mq-outbound-key",
+      "p12": "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",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIC+TCCAeGgAwIBAgIJAL+8eVt8KITEMA0GCSqGSIb3DQEBDAUAMBoxGDAWBgNVBAMTD21xLW91\r\ndGJvdW5kLWtleTAeFw0yNjA5MDkwNTI0NDFaFw0zMTA5MDgwNTI0NDFaMBoxGDAWBgNVBAMTD21x\r\nLW91dGJvdW5kLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL8p75PewwMEpdPF\r\n2/8zML6AEYm7q+7z4ApD33Vf1Pek1Fd+x7tMQahrpLL5um0S2oMFgdP/gY1U/837aqqh+9rbkedB\r\nQTHQ019bqnz18+PyZHThX9Qo7L0WSl7kQVC3AW1eARGVy+Zyk7KrBD0vI8W35FNR2k+zH/GAjBRH\r\n+9ReEKIY7guK9u3l7siKVE4+dKcsVrwJe+he51M7aaAEu3l8qI/65VHgUhHNVErCoKnvTkA1eZ96\r\nYqAPIhXjbNNfKj/DJdi2UQ556Ks5NyyruOt0hBfWJ9ZnhvYQtdUqcXTv0l5ZPYhyNBoZs+GKaxHV\r\nZfT8nV9yTWQN6Q/XIOKEX68CAwEAAaNCMEAwHQYDVR0OBBYEFNDtBLX5JWCj8AnlTB5yVoPkToQ6\r\nMB8GA1UdIwQYMBaAFNDtBLX5JWCj8AnlTB5yVoPkToQ6MA0GCSqGSIb3DQEBDAUAA4IBAQCSsuYP\r\nioc5Vx0QPAf0OwuyT16AUVbTzSmSW2tGV4WJjEOc1LZ7yqT2D5Mykrqw9BkFaFQ1+Jp3X2OB0pkZ\r\nFP7TGM4/k9YaPJfDte9O5TsqaPMtLOF8u4Brr1ayH49Ml7oq4mKpn8hYGTotJMIvzHYKFhHeZMDR\r\nsGer/+40dGz9pff2wNDyFJaGig49a+V5ixXqtXzsXtjeoMO77vYdev18iY6mkYw1+GC74uWFy/aN\r\n6BV1aNQ59bOQ5G0llvU0RbcusHU4hxH4/dOVrufqmB6qNYxKU+ZO/tAnvXB0ReXdfkFUssWw01dm\r\njQfL0xfe2lP0h3Y95rY5n/30k9Hmfdjt\n-----END CERTIFICATE-----\n"
+      ]
+    },
+    {
+      "goid": "00000000000000000000000000000002:some-kafka-key",
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "some-kafka-key",
+      "checksum": "34e491071a91af674dfb20494a698a74c9d230da",
+      "keyType": "RSA",
+      "keySize": 2048,
+      "subjectDn": "CN=some-kafka-key",
+      "p12": "MIIKRAIBAzCCCe4GCSqGSIb3DQEHAaCCCd8EggnbMIIJ1zCCBb4GCSqGSIb3DQEHAaCCBa8EggWrMIIFpzCCBaMGCyqGSIb3DQEMCgECoIIFQDCCBTwwZgYJKoZIhvcNAQUNMFkwOAYJKoZIhvcNAQUMMCsEFEA3Vkl2Lede/YfP948uR0VTj0rRAgInEAIBIDAMBggqhkiG9w0CCQUAMB0GCWCGSAFlAwQBKgQQzi5KLbaMLdjXXL1lnHWWOASCBNAoF0LZ2tGuBIm5adrBgLDueZUCyYj8h4QLVdBk9tuHgqF6Oe7W6VYaURrF5y4ihAknnkukr3aLLTzZdlLv1lMz3C/7NYWzOw3wnrAZ230aXTHN3zGgI3L/lRwtN0Sl5evZJrSrwPR+eQg8Nh/4SyuK6E6NGZmpLhm6gsHUy/KKcewaRk0yxclDlVUfSaKYYx3Zyz5BAjrydC+C8WpYOkhafQj9MFU2wDg/RB+Avjmqg7X2Hky8EHSudHYKQdajEPw9O/W7hMmGc99e0DiDRc1FVGH+8ODpoMpLVIy4Ez7pTc0hQ+OBvBw9KZFWT+5JhIUms8xKxWn8y2muaboaBdZr4LGAahmVpybto9Q3/6XmB1DIhegzLnD1DXgCiWeYymA3SfMwlHohWafNaFpA0uRYpcuAXmx2tJ3fEZ3YXqPffUSM2/WyzhCqZRbY+DnR28PXJcly1oOHlVmmPt6kaSFzIp0FU3UXDU5MTKjN7ZwhZM095gOlYMKtJyoNn/xrfPSdDOiLjfl4o+MhiXt5f4fHqAxXot4kJb9EU9vu5aJU3bBfQuDHuQ0pcqdr0d35+uVA6FzNIziFUc/5owxTRTxk1xtlA2k0TpowS59GYAGhD7uEKFRKSMSiV07kGR3f8idPKsSP9YZN8ubm2JmEp9n1tJL92dnglnKAB1DWhN9aXFp9aGQvZmbbCIqOFXG4Tr69ouGJmEWktU/g0unt5lGR61Q876lBTe7de2AIwntL7pkE/1I9Tr6354qKX75oXA8kpa+KlWWiQG4YO9wMk+7GYuPQWAkXUT91JcOCn4qaKX3NhgSKxFeZTi5PwrxQeIVabbwwadDkG07nPFWj204+9+93xR2bOFNpS6PBNwyidcycMN57B8F2cGRRWP7rCH/MxAZi4q1I25d3hKc9Scr0O4CvFh5sf7SVS/ovsRGfqDGhvSRkXFg/z9LKsyCLbCLY0TkHjf6/nzBCgNbvIBlhIPQ9KTst/ypz8ACQDhh22TkQHONLa8uwzZJ38Q581LF/Cds8b+edOzBzIpyMeAUqD8ipChvfwNStw5mQudjvk1Oqq6zyC5Ga9meVbIuyp63fmYPv25KiH5n0FHbm/Jg/s7UmVcGkc1mg/VQz/SZerJC67WNxL4ufqCxsa2CGCLbWrrG7M6PHd2mD3+ITs7fhGgIrXzp3w4Imn1KpLizJF1mDweSfqEp2fGo1v9xGr6iVaq6rnIQSmQk4Kah1EHFxmpt2HDgg+HYRXy9W7TL4fw63leaYGQHGtOSSLRw7meZj2lgzy10//6XD/yf46ZqnrRCKkvPOUN6Noj1I7D2+j8VDhbiAAmWYgTfF5qmFBwyZZHj0Sabq6qdPJ4c7saisU4fYF8nFXOek/pWCykdYgtAL/BQQzEAuzSIg1ZxpNUQCvUvFw9Ljog7zDq3okRywnygztot61fW3qxR/pLjUUpBAF3AFsO8MNGG/ax7JRxQjhcR7ojhQtP94U2zbrs67s5X2qexqrnX6+qm2b+0bYP50BTYISZypF/OGkVeexerIDlxT2MWy53caAvNZKNwMp1pUQ6uz9kmX9jDiQFvlhWrA5KjI5UIZPU03f1GiUFJ5sXRYVzAwuPehd0UA5B+iUu2YRtsVk45ybU/8qK6wvzFQMCsGCSqGSIb3DQEJFDEeHhwAcwBvAG0AZQAtAGsAYQBmAGsAYQAtAGsAZQB5MCEGCSqGSIb3DQEJFTEUBBJUaW1lIDE3ODg5Njg4MjE4OTMwggQRBgkqhkiG9w0BBwagggQCMIID/gIBADCCA/cGCSqGSIb3DQEHATBmBgkqhkiG9w0BBQ0wWTA4BgkqhkiG9w0BBQwwKwQUB+iRSqrzYwFPQKspWG9mDUFQ9dYCAicQAgEgMAwGCCqGSIb3DQIJBQAwHQYJYIZIAWUDBAEqBBBEfQDgdvqiomeSmrHfPMh2gIIDgFHljXGKCJpcBpimqyfftHJWKI+G5xG0H/BEJw1zkDLHuikeyCO7newqFq/kHzbNpDH1r6VIz0m5k+Zdjc8TB+ue5UtP8cane1DFCRs6Rrp4Cxf6yFS+MTs6tqlEUSRQQ5UqIEyTpYqKqaYmCgXfiYuLn8qV/Bk8NYxYNt2EPOVsWvDOnw5FvkFIz4yucN13qD//H5v+brQ9aBeMFQszz+fiDLUOlkBQJrrIu/+sJ/WOe/zyKc5arAZg3sYYcg2aaF7Nn6yimSUcUn5MFT4Fv1QVVfpBHwqZjYStb5z2N0H9iBF4m1SCYn18D/YlMyeSrkUkoEG9aWJvqogGyg1MJ/KH+M+pWM9BAt/1PPPEuj9uPtLfBl34/qs7qEdFXB3+uLnD7UTPnDfbcnwTXu8VUMuuCmpvQptCdIPnA65V4aSEL+h1PS2Lngb+MQoLM+Vp6jNn+joZZuAee/I4CBAO7stoBp3PSm1Sf/FUmMEl7WrvjRsFU+cZBPags/1bCIoNBfo2GFeykigPVlQ+jGHd2CFDKsgowP2PhmTjhx+BuxQNt+dQhMsHW64B5b7oW4uGpI/ThB4CrectW7YiFrNe+sFhbG1tX6XDSn4ATuap/HHMO4BNOLYjw13A/W6TcrfTXSEBx5pjrStQzrANgFKMkxy+GZ0w82LHY9LSny7/XKemBbxHwXKb29XTKMTcWU4mWmk422EvR/Oq5D33cQCEddAJu1hJmew6Uk22SaQ4HHN0dSv32I3mCNhrFFjU/YGOkBp76ON3qLQ+pYh1jH/vVVREoq19xrIiBFtYC0JBFXgrJzu/bJobykPOLDQiL71X4qBmSbJGG1wPrqitsi2hf6CzNvPFOkNwucgx1rdowtZDKAPM8QG1e8+0acRtSBpfpHC5L28FKFzsPpTyNO8C3+G+V+IDmQ0UJzli9EZA4bnoytyy30maLGIAZ36xRKKTg0NVzUY3tOPskyqoSR2okxbXTq2CnstSgDUN93BUNQpemdmQIh+OqGd41KJf06PPYy/HNtFSdm4IY08OrtnFST0nssuXJzhpSkZqDnpXKvujuGrR5Ucfv/ErJg7/NF22xxZ0m9N4vAT14qZi9HoNXt2i+JjUgBg72pWl2v0gpYnotfqPIkgVlRRXyjSgcWlifghCjpvVP4PTKjBsyE9YItZ2eSl/fyGzqA4xiY16CbmMME0wMTANBglghkgBZQMEAgEFAAQgzABRinClVjNlNRApRxQy3uMwYFoLxTz9LMTLoxll0CsEFD7gRBqHfkLJiI8O78pLYiDdCKkJAgInEA==",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIC9jCCAd6gAwIBAgIIWcftiksTO1wwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc29tZS1r\r\nYWZrYS1rZXkwHhcNMjMwNzA0MjMxMjU1WhcNMjgwNzAyMjMxMjU1WjAZMRcwFQYDVQQDEw5zb21l\r\nLWthZmthLWtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJjtDIBLD7JvLcgp3WBL\r\ntLsIhuTQyY/vlOp/FSx95AzzFkvRxOpApmRgzWDc5WQ72qyq+qYm/iAyCokJ4ih7SP35bJQ+VMIK\r\nVh06u0GmjbLnOFMm19u/d8ri//cE1r0ZEtvQ/QYLYNf3XYaGtJwkh39LqnBVAT/mX8ys6luUWJRp\r\nnBWGxcCJDdreSj/PFiQQM2wUUYmfc7DgIcCnm2lZx+GFddrf7vrLsbl7OauhpDH0IdMqEyRDO2uJ\r\nRBdg2GKLW17p+eJdTXT35vJO8mRItmdKw8n85TGcJ3XtNeZJMa4nuLxQOfva3Hv7Di1Wet8XPOdR\r\ntXV09ns3uzvtoKk1z2ECAwEAAaNCMEAwHQYDVR0OBBYEFGMxQ+Oigl/FKLlcThUSQRpVUMlQMB8G\r\nA1UdIwQYMBaAFGMxQ+Oigl/FKLlcThUSQRpVUMlQMA0GCSqGSIb3DQEBDAUAA4IBAQCSrc4wrZsB\r\nuMUxefqskCI+aP6v9fmkL/yycVr/W3SkoKV/DejDBWmzXmrzJOukhw7rUgd7IAjqL5h5uz/4uDmj\r\n6iJy02NwU3lE7sSYnKpRFcwAbafLxZIVr22lsCnFlXFz52RBwSNhUx3bj60bSbpuTeFEAbEmZHCd\r\nAEQM1BskyqMbxneyL1YK1fKLW8LJp36m8q2UuUeSRK1//LY+Qq01iXdNKwoAoPdbjvTRTtZjTQEK\r\nag3aK/uHOwqgqh2YIZESx3WAdSwkUF+oA8EsP0CBIkXg7CE2zd0ushafKkzrfnjxVpdeB5aEueoJ\r\nP+TtZJn6QxKZ6zuFQHfhwIHOV+Ua\n-----END CERTIFICATE-----\n"
+      ]
+    },
+    {
+      "goid": "00000000000000000000000000000002:ssl",
+      "keystoreId": "00000000000000000000000000000002",
+      "alias": "ssl",
+      "checksum": "65a29451f0f6a5adacf37f400d75114520ce8f2b",
+      "keyType": "RSA",
+      "keySize": 2048,
+      "usageTypes": [
+        "SSL",
+        "SERVER_SSL",
+        "CLIENT_SSL"
+      ],
+      "subjectDn": "CN=ssg.gateway",
+      "p12": "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",
+      "certChain": [
+        "-----BEGIN CERTIFICATE-----\nMIIC8TCCAdmgAwIBAgIJAM7QR+2Kl+XUMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3NzZy5n\r\nYXRld2F5MB4XDTI2MDkwOTAxMzcyM1oXDTM2MDkwNjAxMzcyM1owFjEUMBIGA1UEAxMLc3NnLmdh\r\ndGV3YXkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvk70OMAmV2glL4mOyStphqYqI\r\nuGyfOIE5uJoJHk0wA36Vj4UWjEKJgALfJmhhnr7h/T1j9IFB+mBDftw9HB9G2It1HFO3tmZ+I1PH\r\nhghb8NmUi9YIxKzI9QZdbPvoZx3Hwc+AttaN8Op3QNimR3Tda5i6lrTzsMT81Ckp5Ft6K8HcqsUs\r\nPWVZLxaVNB7WzIFuRuuIKRE+Jhhr4iJVP4H9uQQIfIWUp1rHbRkbrffjztP2lUp+rANConWfzxwk\r\ne4PSvevKbkNEP7kAUGR3TKG/l6XR1oAtPx18jLy7HdVKHYqWmmkPheui4CWhLJobU46TqQ8sLxGi\r\nYKYnA3w7xQldAgMBAAGjQjBAMB0GA1UdDgQWBBSQl59PR/9HspF4sc/AGlYEbFC49zAfBgNVHSME\r\nGDAWgBSQl59PR/9HspF4sc/AGlYEbFC49zANBgkqhkiG9w0BAQwFAAOCAQEAin6/RssrsDNa9H71\r\nHamicq8NqFpBNNDILECR8d+R/Uev6O3NXQ/mKN61tdoB5yMs09twXpMeKVWWp5nqpMp6cNRh8uVY\r\nELNWKDHZWK0o6HmU9W/JxjIW7jj9jjD4Ni+l4MPUlOIZyFwvYCWVQiCsVKFaL/9HtX4T/Wka2FO4\r\nTSCGk77LzEVROqmQM6XwEET8J1sYm7Iw0DakEKz2V8QdD5J+aWzrH0m9inF9bu/lDYBOGJGL6FP4\r\ndgp/fKmdl2cFE2D/QjJiCETiMEw2KYQuwJQR6fx4Y93B6e/dsTRgrSJLKmAr5boie5JArJSA2h3M\r\nD1POb0DhQJooaPdN1z1/Gw==\n-----END CERTIFICATE-----\n"
+      ]
+    }
+  ],
+  "secrets": [
+    {
+      "goid": "9a45f1717f6f3a403e35e473df1da15e",
+      "name": "mq-pwd",
+      "checksum": "4dd5426b2970d136f65a84174a04c66259bafac3",
+      "description": "",
+      "secret": "JEw3RXYwMyQl25ATFHEU+I66VvsT7T+sk0usj1w5zVmHYWQpGDFBVg==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-09T06:23:22.360Z"
+    },
+    {
+      "goid": "9a45f1717f6f3a403e35e473df1da15f",
+      "name": "sftp-key",
+      "checksum": "1141087e42d1002637bedbff874819b4754c4096",
+      "description": "",
+      "secret": "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",
+      "secretType": "PEM_PRIVATE_KEY",
+      "variableReferencable": false,
+      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxzipXZbqbbSu0PiV2RUM\niLT4ziipIln+1ebpqJSo4LC8OIZQV6NNm3VXH0ARkoHXFmBc5bpjD2at5jZr9i2G\nLW8NU0v7Ng0YW0FFXi5UQSOOpryeMEZbX7BdOf3s3FvhKakFFoYdvZdKzNlCnBuZ\ngacTZn4bRlg82XORnIIPFdN56N4tsA5OJIuvnR4PmtlR1AyNfppax46KrnNl2tnU\n8/3K6DSpN4w3mEJ8s1cPHFOipFg/7BPjFHJpdPT+gaa0+s/7ozsCCNFQS0Fa4wFH\nNGCacYisQMKg0Oamo0CCy6GgsWVodJgGObkFMyPGglMEInmquU6JfPEwQUSOBnuG\nvQIDAQAB\n-----END PUBLIC KEY-----\n",
+      "lastModifiedDate": "2026-09-09T07:01:00.144Z"
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae2",
+      "name": "some-kafka-pwd",
+      "checksum": "af5f96de47b67d07bdfc92afc723d7df7fda2ad1",
+      "description": "",
+      "secret": "JEw3RXYwMyT3G+Hcu1AL3+XcJMZs7rrDir3RX6xBAoBOSS7Cq8fwgg==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-09T03:35:24.617Z"
+    },
+    {
+      "goid": "c84d9a1bee64808dc0f7fc52aa0a8bf3",
+      "name": "some-sftp-pwd",
+      "checksum": "b01ebea260fceda1e51043bab5b5c79c3933e718",
+      "description": "",
+      "secret": "JEw3RXYwMyTw9O1B7qbTO0iQ8dqr5nNcJEmui8dK3T5UhjiKpTklwA==",
+      "secretType": "PASSWORD",
+      "variableReferencable": false,
+      "lastModifiedDate": "2026-09-09T03:42:14.602Z"
+    }
+  ],
+  "services": [
+    {
+      "goid": "a975796f1c3d80060c8dc56385654611",
+      "guid": "d7114158-1a46-49fd-9370-6e387eb06ca0",
+      "name": "mq-service1",
+      "resolutionPath": "/mq-service1",
+      "serviceType": "WEB_API",
+      "checksum": "182590fbb39dd210c6ea7d1529d9084841ce6b6b",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\"/>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "a975796f1c3d80060c8dc56385654610",
+      "guid": "08bda216-69c1-424c-ad99-996423b5cefb",
+      "name": "sftp-service1",
+      "resolutionPath": "/sftp-service1",
+      "serviceType": "WEB_API",
+      "checksum": "6f18275d380792c8782ad77233d6b4b9182580ce",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\"/>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8b29",
+      "guid": "a20bedc4-db56-4fbc-a67f-09193f47df23",
+      "name": "some-kafka-consumer",
+      "resolutionPath": "/some-kafka/consumer",
+      "serviceType": "WEB_API",
+      "checksum": "2cd93c28bd7129143b3aa1f3179aba8b3e2d4f79",
+      "version": 2,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:HardcodedResponse>\n            <L7p:Base64ResponseBody stringValue=\"JHtyZXF1ZXN0LmthZmthLnRvcGljfToke3JlcXVlc3Qua2Fma2EucGFydGl0aW9ufToke3JlcXVlc3Qua2Fma2Eub2Zmc2V0fQ==\"/>\n            <L7p:ResponseContentType stringValue=\"text/plain; charset=UTF-8\"/>\n        </L7p:HardcodedResponse>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "c73c9a1bee64808dc0f7fc52aa0a8ae8",
+      "guid": "cb1bfd6b-2c13-4389-bd66-8676625d5ea3",
+      "name": "some-kafka-producer",
+      "resolutionPath": "/some-kafka/producer",
+      "serviceType": "WEB_API",
+      "checksum": "81195f996ff805b1f889f4ef3a43af3881ff0df6",
+      "version": 2,
+      "enabled": true,
+      "folderPath": "/",
+      "methodsAllowed": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "tracingEnabled": false,
+      "wssProcessingEnabled": false,
+      "laxResolution": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:KafkaRouting>\n            <L7p:AckTimeout stringValue=\"\"/>\n            <L7p:ClientConfigGoid goidValue=\"c73c9a1bee64808dc0f7fc52aa0a8ae5\"/>\n            <L7p:ClientConfigName stringValue=\"some-kafka-producer\"/>\n            <L7p:Topic stringValue=\"some-topic\"/>\n        </L7p:KafkaRouting>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "properties": {
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

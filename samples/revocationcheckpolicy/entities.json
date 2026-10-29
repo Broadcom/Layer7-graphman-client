@@ -1,0 +1,68 @@
+{
+  "revocationCheckPolicies": [
+    {
+      "name": "RevocationCheckPolicyThruGraphman1",
+      "defaultPolicy": false,
+      "defaultSuccess": true,
+      "continueOnServerUnavailable": true,
+      "revocationCheckPolicyItems": [
+        {
+          "type": "CRL_FROM_CERTIFICATE",
+          "url": ".*",
+          "allowIssuerSignature": true,
+          "nonceUsage": "INCLUDE_NONCE"
+        },
+        {
+          "type": "CRL_FROM_URL",
+          "url": "https://crlfromurl.com/",
+          "allowIssuerSignature": true,
+          "nonceUsage": "EXCLUDE_NONCE"
+        },
+        {
+          "type": "OCSP_FROM_CERTIFICATE",
+          "url": ".*",
+          "allowIssuerSignature": false,
+          "nonceUsage": "EXCLUDE_NONCE"
+        },
+        {
+          "type": "OCSP_FROM_URL",
+          "url": "https://ocspfromurl.com/",
+          "allowIssuerSignature": false,
+          "nonceUsage": "USE_NONCE_CONDITIONALLY"
+        }
+      ]
+    },
+    {
+      "name": "RevocationCheckPolicyThruGraphman2",
+      "defaultPolicy": true,
+      "defaultSuccess": false,
+      "continueOnServerUnavailable": false,
+      "revocationCheckPolicyItems": [
+        {
+          "type": "CRL_FROM_CERTIFICATE",
+          "url": ".*",
+          "allowIssuerSignature": false,
+          "nonceUsage": "INCLUDE_NONCE"
+        },
+        {
+          "type": "CRL_FROM_URL",
+          "url": "https://crlfromurl.com/",
+          "allowIssuerSignature": false,
+          "nonceUsage": "EXCLUDE_NONCE"
+        },
+        {
+          "type": "OCSP_FROM_CERTIFICATE",
+          "url": ".*",
+          "allowIssuerSignature": true,
+          "nonceUsage": "EXCLUDE_NONCE"
+        },
+        {
+          "type": "OCSP_FROM_URL",
+          "url": "https://ocspfromurl.com/",
+          "allowIssuerSignature": true,
+          "nonceUsage": "USE_NONCE_CONDITIONALLY"
+        }
+      ]
+    }
+  ]
+}

@@ -26,6 +26,53 @@ test("import entities with bundleDefaultAction=IGNORE", () => {
     });
 });
 
+test("import entities using --query alias for --using", () => {
+    const output = graphman("import",
+        "--gateway", "target-gateway",
+        "--query", "install-bundle",
+        "--input", standardBundleFile,
+        "--options.bundleDefaultAction", "IGNORE",
+        "--force");
+
+    const op = output.data[metadata().mutationMethod("keys", "set")];
+    expect(op.detailedStatus.length).toBeGreaterThan(0);
+    op.detailedStatus.forEach(item => expect(item).toMatchObject(
+        {action: 'IGNORE', status: 'IGNORED'}));
+});
+
+test("import using deprecated --using still works and warns", () => {
+    const output = graphman("import",
+        "--gateway", "target-gateway",
+        "--using", "install-bundle",
+        "--input", standardBundleFile,
+        "--options.bundleDefaultAction", "IGNORE",
+        "--force");
+
+    expect(output.stdout).toEqual(expect.stringContaining("--using is deprecated, use --query instead"));
+    const op = output.data[metadata().mutationMethod("keys", "set")];
+    expect(op.detailedStatus.length).toBeGreaterThan(0);
+});
+
+test("import entities using a composite mutation built from multiple mutation names", () => {
+    const output = graphman("import",
+        "--gateway", "target-gateway",
+        "--queries", "setKeys", "setSecrets",
+        "--input", standardBundleFile,
+        "--options.bundleDefaultAction", "IGNORE",
+        "--force");
+
+    const setKeysStatus = output.data[metadata().mutationMethod("keys", "set")];
+    const setSecretsStatus = output.data[metadata().mutationMethod("secrets", "set")];
+
+    expect(setKeysStatus.detailedStatus.length).toBeGreaterThan(0);
+    setKeysStatus.detailedStatus.forEach(item => expect(item).toMatchObject(
+        {action: 'IGNORE', status: 'IGNORED'}));
+
+    expect(setSecretsStatus.detailedStatus.length).toBeGreaterThan(0);
+    setSecretsStatus.detailedStatus.forEach(item => expect(item).toMatchObject(
+        {action: 'IGNORE', status: 'IGNORED'}));
+});
+
 test("import entities with bundleDefaultAction=DELETE", () => {
     const output = graphman("import",
         "--gateway", "target-gateway",

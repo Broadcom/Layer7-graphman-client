@@ -59,8 +59,9 @@ module.exports = {
         config.options = makeOptions(config.options || {});
         Object.assign(config.options, params.options);
 
-        // set the client log level
+        // set the client log level and sink
         utils.logAt(config.options.log);
+        utils.logTo(config.options.logSink);
 
         config.credentials = makeCredentials(config.credentials || {});
         config.proxies = makeProxies(config.proxies || {});
@@ -158,7 +159,24 @@ module.exports = {
             }
         });
 
+        this.mutationFieldNamesByPattern(pattern).forEach(item => {
+            if (!result.includes(item)) {
+                result.push(item);
+            }
+        });
+
         return result;
+    },
+
+    mutationFieldInfo: function (name) {
+        const mutationInfo = this.metadata.types["Mutation"];
+        return mutationInfo.fields.find(x => x.name === name);
+    },
+
+    mutationFieldNamesByPattern: function (pattern) {
+        const mutationInfo = this.metadata.types["Mutation"];
+        const regex = "^" + pattern.replaceAll("*", ".*") + "$";
+        return mutationInfo.fields.filter(x => x.name.match(regex)).map(x => x.name);
     },
 
     typeInfoByTypeName: function (name) {
@@ -382,6 +400,7 @@ function loadConfig(configFile) {
 function makeOptions(options) {
     return Object.assign({
         "log": "info",
+        "logSink": "stdout",
         "schema": SCHEMA_VERSION,
         "policyCodeFormat": "xml",
         "keyFormat": "p12",

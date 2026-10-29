@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
@@ -56,6 +56,16 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        input: "string",
+        output: "string",
+        options: {
+            normalize: "boolean",
+            excludeGoids: "boolean",
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("revise --input <input-file>");
         console.log("  [--output <output-file>]");
@@ -66,6 +76,7 @@ module.exports = {
         console.log();
         console.log("  --input <input-file>");
         console.log("    specify the name of input bundle file that contains gateway configuration");
+        console.log("    use '-' to read the bundle from the standard input");
         console.log();
         console.log("  --output <output-file>");
         console.log("    specify the name of file to capture the revised version of bundle.");
@@ -77,5 +88,8 @@ module.exports = {
         console.log("        use this option to normalize/sanitize the bundle for import ready.");
         console.log("      .excludeGoids");
         console.log("        use this option to exclude Goids from the bundled entities. This option is applicable only when normalize option is selected.");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
     }
 }

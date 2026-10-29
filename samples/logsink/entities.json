@@ -1,0 +1,141 @@
+{
+  "logSinks":[
+    {
+      "name": "some_ssg_log_Z",
+      "description": "some description Z",
+      "type": "SYSLOG",
+      "enabled": true,
+      "severity": "INFO",
+      "categories": [
+        "TRAFFIC",
+        "LOG"
+      ],
+      "syslogHosts": [
+        "127.0.0.1:8789"
+      ],
+      "filters": [
+        {
+          "type": "listen-port",
+          "values": [
+            "Default HTTPS (9443)"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "syslog.protocol",
+          "value": "TCP"
+        },
+        {
+          "name": "syslog.format",
+          "value": "STANDARD"
+        },
+        {
+          "name": "syslog.facility",
+          "value": "1"
+        },
+        {
+          "name": "syslog.charSet",
+          "value": "UTF-8"
+        },
+        {
+          "name": "syslog.logHostname",
+          "value": "true"
+        },
+        {
+          "name": "syslog.ssl.clientAuth",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "some_ssg_log_Y",
+      "description": "some description Y",
+      "type": "SYSLOG",
+      "enabled": true,
+      "severity": "INFO",
+      "categories": [
+        "TRAFFIC",
+        "LOG"
+      ],
+      "syslogHosts": [
+        "127.0.0.1:8789"
+      ],
+      "filters": [
+        {
+          "type": "listen-port",
+          "values": [
+            "Default HTTPS (9443)"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "syslog.protocol",
+          "value": "TCP"
+        },
+        {
+          "name": "syslog.format",
+          "value": "STANDARD"
+        },
+        {
+          "name": "syslog.facility",
+          "value": "1"
+        },
+        {
+          "name": "syslog.charSet",
+          "value": "UTF-8"
+        },
+        {
+          "name": "syslog.logHostname",
+          "value": "true"
+        },
+        {
+          "name": "syslog.ssl.clientAuth",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "some_ssg_log_X",
+      "description": "some description X",
+      "type": "FILE",
+      "enabled": true,
+      "severity": "WARNING",
+      "categories": [
+        "TRAFFIC",
+        "LOG"
+      ],
+      "filters": [
+        {
+          "type": "folder",
+          "values": [
+            "/"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "file.logCount",
+          "value": "2"
+        },
+        {
+          "name": "file.maxSize",
+          "value": "1024"
+        },
+        {
+          "name": "file.interval",
+          "value": "DAILY"
+        },
+        {
+          "name": "file.rolling",
+          "value": "true"
+        },
+        {
+          "name": "file.format",
+          "value": "VERBOSE"
+        }
+      ]
+    }
+  ]
+}

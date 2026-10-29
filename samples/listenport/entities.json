@@ -1,0 +1,90 @@
+{
+  "listenPorts": [
+    {
+      "name": "some-listen-port (18443)",
+      "enabled": true,
+      "protocol": "HTTPS",
+      "port": 18443,
+      "enabledFeatures": [
+        "PUBLISHED_SERVICE_MESSAGE_INPUT",
+        "POLICY_MANAGER_ACCESS",
+        "POLICY_DOWNLOAD_SERVICE",
+        "PING_SERVICE",
+        "WS_TRUST_SECURITY_TOKEN_SERVICE",
+        "CERTIFICATE_SIGNING_SERVICE",
+        "PASSWORD_CHANGING_SERVICE",
+        "WSDL_DOWNLOAD_SERVICE",
+        "SNMP_QUERY_SERVICE",
+        "BUILT_IN_SERVICES"
+      ],
+      "tlsSettings": {
+        "clientAuthentication": "OPTIONAL",
+        "tlsVersions": [
+          "TLSv1.2",
+          "TLSv1.3"
+        ],
+        "useCipherSuitesOrder": true
+      },
+      "properties": [
+        {
+          "name": "enableWebSocket",
+          "value": "false"
+        },
+        {
+          "name": "useExtendedFtpCommandSet",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "some-other-listen-port (28443)",
+      "enabled": true,
+      "protocol": "HTTPS",
+      "port": 28443,
+      "enabledFeatures": [
+        "PUBLISHED_SERVICE_MESSAGE_INPUT",
+        "POLICY_MANAGER_ACCESS",
+        "POLICY_DOWNLOAD_SERVICE",
+        "PING_SERVICE",
+        "WS_TRUST_SECURITY_TOKEN_SERVICE",
+        "CERTIFICATE_SIGNING_SERVICE",
+        "PASSWORD_CHANGING_SERVICE",
+        "WSDL_DOWNLOAD_SERVICE",
+        "SNMP_QUERY_SERVICE",
+        "BUILT_IN_SERVICES"
+      ],
+      "tlsSettings": {
+        "clientAuthentication": "REQUIRED",
+        "keystoreId": "00000000000000000000000000000002",
+        "keyAlias": "some-host",
+        "tlsVersions": [
+          "TLSv1.2",
+          "TLSv1.3"
+        ],
+        "useCipherSuitesOrder": true
+      },
+      "properties": [
+        {
+          "name": "threadPoolSize",
+          "value": "32"
+        },
+        {
+          "name": "enableWebSocket",
+          "value": "true"
+        },
+        {
+          "name": "overrideContentType",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "useExtendedFtpCommandSet",
+          "value": "false"
+        },
+        {
+          "name": "requestSizeLimit",
+          "value": "2048"
+        }
+      ]
+    }
+  ]
+}
