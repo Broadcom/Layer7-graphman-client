@@ -97,7 +97,9 @@ function availableQueriesIn(path, callback) {
 }
 
 function describeQuery(queryName, options) {
-    const [queryPrefix, querySuffix] = queryName.split(":");
+    const separator = queryName.indexOf(":");
+    const queryPrefix = separator === -1 ? queryName : queryName.substring(0, separator);
+    const querySuffix = separator === -1 ? undefined : queryName.substring(separator + 1);
     utils.info("query", queryPrefix);
     if (queryPrefix.indexOf("*") === -1) {
         const query = gql.generate(queryName, {}, Object.assign({describeQuery: true}, options));
@@ -107,7 +109,7 @@ function describeQuery(queryName, options) {
         if (queryNames.length === 0) {
             utils.info("no matches found");
         } else if (queryNames.length === 1) {
-            const query = gql.generate(queryNames[0] + ":" + querySuffix, {}, Object.assign({describeQuery: true}, options));
+            const query = gql.generate(queryNames[0] + (querySuffix === undefined ? "" : ":" + querySuffix), {}, Object.assign({describeQuery: true}, options));
             utils.print(query.query);
         } else {
             utils.info(`${queryNames.length} matches found`);

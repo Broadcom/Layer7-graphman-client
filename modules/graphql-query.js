@@ -5,22 +5,26 @@ const graphman = require("./graphman");
 
 module.exports = {
     generate: function (query, variables, options) {
-        const [queryPrefix, querySuffix] = query.split(":");
+        const [queryPrefix, querySuffix] = splitOnFirst(query, ":");
         const queryFilename = utils.queryFile(queryPrefix + ".json", graphman.configuration().schemaVersion);
         const gql = utils.existsFile(queryFilename) ?
             utils.readFile(queryFilename) :
             buildGraphQL(queryPrefix, querySuffix);
 
         gql.variables = Object.assign(gql.variables || {}, variables);
-        gql.options = options || {};
+        gql.options = Object.assign({}, options);
 
-        if (querySuffix === "full") {
+        const {modes} = parseQuerySuffix(querySuffix);
+
+        if (modes.has("full")) {
             gql.variables.includeAllDependencies = true;
-            gql.variables.includePolicyRevisions = options.includePolicyRevisions;
+            gql.variables.includePolicyRevisions = gql.options.includePolicyRevisions;
             gql.options.full = true;
+        } else if (modes.has("dependencies")) {
+            gql.variables.includeAllDependencies = true;
         }
 
-        if (querySuffix === "summary") {
+        if (modes.has("summary")) {
             gql.variables.includePolicyRevisions = false;
             gql.options.summary = true;
         }
@@ -413,7 +417,7 @@ function expandGraphQLSubQuery(gql, query) {
         if (subgroup.endsWith(".gql")) {
             return expandGraphQLSubQuery(gql, utils.readFile(utils.queryFile(subgroup, graphman.configuration().schemaVersion)));
         }else {
-            const [prefix, suffix] = subgroup.split(":");
+            const [prefix, suffix] = splitOnFirst(subgroup, ":");
             const typeInfo = graphman.typeInfoByTypeName(prefix);
             return typeInfo ? expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) : subtext;
         }
@@ -423,49 +427,54 @@ function expandGraphQLSubQuery(gql, query) {
 function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
     let query = "";
 
-    if (suffix === "summary" || gql.options.summary) { // summary fields inclusion
-        typeInfo.fields.forEach(fieldInfo => { // include fields
-            if (typeInfo.summaryFields.length === 0 || typeInfo.summaryFields.includes(fieldInfo.name)) {
-                query += "\n" + fieldInfo.name;
-                if (!graphman.isPrimitiveField(fieldInfo)) {
-                    query += ` {\n  {{${fieldInfo.dataType}}}\n}`;
-                }
-            }
-        });
-    } else {
-        const excludedFields = [];
-        const includedFields = [];
+    const {modes, fields} = parseQuerySuffix(suffix);
+    const summary = modes.has("summary") || gql.options.summary;
+    const none = modes.has("none") && !summary;
 
-        Array.from(splitTokens(suffix)).forEach(item => {
-            if (item.startsWith("-")) excludedFields.push(item.substring(1));
-            else if (item.startsWith("+")) includedFields.push(item.substring(1));
-            else includedFields.push(item);
-        });
+    const excludedFields = [];
+    const includedFields = [];
 
-        if (gql.options && (!suffix || suffix.length === 0)) {
-            if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions")) {
-                includedFields.push("policyRevisions");
-            }
-            if (gql.options.includeMultipartFields && !includedFields.includes("filePartName")) {
-                includedFields.push("filePartName");
-            }
+    Array.from(splitTokens(fields)).forEach(item => {
+        if (item.startsWith("-")) excludedFields.push(item.substring(1));
+        else if (item.startsWith("+")) includedFields.push(item.substring(1));
+        else includedFields.push(item);
+    });
+
+    if (!summary && !none && gql.options && fields.length === 0) {
+        if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions")) {
+            includedFields.push("policyRevisions");
+        }
+        if (gql.options.includeMultipartFields && !includedFields.includes("filePartName")) {
+            includedFields.push("filePartName");
+        }
+    }
+
+    typeInfo.fields.forEach(fieldInfo => { // include fields
+        const name = fieldInfo.name;
+        let included;
+
+        if (summary) {
+            included = typeInfo.summaryFields.length === 0 || typeInfo.summaryFields.includes(name);
+        } else if (none) {
+            included = false;
+        } else {
+            included = !typeInfo.excludedFields.includes(name) &&
+                !excludedFields.includes("*") &&
+                (!typeInfo.deprecatedFields.includes(name) || !gql.options.excludeDeprecatedFields);
         }
 
-        typeInfo.fields.forEach(fieldInfo => { // include fields
-            if ((!typeInfo.excludedFields.includes(fieldInfo.name) &&
-                    !excludedFields.includes(fieldInfo.name) &&
-                    !excludedFields.includes("*") &&
-                    (!typeInfo.deprecatedFields.includes(fieldInfo.name) || !gql.options.excludeDeprecatedFields)) ||
-                    includedFields.includes(fieldInfo.name)) {
-                query += "\n" + fieldInfo.name;
-                if (!graphman.isPrimitiveField(fieldInfo)) {
-                    query += ` {\n  {{${fieldInfo.dataType}${fieldInfo.suffix || ""}}}\n}`;
-                }
-            } else {
-                utils.fine(`excluding the query field ${typeInfo.typeName}.${fieldInfo.name}`);
+        if (excludedFields.includes(name)) included = false;
+        if (includedFields.includes(name)) included = true;
+
+        if (included) {
+            query += "\n" + name;
+            if (!graphman.isPrimitiveField(fieldInfo)) {
+                query += ` {\n  {{${fieldInfo.dataType}${summary ? "" : fieldInfo.suffix || ""}}}\n}`;
             }
-        });
-    }
+        } else {
+            utils.fine(`excluding the query field ${typeInfo.typeName}.${name}`);
+        }
+    });
 
     return query.indexOf("{{") !== -1 ? expandGraphQLSubQuery(gql, query) : query;
 }
@@ -512,6 +521,41 @@ function beautifyGraphQLQuery(gql, query) {
     });
 
     return result.query;
+}
+
+const QUERY_MODES = ["summary", "all", "dependencies", "full", "none"];
+
+function splitOnFirst(text, delimiter) {
+    const index = text.indexOf(delimiter);
+    return index === -1 ? [text, undefined] : [text.substring(0, index), text.substring(index + delimiter.length)];
+}
+
+/**
+ * Parses the query suffix of the form [<modes>][:<fields>], where modes are comma separated names
+ * from QUERY_MODES and fields are comma separated field filters (-name, +name or name).
+ * A first stage starting with -* is treated as "none". A first stage containing anything other than
+ * known modes is treated as a legacy single-stage field list.
+ * @returns {{modes: Set<string>, fields: string}}
+ */
+function parseQuerySuffix(suffix) {
+    const modes = new Set();
+    if (!suffix) return {modes: modes, fields: ""};
+
+    const [stage1, stage2] = splitOnFirst(suffix, ":");
+    const tokens = splitTokens(stage1);
+
+    if (stage1.trim().startsWith("-*")) {
+        modes.add("none");
+        return {modes: modes, fields: tokens.slice(1).concat(splitTokens(stage2)).join(",")};
+    }
+
+    if (tokens.length > 0 && tokens.every(item => QUERY_MODES.includes(item))) {
+        tokens.forEach(item => modes.add(item));
+        if (modes.has("full")) modes.add("dependencies");
+        return {modes: modes, fields: splitTokens(stage2).join(",")};
+    }
+
+    return {modes: modes, fields: suffix};
 }
 
 function splitTokens(text, delimiter) {
