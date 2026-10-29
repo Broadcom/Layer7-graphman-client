@@ -24,6 +24,10 @@ module.exports = {
             gql.variables.includeAllDependencies = true;
         }
 
+        if (modes.has("dependencies")) {
+            gql.options.dependencies = true;
+        }
+
         if (modes.has("summary")) {
             gql.variables.includePolicyRevisions = false;
             gql.options.summary = true;
@@ -425,6 +429,11 @@ function expandGraphQLSubQuery(gql, query) {
 }
 
 function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
+    if (typeInfo.typeName === "PolicyDependency" && gql.options.dependencies) {
+        // dependencies of dependencies are not expanded, to avoid the recursion
+        gql = Object.assign({}, gql, {options: Object.assign({}, gql.options, {dependencies: false})});
+    }
+
     let query = "";
 
     const {modes, fields} = parseQuerySuffix(suffix);
@@ -466,7 +475,10 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
         if (excludedFields.includes(name)) included = false;
         if (includedFields.includes(name)) included = true;
 
-        if (included) {
+        if (gql.options.dependencies && name === "policy" && fieldInfo.dataType === "Policy" && !excludedFields.includes(name)) {
+            // policy dependencies inclusion for the entities having policy sub field
+            query += `\npolicy {\n${included ? "{{Policy}}\n" : ""}allDependencies {\n  {{PolicyDependency:${POLICY_DEPENDENCY_SUFFIX}}}\n}\n}`;
+        } else if (included) {
             query += "\n" + name;
             if (!graphman.isPrimitiveField(fieldInfo)) {
                 query += ` {\n  {{${fieldInfo.dataType}${summary ? "" : fieldInfo.suffix || ""}}}\n}`;
@@ -523,6 +535,8 @@ function beautifyGraphQLQuery(gql, query) {
     return result.query;
 }
 
+// entity types referred from the policy dependencies, which are fetched separately
+const POLICY_DEPENDENCY_SUFFIX = "-policyFragments,-dtds,-schemas,-internalIdps,-internalUsers,-internalGroups,-fips,-fipUsers,-fipGroups,-federatedIdps,-federatedUsers,-federatedGroups,-ldaps,-ldapIdps,-simpleLdapIdps,-policyBackedIdps";
 const QUERY_MODES = ["summary", "all", "dependencies", "full", "none"];
 
 function splitOnFirst(text, delimiter) {
