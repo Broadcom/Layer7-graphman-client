@@ -39,13 +39,18 @@ module.exports = {
             // NOTE: the reverse is not scoped, as the types missing in the target bundle are all inserts.
             let sourceBundle = null;
             let scopeTypes = null;
+            let lookupTypes = [];
             if (!isGateway(source) && isGateway(target) && params.options.scope !== "full") {
                 sourceBundle = utils.readFile(source);
                 scopeTypes = scopedTypes(sourceBundle);
+
+                // include/encass references need the target's policy fragments/encass configs to capture guid mappings
+                lookupTypes = referencedLookupTypes(sourceBundle).filter(key => !scopeTypes.includes(key));
+                scopeTypes = scopeTypes.concat(lookupTypes);
             }
 
             bundles.push(sourceBundle ? Promise.resolve(sourceBundle) : readBundleFrom(source, "source"));
-            bundles.push(readBundleFrom(target, "target", scopeTypes));
+            bundles.push(readBundleFrom(target, "target", scopeTypes, lookupTypes));
 
             const mappingsFile = params["input-mappings"];
             const inputMappings = mappingsFile ? utils.readFile(params["input-mappings"]) : {};
@@ -59,6 +64,8 @@ module.exports = {
                 logReportCounts(report);
                 if (params.options.renewEntities) {
                     diffRenewReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options, ignoreMatcher, renewedReport => {
+                        captureDependencyMappings(renewedReport, rightBundle);
+
                         const bundle = {};
                         diffBundle(renewedReport, bundle, params.options, false);
 
@@ -73,6 +80,8 @@ module.exports = {
                         utils.writeResult(params.output, butils.sort(bundle));
                     });
                 } else {
+                    captureDependencyMappings(report, rightBundle);
+
                     const bundle = {};
                     diffBundle(report, bundle, params.options, false);
 
@@ -160,6 +169,8 @@ module.exports = {
         console.log("Input can be a bundle file or a gateway profile name if it precedes with '@' special character.");
         console.log("When gateway is specified as input, summary bundle will be pulled for comparison.");
         console.log("Differences are computed such that what can be done to the target to match with the given source.");
+        console.log("Include and encapsulated assertion references found in the policy code/json of the inserts and updates are");
+        console.log("resolved by name against the target, to capture the guid mappings even when they are not part of the bundle.");
         console.log("The difference bundle and it's comprehensive report will be generated.");
         console.log("The difference report can be used to re-generate the difference bundle when required.");
         console.log();
@@ -244,17 +255,17 @@ function scopedTypes(bundle) {
         Array.isArray(bundle[key]) && graphman.typeInfoByPluralName(key) && graphman.queryFieldInfo(key));
 }
 
-function readBundleFrom(fileOrGateway, label, scopeTypes) {
+function readBundleFrom(fileOrGateway, label, scopeTypes, lookupTypes) {
     if (isGateway(fileOrGateway)) {
         const gateway = graphman.gatewayConfiguration(fileOrGateway.substring(1));
         if (!gateway.address) throw utils.newError(`${gateway.name} gateway details are missing`);
-        return readBundleFromGateway(gateway, label, scopeTypes);
+        return readBundleFromGateway(gateway, label, scopeTypes, lookupTypes);
     } else {
         return Promise.resolve(utils.readFile(fileOrGateway));
     }
 }
 
-function readBundleFromGateway(gateway, label, scopeTypes) {
+function readBundleFromGateway(gateway, label, scopeTypes, lookupTypes) {
     return new Promise(function (resolve, reject) {
         const side = `${label} (${gateway.name})`;
         try {
@@ -289,12 +300,107 @@ function readBundleFromGateway(gateway, label, scopeTypes) {
                 bundle.properties.meta = bundle.properties.meta || {};
                 bundle.properties.meta.summary = true;
                 bundle.properties.meta.gateway = gateway.name;
+                if (lookupTypes && lookupTypes.length) bundle.properties.meta.lookupTypes = lookupTypes;
                 resolve(bundle);
             });
         } catch (error) {
             reject(error);
         }
     });
+}
+
+const INCLUDE_POLICY_TYPES = ["fragment", "include"];
+
+/**
+ * Collects the Include/Encapsulated assertion references from the entity's policy code.
+ * Only policy.code and policy.json are inspected; xml/yaml policies are skipped.
+ * @returns {{kind: string, name: string, guid: string}[]} kind is either 'include' or 'encass'
+ */
+function policyReferences(entity) {
+    const references = [];
+    if (!entity.policy) return references;
+
+    let code = entity.policy.code;
+    if (!code && entity.policy.json) {
+        try {
+            code = JSON.parse(entity.policy.json);
+        } catch (error) {
+            utils.warn("unable to parse policy json while inspecting the references");
+        }
+    }
+
+    if (!code && (entity.policy.xml || entity.policy.yaml)) {
+        utils.info("  skipping dependency inspection, policy is not available as code/json");
+    }
+
+    (function walk(node) {
+        if (Array.isArray(node)) {
+            node.forEach(walk);
+        } else if (node && typeof node === "object") {
+            Object.keys(node).forEach(key => {
+                const value = node[key];
+                if (key === "Include" && value && typeof value === "object" && !Array.isArray(value)) {
+                    references.push({kind: "include", name: value.policyName, guid: value.policyGuid});
+                } else if (key === "Encapsulated" && value && typeof value === "object" && !Array.isArray(value)) {
+                    references.push({kind: "encass", name: value.encassName, guid: value.encassGuid});
+                } else {
+                    walk(value);
+                }
+            });
+        }
+    })(code);
+
+    return references;
+}
+
+/**
+ * Entity types that must be available from the target to resolve the references made by the bundle's policies.
+ */
+function referencedLookupTypes(bundle) {
+    const kinds = new Set();
+    Object.keys(bundle).forEach(key => {
+        if (Array.isArray(bundle[key])) bundle[key].forEach(entity => {
+            policyReferences(entity).forEach(ref => kinds.add(ref.kind));
+        });
+    });
+
+    const types = [];
+    if (kinds.has("include")) types.push("policies");
+    if (kinds.has("encass")) types.push("encassConfigs");
+    return types.filter(key => graphman.queryFieldInfo(key));
+}
+
+function findReferencedTarget(rightBundle, ref) {
+    if (ref.kind === "encass") {
+        return (rightBundle.encassConfigs || []).find(x => x.name === ref.name);
+    }
+
+    return (rightBundle.policies || []).find(x =>
+        x.name === ref.name && INCLUDE_POLICY_TYPES.includes(String(x.policyType).toLowerCase()));
+}
+
+/**
+ * Captures the guid mappings for the include/encapsulated assertions referred from the policies
+ * that are part of the inserts/updates, using the entities of the target bundle.
+ * This helps when the referred entities are not part of the source bundle.
+ */
+function captureDependencyMappings(report, rightBundle) {
+    const guids = report.mappings.guids;
+
+    ["inserts", "updates"].forEach(category => butils.forEach(report[category], (key, entities, typeInfo) => {
+        entities.forEach(entity => policyReferences(entity).forEach(ref => {
+            if (!ref.name) return;
+
+            const target = findReferencedTarget(rightBundle, ref);
+            const entityName = butils.entityName(entity, typeInfo);
+            if (!target) {
+                utils.warn(`  ${entityName} refers to ${ref.kind === "encass" ? "encapsulated assertion" : "include policy"} ${ref.name}, which is not found in the target`);
+            } else if (ref.guid && target.guid && ref.guid !== target.guid && !guids.find(x => x.source === ref.guid)) {
+                utils.info(`  selecting ${entityName}, ${ref.kind}=${ref.name}, category=guid-mappings`);
+                guids.push({source: ref.guid, target: target.guid});
+            }
+        }));
+    }));
 }
 
 function logReportCounts(report) {
@@ -358,11 +464,13 @@ function diffReport(leftBundle, rightBundle, mappings, report, options, ignoreMa
     });
 
     // deletes are limited to the types known to the source bundle, unless chosen otherwise
+    const lookupTypes = (rightBundle.properties && rightBundle.properties.meta && rightBundle.properties.meta.lookupTypes) || [];
     const limitDeletes = options.deleteScope !== "all" && !isSummaryBundle(leftBundle);
 
     butils.forEach(rightBundle, (key, rightEntities, typeInfo) => {
         const leftEntities = leftBundle[key];
         if (limitDeletes && !Array.isArray(leftEntities)) return;
+        if (lookupTypes.includes(key)) return;
         if (!leftEntities || leftEntities.length === 0) {
             utils.info("inspecting " + key);
             rightEntities.forEach(rightEntity => {
