@@ -30,6 +30,7 @@ module.exports = {
         const bundles = [];
 
         if (params["input-source"] && params["input-target"]) {
+            const ignoreMatcher = buildIgnoreMatcher(params);
             const source = params["input-source"];
             const target = params["input-target"];
 
@@ -52,12 +53,12 @@ module.exports = {
             Promise.all(bundles).then(results => {
                 const leftBundle = results[0];
                 const rightBundle = results[1];
-                const report = {inserts: {}, updates: {}, deletes: {}, diffs: {}, mappings: {goids: [], guids: []}};
+                const report = {inserts: {}, updates: {}, deletes: {}, diffs: {}, ignored: {}, mappings: {goids: [], guids: []}};
 
-                diffReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options);
+                diffReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options, ignoreMatcher);
                 logReportCounts(report);
                 if (params.options.renewEntities) {
-                    diffRenewReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options, renewedReport => {
+                    diffRenewReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options, ignoreMatcher, renewedReport => {
                         const bundle = {};
                         diffBundle(renewedReport, bundle, params.options, false);
 
@@ -124,6 +125,8 @@ module.exports = {
         "input-target": "string",
         "input-mappings": "string",
         "input-report": "string",
+        "input-ignore-filters": "string",
+        "ignore-filter": "opaque",
         output: "string",
         "output-report": "string",
         "output-id-mappings": "string",
@@ -142,6 +145,8 @@ module.exports = {
     usage: function () {
         console.log("diff --input-source <input-file-or-gateway> --input-target <input-file-or-gateway>");
         console.log("  [--input-mappings <input-mappings-file>]");
+        console.log("  [--input-ignore-filters <ignore-filters-file>]");
+        console.log("  [--ignore-filter.<section>.<field-name> <matching-criteria> <field-value>,...]");
         console.log("  [--output <output-file>]");
         console.log("  [--output-report <output-report-file>]");
         console.log("  [--output-id-mappings <output-id-mappings-file>]");
@@ -171,6 +176,20 @@ module.exports = {
         console.log();
         console.log("  --input-mappings <input-mappings-file>");
         console.log("    specify complex mappings between source and target environments");
+        console.log();
+        console.log("  --input-ignore-filters <ignore-filters-file>");
+        console.log("    specify a file with the filters to ignore the matching entities, e.g.");
+        console.log('      {"clusterProperties": [{"name": ["regex", "^cluster\\."]}, {"name": "some.prop"}], "services": {"name": ["eq%", "test-"]}}');
+        console.log("    top-level keys are section (plural) names; a section holds a filter or an array of filters");
+        console.log("    fields within a filter are chained by and-logic, filters within a section by or-logic");
+        console.log("    supported matching criteria are same as the export --filter options");
+        console.log("    an entity is ignored when the source or the matching target entity satisfies a filter");
+        console.log("    ignored entities are left out of the diff bundle, listed under 'ignored' in the diff report,");
+        console.log("    and still contribute to the goid/guid mappings");
+        console.log("    NOTE: gateway inputs carry only summary fields, so filter on identity/summary fields such as name");
+        console.log();
+        console.log("  --ignore-filter.<section>.<field-name> [<matching-criteria>] <field-value>");
+        console.log("    same as --input-ignore-filters, but specified at the command line; combined with the file filters");
         console.log();
         console.log("  --input-report <input-report-file>");
         console.log("    specify the input diff report file to generate the diff bundle");
@@ -287,19 +306,48 @@ function logReportCounts(report) {
         });
     });
 
+    butils.forEach(report.ignored || {}, (key, entities) => {
+        counts[key] = counts[key] || {inserts: 0, updates: 0, deletes: 0};
+        counts[key].ignored = entities.length;
+    });
+
     const keys = Object.keys(counts).sort();
     if (keys.length === 0) {
         utils.info("no differences found");
         return;
     }
 
-    utils.info("differences summary (inserts/updates/deletes)");
-    keys.forEach(key => utils.info(`  ${key}: ${counts[key].inserts}/${counts[key].updates}/${counts[key].deletes}`));
+    utils.info("differences summary (inserts/updates/deletes, ignored)");
+    keys.forEach(key => utils.info(`  ${key}: ${counts[key].inserts}/${counts[key].updates}/${counts[key].deletes}, ignored=${counts[key].ignored || 0}`));
 }
 
-function diffReport(leftBundle, rightBundle, mappings, report, options) {
+function buildIgnoreMatcher(params) {
+    const fileRules = params["input-ignore-filters"] ? utils.readFile(params["input-ignore-filters"]) : {};
+    const cliRules = params["ignore-filter"] || {};
+    const rules = {};
+
+    [fileRules, cliRules].forEach(source => Object.keys(source).forEach(section => {
+        const value = source[section];
+        // an array of objects is a list of rules; anything else is a single rule
+        const list = Array.isArray(value) && value.every(x => x && typeof x === "object" && !Array.isArray(x)) ? value : [value];
+        rules[section] = (rules[section] || []).concat(list);
+    }));
+
+    return butils.buildIgnoreMatcher(rules);
+}
+
+function recordIgnored(report, typeInfo, entity, category, rule) {
+    utils.info("  ignoring " + butils.entityName(entity, typeInfo) + ", category=" + category + ", rule=" + rule);
+    const record = butils.toPartialEntity(entity, typeInfo);
+    record.category = category;
+    record.rule = rule;
+    butils.withArray(report.ignored, typeInfo).push(record);
+}
+
+function diffReport(leftBundle, rightBundle, mappings, report, options, ignoreMatcher) {
     const multiLineTextDiffExtension = utils.extension("multiline-text-diff");
     const extOptions = {
+        ignoreMatcher: ignoreMatcher,
         multiLineTextDiffExtension: multiLineTextDiffExtension,
         summary: isSummaryBundle(leftBundle) || isSummaryBundle(rightBundle)
     };
@@ -318,6 +366,9 @@ function diffReport(leftBundle, rightBundle, mappings, report, options) {
         if (!leftEntities || leftEntities.length === 0) {
             utils.info("inspecting " + key);
             rightEntities.forEach(rightEntity => {
+                const rule = ignoreMatcher(typeInfo.pluralName, rightEntity);
+                if (rule) return recordIgnored(report, typeInfo, rightEntity, "deletes", rule);
+
                 utils.info("  selecting " + butils.entityName(rightEntity, typeInfo) + ", category=deletes");
                 const deletes = butils.withArray(report.deletes, typeInfo);
                 deletes.push(rightEntity);
@@ -332,6 +383,7 @@ function sortReport(report) {
     report.inserts = butils.sort(report.inserts);
     report.updates = butils.sort(report.updates);
     report.deletes = butils.sort(report.deletes);
+    if (report.ignored) report.ignored = butils.sort(report.ignored);
     return report;
 }
 
@@ -339,7 +391,7 @@ function isSummaryBundle(bundle) {
     return bundle.properties && bundle.properties.meta && bundle.properties.meta.summary;
 }
 
-function diffRenewReport(leftBundle, rightBundle, mappings, report, options, callback) {
+function diffRenewReport(leftBundle, rightBundle, mappings, report, options, ignoreMatcher, callback) {
     let promises = [];
 
     if (isSummaryBundle(leftBundle)) {
@@ -376,14 +428,15 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
     // generate report using the renewed details
     Promise.all(promises).then(results => {
         if (results.length <= 2) {
-            const renewedReport = {inserts: results[0], updates: results[1], deletes: report.deletes, diffs: report.diffs, mappings: report.mappings};
+            const renewedReport = {inserts: results[0], updates: results[1], deletes: report.deletes, diffs: report.diffs, ignored: report.ignored, mappings: report.mappings};
             callback(renewedReport);
         } else {
-            const renewedReport = {inserts: results[0], updates: {}, deletes: report.deletes, diffs: {}, mappings: {goids: [], guids: []}};
+            const renewedReport = {inserts: results[0], updates: {}, deletes: report.deletes, diffs: {}, ignored: report.ignored, mappings: {goids: [], guids: []}};
             const multiLineTextDiffExtension = utils.extension("multiline-text-diff");
             const leftUpdateBundle = results[1];
             const rightUpdateBundle = results[2];
             const extOptions = {
+                ignoreMatcher: ignoreMatcher,
                 multiLineTextDiffExtension: multiLineTextDiffExtension,
                 summary: isSummaryBundle(leftUpdateBundle) || isSummaryBundle(rightUpdateBundle)
             };
@@ -432,10 +485,17 @@ function diffEntities(leftEntities, rightEntities, sectionMappings, report, type
     leftEntities.forEach(leftEntity => {
         const rightEntity = findRight(leftEntity);
 
+        const ignoreRule = extOptions.ignoreMatcher(typeInfo.pluralName, leftEntity) ||
+            (rightEntity ? extOptions.ignoreMatcher(typeInfo.pluralName, rightEntity) : null);
+
         if (rightEntity == null) {
-            utils.info("  selecting " + butils.entityName(leftEntity, typeInfo) + ", category=inserts");
-            const inserts = butils.withArray(report.inserts, typeInfo);
-            inserts.push(leftEntity);
+            if (ignoreRule) {
+                recordIgnored(report, typeInfo, leftEntity, "inserts", ignoreRule);
+            } else {
+                utils.info("  selecting " + butils.entityName(leftEntity, typeInfo) + ", category=inserts");
+                const inserts = butils.withArray(report.inserts, typeInfo);
+                inserts.push(leftEntity);
+            }
         } else if (rightEntity.checksum === undefined) {
             utils.info("  ignoring " + butils.entityName(leftEntity, typeInfo) + ", target entity checksum is undefined");
         } else if (leftEntity.checksum === undefined || leftEntity.checksum !== rightEntity.checksum) {
@@ -457,6 +517,8 @@ function diffEntities(leftEntities, rightEntities, sectionMappings, report, type
             if (!equals) {
                 if (details.length === 1 && details[0].path === "$.checksum" && !extOptions.summary) {
                     utils.info("  not selecting " + butils.entityName(leftEntity, typeInfo) + ", only the checksum is different");
+                } else if (ignoreRule) {
+                    recordIgnored(report, typeInfo, leftEntity, "updates", ignoreRule);
                 } else {
                     utils.info("  selecting " + butils.entityName(leftEntity, typeInfo) + ", category=updates");
                     const updates = butils.withArray(report.updates, typeInfo);
@@ -493,6 +555,9 @@ function diffEntities(leftEntities, rightEntities, sectionMappings, report, type
     // find the un-matched ones w.r.t. left entities, and bucket them into diff-report
     if (rightEntities) rightEntities.forEach(rightEntity => {
         if (!findLeft(rightEntity)) {
+            const rule = extOptions.ignoreMatcher(typeInfo.pluralName, rightEntity);
+            if (rule) return recordIgnored(report, typeInfo, rightEntity, "deletes", rule);
+
             utils.info("  selecting " + butils.entityName(rightEntity, typeInfo) + ", category=deletes");
             const deletes = butils.withArray(report.deletes, typeInfo);
             deletes.push(rightEntity);
