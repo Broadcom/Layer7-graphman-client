@@ -30,8 +30,21 @@ module.exports = {
         const bundles = [];
 
         if (params["input-source"] && params["input-target"]) {
-            bundles.push(readBundleFrom(params["input-source"]));
-            bundles.push(readBundleFrom(params["input-target"]));
+            const source = params["input-source"];
+            const target = params["input-target"];
+
+            // when the source is a bundle and the target is a gateway, pull only the entity types
+            // that are present in the source bundle instead of the entire gateway summary.
+            // NOTE: the reverse is not scoped, as the types missing in the target bundle are all inserts.
+            let sourceBundle = null;
+            let scopeTypes = null;
+            if (!isGateway(source) && isGateway(target) && params.options.scope !== "full") {
+                sourceBundle = utils.readFile(source);
+                scopeTypes = scopedTypes(sourceBundle);
+            }
+
+            bundles.push(sourceBundle ? Promise.resolve(sourceBundle) : readBundleFrom(source, "source"));
+            bundles.push(readBundleFrom(target, "target", scopeTypes));
 
             const mappingsFile = params["input-mappings"];
             const inputMappings = mappingsFile ? utils.readFile(params["input-mappings"]) : {};
@@ -42,6 +55,7 @@ module.exports = {
                 const report = {inserts: {}, updates: {}, deletes: {}, diffs: {}, mappings: {goids: [], guids: []}};
 
                 diffReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options);
+                logReportCounts(report);
                 if (params.options.renewEntities) {
                     diffRenewReport(leftBundle, rightBundle, inputMappings.mappings || {}, report, params.options, renewedReport => {
                         const bundle = {};
@@ -72,6 +86,7 @@ module.exports = {
                     utils.writeResult(params.output, butils.sort(bundle));
                 }
             }).catch(error => {
+                process.exitCode = 1;
                 utils.error("errors encountered while analyzing the differences", error);
                 if (error.name) utils.error(`  name: ${error.name}`);
                 if (error.message) utils.error(`  message: ${error.message}`);
@@ -89,7 +104,7 @@ module.exports = {
     },
 
     initParams: function (params, config) {
-        params.options = Object.assign({includeInserts: true, includeUpdates: true, includeDeletes: false}, params.options);
+        params.options = Object.assign({includeInserts: true, includeUpdates: true, includeDeletes: false, deleteScope: "source", scope: "auto"}, params.options);
 
         const output = params.output;
         const JSON_SUFFIX = ".json";
@@ -118,6 +133,8 @@ module.exports = {
             includeDeletes: "boolean",
             useNoDefMappings: "boolean",
             renewEntities: "boolean",
+            deleteScope: "string",
+            scope: "string",
             logSink: "string"
         }
     },
@@ -183,6 +200,12 @@ module.exports = {
         console.log("        decides whether to use nodef mappings (only for deletion).");
         console.log("      .renewEntities false|true");
         console.log("        decides whether to renew entities from the respective gateways when specified.");
+        console.log("      .scope auto|full");
+        console.log("        auto: when the source is a bundle and the target is a gateway, retrieve only the entity types");
+        console.log("        present in the source bundle; full: always retrieve the entire gateway summary.");
+        console.log("      .deleteScope source|all");
+        console.log("        source: report deletes only for the entity types present in the source bundle (or any type");
+        console.log("        when the source is a gateway); all: report deletes for every entity type found in the target.");
         console.log("      .logSink stdout|stderr");
         console.log("        directs the log messages to the chosen sink.");
         console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
@@ -190,47 +213,88 @@ module.exports = {
     }
 }
 
-function readBundleFrom(fileOrGateway) {
-    if (fileOrGateway.startsWith('@')) {
+function isGateway(fileOrGateway) {
+    return fileOrGateway.startsWith('@');
+}
+
+/**
+ * Entity types (plural names) of a bundle that can be queried from a gateway.
+ */
+function scopedTypes(bundle) {
+    return Object.keys(bundle).filter(key =>
+        Array.isArray(bundle[key]) && graphman.typeInfoByPluralName(key) && graphman.queryFieldInfo(key));
+}
+
+function readBundleFrom(fileOrGateway, label, scopeTypes) {
+    if (isGateway(fileOrGateway)) {
         const gateway = graphman.gatewayConfiguration(fileOrGateway.substring(1));
         if (!gateway.address) throw utils.newError(`${gateway.name} gateway details are missing`);
-        return readBundleFromGateway(gateway);
+        return readBundleFromGateway(gateway, label, scopeTypes);
     } else {
         return Promise.resolve(utils.readFile(fileOrGateway));
     }
 }
 
-function readBundleFromGateway(gateway) {
+function readBundleFromGateway(gateway, label, scopeTypes) {
     return new Promise(function (resolve, reject) {
-        utils.info(`retrieving ${gateway.name} gateway configuration summary`);
+        const side = `${label} (${gateway.name})`;
         try {
-            exporter.export(
-                gateway,
-                gql.generate("all:summary", {}, graphman.configuration().options),
-                data => {
-                    if (data.errors) {
-                        utils.warn(`errors detected while retrieving ${gateway.name} gateway configuration summary`);
+            let query;
+            if (scopeTypes) {
+                if (scopeTypes.length === 0) {
+                    utils.info(`no known entity types to retrieve from ${side} gateway`);
+                    return resolve({properties: {meta: {summary: true, gateway: gateway.name}}});
+                }
 
-                        // if there's no data, report the errors via reject; otherwise, log them and proceed.
-                        if (!data.data) {
-                            reject(data.errors);
-                        } else {
-                            utils.error("errors encountered while analyzing the differences", data.errors);
-                        }
+                utils.info(`retrieving ${side} gateway configuration summary for ${scopeTypes.join(", ")}`);
+                query = gql.generateComposite(scopeTypes.map(name => name + ":summary"), {}, graphman.configuration().options);
+            } else {
+                utils.info(`retrieving ${side} gateway configuration summary`);
+                query = gql.generate("all:summary", {}, graphman.configuration().options);
+            }
+
+            exporter.export(gateway, query, data => {
+                if (data.errors) {
+                    // if there's no data, report the errors via reject; otherwise, log them and proceed.
+                    if (!data.data) {
+                        utils.warn(`unable to retrieve ${side} gateway configuration summary`);
+                        return reject(data.errors);
                     }
 
-                    const bundle = data.data || {};
-                    bundle.properties = bundle.properties || {};
-                    bundle.properties.meta = bundle.properties.meta || {};
-                    bundle.properties.meta.summary = true;
-                    bundle.properties.meta.gateway = gateway.name;
-                    resolve(bundle);
+                    utils.warn(`partial errors detected while retrieving ${side} gateway configuration summary, proceeding with the available data`);
+                    utils.error(`${side} gateway errors`, data.errors);
                 }
-            );
+
+                const bundle = data.data || {};
+                bundle.properties = bundle.properties || {};
+                bundle.properties.meta = bundle.properties.meta || {};
+                bundle.properties.meta.summary = true;
+                bundle.properties.meta.gateway = gateway.name;
+                resolve(bundle);
+            });
         } catch (error) {
             reject(error);
         }
     });
+}
+
+function logReportCounts(report) {
+    const counts = {};
+    ["inserts", "updates", "deletes"].forEach(category => {
+        butils.forEach(report[category], (key, entities) => {
+            counts[key] = counts[key] || {inserts: 0, updates: 0, deletes: 0};
+            counts[key][category] = entities.length;
+        });
+    });
+
+    const keys = Object.keys(counts).sort();
+    if (keys.length === 0) {
+        utils.info("no differences found");
+        return;
+    }
+
+    utils.info("differences summary (inserts/updates/deletes)");
+    keys.forEach(key => utils.info(`  ${key}: ${counts[key].inserts}/${counts[key].updates}/${counts[key].deletes}`));
 }
 
 function diffReport(leftBundle, rightBundle, mappings, report, options) {
@@ -245,8 +309,12 @@ function diffReport(leftBundle, rightBundle, mappings, report, options) {
         diffEntities(leftEntities, rightBundle[key], mappings[key], report, typeInfo, options, extOptions);
     });
 
+    // deletes are limited to the types known to the source bundle, unless chosen otherwise
+    const limitDeletes = options.deleteScope !== "all" && !isSummaryBundle(leftBundle);
+
     butils.forEach(rightBundle, (key, rightEntities, typeInfo) => {
         const leftEntities = leftBundle[key];
+        if (limitDeletes && !Array.isArray(leftEntities)) return;
         if (!leftEntities || leftEntities.length === 0) {
             utils.info("inspecting " + key);
             rightEntities.forEach(rightEntity => {
@@ -279,12 +347,12 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
 
         // renew inserts section using the source gateway
         promises.push(new Promise(function (resolve, reject) {
-            renewBundle(gateway, report.inserts, ["*"], Object.assign(options, {useGoids: true}), resolve, reject);
+            renewBundle(gateway, report.inserts, ["*"], Object.assign({}, options, {useGoids: true}), resolve, reject);
         }));
 
         // renew updates section using the source gateway
         promises.push(new Promise(function (resolve, reject) {
-            renewBundle(gateway, report.updates, ["*"], Object.assign(options, {useGoids: true}), resolve, reject);
+            renewBundle(gateway, report.updates, ["*"], Object.assign({}, options, {useGoids: true}), resolve, reject);
         }));
     } else {
         promises.push(new Promise(function (resolve) {
@@ -301,7 +369,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
 
         // renew updates section using the target gateway
         promises.push(new Promise(function (resolve, reject) {
-            renewBundle(gateway, report.updates, ["*"], Object.assign(options, {useGoids: false}), resolve, reject);
+            renewBundle(gateway, report.updates, ["*"], Object.assign({}, options, {useGoids: false}), resolve, reject);
         }));
     }
 
@@ -327,6 +395,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
             callback(renewedReport);
         }
     }).catch(error => {
+        process.exitCode = 1;
         utils.error("errors encountered while renewing the entities", error);
         utils.print();
     });
@@ -334,7 +403,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, cal
 
 function renewBundle(gateway, bundle, sections, options, resolve, reject) {
     if (!gateway.address) {
-        reject(utils.newError(`${gateway.name} gateway details are missing`));
+        return reject(utils.newError(`${gateway.name} gateway details are missing`));
     }
 
     Promise.all(renewer.renew(gateway, bundle, sections, options)).then(results => {
@@ -355,11 +424,13 @@ function renewBundle(gateway, bundle, sections, options, resolve, reject) {
  * @param extOptions extended options
  */
 function diffEntities(leftEntities, rightEntities, sectionMappings, report, typeInfo, options, extOptions) {
+    const findRight = entityFinder(rightEntities, typeInfo);
+    const findLeft = entityFinder(leftEntities, typeInfo);
+
     // iterate through the left entities,
     // bucket it into diff-report, depending on the match in the right entities
     leftEntities.forEach(leftEntity => {
-        const rightEntity = rightEntities ?
-            rightEntities.find(x => butils.isEntityMatches(leftEntity, x, typeInfo)) : null;
+        const rightEntity = findRight(leftEntity);
 
         if (rightEntity == null) {
             utils.info("  selecting " + butils.entityName(leftEntity, typeInfo) + ", category=inserts");
@@ -421,12 +492,31 @@ function diffEntities(leftEntities, rightEntities, sectionMappings, report, type
     //Now, iterate through the right entities
     // find the un-matched ones w.r.t. left entities, and bucket them into diff-report
     if (rightEntities) rightEntities.forEach(rightEntity => {
-        if (!leftEntities.find(x => butils.isEntityMatches(x, rightEntity, typeInfo))) {
+        if (!findLeft(rightEntity)) {
             utils.info("  selecting " + butils.entityName(rightEntity, typeInfo) + ", category=deletes");
             const deletes = butils.withArray(report.deletes, typeInfo);
             deletes.push(rightEntity);
         }
     });
+}
+
+/**
+ * Builds a lookup function that finds the first matching entity from the given list.
+ * Uses a hash index when the type has a single identity field; falls back to a linear scan otherwise.
+ */
+function entityFinder(entities, typeInfo) {
+    if (!entities) return () => null;
+
+    if (typeInfo.identityFields.length === 1) {
+        const field = typeInfo.identityFields[0];
+        const index = new Map();
+        entities.forEach(item => {
+            if (!index.has(item[field])) index.set(item[field], item);
+        });
+        return probe => index.get(probe[field]) || null;
+    }
+
+    return probe => entities.find(x => butils.isEntityMatches(probe, x, typeInfo)) || null;
 }
 
 /**
