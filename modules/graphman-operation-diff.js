@@ -370,32 +370,60 @@ function referencedLookupTypes(bundle) {
     return types.filter(key => graphman.queryFieldInfo(key));
 }
 
-function findReferencedTarget(rightBundle, ref) {
-    if (ref.kind === "encass") {
-        return (rightBundle.encassConfigs || []).find(x => x.name === ref.name);
-    }
+function findReferencedTarget(rightBundle, ref, targetReferences) {
+    const entity = ref.kind === "encass" ?
+        (rightBundle.encassConfigs || []).find(x => x.name === ref.name) :
+        (rightBundle.policies || []).find(x =>
+            x.name === ref.name && INCLUDE_POLICY_TYPES.includes(String(x.policyType).toLowerCase()));
 
-    return (rightBundle.policies || []).find(x =>
-        x.name === ref.name && INCLUDE_POLICY_TYPES.includes(String(x.policyType).toLowerCase()));
+    // the referred entity is not part of the target bundle, fall back to the references made by the target policies
+    return entity || targetReferences().get(ref.kind + " " + ref.name) || null;
+}
+
+/**
+ * Harvests the name-to-guid pairs from the include/encapsulated assertions of the target bundle's policies.
+ * They are useful when the referred entities are not part of the target bundle, but the target policies refer to them.
+ * The first guid seen for a name wins.
+ */
+function harvestTargetReferences(rightBundle) {
+    const harvested = new Map();
+
+    butils.forEach(rightBundle, (key, entities) => entities.forEach(entity => {
+        policyReferences(entity).forEach(ref => {
+            const id = ref.kind + " " + ref.name;
+            if (ref.name && ref.guid && !harvested.has(id)) harvested.set(id, {guid: ref.guid});
+        });
+    }));
+
+    return harvested;
 }
 
 /**
  * Captures the guid mappings for the include/encapsulated assertions referred from the policies
- * that are part of the inserts/updates, using the entities of the target bundle.
- * This helps when the referred entities are not part of the source bundle.
+ * that are part of the inserts/updates, using the entities of the target bundle, or else the references made by the target bundle's own policies.
+ * This helps when the referred entities are not part of the source and/or target bundles.
  */
 function captureDependencyMappings(report, rightBundle) {
     const guids = report.mappings.guids;
+    let harvested = null;
+    const targetReferences = () => harvested || (harvested = harvestTargetReferences(rightBundle));
 
     ["inserts", "updates"].forEach(category => butils.forEach(report[category], (key, entities, typeInfo) => {
         entities.forEach(entity => policyReferences(entity).forEach(ref => {
-            if (!ref.name) return;
-
-            const target = findReferencedTarget(rightBundle, ref);
             const entityName = butils.entityName(entity, typeInfo);
+            const what = ref.kind === "encass" ? "encapsulated assertion" : "include policy";
+
+            if (!ref.name) {
+                if (ref.guid) utils.warn(`  ${entityName} refers to ${what} with guid ${ref.guid}, but the reference has no name to find it in the target`);
+                return;
+            }
+
+            const target = findReferencedTarget(rightBundle, ref, targetReferences);
             if (!target) {
-                utils.warn(`  ${entityName} refers to ${ref.kind === "encass" ? "encapsulated assertion" : "include policy"} ${ref.name}, which is not found in the target`);
-            } else if (ref.guid && target.guid && ref.guid !== target.guid && !guids.find(x => x.source === ref.guid)) {
+                utils.warn(`  ${entityName} refers to ${what} ${ref.name}, which is not found in the target`);
+            } else if (!target.guid) {
+                utils.warn(`  ${entityName} refers to ${what} ${ref.name}, which has no guid in the target`);
+            } else if (ref.guid && ref.guid !== target.guid && !guids.find(x => x.source === ref.guid)) {
                 utils.info(`  selecting ${entityName}, ${ref.kind}=${ref.name}, category=guid-mappings`);
                 guids.push({source: ref.guid, target: target.guid});
             }

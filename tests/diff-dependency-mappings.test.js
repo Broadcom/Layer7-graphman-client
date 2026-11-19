@@ -80,3 +80,63 @@ test("nothing is mapped when the references are already in sync", () => {
     });
     expect(guids).toEqual([]);
 });
+
+describe("target bundle without the referred entities", () => {
+    const TARGET_CODE = {
+        All: [
+            {Include: {policyName: "frag-1", policyGuid: "tgt-frag-guid"}},
+            {Encapsulated: {encassName: "encass-1", encassGuid: "tgt-encass-guid"}}
+        ]
+    };
+
+    function targetService(policy) {
+        return Object.assign(service(policy), {goid: "tgt-svc-goid", guid: "tgt-svc-guid", checksum: "t1"});
+    }
+
+    test("guids are harvested from the references made by the target policies", () => {
+        const {output, guids} = diff({services: [service({code: CODE})]}, {services: [targetService({code: TARGET_CODE})]});
+
+        expect(guids).toEqual(expect.arrayContaining([
+            {source: "src-frag-guid", target: "tgt-frag-guid"},
+            {source: "src-encass-guid", target: "tgt-encass-guid"}
+        ]));
+        expect(JSON.stringify(output.services[0].policy.code)).toContain("tgt-frag-guid");
+    });
+
+    test("target policy json is harvested as well", () => {
+        const {guids} = diff({services: [service({json: JSON.stringify(CODE)})]},
+            {services: [targetService({json: JSON.stringify(TARGET_CODE)})]});
+        expect(guids).toEqual(expect.arrayContaining([{source: "src-frag-guid", target: "tgt-frag-guid"}]));
+    });
+
+    test("entities of the target bundle take precedence over harvested references", () => {
+        const {guids} = diff({services: [service({code: CODE})]}, {
+            services: [targetService({code: TARGET_CODE})],
+            policies: [{goid: "tf", guid: "entity-frag-guid", name: "frag-1", policyType: "FRAGMENT", checksum: "f"}]
+        });
+        expect(guids.filter(x => x.source === "src-frag-guid")).toEqual([{source: "src-frag-guid", target: "entity-frag-guid"}]);
+    });
+});
+
+describe("warnings for the references that cannot be mapped", () => {
+    test("referred entity is not found in the target", () => {
+        const {output} = diff({services: [service({code: CODE})]}, {policies: []});
+        expect(output.stdout).toContain("refers to include policy frag-1, which is not found in the target");
+        expect(output.stdout).toContain("refers to encapsulated assertion encass-1, which is not found in the target");
+    });
+
+    test("referred entity has no guid in the target", () => {
+        const {output, guids} = diff({services: [service({code: CODE})]}, {
+            policies: [{goid: "tf", name: "frag-1", policyType: "FRAGMENT", checksum: "f"}]
+        });
+        expect(output.stdout).toContain("refers to include policy frag-1, which has no guid in the target");
+        expect(guids.find(x => x.source === "src-frag-guid")).toBeUndefined();
+    });
+
+    test("reference has a guid but no name", () => {
+        const {output} = diff({
+            services: [service({code: {All: [{Include: {policyGuid: "src-nameless-guid"}}]}})]
+        }, TARGET);
+        expect(output.stdout).toContain("refers to include policy with guid src-nameless-guid, but the reference has no name");
+    });
+});
