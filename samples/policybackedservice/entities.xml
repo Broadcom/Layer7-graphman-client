@@ -1,0 +1,262 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+				<l7:Item>
+					<l7:Name>some-policy-backed-service</l7:Name>
+					<l7:Id>6be8479975c7d1250926a4a86cc3758a</l7:Id>
+					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
+					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
+					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758a"/>
+					<l7:Resource>
+						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc3758a" version="0">
+							<l7:Name>some-policy-backed-service</l7:Name>
+							<l7:InterfaceName>com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor</l7:InterfaceName>
+							<l7:PolicyBackedServiceOperations>
+								<l7:PolicyBackedServiceOperation>
+									<l7:PolicyId>6be8479975c7d1250926a4a86cc37577</l7:PolicyId>
+									<l7:OperationName>process</l7:OperationName>
+								</l7:PolicyBackedServiceOperation>
+							</l7:PolicyBackedServiceOperations>
+						</l7:PolicyBackedService>
+					</l7:Resource>
+				</l7:Item>
+				<l7:Item>
+					<l7:Name>some-other-policy-backed-service</l7:Name>
+					<l7:Id>6be8479975c7d1250926a4a86cc3758e</l7:Id>
+					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
+					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
+					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758e"/>
+					<l7:Resource>
+						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc3758e" version="0">
+							<l7:Name>some-other-policy-backed-service</l7:Name>
+							<l7:InterfaceName>com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor</l7:InterfaceName>
+							<l7:PolicyBackedServiceOperations>
+								<l7:PolicyBackedServiceOperation>
+									<l7:PolicyId>6be8479975c7d1250926a4a86cc37597</l7:PolicyId>
+									<l7:OperationName>process</l7:OperationName>
+								</l7:PolicyBackedServiceOperation>
+							</l7:PolicyBackedServiceOperations>
+						</l7:PolicyBackedService>
+					</l7:Resource>
+				</l7:Item>
+				<l7:Item>
+					<l7:Name>some-background-task</l7:Name>
+					<l7:Id>6be8479975c7d1250926a4a86cc375c0</l7:Id>
+					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
+					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
+					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc375c0"/>
+					<l7:Resource>
+						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc375c0" version="0">
+							<l7:Name>some-background-task</l7:Name>
+							<l7:InterfaceName>com.l7tech.objectmodel.polback.BackgroundTask</l7:InterfaceName>
+							<l7:PolicyBackedServiceOperations>
+								<l7:PolicyBackedServiceOperation>
+									<l7:PolicyId>6be8479975c7d1250926a4a86cc375ad</l7:PolicyId>
+									<l7:OperationName>run</l7:OperationName>
+								</l7:PolicyBackedServiceOperation>
+							</l7:PolicyBackedServiceOperations>
+						</l7:PolicyBackedService>
+					</l7:Resource>
+				</l7:Item>
+                <l7:Item>
+                    <l7:Name>policies</l7:Name>
+                    <l7:Id>6be8479975c7d1250926a4a86cc375c5</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2025-07-11T14:30:36.800+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="6be8479975c7d1250926a4a86cc375c5" version="0">
+                            <l7:Name>policies</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-entity-change-listener</l7:Name>
+                    <l7:Id>e0f7be6890bd59df4a924baada26fb38</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2025-07-11T14:30:36.800+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="288e2593-83eb-47b7-84d6-64176f28b692" id="e0f7be6890bd59df4a924baada26fb38" version="3">
+                            <l7:PolicyDetail folderId="6be8479975c7d1250926a4a86cc375c5" guid="288e2593-83eb-47b7-84d6-64176f28b692" id="e0f7be6890bd59df4a924baada26fb38" version="3">
+<l7:Name>some-entity-change-listener</l7:Name>
+<l7:PolicyType>Service Operation</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>2</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tag">
+        <l7:StringValue>com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor</l7:StringValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: EntityChangeListener "/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-metrics-processor-policy</l7:Name>
+                    <l7:Id>6be8479975c7d1250926a4a86cc37577</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2025-07-11T14:30:36.800+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="80778e22-e295-4010-b2e1-a3c3e0c0cb0f" id="6be8479975c7d1250926a4a86cc37577" version="2">
+                            <l7:PolicyDetail folderId="6be8479975c7d1250926a4a86cc375c5" guid="80778e22-e295-4010-b2e1-a3c3e0c0cb0f" id="6be8479975c7d1250926a4a86cc37577" version="2">
+<l7:Name>some-metrics-processor-policy</l7:Name>
+<l7:PolicyType>Service Operation</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="subtag">
+        <l7:StringValue>process</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="tag">
+        <l7:StringValue>com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor</l7:StringValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-metrics-processor"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-other-metrics-processor-policy</l7:Name>
+                    <l7:Id>6be8479975c7d1250926a4a86cc37597</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2025-07-11T14:30:36.800+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="d29d2e0b-16cb-4961-bec1-3f0e5c6bd7d2" id="6be8479975c7d1250926a4a86cc37597" version="1">
+                            <l7:PolicyDetail folderId="6be8479975c7d1250926a4a86cc375c5" guid="d29d2e0b-16cb-4961-bec1-3f0e5c6bd7d2" id="6be8479975c7d1250926a4a86cc37597" version="1">
+<l7:Name>some-other-metrics-processor-policy</l7:Name>
+<l7:PolicyType>Service Operation</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="subtag">
+        <l7:StringValue>process</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="tag">
+        <l7:StringValue>com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor</l7:StringValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-metrics-processor"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-background-task-policy</l7:Name>
+                    <l7:Id>6be8479975c7d1250926a4a86cc375ad</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2025-07-11T14:30:36.800+05:30</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="f16f7330-50cf-46f8-a6b5-c8fada655ed4" id="6be8479975c7d1250926a4a86cc375ad" version="1">
+                            <l7:PolicyDetail folderId="6be8479975c7d1250926a4a86cc375c5" guid="f16f7330-50cf-46f8-a6b5-c8fada655ed4" id="6be8479975c7d1250926a4a86cc375ad" version="1">
+<l7:Name>some-background-task-policy</l7:Name>
+<l7:PolicyType>Service Operation</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="subtag">
+        <l7:StringValue>run</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="tag">
+        <l7:StringValue>com.l7tech.objectmodel.polback.BackgroundTask</l7:StringValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-background-task-policy"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://source.gateway:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc375c5" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="e0f7be6890bd59df4a924baada26fb38" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc37577" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc37597" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc375ad" type="POLICY"/>
+				<l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc3758a" type="POLICY_BACKED_SERVICE"/>
+				<l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc3758e" type="POLICY_BACKED_SERVICE"/>
+				<l7:Mapping action="NewOrExisting" srcId="6be8479975c7d1250926a4a86cc375c0" type="POLICY_BACKED_SERVICE"/>
+            </l7:Mappings>
+</l7:Bundle>

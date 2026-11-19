@@ -1,0 +1,122 @@
+{
+  "policies": [
+    {
+      "goid": "b6abffb903683651588606c0b1641835",
+      "name": "global-pre-service",
+      "policyType": "GLOBAL",
+      "tag": "pre-service",
+      "checksum": "f39e1e97556492fd045ddd6a245343fc662c523d",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: global-pre-service\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "1c3358eb80e60ae6663b138c7841d3f2",
+      "name": "internal-use-policy",
+      "policyType": "INTERNAL",
+      "tag": "audit-message-filter",
+      "checksum": "aa2b785f4b3e1be1628156749f7493ff55d6a9b8",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"// Add policy logic to scrub / protect the request or response messages before they are audited.\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"// Policy is invoked by the audit sub system post service and global policy processing.\"/>\n        </L7p:CommentAssertion>\n        <L7p:EncodeDecode>\n            <L7p:SourceVariableName stringValue=\"request.mainpart\"/>\n            <L7p:TargetContentType stringValue=\"text/xml; charset=utf-8\"/>\n            <L7p:TargetDataType variableDataType=\"message\"/>\n            <L7p:TargetVariableName stringValue=\"request\"/>\n            <L7p:TransformType transformType=\"BASE64_ENCODE\"/>\n        </L7p:EncodeDecode>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"PHNhdmVkbWVzc2FnZSB4bWxucz0iaHR0cDovL2xheWVyN3RlY2guY29tL25zL2F1ZGl0Ij4NCiR7cmVxdWVzdC5tYWlucGFydH0NCjwvc2F2ZWRtZXNzYWdlPg==\"/>\n            <L7p:ContentType stringValue=\"text/xml; charset=utf-8\"/>\n            <L7p:DataType variableDataType=\"message\"/>\n            <L7p:VariableToSet stringValue=\"request\"/>\n        </L7p:SetVariable>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Configure cert to use here. Should match the Audit Viewer Private Key if defined.\"/>\n        </L7p:CommentAssertion>\n        <L7p:NonSoapEncryptElement>\n            <L7p:Target target=\"REQUEST\"/>\n            <L7p:XpathExpression xpathExpressionValue=\"included\">\n                <L7p:Expression stringValue=\"/*\"/>\n                <L7p:Namespaces mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"xenc\"/>\n                        <L7p:value stringValue=\"http://www.w3.org/2001/04/xmlenc#\"/>\n                    </L7p:entry>\n                    <L7p:entry>\n                        <L7p:key stringValue=\"ds\"/>\n                        <L7p:value stringValue=\"http://www.w3.org/2000/09/xmldsig#\"/>\n                    </L7p:entry>\n                </L7p:Namespaces>\n            </L7p:XpathExpression>\n        </L7p:NonSoapEncryptElement>\n    </wsp:All>\n</wsp:Policy>"
+      }
+    },
+    {
+      "goid": "86357036360a453d0f5125a643c490bf",
+      "name": "pbip-fragment",
+      "policyType": "POLICY_BACKED_IDP",
+      "tag": "password-auth",
+      "checksum": "e789d4af4ee2e1781f38cfe2c18089e24bed4842",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbip-fragment\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "a803bd073e4cccc1561256179748d168",
+      "name": "pbso-fragment-background",
+      "policyType": "POLICY_BACKED_BACKGROUND_TASK",
+      "checksum": "39f979067d28a860f4466f603ae244efe69d58bd",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbso-fragment-background\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "077429a00bbc73a6667e8b1bc5e836a8",
+      "name": "pbso-fragment-background-2",
+      "policyType": "POLICY_BACKED_OPERATION",
+      "tag": "com.l7tech.objectmodel.polback.BackgroundTask",
+      "subTag": "run",
+      "checksum": "39f979067d28a860f4466f603ae244efe69d58bd",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbso-fragment-background\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "8b3c66fdf21eafaa37ed2335b373b85a",
+      "name": "pbso-fragment-entity-change-listener",
+      "policyType": "POLICY_BACKED_OPERATION",
+      "tag": "com.l7tech.external.assertions.entitychangelistener.server.EntityChangeEventProcessor",
+      "subTag": "process",
+      "checksum": "29c3fedf31c911eb24e50b1af49c6a793705c306",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbso-fragment-entity-change-listener\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "31e69f5d8a58d7ab352afa38529e7ee0",
+      "name": "pbso-fragment-service-metrics",
+      "policyType": "POLICY_BACKED_SERVICE_METRICS",
+      "tag": "com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor",
+      "subTag": "process",
+      "checksum": "8d54b0c22d6f7bb62ca64b6e60e325cdc475df27",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbso-fragment-service-metrics\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "5e66724bbbb3981c9566ab0069033807",
+      "name": "pbso-fragment-service-metrics-2",
+      "policyType": "POLICY_BACKED_SERVICE_METRICS",
+      "checksum": "8d54b0c22d6f7bb62ca64b6e60e325cdc475df27",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: pbso-fragment-service-metrics\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "06d39004d0166218805a04fc254183c7",
+      "name": "some-fragment",
+      "policyType": "FRAGMENT",
+      "checksum": "0264fba328e6509735b73e6f754a27a56340025a",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-fragment\"/>\n        </L7p:CommentAssertion>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"SGVsbG8h\"/>\n            <L7p:VariableToSet stringValue=\"text\"/>\n        </L7p:SetVariable>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "1d41d2a0-c312-449b-9629-c3e699d1d5eb",
+      "name": "Gateway Graphman Bundle - 2025-07-07T10:22:45.187+05:30",
+      "author": "admin",
+      "hostname": "localhost",
+      "timestamp": "2025-07-07T10:22:45.187+05:30"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

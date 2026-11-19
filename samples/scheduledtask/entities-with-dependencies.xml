@@ -1,0 +1,148 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>scheduled-tasks</l7:Name>
+            <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2026-06-13T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d" version="1">
+                    <l7:Name>scheduled-tasks</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-backgroundtask-policy</l7:Name>
+            <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e</l7:Id>
+            <l7:Type>POLICY</l7:Type>
+            <l7:TimeStamp>2026-06-13T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Policy guid="a1b2c3d4-e5f6-7890-abcd-ef1234567801" id="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e" version="0">
+                    <l7:PolicyDetail folderId="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d" guid="a1b2c3d4-e5f6-7890-abcd-ef1234567801" id="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e" version="0">
+                        <l7:Name>some-backgroundtask-policy</l7:Name>
+                        <l7:PolicyType>Service Operation</l7:PolicyType>
+                        <l7:Properties>
+                            <l7:Property key="hasRouting">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="revision">
+                                <l7:LongValue>1</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="subtag">
+                                <l7:StringValue>run</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="tag">
+                                <l7:StringValue>com.l7tech.objectmodel.polback.BackgroundTask</l7:StringValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:PolicyDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-backgroundtask-policy"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Policy>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-backgroundtask-policy</l7:Name>
+            <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f</l7:Id>
+            <l7:Type>POLICY</l7:Type>
+            <l7:TimeStamp>2026-06-13T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Policy guid="a1b2c3d4-e5f6-7890-abcd-ef1234567802" id="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f" version="0">
+                    <l7:PolicyDetail folderId="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d" guid="a1b2c3d4-e5f6-7890-abcd-ef1234567802" id="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f" version="0">
+                        <l7:Name>some-other-backgroundtask-policy</l7:Name>
+                        <l7:PolicyType>Service Operation</l7:PolicyType>
+                        <l7:Properties>
+                            <l7:Property key="hasRouting">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="revision">
+                                <l7:LongValue>1</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="subtag">
+                                <l7:StringValue>run</l7:StringValue>
+                            </l7:Property>
+                            <l7:Property key="tag">
+                                <l7:StringValue>com.l7tech.objectmodel.polback.BackgroundTask</l7:StringValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:PolicyDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: some-other-backgroundtask-policy"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Policy>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="FailOnNew">
+                    <l7:BooleanValue>true</l7:BooleanValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d" type="FOLDER"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f" type="POLICY"/>
+    </l7:Mappings>
+    <l7:DependencyGraph>
+        <l7:Dependencies>
+            <l7:Dependency>
+                <l7:Name>scheduled-tasks</l7:Name>
+                <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d</l7:Id>
+                <l7:Type>FOLDER</l7:Type>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>some-backgroundtask-policy</l7:Name>
+                        <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-other-backgroundtask-policy</l7:Name>
+                        <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                    </l7:Dependency>
+                </l7:Dependencies>
+            </l7:Dependency>
+            <l7:Dependency>
+                <l7:Name>some-backgroundtask-policy</l7:Name>
+                <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6e</l7:Id>
+                <l7:Type>POLICY</l7:Type>
+            </l7:Dependency>
+            <l7:Dependency>
+                <l7:Name>some-other-backgroundtask-policy</l7:Name>
+                <l7:Id>3a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6f</l7:Id>
+                <l7:Type>POLICY</l7:Type>
+            </l7:Dependency>
+        </l7:Dependencies>
+        <l7:MissingDependencies/>
+    </l7:DependencyGraph>
+</l7:Bundle>

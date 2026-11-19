@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -172,6 +172,17 @@ module.exports = {
                 mappings[key] = [{action: overrideMapping.action, 'default': true}];
             }
         });
+    },
+
+    /**
+     * Builds a matcher out of ignore rules.
+     * Rules are keyed by section (plural name); each section holds a rule or an array of rules.
+     * Fields within a rule are AND-ed, rules within a section are OR-ed.
+     * @param rules ignore rules, using the same field criteria as the filter
+     * @returns {function(string, object): (string|null)} returns the description of the matching rule or null
+     */
+    buildIgnoreMatcher: function (rules) {
+        return filterer.buildMatcher(rules || {});
     },
 
     filter: function (bundle, filter) {
@@ -861,6 +872,24 @@ let filterer = function () {
                     bundle[typeInfo.pluralName] = result;
                 }
             }
+        },
+
+        buildMatcher: function (rules) {
+            const compiled = {};
+            Object.keys(rules).forEach(section => {
+                const value = rules[section];
+                const list = Array.isArray(value) && value.every(x => x && typeof x === "object" && !Array.isArray(x)) ?
+                    value : [value];
+                compiled[section] = list.map(rule => ({
+                    description: JSON.stringify(rule),
+                    test: buildPredicate(rule)
+                }));
+            });
+
+            return function (section, entity) {
+                const found = (compiled[section] || []).find(rule => rule.test(entity));
+                return found ? found.description : null;
+            };
         },
 
         buildPredicates: function (filter) {

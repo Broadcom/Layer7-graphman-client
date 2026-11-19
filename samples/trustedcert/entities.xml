@@ -1,0 +1,440 @@
+<!-- Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-trusted-cert</l7:Name>
+            <l7:Id>bfa859a5da8d55ef5aae27813328f321</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-01-07T14:50:11.748+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="bfa859a5da8d55ef5aae27813328f321" version="0">
+                    <l7:Name>some-trusted-cert</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3DDigiCert+TLS+RSA+SHA256+2020+CA1%2CO%3DDigiCert+Inc%2CC%3DUS</l7:IssuerName>
+                        <l7:SerialNumber>16115816404043435608139631424403370993</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dwww.example.org%2CO%3DInternet%C2%A0Corporation%C2%A0for%C2%A0Assigned%C2%A0Names%C2%A0and%C2%A0Numbers%2CL%3DLos+Angeles%2CST%3DCalifornia%2CC%3DUS</l7:SubjectName>
+                        <l7:Encoded>MIIHSjCCBjKgAwIBAgIQDB/LGEUYx+OGZ0EjbWtz8TANBgkqhkiG9w0BAQsFADBPMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMSkwJwYDVQQDEyBEaWdpQ2VydCBUTFMgUlNBIFNIQTI1NiAyMDIwIENBMTAeFw0yMzAxMTMwMDAwMDBaFw0yNDAyMTMyMzU5NTlaMIGWMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLTG9zIEFuZ2VsZXMxQjBABgNVBAoMOUludGVybmV0wqBDb3Jwb3JhdGlvbsKgZm9ywqBBc3NpZ25lZMKgTmFtZXPCoGFuZMKgTnVtYmVyczEYMBYGA1UEAxMPd3d3LmV4YW1wbGUub3JnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwoB3iVm4RW+6StkR+nutx1fQevu2+t0Fu6KBcbvhfyHSXy7w0nJOdTT4jWLjStpRkNQBPZwMwHH35i+21gdnJtDe/xfO8IX9McFmyodlBUcqX8CruIzDv9AXf2OjXPBG+4aq+03XKl5/muATl32++301Vw1dXoGYNeoWQqLTsHT3WS3tOOf+ehuzNuZ+rj+ephaD3lMBToEArrtC9R91KTTN6YSAOK48NxTA8CfOMFK5itxfIqB5+E9OSQTidXyqLyoeA+xxTKMqYfxvypEek1oueAhY9u67NCBdmuavxtfyvwp7+o6Sd+NsewxAhmRKFexw13KOYzDhC+9aMJcuJQIDAQABo4ID2DCCA9QwHwYDVR0jBBgwFoAUt2ui6qiqhIx56rTaD5iyxZV2ufQwHQYDVR0OBBYEFLCTP+gXgv1ssrYXh8vjgP6CmwGeMIGBBgNVHREEejB4gg93d3cuZXhhbXBsZS5vcmeCC2V4YW1wbGUubmV0ggtleGFtcGxlLmVkdYILZXhhbXBsZS5jb22CC2V4YW1wbGUub3Jngg93d3cuZXhhbXBsZS5jb22CD3d3dy5leGFtcGxlLmVkdYIPd3d3LmV4YW1wbGUubmV0MA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwgY8GA1UdHwSBhzCBhDBAoD6gPIY6aHR0cDovL2NybDMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VExTUlNBU0hBMjU2MjAyMENBMS00LmNybDBAoD6gPIY6aHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VExTUlNBU0hBMjU2MjAyMENBMS00LmNybDA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcGCCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwfwYIKwYBBQUHAQEEczBxMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wSQYIKwYBBQUHMAKGPWh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFRMU1JTQVNIQTI1NjIwMjBDQTEtMS5jcnQwCQYDVR0TBAIwADCCAX8GCisGAQQB1nkCBAIEggFvBIIBawFpAHYA7s3QZNXbGs7FXLedtM0TojKHRny87N7DUUhZRnEftZsAAAGFq0gFIwAABAMARzBFAiEAqt+fK6jFdGA6tv0EWt9rax0WYBV4re9jgZgq0zi42QUCIEBh1yKpPvgX1BreE0wBUmriOVUhJS77KgF193fT2877AHcAc9meiRtMlnigIH1HneayxhzQUV5xGSqMa4AQesF3crUAAAGFq0gFnwAABAMASDBGAiEA12SUFK5rgLqRzvgcr7ZzV4nl+Zt9lloAzRLfPc7vSPACIQCXPbwScx1rE+BjFawZlVjLj/1PsM0KQQcsfHDZJUTLwAB2AEiw42vapkc0D+VqAvqdMOscUgHLVt0sgdm7v6s52IRzAAABhatIBV4AAAQDAEcwRQIhAN5bhHthoyWMJ3CQB/1iYFEhMgUVkFhHDM/nlE9ThCwhAiAPvPJXyp7a2kzwJX3P7fqH5Xko3rPhCzRoXYd6W+QkCjANBgkqhkiG9w0BAQsFAAOCAQEAWeRK2KmCuppK8WMMbXYmdbM8dL7F9z2nkZL4zwYtWBDt87jW/Gz/E5YyzU/phySFC3SiwvYP9afYfXaKrunJWCtuAG+5zSTuxELFTBaFnTRhOSO/xo6VyYSpsuVBD0R415W5z9l0v1hP5xb/fEAwxGxOIk3Lg2c6k78rxcWcGvJDoSU7hPb3U26oha7eFHSRMAYN8gfUxAi6Q2TF4j/arMVBr6Q36EJ2dPcTu0p9NlmBm8dE34lzuTNC6GDCTWFdEloQ9u//M4kUUOjWn8a5XCs1263t3Ta2JfKViqxpP5r+GvgVKG3qGFrC0mIYr0B4tfpeCY9T+cz4I6GDMSP0xg==</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-trusted-cert</l7:Name>
+            <l7:Id>bfa859a5da8d55ef5aae27813328f323</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-01-07T14:50:11.764+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="bfa859a5da8d55ef5aae27813328f323" version="0">
+                    <l7:Name>some-other-trusted-cert</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3DCloudflare+Inc+ECC+CA-3%2CO%3DCloudflare%5C%2C+Inc.%2CC%3DUS</l7:IssuerName>
+                        <l7:SerialNumber>2399198016257482881447715794105023305</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dsni.cloudflaressl.com%2CO%3DCloudflare%5C%2C+Inc.%2CL%3DSan+Francisco%2CST%3DCalifornia%2CC%3DUS</l7:SubjectName>
+                        <l7:Encoded>MIIFJjCCBMygAwIBAgIQAc4RmE1z36BQTG41XVo7STAKBggqhkjOPQQDAjBKMQswCQYDVQQGEwJVUzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEgMB4GA1UEAxMXQ2xvdWRmbGFyZSBJbmMgRUNDIENBLTMwHhcNMjIwNTI4MDAwMDAwWhcNMjMwNTI4MjM1OTU5WjB1MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEeMBwGA1UEAxMVc25pLmNsb3VkZmxhcmVzc2wuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENvXhMbPHM1wuM8muwgLfqOY8OZhhVbzGKYNf+VVTkgU4xvYoOtoBckp/L8HEYEIex1s77eEKNW4GuId6r+9g1KOCA2cwggNjMB8GA1UdIwQYMBaAFKXON+rrsHUOlGeItEX62SQQh5YfMB0GA1UdDgQWBBSK7ogvwe81QKZOZXOq3FJVyiO3UTAuBgNVHREEJzAlggx3d3cuaWV0Zi5vcmeCFXNuaS5jbG91ZGZsYXJlc3NsLmNvbTAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMHsGA1UdHwR0MHIwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5jcmwwN6A1oDOGMWh0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5jcmwwPgYDVR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BTMHYGCCsGAQUFBwEBBGowaDAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AuZGlnaWNlcnQuY29tMEAGCCsGAQUFBzAChjRodHRwOi8vY2FjZXJ0cy5kaWdpY2VydC5jb20vQ2xvdWRmbGFyZUluY0VDQ0NBLTMuY3J0MAwGA1UdEwEB/wQCMAAwggF9BgorBgEEAdZ5AgQCBIIBbQSCAWkBZwB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs62nhd31tBr1uAAABgQg6Ys4AAAQDAEcwRQIhANX0PSUOX/P50JSOcCYD98B6qt+R31549HF5pG7vNY6tAiBF0mN1uKpSSU//UYa2JsFnyNJoP1SCjjmltkviylJTlwB1ADXPGRu/sWxXvw+tTG1Cy7u2JyAmUeo/4SrvqAPDO9ZMAAABgQg6YugAAAQDAEYwRAIgFiWFDBq0iPpHVeuvExEotWs8OPvznzF5G/HKdTRoGSMCIFEHSwwxLw/3H7xZQCkga6oE2tlBnz1+RhcEMGSG+42iAHYAtz77JN+cTbp18jnFulj0bF38Qs96nzXEnh0JgSXttJkAAAGBCDpi0wAABAMARzBFAiEAyf8VZ5Y1NvgVk5PaBzvX3sWYqeLVaZje5QSsHIapKD8CICez+afq/kWu3bNv7ci5/ftUK63G4pye/8/tfzhPS3/HMAoGCCqGSM49BAMCA0gAMEUCIQDOQ2v6is3j1uVq8oS15c5SHTcsUd25ErdbcfGSs9HTGAIgIINaIvgtyM5xDmIObFHPBNYQpIAc9lIZN9fvL9ct7Yk=</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-signer</l7:Name>
+            <l7:Id>3a5b333e413ee8f1f18ba6d4c17da152</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-02-01T17:44:46.407+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="3a5b333e413ee8f1f18ba6d4c17da152" version="0">
+                    <l7:Name>some-signer</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dsome-signer</l7:IssuerName>
+                        <l7:SerialNumber>13223556693730863698</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dsome-signer</l7:SubjectName>
+                        <l7:Encoded>MIIDFTCCAf2gAwIBAgIJALeDgsBlESpSMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3NvbWUtc2lnbmVyMB4XDTI2MDIwMTExMTAyOVoXDTMxMDEzMTExMTAyOVowFjEUMBIGA1UEAxMLc29tZS1zaWduZXIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCzrLpVU+kZIHZ2Dr95otEZOehsR11GgMFBD3BkfjIsfcAE8eqlionYFpQCbCCMjtkGyQGRSc4LALNMUxgCC7RMidCFugKjog4ZSP5Ox4ws5DC4WgC6hHsbtwqQetO/+yWgnLIkoSt6nbWDKEpxCPJgjB+bF3RaYVyVEgP4rMywerWUoWOY08z8eTugTvrmW8CdbHAPoTlXVkGckdRmmU8dHiiP5IOPjH70nq/Ss7MU2GE0kEQ7inpx71DGS5o90grdY+N7cpDZQgxBUdO5V7gma2t4iZhbmli8jNG8tfLZPHTtnJ+3yb+xLuf0dOH/p0wo+5y8QZ4FkpBAsHW7M9CRAgMBAAGjZjBkMBIGA1UdEwEB/wQIMAYBAf8CAQEwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBRdjL/RQ11IVqwtJwJRQu7Zt2+h5jAfBgNVHSMEGDAWgBRdjL/RQ11IVqwtJwJRQu7Zt2+h5jANBgkqhkiG9w0BAQwFAAOCAQEAe1yAsbbeDsLGiD+xEF28SPtCJeq9AtqPThTdjGc7jSo8sLy8gRAns0hUrupklmLqenD6kV4YqKF5de0MTysNSnrRMhS5sCq14RSo3eV10aqbNNAtCDYCOSqqKWCeZDdAaVM1Nm4mUVJ+3Sq4d8VulRbSFZh7q8275sY2cv2VgSUtiOXL8FrT+fxphZmN+/mTp3udPiiLSN0CO7H7UXp+Yc6a8+cIzpZiGdpSTVtCKZZqVzvsGmgkU467fD57nEFfJWGkiEKFmOuWj3w3R0fJR2DQIBoGm8tp+VmtvphJuRsLfTUsSMRjgi5OOlXuvopp1ivhV7WWqYawVZUI238z9g==</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-signer</l7:Name>
+            <l7:Id>3a5b333e413ee8f1f18ba6d4c17da158</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-02-01T17:44:46.416+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="3a5b333e413ee8f1f18ba6d4c17da158" version="0">
+                    <l7:Name>some-signer</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dsome-signer</l7:IssuerName>
+                        <l7:SerialNumber>12880444078030252630</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dsome-signer</l7:SubjectName>
+                        <l7:Encoded>MIIE8TCCAtmgAwIBAgIJALLAh6U8RupWMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3NvbWUtc2lnbmVyMB4XDTI2MDIwMTExMTIxNVoXDTMxMDEzMTExMTIxNVowFjEUMBIGA1UEAxMLc29tZS1zaWduZXIwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCmjY6BzIveVmng+Ax6g/1HXecvh9Td7GIOKm+jMCDBbJuZGBWLmg/IvVb2nKQF2UcadJMAvFUwr0jAfMFQam0Fod2sbCxGiQpr6eRZ58ryBmIUAPrZHOr+/mqFdwibZ6aj7fMHW9636B4hruFY5f7Ph0JH/WJcDE8NQvy7SukVM5aPjZDQI/fCKfc23zWNzh2HSDFNCbUravo7ZXn6ZI8emeYtYmZj3ErqfICiNUb0Kp9NLw9uVDX+acIRdHPvfqu4xK2c5Pj/rv14x+8aJIvDaLt6LHr4V56L1omHROeix7UGRk651MJR/0lWJndSKlCEBcHJs3ce1W7DL6+KvSgQaEtaI2MyrQ5/ogxac6c+0NoGi6rpjCwfNDMePuz8uqSW5exkRAWii8GRivG3C5+i3HcVgifP2VIs0qF9VLZX4VVIIwVShvP90ubuMSBDo7SpXN5JrVk4hdcwqwHWRl68HWXP/Fcax8x+Y+487/sRVjkR/MHcDzqrRVdU6Vdz9pI/hhdClpCI0esC5NKIU3WxBfRaLN7uaDUF+F/f3suZ1aWpZ3lzOnlRPLNeHn0fJcMhf3mkKxEcs7YGLyR5j8PQ2kjE3pBn4Jkh59m8O1tuQNCAcz0mpcBhGRr0AV/ixgfJFMAifr9EgkIwZq/RdwBkqB/s8QOMtSejCCOtI9kbfQIDAQABo0IwQDAdBgNVHQ4EFgQUr6rq5sGk5jtqq4iNPOP08paoj0MwHwYDVR0jBBgwFoAUr6rq5sGk5jtqq4iNPOP08paoj0MwDQYJKoZIhvcNAQEMBQADggIBAEtGa1HLoBAnZJjy8wokiRopHECwyrsv1yy0s2t3QqF4xgnekwb4cOVx6hGoKyD2wtOFQi4pKtX8KXPTAgj1b+RURD3aVRpI0gMHviCn4HkTjTjmJoReysoTahsk2myLmkDdhtecsXKPo2WMx76avJysgmqpXTEzsq9+iVc7qGUdiawb/XQ4qK4tIpsyWO52r6d9pMbD58NGvebmJlM8p9NZ9BLwVJD7ktqrf1h4Hevn86aBJLz7UPQRuCzTBbqhoDmsGkYL9AyP0KFp59kEcZcaf5p4uTHQX0BXrCEpa7Bz/hgm+8Zi6eixczeyA/NLU76zMVXV46pMed9RwtlA2gve1YtlHxu349gRb+wmHbZE445KglGk7niV7QgjkLEZHxvmbjC0ftT9PY9P9i58HsgFlA7V3wLdGhJTV7rJkHVG6fuxa/L8GE2sWgtiErcHIka58E00UNqN9tgUewcX3DUvP2tusba1SYen3zKtEIg/+n1k3GlzmPQJb+f487V2F8uGWT9bUGEw+goupHE8S7jGIdL2KO+7JPF77gdbUdgztrgU639MbxOcq/X5RjUF2Kz8EMbAMRo6sRnWQ9LzGpRN+lECaMDxyo71A35kth3vPS/eStYceWPKG11Pdl47lpviiea2sDb8Puwk7NJUlhnCKLnnLTwM6mYhCITOo80k</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-signer</l7:Name>
+            <l7:Id>3a5b333e413ee8f1f18ba6d4c17da160</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-02-01T19:43:32.392+05:30</l7:TimeStamp>
+            <l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160"/>
+            <l7:Resource>
+                <l7:TrustedCertificate id="3a5b333e413ee8f1f18ba6d4c17da160" version="0">
+                    <l7:Name>some-signer</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dsome-signer</l7:IssuerName>
+                        <l7:SerialNumber>9802179891001395627</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dsome-signer</l7:SubjectName>
+                        <l7:Encoded>MIID8TCCAlmgAwIBAgIJAIgIVq07nYmrMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3NvbWUtc2lnbmVyMB4XDTI2MDIwMTEzMTE1OFoXDTMxMDEzMTEzMTE1OFowFjEUMBIGA1UEAxMLc29tZS1zaWduZXIwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDxcYueUxaalaPZvhMh9cSvVYtrpKcf9021am0MyGqbBrYyS5eoLCPsspQ0nD0zKR6ASbY/CxAF/0Y2m10/+jF7n35yEtcgv38KhaMJN4ls4zDE0Gdq/KaHtswRxi9S8xfzf0k3iZM7sCtGlV3gpEWbAlgwubwRbbzzROkCMt7PS87wfUjogsWRrA4wf1MrhGm052Cj35rToSG6/Z+bwxHfj4osDR8jl+/6uh9ynyreYc8eIUMWUhoQ5+pSYB8ASoI071YkCxgaVcqmszl8cKQKSbmP8Ix+hHlkPQXPjMK/J5w/keFHZ0bp1+H142EhGwhAW2BI7wj3prnA38FK3Ygjpf+tRQSW5MUqVsBjZh/fu/i0xPVXfoIr/1+V7Edmyvg8CwkhJAEp9+06sOleZW5OIMcpbCdx5RUnlwYUPbcqcne++RTZAKXZe8fZRlQjG1nv/R8ExwxvlXrzje4b73Zj5Q5LpAiDkCudCSlB5Oq0G+W1hMKaBHVRpv7PhQuQ120CAwEAAaNCMEAwHQYDVR0OBBYEFHfilVinB0bK7ZTWX6TLMNjgbktxMB8GA1UdIwQYMBaAFHfilVinB0bK7ZTWX6TLMNjgbktxMA0GCSqGSIb3DQEBDAUAA4IBgQBY0ydLYxZ9ceMbPA6Ann7F9sLB+88lNwUv4ttLvGdBCeh/6Ao7SqF6CfRiW/V/jQTTINP6oecWPQYY+rNlPM9q7SOg6YFu/oMENP/qFjuE9ACV5TVbtHWUkRmdmkOwLKGbRm2cizHLW01cvR0pqFq5h6q8RCy3H7IV2Wc6CZFoMU6ZNPdR1/dEDtCkFtqRZVun7eMsyeT9bmb+THjCHEbfasr16fKMlo4z+l+jlssCm7OiDZSHIGZQQLOHytDVTKwexNet9+zqbdRiFvcW/PLKTPqpzekqwiWc3/GFv+n6C2IGnQS6G4aCofVvZvhrnN0bKASYitA4dVqvZMBAJY8pYwXjt3jNlzeqqzwYIJtjn1t1NC3NL8VM02QxlGNi6tAqk35uwsJUNGwRsvSmOFdbLS19nmTbvsnI/PSslm4s+i9CeRX+5PbKpmnyaovRQCvYrfUf3Fjygst1L2ymIg9fIdDis6vEMLSWUiRMiShXYzda4ZMuk1c3/3vrkG8NPwI=</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>trusted-cert-plural-update-1</l7:Name>
+            <l7:Id>c5a5333e413ee8f1f18ba6d4c17da201</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="c5a5333e413ee8f1f18ba6d4c17da201" version="0">
+                    <l7:Name>trusted-cert-plural-update-1</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dtrusted-cert-plural-update-1</l7:IssuerName>
+                        <l7:SerialNumber>415569845808623625882237882498165067619920396354</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dtrusted-cert-plural-update-1</l7:SubjectName>
+                        <l7:Encoded>MIIDLzCCAhegAwIBAgIUSMrL30zhd8NvVYU007MwZnIOQEIwDQYJKoZIhvcNAQELBQAwJzElMCMGA1UEAwwcdHJ1c3RlZC1jZXJ0LXBsdXJhbC11cGRhdGUtMTAeFw0yNjA4MDExMDA5NDhaFw0zNjA3MjkxMDA5NDhaMCcxJTAjBgNVBAMMHHRydXN0ZWQtY2VydC1wbHVyYWwtdXBkYXRlLTEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCveiPratjN+uxZdYiuoJlAnJH6pKp5gKYM/QFKI8SaGIT9RI9i2fgPMDC0wnnuAqbUBF9j4GpKDm5eGh62ir1qya3vZOa94RHFoLZZbUPsC7kbav+buj9T5AT23pWf4R0rSUJeNI0cLbnxsCW+O2oWe9j1YcxHEqmjK60mR5b5AGm2fNvyNBKZtraYcKpzEDTDGmImJi+i5cVW5Lmv6PBg1LzaXKCavbJaDF1ArFaRc++9UrBAW7A/8i1DXur6FL/SCAfUtDwdHxGETg+88hgQQgAF6PF0YAxvSdxSu6rggXT/5ZrKmkUKOh2zprSX7rUyx+okpGrmCoHSGvwH6VCfAgMBAAGjUzBRMB0GA1UdDgQWBBQRcMzm5seAdXYFAfLmZJb5d6si9DAfBgNVHSMEGDAWgBQRcMzm5seAdXYFAfLmZJb5d6si9DAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQASbZBvo7de3X5deXM5tUtHlOeBYXTvG/fJrIvtpcW8sHQskwzCbYMJssw6okQc4BjdjGprjmm7T8O77PtI5Imua7w45QQnaOsh5RBKh01Yaqd/e799A/E1oMihSstbGTUVUi1Ut9Itx6BntL9VRlAVzxXK6p3W884UO4StblPpe0szEh4ZYif6pMhqIUX/hIFf/O/Uc0WQBg6IGY3uPe7/Dae9ksHruHTehUY80RVYuptbGPfhQ9nrLdDOyF1ag98jReqvtmJxRfIk2OgYSOV5fraXXKAwEUjnPVkvkxPtUiRKXMi1YH0oFP3RDkDSaSAc4TULJVoeQVFemH28JwEN</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>trusted-cert-plural-update-2</l7:Name>
+            <l7:Id>c5a5333e413ee8f1f18ba6d4c17da202</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="c5a5333e413ee8f1f18ba6d4c17da202" version="0">
+                    <l7:Name>trusted-cert-plural-update-2</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dtrusted-cert-plural-update-2</l7:IssuerName>
+                        <l7:SerialNumber>4897669019775488438666935958789858078535030832</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dtrusted-cert-plural-update-2</l7:SubjectName>
+                        <l7:Encoded>MIIDLzCCAhegAwIBAgIUANuee6mQVFYQB5w7Oepwox6lmDAwDQYJKoZIhvcNAQELBQAwJzElMCMGA1UEAwwcdHJ1c3RlZC1jZXJ0LXBsdXJhbC11cGRhdGUtMjAeFw0yNjA4MDExMDA5NDlaFw0zNjA3MjkxMDA5NDlaMCcxJTAjBgNVBAMMHHRydXN0ZWQtY2VydC1wbHVyYWwtdXBkYXRlLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC+ouVlLX1XeDZxvWsWuaT5uuSsho0YkLzhZXGCRGaJRSG5n/lyjuxIHOeWtG859x52s5E89uWM5HPLi+Z4xqFuIn8LX6kKBOOUHPVxjlWWQ6Ne+4qvQJS8iYBP3FeWJ9KlR5FO3LM7EVOIt26jxjyk6VNlTotUrLRprSrSgFzUMtS8DT/RpCVbRf1Yhj2oNmfFf4+6n86iGWavuxpAt8gAg19stccAj/i9s5ZhNHrrRF/9aO9iWbyDvnDlXjevCjDhvWhkZYAYQZ8u7vkOgoSH5FzEeMVyAASYcOmVnaQc+EzANCIbEs0aL538jVwkfkIel3x60kc5KiShYNpaiHQtAgMBAAGjUzBRMB0GA1UdDgQWBBR5YcwM9PKJY9Vf0nGdWGEOCZxDPzAfBgNVHSMEGDAWgBR5YcwM9PKJY9Vf0nGdWGEOCZxDPzAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBLfHB+Sh42pPGc27KBea27saysdwY/Hmuyyp26CA1xY+FbUyONFXWBDZ+VZSuIMHSoWMB79zq6tEPQIXnxfqjKTcLkTh3GjZZ34D4Q9MCe3Id2r7bpmSv+2zsYa0qbAIj7K5NfNI58nXk/s2Q1hST4P214vhMdWdkP63k1Tp6wgnCXzXnRreJgUA5ss0PcqTitF3+Q+WRbJoIHqcwEiAiGDVU4Xza//7IBEWq1fxOGtwRE/VHtH1PSV7Pm8einbxWimfSP+RoO6jczR5F/jbTiQpsFg1m7WA5qcegdhUius9g0kAz4XfJakuDSZ++KjwWZD7VDfBHDuPoApke1EvrM</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>trusted-cert-delete-by-input-1</l7:Name>
+            <l7:Id>c5a5333e413ee8f1f18ba6d4c17da301</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="c5a5333e413ee8f1f18ba6d4c17da301" version="0">
+                    <l7:Name>trusted-cert-delete-by-input-1</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dtrusted-cert-delete-by-input-1</l7:IssuerName>
+                        <l7:SerialNumber>578278870412023487250530928422345053523262613963</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dtrusted-cert-delete-by-input-1</l7:SubjectName>
+                        <l7:Encoded>MIIDMzCCAhugAwIBAgIUZUrr32xOMkNwVmAneMEMfn9oqcswDQYJKoZIhvcNAQELBQAwKTEnMCUGA1UEAwwedHJ1c3RlZC1jZXJ0LWRlbGV0ZS1ieS1pbnB1dC0xMB4XDTI2MDgwMTEwMTAyOVoXDTM2MDcyOTEwMTAyOVowKTEnMCUGA1UEAwwedHJ1c3RlZC1jZXJ0LWRlbGV0ZS1ieS1pbnB1dC0xMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArHOeTB62R62oGIimB1GZxyVv7WEpcEi2zbpBMFWq3/dm5JaJminZSzYuxiR72QcKtXfKTwYi49BMJmL1UTlOKrlcFGWgG/3NbJOlLCdQ+upeLjzJ15GQgcftTEat6c/+xzCo25CY6WXG6Ei4KtkejlICh3lVq0ZmNid0ELGvTzEjXiu810wmbC5yLYBQJkUIHKyf2J70H0peYZPIXm6vWWJ8UHf1nfxvTR2bcaGO1UBp3hoXwvMIwnMtYBK8LpZHyE3U+VRSt9M2FCRb4AHQoHtd5h3JGXABbSMTRig1NC74trYXMqOOVOFg6afneEsmogXf2Q9XUHkUsb7Fa76c8wIDAQABo1MwUTAdBgNVHQ4EFgQUwxoMuouc3hgmkDTWByY8Pfx8HLMwHwYDVR0jBBgwFoAUwxoMuouc3hgmkDTWByY8Pfx8HLMwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAq5J/SsW2iJWeJ7j9ZmF6KL58sFXw1+T3TcbGEjlcfH+lVo/792koqGszGjBWE5OCcvY00nrL13eIQ1xlmRAQ8bXlu0gKPXJVQ6pUtpjS98ZwOYHIwR/xbjU93NNG4nPqI1HwqPhe+qKeNRyKOfZjS3EI1BAg5xmax0QvMINxaMOvuxmJEfrNoe61sgXJbv3M3uoJAKAfNehlSdHvfNVF1HXZL6G+TWZhM5AQc+YmxVcZiD8TuxtJrMzVnG46ZPLIOgM9UYaSsaIcoWKDnEKcA8WdpgEhzgNOm7eCaQDjFQ4ZqM11kd8u+XfJQ8Cx4VTMTiget09+0osH0JMiiAG/iw==</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>trusted-cert-delete-by-input-2</l7:Name>
+            <l7:Id>c5a5333e413ee8f1f18ba6d4c17da302</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="c5a5333e413ee8f1f18ba6d4c17da302" version="0">
+                    <l7:Name>trusted-cert-delete-by-input-2</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dtrusted-cert-delete-by-input-2</l7:IssuerName>
+                        <l7:SerialNumber>293214069250945717220051983837729519942244146862</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dtrusted-cert-delete-by-input-2</l7:SubjectName>
+                        <l7:Encoded>MIIDMzCCAhugAwIBAgIUM1wscPca5paMuEJxMM8xf4tanq4wDQYJKoZIhvcNAQELBQAwKTEnMCUGA1UEAwwedHJ1c3RlZC1jZXJ0LWRlbGV0ZS1ieS1pbnB1dC0yMB4XDTI2MDgwMTEwMTAzMVoXDTM2MDcyOTEwMTAzMVowKTEnMCUGA1UEAwwedHJ1c3RlZC1jZXJ0LWRlbGV0ZS1ieS1pbnB1dC0yMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqjjziPoCmGl2g0g5B1otHyh0ZX3v/ILZbuTU65UBRRheyqKUIH/Ph9bmFYaOj7Y+5HTR/0bPGfvOgmJ2eOR2+divDBXrLn/IDABZZraUctzgozIqYpkNsoBbeplGUL+ECrJx3pU0/ylBwGsMWbzbsdBu6/p+K3pOTeMgDsN2AbrjWHJtrd6/rikngO3ZCqMARs/cv2UnwIhNbFtsM37wIn1PQBFrzv92I/zM00yQv3eyNCoVtvPNWa+ObfWJcWIQ0cht0QFBdKV4agmeURFxa5aI5rvDGJHcP+ncdFuBd+5Vx9OlcLxidBIK+aNbxdGMFLR0NpJXiPfXeCPep0UX9wIDAQABo1MwUTAdBgNVHQ4EFgQUn+LwEQQc5e7q/tgpVeMFkyiaHYcwHwYDVR0jBBgwFoAUn+LwEQQc5e7q/tgpVeMFkyiaHYcwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAmzAxWW0xi03u0X4pYcVJYDu+80hRt6sgBouEVmvicgq/c3ZVkGmzYiuSXwExvvC9D3psJ9Fb7P/+gEjgkZiQDLctSOGvjFxFeOzYsaKidzKRZC68BGmuj2vaEZV8h+x6D9LCLb1GXkohPIG07VOlGfrb6g05tv1Ed/YvWErhOOlO8YR3ANXhTiRplEbhdinESan0vNiVlA4Tjs2ybQ1NBhHegKwwoQo4fsxkRSyUz+VrkiHvypx0n2IXIJ687CWdbDpudNzp6qQbMzcNTrN0129XD3DaGQdKf+m5UQM8+kUc9vvfueWFTGYGsGKOHvd/662UVrB7eulK+R1VgdV34A==</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="bfa859a5da8d55ef5aae27813328f321" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="bfa859a5da8d55ef5aae27813328f323" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da152" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da152" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da158" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da158" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da160" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="c5a5333e413ee8f1f18ba6d4c17da201" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="c5a5333e413ee8f1f18ba6d4c17da202" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="c5a5333e413ee8f1f18ba6d4c17da301" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="c5a5333e413ee8f1f18ba6d4c17da302" type="TRUSTED_CERT">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

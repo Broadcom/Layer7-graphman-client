@@ -1,0 +1,101 @@
+{
+  "policies": [
+    {
+      "goid": "e0f7be6890bd59df4a924baada26fb38",
+      "guid": "288e2593-83eb-47b7-84d6-64176f28b692",
+      "name": "some-policy-backed-service-policy",
+      "policyType": "POLICY_BACKED_OPERATION",
+      "tag": "com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor",
+      "checksum": "1c5aa0ed66c053b77b53921569351e77f320abcf",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: EntityChangeListener \"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "6be8479975c7d1250926a4a86cc37577",
+      "guid": "80778e22-e295-4010-b2e1-a3c3e0c0cb0f",
+      "name": "some-metrics-processor-policy",
+      "policyType": "POLICY_BACKED_SERVICE_METRICS",
+      "checksum": "60f1c18006c8b1650c2185043e14c02b70236219",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-metrics-processor\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "6be8479975c7d1250926a4a86cc37597",
+      "guid": "d29d2e0b-16cb-4961-bec1-3f0e5c6bd7d2",
+      "name": "some-other-metrics-processor-policy",
+      "policyType": "POLICY_BACKED_SERVICE_METRICS",
+      "checksum": "e5b7efbedc0cf42e412c0aafe97820ed49c5dbdb",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-metrics-processor\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "6be8479975c7d1250926a4a86cc375ad",
+      "guid": "f16f7330-50cf-46f8-a6b5-c8fada655ed4",
+      "name": "some-background-task-policy",
+      "policyType": "POLICY_BACKED_BACKGROUND_TASK",
+      "checksum": "03a2bc237f2e69d5edd8d074fae7f5a4f6f9858d",
+      "folderPath": "/policies",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-background-task-policy\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ],
+  "policyBackedServices": [
+    {
+      "goid": "6be8479975c7d1250926a4a86cc3758a",
+      "name": "some-policy-backed-service",
+      "interfaceName": "com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor",
+      "checksum": "abe65980f819895ae503b6133cd65cdc0e36d0d2",
+      "operations": [
+        {
+          "operationName": "process",
+          "policyName": "some-metrics-processor-policy"
+        }
+      ]
+    },
+    {
+      "goid": "6be8479975c7d1250926a4a86cc3758e",
+      "name": "some-other-policy-backed-service",
+      "interfaceName": "com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor",
+      "checksum": "bbf8e44f9ec010dd1eb2ba2836c2efed00f2dee0",
+      "operations": [
+        {
+          "operationName": "process",
+          "policyName": "some-other-metrics-processor-policy"
+        }
+      ]
+    },
+    {
+      "goid": "6be8479975c7d1250926a4a86cc375c0",
+      "name": "some-background-task",
+      "interfaceName": "com.l7tech.objectmodel.polback.BackgroundTask",
+      "checksum": "a05942590dedf483f2f3a4e02030b7700e3943b8",
+      "operations": [
+        {
+          "operationName": "run",
+          "policyName": "some-background-task-policy"
+        }
+      ]
+    }
+  ],
+  "properties": {
+    "meta": {
+      "id": "7620df40-8e14-4e78-97bd-22f1a0675f0b",
+      "name": "Gateway Graphman Bundle - 2025-07-17T06:07:34.908+05:30",
+      "author": "admin",
+      "hostname": "source.gateway",
+      "timestamp": "2025-07-17T06:07:34.908+05:30"
+    },
+    "defaultAction": "NEW_OR_UPDATE"
+  }
+}

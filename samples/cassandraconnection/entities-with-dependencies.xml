@@ -1,0 +1,484 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>cassandra-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d601ba</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:18.595Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d601ba" version="0">
+                            <l7:Name>cassandra-connections</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>secret-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.182Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc77" version="1">
+                            <l7:Name>secret-2</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,863rEH1zEWnZ3I55lv1eCK0K/nJVW9p65gUD+fzvOYc=$iHvRNdNGbhc3124wQv3oCR/MPlvmivFZNYWxalQxpGNSO1csEm/6WOMX8QxNv63VL80izUlcNtX5wl0BaoiiKQOS+TXQeL6+9HFVwRp1TIfThqIdUcs4GuMisQN3+mCO">$L7C2$1,06PEnMZoEAEWN3Z5tHGQkCfHyR7WgUEhnIy3uSUUXqA=$+RQAMaR0KjIxd0/Stfi1UhYwmYAzLAr3qB0iWG5EYsevl6O6ctsTLteWxN4U/aNlTbQxg1VmpA5zN1Pos1KzJg==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-02-25T11:23:54.437Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>false</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cassandra-connection-1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fc58</l7:Id>
+                    <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.183Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:CassandraConnection id="72adab14b763f12efb51ebb737d5fc58" version="1">
+                            <l7:Name>cassandra-connection-1</l7:Name>
+                            <l7:Keyspace></l7:Keyspace>
+                            <l7:ContactPoint>example</l7:ContactPoint>
+                            <l7:Port>9042</l7:Port>
+                            <l7:Username>cassandra-user</l7:Username>
+                            <l7:PasswordId>72adab14b763f12efb51ebb737d5fc77</l7:PasswordId>
+                            <l7:Compression>NONE</l7:Compression>
+                            <l7:Ssl>false</l7:Ssl>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties/>
+                        </l7:CassandraConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cassandra-connection-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60314</l7:Id>
+                    <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.183Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:CassandraConnection id="72adab14b763f12efb51ebb737d60314" version="0">
+                            <l7:Name>cassandra-connection-2</l7:Name>
+                            <l7:Keyspace></l7:Keyspace>
+                            <l7:ContactPoint>example</l7:ContactPoint>
+                            <l7:Port>9043</l7:Port>
+                            <l7:Username>cassandra-user</l7:Username>
+                            <l7:PasswordId>72adab14b763f12efb51ebb737d5fc77</l7:PasswordId>
+                            <l7:Compression>LZ4</l7:Compression>
+                            <l7:Ssl>true</l7:Ssl>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="driverConfig">
+    <l7:StringValue>driver-prop1=val1
+driver-prop2=val2</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:CassandraConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>secret-3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.184Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc7a" version="1">
+                            <l7:Name>secret-3</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,863rEH1zEWnZ3I55lv1eCK0K/nJVW9p65gUD+fzvOYc=$iHvRNdNGbhc3124wQv3oCR/MPlvmivFZNYWxalQxpGNSO1csEm/6WOMX8QxNv63VL80izUlcNtX5wl0BaoiiKQOS+TXQeL6+9HFVwRp1TIfThqIdUcs4GuMisQN3+mCO">$L7C2$1,41D8nRYTzmthgdaQLN2wel5KEGYsK7zos1xgv1S6pYE=$bpf8nqGQKy6L8KL6JA95lenIYpHaxK+SyULEYwtiGslztgZq6Qb88pK5D02PQf1IA0IJ37CHURmLSCOQikUGJw==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-02-25T11:23:54.440Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>cassandra-connection-3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60316</l7:Id>
+                    <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.184Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:CassandraConnection id="72adab14b763f12efb51ebb737d60316" version="4">
+                            <l7:Name>cassandra-connection-3</l7:Name>
+                            <l7:Keyspace>keyspace3</l7:Keyspace>
+                            <l7:ContactPoint>example</l7:ContactPoint>
+                            <l7:Port>9044</l7:Port>
+                            <l7:Username>user3</l7:Username>
+                            <l7:PasswordId>72adab14b763f12efb51ebb737d5fc7a</l7:PasswordId>
+                            <l7:Compression>LZ4</l7:Compression>
+                            <l7:Ssl>true</l7:Ssl>
+                            <l7:TlsCiphers>TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</l7:TlsCiphers>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="keepAlive">
+    <l7:StringValue>true</l7:StringValue>
+</l7:Property>
+<l7:Property key="localDataCenterName">
+    <l7:StringValue>example-dc</l7:StringValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:CassandraConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6031b</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.189Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="12cbb701-90b0-42cb-be6c-365e08acbc6d" id="72adab14b763f12efb51ebb737d6031b" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d601ba" guid="12cbb701-90b0-42cb-be6c-365e08acbc6d" id="72adab14b763f12efb51ebb737d6031b" version="1">
+<l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-cassandra-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-2"/&gt;
+            &lt;L7p:FailIfNoResults booleanValue="true"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:GenerateXmlResult booleanValue="true"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-3"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:GenerateXmlResult booleanValue="true"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-cassandra-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d602fe</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.193Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="45618c2a-8572-4e06-bbd5-c0d07cf4d5b0" id="72adab14b763f12efb51ebb737d602fe" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d601ba" guid="45618c2a-8572-4e06-bbd5-c0d07cf4d5b0" id="72adab14b763f12efb51ebb737d602fe" version="1">
+<l7:Name>policy-with-cassandra-connections</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-cassandra-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-1"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-2"/&gt;
+            &lt;L7p:FailIfNoResults booleanValue="true"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:GenerateXmlResult booleanValue="true"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="12cbb701-90b0-42cb-be6c-365e08acbc6d"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-cassandra-connections"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-cassandra-connections</l7:Name>
+                    <l7:Id>5db3a5b3a9b52c23066ea07be5c66924</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T07:51:19.259Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="5db3a5b3a9b52c23066ea07be5c66924" version="2">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d601ba" id="5db3a5b3a9b52c23066ea07be5c66924" version="2">
+<l7:Name>service-with-cassandra-connections</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-cassandra-connections</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>2</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-cassandra-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-1"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+        &lt;L7p:CassandraQuery&gt;
+            &lt;L7p:ConnectionName stringValue="cassandra-connection-2"/&gt;
+            &lt;L7p:FailIfNoResults booleanValue="true"/&gt;
+            &lt;L7p:FetchSize intValue="5000"/&gt;
+            &lt;L7p:GenerateXmlResult booleanValue="true"/&gt;
+            &lt;L7p:MaxRecords intValue="10"/&gt;
+            &lt;L7p:QueryDocument stringValue="SELECT"/&gt;
+            &lt;L7p:QueryTimeout stringValueNull="null"/&gt;
+        &lt;/L7p:CassandraQuery&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="12cbb701-90b0-42cb-be6c-365e08acbc6d"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-cassandra-connections"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d601ba" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d601ba" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc58" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/cassandraConnections/72adab14b763f12efb51ebb737d5fc58" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60314" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/cassandraConnections/72adab14b763f12efb51ebb737d60314" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60316" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/cassandraConnections/72adab14b763f12efb51ebb737d60316" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6031b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6031b" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d602fe" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d602fe" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66924" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66924" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>cassandra-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d601ba</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-cassandra-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d602fe</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6031b</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-cassandra-connections</l7:Name>
+<l7:Id>5db3a5b3a9b52c23066ea07be5c66924</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>secret-2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cassandra-connection-1</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fc58</l7:Id>
+                        <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>secret-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cassandra-connection-2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60314</l7:Id>
+                        <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>secret-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc77</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>secret-3</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>cassandra-connection-3</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60316</l7:Id>
+                        <l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>secret-3</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc7a</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6031b</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60314</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-3</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60316</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-cassandra-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d602fe</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc58</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60314</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6031b</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-cassandra-connections</l7:Name>
+                        <l7:Id>5db3a5b3a9b52c23066ea07be5c66924</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d5fc58</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>cassandra-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60314</l7:Id>
+<l7:Type>CASSANDRA_CONFIGURATION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-cassandra-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6031b</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

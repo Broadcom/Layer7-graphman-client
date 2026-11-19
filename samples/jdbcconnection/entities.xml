@@ -1,0 +1,437 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-custom-1</l7:Name>
+                    <l7:Id>1f7fc76ab9627653dc51b248e61f3959</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.865Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="1f7fc76ab9627653dc51b248e61f3959" version="0">
+                            <l7:Name>jdbc-connection-custom-1</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>125</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>30</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="Prop2">
+        <l7:StringValue>Val2</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="c3p0.Prop3">
+        <l7:StringValue>Val3</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,qBb+IO7CaZRDf3274urxYcDrouPip0N8ERXRYpfyMWM=$v0HlWCdOcPs1X1wqKkkzDPKqjHpAZqimGieWkNgUIn07apTDI4kVFN5IShczhhzIvFrvzJXvMir79k6Q7KEwLw==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>jdbc-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-user-pwd</l7:Name>
+                    <l7:Id>c002ee2db07065e75ef013a8c117fc6f</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.867Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="c002ee2db07065e75ef013a8c117fc6f" version="0">
+                            <l7:Name>jdbc-user-pwd</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,pHi/7C6791azD4LHXIrG+xrKggkfxXtmhbn1tlrAC2k=$U1orATTmOwKODZm+87QCcOYS8bj0z/hVbzlS3lXXAqkdAE1pZuTrVSdG6XDVdMHctqnneui6N8WSV2bMI3Oxug==</l7:Password>
+                            <l7:Properties>
+<l7:Property key="description">
+    <l7:StringValue></l7:StringValue>
+</l7:Property>
+<l7:Property key="lastUpdated">
+    <l7:DateValue>2026-09-29T14:19:42.991Z</l7:DateValue>
+</l7:Property>
+<l7:Property key="type">
+    <l7:StringValue>Password</l7:StringValue>
+</l7:Property>
+<l7:Property key="usageFromVariable">
+    <l7:BooleanValue>true</l7:BooleanValue>
+</l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-custom-2</l7:Name>
+                    <l7:Id>1f7fc76ab9627653dc51b248e61f395a</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.867Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="1f7fc76ab9627653dc51b248e61f395a" version="0">
+                            <l7:Name>jdbc-connection-custom-2</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>125</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>30</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>oracle.jdbc.OracleDriver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="Prop2">
+        <l7:StringValue>Val2</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="c3p0.Prop3">
+        <l7:StringValue>Val3</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue>${secpass.jdbc-user-pwd.plaintext}</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>jdbc-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-custom-3</l7:Name>
+                    <l7:Id>1f7fc76ab9627653dc51b248e61f395b</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.867Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="1f7fc76ab9627653dc51b248e61f395b" version="0">
+                            <l7:Name>jdbc-connection-custom-3</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>125</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>30</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>oracle.jdbc.OracleDriver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="Prop2">
+        <l7:StringValue>Val2</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="c3p0.Prop3">
+        <l7:StringValue>Val3</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue>${secpass.jdbc-user123-pwd.plaintext}</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>jdbc-user123</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-default</l7:Name>
+                    <l7:Id>1f7fc76ab9627653dc51b248e61f3958</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.868Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="1f7fc76ab9627653dc51b248e61f3958" version="0">
+                            <l7:Name>jdbc-connection-default</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,xGtPWzzHxFL5xcTu2JkythNX47J4QoN2Zh6o2zdt18Q=$V394PO8dn4Q2ko4t2Yp9q1ELlExIUNFeP0RrRBhzIi/kS520WTMRt5KddtEZXSFgmozoGRcGp6urGlmpms0esw==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue></l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-jdbc-connection</l7:Name>
+                    <l7:Id>36943aa823d438b8ec08f6ece0d178bb</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.869Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="36943aa823d438b8ec08f6ece0d178bb" version="0">
+                            <l7:Name>some-jdbc-connection</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>false</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,c82sXCGKNVX474RSje6nLZsS1tVia3W5obe6PVLjyk0=$biHK7eEbCcP5vtsYX1Yb1bqzH7MlUYQ17U6Idx42ztJF1CuDhZirQ1A7J0bUGcYyavzok4fZIY5TWspXGx6iDg==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>some-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-jdbc-connection-delete-by-input-1</l7:Name>
+                    <l7:Id>66943aa823d438b8ec08f6ece0d178be</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.870Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="66943aa823d438b8ec08f6ece0d178be" version="0">
+                            <l7:Name>some-jdbc-connection-delete-by-input-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>false</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,EzZWQaHu4DgxNbktkPo/Udg4PvaFLsyUxNUfdCbZ5FU=$J28Bbqk56fhilY/4NidE3ySme6jYn7zI2tWGqvzLqP9l6VjHifDJQk/X03zhk4a3iyB/HVN0SKKpIHTbwgAT/Q==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>some-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-jdbc-connection-delete-by-input-2</l7:Name>
+                    <l7:Id>76943aa823d438b8ec08f6ece0d178bf</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.872Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="76943aa823d438b8ec08f6ece0d178bf" version="0">
+                            <l7:Name>some-jdbc-connection-delete-by-input-2</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>false</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,98Adf8QKITwqwt7xM5R4leka7iBLY5Pb/sHTm9YrPR8=$GSyjoghs7PZMUV/fIhHAcpKpTvKuJHBvU/giqWpfsnIAl9UUzcw33Gc9gDmimn4UDQn8RmbzGS97aDpWmq+T8w==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>some-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-other-jdbc-connection</l7:Name>
+                    <l7:Id>46943aa823d438b8ec08f6ece0d178bc</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.872Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="46943aa823d438b8ec08f6ece0d178bc" version="0">
+                            <l7:Name>some-other-jdbc-connection</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>20</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>5</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>org.postgresql.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc:postgresql://some-other-host:5432/some-other-db</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,xtRXTQh/Q7L7OOg1+OgJujS0dupXQzLPtyMTIf0aQGw=$cjNDPnE2e+xE84A5wYz+ai8rkje6w06AXGiCUK8QgXdU3hMAEuA63g2xMuanGyjlNGMvunLKQXaBTiET8lKFiw==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="ssl">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>some-other-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-sec-jdbc-connection</l7:Name>
+                    <l7:Id>56943aa823d438b8ec08f6ece0d178bd</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-09-29T14:28:39.873Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="56943aa823d438b8ec08f6ece0d178bd" version="0">
+                            <l7:Name>some-sec-jdbc-connection</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc:mysql://some-host:3306/some-db</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue>${secpass.some-pwd.plaintext}</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>some-user</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3959" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3959" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="c002ee2db07065e75ef013a8c117fc6f" srcUri="https://source.gateway:18443/restman/1.0/passwords/c002ee2db07065e75ef013a8c117fc6f" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395a" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395a" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395b" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395b" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3958" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3958" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="36943aa823d438b8ec08f6ece0d178bb" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/36943aa823d438b8ec08f6ece0d178bb" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="66943aa823d438b8ec08f6ece0d178be" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/66943aa823d438b8ec08f6ece0d178be" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="76943aa823d438b8ec08f6ece0d178bf" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/76943aa823d438b8ec08f6ece0d178bf" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="46943aa823d438b8ec08f6ece0d178bc" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/46943aa823d438b8ec08f6ece0d178bc" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="56943aa823d438b8ec08f6ece0d178bd" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/56943aa823d438b8ec08f6ece0d178bd" type="JDBC_CONNECTION"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-custom-1</l7:Name>
+                        <l7:Id>1f7fc76ab9627653dc51b248e61f3959</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-user-pwd</l7:Name>
+                        <l7:Id>c002ee2db07065e75ef013a8c117fc6f</l7:Id>
+                        <l7:Type>SECURE_PASSWORD</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-custom-2</l7:Name>
+                        <l7:Id>1f7fc76ab9627653dc51b248e61f395a</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jdbc-user-pwd</l7:Name>
+<l7:Id>c002ee2db07065e75ef013a8c117fc6f</l7:Id>
+<l7:Type>SECURE_PASSWORD</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-custom-3</l7:Name>
+                        <l7:Id>1f7fc76ab9627653dc51b248e61f395b</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-default</l7:Name>
+                        <l7:Id>1f7fc76ab9627653dc51b248e61f3958</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-jdbc-connection</l7:Name>
+                        <l7:Id>36943aa823d438b8ec08f6ece0d178bb</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-jdbc-connection-delete-by-input-1</l7:Name>
+                        <l7:Id>66943aa823d438b8ec08f6ece0d178be</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-jdbc-connection-delete-by-input-2</l7:Name>
+                        <l7:Id>76943aa823d438b8ec08f6ece0d178bf</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-other-jdbc-connection</l7:Name>
+                        <l7:Id>46943aa823d438b8ec08f6ece0d178bc</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-sec-jdbc-connection</l7:Name>
+                        <l7:Id>56943aa823d438b8ec08f6ece0d178bd</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

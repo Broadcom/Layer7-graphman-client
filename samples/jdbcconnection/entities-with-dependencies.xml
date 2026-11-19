@@ -1,0 +1,424 @@
+
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>jdbc-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6017a</l7:Id>
+                    <l7:Type>FOLDER</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:21.459Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Folder folderId="0000000000000000ffffffffffffec76" id="72adab14b763f12efb51ebb737d6017a" version="1">
+                            <l7:Name>jdbc-connections</l7:Name>
+                        </l7:Folder>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-1</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6034e</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.066Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="72adab14b763f12efb51ebb737d6034e" version="0">
+                            <l7:Name>jdbc-connection-1</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.microsoft.sqlserver.jdbc.SQLServerDriver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url1</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,nVFXXRTG+KvbFj5oATTy5+U46lSF1YFoIZNbnMg1X1o=$v3zua9rivZlZBjigYPa6Mb2gOn9cSwoBrDSPQRHQ+bf5uDgBSeYVjMZl4a9WAt+MMvPJFtKBVKZEcvwIJJPwUoQ4uOTdrt9MAj9vWQMDJ3bxBN0Z3NhbuwEaMDRYFEe6">$L7C2$1,czjt+7y3Lbj8269jCY9OtF7Iq08/iINLjw2c8tSnFi4=$MiX4wH5P6Kd3TP9gyYxkz2nhykb9bYdF2vXTXVpNjyc2fzWqYcSEzLhZuErtjAXwIwTMSJIneR7DlVgwfYxFaQ==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue></l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-2</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60350</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.067Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="72adab14b763f12efb51ebb737d60350" version="0">
+                            <l7:Name>jdbc-connection-2</l7:Name>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>15</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>3</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>com.mysql.cj.jdbc.Driver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url2</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="Attribute2">
+        <l7:StringValue>Value2</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="c3p0.Attribute1">
+        <l7:StringValue>Value1</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue>${secpass.jdbc-pwd-2.plaintext}</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>user2</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>jdbc-connection-3</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60352</l7:Id>
+                    <l7:Type>JDBC_CONNECTION</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.067Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:JDBCConnection id="72adab14b763f12efb51ebb737d60352" version="0">
+                            <l7:Name>jdbc-connection-3</l7:Name>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:Properties>
+<l7:Property key="maximumPoolSize">
+    <l7:IntegerValue>10</l7:IntegerValue>
+</l7:Property>
+<l7:Property key="minimumPoolSize">
+    <l7:IntegerValue>1</l7:IntegerValue>
+</l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+<l7:DriverClass>oracle.jdbc.OracleDriver</l7:DriverClass>
+<l7:JdbcUrl>jdbc://url3</l7:JdbcUrl>
+<l7:ConnectionProperties>
+    <l7:Property key="Attribute2">
+        <l7:StringValue>Value2</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="EnableCancelTimeout">
+        <l7:StringValue>true</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="c3p0.Attribute1">
+        <l7:StringValue>Value1</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="password">
+        <l7:StringValue bundleKey="$L7C2$9fa1f,nVFXXRTG+KvbFj5oATTy5+U46lSF1YFoIZNbnMg1X1o=$v3zua9rivZlZBjigYPa6Mb2gOn9cSwoBrDSPQRHQ+bf5uDgBSeYVjMZl4a9WAt+MMvPJFtKBVKZEcvwIJJPwUoQ4uOTdrt9MAj9vWQMDJ3bxBN0Z3NhbuwEaMDRYFEe6">$L7C2$1,YTAnjfqQVTF0FsNG990R8KOgq/PYyo4H+2T6J+zTp80=$H0hUbm1RcWge4d2WD99zZO0h3S9xVi9Qns3NCwlHzsVKLfaUVX5DQldNeSUwKk3eb+bfmj/1SikECrHXqMfmng==</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="user">
+        <l7:StringValue>user3</l7:StringValue>
+    </l7:Property>
+</l7:ConnectionProperties>
+                            </l7:Extension>
+                        </l7:JDBCConnection>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d60357</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.070Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="195e28d0-9ddd-4411-b836-42997fea8ffe" id="72adab14b763f12efb51ebb737d60357" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d6017a" guid="195e28d0-9ddd-4411-b836-42997fea8ffe" id="72adab14b763f12efb51ebb737d60357" version="1">
+<l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-jdbc-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-2"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-3"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>policy-with-jdbc-connections</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d6033b</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.073Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Policy guid="e7743987-8540-45f0-b844-c4d1c2f3df0b" id="72adab14b763f12efb51ebb737d6033b" version="1">
+                            <l7:PolicyDetail folderId="72adab14b763f12efb51ebb737d6017a" guid="e7743987-8540-45f0-b844-c4d1c2f3df0b" id="72adab14b763f12efb51ebb737d6033b" version="1">
+<l7:Name>policy-with-jdbc-connections</l7:Name>
+<l7:PolicyType>Include</l7:PolicyType>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="revision">
+        <l7:LongValue>1</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:PolicyDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-jdbc-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-1"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-2"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="195e28d0-9ddd-4411-b836-42997fea8ffe"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-jdbc-connections"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Policy>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>service-with-jdbc-connections</l7:Name>
+                    <l7:Id>5db3a5b3a9b52c23066ea07be5c66b2b</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2026-02-28T08:27:22.081Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="5db3a5b3a9b52c23066ea07be5c66b2b" version="2">
+                            <l7:ServiceDetail folderId="72adab14b763f12efb51ebb737d6017a" id="5db3a5b3a9b52c23066ea07be5c66b2b" version="2">
+<l7:Name>service-with-jdbc-connections</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/service-with-jdbc-connections</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="hasRouting">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>2</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:CommentAssertion&gt;
+            &lt;L7p:Comment stringValue="Policy Fragment: policy-with-jdbc-connections"/&gt;
+        &lt;/L7p:CommentAssertion&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-1"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+        &lt;L7p:JdbcQuery&gt;
+            &lt;L7p:ConnectionName stringValue="jdbc-connection-2"/&gt;
+            &lt;L7p:ConvertVariablesToStrings booleanValue="false"/&gt;
+            &lt;L7p:SqlQuery stringValue="SELECT"/&gt;
+        &lt;/L7p:JdbcQuery&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="195e28d0-9ddd-4411-b836-42997fea8ffe"/&gt;
+            &lt;L7p:PolicyName stringValue="sub-policy-with-jdbc-connections"/&gt;
+        &lt;/L7p:Include&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6017a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6017a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6034e" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d6034e" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60350" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60350" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60352" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60352" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60357" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60357" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6033b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6033b" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66b2b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66b2b" type="SERVICE"/>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6017a</l7:Id>
+                        <l7:Type>FOLDER</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>policy-with-jdbc-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6033b</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60357</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>service-with-jdbc-connections</l7:Name>
+<l7:Id>5db3a5b3a9b52c23066ea07be5c66b2b</l7:Id>
+<l7:Type>SERVICE</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-1</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6034e</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-2</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60350</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>jdbc-connection-3</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60352</l7:Id>
+                        <l7:Type>JDBC_CONNECTION</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d60357</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60350</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-3</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60352</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>policy-with-jdbc-connections</l7:Name>
+                        <l7:Id>72adab14b763f12efb51ebb737d6033b</l7:Id>
+                        <l7:Type>POLICY</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6034e</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60350</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60357</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>service-with-jdbc-connections</l7:Name>
+                        <l7:Id>5db3a5b3a9b52c23066ea07be5c66b2b</l7:Id>
+                        <l7:Type>SERVICE</l7:Type>
+                        <l7:Dependencies>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-1</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d6034e</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>jdbc-connection-2</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60350</l7:Id>
+<l7:Type>JDBC_CONNECTION</l7:Type>
+                            </l7:Dependency>
+                            <l7:Dependency>
+<l7:Name>sub-policy-with-jdbc-connections</l7:Name>
+<l7:Id>72adab14b763f12efb51ebb737d60357</l7:Id>
+<l7:Type>POLICY</l7:Type>
+                            </l7:Dependency>
+                        </l7:Dependencies>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

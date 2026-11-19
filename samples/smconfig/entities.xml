@@ -1,0 +1,265 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>siteminder-password</l7:Name>
+                    <l7:Id>26c008c30b117ce17a4fec839e968552</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:55:56.665Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:StoredPassword id="26c008c30b117ce17a4fec839e968552" version="0">
+                            <l7:Name>siteminder-password</l7:Name>
+                            <l7:Password bundleKey="$L7C2$9fa1f,2fEW0fzS6yy4TxkUYZF7544lUzDs0X9r9eGYj3a/o7A=$FC4dquQF1Y7nlDkbJDekp3iv8+QHisoDws7K2ymr0kbJ4Vx5v8b0+vkWgI48Hl1+DJxQYSryLNXMqj6I+Y3sRgvd9bi468Zgm7IN8r/cTI2aT9C22uRSCVR6ghoodnCz">$L7C2$1,qAR2PMrE9edkQ5mtI/ONF8g7P9yZl9SFiIV0a5c8pG4=$aUxkRUQR+BNzpIlmV8hfGc1ws3KdoY0pJkXWOajNpI6ogFRCwmj2J9ISNP4Q2jHe4bdg+UIjAIo/ZJuClWtk+w==</l7:Password>
+                            <l7:Properties>
+                                <l7:Property key="description">
+                                    <l7:StringValue></l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="lastUpdated">
+                                    <l7:DateValue>2026-02-08T00:49:13.609Z</l7:DateValue>
+                                </l7:Property>
+                                <l7:Property key="type">
+                                    <l7:StringValue>Password</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="usageFromVariable">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:StoredPassword>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-siteminder-config</l7:Name>
+                    <l7:Id>26c008c30b117ce17a4fec839e968557</l7:Id>
+                    <l7:Type>SITEMINDER_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:55:56.666Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:SiteMinderConfiguration id="26c008c30b117ce17a4fec839e968557" version="1">
+                            <l7:Name>some-siteminder-config</l7:Name>
+                            <l7:Address>127.0.0.1</l7:Address>
+                            <l7:Hostname>ssg94-test</l7:Hostname>
+                            <l7:HostConfiguration>DefaultHostSettings</l7:HostConfiguration>
+                            <l7:UserName>siteminder</l7:UserName>
+                            <l7:PasswordId>26c008c30b117ce17a4fec839e968552</l7:PasswordId>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:FipsMode>1</l7:FipsMode>
+                            <l7:IpCheck>false</l7:IpCheck>
+                            <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
+                            <l7:ClusterThreshold>50</l7:ClusterThreshold>
+                            <l7:NonClusterFailover>false</l7:NonClusterFailover>
+                            <l7:Secret bundleKey="$L7C2$9fa1f,1mkfm53mK5lvVow17nxjoHg6w5jhLbQfQ/CWxn5dYEA=$JTVLVZq8yGVf/TLZWVl/SslpznbJ3UfflEDgNfBIZjjN/Y+R3NJ0ghOl2SBDbUjt8R6ZK/SnJvBH7i5ji6u6qn2shRqw1fphK5H0DLj+JRA9rek2iP2I+YJ/pU/oREEg">$L7C2$1,0cFrKqGZkAzk488iPCx+MIyPasOWLuqZQ/n86lSHGcs=$XT4hqoy3ruP62FG4I/jqO2Fg5cCr7bc8cgqYz1jEEqhBQZ9D6u2b6NK99ko5SGGkoFutrfBBLl8U3EgJJLs0OvzUYRBqmjfQkxs+PHj1+6eP67m1Wbhw4axYWYkakMZD+e+Taap42k6YQym+vEgluQWpTT31Rgm5j92Iw7lJJ2SkooIyusf6bbGCTwU0JDjhlo0X7OwZB1XStZgjfeWOHUJKcjhTAEWMSfNi0dZy0IoPJHdXFF+RQ0GYl2WgfKh+07hbDrjkS4ox5Pc1BTUYe+6NCys7h/wb/3sKg25yfZ58LMiMwmfWWISv9MdXM0T/HHoNjhu144erncgQCEf7Og==</l7:Secret>
+                            <l7:Properties>
+                                <l7:Property key="server.0.0.accounting.port">
+                                    <l7:StringValue>44441</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.address">
+                                    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authentication.port">
+                                    <l7:StringValue>44442</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authorization.port">
+                                    <l7:StringValue>44443</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.max">
+                                    <l7:StringValue>3</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.min">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.step">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.timeout">
+                                    <l7:StringValue>60</l7:StringValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:SiteMinderConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-other-siteminder-config</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f76d</l7:Id>
+                    <l7:Type>SITEMINDER_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:55:56.666Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:SiteMinderConfiguration id="72adab14b763f12efb51ebb737d5f76d" version="0">
+                            <l7:Name>some-other-siteminder-config</l7:Name>
+                            <l7:Address>1.2.3.4</l7:Address>
+                            <l7:Hostname>ssg94-test-some-other</l7:Hostname>
+                            <l7:HostConfiguration>DefaultHostSettings</l7:HostConfiguration>
+                            <l7:UserName>siteminder</l7:UserName>
+                            <l7:PasswordId>26c008c30b117ce17a4fec839e968552</l7:PasswordId>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:FipsMode>3</l7:FipsMode>
+                            <l7:IpCheck>true</l7:IpCheck>
+                            <l7:UpdateSsoToken>true</l7:UpdateSsoToken>
+                            <l7:ClusterThreshold>75</l7:ClusterThreshold>
+                            <l7:NonClusterFailover>true</l7:NonClusterFailover>
+                            <l7:Secret bundleKey="$L7C2$9fa1f,1mkfm53mK5lvVow17nxjoHg6w5jhLbQfQ/CWxn5dYEA=$JTVLVZq8yGVf/TLZWVl/SslpznbJ3UfflEDgNfBIZjjN/Y+R3NJ0ghOl2SBDbUjt8R6ZK/SnJvBH7i5ji6u6qn2shRqw1fphK5H0DLj+JRA9rek2iP2I+YJ/pU/oREEg">$L7C2$1,0cFrKqGZkAzk488iPCx+MIyPasOWLuqZQ/n86lSHGcs=$XT4hqoy3ruP62FG4I/jqO2Fg5cCr7bc8cgqYz1jEEqhBQZ9D6u2b6NK99ko5SGGkoFutrfBBLl8U3EgJJLs0OvzUYRBqmjfQkxs+PHj1+6eP67m1Wbhw4axYWYkakMZD+e+Taap42k6YQym+vEgluQWpTT31Rgm5j92Iw7lJJ2SkooIyusf6bbGCTwU0JDjhlo0X7OwZB1XStZgjfeWOHUJKcjhTAEWMSfNi0dZy0IoPJHdXFF+RQ0GYl2WgfKh+07hbDrjkS4ox5Pc1BTUYe+6NCys7h/wb/3sKg25yfZ58LMiMwmfWWISv9MdXM0T/HHoNjhu144erncgQCEf7Og==</l7:Secret>
+                            <l7:Properties>
+                                <l7:Property key="server.0.0.accounting.port">
+                                    <l7:StringValue>44441</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.address">
+                                    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authentication.port">
+                                    <l7:StringValue>44442</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authorization.port">
+                                    <l7:StringValue>44443</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.max">
+                                    <l7:StringValue>3</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.min">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.step">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.timeout">
+                                    <l7:StringValue>60</l7:StringValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:SiteMinderConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-disabled-siteminder-config</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f770</l7:Id>
+                    <l7:Type>SITEMINDER_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-02-08T00:55:56.666Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:SiteMinderConfiguration id="72adab14b763f12efb51ebb737d5f770" version="0">
+                            <l7:Name>some-disabled-siteminder-config</l7:Name>
+                            <l7:Address>127.0.0.1</l7:Address>
+                            <l7:Hostname>ssg94-test</l7:Hostname>
+                            <l7:HostConfiguration>DefaultHostSettings</l7:HostConfiguration>
+                            <l7:UserName>siteminder</l7:UserName>
+                            <l7:PasswordId>26c008c30b117ce17a4fec839e968552</l7:PasswordId>
+                            <l7:Enabled>false</l7:Enabled>
+                            <l7:FipsMode>1</l7:FipsMode>
+                            <l7:IpCheck>false</l7:IpCheck>
+                            <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
+                            <l7:ClusterThreshold>50</l7:ClusterThreshold>
+                            <l7:NonClusterFailover>false</l7:NonClusterFailover>
+                            <l7:Secret bundleKey="$L7C2$9fa1f,1mkfm53mK5lvVow17nxjoHg6w5jhLbQfQ/CWxn5dYEA=$JTVLVZq8yGVf/TLZWVl/SslpznbJ3UfflEDgNfBIZjjN/Y+R3NJ0ghOl2SBDbUjt8R6ZK/SnJvBH7i5ji6u6qn2shRqw1fphK5H0DLj+JRA9rek2iP2I+YJ/pU/oREEg">$L7C2$1,0cFrKqGZkAzk488iPCx+MIyPasOWLuqZQ/n86lSHGcs=$XT4hqoy3ruP62FG4I/jqO2Fg5cCr7bc8cgqYz1jEEqhBQZ9D6u2b6NK99ko5SGGkoFutrfBBLl8U3EgJJLs0OvzUYRBqmjfQkxs+PHj1+6eP67m1Wbhw4axYWYkakMZD+e+Taap42k6YQym+vEgluQWpTT31Rgm5j92Iw7lJJ2SkooIyusf6bbGCTwU0JDjhlo0X7OwZB1XStZgjfeWOHUJKcjhTAEWMSfNi0dZy0IoPJHdXFF+RQ0GYl2WgfKh+07hbDrjkS4ox5Pc1BTUYe+6NCys7h/wb/3sKg25yfZ58LMiMwmfWWISv9MdXM0T/HHoNjhu144erncgQCEf7Og==</l7:Secret>
+                            <l7:Properties>
+                                <l7:Property key="server.0.0.accounting.port">
+                                    <l7:StringValue>44441</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.address">
+                                    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authentication.port">
+                                    <l7:StringValue>44442</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authorization.port">
+                                    <l7:StringValue>44443</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.max">
+                                    <l7:StringValue>3</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.min">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.connection.step">
+                                    <l7:StringValue>1</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.timeout">
+                                    <l7:StringValue>60</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.1.1.account.port">
+                                    <l7:StringValue>12345</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.1.1.timeout">
+                                    <l7:StringValue>123</l7:StringValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:SiteMinderConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-plainpwd-siteminder-config</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f880</l7:Id>
+                    <l7:Type>SITEMINDER_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-03-16T00:00:00.000Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:SiteMinderConfiguration id="72adab14b763f12efb51ebb737d5f880" version="0">
+                            <l7:Name>some-plainpwd-siteminder-config</l7:Name>
+                            <l7:Address>127.0.0.1</l7:Address>
+                            <l7:Hostname>ssg94-plainpwd</l7:Hostname>
+                            <l7:HostConfiguration>DefaultHostSettings</l7:HostConfiguration>
+                            <l7:UserName>siteminder</l7:UserName>
+                            <l7:PasswordId>26c008c30b117ce17a4fec839e968552</l7:PasswordId>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:FipsMode>1</l7:FipsMode>
+                            <l7:IpCheck>false</l7:IpCheck>
+                            <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
+                            <l7:ClusterThreshold>50</l7:ClusterThreshold>
+                            <l7:NonClusterFailover>false</l7:NonClusterFailover>
+                            <l7:Secret>sm-agent-secret</l7:Secret>
+                            <l7:Properties>
+                                <l7:Property key="server.0.0.accounting.port">
+                                    <l7:StringValue>44441</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.address">
+                                    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authentication.port">
+                                    <l7:StringValue>44442</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authorization.port">
+                                    <l7:StringValue>44443</l7:StringValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:SiteMinderConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-secpass-siteminder-config</l7:Name>
+                    <l7:Id>72adab14b763f12efb51ebb737d5f881</l7:Id>
+                    <l7:Type>SITEMINDER_CONFIGURATION</l7:Type>
+                    <l7:TimeStamp>2026-03-16T00:00:00.000Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:SiteMinderConfiguration id="72adab14b763f12efb51ebb737d5f881" version="0">
+                            <l7:Name>some-secpass-siteminder-config</l7:Name>
+                            <l7:Address>127.0.0.1</l7:Address>
+                            <l7:Hostname>ssg94-secpass</l7:Hostname>
+                            <l7:HostConfiguration>DefaultHostSettings</l7:HostConfiguration>
+                            <l7:UserName>siteminder</l7:UserName>
+                            <l7:PasswordId>26c008c30b117ce17a4fec839e968552</l7:PasswordId>
+                            <l7:Enabled>true</l7:Enabled>
+                            <l7:FipsMode>1</l7:FipsMode>
+                            <l7:IpCheck>false</l7:IpCheck>
+                            <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
+                            <l7:ClusterThreshold>50</l7:ClusterThreshold>
+                            <l7:NonClusterFailover>false</l7:NonClusterFailover>
+                            <l7:Secret>${secpass.siteminder-secpass.plaintext}</l7:Secret>
+                            <l7:Properties>
+                                <l7:Property key="server.0.0.accounting.port">
+                                    <l7:StringValue>44441</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.address">
+                                    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authentication.port">
+                                    <l7:StringValue>44442</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="server.0.0.authorization.port">
+                                    <l7:StringValue>44443</l7:StringValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:SiteMinderConfiguration>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968552" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/passwords/26c008c30b117ce17a4fec839e968552" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968557" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/siteMinderConfigurations/26c008c30b117ce17a4fec839e968557" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f76d" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f76d" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f770" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f770" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f880" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f881" type="SITEMINDER_CONFIGURATION"/>
+            </l7:Mappings>
+</l7:Bundle>

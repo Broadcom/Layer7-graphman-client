@@ -24,7 +24,7 @@ This document describes how to run and write tests for the Graphman Client.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Layer7-Community/graphman-client.git
+git clone https://github.com/Broadcom/Layer7-graphman-client.git
 cd graphman-client
 ```
 
@@ -454,7 +454,7 @@ For detailed information about test reporting, see:
 ## Additional Resources
 
 - [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [Graphman Wiki](https://github.com/Layer7-Community/graphman-client/wiki)
+- [Graphman Wiki](https://github.com/Broadcom/Layer7-graphman-client/wiki)
 - [Node.js Testing Best Practices](https://github.com/goldbergyoni/nodebestpractices#-testing-and-overall-quality-practices)
 
 ## Contributing
@@ -469,6 +469,6 @@ When adding new features:
 ## Support
 
 For issues or questions:
-- Open an issue on [GitHub](https://github.com/Layer7-Community/graphman-client/issues)
-- Check the [Wiki](https://github.com/Layer7-Community/graphman-client/wiki)
+- Open an issue on [GitHub](https://github.com/Broadcom/Layer7-graphman-client/issues)
+- Check the [Wiki](https://github.com/Broadcom/Layer7-graphman-client/wiki)
 

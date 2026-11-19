@@ -1,0 +1,445 @@
+<!-- AI assistance has been used to generate some or all contents of this file. That includes, but is not limited to, new code, modifying existing code, stylistic edits. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some_log_sink_A</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10908ac</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2023-09-04T12:13:56.211+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10908ac" version="7">
+                    <l7:Name>some_ssg_log_A</l7:Name>
+                    <l7:Description>some description_A</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>127.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_log_sink_B</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10908ab</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2023-09-04T12:13:56.211+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10908ab" version="7">
+                    <l7:Name>some_ssg_log_B</l7:Name>
+                    <l7:Description>some description_B</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>128.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_log_sink_C</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10909bc</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2023-09-04T12:13:56.211+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10909bc" version="7">
+                    <l7:Name>some_ssg_log_C</l7:Name>
+                    <l7:Description>some description_C</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>false</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>128.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_log_sink_delete_by_input_1</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10910ac</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10910ac" version="0">
+                    <l7:Name>some_ssg_log_delete_by_input_1</l7:Name>
+                    <l7:Description>some description_delete_by_input_1</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>127.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_log_sink_delete_by_goid</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10912ac</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10912ac" version="0">
+                    <l7:Name>some_ssg_log_delete_by_goid</l7:Name>
+                    <l7:Description>some description_delete_by_goid</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>127.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some_log_sink_delete_by_input_2</l7:Name>
+            <l7:Id>c94b394a7883682d4fb1cf8fa10911ac</l7:Id>
+            <l7:Type>LOG_SINK</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:LogSink id="c94b394a7883682d4fb1cf8fa10911ac" version="0">
+                    <l7:Name>some_ssg_log_delete_by_input_2</l7:Name>
+                    <l7:Description>some description_delete_by_input_2</l7:Description>
+                    <l7:Type>SYSLOG</l7:Type>
+                    <l7:Categories>
+                        <l7:Category>AUDIT</l7:Category>
+                        <l7:Category>LOG</l7:Category>
+                    </l7:Categories>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Severity>INFO</l7:Severity>
+                    <l7:SyslogHosts>
+                        <l7:StringValue>127.0.0.1:9008</l7:StringValue>
+                    </l7:SyslogHosts>
+                    <l7:Filters>
+                        <l7:Filter>
+                            <l7:Type>client-ip</l7:Type>
+                            <l7:Values>10.1.2.3</l7:Values>
+                        </l7:Filter>
+                    </l7:Filters>
+                    <l7:Properties>
+                        <l7:Property key="file.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.interval">
+                            <l7:StringValue>HOURLY</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="file.rolling">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.charSet">
+                            <l7:StringValue>UTF-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.facility">
+                            <l7:StringValue>1</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.format">
+                            <l7:StringValue>STANDARD</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.logHostname">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.protocol">
+                            <l7:StringValue>TCP</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.clientAuth">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.key.alias">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.ssl.keystore.id">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                        <l7:Property key="syslog.timezone">
+                            <l7:Value>
+                                <l7:Item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            </l7:Value>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:LogSink>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10908ab" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10908ab" type="LOG_SINK"/>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10908ac" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10908ac" type="LOG_SINK"/>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10909bc" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10909bc" type="LOG_SINK"/>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10910ac" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10910ac" type="LOG_SINK"/>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10911ac" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10911ac" type="LOG_SINK"/>
+        <l7:Mapping action="NewOrExisting" srcId="c94b394a7883682d4fb1cf8fa10912ac" srcUri="https://127.0.0.1:8443/restman/1.0/logSinks/c94b394a7883682d4fb1cf8fa10912ac" type="LOG_SINK"/>
+    </l7:Mappings>
+</l7:Bundle>

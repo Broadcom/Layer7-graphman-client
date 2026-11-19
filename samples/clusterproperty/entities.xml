@@ -1,0 +1,179 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>delete-by-goid-cwp</l7:Name>
+                    <l7:Id>f09e10c4716574e06d1b6c012951df03</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.921Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df03" version="0">
+                            <l7:Name>delete-by-goid-cwp</l7:Name>
+                            <l7:Value>some-value</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>delete-by-input-cwp-1</l7:Name>
+                    <l7:Id>f09e10c4716574e06d1b6c012951df01</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.921Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df01" version="0">
+                            <l7:Name>delete-by-input-cwp-1</l7:Name>
+                            <l7:Value>some-value</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>delete-by-input-cwp-2</l7:Name>
+                    <l7:Id>f09e10c4716574e06d1b6c012951df02</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.921Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951df02" version="0">
+                            <l7:Name>delete-by-input-cwp-2</l7:Name>
+                            <l7:Value>some-value</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>multiline-cwp</l7:Name>
+                    <l7:Id>f09e10c4716574e06d1b6c012951de8c</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.921Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="f09e10c4716574e06d1b6c012951de8c" version="0">
+                            <l7:Name>multiline-cwp</l7:Name>
+                            <l7:Value>hello,world!</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-cwp</l7:Name>
+                    <l7:Id>90fad4db3a40b94ce88a9c4650d447fb</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.922Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="90fad4db3a40b94ce88a9c4650d447fb" version="0">
+                            <l7:Name>some-cwp</l7:Name>
+                            <l7:Value>some-value</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-cwp-by-name</l7:Name>
+                    <l7:Id>90fad4db3a40b94ce88a9c4650d44801</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.922Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="90fad4db3a40b94ce88a9c4650d44801" version="0">
+                            <l7:Name>some-cwp-by-name</l7:Name>
+                            <l7:Value>some-value-by-name</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>some-other-cwp</l7:Name>
+                    <l7:Id>90fad4db3a40b94ce88a9c4650d447fd</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    <l7:TimeStamp>2026-09-30T02:25:39.922Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:ClusterProperty id="90fad4db3a40b94ce88a9c4650d447fd" version="0">
+                            <l7:Name>some-other-cwp</l7:Name>
+                            <l7:Value>some-other-value</l7:Value>
+                        </l7:ClusterProperty>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df03" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df03" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df01" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df01" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df02" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df02" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951de8c" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951de8c" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fb" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fb" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d44801" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d44801" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fd" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fd" type="CLUSTER_PROPERTY">
+                    <l7:Properties>
+                        <l7:Property key="MapBy">
+                            <l7:StringValue>name</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+            </l7:Mappings>
+            <l7:DependencyGraph>
+                <l7:Dependencies>
+                    <l7:Dependency>
+                        <l7:Name>delete-by-goid-cwp</l7:Name>
+                        <l7:Id>f09e10c4716574e06d1b6c012951df03</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>delete-by-input-cwp-1</l7:Name>
+                        <l7:Id>f09e10c4716574e06d1b6c012951df01</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>delete-by-input-cwp-2</l7:Name>
+                        <l7:Id>f09e10c4716574e06d1b6c012951df02</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>multiline-cwp</l7:Name>
+                        <l7:Id>f09e10c4716574e06d1b6c012951de8c</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-cwp</l7:Name>
+                        <l7:Id>90fad4db3a40b94ce88a9c4650d447fb</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-cwp-by-name</l7:Name>
+                        <l7:Id>90fad4db3a40b94ce88a9c4650d44801</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                    <l7:Dependency>
+                        <l7:Name>some-other-cwp</l7:Name>
+                        <l7:Id>90fad4db3a40b94ce88a9c4650d447fd</l7:Id>
+                        <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                    </l7:Dependency>
+                </l7:Dependencies>
+                <l7:MissingDependencies/>
+            </l7:DependencyGraph>
+</l7:Bundle>

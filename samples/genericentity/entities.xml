@@ -1,0 +1,472 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-generic-key</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f517</l7:Id>
+            <l7:Type>TRUSTED_CERT</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:44.741+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:TrustedCertificate id="49e3688fc78812fe6efb9b071fc8f517" version="0">
+                    <l7:Name>some-generic-key</l7:Name>
+                    <l7:CertificateData>
+                        <l7:IssuerName>CN%3Dsome-generic-key</l7:IssuerName>
+                        <l7:SerialNumber>17202289313062356451</l7:SerialNumber>
+                        <l7:SubjectName>CN%3Dsome-generic-key</l7:SubjectName>
+                        <l7:Encoded>MIIC+zCCAeOgAwIBAgIJAO66zv0UlIXjMA0GCSqGSIb3DQEBDAUAMBsxGTAXBgNVBAMTEHNvbWUtZ2VuZXJpYy1rZXkwHhcNMjQwNzA1MDg0NjIxWhcNMjkwNzA0MDg0NjIxWjAbMRkwFwYDVQQDExBzb21lLWdlbmVyaWMta2V5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmGP9JpF0ID1eNThBeeumrb4rKDTHItK6LEtWjesub/xXD24nfZWrf1sRFpsboyQWhBXkE/xzIoexQJUDrYAXuM1wNvViCvmVPVG8KNIMQvs6wfzdYhbbTm7u6oVYMg23g9kAMIJ/nPlQBamgeeFn8Gh0084epWj6Bou9IaX4o9T3UjSlGKJMyAdycJwpEYhOrArB+jELZnWzZ9iA7G0Lhn1KZQX88Vwtw+9UdUujlduzRYqX4QWEs5nLfZPV2qKMFjA1H9B+jS5dklEOtGjACfBHKKD/bkfvauG4EQWkQn4C1VRFQRZOajsQvjAzRZqoetCVwqRzKmAb/SYwZcFM2QIDAQABo0IwQDAdBgNVHQ4EFgQUNve22Hhv3VFk0VKIOzaURLf8z0UwHwYDVR0jBBgwFoAUNve22Hhv3VFk0VKIOzaURLf8z0UwDQYJKoZIhvcNAQEMBQADggEBAEaEDEwmu3FizIszfW0S3q8rcWTSGWAQSZrcVE73CLKdW/DZqTBwltH6vG8PIkg/76kFQfDYmH8XJQu3VqGyfJAo1yKmnuhz4pJgn0L+vjGtFE5ezB14rcWGHCbNRrvl/mRPPazfqPUKy9xLthApwT3Q+Qrs2VbUiz1gG8+D3HYSJC6NOg0r9mXqlZp0rt4t0ZiWq6qD4WFoBeRjd4J1CLSUp3lIW6V04nXl5zcffiCfn9bf83DauI8HOiHj8qcXa04Rj87l49zj/j3kW8AO+jc1IBjI6AP/kDQKKN5HmyghcobEq0b074dTk5Vb2LtHwWsBiOgr5X/PA+zbs7bC+MQ=</l7:Encoded>
+                    </l7:CertificateData>
+                    <l7:Properties>
+                        <l7:Property key="revocationCheckingEnabled">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustAnchor">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlAttestingEntity">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedAsSamlIssuer">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningClientCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSigningServerCerts">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="trustedForSsl">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="verifyHostname">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:TrustedCertificate>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-websocket-conn-inbound</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f51b</l7:Id>
+            <l7:Type>GENERIC</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:44.755+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:GenericEntity id="49e3688fc78812fe6efb9b071fc8f51b" version="0">
+                    <l7:Name>some-generic-websocket-conn-inbound</l7:Name>
+                    <l7:Description>some generic websocke conn inbound</l7:Description>
+                    <l7:EntityClassName>com.l7tech.external.assertions.websocket.WebSocketConnectionEntity</l7:EntityClassName>
+                    <l7:Enabled>false</l7:Enabled>
+                    <l7:ValueXml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                        &lt;java version=&quot;17.0.5&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.external.assertions.websocket.WebSocketConnectionEntity&quot; id=&quot;WebSocketConnectionEntity0&quot;&gt;
+                        &lt;void property=&quot;connectionPolicyGOID&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;description&quot;&gt;
+                        &lt;string&gt;some generic websocke conn inbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;enabled&quot;&gt;
+                        &lt;boolean&gt;false&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundClientAuth&quot;&gt;
+                        &lt;object class=&quot;java.lang.Enum&quot; method=&quot;valueOf&quot;&gt;
+                        &lt;class&gt;com.l7tech.external.assertions.websocket.WebSocketConnectionEntity$ClientAuthType&lt;/class&gt;
+                        &lt;string&gt;OPTIONAL&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundListenPort&quot;&gt;
+                        &lt;int&gt;1234&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundMaxConnections&quot;&gt;
+                        &lt;int&gt;30&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundMaxIdleTime&quot;&gt;
+                        &lt;int&gt;3000&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;void id=&quot;Goid0&quot; property=&quot;goid&quot;/&gt;
+                        &lt;void property=&quot;inboundPolicyOID&quot;&gt;
+                        &lt;object idref=&quot;Goid0&quot;/&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundPrivateKeyAlias&quot;&gt;
+                        &lt;string&gt;some-generic-key&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundPrivateKeyId&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;00000000000000000000000000000002&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundSsl&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundTlsProtocols&quot;&gt;
+                        &lt;array class=&quot;java.lang.String&quot; length=&quot;2&quot;&gt;
+                        &lt;void index=&quot;0&quot;&gt;
+                        &lt;string&gt;TLSv1.3&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void index=&quot;1&quot;&gt;
+                        &lt;string&gt;TLSv1.2&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/array&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;name&quot;&gt;
+                        &lt;string&gt;some-generic-websocket-conn-inbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundConnectionPolicyId&quot;&gt;
+                        &lt;object idref=&quot;Goid0&quot;/&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundPolicyOID&quot;&gt;
+                        &lt;object idref=&quot;Goid0&quot;/&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundPrivateKeyId&quot;&gt;
+                        &lt;object idref=&quot;Goid0&quot;/&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundUrl&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;removePortFlag&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;valueXml&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/object&gt;
+                        &lt;/java&gt;
+                    </l7:ValueXml>
+                </l7:GenericEntity>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-xmpp-conn-inbound</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f521</l7:Id>
+            <l7:Type>GENERIC</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:44.771+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:GenericEntity id="49e3688fc78812fe6efb9b071fc8f521" version="0">
+                    <l7:Name>some-generic-xmpp-conn-inbound</l7:Name>
+                    <l7:EntityClassName>com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity</l7:EntityClassName>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:ValueXml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                        &lt;java version=&quot;17.0.5&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity&quot;&gt;
+                        &lt;void property=&quot;bindAddress&quot;&gt;
+                        &lt;string&gt;127.0.0.1&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;legacySsl&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;messageReceivedServiceOid&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;name&quot;&gt;
+                        &lt;string&gt;some-generic-xmpp-conn-inbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;sessionTerminatedServiceOid&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;valueXml&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/object&gt;
+                        &lt;/java&gt;
+                    </l7:ValueXml>
+                </l7:GenericEntity>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-pwd</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f510</l7:Id>
+            <l7:Type>SECURE_PASSWORD</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.173+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:StoredPassword id="49e3688fc78812fe6efb9b071fc8f510" version="2">
+                    <l7:Name>some-generic-pwd</l7:Name>
+                    <l7:Password bundleKey="$L7C2$9fa1f,VEwI07xxhVd9Ati22Su9LinGa+Vji9N6BFf9hcENPyg=$hFmx5myicdVRF3oVp3u+CYbuRN/Cl3IPV3M5logrNZMoHbwVyYtlfCSzdDyDD2eUs309xWU5DUmKVAs1dNus94m6QBIiiag36OLZcV7YnvH9eEpg94HVMX4io8O/3ImT">$L7C2$1,gO199H8iAiOO5OiHfF/VYDNCGj0LKYRmQUrtJ2kG71k=$+Rpoyq0TfhZlDHmTYwMl+U9W3sCHzXq9moM51uEIl/9I8zv5ozKB8JZXwtvdWWqTL+uzLffFcXhIQlcPgrNe4w==</l7:Password>
+                    <l7:Properties>
+                        <l7:Property key="description">
+                            <l7:StringValue>some generic password</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="lastUpdated">
+                            <l7:DateValue>2024-07-05T15:14:57.410+05:30</l7:DateValue>
+                        </l7:Property>
+                        <l7:Property key="type">
+                            <l7:StringValue>Password</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="usageFromVariable">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:StoredPassword>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-http2-client-config</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f513</l7:Id>
+            <l7:Type>GENERIC</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.183+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:GenericEntity id="49e3688fc78812fe6efb9b071fc8f513" version="1">
+                    <l7:Name>some-generic-http2-client-config</l7:Name>
+                    <l7:Description>some generic http2 client config</l7:Description>
+                    <l7:EntityClassName>com.l7tech.external.assertions.http2.routing.model.Http2ClientConfigurationEntity</l7:EntityClassName>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:ValueXml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                        &lt;java version=&quot;17.0.5&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.external.assertions.http2.routing.model.Http2ClientConfigurationEntity&quot;&gt;
+                        &lt;void property=&quot;description&quot;&gt;
+                        &lt;string&gt;some generic http2 client config&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;followRedirects&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;id&quot;&gt;
+                        &lt;string&gt;49e3688fc78812fe6efb9b071fc8f513&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;name&quot;&gt;
+                        &lt;string&gt;some-generic-http2-client-config&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;proxyHost&quot;&gt;
+                        &lt;string&gt;some-generic-host&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;proxyPasswordGoid&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;49e3688fc78812fe6efb9b071fc8f510&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;proxyPort&quot;&gt;
+                        &lt;int&gt;1234&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;proxyUsername&quot;&gt;
+                        &lt;string&gt;some-generic-user&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;tlsTrustedCertGoids&quot;&gt;
+                        &lt;array class=&quot;com.l7tech.objectmodel.Goid&quot; length=&quot;1&quot;&gt;
+                        &lt;void index=&quot;0&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;49e3688fc78812fe6efb9b071fc8f517&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;/array&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;tlsTrustedCertNames&quot;&gt;
+                        &lt;array class=&quot;java.lang.String&quot; length=&quot;1&quot;&gt;
+                        &lt;void index=&quot;0&quot;&gt;
+                        &lt;string&gt;some-generic-key&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/array&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;tlsVersion&quot;&gt;
+                        &lt;string&gt;TLSv1.3&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;valueXml&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/object&gt;
+                        &lt;/java&gt;
+                    </l7:ValueXml>
+                </l7:GenericEntity>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-websocket-conn-outbound</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f51d</l7:Id>
+            <l7:Type>GENERIC</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.194+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:GenericEntity id="49e3688fc78812fe6efb9b071fc8f51d" version="2">
+                    <l7:Name>some-generic-websocket-conn-outbound</l7:Name>
+                    <l7:Description>some generic websocket conn outbound</l7:Description>
+                    <l7:EntityClassName>com.l7tech.external.assertions.websocket.WebSocketConnectionEntity</l7:EntityClassName>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:ValueXml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                        &lt;java version=&quot;17.0.5&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.external.assertions.websocket.WebSocketConnectionEntity&quot;&gt;
+                        &lt;void property=&quot;connectionPolicyGOID&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot; id=&quot;Goid0&quot;&gt;
+                        &lt;string&gt;0000000000000000ffffffffffffffff&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;description&quot;&gt;
+                        &lt;string&gt;some generic websocket conn outbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;id&quot;&gt;
+                        &lt;string&gt;49e3688fc78812fe6efb9b071fc8f51d&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inboundPolicyOID&quot;&gt;
+                        &lt;object idref=&quot;Goid0&quot;/&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;name&quot;&gt;
+                        &lt;string&gt;some-generic-websocket-conn-outbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundClientAuthentication&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundConnectionPolicyId&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundMaxIdleTime&quot;&gt;
+                        &lt;int&gt;3000&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundOnly&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundPolicyOID&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundPrivateKeyAlias&quot;&gt;
+                        &lt;string&gt;some-generic-key&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundPrivateKeyId&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;00000000000000000000000000000002&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundSsl&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundTlsProtocols&quot;&gt;
+                        &lt;array class=&quot;java.lang.String&quot; length=&quot;2&quot;&gt;
+                        &lt;void index=&quot;0&quot;&gt;
+                        &lt;string&gt;TLSv1.3&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void index=&quot;1&quot;&gt;
+                        &lt;string&gt;TLSv1.2&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/array&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;outboundUrl&quot;&gt;
+                        &lt;string&gt;some-generic-host&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;valueXml&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;version&quot;&gt;
+                        &lt;int&gt;1&lt;/int&gt;
+                        &lt;/void&gt;
+                        &lt;/object&gt;
+                        &lt;/java&gt;
+                    </l7:ValueXml>
+                </l7:GenericEntity>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-xmpp-conn-outbound</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f525</l7:Id>
+            <l7:Type>GENERIC</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.205+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:GenericEntity id="49e3688fc78812fe6efb9b071fc8f525" version="0">
+                    <l7:Name>some-generic-xmpp-conn-outbound</l7:Name>
+                    <l7:EntityClassName>com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity</l7:EntityClassName>
+                    <l7:Enabled>false</l7:Enabled>
+                    <l7:ValueXml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+                        &lt;java version=&quot;17.0.5&quot; class=&quot;java.beans.XMLDecoder&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.external.assertions.xmppassertion.XMPPConnectionEntity&quot;&gt;
+                        &lt;void property=&quot;enabled&quot;&gt;
+                        &lt;boolean&gt;false&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;hostname&quot;&gt;
+                        &lt;string&gt;some-generic-host&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;inbound&quot;&gt;
+                        &lt;boolean&gt;false&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;legacySsl&quot;&gt;
+                        &lt;boolean&gt;true&lt;/boolean&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;messageReceivedServiceOid&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;name&quot;&gt;
+                        &lt;string&gt;some-generic-xmpp-conn-outbound&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;sessionTerminatedServiceOid&quot;&gt;
+                        &lt;object class=&quot;com.l7tech.objectmodel.Goid&quot;&gt;
+                        &lt;string&gt;beae98430fec7d7792743dd5a1772e5e&lt;/string&gt;
+                        &lt;/object&gt;
+                        &lt;/void&gt;
+                        &lt;void property=&quot;valueXml&quot;&gt;
+                        &lt;string&gt;&lt;/string&gt;
+                        &lt;/void&gt;
+                        &lt;/object&gt;
+                        &lt;/java&gt;
+                    </l7:ValueXml>
+                </l7:GenericEntity>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-generic-key</l7:Name>
+            <l7:Id>00000000000000000000000000000002:some-generic-key</l7:Id>
+            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.256+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:PrivateKey alias="some-generic-key" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:some-generic-key">
+                    <l7:CertificateChain>
+                        <l7:CertificateData>
+                            <l7:IssuerName>CN%3Dsome-generic-key</l7:IssuerName>
+                            <l7:SerialNumber>17202289313062356451</l7:SerialNumber>
+                            <l7:SubjectName>CN%3Dsome-generic-key</l7:SubjectName>
+                            <l7:Encoded>MIIC+zCCAeOgAwIBAgIJAO66zv0UlIXjMA0GCSqGSIb3DQEBDAUAMBsxGTAXBgNVBAMTEHNvbWUtZ2VuZXJpYy1rZXkwHhcNMjQwNzA1MDg0NjIxWhcNMjkwNzA0MDg0NjIxWjAbMRkwFwYDVQQDExBzb21lLWdlbmVyaWMta2V5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmGP9JpF0ID1eNThBeeumrb4rKDTHItK6LEtWjesub/xXD24nfZWrf1sRFpsboyQWhBXkE/xzIoexQJUDrYAXuM1wNvViCvmVPVG8KNIMQvs6wfzdYhbbTm7u6oVYMg23g9kAMIJ/nPlQBamgeeFn8Gh0084epWj6Bou9IaX4o9T3UjSlGKJMyAdycJwpEYhOrArB+jELZnWzZ9iA7G0Lhn1KZQX88Vwtw+9UdUujlduzRYqX4QWEs5nLfZPV2qKMFjA1H9B+jS5dklEOtGjACfBHKKD/bkfvauG4EQWkQn4C1VRFQRZOajsQvjAzRZqoetCVwqRzKmAb/SYwZcFM2QIDAQABo0IwQDAdBgNVHQ4EFgQUNve22Hhv3VFk0VKIOzaURLf8z0UwHwYDVR0jBBgwFoAUNve22Hhv3VFk0VKIOzaURLf8z0UwDQYJKoZIhvcNAQEMBQADggEBAEaEDEwmu3FizIszfW0S3q8rcWTSGWAQSZrcVE73CLKdW/DZqTBwltH6vG8PIkg/76kFQfDYmH8XJQu3VqGyfJAo1yKmnuhz4pJgn0L+vjGtFE5ezB14rcWGHCbNRrvl/mRPPazfqPUKy9xLthApwT3Q+Qrs2VbUiz1gG8+D3HYSJC6NOg0r9mXqlZp0rt4t0ZiWq6qD4WFoBeRjd4J1CLSUp3lIW6V04nXl5zcffiCfn9bf83DauI8HOiHj8qcXa04Rj87l49zj/j3kW8AO+jc1IBjI6AP/kDQKKN5HmyghcobEq0b074dTk5Vb2LtHwWsBiOgr5X/PA+zbs7bC+MQ=</l7:Encoded>
+                        </l7:CertificateData>
+                    </l7:CertificateChain>
+                    <l7:Properties>
+                        <l7:Property key="keyAlgorithm">
+                            <l7:StringValue>RSA</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="keyData">
+                            <l7:StringValue bundleKey="$L7C2$9fa1f,VEwI07xxhVd9Ati22Su9LinGa+Vji9N6BFf9hcENPyg=$hFmx5myicdVRF3oVp3u+CYbuRN/Cl3IPV3M5logrNZMoHbwVyYtlfCSzdDyDD2eUs309xWU5DUmKVAs1dNus94m6QBIiiag36OLZcV7YnvH9eEpg94HVMX4io8O/3ImT" algorithm="RSA">$L7C2$1,vFPDlFoISwJoAwuSzMPyWWyzut78OIIUh11rBdr3+/Y=$UNmdovBN9ONvcLCVgLuJi3ReLo9PLC/iCzLn3DstFwK82JgQLrXJx5iM95x6a7+wr5v7a5G8ZkVZ0UV1/RJWTeCxxqaMLpvdSFP0mo/6FIhj72BXnj47d9Gm44EMNnlEXU87LQuBv5BYzTIkEUKrVwg4ElOOnUvIt76nnTjiVr/ttZATowo3+vrHIlyWuF0yR4yUSVAYeIs7v+ZYjqjVUIJxSuSrzUzPrRNQr4SO6/9ltik5kMPu2sfBUvEIZ1kU3XZKIDai/T4svwv/xTxd7tpxjNRX0SL37vnA8ASqtaZkrTHw0MhzpEx91tczmQw7QL6XV+ioUzLnXPqOreo0IaXU9pf8HlSDeWKKLKhE4ZcfyKEx18JL8wzABgjs+hlgoCL9NwqSRAkRebfrXH5EVYNZ8f/CU0HtwK79Uvs1Lwk5bLQcAV4CX6VO8C9kIJlABag3eMeSbGXRH1aDaBOd0LH6PbQrZsVB1KTMX8yDjY+KpIEJVpgQeBpJouzQ3pIC36MfNrlW1zJVFzVcIMQuDtVXjLiQUlpDHJl5NU2nBi8oiQm1nDZ9OjrtMGg73Wp2upGhSfDZ/jpkvP+c/X2Kt7CvHM0MXIw5nxec+UEKEjxq/HoUNqPNcyTMsFYloDMqoT/xezygFNFY9GCnJ+GDPDmYtlSr8xvRRAt/Lrs+STVd345RPTrFZBalPieGA7haA2RFcid816vr2LY1wqsiVrnS+zyPhcb+iNnZXZbwr+6H6k60gR+8dCFzIl4gWP3zhULVyVQ0UbPb/1Adwe/jcikl9te1AcFM875U+F1GfrnUfPHAjyNnKYTP9ZX7GEQdJx/3u0MQvACk4kNo+2mjVwXZ12VsHkFQUeqkKpyVN1bRVhBw3bWX8FbfVKz4B93saF9aG5Mu49eSD9t41k9fMjFl/eDaNRiY3GMdGw30cW1OSg1Pga2ZcIerFJ2jidY6lrPCxwCNpvjenh6Eo/jW7VUXTeRc9r8JIgSPaoo68obyjKPSEuTu6NKUPe/0SpmzzugBf0HlRME0p+/Ng2umw7+zFWY9gf4qG3pa8kBtMVxZysvDGsKqbkC5vGe8o4wlcoGnaUQBvk0RDfvPAbq0qYKuWdpCiHyK70VKl4Fk6MDjLtwChcz4vhyk6geRMdOkrHGkmIODb3Nwqfck5UDfUwIyfBPd/sX6m7OB6bAvb/xFZ0ZbsWaCdwMbC5G/byuTy4QXX/t7HhUKY/q9qm3+a8c/HRbZ9MRBMY4Fx9wK1+fGkvByzWLaF2l9BVBAoF4P19plUsb+A6MpG+YklP8x6HLxgUDkdJZ5Zxt035kSOKFjaMs2thtIdnynkFR5Otpl6/NDUCclmqW9r6vqlBGbUWQ4Jlfkl6mzHqD/cMz4weq7y1Gi/b19sb3dw4QWICqCrrDuPRQMA0CmRFTmcKJlQAIv7Lgk+LZe6V70KxLK0ssvQ0WLmsWUsxMGX0gzlYVjVHPcO4oU7ivybKRYfmL6ywPqba4nwyq8OcAihXT48l9pUbkd4wBECoz835bYAEhIWR29Nf9EgHQH+ehnXscDvYZEawbhqci5dRHeqSure3EYeCjceKspGTnzkAAZxufGRD1NU00qTvIkU7wem/7ZoYV5lraSutaHwRLuOnTLrj5/6QOGUuXpU11tnPEucalQuKgRGzMXcWDCzbIzWz/+xADQh0WFyxzQ7k0K5C0a4H4=</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:PrivateKey>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>XMPP-49e3688fc78812fe6efb9b071fc8f521</l7:Name>
+            <l7:Id>49e3688fc78812fe6efb9b071fc8f522</l7:Id>
+            <l7:Type>FIREWALL_RULE</l7:Type>
+            <l7:TimeStamp>2024-07-05T15:22:48.362+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:FirewallRule id="49e3688fc78812fe6efb9b071fc8f522" version="0">
+                    <l7:Name>XMPP-49e3688fc78812fe6efb9b071fc8f521</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Ordinal>0</l7:Ordinal>
+                    <l7:Properties>
+                        <l7:Property key="chain">
+                            <l7:StringValue>INPUT</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="destination-port">
+                            <l7:StringValue>5222</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="jump">
+                            <l7:StringValue>ACCEPT</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="protocol">
+                            <l7:StringValue>tcp</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="table">
+                            <l7:StringValue>filter</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:FirewallRule>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f517" srcUri="https://127.0.0.1:8443/restman/1.0/trustedCertificates/49e3688fc78812fe6efb9b071fc8f517" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f51b" srcUri="https://127.0.0.1:8443/restman/1.0/genericEntities/49e3688fc78812fe6efb9b071fc8f51b" type="GENERIC"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f521" srcUri="https://127.0.0.1:8443/restman/1.0/genericEntities/49e3688fc78812fe6efb9b071fc8f521" type="GENERIC"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f510" srcUri="https://127.0.0.1:8443/restman/1.0/passwords/49e3688fc78812fe6efb9b071fc8f510" type="SECURE_PASSWORD"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f513" srcUri="https://127.0.0.1:8443/restman/1.0/genericEntities/49e3688fc78812fe6efb9b071fc8f513" type="GENERIC"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f51d" srcUri="https://127.0.0.1:8443/restman/1.0/genericEntities/49e3688fc78812fe6efb9b071fc8f51d" type="GENERIC"/>
+        <l7:Mapping action="NewOrExisting" srcId="49e3688fc78812fe6efb9b071fc8f525" srcUri="https://127.0.0.1:8443/restman/1.0/genericEntities/49e3688fc78812fe6efb9b071fc8f525" type="GENERIC"/>
+    </l7:Mappings>
+</l7:Bundle>

@@ -1,6 +1,4 @@
-/*
- * Copyright (c)  2026. Broadcom Inc. and its subsidiaries. All Rights Reserved.
- */
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const butils = require("./graphman-bundle");
@@ -35,6 +33,14 @@ module.exports = {
         return params;
     },
 
+    paramsSchema: {
+        inputs: "array",
+        output: "string",
+        options: {
+            logSink: "string"
+        }
+    },
+
     usage: function () {
         console.log("combine --inputs <input-file> <input-file> ...");
         console.log("  [--output <output-file>]");
@@ -44,9 +50,17 @@ module.exports = {
         console.log();
         console.log("  --inputs <input-file> <input-file> ...");
         console.log("    specify two or more input bundles file(s)");
+        console.log("    use '-' in place of one of the file names to read that bundle from the standard input");
         console.log();
         console.log("  --output <output-file>");
         console.log("    specify the file to capture the combined gateway configuration as bundle");
+        console.log("    when skipped, output will be written to the console.");
+        console.log();
+        console.log("  --options.<name> <value>");
+        console.log("    specify options as name-value pair(s) to customize the operation");
+        console.log("      .logSink stdout|stderr");
+        console.log("        directs the log messages to the chosen sink.");
+        console.log("        use 'stderr' (or .log nolog) when piping the output to another command.");
         console.log();
 
     }

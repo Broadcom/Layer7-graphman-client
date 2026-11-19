@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -27,6 +27,7 @@ module.exports = {
                 if (params.help) {
                     operation.usage();
                 } else {
+                    require("./args-validator").validate(params, args.slice(1), operation);
                     const config = graphman.configuration();
                     utils.extensions(config.options.extensions);
                     operation.run(operation.initParams(params, config));
