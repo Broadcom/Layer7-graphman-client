@@ -1292,7 +1292,7 @@
         },
         {
           "name": "bootstrapServers",
-          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+          "value": "example.net:9095,example.net:9092,example.net:9093"
         },
         {
           "name": "role",
@@ -1359,7 +1359,7 @@
         },
         {
           "name": "bootstrapServers",
-          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+          "value": "example.net:9095,example.net:9092,example.net:9093"
         },
         {
           "name": "producer.retries",
@@ -1491,7 +1491,7 @@
         },
         {
           "name": "bootstrapServers",
-          "value": "apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093"
+          "value": "example.net:9095,example.net:9092,example.net:9093"
         },
         {
           "name": "role",
@@ -1562,7 +1562,7 @@
         },
         {
           "name": "bootstrapServers",
-          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+          "value": "example.net:9095"
         }
       ]
     },
@@ -1579,7 +1579,7 @@
         },
         {
           "name": "bootstrapServers",
-          "value": "apim-kafka-01.lvn.broadcom.net:9095"
+          "value": "example.net:9095"
         }
       ]
     }
@@ -1623,7 +1623,7 @@
         "SERVER_SSL",
         "CLIENT_SSL"
       ],
-      "subjectDn": "CN=ssg.gateway",
+      "subjectDn": "CN=example.net",
       "p12": "MIIKHgIBAzCCCcgGCSqGSIb3DQEHAaCCCbkEggm1MIIJsTCCBagGCSqGSIb3DQEHAaCCBZkEggWVMIIFkTCCBY0GCyqGSIb3DQEMCgECoIIFQDCCBTwwZgYJKoZIhvcNAQUNMFkwOAYJKoZIhvcNAQUMMCsEFL1hDieBY0FKCMQlQuJxAc/MjKDUAgInEAIBIDAMBggqhkiG9w0CCQUAMB0GCWCGSAFlAwQBKgQQe8a3SxFgzIVE3fgwLisCWASCBNDsDyfKNjVgjdrk8/SPUekGv784F7TIGHlZfhHpEg/u7pAbNWp1Emz7v0NqDodlmX6VIWxZEJRK05WAsJQT/mBwdPNveRG+5brOJrz4ceM/MEdWHkbRxKKje7grgf5SScdMkcBF0Yw9kLpwQ32gBo6x9LxAvhlq91VARA46yYHY7O5KpiQipkj3C1Pb37vYhvrAMreku+gDbj5zeX4dbPY32Ar7rf7Pcap+WqEUIbW5q654IEwUEAk/rbLJeqTJ8B53IAJYd7CNcottR/pk14kyYzVKGXdX6NErrYz+Kwzy0l/wDnqDsmI77GO7e3XT6lRfIR+bkTcLWww+YdeXfA0BsFpIiDb/3//lxAm0lfGtokYRg/mm066S5stPCpBR/hYhMpu0uEjXi14aIGd/IJAhqMEe/kkezKGogbq4xaOuRKEVdVzvwin1R0gKpJ43eJxkDf5bH8b/8Ja+GDhlD4KYvHr6EyQ12nTAGXRfE3xBACv4uPf+U0Hqq3MKJZDhyYx2+aGJgzKOZ5PCYRt5x55ysAz578vBv49dLqicFXD64KxGASV877PhMZQ2QLSkT6SaEx1isBz4d0yoVTgon8Nm/1hlXFPJ8a6voH3EZO9n9sr5L30xxt7GUpVGdgMtA8rVlYmkV9N+4qdVssp18t+j0ztZW/PNgUOvPME9hIxetGl+MtZa/N2c8u/XlwVe8/Uj/SMPu1Es4N/uPzlXui51IyI2bwCdZPZTAX2dgZ0q2R1o3kPzXBQ0vIAoHNVm9BHCEduR46f2nxNbi7FkvYNk/bi30kifO7VgXrJU79LEKhY2n9wM9d3or+IsSO3o9o3Fm4HqNLElZkWqMcd61TT/gsGfYSFb2XgT3PPleI0KXuMynznzveVM6rKFbzJvNRTx1iMWcKdrsFbknjMtXmxpO33PkIa6RoSpZguxMotIWB17OCzf0FHV/M9/i3vNgdodHqkgd0c9vnec5cR3U7qb9wSVdekz0g/gUdP4K3YmE1ospwIli3aBlyzi+LyHugLax/W1tNs/fQfTpDOguiQWcd+rQ6wn2fnH+p1E1yecRtj35ndwGrr8b8/xGVB9FBOe/PQmzNMUEA5E+jSMd73ShtZkzdOIDeehvx1BzwevAL5na3NCOATLIShJiDkCM4LVDvfYCj9zAbgu0pY0DjStDE4ht+oaRX6ANGwgAO2X8q4tnUIR4qBVFLdaKSDo2Ddfp65yF3LyUti8DrWLY9ZJ1qeZ50LMa2HT9yj77/YRt2rOvhv0GfiMFjvaP3fidMuSzXXXGL2k6w/PBq9dF7Amdir15I6dkGUiP5S9d8fVpBl/nrboeE2kOA2xl6E5J2N4Y/zrKoWHTqpyGMOamUEJkG7VtCn8NIScKdaJrd1NgDOdpPnxcvBKA9SqECzMQ6LH+tkycOXS0rJ9LT46VwXrH2yB5qCl7WZVr2Wx3r6hkbcv7a48qzB3bUgueHfpr2S0u4oeT5p4sOWbY3/KWPuiziDFtXDNH+IMtcPfBg9xfg90vqm5ITR4x06sWo5HWOt+lKdIg9TnnZMT4MuBy4RmfeAa355clCoTPGUawf93VLl+DLuNoQWAZzbEXBNJuY9l/oRJSIgt9LV++IMYrsMk+vQ+94YU5qKnJDAV+IN5sDE6MBUGCSqGSIb3DQEJFDEIHgYAcwBzAGwwIQYJKoZIhvcNAQkVMRQEElRpbWUgMTc4ODk2ODgyMTg4MzCCBAEGCSqGSIb3DQEHBqCCA/IwggPuAgEAMIID5wYJKoZIhvcNAQcBMGYGCSqGSIb3DQEFDTBZMDgGCSqGSIb3DQEFDDArBBQkYb0BzsZlCjthgZAFMTwnJiiPUwICJxACASAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEEFndV8eIFZUSpoRhuLtyv1SAggNwG4wqleMKkvLJTZIZnFcwc27/+kaiMZbMSfaeRXLK2nvq13yFz2OmGS6nzYlQ7KDeQjSO4o4I22tCnwUhwATiHW73fyXtFcb32O4TjzqX40FByDUh02LC6z5qO8LkEgEZCIeMaQzeBHkq32qVuJV9dcISwWsoNRXSp6btRoZiyUKQLHdDTS0W/38YlsuKDVcE/dpRlE+f4HvvVOlv6JnHlnB/QLGR6y32HyKWD4rxiy570CwkweS4tY3Rm9yQVl5mrHw/tB1w0ipR5hCJ0KG9vgD7nE1npXkPcacZy8Ij8RSaqauez9KeEgUu1iVogrHfD5AQFmCl/oXtcHbjN7NvY+AfKfDbQh8js5JtKLtZPUfwqhizqkGIb4JRr9qEhQe+Hrr8LJegYLZ6I8p/FMwQghcosZ4MaXkGMCDqtuSJDRzmpw8UB+lSFggGQREhKAqFq/drDr0Gd/4rR6Cs4KZhpqfQS6XAefqvjArYPufVdsC+vlL3gd/0evJZdMDbqZoDXSTodUiJVDc1kc7V6N/fT+TxcdXEpiPM2zNm0xuEfgTQHmkE+RHRblPXVT3oOa2Th79Nv80Y96/Jlswv31ix/Do6l6dqcyFVJlIGvWEJY4ZFBcRL5LAZMwO2aQmBM6HhLI50nJPJoNGL66eiz2IelaZkaJi3gDMDYq2XzDAhRzX/ciGckKY4wHh/A2iRFxnWFTgvUgKnRBz/LsgZEtgTVKLFLhRvUlh4BrpJuCX2Pg8wbQ+wiDoYbEC2QoXomFu5uIzoz8BqgVYhmGP0lm3OVAAdFLWAjdgJ68zA/1Lyh/rgbthpbTwOdagww+UYONx32W02njWNmWfqvF8TmD3QO/7+rTwQDnYACKXh0MQuBdptS7pwZ3tnvlxSid4mk697slMDKXE6Eb0BEeB7fNxFplOOnsrouio+D/2ejkzeYJBHwLIxn5r0ZfuaxYbtLvPrgQ7drcJzSIFU0NV0BhRI5BjU1t/m7+F8sPXJGCJXy/DjaoEBEze/gsW+BinE0Z6rTklWm5a2lSppP9WAUMYye/hqHuTcIywfuhCwVdGs8MicUPu6EONn4qWbO0sBgB8fKWAdhl1LITi0zfsYPwTspHjkS+QaliaZ7uEscXgAiyvE2aFGiBFPIk+INZjaJgznvSZk492/FgzTQvzZw3izajBNMDEwDQYJYIZIAWUDBAIBBQAEIKB4vbzi2dA1zKVam4ZzAtgOFUpau6UJCIVzg9Uh4fNLBBTb89ximSTzZCK3G9gG1KaWViKlqAICJxA=",
       "certChain": [
         "-----BEGIN CERTIFICATE-----\nMIIC8TCCAdmgAwIBAgIJAM7QR+2Kl+XUMA0GCSqGSIb3DQEBDAUAMBYxFDASBgNVBAMTC3NzZy5n\r\nYXRld2F5MB4XDTI2MDkwOTAxMzcyM1oXDTM2MDkwNjAxMzcyM1owFjEUMBIGA1UEAxMLc3NnLmdh\r\ndGV3YXkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvk70OMAmV2glL4mOyStphqYqI\r\nuGyfOIE5uJoJHk0wA36Vj4UWjEKJgALfJmhhnr7h/T1j9IFB+mBDftw9HB9G2It1HFO3tmZ+I1PH\r\nhghb8NmUi9YIxKzI9QZdbPvoZx3Hwc+AttaN8Op3QNimR3Tda5i6lrTzsMT81Ckp5Ft6K8HcqsUs\r\nPWVZLxaVNB7WzIFuRuuIKRE+Jhhr4iJVP4H9uQQIfIWUp1rHbRkbrffjztP2lUp+rANConWfzxwk\r\ne4PSvevKbkNEP7kAUGR3TKG/l6XR1oAtPx18jLy7HdVKHYqWmmkPheui4CWhLJobU46TqQ8sLxGi\r\nYKYnA3w7xQldAgMBAAGjQjBAMB0GA1UdDgQWBBSQl59PR/9HspF4sc/AGlYEbFC49zAfBgNVHSME\r\nGDAWgBSQl59PR/9HspF4sc/AGlYEbFC49zANBgkqhkiG9w0BAQwFAAOCAQEAin6/RssrsDNa9H71\r\nHamicq8NqFpBNNDILECR8d+R/Uev6O3NXQ/mKN61tdoB5yMs09twXpMeKVWWp5nqpMp6cNRh8uVY\r\nELNWKDHZWK0o6HmU9W/JxjIW7jj9jjD4Ni+l4MPUlOIZyFwvYCWVQiCsVKFaL/9HtX4T/Wka2FO4\r\nTSCGk77LzEVROqmQM6XwEET8J1sYm7Iw0DakEKz2V8QdD5J+aWzrH0m9inF9bu/lDYBOGJGL6FP4\r\ndgp/fKmdl2cFE2D/QjJiCETiMEw2KYQuwJQR6fx4Y93B6e/dsTRgrSJLKmAr5boie5JArJSA2h3M\r\nD1POb0DhQJooaPdN1z1/Gw==\n-----END CERTIFICATE-----\n"
@@ -1636,7 +1636,7 @@
       "name": "mq-pwd",
       "checksum": "4dd5426b2970d136f65a84174a04c66259bafac3",
       "description": "",
-      "secret": "JEw3RXYwMyQl25ATFHEU+I66VvsT7T+sk0usj1w5zVmHYWQpGDFBVg==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": false,
       "lastModifiedDate": "2026-09-09T06:23:22.360Z"
@@ -1646,7 +1646,7 @@
       "name": "sftp-key",
       "checksum": "1141087e42d1002637bedbff874819b4754c4096",
       "description": "",
-      "secret": "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",
+      "secret": "password",
       "secretType": "PEM_PRIVATE_KEY",
       "variableReferencable": false,
       "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxzipXZbqbbSu0PiV2RUM\niLT4ziipIln+1ebpqJSo4LC8OIZQV6NNm3VXH0ARkoHXFmBc5bpjD2at5jZr9i2G\nLW8NU0v7Ng0YW0FFXi5UQSOOpryeMEZbX7BdOf3s3FvhKakFFoYdvZdKzNlCnBuZ\ngacTZn4bRlg82XORnIIPFdN56N4tsA5OJIuvnR4PmtlR1AyNfppax46KrnNl2tnU\n8/3K6DSpN4w3mEJ8s1cPHFOipFg/7BPjFHJpdPT+gaa0+s/7ozsCCNFQS0Fa4wFH\nNGCacYisQMKg0Oamo0CCy6GgsWVodJgGObkFMyPGglMEInmquU6JfPEwQUSOBnuG\nvQIDAQAB\n-----END PUBLIC KEY-----\n",
@@ -1657,7 +1657,7 @@
       "name": "some-kafka-pwd",
       "checksum": "af5f96de47b67d07bdfc92afc723d7df7fda2ad1",
       "description": "",
-      "secret": "JEw3RXYwMyT3G+Hcu1AL3+XcJMZs7rrDir3RX6xBAoBOSS7Cq8fwgg==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": false,
       "lastModifiedDate": "2026-09-09T03:35:24.617Z"
@@ -1667,7 +1667,7 @@
       "name": "some-sftp-pwd",
       "checksum": "b01ebea260fceda1e51043bab5b5c79c3933e718",
       "description": "",
-      "secret": "JEw3RXYwMyTw9O1B7qbTO0iQ8dqr5nNcJEmui8dK3T5UhjiKpTklwA==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": false,
       "lastModifiedDate": "2026-09-09T03:42:14.602Z"

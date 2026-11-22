@@ -184,7 +184,7 @@
             <l7:Resource>
                 <l7:StoredPassword id="49e3688fc78812fe6efb9b071fc8f510" version="2">
                     <l7:Name>some-generic-pwd</l7:Name>
-                    <l7:Password bundleKey="$L7C2$9fa1f,VEwI07xxhVd9Ati22Su9LinGa+Vji9N6BFf9hcENPyg=$hFmx5myicdVRF3oVp3u+CYbuRN/Cl3IPV3M5logrNZMoHbwVyYtlfCSzdDyDD2eUs309xWU5DUmKVAs1dNus94m6QBIiiag36OLZcV7YnvH9eEpg94HVMX4io8O/3ImT">$L7C2$1,gO199H8iAiOO5OiHfF/VYDNCGj0LKYRmQUrtJ2kG71k=$+Rpoyq0TfhZlDHmTYwMl+U9W3sCHzXq9moM51uEIl/9I8zv5ozKB8JZXwtvdWWqTL+uzLffFcXhIQlcPgrNe4w==</l7:Password>
+                    <l7:Password>password</l7:Password>
                     <l7:Properties>
                         <l7:Property key="description">
                             <l7:StringValue>some generic password</l7:StringValue>

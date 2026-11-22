@@ -199,9 +199,9 @@
                         <l7:TrustedCertificate id="b0ac5b9aad8bee68d8e2176b3ae64182" version="0">
                             <l7:Name>AutoTrustSslKey</l7:Name>
                             <l7:CertificateData>
-<l7:IssuerName>CN%3Dssg112.broadcom.net</l7:IssuerName>
+<l7:IssuerName>CN%example.net</l7:IssuerName>
 <l7:SerialNumber>1706064130904947667</l7:SerialNumber>
-<l7:SubjectName>CN%3Dssg112.broadcom.net</l7:SubjectName>
+<l7:SubjectName>CN%example.net</l7:SubjectName>
 <l7:Encoded>MIIDADCCAeigAwIBAgIIF60oSbaf+9MwDQYJKoZIhvcNAQEMBQAwHjEcMBoGA1UEAxMTc3NnMTEyLmJyb2FkY29tLm5ldDAeFw0yNjAyMDUwOTM3NDVaFw0zNjAyMDMwOTM3NDVaMB4xHDAaBgNVBAMTE3NzZzExMi5icm9hZGNvbS5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDSNcm8Puxxy5oGnnpGaP1OSoauGxkkKQwgitR4WqO0i90dBTX9u4xGhaIjXuGEJZPrEg3e0HqaLkVuyL2akUBe4GuNikub3n7PwMr/nmkFR8KURmL3U2F0GNCTcm2FKdjJXPawG7hRth4xBILplwa53C4QG6QNJHF7unNqMyYWu3YOgNqQn6HqcE6IMdFZEDCk9KQpNhfTB6L/XkM35nT0S4jzT9NnIct0b+e6CRvoC0sPoUry6jXN8USSz+p4Tailg4lpb22i8UEyRhcITlnB0dE/wQnQG9W0jDsFkPQ+twYiqaPlTpn7SG0oHV06UGFYBwDDP6Cm75gvmyQKPwuDAgMBAAGjQjBAMB0GA1UdDgQWBBRsD3iCEvCOpa0Zhp7lMp6rREiIszAfBgNVHSMEGDAWgBRsD3iCEvCOpa0Zhp7lMp6rREiIszANBgkqhkiG9w0BAQwFAAOCAQEAW8FESZmjzzybJbiGEubPS4qM7cJKk8qX8K9z5Dmsrv7FC9pfYMTglEjUp3GfCTE4kz/a/9+WrPib7cn8FoutMtYrOjLrr7qoI/gbZXVSsJ+OZSQlL+sE9REdvCAkCj+MfC4XGpXTPKgshFNU1ucIxtR7ZF4jD5B2I0ibDLueZ9oXY7LDGf0ZNjDQeBn4/F2dhyr62mejOyoERz+nOyySpDBvStRtxNfHwH63M8N82JgcTJLcxXX+OIhU+1APT0ShSlv4pYx4oDV4+8tK7aP3707gwZ9Q45Jf1dSAKWYSAhrBYAxwI/r0lWbRqzpb5bEhqw4Zsn0/mTZcvGJgk43hRw==</l7:Encoded>
                             </l7:CertificateData>
                             <l7:Properties>
@@ -317,14 +317,14 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f745" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f745" type="REVOCATION_CHECK_POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f749" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f749" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="b0ac5b9aad8bee68d8e2176b3ae64182" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/trustedCertificates/b0ac5b9aad8bee68d8e2176b3ae64182" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f74b" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f74b" type="REVOCATION_CHECK_POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa01" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa01" type="REVOCATION_CHECK_POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa02" srcUri="https://ssg112.broadcom.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa02" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f745" srcUri="https://example.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f745" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://example.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://example.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://example.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f749" srcUri="https://example.net:18443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f749" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="b0ac5b9aad8bee68d8e2176b3ae64182" srcUri="https://example.net:18443/restman/1.0/trustedCertificates/b0ac5b9aad8bee68d8e2176b3ae64182" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f74b" srcUri="https://example.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f74b" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa01" srcUri="https://example.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa01" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fa02" srcUri="https://example.net:18443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5fa02" type="REVOCATION_CHECK_POLICY"/>
             </l7:Mappings>
 </l7:Bundle>

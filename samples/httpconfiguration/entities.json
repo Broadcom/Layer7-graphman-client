@@ -193,7 +193,7 @@
       "name": "http-config-pwd-1",
       "checksum": "5382e1330674361cb2b5b9b910d2ec06f42177cc",
       "description": "",
-      "secret": "JEw3RXYwMyTHvYeF9jhbQ9W15j7abPgB1je1SK3HJndwI9Vp7D0plw==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": false,
       "lastModifiedDate": "2026-09-10T17:20:18.838Z"
@@ -203,7 +203,7 @@
       "name": "http-config-pwd-2",
       "checksum": "b6b56768591f3fcc3be4e81acd4d48bfd2816de7",
       "description": "",
-      "secret": "JEw3RXYwMySI5Qw/Gwxuj5OxeQFAC+6LJcrHI+eBJPQuUJd9wabCXg==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": false,
       "lastModifiedDate": "2026-09-10T17:24:52.401Z"

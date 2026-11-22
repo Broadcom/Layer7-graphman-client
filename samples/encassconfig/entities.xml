@@ -772,36 +772,36 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd42" srcUri="https://source.gateway:18443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd42" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd42" srcUri="https://example.net:18443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd42" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fea4" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fea4" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe7e" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe7e" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee0" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee0" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff15" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5ff15" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5feb7" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5feb7" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe91" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe91" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee2" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee2" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fecd" srcUri="https://source.gateway:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fecd" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee8" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee8" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff41" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff41" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff52" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff52" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff63" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff63" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://source.gateway:18443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fea4" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fea4" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe7e" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe7e" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee0" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee0" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff15" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5ff15" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5feb7" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5feb7" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe91" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe91" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee2" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee2" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fecd" srcUri="https://example.net:18443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fecd" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fee8" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5fee8" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff41" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff41" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff52" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff52" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff63" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/72adab14b763f12efb51ebb737d5ff63" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:18443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="628534200f7f993138161f24f47077a1" srcUri="https://source.gateway:18443/restman/1.0/policies/628534200f7f993138161f24f47077a1" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="9741965eb4bde407913f33b2f7a20485" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/9741965eb4bde407913f33b2f7a20485" type="ENCAPSULATED_ASSERTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="628534200f7f993138161f24f47077a2" srcUri="https://source.gateway:18443/restman/1.0/policies/628534200f7f993138161f24f47077a2" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="ff70c6a442043ef12e74f4eb13ccb8c5" srcUri="https://source.gateway:18443/restman/1.0/encapsulatedAssertions/ff70c6a442043ef12e74f4eb13ccb8c5" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="628534200f7f993138161f24f47077a1" srcUri="https://example.net:18443/restman/1.0/policies/628534200f7f993138161f24f47077a1" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="9741965eb4bde407913f33b2f7a20485" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/9741965eb4bde407913f33b2f7a20485" type="ENCAPSULATED_ASSERTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="628534200f7f993138161f24f47077a2" srcUri="https://example.net:18443/restman/1.0/policies/628534200f7f993138161f24f47077a2" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="ff70c6a442043ef12e74f4eb13ccb8c5" srcUri="https://example.net:18443/restman/1.0/encapsulatedAssertions/ff70c6a442043ef12e74f4eb13ccb8c5" type="ENCAPSULATED_ASSERTION"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

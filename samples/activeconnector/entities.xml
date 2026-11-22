@@ -156,7 +156,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="9a45f1717f6f3a403e35e473df1da15e" version="1">
                             <l7:Name>mq-pwd</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,DhqmqpJHMLV1uiTsfD5amXnQQSU0qcc0LYfxmxQvX4M=$UGWwV8dFaNqVZQZ2Idju0LcaPHNxCh9dZBjr2vApqxWuOeqBoQgZ4oMOvWenzMfeGXLxeEUytyVCnUu2kfJt1w==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -912,7 +912,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="c84d9a1bee64808dc0f7fc52aa0a8bf3" version="0">
                             <l7:Name>some-sftp-pwd</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,Tz3JG5ISNoT04LD2Qwh6N9XMWw1ia1pXmWYol/LNeCE=$OjfxS1IHtzvEvlBJOk72wVjMBE70f50LwI/uvER8C6X0g52/r4yWjOLa+twiebtJaIOtCxOewZzy5+94BACVrw==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -1040,7 +1040,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="9a45f1717f6f3a403e35e473df1da15f" version="1">
                             <l7:Name>sftp-key</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,w0ge/SqstsJHz1UO7CXrvwhPYBABeolMAaElLssZwTs=$6c8HILmL20yR+t5m7PuALEfvuvJvIia+AMSTNx3s1Nl4/UXQmGYG0jK1lJOGrJI3M3RbRtQyBrlyY5hjzPD2kZuzF/vaHob196WWyjzuh2WwMV+R8du9X/XQ24T6EdPCOTcWC8UYeziPk+iNbWKsWaIlh4HXg7K4qvlvq1v+r3eX2OM4RNjI9/EZqqiHvuFYbeq2EvNjYKLru2zA3Uwqrvti3pkS9NA2ztj3vqcp8Mw3Bq/U919xddQevy9HkduNPQhV/NCHHv6YtYz1/hfY7KfTt6D7P5ZDkPlpEQTgSq5O8BuNyWPQb31MBljNvpDecu39Z5lgz8tWFbMR8swc5dCnra4BaDqKqMpNedWKpGmMWYVaqIJ7+BybRHnseWZ4uyQnPyxSWRlFcMtNEfuml1OBVPW1gT5pbxp8YswzUf1GAHQO0R7pd3brkaLLqpqefeuKaQ5QvfXNoY0K50nqHymyedR+zstip8sdaVUpS8iSaQUjB45szayedF+OSxA7vJsaas3DyvWp6V+51Q6srAtIWYpXgtpBZYrdWTqfyzOumnshh/SKJYG4rqRF68inm5yp9MRNXoAFckReVlFNKk8HT4NoYbbmRV4FwQkiXsgCDXNo3lOZ2he39D8gIjUQeMaWNnC3Rn/o5DdSACcUS2gLBcAhHqAygUE/TGR9ijuP/Ux6+uMqsph/nXofycKt/RQ5U5ugDzH6oO3kScpM470qFnx1paXXLzjD0OY09y9v4kDyhPYix+sUzguEp6sN49TEXxmxCqU9fV7JW9kSRSBKapF3jVDnymkz/JdXsHPZUPIZCdgX/eAMEO2Ru05Dv4G9KegEN2B5ZWJwYog3ZoPxu1WvreqJ7zTcRWWjRKApV9F+YGq5lppGhn+B5n33VZY3Esft4mG9v/QRWAbRuz7x3vzeS4vj7Ghv+AcpAowO+Jg8oaAhW4oBSAV/q6/NIwAKjOlaTwE2PZ59hMAKnjCFOIYaXv50OyN+Gt8QUvAsibqElirwbq4NLj87G73whqjEb3w8LzLpDbZayiJSBrA2ePAiiKEquu6jeBxfxFbURV8qtiM2HqFy5Q/e50O46COoLttT4htCgymvyDuJvVF6hVvRQ2KeZNJSTvagYajarE9S4h45fVrtN6YX7AVCJ7p9E5wR0Gp/9ow9uVX2VN98ZmKonaeZaeNSRSNfQaFKGIFY+Iq0eKmpiT4vCd3B0meM0+BnKNVbC0bNIFAupyUnunaYbOYjbifpqpEl9+/QpqlTMbUKzcJRvbcBIIj4c2r0wAIkRGbIyVAncKf4WlGPmyHs/67H9gwHyjRMrMqoV0GKwUWP8Aai7B3qS+gWNRM9VXNF/6pBJGBSHUwHr2e7ZtLh6lxarp/WyEKQSCMwmuv02d849EZk7JkFY5Az7zotXGBFUvADohDLNSYyKgK4IibvnM1D3sp6B3Gu/EIqxUk2ZxwMb1CinAfMuMwPvFWm5mzzcWsMoulgxmySgYGcEj3DFSm8C2Zeo4V5ROsomjAnKVJBrrFleywAa9Ztet8u9Ll5hcqb464/hh6O7JyreNt9hI2IgrVyH2ajCrbjsQ4SLuL0iMGbkqaaP0dxPnD9AUBENYSY6j3ftdMnO2s4UVrSzw+X+BDFBEhW1H65J8O6Z23uhnlaVWGik/3YxIdn6dKg3bHz7ZvUP2d5UfWtKZp6Kz9wplzFS+s+WK0nvPCVBHUtv7cb6ltUtVDngzckA85H6Ic9M/6qXJY04y6maYiniZsaL/Qx8a0wPQULlOTm0bkYbHhaFd3TptqqTz8jF2Ulx/bXk2HKH1fHHZ/i4NHGJmXrIFqLAtpth6xvJWOkJsh7N/PFVHUJxGKL1gT7HcH5EtzCQsRnK1Clj584lXV8+1bsBKCirOxWdi62FgG4XXJ2Px7AY8PMDVfHYfTqLGxCL+XLt9bNs0eHUTB2cCEYvXIfY03A4q6zZJnbyD6/yqN2vrwKDeD3BQkthXpM0c86OJgWNjb5fZU3pKLWh45e0ojKE3o/MbYmPy5/sFzqrBFzSZXLu4n7YbbeeXmFh2cjA93XIXAwmEIV5EJhxX5cCFYXLFwPvm5ylB9qhgJx7oQpdDpGVZtZC3Ow/7Rp0D8qWKCVH4DqlOqUePhROuARfMF3qy1nAk7OoIyAfOCIMDFWMJTbFXZDdSj5+1bA3MmzErIpuzChUCRb503F5fgtvK7p46JPtY/NcI3D4bpLSLWSLHbV8u4Rt8++xbq7vvsA1zPhb63AcmYcIGD6DpqwndGFHThN9p1jo1+PhZJ2HPuflw+sh6dgGp+8</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -1298,7 +1298,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="c73c9a1bee64808dc0f7fc52aa0a8ae2" version="0">
                             <l7:Name>some-kafka-pwd</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,V9P69iWez8eg8IH756Sv8zX65Zr/2rIqgX1eBdoy2aE=$ZzzLQ2X6BGgZ68rCQiId572tutvznKzlyHwLoovPgcnZ4v97u4wF0dqQjLcq6Lsi7H+cqziudIQpyiVkdriNnZ12sI0qFAmWS269k0JX2kZMGpeta++26LpFAcfniy4Y">$L7C2$1,uRBoiuOvBv+9WWHGi26+nkvHeFXLvyizk7zOF3XUENg=$BHp+fn8Fb7WR6nOT0Cvcfxqm1KRjqYKynRIfO93BkyiOSBqYy4AQAlk8j/Aa4n9NInLlfsBHhDFZwvnxeJMqew==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -1358,7 +1358,7 @@
     <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.bootstrapServers">
-    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+    <l7:StringValue>example.net:9095,example.net:9092,example.net:9093</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
     <l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
@@ -1454,7 +1454,7 @@
     <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.bootstrapServers">
-    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+    <l7:StringValue>example.net:9095,example.net:9092,example.net:9093</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.enableTls">
     <l7:StringValue>true</l7:StringValue>
@@ -1515,7 +1515,7 @@
     <l7:StringValue>SCRAM-SHA-256</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.bootstrapServers">
-    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095,apim-kafka-02.lvn.broadcom.net:9092,kafka-03.apim.broadcom.net:9093</l7:StringValue>
+    <l7:StringValue>example.net:9095,example.net:9092,example.net:9093</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.consumer.advanced.some-consumer-adv-prop">
     <l7:StringValue>some-consumer-adv-prop-value</l7:StringValue>
@@ -1623,7 +1623,7 @@
                             <l7:Type>KafkaClient</l7:Type>
                             <l7:Properties>
 <l7:Property key="kafka.bootstrapServers">
-    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+    <l7:StringValue>example.net:9095</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.role">
     <l7:StringValue>producer</l7:StringValue>
@@ -1644,7 +1644,7 @@
                             <l7:Type>KafkaClient</l7:Type>
                             <l7:Properties>
 <l7:Property key="kafka.bootstrapServers">
-    <l7:StringValue>apim-kafka-01.lvn.broadcom.net:9095</l7:StringValue>
+    <l7:StringValue>example.net:9095</l7:StringValue>
 </l7:Property>
 <l7:Property key="kafka.role">
     <l7:StringValue>producer</l7:StringValue>
@@ -1655,40 +1655,40 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg.gateway:18443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:18443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654611" srcUri="https://ssg.gateway:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654611" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6816" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6816" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15e" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15e" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6817" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6817" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:mq-outbound-key" srcUri="https://ssg.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:mq-outbound-key" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6818" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6818" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6815" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6815" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6811" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6811" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6812" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6812" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6813" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6813" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6810" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6810" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6814" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6814" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="c84d9a1bee64808dc0f7fc52aa0a8bf3" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/c84d9a1bee64808dc0f7fc52aa0a8bf3" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681a" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681a" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654610" srcUri="https://ssg.gateway:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654610" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15f" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15f" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681b" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681b" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681c" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681c" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6819" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6819" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8b29" srcUri="https://ssg.gateway:18443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8b29" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae2" srcUri="https://ssg.gateway:18443/restman/1.0/passwords/c73c9a1bee64808dc0f7fc52aa0a8ae2" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:some-kafka-key" srcUri="https://ssg.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:some-kafka-key" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712612" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae5" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a8ae5" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712610" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9001" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9001" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9002" srcUri="https://ssg.gateway:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9002" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654611" srcUri="https://example.net:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654611" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6816" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6816" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15e" srcUri="https://example.net:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15e" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6817" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6817" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:mq-outbound-key" srcUri="https://example.net:18443/restman/1.0/privateKeys/00000000000000000000000000000002:mq-outbound-key" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6818" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6818" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6815" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6815" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6811" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6811" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6812" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6812" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6813" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6813" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6810" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6810" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6814" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6814" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c84d9a1bee64808dc0f7fc52aa0a8bf3" srcUri="https://example.net:18443/restman/1.0/passwords/c84d9a1bee64808dc0f7fc52aa0a8bf3" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681a" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681a" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="a975796f1c3d80060c8dc56385654610" srcUri="https://example.net:18443/restman/1.0/services/a975796f1c3d80060c8dc56385654610" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="9a45f1717f6f3a403e35e473df1da15f" srcUri="https://example.net:18443/restman/1.0/passwords/9a45f1717f6f3a403e35e473df1da15f" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681b" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681b" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b681c" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b681c" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="ce64b9991c57dbe3a23bac34691b6819" srcUri="https://example.net:18443/restman/1.0/activeConnectors/ce64b9991c57dbe3a23bac34691b6819" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8b29" srcUri="https://example.net:18443/restman/1.0/services/c73c9a1bee64808dc0f7fc52aa0a8b29" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae2" srcUri="https://example.net:18443/restman/1.0/passwords/c73c9a1bee64808dc0f7fc52aa0a8ae2" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:some-kafka-key" srcUri="https://example.net:18443/restman/1.0/privateKeys/00000000000000000000000000000002:some-kafka-key" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712612" srcUri="https://example.net:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712612" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a8ae5" srcUri="https://example.net:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a8ae5" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="861c30489c47114e500f68032d712610" srcUri="https://example.net:18443/restman/1.0/activeConnectors/861c30489c47114e500f68032d712610" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9001" srcUri="https://example.net:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9001" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="c73c9a1bee64808dc0f7fc52aa0a9002" srcUri="https://example.net:18443/restman/1.0/activeConnectors/c73c9a1bee64808dc0f7fc52aa0a9002" type="SSG_ACTIVE_CONNECTOR"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

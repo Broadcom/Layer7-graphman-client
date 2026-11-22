@@ -205,19 +205,19 @@
         </l7:Item>
     </l7:References>
     <l7:Mappings>
-        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
             <l7:Properties>
                 <l7:Property key="FailOnNew">
                     <l7:BooleanValue>true</l7:BooleanValue>
                 </l7:Property>
             </l7:Properties>
         </l7:Mapping>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c01" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c01" type="FOLDER"/>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c02" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c02" type="POLICY"/>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c03" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c03" type="POLICY"/>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c04" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c04" type="POLICY"/>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c05" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c05" type="POLICY"/>
-        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c06" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c06" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c01" srcUri="https://example.net:28443/restman/1.0/folders/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c01" type="FOLDER"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c02" srcUri="https://example.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c02" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c03" srcUri="https://example.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c03" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c04" srcUri="https://example.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c04" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c05" srcUri="https://example.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c05" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c06" srcUri="https://example.net:28443/restman/1.0/policies/aa1b2c4d5e6f7a8b9c0d1e2f3a4b5c06" type="POLICY"/>
     </l7:Mappings>
     <l7:DependencyGraph>
         <l7:Dependencies>

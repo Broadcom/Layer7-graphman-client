@@ -86,49 +86,49 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df03" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df03" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df03" srcUri="https://example.net:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df03" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df01" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df01" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df01" srcUri="https://example.net:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df01" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df02" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df02" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951df02" srcUri="https://example.net:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951df02" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951de8c" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951de8c" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="f09e10c4716574e06d1b6c012951de8c" srcUri="https://example.net:18443/restman/1.0/clusterProperties/f09e10c4716574e06d1b6c012951de8c" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fb" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fb" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fb" srcUri="https://example.net:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fb" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d44801" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d44801" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d44801" srcUri="https://example.net:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d44801" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fd" srcUri="https://source.gateway:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fd" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="90fad4db3a40b94ce88a9c4650d447fd" srcUri="https://example.net:18443/restman/1.0/clusterProperties/90fad4db3a40b94ce88a9c4650d447fd" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>

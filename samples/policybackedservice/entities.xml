@@ -5,7 +5,7 @@
 					<l7:Id>6be8479975c7d1250926a4a86cc3758a</l7:Id>
 					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
 					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
-					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758a"/>
+					<l7:Link rel="self" uri="https://example.net:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758a"/>
 					<l7:Resource>
 						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc3758a" version="0">
 							<l7:Name>some-policy-backed-service</l7:Name>
@@ -24,7 +24,7 @@
 					<l7:Id>6be8479975c7d1250926a4a86cc3758e</l7:Id>
 					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
 					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
-					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758e"/>
+					<l7:Link rel="self" uri="https://example.net:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc3758e"/>
 					<l7:Resource>
 						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc3758e" version="0">
 							<l7:Name>some-other-policy-backed-service</l7:Name>
@@ -43,7 +43,7 @@
 					<l7:Id>6be8479975c7d1250926a4a86cc375c0</l7:Id>
 					<l7:Type>POLICY_BACKED_SERVICE</l7:Type>
 					<l7:TimeStamp>2025-07-11T14:30:53.573+05:30</l7:TimeStamp>
-					<l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc375c0"/>
+					<l7:Link rel="self" uri="https://example.net:8443/restman/1.0/policyBackedServices/6be8479975c7d1250926a4a86cc375c0"/>
 					<l7:Resource>
 						<l7:PolicyBackedService id="6be8479975c7d1250926a4a86cc375c0" version="0">
 							<l7:Name>some-background-task</l7:Name>
@@ -243,7 +243,7 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://source.gateway:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>

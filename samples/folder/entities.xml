@@ -211,7 +211,7 @@
                 </l7:Property>
             </l7:Properties>
         </l7:Mapping>
-		<l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ab0" srcUri="https://source.gateway:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ab0" type="POLICY"/>
-        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ac3" srcUri="https://source.gateway:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ac3" type="POLICY"/>
+		<l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ab0" srcUri="https://example.net:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ab0" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17d9ac3" srcUri="https://example.net:8443/restman/1.0/policies/3a5b333e413ee8f1f18ba6d4c17d9ac3" type="POLICY"/>
     </l7:Mappings>
 </l7:Bundle>

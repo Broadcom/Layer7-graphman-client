@@ -42,7 +42,7 @@
                     <l7:UseSsl>false</l7:UseSsl>
                     <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
                     <l7:Username>some-user</l7:Username>
-                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Password>password</l7:Password>
                     <l7:Folder>INBOX</l7:Folder>
                     <l7:PollInterval>60</l7:PollInterval>
                     <l7:Properties>
@@ -97,7 +97,7 @@
                     <l7:UseSsl>false</l7:UseSsl>
                     <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
                     <l7:Username>some-user</l7:Username>
-                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Password>password</l7:Password>
                     <l7:Folder>INBOX</l7:Folder>
                     <l7:PollInterval>60</l7:PollInterval>
                     <l7:Properties>
@@ -123,7 +123,7 @@
                     <l7:UseSsl>false</l7:UseSsl>
                     <l7:DeleteOnReceive>false</l7:DeleteOnReceive>
                     <l7:Username>some-user</l7:Username>
-                    <l7:Password>el-some-pwd</l7:Password>
+                    <l7:Password>password</l7:Password>
                     <l7:Folder>INBOX</l7:Folder>
                     <l7:PollInterval>60</l7:PollInterval>
                     <l7:Properties>

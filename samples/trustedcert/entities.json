@@ -35,7 +35,7 @@
     {
       "goid": "8ae48d7224bdee2b8772600ae110997b",
       "name": "some-third-trusted-cert",
-      "subjectDn": "cn=example3.org",
+      "subjectDn": "cn=example.net",
       "thumbprint": "SHA1:08bdebdc91233bf16916c1caef24f70864e2d7c8",
       "checksum": "5f587de6558e33db8a89e6ab70f366a4e8dfab9f",
       "verifyHostname": false,

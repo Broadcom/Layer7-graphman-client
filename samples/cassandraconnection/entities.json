@@ -152,7 +152,7 @@
       "name": "some-cassandra-pwd",
       "checksum": "7fa7116bb7d74e7664fe5235976a2ec4e5f0b5bf",
       "description": "test secure password",
-      "secret": "JEw3RXYwMyTPl5WfyEbld5rXdDqa8NY78GnThEtJi1Jnn/fXMIh2Gw==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": true,
       "lastModifiedDate": "2026-09-28T02:34:29.966Z"

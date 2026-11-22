@@ -20,7 +20,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="26c008c30b117ce17a4fec839e968552" version="1">
                             <l7:Name>siteminder-password</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,GXh4eP/IUWLcZWW25FnWeu5au591ybCxWibyg7gJPnY=$dWa8gVRpzbIC/BUEWMJ2eCDXJ+/t6IaGnT6naG9lunksHRwL3NjsCdAODYy1IT1VvfXZrRIm2gKYGPStHAW520LZVh66taR40gSsr/Wx+YSbxrlNE/pwmlw2Q/8AsJGK">$L7C2$1,Au66SsH6Z5Y6dWH1ttEPftDAUBZbpBS98h9GcAFkCeI=$nFZYTFW36gCqwzpOOhIjOvA83qHV/6IUzf4Sh7pY98fZo3njtv7/OANez4E7/EPMBDWyza8+EcucgwkAvCHMvw==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -57,13 +57,13 @@
                             <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
                             <l7:ClusterThreshold>50</l7:ClusterThreshold>
                             <l7:NonClusterFailover>false</l7:NonClusterFailover>
-                            <l7:Secret bundleKey="$L7C2$9fa1f,GXh4eP/IUWLcZWW25FnWeu5au591ybCxWibyg7gJPnY=$dWa8gVRpzbIC/BUEWMJ2eCDXJ+/t6IaGnT6naG9lunksHRwL3NjsCdAODYy1IT1VvfXZrRIm2gKYGPStHAW520LZVh66taR40gSsr/Wx+YSbxrlNE/pwmlw2Q/8AsJGK">$L7C2$1,2/LincM+LcABGMnmhNkFd1dT7gFK0jmV/S6nm1nuFSA=$VpHcKSfrDXpKv2+xJNIuVLYFJEgCOYjSNXMjVLQDr449BnM5RMnyRZMfli2PaqZFDUoDC8J17vqz+IE7KK2E/HbHNZ8DbeHWn2geWVX7o4sMFrg9vrz0drK2czrmtfq+gW9DVeMbhExxHC4GPIYvDpUgfaCM/qvmfzCnu3DYtxkr0FnU3ZhFTJA4jCYdcIRyPblTCEPJjEFsSVTLQqNgIE8YARIIT81kj3G4f3GVN2VddHLaaf7RjHerMIkX3yXosqMfXVc9kdMt5cKSfRNGl2Lvt8++6oy5PC2gM7WXLxQG13ro8UuUStpXncU5pLaQhYx2lgmEJWTUQvnj9hG/Ng==</l7:Secret>
+                            <l7:Secret>password</l7:Secret>
                             <l7:Properties>
 <l7:Property key="server.0.0.accounting.port">
     <l7:StringValue>44441</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.address">
-    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+    <l7:StringValue>example.net</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.authentication.port">
     <l7:StringValue>44442</l7:StringValue>
@@ -106,13 +106,13 @@
                             <l7:UpdateSsoToken>true</l7:UpdateSsoToken>
                             <l7:ClusterThreshold>75</l7:ClusterThreshold>
                             <l7:NonClusterFailover>true</l7:NonClusterFailover>
-                            <l7:Secret bundleKey="$L7C2$9fa1f,GXh4eP/IUWLcZWW25FnWeu5au591ybCxWibyg7gJPnY=$dWa8gVRpzbIC/BUEWMJ2eCDXJ+/t6IaGnT6naG9lunksHRwL3NjsCdAODYy1IT1VvfXZrRIm2gKYGPStHAW520LZVh66taR40gSsr/Wx+YSbxrlNE/pwmlw2Q/8AsJGK">$L7C2$1,BEg8BKFSo2Wn6lHJVrQbfJUy14ILJivyZsN+FR2BnQo=$EEHCJsat8Ayc2rlVexvB+fxWYOCpWQiB/AJnoaHFbudO8Ag68PtImaMeNXqUMpqTc0YLSVN1PuqKDFKPm01shqZ9ClF2qnmcDDQg0nMGKy2pZ4H0mtvcggBzohta6vvhwclIhyY/kAlM9aarI/MSXIrPkh2l6acVImZv6enN8hNKMGeHYssjTLKORVXezcKJHkPnQNciHwJ7tNcHp0+9uVOiFndfCQiWoaduiBKY9LKqtmHelk83d84icHZfOyAkc0DY+KDWsWC3sWuVm8jWgoyQxt5Wm5T85UJtbeFJEyU/5ZL62TXblTsOOX1FftYqaCuMgYDNZNUtTgs9TqLAyw==</l7:Secret>
+                            <l7:Secret>password</l7:Secret>
                             <l7:Properties>
 <l7:Property key="server.0.0.accounting.port">
     <l7:StringValue>44441</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.address">
-    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+    <l7:StringValue>example.net</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.authentication.port">
     <l7:StringValue>44442</l7:StringValue>
@@ -155,13 +155,13 @@
                             <l7:UpdateSsoToken>false</l7:UpdateSsoToken>
                             <l7:ClusterThreshold>50</l7:ClusterThreshold>
                             <l7:NonClusterFailover>false</l7:NonClusterFailover>
-                            <l7:Secret bundleKey="$L7C2$9fa1f,GXh4eP/IUWLcZWW25FnWeu5au591ybCxWibyg7gJPnY=$dWa8gVRpzbIC/BUEWMJ2eCDXJ+/t6IaGnT6naG9lunksHRwL3NjsCdAODYy1IT1VvfXZrRIm2gKYGPStHAW520LZVh66taR40gSsr/Wx+YSbxrlNE/pwmlw2Q/8AsJGK">$L7C2$1,mtMMaI+eqjZ4v9CDWorbioED9/vzUisBxAINHpnYLNI=$2EorWwSdU8JrSMzTSq0DNWVnV68YQZpYq6+nm2y3eeyA7FQNAK8RilSBk3SwOdmdUC0TsFUpGb7pmbTPYLUibEPY39Qchj2JNYz6UhZHTvnirCBYwPMOCne4nQOBxQh+ysizvaWKgw//t+ZRudiwN37b9pUpnW8bwdkqqVyYu0Ug/Ozhw03a6REWdpwZG+Oq9GQzhsJGb/oxKHzDpBlqskFtxfgE4va/ZblT2heE+EGRPTU/8kxLhZ8XbpRDkdcWqU3xu2Mcx8PPWOmxv5MC9tkaOigp8SeHr/5twvUp+XEflNE0U1hSsOVR9OP8T9eLAQSHU3cl+EI5ITgmjaF2vw==</l7:Secret>
+                            <l7:Secret>password</l7:Secret>
                             <l7:Properties>
 <l7:Property key="server.0.0.accounting.port">
     <l7:StringValue>44441</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.address">
-    <l7:StringValue>apimsm128compat.lvn.broadcom.net</l7:StringValue>
+    <l7:StringValue>example.net</l7:StringValue>
 </l7:Property>
 <l7:Property key="server.0.0.authentication.port">
     <l7:StringValue>44442</l7:StringValue>
@@ -416,21 +416,21 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff77" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5ff77" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968552" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/26c008c30b117ce17a4fec839e968552" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968557" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/siteMinderConfigurations/26c008c30b117ce17a4fec839e968557" type="SITEMINDER_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f76d" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f76d" type="SITEMINDER_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f770" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f770" type="SITEMINDER_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6063e" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6063e" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d605de" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d605de" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d605f1" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d605f1" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ff77" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5ff77" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968552" srcUri="https://example.net:28443/restman/1.0/passwords/26c008c30b117ce17a4fec839e968552" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="26c008c30b117ce17a4fec839e968557" srcUri="https://example.net:28443/restman/1.0/siteMinderConfigurations/26c008c30b117ce17a4fec839e968557" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f76d" srcUri="https://example.net:28443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f76d" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f770" srcUri="https://example.net:28443/restman/1.0/siteMinderConfigurations/72adab14b763f12efb51ebb737d5f770" type="SITEMINDER_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6063e" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6063e" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d605de" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d605de" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d605f1" srcUri="https://example.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d605f1" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

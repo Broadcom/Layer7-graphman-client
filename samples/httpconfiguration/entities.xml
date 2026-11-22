@@ -8,7 +8,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="a3db3565871da28840b21d286c9f108a" version="1">
                             <l7:Name>http-config-pwd-1</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh">$L7C2$1,vIguw0RJI22eHbE7kx/ri8AiPlJqR+aBxewWZQ6aZYo=$RH1P2NrXdFJhOyO0tfiZLFyKjDjTDDT0DRsAHyEaBfPuiUAE10PHoUhzeoe72z33kJlEEQfm01itwGtUbU3hdA==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -210,7 +210,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="a3db3565871da28840b21d286c9f108b" version="1">
                             <l7:Name>http-config-pwd-2</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh">$L7C2$1,jhFxu9RBtDwwDK6EhDA5kdclmsf9wbAN5HokNFEIFiQ=$DFsYmHPgRmJiALAADUwqXv8YDNZNsXEUTrmDPgSe1I2jyqZWTjZjhLFzeq74uJHKySAhAjDQITYkWgvmm8Ihrg==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -280,17 +280,17 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108a" srcUri="https://source.gateway:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108a" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://source.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431adf" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431adf" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae0" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae0" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae1" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae1" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:http-config-key1" srcUri="https://source.gateway:18443/restman/1.0/privateKeys/00000000000000000000000000000002:http-config-key1" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae2" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae2" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae3" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae3" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108b" srcUri="https://source.gateway:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108b" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae4" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae4" type="HTTP_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ade" srcUri="https://source.gateway:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ade" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108a" srcUri="https://example.net:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://example.net:18443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431adf" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431adf" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae0" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae0" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae1" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae1" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:http-config-key1" srcUri="https://example.net:18443/restman/1.0/privateKeys/00000000000000000000000000000002:http-config-key1" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae2" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae2" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae3" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae3" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108b" srcUri="https://example.net:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108b" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae4" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae4" type="HTTP_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ade" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ade" type="HTTP_CONFIGURATION"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

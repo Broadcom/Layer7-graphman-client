@@ -32,7 +32,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="4a4c055365691617a259ca5ad3b8b96f" version="0">
                             <l7:Name>some-cassandra-pwd</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,myjvw2/0n4m9wB+ABnMhzOIjsC5L9MzJkYCS4zrXKuE=$b+Vc+vVMVKak6xPA+oVO+wXPYfqeAxiJ2jVWm2Ru25F/q8qrT3/UNBqQeZr7jGTUaGqOGcAGplYk9jtEKXM02CYT+xi37l/+53xA/BRFNylhnw2LrRUIsuOLEPy4mT3t">$L7C2$1,WhLwxzI0jtd5jPCu5tKhXPGNFyThL10zC8neX7URrGU=$Bm8OBX/yYUdbdGcCudJHPjs8xgwzduDLonfGjUFg1ZNuYbtZ6UTOw/m3Y9lfSGGjyd0uf0aTR7NDr24uEfpOsw==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue>test secure password</l7:StringValue>
@@ -185,14 +185,14 @@ driver-config-2:val2</l7:StringValue>
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d5" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d5" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b96f" srcUri="https://source.gateway:18443/restman/1.0/passwords/4a4c055365691617a259ca5ad3b8b96f" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d6" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d6" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d4" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d4" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b864" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b864" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b901" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b901" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b902" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b902" type="CASSANDRA_CONFIGURATION"/>
-                <l7:Mapping action="NewOrExisting" srcId="5b5c055365691617a259ca5ad3b8b865" srcUri="https://source.gateway:18443/restman/1.0/cassandraConnections/5b5c055365691617a259ca5ad3b8b865" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d5" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d5" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b96f" srcUri="https://example.net:18443/restman/1.0/passwords/4a4c055365691617a259ca5ad3b8b96f" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d6" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d6" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="8379e047b25c23db49042913fd4553d4" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/8379e047b25c23db49042913fd4553d4" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b864" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b864" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b901" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b901" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="4a4c055365691617a259ca5ad3b8b902" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/4a4c055365691617a259ca5ad3b8b902" type="CASSANDRA_CONFIGURATION"/>
+                <l7:Mapping action="NewOrExisting" srcId="5b5c055365691617a259ca5ad3b8b865" srcUri="https://example.net:18443/restman/1.0/cassandraConnections/5b5c055365691617a259ca5ad3b8b865" type="CASSANDRA_CONFIGURATION"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

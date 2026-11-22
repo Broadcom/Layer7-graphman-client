@@ -81,7 +81,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc55" version="1">
                             <l7:Name>secret-1</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,HYOG3NLPa6kvW02LYB+942pgkA5gqP2uJD4YAVWOuVs=$soXHMQ9qZQMuPbnJCHcddIlATRnkpYnCqmXH8YPbOG1uJVtVCwHVbZ2KRMvO+5Sd25HucBGywu6LRqs9YlTI67MHKHrIjydG9jFCszRPSQJ5w2AVXojpCq670CdXOEUF">$L7C2$1,z9DVcWLHqDJhN/Rjb8E/AfYPKOauX+VBUHPBa7fWqzQ=$VAESVWuXEuwlFNH7egsZed4H6ak/nyLrxGp5gCQlnJ+/7uUTCEjAar5HURRH6WF7k31J9DruIQhcnho1bFK3BQ==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -100,13 +100,13 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example1.io</l7:Name>
+                    <l7:Name>example.net</l7:Name>
                     <l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
                     <l7:Type>TRUSTED_CERT</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:18:24.749Z</l7:TimeStamp>
                     <l7:Resource>
                         <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdb9" version="0">
-                            <l7:Name>example1.io</l7:Name>
+                            <l7:Name>example.net</l7:Name>
                             <l7:CertificateData>
 <l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
 <l7:SerialNumber>16461789489081207431</l7:SerialNumber>
@@ -270,13 +270,13 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example2.io</l7:Name>
+                    <l7:Name>example.net</l7:Name>
                     <l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
                     <l7:Type>TRUSTED_CERT</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:18:24.761Z</l7:TimeStamp>
                     <l7:Resource>
                         <l7:TrustedCertificate id="72adab14b763f12efb51ebb737d5fdbb" version="0">
-                            <l7:Name>example2.io</l7:Name>
+                            <l7:Name>example.net</l7:Name>
                             <l7:CertificateData>
 <l7:IssuerName>CN%3Dsigner-2</l7:IssuerName>
 <l7:SerialNumber>8697244857288879459</l7:SerialNumber>
@@ -385,10 +385,10 @@
   &lt;void property="tlsTrustedCertNames"&gt;
    &lt;array class="java.lang.String" length="2"&gt;
     &lt;void index="0"&gt;
-     &lt;string&gt;example1.io&lt;/string&gt;
+     &lt;string&gt;example.net&lt;/string&gt;
     &lt;/void&gt;
     &lt;void index="1"&gt;
-     &lt;string&gt;example2.io&lt;/string&gt;
+     &lt;string&gt;example.net&lt;/string&gt;
     &lt;/void&gt;
    &lt;/array&gt;
   &lt;/void&gt;
@@ -478,12 +478,12 @@
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604ca"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-2"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604cc"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-3"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example3.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
@@ -530,12 +530,12 @@
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604c6"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-1"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604ca"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-2"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
         &lt;L7p:Include&gt;
             &lt;L7p:PolicyGuid stringValue="eea78384-01b6-4f90-8c98-e118f14549b1"/&gt;
@@ -603,12 +603,12 @@
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604c6"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-1"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
         &lt;L7p:Http2Routing&gt;
             &lt;L7p:Http2ClientConfigGoid goidValue="72adab14b763f12efb51ebb737d604ca"/&gt;
             &lt;L7p:Http2ClientConfigName stringValue="http2-client-2"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.com"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
         &lt;/L7p:Http2Routing&gt;
         &lt;L7p:Include&gt;
             &lt;L7p:PolicyGuid stringValue="eea78384-01b6-4f90-8c98-e118f14549b1"/&gt;
@@ -624,27 +624,27 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ffb7" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5ffb7" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604c6" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604c6" type="GENERIC"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc55" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc55" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdb9" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdb9" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdbb" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdbb" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604ca" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604ca" type="GENERIC"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604cc" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604cc" type="GENERIC"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604f6" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d604f6" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604d0" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d604d0" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66c89" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66c89" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5ffb7" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5ffb7" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604c6" srcUri="https://example.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604c6" type="GENERIC"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc55" srcUri="https://example.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc55" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdb9" srcUri="https://example.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdb9" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f751" srcUri="https://example.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f751" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f754" srcUri="https://example.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5f754" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5f747" srcUri="https://example.net:28443/restman/1.0/revocationCheckingPolicies/72adab14b763f12efb51ebb737d5f747" type="REVOCATION_CHECK_POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fdbb" srcUri="https://example.net:28443/restman/1.0/trustedCertificates/72adab14b763f12efb51ebb737d5fdbb" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604ca" srcUri="https://example.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604ca" type="GENERIC"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604cc" srcUri="https://example.net:28443/restman/1.0/genericEntities/72adab14b763f12efb51ebb737d604cc" type="GENERIC"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604f6" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d604f6" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d604d0" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d604d0" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66c89" srcUri="https://example.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66c89" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>
@@ -686,7 +686,7 @@
                         <l7:Type>SECURE_PASSWORD</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example1.io</l7:Name>
+                        <l7:Name>example.net</l7:Name>
                         <l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
                         <l7:Type>TRUSTED_CERT</l7:Type>
                     </l7:Dependency>
@@ -718,7 +718,7 @@
                         </l7:Dependencies>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example2.io</l7:Name>
+                        <l7:Name>example.net</l7:Name>
                         <l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
                         <l7:Type>TRUSTED_CERT</l7:Type>
                         <l7:Dependencies>
@@ -740,12 +740,12 @@
 <l7:Type>SECURE_PASSWORD</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example1.io</l7:Name>
+<l7:Name>example.net</l7:Name>
 <l7:Id>72adab14b763f12efb51ebb737d5fdb9</l7:Id>
 <l7:Type>TRUSTED_CERT</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example2.io</l7:Name>
+<l7:Name>example.net</l7:Name>
 <l7:Id>72adab14b763f12efb51ebb737d5fdbb</l7:Id>
 <l7:Type>TRUSTED_CERT</l7:Type>
                             </l7:Dependency>

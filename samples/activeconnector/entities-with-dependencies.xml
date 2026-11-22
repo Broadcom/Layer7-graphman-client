@@ -133,7 +133,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc77" version="1">
                             <l7:Name>secret-2</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,yseeFywXiaiJGbdb/9fe6kb9m006LQwBrSuoS7C08eE=$T0oCKyku1Ewad5t/qTfrhbKRPxWba5NOAIw8CYrxaaVhFITxkVFDBTlHLrj4oRv74PwuTIpJQrPQ64Esbq5TfxPZBarSZcxrel813F4touudR7eW/2wTFLa0YXvGM2RM">$L7C2$1,bqxifRq240+3KqPNVU4dO672JlMW3iByTXF7tbPNCrU=$dvj66yCmjWvIfpMP9UKXh4fzVyoj+hfH58p9HayVr1h8Z7M9eanhv6P8JHwf9rKuHF+hlo5LQEQuuXXbYzYnVg==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -285,7 +285,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc7a" version="1">
                             <l7:Name>secret-3</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,yseeFywXiaiJGbdb/9fe6kb9m006LQwBrSuoS7C08eE=$T0oCKyku1Ewad5t/qTfrhbKRPxWba5NOAIw8CYrxaaVhFITxkVFDBTlHLrj4oRv74PwuTIpJQrPQ64Esbq5TfxPZBarSZcxrel813F4touudR7eW/2wTFLa0YXvGM2RM">$L7C2$1,GjTTMuuaAkyzXfKZi86Kf3kX6OxxG10UWsW9aOq3xC8=$x9CZ6o+Saj95f4fm7xG0zSlc+ihRbp6EtNh0yJLcOG1eyxzoxbo4CowkigA0Sh2kXXZA79sM8dF0UvW2nSykBg==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -687,33 +687,33 @@ topic4</l7:StringValue>
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6007a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6007a" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60434" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d60434" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="34124900af309006ed45a0d3823e5759" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/34124900af309006ed45a0d3823e5759" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:kafka-key2" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:kafka-key2" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6043c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d6043c" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:kafka-key3" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:kafka-key3" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60442" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d60442" type="SSG_ACTIVE_CONNECTOR"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6045c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6045c" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60445" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60445" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60781" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/72adab14b763f12efb51ebb737d60781" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6007a" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6007a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60434" srcUri="https://example.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d60434" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="34124900af309006ed45a0d3823e5759" srcUri="https://example.net:28443/restman/1.0/services/34124900af309006ed45a0d3823e5759" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://example.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:kafka-key2" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:kafka-key2" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6043c" srcUri="https://example.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d6043c" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://example.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:kafka-key3" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:kafka-key3" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60442" srcUri="https://example.net:28443/restman/1.0/activeConnectors/72adab14b763f12efb51ebb737d60442" type="SSG_ACTIVE_CONNECTOR"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6045c" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6045c" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60445" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60445" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60781" srcUri="https://example.net:28443/restman/1.0/clusterProperties/72adab14b763f12efb51ebb737d60781" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="160cf0037eb93eb587294a187f6b7e61" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/160cf0037eb93eb587294a187f6b7e61" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6047d" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d6047d" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="160cf0037eb93eb587294a187f6b7e61" srcUri="https://example.net:28443/restman/1.0/services/160cf0037eb93eb587294a187f6b7e61" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6047d" srcUri="https://example.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d6047d" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

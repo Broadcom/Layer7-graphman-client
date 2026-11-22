@@ -93,7 +93,7 @@
       "id": "7620df40-8e14-4e78-97bd-22f1a0675f0b",
       "name": "Gateway Graphman Bundle - 2025-07-17T06:07:34.908+05:30",
       "author": "admin",
-      "hostname": "source.gateway",
+      "hostname": "example.net",
       "timestamp": "2025-07-17T06:07:34.908+05:30"
     },
     "defaultAction": "NEW_OR_UPDATE"

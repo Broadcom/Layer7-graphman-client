@@ -42,12 +42,12 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example1.io</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                    <l7:Name>example.net</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                     <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:29:57.344Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:PrivateKey alias="example1.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example1.io">
+                        <l7:PrivateKey alias="example.net" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example.net">
                             <l7:CertificateChain>
 <l7:CertificateData>
     <l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
@@ -68,12 +68,12 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example2.io</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+                    <l7:Name>example.net</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                     <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:29:57.344Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:PrivateKey alias="example2.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example2.io">
+                        <l7:PrivateKey alias="example.net" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example.net">
                             <l7:CertificateChain>
 <l7:CertificateData>
     <l7:IssuerName>CN%3Dsigner-2</l7:IssuerName>
@@ -106,12 +106,12 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example3.io</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+                    <l7:Name>example.net</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                     <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:29:57.345Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:PrivateKey alias="example3.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example3.io">
+                        <l7:PrivateKey alias="example.net" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example.net">
                             <l7:CertificateChain>
 <l7:CertificateData>
     <l7:IssuerName>CN%3Dsigner-3</l7:IssuerName>
@@ -168,10 +168,10 @@
             &lt;L7p:Comment stringValue="Policy Fragment: policy-with-trusted-certs"/&gt;
         &lt;/L7p:CommentAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -201,10 +201,10 @@
             &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
         &lt;/L7p:HttpRoutingAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example3.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example3.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -273,7 +273,7 @@
         &lt;/L7p:CommentAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -302,10 +302,10 @@
             &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
         &lt;/L7p:HttpRoutingAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example1.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -335,10 +335,10 @@
             &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
         &lt;/L7p:HttpRoutingAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -411,7 +411,7 @@
         &lt;/L7p:CommentAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -500,7 +500,7 @@
         &lt;/L7p:CommentAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -529,10 +529,10 @@
             &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
         &lt;/L7p:HttpRoutingAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example1.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example1.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -562,10 +562,10 @@
             &lt;L7p:UsesDefaultKeyStore booleanValue="false"/&gt;
         &lt;/L7p:HttpRoutingAssertion&gt;
         &lt;L7p:HttpRoutingAssertion&gt;
-            &lt;L7p:KeyAlias stringValue="example2.io"/&gt;
+            &lt;L7p:KeyAlias stringValue="example.net"/&gt;
             &lt;L7p:NonDefaultKeystoreId goidValue="00000000000000000000000000000002"/&gt;
             &lt;L7p:OmitAuthHeaderConnectReuseSystemDefault boxedBooleanValue="true"/&gt;
-            &lt;L7p:ProtectedServiceUrl stringValue="https://example2.io"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="https://example.net"/&gt;
             &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
             &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
             &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
@@ -608,22 +608,22 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd02" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd02" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example1.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example1.io" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example2.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example2.io" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example3.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example3.io" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe3c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe3c" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe26" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe26" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe55" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe55" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66d9f" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66d9f" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd02" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd02" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe3c" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe3c" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe26" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe26" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fe55" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d5fe55" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66d9f" srcUri="https://example.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66d9f" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>
@@ -660,18 +660,18 @@
                         <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example1.io</l7:Name>
-                        <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                        <l7:Name>example.net</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                         <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example2.io</l7:Name>
-                        <l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+                        <l7:Name>example.net</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                         <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example3.io</l7:Name>
-                        <l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+                        <l7:Name>example.net</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                         <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
@@ -680,13 +680,13 @@
                         <l7:Type>POLICY</l7:Type>
                         <l7:Dependencies>
                             <l7:Dependency>
-<l7:Name>example2.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example3.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example3.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                         </l7:Dependencies>
@@ -702,13 +702,13 @@
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example1.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example2.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
@@ -734,13 +734,13 @@
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example1.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example2.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example2.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>

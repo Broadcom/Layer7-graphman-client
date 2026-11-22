@@ -303,20 +303,20 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6017a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6017a" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6034e" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d6034e" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60350" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60350" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60352" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60352" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60357" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60357" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6033b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6033b" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66b2b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66b2b" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6017a" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6017a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6034e" srcUri="https://example.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d6034e" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60350" srcUri="https://example.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60350" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60352" srcUri="https://example.net:28443/restman/1.0/jdbcConnections/72adab14b763f12efb51ebb737d60352" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60357" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d60357" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6033b" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6033b" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="5db3a5b3a9b52c23066ea07be5c66b2b" srcUri="https://example.net:28443/restman/1.0/services/5db3a5b3a9b52c23066ea07be5c66b2b" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

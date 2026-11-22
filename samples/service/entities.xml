@@ -301,7 +301,7 @@
         </l7:Item>
     </l7:References>
     <l7:Mappings>
-        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://source.gateway:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
             <l7:Properties>
                 <l7:Property key="FailOnNew">
                     <l7:BooleanValue>true</l7:BooleanValue>

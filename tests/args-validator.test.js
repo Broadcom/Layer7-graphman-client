@@ -49,8 +49,18 @@ test("known type mismatch throws", () => {
     expect(() => run(["--options.excludeGoids", "notabool"])).toThrow(/expected type boolean/);
 });
 
-test("known array-type parameter given a scalar throws", () => {
-    expect(() => run(["--sections", "services"])).toThrow(/expected type array/);
+test("known non-array-type parameter given a multiple values throws", () => {
+    expect(() => run(["--input", "hello", "world"])).toThrow(/expected type string/);
+});
+
+test("known array-type parameter given a scalar accepts", () => {
+    const params = run(["--sections", "services"]);
+    expect(params.sections).toEqual(["services"]);
+});
+
+test("known array-type parameter given a multiple values accepts", () => {
+    const params = run(["--sections", "services", "policies"]);
+    expect(params.sections).toEqual(["services", "policies"]);
 });
 
 test("variables and its nested keys are never validated", () => {

@@ -14,7 +14,7 @@
         },
         {
           "type": "CRL_FROM_URL",
-          "url": "https://crlfromurl.com/",
+          "url": "https://example.net/",
           "allowIssuerSignature": true,
           "nonceUsage": "EXCLUDE_NONCE"
         },
@@ -26,7 +26,7 @@
         },
         {
           "type": "OCSP_FROM_URL",
-          "url": "https://ocspfromurl.com/",
+          "url": "https://example.net/",
           "allowIssuerSignature": false,
           "nonceUsage": "USE_NONCE_CONDITIONALLY"
         }
@@ -46,7 +46,7 @@
         },
         {
           "type": "CRL_FROM_URL",
-          "url": "https://crlfromurl.com/",
+          "url": "https://example.net/",
           "allowIssuerSignature": false,
           "nonceUsage": "EXCLUDE_NONCE"
         },
@@ -58,7 +58,7 @@
         },
         {
           "type": "OCSP_FROM_URL",
-          "url": "https://ocspfromurl.com/",
+          "url": "https://example.net/",
           "allowIssuerSignature": true,
           "nonceUsage": "USE_NONCE_CONDITIONALLY"
         }

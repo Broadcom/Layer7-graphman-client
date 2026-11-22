@@ -178,7 +178,7 @@
             <l7:Id>3a5b333e413ee8f1f18ba6d4c17da160</l7:Id>
             <l7:Type>TRUSTED_CERT</l7:Type>
             <l7:TimeStamp>2026-02-01T19:43:32.392+05:30</l7:TimeStamp>
-            <l7:Link rel="self" uri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160"/>
+            <l7:Link rel="self" uri="https://example.net:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160"/>
             <l7:Resource>
                 <l7:TrustedCertificate id="3a5b333e413ee8f1f18ba6d4c17da160" version="0">
                     <l7:Name>some-signer</l7:Name>
@@ -405,9 +405,9 @@
                 </l7:Property>
             </l7:Properties>
         </l7:Mapping>
-        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da152" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da152" type="TRUSTED_CERT"/>
-        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da158" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da158" type="TRUSTED_CERT"/>
-        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da160" srcUri="https://source.gateway:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da152" srcUri="https://example.net:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da152" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da158" srcUri="https://example.net:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da158" type="TRUSTED_CERT"/>
+        <l7:Mapping action="NewOrExisting" srcId="3a5b333e413ee8f1f18ba6d4c17da160" srcUri="https://example.net:8443/restman/1.0/trustedCertificates/3a5b333e413ee8f1f18ba6d4c17da160" type="TRUSTED_CERT"/>
         <l7:Mapping action="NewOrExisting" srcId="c5a5333e413ee8f1f18ba6d4c17da201" type="TRUSTED_CERT">
             <l7:Properties>
                 <l7:Property key="MapBy">

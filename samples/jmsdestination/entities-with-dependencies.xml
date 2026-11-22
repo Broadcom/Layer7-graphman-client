@@ -82,7 +82,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc77" version="1">
                             <l7:Name>secret-2</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,X6YEPfT2fI5WorJCSymTqPZMVvt6enccKv2dOU4geMg=$GQmGunpszRtCxraBiwfsFWUVGLJ4cRVzfWoDS/HMm5yqxm5f4IsTsffjDwg+E7dkXRUeBax26EFZZ93gfH9+wdNVNwGte4tMoR4U3rohNZj6sc57PXYBuzi342bpAjnZ">$L7C2$1,mU9FmbyTiG0RGpHPYrufbPuaaux+YmMNGmu3bhpI7Io=$uYFH5eAs3gwpgGUYhBFG1xBTuQ+jh8K5rYQRDiv368eDnpWzFgPPj+FzgCO2QZV2aQikFlCq/4zpOpTrkrAAlg==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -101,12 +101,12 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>example1.io</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                    <l7:Name>example.net</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                     <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     <l7:TimeStamp>2026-02-28T12:21:24.572Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:PrivateKey alias="example1.io" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example1.io">
+                        <l7:PrivateKey alias="example.net" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:example.net">
                             <l7:CertificateChain>
 <l7:CertificateData>
     <l7:IssuerName>CN%3Dexample1.io</l7:IssuerName>
@@ -188,7 +188,7 @@
                                         <l7:StringValue>false</l7:StringValue>
                                     </l7:Property>
                                     <l7:Property key="com.l7tech.server.jms.prop.queue.ssgKeyAlias">
-                                        <l7:StringValue>example1.io</l7:StringValue>
+                                        <l7:StringValue>example.net</l7:StringValue>
                                     </l7:Property>
                                     <l7:Property key="com.l7tech.server.jms.prop.queue.ssgKeystoreId">
                                         <l7:StringValue>00000000000000000000000000000002</l7:StringValue>
@@ -215,7 +215,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="72adab14b763f12efb51ebb737d5fc7a" version="1">
                             <l7:Name>secret-3</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,X6YEPfT2fI5WorJCSymTqPZMVvt6enccKv2dOU4geMg=$GQmGunpszRtCxraBiwfsFWUVGLJ4cRVzfWoDS/HMm5yqxm5f4IsTsffjDwg+E7dkXRUeBax26EFZZ93gfH9+wdNVNwGte4tMoR4U3rohNZj6sc57PXYBuzi342bpAjnZ">$L7C2$1,37JcoAbkMFvTFWdKThUyfE/DUOLTIstv97Sft8XMDWg=$T4P/5LEEMb5mOnZdtmhA9N4Ipg+/GKhPnBFGeBoglLR6g+PHeUELzuHhjrn4QCqy8pAlurJ2sCN1T6BYJvyttg==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -322,7 +322,7 @@
                     <l7:Id>72adab14b763f12efb51ebb737d60677</l7:Id>
                     <l7:Type>JMS_ENDPOINT</l7:Type>
                     <l7:TimeStamp>2026-03-05T00:00:50.921Z</l7:TimeStamp>
-                    <l7:Link rel="self" uri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60677"/>
+                    <l7:Link rel="self" uri="https://example.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60677"/>
                     <l7:Resource>
                         <l7:JMSDestination id="72adab14b763f12efb51ebb737d60677" version="0">
                             <l7:JMSDestinationDetail id="72adab14b763f12efb51ebb737d60677" version="0">
@@ -668,31 +668,31 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://example.net:28443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
                     <l7:Properties>
                         <l7:Property key="FailOnNew">
                             <l7:BooleanValue>true</l7:BooleanValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6013a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6013a" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60666" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60666" type="JMS_ENDPOINT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example1.io" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example1.io" type="SSG_KEY_ENTRY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6066b" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d6066b" type="JMS_ENDPOINT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60670" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60670" type="JMS_ENDPOINT"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6071c" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6071c" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606c4" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d606c4" type="POLICY"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60781" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/clusterProperties/72adab14b763f12efb51ebb737d60781" type="CLUSTER_PROPERTY">
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6013a" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d6013a" type="FOLDER"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60666" srcUri="https://example.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60666" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc77" srcUri="https://example.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc77" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6066b" srcUri="https://example.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d6066b" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fc7a" srcUri="https://example.net:28443/restman/1.0/passwords/72adab14b763f12efb51ebb737d5fc7a" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60670" srcUri="https://example.net:28443/restman/1.0/jmsDestinations/72adab14b763f12efb51ebb737d60670" type="JMS_ENDPOINT"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d6071c" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d6071c" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606c4" srcUri="https://example.net:28443/restman/1.0/policies/72adab14b763f12efb51ebb737d606c4" type="POLICY"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60781" srcUri="https://example.net:28443/restman/1.0/clusterProperties/72adab14b763f12efb51ebb737d60781" type="CLUSTER_PROPERTY">
                     <l7:Properties>
                         <l7:Property key="MapBy">
                             <l7:StringValue>name</l7:StringValue>
                         </l7:Property>
                     </l7:Properties>
                 </l7:Mapping>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60681" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d60681" type="SERVICE"/>
-                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606d8" srcUri="https://ssg112.broadcom.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d606d8" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d60681" srcUri="https://example.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d60681" type="SERVICE"/>
+                <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d606d8" srcUri="https://example.net:28443/restman/1.0/services/72adab14b763f12efb51ebb737d606d8" type="SERVICE"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>
@@ -734,8 +734,8 @@
                         <l7:Type>SECURE_PASSWORD</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
-                        <l7:Name>example1.io</l7:Name>
-                        <l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+                        <l7:Name>example.net</l7:Name>
+                        <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                         <l7:Type>SSG_KEY_ENTRY</l7:Type>
                     </l7:Dependency>
                     <l7:Dependency>
@@ -749,8 +749,8 @@
 <l7:Type>SECURE_PASSWORD</l7:Type>
                             </l7:Dependency>
                             <l7:Dependency>
-<l7:Name>example1.io</l7:Name>
-<l7:Id>00000000000000000000000000000002:example1.io</l7:Id>
+<l7:Name>example.net</l7:Name>
+<l7:Id>00000000000000000000000000000002:example.net</l7:Id>
 <l7:Type>SSG_KEY_ENTRY</l7:Type>
                             </l7:Dependency>
                         </l7:Dependencies>

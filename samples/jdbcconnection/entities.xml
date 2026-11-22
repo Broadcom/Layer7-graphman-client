@@ -49,7 +49,7 @@
                     <l7:Resource>
                         <l7:StoredPassword id="c002ee2db07065e75ef013a8c117fc6f" version="0">
                             <l7:Name>jdbc-user-pwd</l7:Name>
-                            <l7:Password bundleKey="$L7C2$9fa1f,boKRqCvRB2JQrrbX877niDD6StXNXG7LoT2bESxt3cM=$cNKW1TWSUB6T+qPKQwmYUDZdhoMRPH41PpAEeReXV03OOi98vgMc6bSHZXUePnZNl6R3bQGvXAt1YOhwPZvuWR4+EuNPL7VciJqovP6jwWFMZwU5FdTgPwQPLuS/eFRz">$L7C2$1,pHi/7C6791azD4LHXIrG+xrKggkfxXtmhbn1tlrAC2k=$U1orATTmOwKODZm+87QCcOYS8bj0z/hVbzlS3lXXAqkdAE1pZuTrVSdG6XDVdMHctqnneui6N8WSV2bMI3Oxug==</l7:Password>
+                            <l7:Password>password</l7:Password>
                             <l7:Properties>
 <l7:Property key="description">
     <l7:StringValue></l7:StringValue>
@@ -361,16 +361,16 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3959" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3959" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="c002ee2db07065e75ef013a8c117fc6f" srcUri="https://source.gateway:18443/restman/1.0/passwords/c002ee2db07065e75ef013a8c117fc6f" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395a" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395a" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395b" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395b" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3958" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3958" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="36943aa823d438b8ec08f6ece0d178bb" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/36943aa823d438b8ec08f6ece0d178bb" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="66943aa823d438b8ec08f6ece0d178be" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/66943aa823d438b8ec08f6ece0d178be" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="76943aa823d438b8ec08f6ece0d178bf" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/76943aa823d438b8ec08f6ece0d178bf" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="46943aa823d438b8ec08f6ece0d178bc" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/46943aa823d438b8ec08f6ece0d178bc" type="JDBC_CONNECTION"/>
-                <l7:Mapping action="NewOrExisting" srcId="56943aa823d438b8ec08f6ece0d178bd" srcUri="https://source.gateway:18443/restman/1.0/jdbcConnections/56943aa823d438b8ec08f6ece0d178bd" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3959" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3959" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="c002ee2db07065e75ef013a8c117fc6f" srcUri="https://example.net:18443/restman/1.0/passwords/c002ee2db07065e75ef013a8c117fc6f" type="SECURE_PASSWORD"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395a" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395a" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f395b" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f395b" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="1f7fc76ab9627653dc51b248e61f3958" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/1f7fc76ab9627653dc51b248e61f3958" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="36943aa823d438b8ec08f6ece0d178bb" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/36943aa823d438b8ec08f6ece0d178bb" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="66943aa823d438b8ec08f6ece0d178be" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/66943aa823d438b8ec08f6ece0d178be" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="76943aa823d438b8ec08f6ece0d178bf" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/76943aa823d438b8ec08f6ece0d178bf" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="46943aa823d438b8ec08f6ece0d178bc" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/46943aa823d438b8ec08f6ece0d178bc" type="JDBC_CONNECTION"/>
+                <l7:Mapping action="NewOrExisting" srcId="56943aa823d438b8ec08f6ece0d178bd" srcUri="https://example.net:18443/restman/1.0/jdbcConnections/56943aa823d438b8ec08f6ece0d178bd" type="JDBC_CONNECTION"/>
             </l7:Mappings>
             <l7:DependencyGraph>
                 <l7:Dependencies>

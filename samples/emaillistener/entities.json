@@ -27,7 +27,7 @@
       "folder": "INBOX",
       "deleteOnReceive": false,
       "username": "some-user",
-      "password": "JEw3RXYwMyTI4KM9krd18I20Ir0/tqTFmn4K6idoq24PyKSMzuCs3g==",
+      "password": "password",
       "sslEnabled": false,
       "pollInterval": 60
     },
@@ -42,7 +42,7 @@
       "folder": "INBOX",
       "deleteOnReceive": false,
       "username": "some-user",
-      "password": "JEw3RXYwMyTQU89D8U7dpcx0knpjxidtk2qN7gi3dxlWsp8HXsyy3g==",
+      "password": "password",
       "sslEnabled": false,
       "pollInterval": 60
     },
@@ -57,7 +57,7 @@
       "folder": "INBOX",
       "deleteOnReceive": false,
       "username": "some-user",
-      "password": "JEw3RXYwMyStvrbYsR5bF0IGiW2qUc2ljMKPpxfmi6KtpJL/Kb5Huw==",
+      "password": "password",
       "sslEnabled": false,
       "pollInterval": 60
     }
@@ -68,7 +68,7 @@
       "name": "email-listener-pwd",
       "checksum": "aa70c932b36eb2759e2f72e09836596f8fb75607",
       "description": "some-description",
-      "secret": "JEw3RXYwMyRtRAr/EGYGMWPzRmS2AujM0ocyJ4Ft5kYvSFU0T1Irig==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": true,
       "lastModifiedDate": "2026-09-07T22:26:49.926Z"

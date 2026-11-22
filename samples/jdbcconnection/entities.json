@@ -8,7 +8,7 @@
       "driverClass": "com.mysql.jdbc.Driver",
       "jdbcUrl": "jdbc://url",
       "username": "jdbc-user",
-      "password": "JEw3RXYwMyRYsvkoAczBrkH1t+2kTn2XCHovV+GeWcv1eu4lwqR4Xw==",
+      "password": "password",
       "minPoolSize": 30,
       "maxPoolSize": 125,
       "properties": [
@@ -104,7 +104,7 @@
       "driverClass": "com.mysql.jdbc.Driver",
       "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
       "username": "some-user",
-      "password": "JEw3RXYwMyRb0bNiGZF16n6CR4w4PSchNnmAZENSXvbxWm3A4UBOXA==",
+      "password": "password",
       "minPoolSize": 3,
       "maxPoolSize": 15,
       "properties": [
@@ -122,7 +122,7 @@
       "driverClass": "com.mysql.jdbc.Driver",
       "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
       "username": "some-user",
-      "password": "JEw3RXYwMySd8Z4CPSSXXNwj7e5M/2bzjau1JJ2vyaknBQg4Rm5COg==",
+      "password": "password",
       "minPoolSize": 3,
       "maxPoolSize": 15,
       "properties": [
@@ -140,7 +140,7 @@
       "driverClass": "com.mysql.jdbc.Driver",
       "jdbcUrl": "jdbc:mysql://some-host:3306/some-db",
       "username": "some-user",
-      "password": "JEw3RXYwMyTmDqcUE96NjCc1iziIHFTwC3pFuf3aRcB5n4poojzQ7A==",
+      "password": "password",
       "minPoolSize": 3,
       "maxPoolSize": 15,
       "properties": [
@@ -158,7 +158,7 @@
       "driverClass": "org.postgresql.Driver",
       "jdbcUrl": "jdbc:postgresql://some-other-host:5432/some-other-db",
       "username": "some-other-user",
-      "password": "JEw3RXYwMyQNAT7or7lL7FAQfYWIDkzslIqNyd2o0yGBNIV1FTXd8g==",
+      "password": "password",
       "minPoolSize": 5,
       "maxPoolSize": 20,
       "properties": [
@@ -193,7 +193,7 @@
       "name": "jdbc-user-pwd",
       "checksum": "5ec900e85436e531a5dca0d3ab87eb3107fa1a06",
       "description": "",
-      "secret": "JEw3RXYwMyS6TwLLkcnMsqhJivUarL8ETmrnsuNuLD+vL4kRqMATqQ==",
+      "secret": "password",
       "secretType": "PASSWORD",
       "variableReferencable": true,
       "lastModifiedDate": "2026-09-29T14:19:42.991Z"
