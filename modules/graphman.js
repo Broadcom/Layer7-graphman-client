@@ -176,7 +176,12 @@ module.exports = {
     mutationFieldNamesByPattern: function (pattern) {
         const mutationInfo = this.metadata.types["Mutation"];
         const regex = "^" + pattern.replaceAll("*", ".*") + "$";
-        return mutationInfo.fields.filter(x => x.name.match(regex)).map(x => x.name);
+        // only the standard plural-based mutations (setXxx/updateXxx/deleteXxx) can be described/generated
+        const pluralNames = Object.keys(this.schemaMetadata().bundleTypes).map(x => x.toLowerCase());
+        const isStandard = field => (field.args || []).some(arg => arg.name === "input") &&
+            ["set", "update", "delete"].some(verb => field.name.startsWith(verb) &&
+                pluralNames.includes(field.name.substring(verb.length).toLowerCase()));
+        return mutationInfo.fields.filter(x => x.name.match(regex) && isStandard(x)).map(x => x.name);
     },
 
     typeInfoByTypeName: function (name) {

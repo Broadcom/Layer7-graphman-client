@@ -111,8 +111,8 @@ function buildV1(metadata, version, schemaVersion) {
     reqSubTypes["Query"] = metadata.subTypes["Query"];
     reqSubTypes["Mutation"] = metadata.subTypes["Mutation"];
 
-    // retain only the *PartialInput (and its "ref" field's *RefInput) types actually
-    // used by update*/delete* mutations, so 'describe' can surface the ref shape
+    // retain only the *PartialInput types used by update*/delete* mutations, and the *RefInput type
+    // of their "ref" field (nothing deeper), so 'describe' can surface the ref shape
     reqSubTypes["Mutation"].fields.forEach(fieldInfo => {
         const inputArg = fieldInfo.args && fieldInfo.args.find(arg => arg.name === "input");
         const inputTypeName = inputArg && bareTypeName(inputArg.dataType);
@@ -120,14 +120,9 @@ function buildV1(metadata, version, schemaVersion) {
 
         if (inputTypeInfo && inputTypeName.endsWith("PartialInput") && !reqSubTypes[inputTypeName]) {
             reqSubTypes[inputTypeName] = inputTypeInfo;
-            inspectTypeFields(metadata, inputTypeInfo, (subFieldInfo, subTypeInfo) => {
-                if (!reqSubTypes[subTypeInfo.typeName]) {
-                    reqSubTypes[subTypeInfo.typeName] = subTypeInfo;
-                    return true;
-                }
-
-                return false;
-            });
+            const refField = inputTypeInfo.fields.find(f => f.name === "ref");
+            const refTypeInfo = refField && metadata.subTypes[bareTypeName(refField.dataType)];
+            if (refTypeInfo) reqSubTypes[refTypeInfo.typeName] = refTypeInfo;
         }
     });
 
