@@ -104,6 +104,7 @@ module.exports = {
             bundleDefaultAction: null,
             excludeGoids: false,
             forceDelete: false,
+            useRefGoids: false,
             forceAdminPasswordReset: false,
             replaceAllMatchingCertChain: false
         }, config.options, params.options);
@@ -134,6 +135,7 @@ module.exports = {
             bundleDefaultAction: "string",
             excludeGoids: "boolean",
             forceDelete: "boolean",
+            useRefGoids: "boolean",
             forceAdminPasswordReset: "boolean",
             replaceAllMatchingCertChain: "boolean",
             activate: "boolean",
@@ -214,6 +216,8 @@ module.exports = {
         console.log("        to leave the comment over the new policy revisions due to mutation");
         console.log("      .forceDelete false|true");
         console.log("        to force deleting the entities when required.");
+        console.log("      .useRefGoids false|true");
+        console.log("        to identify the entities by goids (instead of the natural keys) in the delete* mutations, when the bundle is used as the input.");
         console.log("      .forceAdminPasswordReset false|true");
         console.log("        to force modifying the admin user's password.");
         console.log("      .replaceAllMatchingCertChain false|true");

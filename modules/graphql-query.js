@@ -11,8 +11,10 @@ module.exports = {
      * @param options name-value pairs used to customize the operation
      * @param kind optional, "query" or "mutation"; the kind of GraphQL field the calling operation works with,
      *        used to report the unrecognized names appropriately
+     * @param composing optional, true when generating a part of a composite; the mutation input is then
+     *        adjusted by the composite builder per the final variable name
      */
-    generate: function (query, variables, options, kind) {
+    generate: function (query, variables, options, kind, composing) {
         const [queryPrefix, querySuffix] = splitOnFirst(query, ":");
         const queryFilename = utils.queryFile(queryPrefix + ".json", graphman.configuration().schemaVersion);
         const gql = utils.existsFile(queryFilename) ?
@@ -49,6 +51,7 @@ module.exports = {
         }
 
         retainDeclaredVariables(xgql);
+        if (xgql.inputRule && !composing) applyInputRule(xgql.variables, xgql.inputRule, gql.options);
         return xgql;
     },
 
@@ -82,7 +85,7 @@ module.exports = {
             }
         });
 
-        const generated = queryNames.map(name => this.generate(name, variables, options, kind));
+        const generated = queryNames.map(name => this.generate(name, variables, options, kind, true));
         return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {}, variables);
     }
 }
@@ -190,7 +193,55 @@ function buildGraphQLMutation(mutationPrefix, kind) {
         `}\n` +
         refFieldComment(inputArg.dataType);
 
-    return {query: query, args: [pluralName]};
+    const result = {query: query, args: [pluralName]};
+    const verb = ["update", "delete"].find(item => mutationPrefix.startsWith(item));
+    const partialType = inputArg.dataType.match(/\w+/)[0];
+    if (verb && partialType.endsWith("PartialInput")) {
+        // not a part of the request payload, hence not enumerable
+        Object.defineProperty(result, "inputRule", {value: {variable: pluralName, verb: verb, partialType: partialType}});
+    }
+
+    return result;
+}
+
+/**
+ * Makes the entities of an exported bundle acceptable for the update and delete mutations, which take the
+ * *PartialInput types: updates drop the checksum field, deletes identify the entity by the "ref" field
+ * (natural key fields of the *RefInput type, or the goid if the option useRefGoids is on).
+ * The entities are copied, as the same bundle sections may be shared by many mutations.
+ */
+function applyInputRule(variables, rule, options) {
+    const value = variables[rule.variable];
+    if (value === undefined || value === null) return;
+
+    const convert = rule.verb === "update" ? removeChecksum : entity => toRefInput(entity, rule.partialType, options);
+    variables[rule.variable] = Array.isArray(value) ? value.map(convert) : convert(value);
+}
+
+function removeChecksum(entity) {
+    if (!entity || typeof entity !== "object" || !entity.hasOwnProperty("checksum")) return entity;
+
+    const copy = Object.assign({}, entity);
+    delete copy.checksum;
+    return copy;
+}
+
+function toRefInput(entity, partialType, options) {
+    if (!entity || typeof entity !== "object" || entity.ref) return entity;
+
+    const partialInfo = graphman.typeInfoByTypeName(partialType);
+    const refField = partialInfo && partialInfo.fields.find(f => f.name === "ref");
+    const refInfo = refField && graphman.typeInfoByTypeName(refField.dataType.match(/\w+/)[0]);
+    if (!refInfo) return entity;
+
+    const present = name => entity[name] !== undefined && entity[name] !== null;
+    const pick = names => names.filter(present).reduce((ref, name) => Object.assign(ref, {[name]: entity[name]}), {});
+    const natural = pick(refInfo.fields.map(f => f.name).filter(name => name !== "goid"));
+    const byGoid = pick(["goid"]);
+    const candidates = options && options.useRefGoids ? [byGoid, natural] : [natural, byGoid];
+    const ref = candidates.find(item => Object.keys(item).length > 0);
+
+    return ref ? {ref: ref} : entity;
 }
 
 /**
@@ -343,6 +394,7 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
     let body = "";
     let keyword = null;
     const trailers = [];
+    const inputRules = [];
 
     generated.forEach((gql, index) => {
         const position = index + 1;
@@ -409,6 +461,7 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
         body += renamedBody;
 
         Object.assign(variables, gql.variables);
+        if (gql.inputRule) inputRules.push({finalName: renameMap[gql.inputRule.variable] || gql.inputRule.variable, rule: gql.inputRule});
         // a renamed argument of the query shares the value supplied for the original name; the mutations don't,
         // as the bundle sections are not meant to be duplicated under the renamed variables (supply them explicitly)
         Object.entries(renameMap).forEach(([originalName, finalName]) => {
@@ -423,6 +476,8 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
             variables[finalName] = suppliedVariables[finalName];
         }
     });
+
+    inputRules.forEach(item => applyInputRule(variables, Object.assign({}, item.rule, {variable: item.finalName}), options));
 
     if (!options || !options.describeQuery) {
         argDecls.forEach((declText, finalName) => {
