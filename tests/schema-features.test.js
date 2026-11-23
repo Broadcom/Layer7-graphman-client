@@ -30,7 +30,7 @@ describe("standard mutations are limited to the schema v11.2.2 onwards", () => {
         const output = run("v11.2.1", "describe", "--queries", "setFolders");
 
         expect(output).toContain("standard mutations are supported from the schema v11.2.2 onwards");
-        expect(output).toContain("unrecognized mutation setFolders");
+        expect(output).toContain("unrecognized query or mutation setFolders");
     });
 
     test("in-built mutations are not listed for older schemas", () => {

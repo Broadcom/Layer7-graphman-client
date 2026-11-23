@@ -4,12 +4,20 @@ const utils = require("./graphman-utils");
 const graphman = require("./graphman");
 
 module.exports = {
-    generate: function (query, variables, options) {
+    /**
+     * Generates the GraphQL query/mutation for the given name.
+     * @param query name of the query (or mutation) with the optional suffix
+     * @param variables name-value pairs used in the query
+     * @param options name-value pairs used to customize the operation
+     * @param kind optional, "query" or "mutation"; the kind of GraphQL field the calling operation works with,
+     *        used to report the unrecognized names appropriately
+     */
+    generate: function (query, variables, options, kind) {
         const [queryPrefix, querySuffix] = splitOnFirst(query, ":");
         const queryFilename = utils.queryFile(queryPrefix + ".json", graphman.configuration().schemaVersion);
         const gql = utils.existsFile(queryFilename) ?
             utils.readFile(queryFilename) :
-            buildGraphQL(queryPrefix, querySuffix);
+            buildGraphQL(queryPrefix, querySuffix, kind);
 
         gql.variables = Object.assign(gql.variables || {}, variables);
         gql.options = Object.assign({}, options);
@@ -63,17 +71,27 @@ module.exports = {
      * @param queryArgOverrides optional {"<position>": {"<originalArgName>": "<newArgName>"}} map,
      *        used to pin the name of an argument for the query at that 1-based position instead
      *        of relying on the automatic <name><position> disambiguation
+     * @param kind optional, "query" or "mutation"; the kind of GraphQL field the calling operation works with
      */
-    generateComposite: function (queryNames, variables, options, queryArgOverrides) {
-        const generated = queryNames.map(name => this.generate(name, variables, options));
+    generateComposite: function (queryNames, variables, options, queryArgOverrides, kind) {
+        const generated = queryNames.map(name => this.generate(name, variables, options, kind));
         return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {});
     }
 }
 
-function buildGraphQL(queryPrefix, querySuffix) {
-    return graphman.queryFieldInfo(queryPrefix) ?
-        buildGraphQLQuery(queryPrefix, querySuffix) :
-        buildGraphQLMutation(queryPrefix);
+function buildGraphQL(queryPrefix, querySuffix, kind) {
+    if (graphman.queryFieldInfo(queryPrefix)) {
+        return buildGraphQLQuery(queryPrefix, querySuffix);
+    }
+
+    // operations that work with the query fields (e.g. export) report the unknown names as unrecognized queries;
+    // known mutation fields are still generated, so that the operation can report the mismatch
+    if (kind === "query" && !graphman.mutationFieldInfo(queryPrefix)) {
+        utils.warn("no matching query definition available from " + utils.queriesDir(utils.wrapperHome()));
+        throw "unrecognized query " + queryPrefix;
+    }
+
+    return buildGraphQLMutation(queryPrefix, kind);
 }
 
 /**
@@ -125,10 +143,13 @@ function buildGraphQLQuery(queryPrefix, querySuffix) {
  * @param mutationPrefix name of a captured Mutation field, e.g. setFolders, updateFolders, deleteFolders
  * @returns {{query: string, args: string[]}}
  */
-function buildGraphQLMutation(mutationPrefix) {
+function buildGraphQLMutation(mutationPrefix, kind) {
+    // operations that work with the mutation fields (e.g. import) report the unknown names as unrecognized mutations
+    const unrecognized = (kind === "mutation" ? "unrecognized mutation " : "unrecognized query or mutation ") + mutationPrefix;
+
     if (!graphman.supportsFeature("standard-mutations")) {
         utils.warn(`standard mutations are supported from the schema v11.2.2 onwards, current schema is ${graphman.configuration().schemaVersion}`);
-        throw "unrecognized mutation " + mutationPrefix;
+        throw unrecognized;
     }
 
     const fieldInfo = graphman.mutationFieldInfo(mutationPrefix);
@@ -136,8 +157,8 @@ function buildGraphQLMutation(mutationPrefix) {
     const pluralName = inputArg && pluralNameForMutation(mutationPrefix);
 
     if (!inputArg || !pluralName) {
-        utils.warn("no matching mutation definition available from " + utils.queriesDir(utils.wrapperHome()));
-        throw "unrecognized mutation " + mutationPrefix;
+        utils.warn(`no matching ${kind === "mutation" ? "mutation" : "query or mutation"} definition available from ` + utils.queriesDir(utils.wrapperHome()));
+        throw unrecognized;
     }
 
     const query = `mutation ${mutationPrefix}($${pluralName}: ${inputArg.dataType}) {\n` +

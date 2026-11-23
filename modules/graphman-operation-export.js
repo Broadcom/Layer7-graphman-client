@@ -33,9 +33,9 @@ module.exports = {
                 throw utils.newError("duplicate query name(s) in --queries: " + dupes.join(", "));
             }
 
-            query = gql.generateComposite(params.queries, params.variables, params.options, params.queryArgs);
+            query = gql.generateComposite(params.queries, params.variables, params.options, params.queryArgs, "query");
         } else {
-            query = gql.generate(params.using, params.variables, params.options);
+            query = gql.generate(params.using, params.variables, params.options, "query");
         }
 
         const startDate = Date.now();
@@ -54,7 +54,7 @@ module.exports = {
     export: function (gateway, query, callback) {
         if (!query.query.startsWith("query")) {
             utils.info("invalid query for export operation", query);
-            throw "invalid query for export operation";
+            throw "export operation works with the GraphQL query fields, but the specified one is a mutation";
         }
 
         utils.info(`exporting from ${gateway.name||gateway.address} gateway`);

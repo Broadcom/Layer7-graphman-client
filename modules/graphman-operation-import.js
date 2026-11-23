@@ -59,14 +59,14 @@ module.exports = {
                 throw utils.newError("duplicate query name(s) in --queries: " + dupes.join(", "));
             }
 
-            query = gql.generateComposite(params.queries, combinedVariables, params.options, params.queryArgs);
+            query = gql.generateComposite(params.queries, combinedVariables, params.options, params.queryArgs, "mutation");
         } else {
-            query = gql.generate(params.using, combinedVariables, params.options);
+            query = gql.generate(params.using, combinedVariables, params.options, "mutation");
         }
 
         if (!query.query.startsWith("mutation")) {
             utils.info("invalid query for import operation", query);
-            throw "invalid query for import operation";
+            throw "import operation works with the GraphQL mutation fields, but the specified one is a query";
         }
 
         const request = graphman.request(gateway, query.options);
