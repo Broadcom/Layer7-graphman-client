@@ -109,11 +109,18 @@ function buildV1(metadata, version, schemaVersion) {
     const reqSubTypes = {};
 
     reqSubTypes["Query"] = metadata.subTypes["Query"];
-    reqSubTypes["Mutation"] = metadata.subTypes["Mutation"];
+
+    // standard mutations are supported from the schema v11.2.2 onwards,
+    // so the mutation details are captured for those schemas only
+    const mutationFields = [];
+    if (utils.isSchemaVersionAtLeast(schemaVersion, utils.STANDARD_MUTATIONS_SINCE)) {
+        reqSubTypes["Mutation"] = metadata.subTypes["Mutation"];
+        mutationFields.push(...reqSubTypes["Mutation"].fields);
+    }
 
     // retain only the *PartialInput types used by update*/delete* mutations, and the *RefInput type
     // of their "ref" field (nothing deeper), so 'describe' can surface the ref shape
-    reqSubTypes["Mutation"].fields.forEach(fieldInfo => {
+    mutationFields.forEach(fieldInfo => {
         const inputArg = fieldInfo.args && fieldInfo.args.find(arg => arg.name === "input");
         const inputTypeName = inputArg && bareTypeName(inputArg.dataType);
         const inputTypeInfo = inputTypeName && metadata.subTypes[inputTypeName];

@@ -50,3 +50,40 @@ describe("standard mutations are limited to the schema v11.2.2 onwards", () => {
         expect(run("v11.2.2", "describe")).toContain("available in-built mutations:");
     });
 });
+
+describe("standard mutation details in the schema metadata", () => {
+    const utils = tUtils.load("graphman-utils");
+    const gqlschema = tUtils.load("graphql-schema");
+
+    // rebuilds the metadata from the schema files, without overwriting the pre-compiled metadata file
+    function rebuild(schemaVersion) {
+        let captured = null;
+        const spy = jest.spyOn(utils, "writeFile").mockImplementation((file, content) => {
+            captured = JSON.parse(JSON.stringify(content));
+        });
+
+        try {
+            gqlschema.build("v-test", schemaVersion, true);
+        } finally {
+            spy.mockRestore();
+        }
+
+        return captured;
+    }
+
+    const hasPartialInputs = metadata => Object.keys(metadata.types).some(name => name.endsWith("PartialInput"));
+
+    test.each(["v11.1.4", "v11.2.0", "v11.2.1"])("%s metadata does not capture the mutation details", version => {
+        const metadata = rebuild(version);
+
+        expect(metadata.types["Mutation"]).toBeUndefined();
+        expect(hasPartialInputs(metadata)).toBe(false);
+    });
+
+    test("v11.2.2 metadata captures the mutation details", () => {
+        const metadata = rebuild("v11.2.2");
+
+        expect(metadata.types["Mutation"].fields.length).toBeGreaterThan(0);
+        expect(hasPartialInputs(metadata)).toBe(true);
+    });
+});

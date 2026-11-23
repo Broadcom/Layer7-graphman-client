@@ -27,32 +27,6 @@ const SCHEMA_FEATURE_LIST = {
     "v11.0.00-CR03": ["mappings", "mappings-source"]
 }
 
-// features that are available from the given schema version onwards
-const SCHEMA_FEATURE_SINCE = {
-    "standard-mutations": "v11.2.2"
-}
-
-/**
- * Compares schema versions like v11.2.2, v11.1.00 or v11.0.00-CR03 by their numeric parts.
- * @returns true if the schema version is the same as or later than the minimum version; false for unrecognized versions
- */
-function isSchemaVersionAtLeast(schemaVersion, minimumVersion) {
-    const parse = text => {
-        const match = /^v?(\d+)\.(\d+)(?:\.(\d+))?/.exec(String(text));
-        return match ? [match[1], match[2], match[3] || 0].map(Number) : null;
-    };
-
-    const actual = parse(schemaVersion);
-    const minimum = parse(minimumVersion);
-    if (!actual || !minimum) return false;
-
-    for (let i = 0; i < minimum.length; i++) {
-        if (actual[i] !== minimum[i]) return actual[i] > minimum[i];
-    }
-
-    return true;
-}
-
 const SUPPORTED_REQUEST_LEVEL_OPTIONS = [
     "test", "activate", "comment",
     "forceAdminPasswordReset", "forceDelete", "replaceAllMatchingCertChain",
@@ -61,6 +35,11 @@ const SUPPORTED_REQUEST_LEVEL_OPTIONS = [
 ];
 
 const utils = require("./graphman-utils");
+
+// features that are available from the given schema version onwards
+const SCHEMA_FEATURE_SINCE = {
+    "standard-mutations": utils.STANDARD_MUTATIONS_SINCE
+}
 const hutils = require("./http-utils");
 const gqlschema = require("./graphql-schema");
 
@@ -196,7 +175,7 @@ module.exports = {
 
     mutationFieldInfo: function (name) {
         const mutationInfo = this.metadata.types["Mutation"];
-        return mutationInfo.fields.find(x => x.name === name);
+        return mutationInfo ? mutationInfo.fields.find(x => x.name === name) : undefined;
     },
 
     mutationFieldNamesByPattern: function (pattern) {
@@ -228,11 +207,13 @@ module.exports = {
         this.metadata = gqlschema.build(this.loadedConfig.version, this.loadedConfig.schemaVersion, true);
     },
 
-    isSchemaVersionAtLeast: isSchemaVersionAtLeast,
+    isSchemaVersionAtLeast: function (schemaVersion, minimumVersion) {
+        return utils.isSchemaVersionAtLeast(schemaVersion, minimumVersion);
+    },
 
     supportsFeature: function (featureName) {
         if (SCHEMA_FEATURE_SINCE[featureName]) {
-            return isSchemaVersionAtLeast(this.loadedConfig.schemaVersion, SCHEMA_FEATURE_SINCE[featureName]);
+            return utils.isSchemaVersionAtLeast(this.loadedConfig.schemaVersion, SCHEMA_FEATURE_SINCE[featureName]);
         }
 
         const list = SCHEMA_FEATURE_LIST[this.loadedConfig.schemaVersion]||[];

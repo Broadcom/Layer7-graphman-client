@@ -9,6 +9,7 @@ const SCHEMA_DIR = HOME_DIR + "/schema";
 const SCHEMA_METADATA_BASE_FILE = "metadata-base.json";
 const SCHEMA_METADATA_FILE = "metadata.json";
 const POLICY_SCHEMA_FILE = "policy-code-schema.json";
+const STANDARD_MUTATIONS_SINCE = "v11.2.2";
 
 const NONE_LEVEL = 0;
 const WARN_LEVEL = 1;
@@ -35,6 +36,29 @@ class GraphmanOperationError extends Error {
 }
 
 module.exports = {
+    STANDARD_MUTATIONS_SINCE: STANDARD_MUTATIONS_SINCE,
+
+    /**
+     * Compares schema versions like v11.2.2, v11.1.00 or v11.0.00-CR03 by their numeric parts.
+     * @returns true if the schema version is the same as or later than the minimum version; false for unrecognized versions
+     */
+    isSchemaVersionAtLeast: function (schemaVersion, minimumVersion) {
+        const parse = text => {
+            const match = /^v?(\d+)\.(\d+)(?:\.(\d+))?/.exec(String(text));
+            return match ? [match[1], match[2], match[3] || 0].map(Number) : null;
+        };
+
+        const actual = parse(schemaVersion);
+        const minimum = parse(minimumVersion);
+        if (!actual || !minimum) return false;
+
+        for (let i = 0; i < minimum.length; i++) {
+            if (actual[i] !== minimum[i]) return actual[i] > minimum[i];
+        }
+
+        return true;
+    },
+
     newError: function (msg) {
         return new GraphmanOperationError(msg);
     },
