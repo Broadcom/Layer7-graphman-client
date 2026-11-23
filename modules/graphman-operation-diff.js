@@ -113,6 +113,8 @@ module.exports = {
         }
     },
 
+    mergeMappings: mergeMappings,
+
     initParams: function (params, config) {
         params.options = Object.assign({includeInserts: true, includeUpdates: true, includeDeletes: false, deleteScope: "source", scope: "auto"}, params.options);
 
@@ -567,6 +569,8 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, ign
             const renewedReport = {inserts: results[0], updates: results[1], deletes: report.deletes, diffs: report.diffs, ignored: report.ignored, mappings: report.mappings};
             callback(renewedReport);
         } else {
+            // the re-inspection of the renewed updates records the mappings into a scratch holder, which is then merged
+            // with the mappings already captured for the other (ignored, unchanged, inserted) entities
             const renewedReport = {inserts: results[0], updates: {}, deletes: report.deletes, diffs: {}, ignored: report.ignored, mappings: {goids: [], guids: []}};
             const multiLineTextDiffExtension = utils.extension("multiline-text-diff");
             const leftUpdateBundle = results[1];
@@ -581,6 +585,7 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, ign
                 diffEntities(leftEntities, rightUpdateBundle[key], mappings[key], renewedReport, typeInfo, options, extOptions);
             });
 
+            renewedReport.mappings = mergeMappings(report.mappings, renewedReport.mappings);
             callback(renewedReport);
         }
     }).catch(error => {
@@ -588,6 +593,26 @@ function diffRenewReport(leftBundle, rightBundle, mappings, report, options, ign
         utils.error("errors encountered while renewing the entities", error);
         utils.print();
     });
+}
+
+/**
+ * Merges the goid/guid mappings, retaining the base ones and adding the extra ones that are not already present.
+ */
+function mergeMappings(base, extra) {
+    const merged = {goids: [], guids: []};
+
+    Object.keys(merged).forEach(key => {
+        const seen = new Set();
+        (base[key] || []).concat(extra[key] || []).forEach(item => {
+            const id = item.source + "|" + item.target;
+            if (!seen.has(id)) {
+                seen.add(id);
+                merged[key].push(item);
+            }
+        });
+    });
+
+    return merged;
 }
 
 function renewBundle(gateway, bundle, sections, options, resolve, reject) {
