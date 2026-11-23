@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete http configuration using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete http configuration using input.ref.goid", () => {
     const entity = entityByHost("http-config-custom-1");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ tUtils.standardMutationsTest("delete http configuration using input.ref.goid", (
     expectHttpConfigurationDeleted(entity);
 });
 
-tUtils.standardMutationsTest("delete http configurations using natural key (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete http configurations using natural key (with and without ref) - with test option", () => {
     const entity1 = entityByHost("http-config-custom-2");
     const entity2 = entityByHost("http-config-custom-3");
 
@@ -75,7 +75,7 @@ tUtils.standardMutationsTest("delete http configurations using natural key (with
     expectHttpConfigurationNotDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete http configurations using natural key (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete http configurations using natural key (with and without ref) - without test option", () => {
     const entity1 = entityByHost("http-config-custom-2");
     const entity2 = entityByHost("http-config-custom-3");
 
@@ -106,7 +106,7 @@ tUtils.standardMutationsTest("delete http configurations using natural key (with
     expectHttpConfigurationDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete http configuration fails when required identifying field is missing", () => {
+tUtils.deleteMutationsTest("delete http configuration fails when required identifying field is missing", () => {
     const output = graphman("import",
         "--using", "deleteHttpConfigurations",
         "--variables.httpConfigurations.+.connectTimeout", "300000",
@@ -120,7 +120,7 @@ tUtils.standardMutationsTest("delete http configuration fails when required iden
     ]));
 });
 
-tUtils.standardMutationsTest("delete http configuration that does not exist", () => {
+tUtils.deleteMutationsTest("delete http configuration that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteHttpConfigurations",
         "--variables.httpConfigurations.+.host", "does-not-exist-http-config",

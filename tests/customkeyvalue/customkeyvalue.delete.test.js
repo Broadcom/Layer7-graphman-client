@@ -26,7 +26,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete custom key value using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete custom key value using input.ref.goid", () => {
     const key = "SOME_DB_USERNAME";
     const goid = lookupGoid(key);
 
@@ -45,7 +45,7 @@ tUtils.standardMutationsTest("delete custom key value using input.ref.goid", () 
     expectCustomKeyValueDeleted(key);
 });
 
-tUtils.standardMutationsTest("delete custom key values using key (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete custom key values using key (with and without ref) - with test option", () => {
     const key1 = "SOME_DOMAIN_NAME";
     const key2 = "SOME_DB_PASSWORD";
     const goid1 = lookupGoid(key1);
@@ -73,7 +73,7 @@ tUtils.standardMutationsTest("delete custom key values using key (with and witho
     expectCustomKeyValueNotDeleted(key2);
 });
 
-tUtils.standardMutationsTest("delete custom key values using key (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete custom key values using key (with and without ref) - without test option", () => {
     const key1 = "SOME_DOMAIN_NAME";
     const key2 = "SOME_DB_PASSWORD";
     const goid1 = lookupGoid(key1);
@@ -100,7 +100,7 @@ tUtils.standardMutationsTest("delete custom key values using key (with and witho
     expectCustomKeyValueDeleted(key2);
 });
 
-tUtils.standardMutationsTest("delete custom key value fails when required key field is missing", () => {
+tUtils.deleteMutationsTest("delete custom key value fails when required key field is missing", () => {
     const output = graphman("import",
         "--using", "deleteCustomKeyValues",
         "--variables.customKeyValues.+.value", "irrelevant",
@@ -114,7 +114,7 @@ tUtils.standardMutationsTest("delete custom key value fails when required key fi
     ]));
 });
 
-tUtils.standardMutationsTest("delete custom key value that does not exist", () => {
+tUtils.deleteMutationsTest("delete custom key value that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteCustomKeyValues",
         "--variables.customKeyValues.+.key", "DOES_NOT_EXIST_KEY",

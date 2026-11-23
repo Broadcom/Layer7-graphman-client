@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete cluster property using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete cluster property using input.ref.goid", () => {
     const entity = entityByName("some-cwp");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ tUtils.standardMutationsTest("delete cluster property using input.ref.goid", () 
     expectClusterPropertyDeleted(entity);
 });
 
-tUtils.standardMutationsTest("delete cluster properties using names (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete cluster properties using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("some-other-cwp");
     const entity2 = entityByName("some-cwp-by-name");
 
@@ -69,7 +69,7 @@ tUtils.standardMutationsTest("delete cluster properties using names (with and wi
     expectClusterPropertyNotDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete cluster properties using names (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete cluster properties using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("some-other-cwp");
     const entity2 = entityByName("some-cwp-by-name");
 
@@ -94,7 +94,7 @@ tUtils.standardMutationsTest("delete cluster properties using names (with and wi
     expectClusterPropertyDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete cluster property fails when required name field is missing", () => {
+tUtils.deleteMutationsTest("delete cluster property fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteClusterProperties",
         "--variables.clusterProperties.+.value", "irrelevant",
@@ -108,7 +108,7 @@ tUtils.standardMutationsTest("delete cluster property fails when required name f
     ]));
 });
 
-tUtils.standardMutationsTest("delete cluster property that does not exist", () => {
+tUtils.deleteMutationsTest("delete cluster property that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteClusterProperties",
         "--variables.clusterProperties.+.name", "does-not-exist-cwp",

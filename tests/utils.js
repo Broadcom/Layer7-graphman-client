@@ -82,6 +82,15 @@ module.exports = {
         return (module.exports.supportsStandardMutations() ? test : test.skip)(...args);
     },
 
+    /**
+     * Delete mutations tests are run only for the schemas later than v11.2.2 (skipped for v11.2.2 or earlier).
+     */
+    deleteMutationsTest: function (...args) {
+        const supported = require(path.join(tConfig.home, "modules", "graphman.js"))
+            .isSchemaVersionAtLeast(tConfig.schemaVersion, "v11.2.3");
+        return (supported ? test : test.skip)(...args);
+    },
+
     expectArray: function (actual) {
         return {
             toContainEqual: function (...expected) {

@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete key using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete key using input.ref.goid", () => {
     const entity = entityByAlias("rsa-alice");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ tUtils.standardMutationsTest("delete key using input.ref.goid", () => {
     expectKeyDeleted(entity);
 });
 
-tUtils.standardMutationsTest("delete keys using alias (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete keys using alias (with and without ref) - with test option", () => {
     const entity1 = entityByAlias("ec-bob");
     const entity2 = entityByAlias("ec-signer");
 
@@ -68,7 +68,7 @@ tUtils.standardMutationsTest("delete keys using alias (with and without ref) - w
     expectKeyNotDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete keys using alias (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete keys using alias (with and without ref) - without test option", () => {
     const entity1 = entityByAlias("ec-bob");
     const entity2 = entityByAlias("ec-signer");
 
@@ -94,7 +94,7 @@ tUtils.standardMutationsTest("delete keys using alias (with and without ref) - w
     expectKeyDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete key fails when required alias field is missing", () => {
+tUtils.deleteMutationsTest("delete key fails when required alias field is missing", () => {
     const output = graphman("import",
         "--using", "deleteKeys",
         "--variables.keys.+.keySize", "2048",
@@ -108,7 +108,7 @@ tUtils.standardMutationsTest("delete key fails when required alias field is miss
     ]));
 });
 
-tUtils.standardMutationsTest("delete key that does not exist", () => {
+tUtils.deleteMutationsTest("delete key that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteKeys",
         "--variables.keys.+.alias", "does-not-exist-key",

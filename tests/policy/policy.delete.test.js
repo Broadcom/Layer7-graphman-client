@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete policy using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete policy using input.ref.goid", () => {
     const entity = entityByName("global-pre-service");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ tUtils.standardMutationsTest("delete policy using input.ref.goid", () => {
     expectPolicyDeleted(entity);
 });
 
-tUtils.standardMutationsTest("delete policies using name and policyType (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete policies using name and policyType (with and without ref) - with test option", () => {
     const entity1 = entityByName("pbip-fragment");
     const entity2 = entityByName("some-fragment");
 
@@ -69,7 +69,7 @@ tUtils.standardMutationsTest("delete policies using name and policyType (with an
     expectPolicyNotDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete policies using name and policyType (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete policies using name and policyType (with and without ref) - without test option", () => {
     const entity1 = entityByName("pbip-fragment");
     const entity2 = entityByName("some-fragment");
 
@@ -96,7 +96,7 @@ tUtils.standardMutationsTest("delete policies using name and policyType (with an
     expectPolicyDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete policy fails when required name/policyType fields are missing", () => {
+tUtils.deleteMutationsTest("delete policy fails when required name/policyType fields are missing", () => {
     const output = graphman("import",
         "--using", "deletePolicies",
         "--variables.policies.+.checksum", "irrelevant",
@@ -110,7 +110,7 @@ tUtils.standardMutationsTest("delete policy fails when required name/policyType 
     ]));
 });
 
-tUtils.standardMutationsTest("delete policy that does not exist", () => {
+tUtils.deleteMutationsTest("delete policy that does not exist", () => {
     const output = graphman("import",
         "--using", "deletePolicies",
         "--variables.policies.+.ref.name", "does-not-exist-policy",

@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-tUtils.standardMutationsTest("delete folder using input.ref.goid", () => {
+tUtils.deleteMutationsTest("delete folder using input.ref.goid", () => {
     const entity = entityByPath("/GrandParentUsingGQL/ParentUsingGQL/ChildUsingGQL");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ tUtils.standardMutationsTest("delete folder using input.ref.goid", () => {
     expectFolderDeleted(entity);
 });
 
-tUtils.standardMutationsTest("delete folders using path (with and without ref) - with test option", () => {
+tUtils.deleteMutationsTest("delete folders using path (with and without ref) - with test option", () => {
     const entity1 = entityByPath("/GrandParentUsingGQL/ParentUsingGQL");
     const entity2 = entityByPath("/GrandParentUsingGQL");
 
@@ -67,7 +67,7 @@ tUtils.standardMutationsTest("delete folders using path (with and without ref) -
     expectFolderNotDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete folders using path (with and without ref) - without test option", () => {
+tUtils.deleteMutationsTest("delete folders using path (with and without ref) - without test option", () => {
     const entity1 = entityByPath("/GrandParentUsingGQL/ParentUsingGQL");
     const entity2 = entityByPath("/GrandParentUsingGQL");
 
@@ -92,7 +92,7 @@ tUtils.standardMutationsTest("delete folders using path (with and without ref) -
     expectFolderDeleted(entity2);
 });
 
-tUtils.standardMutationsTest("delete folder fails when required path field is missing", () => {
+tUtils.deleteMutationsTest("delete folder fails when required path field is missing", () => {
     const output = graphman("import",
         "--using", "deleteFolders",
         "--variables.folders.+.checksum", "irrelevant",
@@ -106,7 +106,7 @@ tUtils.standardMutationsTest("delete folder fails when required path field is mi
     ]));
 });
 
-tUtils.standardMutationsTest("delete folder that does not exist", () => {
+tUtils.deleteMutationsTest("delete folder that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteFolders",
         "--variables.folders.+.ref.path", "/DoesNotExistFolderUsingGQL",
