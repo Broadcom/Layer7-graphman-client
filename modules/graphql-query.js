@@ -331,6 +331,7 @@ function pascalCasing(text) {
  */
 function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides, suppliedVariables) {
     const argDecls = new Map(); // finalName -> declText
+    const rootFieldOwners = new Map(); // response key of the root field -> name of the query that selects it
     const variables = {};
     let body = "";
     let keyword = null;
@@ -342,6 +343,15 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
         const {keyword: docKeyword, argsHeader, body: queryBody, trailer} = splitGeneratedQuery(gql.query, queryNames[index]);
 
         if (trailer && !trailers.includes(trailer)) trailers.push(trailer);
+
+        // a root field can be selected only once, un-aliased duplicates make the document invalid
+        const rootFields = new Set(rootFieldKeys(queryBody));
+        rootFields.forEach(key => {
+            if (rootFieldOwners.has(key)) {
+                throw utils.newError(`duplicate root field '${key}' in the composite query, it is selected by both '${rootFieldOwners.get(key)}' and '${queryNames[index]}'; a root field can be requested only once`);
+            }
+        });
+        rootFields.forEach(key => rootFieldOwners.set(key, queryNames[index]));
 
         if (keyword === null) {
             keyword = docKeyword;
@@ -442,6 +452,29 @@ function splitGeneratedQuery(query, queryName) {
         body: lines.slice(1, closingIndex).join("\n") + "\n",
         trailer: lines.slice(closingIndex + 1).join("\n")
     };
+}
+
+/**
+ * Identifies the response keys (alias, or else the field name) of the root fields selected by an operation's body.
+ * Arguments, directive arguments and the nested selections are skipped, only the top-level fields are of interest.
+ */
+function rootFieldKeys(body) {
+    const text = body.split("\n").map(line => line.replace(/#.*$/, "")).join("\n");
+    let topLevel = "";
+    let depth = 0;
+
+    for (const ch of text) {
+        if (ch === "(" || ch === "{") depth++;
+        else if (ch === ")" || ch === "}") depth--;
+        else if (depth === 0) topLevel += ch;
+    }
+
+    const keys = [];
+    for (const match of topLevel.matchAll(/(?<![@\w.])(?:([A-Za-z_]\w*)\s*:\s*)?([A-Za-z_]\w*)/g)) {
+        keys.push(match[1] || match[2]);
+    }
+
+    return keys;
 }
 
 /**
