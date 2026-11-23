@@ -34,6 +34,7 @@ module.exports = {
                 }
             }
         } catch (e) {
+            process.exitCode = 1;
             if (typeof e === 'string') {
                 utils.error(e);
                 utils.print();

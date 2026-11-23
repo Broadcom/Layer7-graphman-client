@@ -145,8 +145,8 @@ module.exports = {
             includeDeletes: "boolean",
             useNoDefMappings: "boolean",
             renewEntities: "boolean",
-            deleteScope: "string",
-            scope: "string",
+            deleteScope: "enum:source|all",
+            scope: "enum:auto|full",
             logSink: "string"
         }
     },

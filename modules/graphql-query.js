@@ -75,6 +75,13 @@ module.exports = {
      * @param kind optional, "query" or "mutation"; the kind of GraphQL field the calling operation works with
      */
     generateComposite: function (queryNames, variables, options, queryArgOverrides, kind) {
+        queryNames.forEach(name => {
+            const prefix = splitOnFirst(name, ":")[0];
+            if (utils.existsFile(utils.queryFile(prefix + ".json", graphman.configuration().schemaVersion))) {
+                throw utils.newError(`'${prefix}' is a predefined query/mutation and cannot be used in a composite; only the standard queries/mutations can be combined`);
+            }
+        });
+
         const generated = queryNames.map(name => this.generate(name, variables, options, kind));
         return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {}, variables);
     }
@@ -574,6 +581,14 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
         else includedFields.push(item);
     });
 
+    if (suffix !== POLICY_DEPENDENCY_SUFFIX) {
+        const known = typeInfo.fields.map(f => f.name);
+        const unknown = excludedFields.concat(includedFields).filter(name => name !== "*" && !known.includes(name));
+        if (unknown.length > 0) {
+            throw utils.newError(`unknown query mode or field '${unknown[0]}' for ${typeInfo.typeName}; supported modes: ${QUERY_MODES.join(", ")}`);
+        }
+    }
+
     if (!summary && !none && gql.options && fields.length === 0) {
         if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions")) {
             includedFields.push("policyRevisions");
@@ -612,6 +627,10 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
             utils.fine(`excluding the query field ${typeInfo.typeName}.${name}`);
         }
     });
+
+    if (query.trim().length === 0) {
+        throw utils.newError(`empty selection for ${typeInfo.typeName}, at least one field must be selected`);
+    }
 
     return query.indexOf("{{") !== -1 ? expandGraphQLSubQuery(gql, query) : query;
 }
@@ -688,7 +707,12 @@ function parseQuerySuffix(suffix) {
         return {modes: modes, fields: tokens.slice(1).concat(splitTokens(stage2)).join(",")};
     }
 
-    if (tokens.length > 0 && tokens.every(item => QUERY_MODES.includes(item))) {
+    const unknownModes = tokens.filter(item => !QUERY_MODES.includes(item));
+    if (unknownModes.length > 0 && unknownModes.length < tokens.length) {
+        throw utils.newError(`unknown query mode '${unknownModes[0]}'; supported modes: ${QUERY_MODES.join(", ")}`);
+    }
+
+    if (tokens.length > 0 && unknownModes.length === 0) {
         tokens.forEach(item => modes.add(item));
         if (modes.has("full")) modes.add("dependencies");
         return {modes: modes, fields: splitTokens(stage2).join(",")};

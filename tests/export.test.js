@@ -8,6 +8,7 @@ test("export entities with unknown query", () => {
         "--using", "unknown-query");
 
     expect(output.stdout).toEqual(expect.stringContaining("unrecognized query unknown-query"));
+    expect(output.status).toBe(1);
 });
 
 test("export entities with unknown gateway profile", () => {
@@ -16,6 +17,7 @@ test("export entities with unknown gateway profile", () => {
         "--gateway", "unknown-gateway");
 
     expect(output.stdout).toEqual(expect.stringContaining("unknown-gateway gateway details are missing"));
+    expect(output.status).toBe(1);
 });
 
 test("try importing few cluster properties using default gateway profile", () => {
@@ -56,7 +58,7 @@ test("export using deprecated --using still works and warns", () => {
 
 test("export using composite query built from multiple query names", () => {
     const output = graphman("export", "--gateway", "default",
-        "--queries", "clusterProperties:summary", "sysinfo");
+        "--queries", "clusterProperties:summary", "passwordPolicies");
 
     expect(output["clusterProperties"]).toMatchObject(expect.arrayContaining([{
         goid: expect.any(String),

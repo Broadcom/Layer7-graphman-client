@@ -838,6 +838,19 @@ let filterer = function () {
         return pfConfig;
     }
 
+    function validateRule(section, rule) {
+        if (!rule || typeof rule !== "object" || Array.isArray(rule) || Object.keys(rule).length === 0) {
+            throw utils.newError(`invalid ignore filter for ${section}, a rule must specify at least one field criteria: ${JSON.stringify(rule)}`);
+        }
+
+        Object.keys(rule).forEach(fieldName => {
+            const criteria = Array.isArray(rule[fieldName]) ? rule[fieldName][0] : "eq";
+            if (!supported_predicates[criteria]) {
+                throw utils.newError(`invalid ignore filter for ${section}.${fieldName}, unsupported matching criteria '${criteria}'; supported: ${Object.keys(supported_predicates).join(", ")}`);
+            }
+        });
+    }
+
     function buildPredicate(filterSection) {
         if (!filterSection) {
             return null;
@@ -880,6 +893,7 @@ let filterer = function () {
                 const value = rules[section];
                 const list = Array.isArray(value) && value.every(x => x && typeof x === "object" && !Array.isArray(x)) ?
                     value : [value];
+                list.forEach(rule => validateRule(section, rule));
                 compiled[section] = list.map(rule => ({
                     description: JSON.stringify(rule),
                     test: buildPredicate(rule)

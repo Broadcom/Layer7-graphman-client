@@ -38,12 +38,19 @@ module.exports = {
             }
         }
         const isWin = process.platform === "win32";
-        const stdOutput = cp.execFileSync(tConfig.execFile, args, {stdio: ['inherit', 'pipe', 'pipe'],shell: isWin, encoding: 'utf8'});
+        // a failed operation exits with a non-zero code; the tests inspect its output instead of failing here
+        const result = cp.spawnSync(tConfig.execFile, args, {stdio: ['inherit', 'pipe', 'pipe'], shell: isWin, encoding: 'utf8'});
+        const stdOutput = result.stdout || "";
+        const stdError = result.stderr || "";
         console.log(stdOutput);
+        if (stdError) console.error(stdError);
+        if (result.error) throw result.error;
         const output = fs.existsSync(outputFile)? String(fs.readFileSync(outputFile)) : "{}";
         console.log(output);
         const json = JSON.parse(output);
         json.stdout = stdOutput;
+        Object.defineProperty(json, 'stderr', {value: stdError});
+        Object.defineProperty(json, 'status', {value: result.status});
         return json;
     },
 

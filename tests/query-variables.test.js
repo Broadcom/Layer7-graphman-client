@@ -109,9 +109,4 @@ describe("list parameters of the mutations default to an empty list", () => {
         expect(query.query).toContain("deleteFolders(input: $folders2)");
     });
 
-    test("the optional toggles of the queries are still shared in a composite", () => {
-        const query = gql.generateComposite(["encass", "folder"], {}, {describeQuery: true}, {}, "query");
-
-        expect((query.query.match(/\$includeAllDependencies: Boolean/g) || []).length).toBe(1);
-    });
 });

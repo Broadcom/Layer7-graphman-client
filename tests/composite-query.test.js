@@ -15,8 +15,11 @@ describe("a root field can be selected only once in a composite query", () => {
         expect(() => composite("services:summary", "services:dependencies")).toThrow(/duplicate root field 'services'/);
     });
 
-    test("a query that already selects the root field is rejected", () => {
-        expect(() => composite("all", "services")).toThrow(/duplicate root field 'services' .* 'all' and 'services'/);
+    test("the predefined queries/mutations cannot be combined", () => {
+        expect(() => composite("all", "services")).toThrow(/'all' is a predefined query\/mutation and cannot be used in a composite/);
+        expect(() => composite("services", "sysinfo:summary")).toThrow(/'sysinfo' is a predefined/);
+        expect(() => gql.generateComposite(["install-bundle", "setFolders"], {}, {}, {}, "mutation")).toThrow(/'install-bundle' is a predefined/);
+        expect(() => gql.generateComposite(["delete-bundle"], {}, {}, {}, "mutation")).toThrow(/'delete-bundle' is a predefined/);
     });
 
     test("the same query repeated is rejected", () => {

@@ -79,6 +79,7 @@ function checkUnknownAndTypes(obj, node, pathPrefix) {
 }
 
 function matchesType(value, expected) {
+    if (expected.startsWith("enum:")) return expected.substring(5).split("|").includes(value);
     if (expected === "array") return Array.isArray(value);
     if (expected === "number") return typeof value === "number";
     if (expected === "boolean") return typeof value === "boolean";
@@ -86,7 +87,8 @@ function matchesType(value, expected) {
 }
 
 function fail(path, expected, value) {
-    throw `parameter '${path}' has an invalid value (${JSON.stringify(value)}); expected type ${expected}`;
+    const type = expected.startsWith("enum:") ? `one of ${expected.substring(5).split("|").join(", ")}` : `type ${expected}`;
+    throw `parameter '${path}' has an invalid value (${JSON.stringify(value)}); expected ${type}`;
 }
 
 function checkNoValueBooleans(args, schema) {

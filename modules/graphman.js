@@ -325,25 +325,38 @@ module.exports = {
 
             response.on('end', function () {
                 let data = Buffer.concat(respInfo.chunks);
+                let jsonData, parts = null;
 
-                if (respInfo.contentType.startsWith('application/json')) {
-                    const jsonData = JSON.parse(data.toString('utf-8'));
-                    utils.debug("graphman http response", jsonData);
-                    callback(jsonData, null, opContext);
-                } else if (respInfo.contentType.startsWith('multipart/')) {
-                    utils.debug("graphman http multipart response");
-                    let parts = hutils.readParts(data, respInfo.boundary);
-                    callback(JSON.parse(parts[0].data), parts, opContext);
-                } else {
-                    utils.info("unexpected graphman http response");
-                    utils.info(data.toString('utf-8'));
-                    callback({errors: "no valid response from graphman"}, null, opContext);
+                try {
+                    if (!respInfo.initialized) {
+                        utils.info("empty graphman http response, status=" + response.statusCode);
+                        jsonData = {errors: "no valid response from graphman"};
+                    } else if (respInfo.contentType.startsWith('application/json')) {
+                        jsonData = JSON.parse(data.toString('utf-8'));
+                        utils.debug("graphman http response", jsonData);
+                    } else if (respInfo.contentType.startsWith('multipart/')) {
+                        utils.debug("graphman http multipart response");
+                        parts = hutils.readParts(data, respInfo.boundary);
+                        jsonData = JSON.parse(parts[0].data);
+                    } else {
+                        utils.info("unexpected graphman http response");
+                        utils.info(data.toString('utf-8'));
+                        jsonData = {errors: "no valid response from graphman"};
+                    }
+                } catch (err) {
+                    process.exitCode = 1;
+                    utils.error(`unable to process the graphman response: ${err.message}`);
+                    utils.logAdditionalErrorDetails(err);
+                    return;
                 }
+
+                callback(jsonData, parts, opContext);
             });
         });
 
         req.on('error', (err) => {
-            utils.warn(`error encountered while processing the graphman request: ${err.message}`);
+            process.exitCode = 1;
+            utils.error(`error encountered while processing the graphman request: ${err.message}`);
             utils.logAdditionalErrorDetails(err);
         });
 

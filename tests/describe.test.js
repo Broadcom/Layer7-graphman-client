@@ -152,7 +152,7 @@ describe("describe command", () => {
     });
 
     test("should describe composite query built from multiple query names", () => {
-        const output = graphman("describe", "--queries", "clusterProperties", "sysinfo");
+        const output = graphman("describe", "--queries", "clusterProperties", "passwordPolicies");
 
         expect(output.stdout).toBeDefined();
         expect(output.stdout).toEqual(expect.stringContaining("query composite"));
@@ -178,17 +178,11 @@ describe("describe command", () => {
         expect(output.stdout).not.toEqual(expect.stringContaining("$name2"));
     });
 
-    test("should keep shared optional toggles undisambiguated across composed queries", () => {
+    test("should reject the predefined queries in a composite", () => {
         const output = graphman("describe", "--queries", "folder", "service");
 
-        // $folderPath and $resolutionPath are each declared once, and the common
-        // includeAllDependencies/includePolicyRevisions toggles are shared, not suffixed
-        expect(output.stdout).toEqual(expect.stringContaining("$folderPath: String!"));
-        expect(output.stdout).toEqual(expect.stringContaining("$resolutionPath: String!"));
-        // only the header declaration includes the ": Boolean" type suffix, so this counts
-        // declarations, not the (expected, multiple) @include usages of the same variable
-        expect((output.stdout.match(/\$includeAllDependencies: Boolean/g) || []).length).toBe(1);
-        expect((output.stdout.match(/\$includePolicyRevisions: Boolean/g) || []).length).toBe(1);
+        expect(output.stdout).toEqual(expect.stringContaining("'folder' is a predefined query/mutation and cannot be used in a composite"));
+        expect(output.status).toBe(1);
     });
 
     tUtils.standardMutationsTest("should describe a composite mutation built from multiple mutation names", () => {
@@ -210,7 +204,7 @@ describe("describe command", () => {
     });
 
     tUtils.standardMutationsTest("should reject combining a query name with a mutation name", () => {
-        const output = graphman("describe", "--queries", "all", "setFolders");
+        const output = graphman("describe", "--queries", "services", "setFolders");
 
         expect(output.stdout).toEqual(expect.stringContaining(
             "cannot combine query and mutation names in the same composite"));
