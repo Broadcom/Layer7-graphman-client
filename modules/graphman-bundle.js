@@ -195,6 +195,9 @@ module.exports = {
             return;
         }
 
+        // the legacy options without any matching criteria don't filter anything
+        if (!filter.equals && !filter.startsWith && !filter.endsWith && !filter.contains) return;
+
         utils.warn(" deprecated filter options are in use, please use the latest filter options");
 
         Object.keys(bundle).filter(key => Array.isArray(bundle[key])).forEach(key => {
@@ -202,9 +205,10 @@ module.exports = {
             bundle[key].forEach(item => {
                 let match = item.hasOwnProperty(filter.by);
 
-                if (filter.equals) {
-                    match = match && (item[filter.by].toString() === filter.equals);
-                } else if (typeof item[filter.by] === 'string') {
+                // the criteria are chained together by and-logic
+                if (match && filter.equals) match = String(item[filter.by]) === filter.equals;
+
+                if (match && typeof item[filter.by] === 'string') {
                     if (filter.startsWith) match = match && item[filter.by].startsWith(filter.startsWith);
                     if (filter.endsWith) match = match && item[filter.by].endsWith(filter.endsWith);
                     if (filter.contains) match = match && item[filter.by].includes(filter.contains);
@@ -829,8 +833,19 @@ let filterer = function () {
         },
     };
 
+    // the criteria can also be prefixed to the field value, e.g. regex.abc.*
+    const supported_predicates_regex = /^(eq|neq|regex|gt|gte|lt|lte)[.]/;
+
     function toPredicateFieldConfig(name, value) {
-        const values = Array.isArray(value) ? value : ["eq", value];
+        let values;
+        if (Array.isArray(value)) {
+            values = value;
+        } else {
+            const valueString = String(value);
+            const match = valueString.match(supported_predicates_regex);
+            values = match ? [match[1], valueString.substring(match[1].length + 1)] : ["eq", value];
+        }
+
         const pfConfig = {name: name, criteria: values[0], value: values[1]};
         if (pfConfig.criteria === "regex") {
             pfConfig.value = new RegExp(pfConfig.value);
@@ -865,7 +880,7 @@ let filterer = function () {
                 if (predicate) {
                     return predicate.test(entity[pfConfig.name], pfConfig.value, pfConfig);
                 } else {
-                    return false;
+                    return true;
                 }
             });
         };

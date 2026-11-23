@@ -14,6 +14,7 @@ const COMMON_SCHEMA = {
         schema: "string",
         policyCodeFormat: "string",
         keyFormat: "string",
+        excludeDeprecatedFields: "boolean",
         caFilename: "string",
         extensions: "array"
     }
@@ -70,6 +71,13 @@ function checkUnknownAndTypes(obj, node, pathPrefix) {
                 fail(path, expected, value);
             }
             return;;
+        }
+
+        // the parser normalizes the values to numbers/booleans, e.g. --options.comment 123 or --gateway true;
+        // the string parameters retain such values as text
+        if (expected === "string" && (typeof value === "number" || typeof value === "boolean")) {
+            obj[key] = String(value);
+            return;
         }
 
         if (!matchesType(value, expected)) {

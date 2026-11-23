@@ -138,6 +138,7 @@ function buildGraphQLQuery(queryPrefix, querySuffix) {
     }
 
     const suffix = querySuffix ? ":" + querySuffix : "";
+    validateQuerySuffix(typeInfo, querySuffix);
 
     return {
         query: `query ${queryPrefix}${fArgs} {\n` +
@@ -147,6 +148,23 @@ function buildGraphQLQuery(queryPrefix, querySuffix) {
             `}\n`,
         args: qArgs
     };
+}
+
+/**
+ * Rejects the field names, typed by the user in the query suffix, that the type doesn't have (e.g. services:sumary).
+ * The suffixes embedded in the predefined query files are not checked, as those may refer to the fields
+ * that are not available with the older schemas.
+ */
+function validateQuerySuffix(typeInfo, querySuffix) {
+    const {fields} = parseQuerySuffix(querySuffix);
+    const known = typeInfo.fields.map(f => f.name);
+    const unknown = splitTokens(fields)
+        .map(item => item.replace(/^[-+]/, ""))
+        .filter(name => name !== "*" && !known.includes(name));
+
+    if (unknown.length > 0) {
+        throw utils.newError(`unknown query mode or field '${unknown[0]}' for ${typeInfo.typeName}; supported modes: ${QUERY_MODES.join(", ")}`);
+    }
 }
 
 /**
@@ -635,14 +653,6 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
         else if (item.startsWith("+")) includedFields.push(item.substring(1));
         else includedFields.push(item);
     });
-
-    if (suffix !== POLICY_DEPENDENCY_SUFFIX) {
-        const known = typeInfo.fields.map(f => f.name);
-        const unknown = excludedFields.concat(includedFields).filter(name => name !== "*" && !known.includes(name));
-        if (unknown.length > 0) {
-            throw utils.newError(`unknown query mode or field '${unknown[0]}' for ${typeInfo.typeName}; supported modes: ${QUERY_MODES.join(", ")}`);
-        }
-    }
 
     if (!summary && !none && gql.options && fields.length === 0) {
         if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions")) {

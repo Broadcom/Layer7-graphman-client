@@ -53,6 +53,7 @@ module.exports = {
             utils.writeResult(params.output, sortedBundle);
             summary.report("renew", sortedBundle, startDate, Date.now());
         }).catch(error => {
+            process.exitCode = 1;
             utils.error("errors encountered while renewing the entities", error);
             utils.print();
         });

@@ -134,6 +134,7 @@ module.exports = {
             comment: "string",
             bundleDefaultAction: "string",
             excludeGoids: "boolean",
+            test: "boolean",
             forceDelete: "boolean",
             useRefGoids: "boolean",
             forceAdminPasswordReset: "boolean",
