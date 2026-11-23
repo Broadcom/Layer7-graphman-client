@@ -44,10 +44,11 @@ module.exports = {
         const xgql = expandGraphQLQuery(gql);
         if (!options.describeQuery && xgql.args) {
             for (const qArg of xgql.args) {
-                if (!xgql.variables[qArg]) utils.warn("missing variable: " + qArg);
+                if (!xgql.variables[qArg] && !hasDefaultValue(xgql.query, qArg)) utils.warn("missing variable: " + qArg);
             }
         }
 
+        retainDeclaredVariables(xgql);
         return xgql;
     },
 
@@ -75,7 +76,7 @@ module.exports = {
      */
     generateComposite: function (queryNames, variables, options, queryArgOverrides, kind) {
         const generated = queryNames.map(name => this.generate(name, variables, options, kind));
-        return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {});
+        return mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides || {}, variables);
     }
 }
 
@@ -161,7 +162,9 @@ function buildGraphQLMutation(mutationPrefix, kind) {
         throw unrecognized;
     }
 
-    const query = `mutation ${mutationPrefix}($${pluralName}: ${inputArg.dataType}) {\n` +
+    // every list parameter of the mutation defaults to an empty list
+    const declaredType = inputArg.dataType.trim().startsWith("[") ? inputArg.dataType + " = []" : inputArg.dataType;
+    const query = `mutation ${mutationPrefix}($${pluralName}: ${declaredType}) {\n` +
         `  ${mutationPrefix}(input: $${pluralName}) {\n` +
         `    detailedStatus {\n` +
         `      action\n` +
@@ -323,8 +326,10 @@ function pascalCasing(text) {
  * @param generated the {query, variables, options} objects produced by generate() for each name
  * @param options options shared across every generated query
  * @param queryArgOverrides {"<position>": {"<originalArgName>": "<newArgName>"}} overrides
+ * @param suppliedVariables the variables supplied by the caller, used for the (renamed) arguments that
+ *        the individual queries don't know about
  */
-function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides) {
+function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides, suppliedVariables) {
     const argDecls = new Map(); // finalName -> declText
     const variables = {};
     let body = "";
@@ -350,7 +355,9 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
             if (decl.length === 0) return;
 
             const originalName = decl.split(":")[0].trim().substring(1);
-            const isRequired = decl.indexOf("=") === -1;
+            // the arguments with default values are the optional toggles, which are shared across the queries;
+            // the mutation arguments carry the input, so they always get disambiguated
+            const isRequired = decl.indexOf("=") === -1 || docKeyword === "mutation";
             const declTextFor = name => decl.replace(`$${originalName}`, `$${name}`);
 
             let finalName = overrides[originalName] || originalName;
@@ -385,16 +392,24 @@ function mergeGeneratedQueries(queryNames, generated, options, queryArgOverrides
         body += renamedBody;
 
         Object.assign(variables, gql.variables);
+        // a renamed argument of the query shares the value supplied for the original name; the mutations don't,
+        // as the bundle sections are not meant to be duplicated under the renamed variables (supply them explicitly)
         Object.entries(renameMap).forEach(([originalName, finalName]) => {
-            if (variables[finalName] === undefined && gql.variables[originalName] !== undefined) {
+            if (docKeyword !== "mutation" && variables[finalName] === undefined && gql.variables[originalName] !== undefined) {
                 variables[finalName] = gql.variables[originalName];
             }
         });
     });
 
+    argDecls.forEach((declText, finalName) => {
+        if (variables[finalName] === undefined && suppliedVariables && suppliedVariables[finalName] !== undefined) {
+            variables[finalName] = suppliedVariables[finalName];
+        }
+    });
+
     if (!options || !options.describeQuery) {
         argDecls.forEach((declText, finalName) => {
-            if (variables[finalName] === undefined) utils.warn("missing variable: " + finalName);
+            if (variables[finalName] === undefined && !declText.includes("=")) utils.warn("missing variable: " + finalName);
         });
     }
 
@@ -427,6 +442,57 @@ function splitGeneratedQuery(query, queryName) {
         body: lines.slice(1, closingIndex).join("\n") + "\n",
         trailer: lines.slice(closingIndex + 1).join("\n")
     };
+}
+
+/**
+ * Checks if the variable is declared with a default value, e.g. $name: [String!]! = []
+ */
+function hasDefaultValue(query, name) {
+    return new RegExp("\\$" + name + "\\s*:[^,)=]*=").test(query);
+}
+
+/**
+ * Retains only the variables declared by the operation, e.g. a bundle read from a file carries
+ * the sections that the chosen query/mutation doesn't declare, which are not meant to be sent.
+ * The "properties" section of the bundle is always retained, even though the operation doesn't declare it.
+ * Variables are left untouched when the operation's declarations cannot be identified.
+ */
+const ALWAYS_RETAINED_VARIABLES = ["properties"];
+
+function retainDeclaredVariables(gql) {
+    const declared = declaredVariableNames(gql.query);
+    if (declared === null || !gql.variables) return;
+
+    const dropped = Object.keys(gql.variables).filter(name => !declared.has(name) && !ALWAYS_RETAINED_VARIABLES.includes(name));
+    dropped.forEach(name => delete gql.variables[name]);
+    if (dropped.length > 0) utils.fine("not sending the variables that are not declared by the operation: " + dropped.join(", "));
+}
+
+/**
+ * Identifies the variables declared in the operation header, e.g. query name($a: Int, $b: [String!]! = []) {...}
+ * @returns {Set<string>|null} null if the operation header cannot be identified
+ */
+function declaredVariableNames(query) {
+    const header = /^\s*(?:query|mutation)\b[^({\n]*/m.exec(query);
+    if (!header) return null;
+
+    const names = new Set();
+    let index = header.index + header[0].length;
+    while (index < query.length && /\s/.test(query[index])) index++;
+
+    if (query[index] === "(") {
+        let depth = 0;
+        let end = index;
+        for (; end < query.length; end++) {
+            if (query[end] === "(") depth++;
+            else if (query[end] === ")" && --depth === 0) break;
+        }
+
+        const declarations = query.substring(index, end);
+        for (const match of declarations.matchAll(/\$([A-Za-z_][A-Za-z0-9_]*)\s*:/g)) names.add(match[1]);
+    }
+
+    return names;
 }
 
 /**
