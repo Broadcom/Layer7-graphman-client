@@ -1,0 +1,32 @@
+{
+  "securityZones": [
+    {
+      "goid": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+      "name": "some-test-zone",
+      "description": "A test security zone for graphman automation",
+      "permittedEntityTypes": [
+        "SERVICE",
+        "POLICY"
+      ]
+    },
+    {
+      "goid": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7",
+      "name": "some-all-entities-zone",
+      "description": "A security zone that permits all entity types",
+      "permittedEntityTypes": [
+        "ANY"
+      ]
+    },
+    {
+      "goid": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8",
+      "name": "some-restricted-zone",
+      "description": "A security zone restricted to specific entity types",
+      "permittedEntityTypes": [
+        "JDBC_CONNECTION",
+        "CASSANDRA_CONFIGURATION",
+        "JMS_CONNECTION",
+        "JMS_ENDPOINT"
+      ]
+    }
+  ]
+}

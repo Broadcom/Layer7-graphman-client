@@ -4550,14 +4550,6 @@
           ]
         },
         {
-          "name": "certificateGoid",
-          "dataType": "ID"
-        },
-        {
-          "name": "certificateType",
-          "dataType": "RvsCertificateType"
-        },
-        {
           "name": "clientCertByGoid",
           "dataType": "ClientCert",
           "args": [
@@ -4884,10 +4876,6 @@
               "dataType": "String"
             }
           ]
-        },
-        {
-          "name": "expiresWithinDays",
-          "dataType": "Int"
         },
         {
           "name": "federatedGroupByGoid",
@@ -6438,6 +6426,16 @@
           ]
         },
         {
+          "name": "runtimeValidationStatuses",
+          "dataType": "CertificateValidationResult",
+          "args": [
+            {
+              "name": "status",
+              "dataType": "CertValidationStatus         certificateType: RvsCertificateType         certificateGoid: ID         expiresWithinDays: Int"
+            }
+          ]
+        },
+        {
           "name": "sampleMessageByGoid",
           "dataType": "SampleMessage",
           "args": [
@@ -7098,10 +7096,6 @@
           ]
         },
         {
-          "name": "status",
-          "dataType": "CertValidationStatus"
-        },
-        {
           "name": "trustedCertByGoid",
           "dataType": "Certificate",
           "args": [
@@ -7242,6 +7236,3131 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "Mutation": {
+      "category": "type",
+      "typeName": "Mutation",
+      "fields": [
+        {
+          "name": "addGroupToRole",
+          "dataType": "RolePayload",
+          "args": [
+            {
+              "name": "role",
+              "dataType": "String!"
+            },
+            {
+              "name": "group",
+              "dataType": "GroupRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "addUserToGroup",
+          "dataType": "GroupRefPayload",
+          "args": [
+            {
+              "name": "group",
+              "dataType": "String!"
+            },
+            {
+              "name": "user",
+              "dataType": "UserRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "addUserToRole",
+          "dataType": "RolePayload",
+          "args": [
+            {
+              "name": "role",
+              "dataType": "String!"
+            },
+            {
+              "name": "user",
+              "dataType": "UserRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "createJdbcConnection",
+          "dataType": "JdbcConnectionPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "JdbcConnectionInput!"
+            }
+          ]
+        },
+        {
+          "name": "deleteActiveConnectors",
+          "dataType": "ActiveConnectorsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ActiveConnectorPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ActiveConnectorRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteAuditConfigurations",
+          "dataType": "AuditConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[AuditConfigurationPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[AuditConfigurationRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteBackgroundTaskPolicies",
+          "dataType": "BackgroundTaskPoliciesPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteBundleEntities",
+          "dataType": "BundleEntitiesPayload"
+        },
+        {
+          "name": "deleteCassandraConnections",
+          "dataType": "CassandraConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[CassandraConnectionPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[CassandraConnectionRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteClientCerts",
+          "dataType": "ClientCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClientCertPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ClientCertRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteClusterProperties",
+          "dataType": "ClusterPropertiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClusterPropertyPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ClusterPropertyRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteCustomKeyValues",
+          "dataType": "CustomKeyValuePayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[CustomKeyValuePartialInput!]"
+            },
+            {
+              "name": "keys",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteDefaultHttpProxyConfigurations",
+          "dataType": "DefaultHttpProxyConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[DefaultHttpProxyConfigurationPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[DefaultHttpProxyConfigurationRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteDtds",
+          "dataType": "DtdsPayload",
+          "args": [
+            {
+              "name": "systemIds",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteEmailListeners",
+          "dataType": "EmailListenersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EmailListenerPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[EmailListenerRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteEncassConfigs",
+          "dataType": "EncassConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EncassConfigPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[EncassConfigRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteFederatedGroups",
+          "dataType": "FederatedGroupsPayload",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFederatedIdps",
+          "dataType": "FederatedIdpsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFederatedUsers",
+          "dataType": "FederatedUsersPayload",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFipGroups",
+          "dataType": "FipGroupsPayload",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFipUsers",
+          "dataType": "FipUsersPayload",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFips",
+          "dataType": "FipsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteFirewallRules",
+          "dataType": "FirewallRulesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FirewallRulePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[FirewallRuleRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteFolders",
+          "dataType": "FoldersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FolderPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[FolderRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "paths",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteGenericEntities",
+          "dataType": "GenericEntitiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GenericEntityPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[GenericEntityRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteGlobalConfigs",
+          "dataType": "GlobalConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalConfigPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[GlobalConfigRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteGlobalPolicies",
+          "dataType": "GlobalPoliciesPayload",
+          "args": [
+            {
+              "name": "tags",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteGlobalResources",
+          "dataType": "GlobalResourcesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalResourcePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[GlobalResourceRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteHttpConfigurations",
+          "dataType": "HttpConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[HttpConfigurationPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[HttpConfigurationRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteIdentityGroups",
+          "dataType": "IdentityGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityGroupPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[IdentityGroupRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteIdentityProviders",
+          "dataType": "IdentityProvidersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityProviderPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[IdentityProviderRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteIdentityUsers",
+          "dataType": "IdentityUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityUserPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[IdentityUserRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteInterfaceTags",
+          "dataType": "InterfaceTagsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InterfaceTagPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[InterfaceTagRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteInternalGroups",
+          "dataType": "InternalGroupsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteInternalSoapServices",
+          "dataType": "InternalSoapServicesPayload",
+          "args": [
+            {
+              "name": "resolvers",
+              "dataType": "[SoapServiceResolverInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteInternalUsers",
+          "dataType": "InternalUsersPayload",
+          "args": [
+            {
+              "name": "logins",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteInternalWebApiServices",
+          "dataType": "InternalWebApiServicesPayload",
+          "args": [
+            {
+              "name": "resolutionPaths",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteJdbcConnections",
+          "dataType": "JdbcConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JdbcConnectionPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[JdbcConnectionRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteJmsDestinations",
+          "dataType": "JmsDestinationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JmsDestinationPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[JmsDestinationRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteKerberosConfigs",
+          "dataType": "KerberosConfigPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[KerberosConfigPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[KerberosConfigRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteKeys",
+          "dataType": "KeysPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[KeyPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[KeyRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "aliases",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteLdapIdps",
+          "dataType": "LdapIdpsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteLdaps",
+          "dataType": "LdapsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteLicenseDocuments",
+          "dataType": "LicenseDocumentsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LicenseDocumentPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[LicenseDocumentRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteListenPorts",
+          "dataType": "ListenPortsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ListenPortPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ListenPortRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteLogSinks",
+          "dataType": "LogSinksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LogSinkPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[LogSinkRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deletePolicies",
+          "dataType": "L7PoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[PolicyRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deletePolicyAlias",
+          "dataType": "L7PolicyAliasPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "L7PolicyAliasRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "deletePolicyAliases",
+          "dataType": "L7PolicyAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyAliasPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[L7PolicyAliasRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deletePolicyBackedIdps",
+          "dataType": "PolicyBackedIdpsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deletePolicyBackedServices",
+          "dataType": "PolicyBackedServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PolicyBackedServicePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[PolicyBackedServiceRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deletePolicyFragments",
+          "dataType": "PolicyFragmentsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteRevocationCheckPolicies",
+          "dataType": "RevocationCheckPoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[RevocationCheckPolicyPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[RevocationCheckPolicyRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteRoles",
+          "dataType": "RolesPayload",
+          "args": [
+            {
+              "name": "roles",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteSMConfigs",
+          "dataType": "SMConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SMConfigPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[SMConfigRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteSampleMessages",
+          "dataType": "SampleMessagesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SampleMessagePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[SampleMessageRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "sampleMessages",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteScheduledTasks",
+          "dataType": "ScheduledTasksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ScheduledTaskPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ScheduledTaskRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteSchemas",
+          "dataType": "SchemasPayload",
+          "args": [
+            {
+              "name": "systemIds",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteSecrets",
+          "dataType": "SecretsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecretPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[SecretRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteSecurityZones",
+          "dataType": "SecurityZonesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecurityZonePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[SecurityZoneRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteServerModuleFiles",
+          "dataType": "ServerModuleFilesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ServerModuleFilePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ServerModuleFileRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteServiceAlias",
+          "dataType": "L7ServiceAliasPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "L7ServiceAliasRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "deleteServiceAliases",
+          "dataType": "L7ServiceAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServiceAliasPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[L7ServiceAliasRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteServices",
+          "dataType": "L7ServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServicePartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[ServiceRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "resolvers",
+              "dataType": "[ServiceResolversInput!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteSimpleLdapIdps",
+          "dataType": "SimpleLdapIdpsPayload",
+          "args": [
+            {
+              "name": "names",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteSniConfigurations",
+          "dataType": "SniConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SniConfigurationPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[SniConfigurationRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "names",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteSoapServices",
+          "dataType": "SoapServicesPayload",
+          "args": [
+            {
+              "name": "resolvers",
+              "dataType": "[SoapServiceResolverInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "deleteTrustedCerts",
+          "dataType": "TrustedCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[TrustedCertPartialInput!]"
+            },
+            {
+              "name": "refInputs",
+              "dataType": "[TrustedCertRefInput!] @deprecated(reason: \"Use 'input' instead\""
+            },
+            {
+              "name": "thumbprintSha1s",
+              "dataType": "[String!] @deprecated(reason: \"Use 'input' instead\""
+            }
+          ]
+        },
+        {
+          "name": "deleteWebApiServices",
+          "dataType": "WebApiServicesPayload",
+          "args": [
+            {
+              "name": "resolutionPaths",
+              "dataType": "[String!]!"
+            }
+          ]
+        },
+        {
+          "name": "generateCSR",
+          "dataType": "KeyCSRPayload",
+          "args": [
+            {
+              "name": "alias",
+              "dataType": "String!"
+            },
+            {
+              "name": "params",
+              "dataType": "CSRGenerateParamsInput!"
+            }
+          ]
+        },
+        {
+          "name": "initializeBundleContext",
+          "dataType": "BundleContextPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "BundlePropertiesInput"
+            }
+          ]
+        },
+        {
+          "name": "installBundleEntities",
+          "dataType": "BundleEntitiesPayload"
+        },
+        {
+          "name": "removeGroupFromRole",
+          "dataType": "RolePayload",
+          "args": [
+            {
+              "name": "role",
+              "dataType": "String!"
+            },
+            {
+              "name": "group",
+              "dataType": "GroupRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "removeUserFromGroup",
+          "dataType": "GroupRefPayload",
+          "args": [
+            {
+              "name": "group",
+              "dataType": "String!"
+            },
+            {
+              "name": "user",
+              "dataType": "UserRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "removeUserFromRole",
+          "dataType": "RolePayload",
+          "args": [
+            {
+              "name": "role",
+              "dataType": "String!"
+            },
+            {
+              "name": "user",
+              "dataType": "UserRefInput!"
+            }
+          ]
+        },
+        {
+          "name": "replaceCertChain",
+          "dataType": "ReplaceCertChainPayload",
+          "args": [
+            {
+              "name": "alias",
+              "dataType": "String!"
+            },
+            {
+              "name": "params",
+              "dataType": "KeyCertChainParamsInput!"
+            }
+          ]
+        },
+        {
+          "name": "setActiveConnectors",
+          "dataType": "ActiveConnectorsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ActiveConnectorInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setAdministrativeUserAccountProperties",
+          "dataType": "AdministrativeUserAccountPropertiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[AdministrativeUserAccountPropertyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setAuditConfigurations",
+          "dataType": "AuditConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[AuditConfigurationInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setBackgroundTaskPolicies",
+          "dataType": "BackgroundTaskPoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[BackgroundTaskPolicyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setCassandraConnections",
+          "dataType": "CassandraConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[CassandraConnectionInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setClientCerts",
+          "dataType": "ClientCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClientCertInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setClusterProperties",
+          "dataType": "ClusterPropertiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClusterPropertyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setCustomKeyValues",
+          "dataType": "CustomKeyValuePayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[CustomKeyValueInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setDefaultHttpProxyConfigurations",
+          "dataType": "DefaultHttpProxyConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[DefaultHttpProxyConfigurationInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setDtds",
+          "dataType": "DtdsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[DtdInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setEmailListeners",
+          "dataType": "EmailListenersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EmailListenerInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setEncassConfigs",
+          "dataType": "EncassConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EncassConfigInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFederatedGroups",
+          "dataType": "FederatedGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FederatedGroupInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFederatedIdps",
+          "dataType": "FederatedIdpsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FederatedIdpInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFederatedUsers",
+          "dataType": "FederatedUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FederatedUserInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFipGroups",
+          "dataType": "FipGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FipGroupInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFipUsers",
+          "dataType": "FipUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FipUserInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFips",
+          "dataType": "FipsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FipInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFirewallRules",
+          "dataType": "FirewallRulesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FirewallRuleInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setFolders",
+          "dataType": "FoldersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FolderInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setGenericEntities",
+          "dataType": "GenericEntitiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GenericEntityInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setGlobalConfigs",
+          "dataType": "GlobalConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalConfigInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setGlobalPolicies",
+          "dataType": "GlobalPoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalPolicyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setGlobalResources",
+          "dataType": "GlobalResourcesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalResourceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setHttpConfigurations",
+          "dataType": "HttpConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[HttpConfigurationInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setIdentityGroups",
+          "dataType": "IdentityGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityGroupInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setIdentityProviders",
+          "dataType": "IdentityProvidersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityProviderInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setIdentityUsers",
+          "dataType": "IdentityUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityUserInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInterfaceTags",
+          "dataType": "InterfaceTagsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InterfaceTagInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInternalGroups",
+          "dataType": "InternalGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InternalGroupInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInternalIdps",
+          "dataType": "InternalIdpsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InternalIdpInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInternalSoapServices",
+          "dataType": "InternalSoapServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SoapServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInternalUsers",
+          "dataType": "InternalUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InternalUserInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setInternalWebApiServices",
+          "dataType": "InternalWebApiServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[WebApiServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setJdbcConnections",
+          "dataType": "JdbcConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JdbcConnectionInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setJmsDestinations",
+          "dataType": "JmsDestinationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JmsDestinationInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setKerberosConfigs",
+          "dataType": "KerberosConfigPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[KerberosConfigInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setKeys",
+          "dataType": "KeysPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[KeyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setLdapIdps",
+          "dataType": "LdapIdpsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LdapIdpInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setLdaps",
+          "dataType": "LdapsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LdapInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setLicenseDocuments",
+          "dataType": "LicenseDocumentsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LicenseDocumentInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setListenPorts",
+          "dataType": "ListenPortsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ListenPortInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setLogSinks",
+          "dataType": "LogSinksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LogSinkInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPasswordPolicies",
+          "dataType": "PasswordPoliciesPayLoad",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PasswordPolicyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicies",
+          "dataType": "L7PoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicyAliases",
+          "dataType": "L7PolicyAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyAliasInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicyBackedIdps",
+          "dataType": "PolicyBackedIdpsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PolicyBackedIdpInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicyBackedServices",
+          "dataType": "PolicyBackedServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PolicyBackedServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicyFragments",
+          "dataType": "PolicyFragmentsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PolicyFragmentInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setPolicyRevisions",
+          "dataType": "L7PoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setRevocationCheckPolicies",
+          "dataType": "RevocationCheckPoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[RevocationCheckPolicyInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setRoles",
+          "dataType": "RolesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[RoleInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSMConfigs",
+          "dataType": "SMConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SMConfigInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSampleMessages",
+          "dataType": "SampleMessagesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SampleMessageInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setScheduledTasks",
+          "dataType": "ScheduledTasksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ScheduledTaskInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSchemas",
+          "dataType": "SchemasPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SchemaInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSecrets",
+          "dataType": "SecretsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecretInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSecurityZones",
+          "dataType": "SecurityZonesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecurityZoneInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setServerModuleFiles",
+          "dataType": "ServerModuleFilesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ServerModuleFileInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setServiceAliases",
+          "dataType": "L7ServiceAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServiceAliasInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setServiceResolutionConfigs",
+          "dataType": "ServiceResolutionConfigsPayLoad",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ServiceResolutionConfigInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setServiceRevisions",
+          "dataType": "L7ServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServicePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setServices",
+          "dataType": "L7ServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSimpleLdapIdps",
+          "dataType": "SimpleLdapIdpsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SimpleLdapIdpInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSniConfigurations",
+          "dataType": "SniConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SniConfigurationInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setSoapServices",
+          "dataType": "SoapServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SoapServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setTrustedCerts",
+          "dataType": "TrustedCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[TrustedCertInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "setWebApiServices",
+          "dataType": "WebApiServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[WebApiServiceInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "signCSR",
+          "dataType": "KeyCertChainPayload",
+          "args": [
+            {
+              "name": "alias",
+              "dataType": "String!"
+            },
+            {
+              "name": "params",
+              "dataType": "CSRSignParamsInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateActiveConnector",
+          "dataType": "ActiveConnectorPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ActiveConnectorRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ActiveConnectorPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateActiveConnectorAdvancedProperties",
+          "dataType": "ActiveConnectorPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ActiveConnectorRefInput!"
+            },
+            {
+              "name": "advancedProperties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateActiveConnectorProperties",
+          "dataType": "ActiveConnectorPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ActiveConnectorRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateActiveConnectors",
+          "dataType": "ActiveConnectorsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ActiveConnectorPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateCassandraConnection",
+          "dataType": "CassandraConnectionPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "CassandraConnectionRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "CassandraConnectionPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateCassandraConnectionProperties",
+          "dataType": "CassandraConnectionPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "CassandraConnectionRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateCassandraConnections",
+          "dataType": "CassandraConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[CassandraConnectionPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateClientCert",
+          "dataType": "ClientCertPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ClientCertRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ClientCertPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateClientCerts",
+          "dataType": "ClientCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClientCertPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateClusterProperties",
+          "dataType": "ClusterPropertiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ClusterPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateClusterProperty",
+          "dataType": "ClusterPropertyPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ClusterPropertyRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ClusterPropertyPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateDefaultHttpProxyConfigurations",
+          "dataType": "DefaultHttpProxyConfigurationsPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "DefaultHttpProxyConfigurationRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "DefaultHttpProxyConfigurationInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateEmailListener",
+          "dataType": "EmailListenerPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "EmailListenerRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "EmailListenerPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateEmailListenerProperties",
+          "dataType": "EmailListenerPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "EmailListenerRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateEmailListeners",
+          "dataType": "EmailListenersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EmailListenerPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateEncassConfig",
+          "dataType": "EncassConfigPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "EncassConfigRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "EncassConfigPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateEncassConfigs",
+          "dataType": "EncassConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[EncassConfigPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateFirewallRule",
+          "dataType": "FirewallRulePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "FirewallRuleRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "FirewallRulePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateFirewallRuleProperties",
+          "dataType": "FirewallRulePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "FirewallRuleRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateFirewallRules",
+          "dataType": "FirewallRulesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FirewallRulePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateFolder",
+          "dataType": "FolderPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "FolderRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "FolderPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateFolders",
+          "dataType": "FoldersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[FolderPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateGenericEntities",
+          "dataType": "GenericEntitiesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GenericEntityPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateGenericEntity",
+          "dataType": "GenericEntityPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "GenericEntityRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "GenericEntityPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateGlobalConfig",
+          "dataType": "GlobalConfigPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "GlobalConfigRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "GlobalConfigPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateGlobalConfigs",
+          "dataType": "GlobalConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalConfigPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateGlobalResource",
+          "dataType": "GlobalResourcePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "GlobalResourceRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "GlobalResourcePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateGlobalResources",
+          "dataType": "GlobalResourcesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[GlobalResourcePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateHttpConfiguration",
+          "dataType": "HttpConfigurationsPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "HttpConfigurationRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "HttpConfigurationPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateHttpConfigurations",
+          "dataType": "HttpConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[HttpConfigurationPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityGroup",
+          "dataType": "IdentityGroupPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "IdentityGroupRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "IdentityGroupPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityGroups",
+          "dataType": "IdentityGroupsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityGroupPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityProvider",
+          "dataType": "IdentityProviderPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "IdentityProviderRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "IdentityProviderPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityProviders",
+          "dataType": "IdentityProvidersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityProviderPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityUser",
+          "dataType": "IdentityUserPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "IdentityUserRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "IdentityUserPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityUserPassword",
+          "dataType": "IdentityUserPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "IdentityUserRefInput!"
+            },
+            {
+              "name": "newPassword",
+              "dataType": "String!"
+            },
+            {
+              "name": "oldPassword",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateIdentityUsers",
+          "dataType": "IdentityUsersPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[IdentityUserPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateInterfaceTag",
+          "dataType": "InterfaceTagPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "InterfaceTagRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "InterfaceTagPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateInterfaceTags",
+          "dataType": "InterfaceTagsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[InterfaceTagPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateJdbcConnection",
+          "dataType": "JdbcConnectionPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "JdbcConnectionRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "JdbcConnectionPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateJdbcConnectionProperties",
+          "dataType": "JdbcConnectionPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "JdbcConnectionRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateJdbcConnections",
+          "dataType": "JdbcConnectionsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JdbcConnectionPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateJmsDestination",
+          "dataType": "JmsDestinationPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "JmsDestinationRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "JmsDestinationPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateJmsDestinationProperties",
+          "dataType": "JmsDestinationPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "JmsDestinationRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateJmsDestinations",
+          "dataType": "JmsDestinationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[JmsDestinationPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateKey",
+          "dataType": "KeyPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "KeyRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "KeyPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateKeys",
+          "dataType": "KeysPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[KeyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateListenPort",
+          "dataType": "ListenPortPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ListenPortRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ListenPortPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateListenPortProperties",
+          "dataType": "ListenPortPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ListenPortRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateListenPorts",
+          "dataType": "ListenPortsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ListenPortPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateLogSink",
+          "dataType": "LogSinkPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "LogSinkRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "LogSinkPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateLogSinkProperties",
+          "dataType": "LogSinkPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "LogSinkRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateLogSinks",
+          "dataType": "LogSinksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[LogSinkPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicies",
+          "dataType": "L7PoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updatePoliciesRevision",
+          "dataType": "L7PoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyPartialInput!]!"
+            },
+            {
+              "name": "activate",
+              "dataType": "Boolean!"
+            },
+            {
+              "name": "comment",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicy",
+          "dataType": "L7PolicyPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "PolicyRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "L7PolicyPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicyAlias",
+          "dataType": "L7PolicyAliasPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "L7PolicyAliasRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "L7PolicyAliasPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicyAliases",
+          "dataType": "L7PolicyAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7PolicyAliasPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicyBackedService",
+          "dataType": "PolicyBackedServicePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "PolicyBackedServiceRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "PolicyBackedServicePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicyBackedServices",
+          "dataType": "PolicyBackedServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[PolicyBackedServicePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updatePolicyRevision",
+          "dataType": "L7PolicyPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "PolicyRefInput!"
+            },
+            {
+              "name": "revision",
+              "dataType": "Long!"
+            },
+            {
+              "name": "activate",
+              "dataType": "Boolean"
+            },
+            {
+              "name": "comment",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateRevocationCheckPolicies",
+          "dataType": "RevocationCheckPoliciesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[RevocationCheckPolicyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateRevocationCheckPolicy",
+          "dataType": "RevocationCheckPolicyPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "RevocationCheckPolicyRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "RevocationCheckPolicyPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSMConfig",
+          "dataType": "SMConfigPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SMConfigRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "SMConfigPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSMConfigProperties",
+          "dataType": "SMConfigPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SMConfigRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateSMConfigs",
+          "dataType": "SMConfigsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SMConfigPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateSampleMessage",
+          "dataType": "SampleMessagePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SampleMessageRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "SampleMessagePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSampleMessages",
+          "dataType": "SampleMessagesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SampleMessagePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateScheduledTask",
+          "dataType": "ScheduledTaskPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ScheduledTaskRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ScheduledTaskPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateScheduledTasks",
+          "dataType": "ScheduledTasksPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ScheduledTaskPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateSecret",
+          "dataType": "SecretPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SecretRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "SecretPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSecrets",
+          "dataType": "SecretsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecretPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateSecurityZone",
+          "dataType": "SecurityZonePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SecurityZoneRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "SecurityZonePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSecurityZones",
+          "dataType": "SecurityZonesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SecurityZonePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateServerModuleFile",
+          "dataType": "ServerModuleFilePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ServerModuleFileRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "ServerModuleFilePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateServerModuleFiles",
+          "dataType": "ServerModuleFilesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[ServerModuleFilePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateService",
+          "dataType": "L7ServicePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ServiceRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "L7ServicePartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateServiceAlias",
+          "dataType": "L7ServiceAliasPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "L7ServiceAliasRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "L7ServiceAliasPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateServiceAliases",
+          "dataType": "L7ServiceAliasesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServiceAliasPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateServiceProperties",
+          "dataType": "L7ServicePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ServiceRefInput!"
+            },
+            {
+              "name": "properties",
+              "dataType": "[EntityPropertyPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateServiceRevision",
+          "dataType": "L7ServicePayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "ServiceRefInput!"
+            },
+            {
+              "name": "revision",
+              "dataType": "Long!"
+            },
+            {
+              "name": "activate",
+              "dataType": "Boolean"
+            },
+            {
+              "name": "comment",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateServices",
+          "dataType": "L7ServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServicePartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateServicesRevision",
+          "dataType": "L7ServicesPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[L7ServicePartialInput!]!"
+            },
+            {
+              "name": "activate",
+              "dataType": "Boolean!"
+            },
+            {
+              "name": "comment",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "updateSniConfiguration",
+          "dataType": "SniConfigurationPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "SniConfigurationRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "SniConfigurationPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateSniConfigurations",
+          "dataType": "SniConfigurationsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[SniConfigurationPartialInput!]!"
+            }
+          ]
+        },
+        {
+          "name": "updateTrustedCert",
+          "dataType": "TrustedCertPayload",
+          "args": [
+            {
+              "name": "refInput",
+              "dataType": "TrustedCertRefInput!"
+            },
+            {
+              "name": "input",
+              "dataType": "TrustedCertPartialInput!"
+            }
+          ]
+        },
+        {
+          "name": "updateTrustedCerts",
+          "dataType": "TrustedCertsPayload",
+          "args": [
+            {
+              "name": "input",
+              "dataType": "[TrustedCertPartialInput!]!"
+            }
+          ]
+        }
+      ],
+      "singularName": "mutation",
+      "pluralName": "mutations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ActiveConnectorRefInput": {
+      "category": "input",
+      "typeName": "ActiveConnectorRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "connectorType",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "activeConnectorRefInput",
+      "pluralName": "activeConnectorRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ActiveConnectorPartialInput": {
+      "category": "input",
+      "typeName": "ActiveConnectorPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ActiveConnectorRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "advancedProperties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "activeConnectorPartialInput",
+      "pluralName": "activeConnectorPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "L7PolicyAliasPartialInput": {
+      "category": "input",
+      "typeName": "L7PolicyAliasPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "L7PolicyAliasRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "l7PolicyAliasPartialInput",
+      "pluralName": "l7PolicyAliasPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "L7PolicyAliasRefInput": {
+      "category": "input",
+      "typeName": "L7PolicyAliasRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "aliasedPolicyName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "l7PolicyAliasRefInput",
+      "pluralName": "l7PolicyAliasRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "L7ServiceAliasPartialInput": {
+      "category": "input",
+      "typeName": "L7ServiceAliasPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "L7ServiceAliasRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "l7ServiceAliasPartialInput",
+      "pluralName": "l7ServiceAliasPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "L7ServiceAliasRefInput": {
+      "category": "input",
+      "typeName": "L7ServiceAliasRefInput",
+      "fields": [
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "aliasedServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        }
+      ],
+      "singularName": "l7ServiceAliasRefInput",
+      "pluralName": "l7ServiceAliasRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "AuditConfigurationRefInput": {
+      "category": "input",
+      "typeName": "AuditConfigurationRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "auditConfigurationRefInput",
+      "pluralName": "auditConfigurationRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "AuditConfigurationPartialInput": {
+      "category": "input",
+      "typeName": "AuditConfigurationPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "AuditConfigurationRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "alwaysSaveInternal",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "lookupPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "sinkPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "ftpConfig",
+          "dataType": "AuditFtpConfigurationInput"
+        }
+      ],
+      "singularName": "auditConfigurationPartialInput",
+      "pluralName": "auditConfigurationPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "AuditFtpConfiguration": {
       "category": "type",
       "typeName": "AuditFtpConfiguration",
@@ -7293,6 +10412,158 @@
       ],
       "singularName": "auditFtpConfiguration",
       "pluralName": "auditFtpConfigurations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "CassandraConnectionPartialInput": {
+      "category": "input",
+      "typeName": "CassandraConnectionPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "CassandraConnectionRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "keyspace",
+          "dataType": "String"
+        },
+        {
+          "name": "contactPoints",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "compression",
+          "dataType": "CassandraCompression"
+        },
+        {
+          "name": "sslEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "cipherSuites",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "cassandraConnectionPartialInput",
+      "pluralName": "cassandraConnectionPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "CassandraConnectionRefInput": {
+      "category": "input",
+      "typeName": "CassandraConnectionRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "cassandraConnectionRefInput",
+      "pluralName": "cassandraConnectionRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ClientCertRefInput": {
+      "category": "input",
+      "typeName": "ClientCertRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "thumbprint",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "clientCertRefInput",
+      "pluralName": "clientCertRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ClientCertPartialInput": {
+      "category": "input",
+      "typeName": "ClientCertPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ClientCertRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "clientCertPartialInput",
+      "pluralName": "clientCertPartialInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -7435,6 +10706,212 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "ClusterPropertyRefInput": {
+      "category": "input",
+      "typeName": "ClusterPropertyRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "clusterPropertyRefInput",
+      "pluralName": "clusterPropertyRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ClusterPropertyPartialInput": {
+      "category": "input",
+      "typeName": "ClusterPropertyPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ClusterPropertyRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "clusterPropertyPartialInput",
+      "pluralName": "clusterPropertyPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "CustomKeyValuePartialInput": {
+      "category": "input",
+      "typeName": "CustomKeyValuePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "CustomKeyValueRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "key",
+          "dataType": "String"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "customKeyValuePartialInput",
+      "pluralName": "customKeyValuePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "CustomKeyValueRefInput": {
+      "category": "input",
+      "typeName": "CustomKeyValueRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "key",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "customKeyValueRefInput",
+      "pluralName": "customKeyValueRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EmailListenerPartialInput": {
+      "category": "input",
+      "typeName": "EmailListenerPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "EmailListenerRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "hostname",
+          "dataType": "NonEmptyString"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "serverType",
+          "dataType": "EmailServerType"
+        },
+        {
+          "name": "sslEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "deleteOnReceive",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folder",
+          "dataType": "String"
+        },
+        {
+          "name": "pollInterval",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "sizeLimit",
+          "dataType": "NonNegativeInt"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "emailListenerPartialInput",
+      "pluralName": "emailListenerPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EmailListenerRefInput": {
+      "category": "input",
+      "typeName": "EmailListenerRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "emailListenerRefInput",
+      "pluralName": "emailListenerRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "EncassArg": {
       "category": "type",
       "typeName": "EncassArg",
@@ -7483,6 +10960,286 @@
       ],
       "singularName": "encassResult",
       "pluralName": "encassResults",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EncassConfigPartialInput": {
+      "category": "input",
+      "typeName": "EncassConfigPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "EncassConfigRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "policyName",
+          "dataType": "String"
+        },
+        {
+          "name": "encassArgs",
+          "dataType": "EncassArgInput"
+        },
+        {
+          "name": "encassResults",
+          "dataType": "EncassResultInput"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "encassConfigPartialInput",
+      "pluralName": "encassConfigPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EncassConfigRefInput": {
+      "category": "input",
+      "typeName": "EncassConfigRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "encassConfigRefInput",
+      "pluralName": "encassConfigRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "FirewallRulePartialInput": {
+      "category": "input",
+      "typeName": "FirewallRulePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "FirewallRuleRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "ordinal",
+          "dataType": "Int"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "protocol",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "String"
+        },
+        {
+          "name": "action",
+          "dataType": "String"
+        },
+        {
+          "name": "interfaceTagName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        }
+      ],
+      "singularName": "firewallRulePartialInput",
+      "pluralName": "firewallRulePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "FirewallRuleRefInput": {
+      "category": "input",
+      "typeName": "FirewallRuleRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "firewallRuleRefInput",
+      "pluralName": "firewallRuleRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "FolderPartialInput": {
+      "category": "input",
+      "typeName": "FolderPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "FolderRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "folderPartialInput",
+      "pluralName": "folderPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "FolderRefInput": {
+      "category": "input",
+      "typeName": "FolderRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "folderRefInput",
+      "pluralName": "folderRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GenericEntityPartialInput": {
+      "category": "input",
+      "typeName": "GenericEntityPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "GenericEntityRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "valueXml",
+          "dataType": "String"
+        },
+        {
+          "name": "valueJson",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "entityClassName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "genericEntityPartialInput",
+      "pluralName": "genericEntityPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GenericEntityRefInput": {
+      "category": "input",
+      "typeName": "GenericEntityRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "genericEntityRefInput",
+      "pluralName": "genericEntityRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -7695,6 +11452,154 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "GlobalConfigPartialInput": {
+      "category": "input",
+      "typeName": "GlobalConfigPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "GlobalConfigRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "certValidationOptions",
+          "dataType": "CertValidationOptionsPartialInput"
+        },
+        {
+          "name": "administrativeUserAccountOptions",
+          "dataType": "AdministrativeUserAccountOptionsPartialInput"
+        },
+        {
+          "name": "defaultHttpProxyOptions",
+          "dataType": "DefaultHttpProxyOptionsPartialInput"
+        },
+        {
+          "name": "serviceResolutionOptions",
+          "dataType": "ServiceResolutionOptionsPartialInput"
+        },
+        {
+          "name": "auditSinkOptions",
+          "dataType": "AuditSinkOptionsPartialInput"
+        }
+      ],
+      "singularName": "globalConfigPartialInput",
+      "pluralName": "globalConfigPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GlobalConfigRefInput": {
+      "category": "input",
+      "typeName": "GlobalConfigRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "globalConfigRefInput",
+      "pluralName": "globalConfigRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GlobalResourcePartialInput": {
+      "category": "input",
+      "typeName": "GlobalResourcePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "GlobalResourceRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "systemId",
+          "dataType": "String"
+        },
+        {
+          "name": "publicId",
+          "dataType": "String"
+        },
+        {
+          "name": "resourceType",
+          "dataType": "ResourceType"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        },
+        {
+          "name": "contentType",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "globalResourcePartialInput",
+      "pluralName": "globalResourcePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GlobalResourceRefInput": {
+      "category": "input",
+      "typeName": "GlobalResourceRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "systemId",
+          "dataType": "String"
+        },
+        {
+          "name": "resourceType",
+          "dataType": "ResourceType"
+        }
+      ],
+      "singularName": "globalResourceRefInput",
+      "pluralName": "globalResourceRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "HttpProxyConfiguration": {
       "category": "type",
       "typeName": "HttpProxyConfiguration",
@@ -7718,6 +11623,206 @@
       ],
       "singularName": "httpProxyConfiguration",
       "pluralName": "httpProxyConfigurations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "DefaultHttpProxyConfigurationRefInput": {
+      "category": "input",
+      "typeName": "DefaultHttpProxyConfigurationRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "defaultHttpProxyConfigurationRefInput",
+      "pluralName": "defaultHttpProxyConfigurationRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "DefaultHttpProxyConfigurationPartialInput": {
+      "category": "input",
+      "typeName": "DefaultHttpProxyConfigurationPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "DefaultHttpProxyConfigurationRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "defaultHttpProxyConfigurationPartialInput",
+      "pluralName": "defaultHttpProxyConfigurationPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "HttpConfigurationPartialInput": {
+      "category": "input",
+      "typeName": "HttpConfigurationPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "HttpConfigurationRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "protocol",
+          "dataType": "HttpScheme"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "ntlmHost",
+          "dataType": "String"
+        },
+        {
+          "name": "ntlmDomain",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsVersion",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsKeyUse",
+          "dataType": "EntityFieldOption"
+        },
+        {
+          "name": "tlsKeystoreId",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsKeyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "dataType": "String"
+        },
+        {
+          "name": "connectTimeout",
+          "dataType": "Int"
+        },
+        {
+          "name": "readTimeout",
+          "dataType": "Int"
+        },
+        {
+          "name": "followRedirects",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "proxyUse",
+          "dataType": "EntityFieldOption"
+        },
+        {
+          "name": "proxyConfiguration",
+          "dataType": "HttpProxyConfigurationInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "httpConfigurationPartialInput",
+      "pluralName": "httpConfigurationPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "HttpConfigurationRefInput": {
+      "category": "input",
+      "typeName": "HttpConfigurationRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "protocol",
+          "dataType": "HttpScheme"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "httpConfigurationRefInput",
+      "pluralName": "httpConfigurationRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -7907,6 +12012,80 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "IdentityProviderRefInput": {
+      "category": "input",
+      "typeName": "IdentityProviderRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityProviderRefInput",
+      "pluralName": "identityProviderRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "IdentityProviderPartialInput": {
+      "category": "input",
+      "typeName": "IdentityProviderPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "IdentityProviderRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "internalDetails",
+          "dataType": "InternalIdpDetailsInput"
+        },
+        {
+          "name": "federatedDetails",
+          "dataType": "FederatedIdpPartialDetailsInput"
+        },
+        {
+          "name": "ldapDetails",
+          "dataType": "LdapIdpDetailsInput"
+        },
+        {
+          "name": "simpleLdapDetails",
+          "dataType": "SimpleLdapIdpDetailsInput"
+        },
+        {
+          "name": "policyBackedDetails",
+          "dataType": "PolicyBackedIdpDetailsInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityProviderPartialInput",
+      "pluralName": "identityProviderPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "IdentityUserBasicDetails": {
       "category": "type",
       "typeName": "IdentityUserBasicDetails",
@@ -8019,6 +12198,84 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "IdentityUserPartialInput": {
+      "category": "input",
+      "typeName": "IdentityUserPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "IdentityUserRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "basicDetails",
+          "dataType": "IdentityUserBasicDetailsInput"
+        },
+        {
+          "name": "internalDetails",
+          "dataType": "IdentityUserInternalDetailsPartialInput"
+        },
+        {
+          "name": "federatedDetails",
+          "dataType": "IdentityUserFederatedDetailsInput"
+        },
+        {
+          "name": "groupNames",
+          "dataType": "String"
+        },
+        {
+          "name": "roleNames",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityUserPartialInput",
+      "pluralName": "identityUserPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "IdentityUserRefInput": {
+      "category": "input",
+      "typeName": "IdentityUserRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityUserRefInput",
+      "pluralName": "identityUserRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "IdentityGroupBasicDetails": {
       "category": "type",
       "typeName": "IdentityGroupBasicDetails",
@@ -8093,6 +12350,84 @@
       ],
       "singularName": "identityGroupFederatedDetails",
       "pluralName": "identityGroupFederatedDetailss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "IdentityGroupPartialInput": {
+      "category": "input",
+      "typeName": "IdentityGroupPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "IdentityGroupRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "basicDetails",
+          "dataType": "IdentityGroupBasicDetailsInput"
+        },
+        {
+          "name": "internalDetails",
+          "dataType": "IdentityGroupInternalDetailsInput"
+        },
+        {
+          "name": "federatedDetails",
+          "dataType": "IdentityGroupFederatedDetailsInput"
+        },
+        {
+          "name": "memberNames",
+          "dataType": "String"
+        },
+        {
+          "name": "roleNames",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityGroupPartialInput",
+      "pluralName": "identityGroupPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "IdentityGroupRefInput": {
+      "category": "input",
+      "typeName": "IdentityGroupRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "identityGroupRefInput",
+      "pluralName": "identityGroupRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -8219,6 +12554,138 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "InterfaceTagRefInput": {
+      "category": "input",
+      "typeName": "InterfaceTagRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "interfaceTagRefInput",
+      "pluralName": "interfaceTagRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "InterfaceTagPartialInput": {
+      "category": "input",
+      "typeName": "InterfaceTagPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "InterfaceTagRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "ipPatterns",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "interfaceTagPartialInput",
+      "pluralName": "interfaceTagPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "JdbcConnectionPartialInput": {
+      "category": "input",
+      "typeName": "JdbcConnectionPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "JdbcConnectionRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "driverClass",
+          "dataType": "String"
+        },
+        {
+          "name": "jdbcUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "minPoolSize",
+          "dataType": "NonNegativeInt"
+        },
+        {
+          "name": "maxPoolSize",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "jdbcConnectionPartialInput",
+      "pluralName": "jdbcConnectionPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "JdbcConnectionRefInput": {
+      "category": "input",
+      "typeName": "JdbcConnectionRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "jdbcConnectionRefInput",
+      "pluralName": "jdbcConnectionRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "JmsSslDetails": {
       "category": "type",
       "typeName": "JmsSslDetails",
@@ -8246,6 +12713,132 @@
       ],
       "singularName": "jmsSslDetails",
       "pluralName": "jmsSslDetailss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "JmsDestinationPartialInput": {
+      "category": "input",
+      "typeName": "JmsDestinationPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "JmsDestinationRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "connectionGoid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "direction",
+          "dataType": "String"
+        },
+        {
+          "name": "providerType",
+          "dataType": "String"
+        },
+        {
+          "name": "initialContextFactoryClassname",
+          "dataType": "String"
+        },
+        {
+          "name": "connectionFactoryName",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiUsername",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiSslDetails",
+          "dataType": "JmsSslDetailsInput"
+        },
+        {
+          "name": "destinationType",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationName",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationUsername",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationSslDetails",
+          "dataType": "JmsSslDetailsInput"
+        },
+        {
+          "name": "template",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "jmsDestinationPartialInput",
+      "pluralName": "jmsDestinationPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "JmsDestinationRefInput": {
+      "category": "input",
+      "typeName": "JmsDestinationRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "direction",
+          "dataType": "String"
+        },
+        {
+          "name": "providerType",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "jmsDestinationRefInput",
+      "pluralName": "jmsDestinationRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -8289,6 +12882,122 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "KerberosConfigRefInput": {
+      "category": "input",
+      "typeName": "KerberosConfigRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "kerberosConfigRefInput",
+      "pluralName": "kerberosConfigRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "KerberosConfigPartialInput": {
+      "category": "input",
+      "typeName": "KerberosConfigPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "KerberosConfigRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "keytab",
+          "dataType": "String"
+        },
+        {
+          "name": "conf",
+          "dataType": "String"
+        },
+        {
+          "name": "krb5Conf",
+          "dataType": "String"
+        },
+        {
+          "name": "loginConf",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "kerberosConfigPartialInput",
+      "pluralName": "kerberosConfigPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "LicenseDocumentRefInput": {
+      "category": "input",
+      "typeName": "LicenseDocumentRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "licenseId",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "licenseDocumentRefInput",
+      "pluralName": "licenseDocumentRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "LicenseDocumentPartialInput": {
+      "category": "input",
+      "typeName": "LicenseDocumentPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "LicenseDocumentRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "licenseId",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "licenseDocumentPartialInput",
+      "pluralName": "licenseDocumentPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "ListenPortTlsSettings": {
       "category": "type",
       "typeName": "ListenPortTlsSettings",
@@ -8324,6 +13033,178 @@
       ],
       "singularName": "listenPortTlsSettings",
       "pluralName": "listenPortTlsSettingss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ListenPortRefInput": {
+      "category": "input",
+      "typeName": "ListenPortRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "listenPortRefInput",
+      "pluralName": "listenPortRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ListenPortPartialInput": {
+      "category": "input",
+      "typeName": "ListenPortPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ListenPortRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "protocol",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "sniConfigurationName",
+          "dataType": "String"
+        },
+        {
+          "name": "enabledFeatures",
+          "dataType": "ListenPortFeature"
+        },
+        {
+          "name": "tlsSettings",
+          "dataType": "ListenPortTlsSettingsInput"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "listenPortPartialInput",
+      "pluralName": "listenPortPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "LogSinkPartialInput": {
+      "category": "input",
+      "typeName": "LogSinkPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "LogSinkRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "type",
+          "dataType": "LogSinkType"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "severity",
+          "dataType": "LogSeverityThreshold"
+        },
+        {
+          "name": "categories",
+          "dataType": "LogSinkCategory"
+        },
+        {
+          "name": "syslogHosts",
+          "dataType": "String"
+        },
+        {
+          "name": "filters",
+          "dataType": "LogSinkFilterInput"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "logSinkPartialInput",
+      "pluralName": "logSinkPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "LogSinkRefInput": {
+      "category": "input",
+      "typeName": "LogSinkRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "logSinkRefInput",
+      "pluralName": "logSinkRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -8626,6 +13507,120 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "L7PolicyPartialInput": {
+      "category": "input",
+      "typeName": "L7PolicyPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "PolicyRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "policy",
+          "dataType": "PolicyInput"
+        },
+        {
+          "name": "policyRevision",
+          "dataType": "PolicyRevisionInput"
+        },
+        {
+          "name": "policyRevisions",
+          "dataType": "PolicyRevisionInput"
+        },
+        {
+          "name": "version",
+          "dataType": "Int"
+        },
+        {
+          "name": "revision",
+          "dataType": "Long"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "soap",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "policyType",
+          "dataType": "L7PolicyType"
+        },
+        {
+          "name": "tag",
+          "dataType": "String"
+        },
+        {
+          "name": "subTag",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "l7PolicyPartialInput",
+      "pluralName": "l7PolicyPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyRefInput": {
+      "category": "input",
+      "typeName": "PolicyRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "policyType",
+          "dataType": "L7PolicyType"
+        },
+        {
+          "name": "tag",
+          "dataType": "String"
+        },
+        {
+          "name": "subTag",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "policyRefInput",
+      "pluralName": "policyRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "PolicyBackedServiceOperation": {
       "category": "type",
       "typeName": "PolicyBackedServiceOperation",
@@ -8641,6 +13636,64 @@
       ],
       "singularName": "policyBackedServiceOperation",
       "pluralName": "policyBackedServiceOperations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyBackedServicePartialInput": {
+      "category": "input",
+      "typeName": "PolicyBackedServicePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "PolicyBackedServiceRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "interfaceName",
+          "dataType": "String"
+        },
+        {
+          "name": "operations",
+          "dataType": "PolicyBackedServiceOperationInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "policyBackedServicePartialInput",
+      "pluralName": "policyBackedServicePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyBackedServiceRefInput": {
+      "category": "input",
+      "typeName": "PolicyBackedServiceRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "policyBackedServiceRefInput",
+      "pluralName": "policyBackedServiceRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -8685,6 +13738,76 @@
       "deprecatedFields": [
         "signerThumbprintSha1s"
       ]
+    },
+    "RevocationCheckPolicyPartialInput": {
+      "category": "input",
+      "typeName": "RevocationCheckPolicyPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "RevocationCheckPolicyRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "defaultPolicy",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "defaultSuccess",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "continueOnServerUnavailable",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "revocationCheckPolicyItems",
+          "dataType": "RevocationCheckPolicyItemInput"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "revocationCheckPolicyPartialInput",
+      "pluralName": "revocationCheckPolicyPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "RevocationCheckPolicyRefInput": {
+      "category": "input",
+      "typeName": "RevocationCheckPolicyRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "revocationCheckPolicyRefInput",
+      "pluralName": "revocationCheckPolicyRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
     },
     "UserRef": {
       "category": "type",
@@ -8808,6 +13931,607 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "SampleMessageRefInput": {
+      "category": "input",
+      "typeName": "SampleMessageRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sampleMessageRefInput",
+      "pluralName": "sampleMessageRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SampleMessagePartialInput": {
+      "category": "input",
+      "typeName": "SampleMessagePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "SampleMessageRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        },
+        {
+          "name": "operationName",
+          "dataType": "String"
+        },
+        {
+          "name": "serviceName",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sampleMessagePartialInput",
+      "pluralName": "sampleMessagePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ScheduledTaskPartialInput": {
+      "category": "input",
+      "typeName": "ScheduledTaskPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ScheduledTaskRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "policyName",
+          "dataType": "String"
+        },
+        {
+          "name": "jobType",
+          "dataType": "JobType"
+        },
+        {
+          "name": "cronExpression",
+          "dataType": "String"
+        },
+        {
+          "name": "executeOnSingleNode",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "executeOnCreation",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "executionDate",
+          "dataType": "DateTime"
+        },
+        {
+          "name": "status",
+          "dataType": "JobStatus"
+        },
+        {
+          "name": "runAsUser",
+          "dataType": "String"
+        },
+        {
+          "name": "runAsUserProviderName",
+          "dataType": "String"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "scheduledTaskPartialInput",
+      "pluralName": "scheduledTaskPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ScheduledTaskRefInput": {
+      "category": "input",
+      "typeName": "ScheduledTaskRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "scheduledTaskRefInput",
+      "pluralName": "scheduledTaskRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "KeyPartialInput": {
+      "category": "input",
+      "typeName": "KeyPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "KeyRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "keystoreId",
+          "dataType": "ID"
+        },
+        {
+          "name": "alias",
+          "dataType": "String"
+        },
+        {
+          "name": "certChain",
+          "dataType": "String"
+        },
+        {
+          "name": "usageTypes",
+          "dataType": "KeyUsageType"
+        },
+        {
+          "name": "keySize",
+          "dataType": "Int"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "keyPartialInput",
+      "pluralName": "keyPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SecretRefInput": {
+      "category": "input",
+      "typeName": "SecretRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "secretRefInput",
+      "pluralName": "secretRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SecretPartialInput": {
+      "category": "input",
+      "typeName": "SecretPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "SecretRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "variableReferencable",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "secret",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "keySize",
+          "dataType": "Int"
+        },
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "secretPartialInput",
+      "pluralName": "secretPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "KeyRefInput": {
+      "category": "input",
+      "typeName": "KeyRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "keystoreId",
+          "dataType": "ID"
+        },
+        {
+          "name": "alias",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "keyRefInput",
+      "pluralName": "keyRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SMConfigPartialInput": {
+      "category": "input",
+      "typeName": "SMConfigPartialInput",
+      "fields": [
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        },
+        {
+          "name": "ref",
+          "dataType": "SMConfigRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "agentHost",
+          "dataType": "String"
+        },
+        {
+          "name": "agentIP",
+          "dataType": "String"
+        },
+        {
+          "name": "agentHostConfig",
+          "dataType": "String"
+        },
+        {
+          "name": "agentSecret",
+          "dataType": "String"
+        },
+        {
+          "name": "cryptoMode",
+          "dataType": "SMCryptoMode"
+        },
+        {
+          "name": "ipCheckEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "updateSSOToken",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "clusterFailoverThreshold",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "nonClusterFailover",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sMConfigPartialInput",
+      "pluralName": "sMConfigPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "L7ServicePartialInput": {
+      "category": "input",
+      "typeName": "L7ServicePartialInput",
+      "fields": [
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        },
+        {
+          "name": "ref",
+          "dataType": "ServiceRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "resolvers",
+          "dataType": "ServiceResolversInput"
+        },
+        {
+          "name": "serviceType",
+          "dataType": "L7ServiceType"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "version",
+          "dataType": "Int"
+        },
+        {
+          "name": "revision",
+          "dataType": "Long"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soapVersion",
+          "dataType": "SoapVersion"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "laxResolution",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityPropertyInput"
+        },
+        {
+          "name": "wsdl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlResources",
+          "dataType": "ServiceResourceInput"
+        },
+        {
+          "name": "policy",
+          "dataType": "PolicyInput"
+        },
+        {
+          "name": "policyRevision",
+          "dataType": "PolicyRevisionInput"
+        },
+        {
+          "name": "policyRevisions",
+          "dataType": "PolicyRevisionInput"
+        }
+      ],
+      "singularName": "l7ServicePartialInput",
+      "pluralName": "l7ServicePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "TrustedCertPartialInput": {
+      "category": "input",
+      "typeName": "TrustedCertPartialInput",
+      "fields": [
+        {
+          "name": "securityZoneName",
+          "dataType": "String"
+        },
+        {
+          "name": "ref",
+          "dataType": "TrustedCertRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        },
+        {
+          "name": "verifyHostname",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "trustAnchor",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "trustedFor",
+          "dataType": "TrustedForType"
+        },
+        {
+          "name": "revocationCheckPolicyType",
+          "dataType": "PolicyUsageType"
+        },
+        {
+          "name": "revocationCheckPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprint",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprintSha1",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "trustedCertPartialInput",
+      "pluralName": "trustedCertPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SecurityZoneRefInput": {
+      "category": "input",
+      "typeName": "SecurityZoneRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "securityZoneRefInput",
+      "pluralName": "securityZoneRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SecurityZonePartialInput": {
+      "category": "input",
+      "typeName": "SecurityZonePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "SecurityZoneRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "permittedEntityTypes",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "securityZonePartialInput",
+      "pluralName": "securityZonePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "ServerModuleFileStateSummary": {
       "category": "type",
       "typeName": "ServerModuleFileStateSummary",
@@ -8858,6 +14582,52 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "ServerModuleFileRefInput": {
+      "category": "input",
+      "typeName": "ServerModuleFileRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serverModuleFileRefInput",
+      "pluralName": "serverModuleFileRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ServerModuleFilePartialInput": {
+      "category": "input",
+      "typeName": "ServerModuleFilePartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "ServerModuleFileRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serverModuleFilePartialInput",
+      "pluralName": "serverModuleFilePartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "ServiceResolvers": {
       "category": "type",
       "typeName": "ServiceResolvers",
@@ -8883,6 +14653,60 @@
       "identityFields": [],
       "deprecatedFields": []
     },
+    "ServiceRefInput": {
+      "category": "input",
+      "typeName": "ServiceRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "serviceType",
+          "dataType": "L7ServiceType"
+        },
+        {
+          "name": "resolvers",
+          "dataType": "ServiceResolversInput"
+        }
+      ],
+      "singularName": "serviceRefInput",
+      "pluralName": "serviceRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SMConfigRefInput": {
+      "category": "input",
+      "typeName": "SMConfigRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sMConfigRefInput",
+      "pluralName": "sMConfigRefInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
     "SniMappingEntry": {
       "category": "type",
       "typeName": "SniMappingEntry",
@@ -8902,6 +14726,68 @@
       ],
       "singularName": "sniMappingEntry",
       "pluralName": "sniMappingEntries",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SniConfigurationPartialInput": {
+      "category": "input",
+      "typeName": "SniConfigurationPartialInput",
+      "fields": [
+        {
+          "name": "ref",
+          "dataType": "SniConfigurationRefInput"
+        },
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sniMappings",
+          "dataType": "SniMappingInput"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sniConfigurationPartialInput",
+      "pluralName": "sniConfigurationPartialInputs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SniConfigurationRefInput": {
+      "category": "input",
+      "typeName": "SniConfigurationRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "sniConfigurationRefInput",
+      "pluralName": "sniConfigurationRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -8956,6 +14842,35 @@
       ],
       "singularName": "trustedCertRef",
       "pluralName": "trustedCertRefs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "TrustedCertRefInput": {
+      "category": "input",
+      "typeName": "TrustedCertRefInput",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprint",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprintSha1",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "trustedCertRefInput",
+      "pluralName": "trustedCertRefInputs",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const fs = require('fs');
 const path = require('path');
@@ -38,13 +38,57 @@ module.exports = {
             }
         }
         const isWin = process.platform === "win32";
-        const stdOutput = cp.execFileSync(tConfig.execFile, args, {stdio: ['inherit', 'pipe', 'pipe'],shell: isWin, encoding: 'utf8'});
+        // a failed operation exits with a non-zero code; the tests inspect its output instead of failing here
+        const result = cp.spawnSync(tConfig.execFile, args, {stdio: ['inherit', 'pipe', 'pipe'], shell: isWin, encoding: 'utf8'});
+        const stdOutput = result.stdout || "";
+        const stdError = result.stderr || "";
         console.log(stdOutput);
+        if (stdError) console.error(stdError);
+        if (result.error) throw result.error;
         const output = fs.existsSync(outputFile)? String(fs.readFileSync(outputFile)) : "{}";
         console.log(output);
         const json = JSON.parse(output);
         json.stdout = stdOutput;
+        Object.defineProperty(json, 'stderr', {value: stdError});
+        Object.defineProperty(json, 'status', {value: result.status});
         return json;
+    },
+
+    /**
+     * Runs the CLI with a payload piped to its standard input.
+     * Returns the raw streams instead of the --output file, as the point is to exercise the pipe.
+     */
+    graphmanWithInput: function (input, ...args) {
+        const isWin = process.platform === "win32";
+        const result = cp.spawnSync(tConfig.execFile, args, {
+            input: input,
+            stdio: ['pipe', 'pipe', 'pipe'],
+            shell: isWin,
+            encoding: 'utf8'
+        });
+
+        return {status: result.status, stdout: result.stdout || "", stderr: result.stderr || ""};
+    },
+
+    /**
+     * Standard mutations (setXxx/updateXxx/deleteXxx) are available from the schema v11.2.2 onwards.
+     */
+    supportsStandardMutations: function () {
+        return require(path.join(tConfig.home, "modules", "graphman.js"))
+            .isSchemaVersionAtLeast(tConfig.schemaVersion, "v11.2.2");
+    },
+
+    standardMutationsTest: function (...args) {
+        return (module.exports.supportsStandardMutations() ? test : test.skip)(...args);
+    },
+
+    /**
+     * Delete mutations tests are run only for the schemas later than v11.2.2 (skipped for v11.2.2 or earlier).
+     */
+    deleteMutationsTest: function (...args) {
+        const supported = require(path.join(tConfig.home, "modules", "graphman.js"))
+            .isSchemaVersionAtLeast(tConfig.schemaVersion, "v11.2.3");
+        return (supported ? test : test.skip)(...args);
     },
 
     expectArray: function (actual) {
@@ -58,6 +102,20 @@ module.exports = {
     
     readFileAsJson: function (path) {
         return JSON.parse(fs.readFileSync(path));
+    },
+
+    lookupEntityGoid: function (pluralName, matchFields) {
+        const listing = module.exports.graphman("export", "--using", `${pluralName}:summary`, "--gateway", "target-gateway");
+        const match = (listing[pluralName] || []).find(item =>
+            Object.keys(matchFields).every(k => item[k] === matchFields[k]));
+        return match && match.goid;
+    },
+
+    expectEntityDeleted: function (pluralName, matchFields) {
+        const listing = module.exports.graphman("export", "--using", `${pluralName}:summary`, "--gateway", "target-gateway");
+        expect(listing[pluralName]).not.toEqual(expect.arrayContaining([
+            expect.objectContaining(matchFields)
+        ]));
     }
 };
 

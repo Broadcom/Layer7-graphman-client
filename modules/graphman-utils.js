@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const fs = require("fs");
 const putil = require("path");
@@ -9,6 +9,7 @@ const SCHEMA_DIR = HOME_DIR + "/schema";
 const SCHEMA_METADATA_BASE_FILE = "metadata-base.json";
 const SCHEMA_METADATA_FILE = "metadata.json";
 const POLICY_SCHEMA_FILE = "policy-code-schema.json";
+const STANDARD_MUTATIONS_SINCE = "v11.2.2";
 
 const NONE_LEVEL = 0;
 const WARN_LEVEL = 1;
@@ -17,9 +18,12 @@ const FINE_LEVEL = 3;
 const DEBUG_LEVEL = 10;
 
 const SECRET_BASE64_PREFIX = "$b64.";
+const STDIN_MARKER = "-";
 
 let logLevel = INFO_LEVEL;
+let logSink = console.log;
 let wrapperDir = HOME_DIR;
+let stdinConsumed = false;
 
 const defaultExtn = {ref: {apply: function (input, context) {return input;}}};
 const extns = {};
@@ -32,6 +36,29 @@ class GraphmanOperationError extends Error {
 }
 
 module.exports = {
+    STANDARD_MUTATIONS_SINCE: STANDARD_MUTATIONS_SINCE,
+
+    /**
+     * Compares schema versions like v11.2.2, v11.1.00 or v11.0.00-CR03 by their numeric parts.
+     * @returns true if the schema version is the same as or later than the minimum version; false for unrecognized versions
+     */
+    isSchemaVersionAtLeast: function (schemaVersion, minimumVersion) {
+        const parse = text => {
+            const match = /^v?(\d+)\.(\d+)(?:\.(\d+))?/.exec(String(text));
+            return match ? [match[1], match[2], match[3] || 0].map(Number) : null;
+        };
+
+        const actual = parse(schemaVersion);
+        const minimum = parse(minimumVersion);
+        if (!actual || !minimum) return false;
+
+        for (let i = 0; i < minimum.length; i++) {
+            if (actual[i] !== minimum[i]) return actual[i] > minimum[i];
+        }
+
+        return true;
+    },
+
     newError: function (msg) {
         return new GraphmanOperationError(msg);
     },
@@ -41,6 +68,16 @@ module.exports = {
         else if (level === 'info' && logLevel === INFO_LEVEL) return true;
         else if (level === 'fine' && logLevel === FINE_LEVEL) return true;
         else return level === 'debug' && logLevel === DEBUG_LEVEL;
+    },
+
+    logTo: function (sink) {
+        if (sink === 'stderr') {
+            logSink = console.error;
+        } else if (sink === 'stdout') {
+            logSink = console.log;
+        } else if (sink) {
+            this.warn("unsupported log sink, " + sink);
+        }
     },
 
     logAt: function (level) {
@@ -170,7 +207,37 @@ module.exports = {
         return path ? putil.dirname(path) : ".";
     },
 
+    stdinMarker: function () {
+        return STDIN_MARKER;
+    },
+
+    readStdin: function () {
+        if (stdinConsumed) {
+            throw this.newError("standard input is already consumed, it can be read only once");
+        }
+
+        if (process.stdin.isTTY) {
+            throw this.newError("no data piped to the standard input");
+        }
+
+        stdinConsumed = true;
+        const data = readStdinSync().trim();
+        if (!data) {
+            throw this.newError("no data piped to the standard input");
+        }
+
+        try {
+            return JSON.parse(data);
+        } catch (e) {
+            throw this.newError("standard input is not a valid json bundle, " + e.message);
+        }
+    },
+
     readFile: function (file) {
+        if (file === STDIN_MARKER) {
+            return this.readStdin();
+        }
+
         if (!fs.existsSync(file)) {
             throw "file doesn't exist, " + file;
         }
@@ -211,7 +278,7 @@ module.exports = {
         }
 
         if (this.loggingAt("debug") || (!e.message && !errors)) {
-            console.log(e);
+            logSink(e);
         }
     },
 
@@ -225,7 +292,7 @@ module.exports = {
             });
         }
 
-        console.log(text);
+        logSink(text);
     },
 
     error: function (message, ...args) {
@@ -397,6 +464,39 @@ module.exports = {
 
         return context;
     }
+}
+
+function readStdinSync() {
+    const chunks = [];
+    const buf = Buffer.alloc(65536);
+
+    // NOTE: on Unix, piping is not working with the below line of code
+    // fs.readFileSync(0, 'utf-8')
+
+    while (true) {
+        try {
+            const bytesRead = fs.readSync(0, buf, 0, buf.length, null);
+            if (bytesRead === 0) break;
+            chunks.push(Buffer.from(buf.subarray(0, bytesRead)));
+        } catch (e) {
+            // on Windows, piped stdin is non-blocking, so a read attempted before data
+            // has arrived in the pipe buffer fails with EAGAIN rather than blocking
+            if (e.code === 'EAGAIN') {
+                sleepSync(20);
+                continue;
+            }
+
+            if (e.code === 'EOF') break;
+            throw e;
+        }
+    }
+
+    return Buffer.concat(chunks).toString('utf-8');
+}
+
+function sleepSync(ms) {
+    const int32 = new Int32Array(new SharedArrayBuffer(4));
+    Atomics.wait(int32, 0, 0, ms);
 }
 
 function replaceNewLineMarkers(data) {

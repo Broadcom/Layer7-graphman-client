@@ -1,0 +1,20 @@
+{
+  "interfaceTags": [
+    {
+      "name": "v2_it_update_1",
+      "ipPatterns": ["10.91.0.0/16"]
+    },
+    {
+      "name": "v2_it_update_2",
+      "ipPatterns": ["10.92.0.0/16"]
+    },
+    {
+      "name": "v2_it_delete_1",
+      "ipPatterns": ["10.93.0.0/16"]
+    },
+    {
+      "name": "v2_it_delete_2",
+      "ipPatterns": ["10.94.0.0/16"]
+    }
+  ]
+}

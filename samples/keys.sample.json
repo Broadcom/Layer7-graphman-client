@@ -42,7 +42,7 @@
       "id": "0dac753d-53fa-4ff1-84b4-7397445cc718",
       "name": "Gateway Graphman Bundle - 2024-09-06T02:53:19.759-07:00",
       "author": "admin",
-      "hostname": "rg625218gw112-0.apim.labs.broadcom.net",
+      "hostname": "example.net",
       "timestamp": "2024-09-06T02:53:19.759-07:00"
     },
     "defaultAction": "NEW_OR_UPDATE"

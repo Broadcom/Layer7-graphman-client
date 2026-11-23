@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "goid": "9da9658488805f66782db48ffb94df54",
+            "name" : "GrandParentUsingGQL",
+            "path" : "/GrandParentUsingGQL"
+        },
+        {
+            "goid": "8bec02e2b07b30bcd41728ded442f5db",
+            "name" : "ParentUsingGQL",
+            "path" : "/GrandParentUsingGQL/ParentUsingGQL"
+        },
+        {
+            "goid": "dd6766e457dd273f4548bba139eb673d",
+            "name" : "ChildUsingGQL",
+            "path" : "/GrandParentUsingGQL/ParentUsingGQL/ChildUsingGQL"
+        }
+    ]
+}

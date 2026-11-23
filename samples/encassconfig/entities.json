@@ -1,0 +1,518 @@
+{
+  "encassConfigs": [
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fee0",
+      "guid": "4395819d-2e60-483c-babb-781058303883",
+      "name": "encass-1",
+      "checksum": "48abd5e392737511704bd99e8a7424a82ec7cd7f",
+      "policyName": "encass-policy-1",
+      "encassArgs": [],
+      "encassResults": [],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "accessControl"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fee2",
+      "guid": "407510c4-b2b8-4254-b444-0109148a25e1",
+      "name": "encass-2",
+      "checksum": "2878d8a3cc500dc33aaf5c6f3cd8163d0bff38d1",
+      "policyName": "encass-policy-2",
+      "encassArgs": [
+        {
+          "name": "input-param",
+          "type": "STRING",
+          "ordinal": 1,
+          "guiPrompt": true,
+          "guiLabel": "Enter Param"
+        }
+      ],
+      "encassResults": [
+        {
+          "name": "output-param",
+          "type": "STRING"
+        }
+      ],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "transportLayerSecurity"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fee8",
+      "guid": "acea8ecd-d6f9-47ee-a67b-6e1d395f6177",
+      "name": "encass-3",
+      "checksum": "a94d4ee87a471310c38b46165bd5211bd0a30b63",
+      "policyName": "encass-policy-3",
+      "encassArgs": [
+        {
+          "name": "input1",
+          "type": "STRING",
+          "ordinal": 1,
+          "guiPrompt": true,
+          "guiLabel": "Enter input1"
+        },
+        {
+          "name": "input2",
+          "type": "INTEGER",
+          "ordinal": 2,
+          "guiPrompt": true,
+          "guiLabel": "Enter input2"
+        },
+        {
+          "name": "input3",
+          "type": "MESSAGE",
+          "ordinal": 3,
+          "guiPrompt": false
+        }
+      ],
+      "encassResults": [
+        {
+          "name": "output1",
+          "type": "STRING"
+        },
+        {
+          "name": "output2",
+          "type": "INTEGER"
+        },
+        {
+          "name": "output3",
+          "type": "MESSAGE"
+        }
+      ],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "true"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "xmlSecurity"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5ff41",
+      "guid": "4395819d-2e60-483c-babb-781058304441",
+      "name": "encass-4",
+      "checksum": "5273a3b1ab1af6f5d7d00a2d0e08723faa9c7e57",
+      "policyName": "simple-policy-1",
+      "encassArgs": [],
+      "encassResults": [],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "accessControl"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5ff52",
+      "guid": "407510c4-b2b8-4254-b444-010914852552",
+      "name": "encass-5",
+      "checksum": "9686a45ff83400dc5b49810cedb8b33580c5c957",
+      "policyName": "simple-policy-2",
+      "encassArgs": [],
+      "encassResults": [],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "accessControl"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5ff63",
+      "guid": "4395819d-2e60-483c-babb-781058306663",
+      "name": "encass-6",
+      "checksum": "5ae5cc448fe3292bfcfa8fc1a93767694706cce1",
+      "policyName": "simple-policy-1",
+      "encassArgs": [],
+      "encassResults": [],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "accessControl"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "9741965eb4bde407913f33b2f7a20485",
+      "guid": "5047edc8-9df8-4e57-9e75-74221139c520",
+      "name": "some-encass",
+      "checksum": "b7a3ad923c7794eff70ca28f6543c6ab562f0240",
+      "policyName": "some-encass-policy",
+      "encassArgs": [
+        {
+          "name": "some-binary-arg",
+          "type": "BINARY",
+          "ordinal": 8,
+          "guiPrompt": false
+        },
+        {
+          "name": "some-bool-arg",
+          "type": "BOOLEAN",
+          "ordinal": 7,
+          "guiPrompt": true,
+          "guiLabel": "boolean"
+        },
+        {
+          "name": "some-cert-arg",
+          "type": "CERTIFICATE",
+          "ordinal": 2,
+          "guiPrompt": true,
+          "guiLabel": "certificate"
+        },
+        {
+          "name": "some-datetime-arg",
+          "type": "DATE_TIME",
+          "ordinal": 9,
+          "guiPrompt": false
+        },
+        {
+          "name": "some-decimal-arg",
+          "type": "DECIMAL",
+          "ordinal": 4,
+          "guiPrompt": true,
+          "guiLabel": "decimal"
+        },
+        {
+          "name": "some-float-arg",
+          "type": "FLOAT",
+          "ordinal": 5,
+          "guiPrompt": true,
+          "guiLabel": "float"
+        },
+        {
+          "name": "some-int-arg",
+          "type": "INTEGER",
+          "ordinal": 3,
+          "guiPrompt": true,
+          "guiLabel": "integer"
+        },
+        {
+          "name": "some-msg-arg",
+          "type": "MESSAGE",
+          "ordinal": 10,
+          "guiPrompt": false
+        },
+        {
+          "name": "some-string-arg",
+          "type": "STRING",
+          "ordinal": 1,
+          "guiPrompt": true,
+          "guiLabel": "string arg"
+        },
+        {
+          "name": "some-xml-arg",
+          "type": "ELEMENT",
+          "ordinal": 6,
+          "guiPrompt": false
+        }
+      ],
+      "encassResults": [
+        {
+          "name": "some-binary-result",
+          "type": "BINARY"
+        },
+        {
+          "name": "some-blob-result",
+          "type": "BLOB"
+        },
+        {
+          "name": "some-bool-result",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "some-cert-result",
+          "type": "CERTIFICATE"
+        },
+        {
+          "name": "some-clob-result",
+          "type": "CLOB"
+        },
+        {
+          "name": "some-datetime-result",
+          "type": "DATE_TIME"
+        },
+        {
+          "name": "some-decimal-result",
+          "type": "DECIMAL"
+        },
+        {
+          "name": "some-float-result",
+          "type": "FLOAT"
+        },
+        {
+          "name": "some-int-result",
+          "type": "INTEGER"
+        },
+        {
+          "name": "some-msg-result",
+          "type": "MESSAGE"
+        },
+        {
+          "name": "some-string-result",
+          "type": "STRING"
+        },
+        {
+          "name": "some-unknown-result",
+          "type": "UNKNOWN"
+        },
+        {
+          "name": "some-xml-result",
+          "type": "ELEMENT"
+        }
+      ],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "accessControl"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "goid": "ff70c6a442043ef12e74f4eb13ccb8c5",
+      "guid": "3acd132d-0b6a-4508-9a14-55b858651f2f",
+      "name": "some-other-encass",
+      "checksum": "0c71b81b86e34c1512de7f8f6e4dfa26751fd5fd",
+      "description": "some othe encass",
+      "policyName": "some-other-encass-policy",
+      "encassArgs": [
+        {
+          "name": "input1",
+          "type": "STRING",
+          "ordinal": 1,
+          "guiPrompt": true,
+          "guiLabel": "Input1"
+        },
+        {
+          "name": "input2",
+          "type": "STRING",
+          "ordinal": 2,
+          "guiPrompt": true,
+          "guiLabel": "Input2"
+        }
+      ],
+      "encassResults": [
+        {
+          "name": "output",
+          "type": "STRING"
+        }
+      ],
+      "properties": [
+        {
+          "name": "allowTracing",
+          "value": "false"
+        },
+        {
+          "name": "paletteFolder",
+          "value": "policyLogic"
+        },
+        {
+          "name": "passMetricsToParent",
+          "value": "false"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fe7e",
+      "guid": "2e0b1506-851c-44be-b574-2025ae9a34ba",
+      "name": "encass-policy-1",
+      "policyType": "FRAGMENT",
+      "checksum": "b9becaaae77b27c4d41dfbf21e51fd852dbd2faf",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: encass-policy-1\"/>\n        </L7p:CommentAssertion>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"4d2a6c88-b20d-4a3f-95ec-54fd74f15103\"/>\n            <L7p:PolicyName stringValue=\"simple-policy-1\"/>\n        </L7p:Include>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fe91",
+      "guid": "34fd3578-32c4-41bc-b977-6cc394aaa824",
+      "name": "encass-policy-2",
+      "policyType": "FRAGMENT",
+      "checksum": "5dd40de98d27bd310571cdf398e8b4be850917bd",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: encass-policy-2\"/>\n        </L7p:CommentAssertion>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"335c873a-29f9-4b98-ae6c-f38f95a8b824\"/>\n            <L7p:PolicyName stringValue=\"simple-policy-2\"/>\n        </L7p:Include>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fecd",
+      "guid": "72fc4709-590e-481e-b5cc-d1ab113ee1a2",
+      "name": "encass-policy-3",
+      "policyType": "FRAGMENT",
+      "checksum": "d590dcb967e93c7a3b29d881bf9233ba6b9d2541",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: encass-policy-3\"/>\n        </L7p:CommentAssertion>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"b2b361f9-2db1-44b7-baad-045949707422\"/>\n            <L7p:PolicyName stringValue=\"simple-policy-3\"/>\n        </L7p:Include>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fe6b",
+      "guid": "93fefbbd-d4e5-4ab7-b948-d755afe3ddb0",
+      "name": "policy-with-encapsulated-assertions",
+      "policyType": "FRAGMENT",
+      "checksum": "9066962a5cea7b06f28eae7980dd79208025a88d",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: policy-with-encapsulated-assertions\"/>\n        </L7p:CommentAssertion>\n        <L7p:Encapsulated>\n            <L7p:EncapsulatedAssertionConfigGuid stringValue=\"4395819d-2e60-483c-babb-781058303883\"/>\n            <L7p:EncapsulatedAssertionConfigName stringValue=\"encass-1\"/>\n        </L7p:Encapsulated>\n        <L7p:Encapsulated>\n            <L7p:EncapsulatedAssertionConfigGuid stringValue=\"407510c4-b2b8-4254-b444-0109148a25e1\"/>\n            <L7p:EncapsulatedAssertionConfigName stringValue=\"encass-2\"/>\n            <L7p:Parameters mapValue=\"included\">\n                <L7p:entry>\n                    <L7p:key stringValue=\"input-param\"/>\n                    <L7p:value stringValue=\"Hello, World!\"/>\n                </L7p:entry>\n            </L7p:Parameters>\n        </L7p:Encapsulated>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"1ad418b5-99fa-4d55-b695-c208303d18b4\"/>\n            <L7p:PolicyName stringValue=\"sub-policy-with-encapsulated-assertions\"/>\n        </L7p:Include>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fea4",
+      "guid": "4d2a6c88-b20d-4a3f-95ec-54fd74f15103",
+      "name": "simple-policy-1",
+      "policyType": "FRAGMENT",
+      "checksum": "1f5e774ec3a278b0ea485c349afe95cdd2c31c47",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: simple-policy-1\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5feb7",
+      "guid": "335c873a-29f9-4b98-ae6c-f38f95a8b824",
+      "name": "simple-policy-2",
+      "policyType": "FRAGMENT",
+      "checksum": "ec1158c61869b1e5cec207a8622f9b0c537b4af9",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: simple-policy-2\"/>\n        </L7p:CommentAssertion>\n        <L7p:Include>\n            <L7p:PolicyGuid stringValue=\"b2b361f9-2db1-44b7-baad-045949707422\"/>\n            <L7p:PolicyName stringValue=\"simple-policy-3\"/>\n        </L7p:Include>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5ff15",
+      "guid": "b2b361f9-2db1-44b7-baad-045949707422",
+      "name": "simple-policy-3",
+      "policyType": "FRAGMENT",
+      "checksum": "6fb48a84c73b0a918cef2c64a54ecbf6876f6fe8",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: simple-policy-3\"/>\n        </L7p:CommentAssertion>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "628534200f7f993138161f24f47077a1",
+      "guid": "605f1143-005c-4e19-8aa9-9238f665f1ec",
+      "name": "some-encass-policy",
+      "policyType": "FRAGMENT",
+      "checksum": "0655079a7491b594776db40c9f268048b8210ffe",
+      "version": 0,
+      "enabled": true,
+      "folderPath": "/",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-policy\"/>\n        </L7p:CommentAssertion>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLXN0cmluZy1hcmd9\"/>\n            <L7p:VariableToSet stringValue=\"some-string-result\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLWludC1hcmd9\"/>\n            <L7p:VariableToSet stringValue=\"some-int-result\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLWRlY2ltYWwtYXJnfQ==\"/>\n            <L7p:VariableToSet stringValue=\"some-decimal-result\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLWZsb2F0LWFyZ30=\"/>\n            <L7p:VariableToSet stringValue=\"some-float-result\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLWJvb2wtYXJnfQ==\"/>\n            <L7p:VariableToSet stringValue=\"some-bool-result\"/>\n        </L7p:SetVariable>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtzb21lLWJpbmFyeS1hcmd9\"/>\n            <L7p:VariableToSet stringValue=\"some-binary-result\"/>\n        </L7p:SetVariable>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "628534200f7f993138161f24f47077a2",
+      "guid": "264423e9-0695-4dde-9eb6-4d94f51d6536",
+      "name": "some-other-encass-policy",
+      "policyType": "FRAGMENT",
+      "checksum": "bb6f55928285d2297d977d6485193fe6ad2b3ba8",
+      "version": 0,
+      "enabled": true,
+      "folderPath": "/",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: some-other-encass\"/>\n        </L7p:CommentAssertion>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"JHtpbnB1dDF9JHtpbnB1dDJ9\"/>\n            <L7p:VariableToSet stringValue=\"output\"/>\n        </L7p:SetVariable>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    },
+    {
+      "goid": "72adab14b763f12efb51ebb737d5fef9",
+      "guid": "1ad418b5-99fa-4d55-b695-c208303d18b4",
+      "name": "sub-policy-with-encapsulated-assertions",
+      "policyType": "FRAGMENT",
+      "checksum": "bd9e9ac1a936a82a2ea345214f811ee8a1979175",
+      "version": 1,
+      "enabled": true,
+      "folderPath": "/encapsulated-assertions",
+      "soap": false,
+      "policy": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: policy-with-encapsulated-assertions\"/>\n        </L7p:CommentAssertion>\n        <L7p:Encapsulated>\n            <L7p:EncapsulatedAssertionConfigGuid stringValue=\"407510c4-b2b8-4254-b444-0109148a25e1\"/>\n            <L7p:EncapsulatedAssertionConfigName stringValue=\"encass-2\"/>\n            <L7p:Parameters mapValue=\"included\">\n                <L7p:entry>\n                    <L7p:key stringValue=\"input-param\"/>\n                    <L7p:value stringValue=\"Hello, World!\"/>\n                </L7p:entry>\n            </L7p:Parameters>\n        </L7p:Encapsulated>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"SGVsbG8sIFdvcmxkIQ==\"/>\n            <L7p:ContentType stringValue=\"text/plain; charset=utf-8\"/>\n            <L7p:DataType variableDataType=\"message\"/>\n            <L7p:VariableToSet stringValue=\"input3\"/>\n        </L7p:SetVariable>\n        <L7p:Encapsulated>\n            <L7p:EncapsulatedAssertionConfigGuid stringValue=\"acea8ecd-d6f9-47ee-a67b-6e1d395f6177\"/>\n            <L7p:EncapsulatedAssertionConfigName stringValue=\"encass-3\"/>\n            <L7p:Parameters mapValue=\"included\">\n                <L7p:entry>\n                    <L7p:key stringValue=\"input1\"/>\n                    <L7p:value stringValue=\"Hello\"/>\n                </L7p:entry>\n                <L7p:entry>\n                    <L7p:key stringValue=\"input2\"/>\n                    <L7p:value stringValue=\"123\"/>\n                </L7p:entry>\n            </L7p:Parameters>\n        </L7p:Encapsulated>\n    </wsp:All>\n</wsp:Policy>\n"
+      }
+    }
+  ]
+}

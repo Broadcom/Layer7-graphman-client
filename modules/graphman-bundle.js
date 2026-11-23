@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+// Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 
 const utils = require("./graphman-utils");
 const graphman = require("./graphman");
@@ -174,6 +174,17 @@ module.exports = {
         });
     },
 
+    /**
+     * Builds a matcher out of ignore rules.
+     * Rules are keyed by section (plural name); each section holds a rule or an array of rules.
+     * Fields within a rule are AND-ed, rules within a section are OR-ed.
+     * @param rules ignore rules, using the same field criteria as the filter
+     * @returns {function(string, object): (string|null)} returns the description of the matching rule or null
+     */
+    buildIgnoreMatcher: function (rules) {
+        return filterer.buildMatcher(rules || {});
+    },
+
     filter: function (bundle, filter) {
          if (!filter) return;
 
@@ -184,6 +195,9 @@ module.exports = {
             return;
         }
 
+        // the legacy options without any matching criteria don't filter anything
+        if (!filter.equals && !filter.startsWith && !filter.endsWith && !filter.contains) return;
+
         utils.warn(" deprecated filter options are in use, please use the latest filter options");
 
         Object.keys(bundle).filter(key => Array.isArray(bundle[key])).forEach(key => {
@@ -191,9 +205,10 @@ module.exports = {
             bundle[key].forEach(item => {
                 let match = item.hasOwnProperty(filter.by);
 
-                if (filter.equals) {
-                    match = match && (item[filter.by].toString() === filter.equals);
-                } else if (typeof item[filter.by] === 'string') {
+                // the criteria are chained together by and-logic
+                if (match && filter.equals) match = String(item[filter.by]) === filter.equals;
+
+                if (match && typeof item[filter.by] === 'string') {
                     if (filter.startsWith) match = match && item[filter.by].startsWith(filter.startsWith);
                     if (filter.endsWith) match = match && item[filter.by].endsWith(filter.endsWith);
                     if (filter.contains) match = match && item[filter.by].includes(filter.contains);
@@ -818,13 +833,37 @@ let filterer = function () {
         },
     };
 
+    // the criteria can also be prefixed to the field value, e.g. regex.abc.*
+    const supported_predicates_regex = /^(eq|neq|regex|gt|gte|lt|lte)[.]/;
+
     function toPredicateFieldConfig(name, value) {
-        const values = Array.isArray(value) ? value : ["eq", value];
+        let values;
+        if (Array.isArray(value)) {
+            values = value;
+        } else {
+            const valueString = String(value);
+            const match = valueString.match(supported_predicates_regex);
+            values = match ? [match[1], valueString.substring(match[1].length + 1)] : ["eq", value];
+        }
+
         const pfConfig = {name: name, criteria: values[0], value: values[1]};
         if (pfConfig.criteria === "regex") {
             pfConfig.value = new RegExp(pfConfig.value);
         }
         return pfConfig;
+    }
+
+    function validateRule(section, rule) {
+        if (!rule || typeof rule !== "object" || Array.isArray(rule) || Object.keys(rule).length === 0) {
+            throw utils.newError(`invalid ignore filter for ${section}, a rule must specify at least one field criteria: ${JSON.stringify(rule)}`);
+        }
+
+        Object.keys(rule).forEach(fieldName => {
+            const criteria = Array.isArray(rule[fieldName]) ? rule[fieldName][0] : "eq";
+            if (!supported_predicates[criteria]) {
+                throw utils.newError(`invalid ignore filter for ${section}.${fieldName}, unsupported matching criteria '${criteria}'; supported: ${Object.keys(supported_predicates).join(", ")}`);
+            }
+        });
     }
 
     function buildPredicate(filterSection) {
@@ -841,7 +880,7 @@ let filterer = function () {
                 if (predicate) {
                     return predicate.test(entity[pfConfig.name], pfConfig.value, pfConfig);
                 } else {
-                    return false;
+                    return true;
                 }
             });
         };
@@ -861,6 +900,25 @@ let filterer = function () {
                     bundle[typeInfo.pluralName] = result;
                 }
             }
+        },
+
+        buildMatcher: function (rules) {
+            const compiled = {};
+            Object.keys(rules).forEach(section => {
+                const value = rules[section];
+                const list = Array.isArray(value) && value.every(x => x && typeof x === "object" && !Array.isArray(x)) ?
+                    value : [value];
+                list.forEach(rule => validateRule(section, rule));
+                compiled[section] = list.map(rule => ({
+                    description: JSON.stringify(rule),
+                    test: buildPredicate(rule)
+                }));
+            });
+
+            return function (section, entity) {
+                const found = (compiled[section] || []).find(rule => rule.test(entity));
+                return found ? found.description : null;
+            };
         },
 
         buildPredicates: function (filter) {

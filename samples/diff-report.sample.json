@@ -118,7 +118,7 @@
             {
                 "goid": "fe006715fb26afdcd1344d613d76bcb1",
                 "name": "cert-delete-1",
-                "subjectDn": "cn=ssg111.broadcom.net",
+                "subjectDn": "cn=example.net",
                 "thumbprint": "MXAEyUit8a29J+JDoWfGY6lam34=",
                 "thumbprintSha1": "MXAEyUit8a29J+JDoWfGY6lam34=",
                 "checksum": "e4f7c1e64c29f91f262e459425a1c4faa4d6e68c"

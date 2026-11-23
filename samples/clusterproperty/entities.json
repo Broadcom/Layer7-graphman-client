@@ -1,0 +1,56 @@
+{
+  "clusterProperties": [
+    {
+      "goid": "f09e10c4716574e06d1b6c012951df03",
+      "name": "delete-by-goid-cwp",
+      "checksum": "0c15dcfe1e0580ac183c5e801a1b5f6a85218a21",
+      "hiddenProperty": false,
+      "value": "some-value"
+    },
+    {
+      "goid": "f09e10c4716574e06d1b6c012951df01",
+      "name": "delete-by-input-cwp-1",
+      "checksum": "a907975736e2955b68897e8542643e63baf205c1",
+      "hiddenProperty": false,
+      "value": "some-value"
+    },
+    {
+      "goid": "f09e10c4716574e06d1b6c012951df02",
+      "name": "delete-by-input-cwp-2",
+      "checksum": "3c2d35720bde81e23580dda7cc6ed228295c20a1",
+      "hiddenProperty": false,
+      "value": "some-value"
+    },
+    {
+      "goid": "f09e10c4716574e06d1b6c012951de8c",
+      "name": "multiline-cwp",
+      "checksum": "a6162568f153fcdee370d8a0dcb700ee31e6f742",
+      "hiddenProperty": false,
+      "value": "hello,world!"
+    },
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d447fb",
+      "name": "some-cwp",
+      "checksum": "15efa8c44f1cca94bc4514d6ef90b7b5b01e5569",
+      "description": "some cluster property",
+      "hiddenProperty": false,
+      "value": "some-value"
+    },
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d44801",
+      "name": "some-cwp-by-name",
+      "checksum": "2eddee50692b59408846d27b604bcde971a8a74f",
+      "description": "cluster property deleted by name",
+      "hiddenProperty": false,
+      "value": "some-value-by-name"
+    },
+    {
+      "goid": "90fad4db3a40b94ce88a9c4650d447fd",
+      "name": "some-other-cwp",
+      "checksum": "5de3784e993125ceb79352aca78315a0800017b2",
+      "description": "",
+      "hiddenProperty": false,
+      "value": "some-other-value"
+    }
+  ]
+}

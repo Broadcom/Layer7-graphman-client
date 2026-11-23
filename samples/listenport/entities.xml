@@ -1,0 +1,226 @@
+<!-- AI assistance has been used to generate some or all contents of this file. That includes, but is not limited to, new code, modifying existing code, stylistic edits. -->
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>some-listen-port (18123)</l7:Name>
+            <l7:Id>750d0fefe477149dbb7670c2cfdf80ff</l7:Id>
+            <l7:Type>SSG_CONNECTOR</l7:Type>
+            <l7:TimeStamp>2023-02-15T11:31:36.182+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ListenPort id="750d0fefe477149dbb7670c2cfdf80ff" version="0">
+                    <l7:Name>some-listen-port (18123)</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Protocol>HTTPS</l7:Protocol>
+                    <l7:Port>18123</l7:Port>
+                    <l7:EnabledFeatures>
+                        <l7:StringValue>Published service message input</l7:StringValue>
+                        <l7:StringValue>Policy Manager access</l7:StringValue>
+                        <l7:StringValue>Built-in services</l7:StringValue>
+                    </l7:EnabledFeatures>
+                    <l7:TlsSettings>
+                        <l7:ClientAuthentication>Optional</l7:ClientAuthentication>
+                        <l7:EnabledVersions>
+                            <l7:StringValue>TLSv1.2</l7:StringValue>
+                            <l7:StringValue>TLSv1.3</l7:StringValue>
+                        </l7:EnabledVersions>
+                        <l7:UseCipherSuitesOrder>true</l7:UseCipherSuitesOrder>
+                    </l7:TlsSettings>
+                    <l7:Properties>
+                        <l7:Property key="enableWebSocket">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="useExtendedFtpCommandSet">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:ListenPort>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-other-listen-port (28123)</l7:Name>
+            <l7:Id>750d0fefe477149dbb7670c2cfdf81ef</l7:Id>
+            <l7:Type>SSG_CONNECTOR</l7:Type>
+            <l7:TimeStamp>2023-02-15T11:31:36.182+05:30</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ListenPort id="750d0fefe477149dbb7670c2cfdf81ef" version="0">
+                    <l7:Name>some-other-listen-port (28123)</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Protocol>HTTPS</l7:Protocol>
+                    <l7:Port>28123</l7:Port>
+                    <l7:EnabledFeatures>
+                        <l7:StringValue>Published service message input</l7:StringValue>
+                        <l7:StringValue>Policy Manager access</l7:StringValue>
+                        <l7:StringValue>Built-in services</l7:StringValue>
+                    </l7:EnabledFeatures>
+                    <l7:TlsSettings>
+                        <l7:ClientAuthentication>Required</l7:ClientAuthentication>
+                        <l7:EnabledVersions>
+                            <l7:StringValue>TLSv1.2</l7:StringValue>
+                            <l7:StringValue>TLSv1.3</l7:StringValue>
+                        </l7:EnabledVersions>
+                        <l7:UseCipherSuitesOrder>true</l7:UseCipherSuitesOrder>
+                    </l7:TlsSettings>
+                    <l7:Properties>
+                        <l7:Property key="threadPoolSize">
+                            <l7:StringValue>32</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="enableWebSocket">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="overrideContentType">
+                            <l7:StringValue>application/json; charset=utf-8</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="useExtendedFtpCommandSet">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="requestSizeLimit">
+                            <l7:StringValue>2048</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:ListenPort>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-listen-port-delete-by-input-1 (38123)</l7:Name>
+            <l7:Id>750d0fefe477149dbb7670c2cfdf82ff</l7:Id>
+            <l7:Type>SSG_CONNECTOR</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ListenPort id="750d0fefe477149dbb7670c2cfdf82ff" version="0">
+                    <l7:Name>some-listen-port-delete-by-input-1 (38123)</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Protocol>HTTPS</l7:Protocol>
+                    <l7:Port>38123</l7:Port>
+                    <l7:EnabledFeatures>
+                        <l7:StringValue>Published service message input</l7:StringValue>
+                        <l7:StringValue>Policy Manager access</l7:StringValue>
+                        <l7:StringValue>Built-in services</l7:StringValue>
+                    </l7:EnabledFeatures>
+                    <l7:TlsSettings>
+                        <l7:ClientAuthentication>Optional</l7:ClientAuthentication>
+                        <l7:EnabledVersions>
+                            <l7:StringValue>TLSv1.2</l7:StringValue>
+                            <l7:StringValue>TLSv1.3</l7:StringValue>
+                        </l7:EnabledVersions>
+                        <l7:UseCipherSuitesOrder>true</l7:UseCipherSuitesOrder>
+                    </l7:TlsSettings>
+                    <l7:Properties>
+                        <l7:Property key="enableWebSocket">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="useExtendedFtpCommandSet">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:ListenPort>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-listen-port-delete-by-input-2 (48123)</l7:Name>
+            <l7:Id>750d0fefe477149dbb7670c2cfdf83ff</l7:Id>
+            <l7:Type>SSG_CONNECTOR</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ListenPort id="750d0fefe477149dbb7670c2cfdf83ff" version="0">
+                    <l7:Name>some-listen-port-delete-by-input-2 (48123)</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Protocol>HTTPS</l7:Protocol>
+                    <l7:Port>48123</l7:Port>
+                    <l7:EnabledFeatures>
+                        <l7:StringValue>Published service message input</l7:StringValue>
+                        <l7:StringValue>Policy Manager access</l7:StringValue>
+                        <l7:StringValue>Built-in services</l7:StringValue>
+                    </l7:EnabledFeatures>
+                    <l7:TlsSettings>
+                        <l7:ClientAuthentication>Optional</l7:ClientAuthentication>
+                        <l7:EnabledVersions>
+                            <l7:StringValue>TLSv1.2</l7:StringValue>
+                            <l7:StringValue>TLSv1.3</l7:StringValue>
+                        </l7:EnabledVersions>
+                        <l7:UseCipherSuitesOrder>true</l7:UseCipherSuitesOrder>
+                    </l7:TlsSettings>
+                    <l7:Properties>
+                        <l7:Property key="enableWebSocket">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="useExtendedFtpCommandSet">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:ListenPort>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>some-listen-port-delete-by-goid (58123)</l7:Name>
+            <l7:Id>750d0fefe477149dbb7670c2cfdf84ff</l7:Id>
+            <l7:Type>SSG_CONNECTOR</l7:Type>
+            <l7:TimeStamp>2026-08-01T00:00:00.000Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:ListenPort id="750d0fefe477149dbb7670c2cfdf84ff" version="0">
+                    <l7:Name>some-listen-port-delete-by-goid (58123)</l7:Name>
+                    <l7:Enabled>true</l7:Enabled>
+                    <l7:Protocol>HTTPS</l7:Protocol>
+                    <l7:Port>58123</l7:Port>
+                    <l7:EnabledFeatures>
+                        <l7:StringValue>Published service message input</l7:StringValue>
+                        <l7:StringValue>Policy Manager access</l7:StringValue>
+                        <l7:StringValue>Built-in services</l7:StringValue>
+                    </l7:EnabledFeatures>
+                    <l7:TlsSettings>
+                        <l7:ClientAuthentication>Optional</l7:ClientAuthentication>
+                        <l7:EnabledVersions>
+                            <l7:StringValue>TLSv1.2</l7:StringValue>
+                            <l7:StringValue>TLSv1.3</l7:StringValue>
+                        </l7:EnabledVersions>
+                        <l7:UseCipherSuitesOrder>true</l7:UseCipherSuitesOrder>
+                    </l7:TlsSettings>
+                    <l7:Properties>
+                        <l7:Property key="enableWebSocket">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                        <l7:Property key="useExtendedFtpCommandSet">
+                            <l7:BooleanValue>false</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:ListenPort>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="750d0fefe477149dbb7670c2cfdf80ff" type="SSG_CONNECTOR">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="750d0fefe477149dbb7670c2cfdf81ef" type="SSG_CONNECTOR">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="750d0fefe477149dbb7670c2cfdf82ff" type="SSG_CONNECTOR">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="750d0fefe477149dbb7670c2cfdf83ff" type="SSG_CONNECTOR">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="750d0fefe477149dbb7670c2cfdf84ff" type="SSG_CONNECTOR">
+            <l7:Properties>
+                <l7:Property key="MapBy">
+                    <l7:StringValue>name</l7:StringValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+    </l7:Mappings>
+</l7:Bundle>

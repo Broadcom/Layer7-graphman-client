@@ -35,6 +35,11 @@ const SUPPORTED_REQUEST_LEVEL_OPTIONS = [
 ];
 
 const utils = require("./graphman-utils");
+
+// features that are available from the given schema version onwards
+const SCHEMA_FEATURE_SINCE = {
+    "standard-mutations": utils.STANDARD_MUTATIONS_SINCE
+}
 const hutils = require("./http-utils");
 const gqlschema = require("./graphql-schema");
 
@@ -59,8 +64,9 @@ module.exports = {
         config.options = makeOptions(config.options || {});
         Object.assign(config.options, params.options);
 
-        // set the client log level
+        // set the client log level and sink
         utils.logAt(config.options.log);
+        utils.logTo(config.options.logSink);
 
         config.credentials = makeCredentials(config.credentials || {});
         config.proxies = makeProxies(config.proxies || {});
@@ -158,7 +164,31 @@ module.exports = {
             }
         });
 
+        this.mutationFieldNamesByPattern(pattern).forEach(item => {
+            if (!result.includes(item)) {
+                result.push(item);
+            }
+        });
+
         return result;
+    },
+
+    mutationFieldInfo: function (name) {
+        const mutationInfo = this.metadata.types["Mutation"];
+        return mutationInfo ? mutationInfo.fields.find(x => x.name === name) : undefined;
+    },
+
+    mutationFieldNamesByPattern: function (pattern) {
+        if (!this.supportsFeature("standard-mutations")) return [];
+
+        const mutationInfo = this.metadata.types["Mutation"];
+        const regex = "^" + pattern.replaceAll("*", ".*") + "$";
+        // only the standard plural-based mutations (setXxx/updateXxx/deleteXxx) can be described/generated
+        const pluralNames = Object.keys(this.schemaMetadata().bundleTypes).map(x => x.toLowerCase());
+        const isStandard = field => (field.args || []).some(arg => arg.name === "input") &&
+            ["set", "update", "delete"].some(verb => field.name.startsWith(verb) &&
+                pluralNames.includes(field.name.substring(verb.length).toLowerCase()));
+        return mutationInfo.fields.filter(x => x.name.match(regex) && isStandard(x)).map(x => x.name);
     },
 
     typeInfoByTypeName: function (name) {
@@ -177,7 +207,15 @@ module.exports = {
         this.metadata = gqlschema.build(this.loadedConfig.version, this.loadedConfig.schemaVersion, true);
     },
 
+    isSchemaVersionAtLeast: function (schemaVersion, minimumVersion) {
+        return utils.isSchemaVersionAtLeast(schemaVersion, minimumVersion);
+    },
+
     supportsFeature: function (featureName) {
+        if (SCHEMA_FEATURE_SINCE[featureName]) {
+            return utils.isSchemaVersionAtLeast(this.loadedConfig.schemaVersion, SCHEMA_FEATURE_SINCE[featureName]);
+        }
+
         const list = SCHEMA_FEATURE_LIST[this.loadedConfig.schemaVersion]||[];
         return list.includes(featureName);
     },
@@ -287,25 +325,38 @@ module.exports = {
 
             response.on('end', function () {
                 let data = Buffer.concat(respInfo.chunks);
+                let jsonData, parts = null;
 
-                if (respInfo.contentType.startsWith('application/json')) {
-                    const jsonData = JSON.parse(data.toString('utf-8'));
-                    utils.debug("graphman http response", jsonData);
-                    callback(jsonData, null, opContext);
-                } else if (respInfo.contentType.startsWith('multipart/')) {
-                    utils.debug("graphman http multipart response");
-                    let parts = hutils.readParts(data, respInfo.boundary);
-                    callback(JSON.parse(parts[0].data), parts, opContext);
-                } else {
-                    utils.info("unexpected graphman http response");
-                    utils.info(data.toString('utf-8'));
-                    callback({errors: "no valid response from graphman"}, null, opContext);
+                try {
+                    if (!respInfo.initialized) {
+                        utils.info("empty graphman http response, status=" + response.statusCode);
+                        jsonData = {errors: "no valid response from graphman"};
+                    } else if (respInfo.contentType.startsWith('application/json')) {
+                        jsonData = JSON.parse(data.toString('utf-8'));
+                        utils.debug("graphman http response", jsonData);
+                    } else if (respInfo.contentType.startsWith('multipart/')) {
+                        utils.debug("graphman http multipart response");
+                        parts = hutils.readParts(data, respInfo.boundary);
+                        jsonData = JSON.parse(parts[0].data);
+                    } else {
+                        utils.info("unexpected graphman http response");
+                        utils.info(data.toString('utf-8'));
+                        jsonData = {errors: "no valid response from graphman"};
+                    }
+                } catch (err) {
+                    process.exitCode = 1;
+                    utils.error(`unable to process the graphman response: ${err.message}`);
+                    utils.logAdditionalErrorDetails(err);
+                    return;
                 }
+
+                callback(jsonData, parts, opContext);
             });
         });
 
         req.on('error', (err) => {
-            utils.warn(`error encountered while processing the graphman request: ${err.message}`);
+            process.exitCode = 1;
+            utils.error(`error encountered while processing the graphman request: ${err.message}`);
             utils.logAdditionalErrorDetails(err);
         });
 
@@ -382,6 +433,7 @@ function loadConfig(configFile) {
 function makeOptions(options) {
     return Object.assign({
         "log": "info",
+        "logSink": "stdout",
         "schema": SCHEMA_VERSION,
         "policyCodeFormat": "xml",
         "keyFormat": "p12",

@@ -2,7 +2,7 @@
 # Previous Releases
 
 ## Install the graphman client using the git release distributions
-Download one of the released [Graphman client distributions](https://github.com/Layer7-Community/graphman-client/releases), and follow the below steps to install the client:
+Download one of the released [Graphman client distributions](https://github.com/Broadcom/Layer7-graphman-client/releases), and follow the below steps to install the client:
 - unzip the wrapper archive
     - `tar -xvf layer7-graphman-wrapper.tar.gz`
 - cd to the wrapper directory
