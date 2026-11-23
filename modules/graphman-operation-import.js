@@ -157,7 +157,7 @@ module.exports = {
         console.log();
         console.log("  --query <mutation>");
         console.log("    specify the name of mutation-based query");
-        console.log("    this can also be an in-built plural-based mutation captured from the schema");
+        console.log("    this can also be an in-built plural-based mutation captured from the schema (schema v11.2.2 onwards)");
         console.log("    (e.g. setXxx, updateXxx, deleteXxx), without requiring a hand-authored query file");
         console.log();
         console.log("  (deprecated) --using <mutation>");

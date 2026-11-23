@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete key using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete key using input.ref.goid", () => {
     const entity = entityByAlias("rsa-alice");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ test("delete key using input.ref.goid", () => {
     expectKeyDeleted(entity);
 });
 
-test("delete keys using alias (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete keys using alias (with and without ref) - with test option", () => {
     const entity1 = entityByAlias("ec-bob");
     const entity2 = entityByAlias("ec-signer");
 
@@ -68,7 +68,7 @@ test("delete keys using alias (with and without ref) - with test option", () => 
     expectKeyNotDeleted(entity2);
 });
 
-test("delete keys using alias (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete keys using alias (with and without ref) - without test option", () => {
     const entity1 = entityByAlias("ec-bob");
     const entity2 = entityByAlias("ec-signer");
 
@@ -94,7 +94,7 @@ test("delete keys using alias (with and without ref) - without test option", () 
     expectKeyDeleted(entity2);
 });
 
-test("delete key fails when required alias field is missing", () => {
+tUtils.standardMutationsTest("delete key fails when required alias field is missing", () => {
     const output = graphman("import",
         "--using", "deleteKeys",
         "--variables.keys.+.keySize", "2048",
@@ -108,7 +108,7 @@ test("delete key fails when required alias field is missing", () => {
     ]));
 });
 
-test("delete key that does not exist", () => {
+tUtils.standardMutationsTest("delete key that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteKeys",
         "--variables.keys.+.alias", "does-not-exist-key",

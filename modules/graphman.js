@@ -27,6 +27,32 @@ const SCHEMA_FEATURE_LIST = {
     "v11.0.00-CR03": ["mappings", "mappings-source"]
 }
 
+// features that are available from the given schema version onwards
+const SCHEMA_FEATURE_SINCE = {
+    "standard-mutations": "v11.2.2"
+}
+
+/**
+ * Compares schema versions like v11.2.2, v11.1.00 or v11.0.00-CR03 by their numeric parts.
+ * @returns true if the schema version is the same as or later than the minimum version; false for unrecognized versions
+ */
+function isSchemaVersionAtLeast(schemaVersion, minimumVersion) {
+    const parse = text => {
+        const match = /^v?(\d+)\.(\d+)(?:\.(\d+))?/.exec(String(text));
+        return match ? [match[1], match[2], match[3] || 0].map(Number) : null;
+    };
+
+    const actual = parse(schemaVersion);
+    const minimum = parse(minimumVersion);
+    if (!actual || !minimum) return false;
+
+    for (let i = 0; i < minimum.length; i++) {
+        if (actual[i] !== minimum[i]) return actual[i] > minimum[i];
+    }
+
+    return true;
+}
+
 const SUPPORTED_REQUEST_LEVEL_OPTIONS = [
     "test", "activate", "comment",
     "forceAdminPasswordReset", "forceDelete", "replaceAllMatchingCertChain",
@@ -174,6 +200,8 @@ module.exports = {
     },
 
     mutationFieldNamesByPattern: function (pattern) {
+        if (!this.supportsFeature("standard-mutations")) return [];
+
         const mutationInfo = this.metadata.types["Mutation"];
         const regex = "^" + pattern.replaceAll("*", ".*") + "$";
         // only the standard plural-based mutations (setXxx/updateXxx/deleteXxx) can be described/generated
@@ -200,7 +228,13 @@ module.exports = {
         this.metadata = gqlschema.build(this.loadedConfig.version, this.loadedConfig.schemaVersion, true);
     },
 
+    isSchemaVersionAtLeast: isSchemaVersionAtLeast,
+
     supportsFeature: function (featureName) {
+        if (SCHEMA_FEATURE_SINCE[featureName]) {
+            return isSchemaVersionAtLeast(this.loadedConfig.schemaVersion, SCHEMA_FEATURE_SINCE[featureName]);
+        }
+
         const list = SCHEMA_FEATURE_LIST[this.loadedConfig.schemaVersion]||[];
         return list.includes(featureName);
     },

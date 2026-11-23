@@ -63,6 +63,18 @@ module.exports = {
         return {status: result.status, stdout: result.stdout || "", stderr: result.stderr || ""};
     },
 
+    /**
+     * Standard mutations (setXxx/updateXxx/deleteXxx) are available from the schema v11.2.2 onwards.
+     */
+    supportsStandardMutations: function () {
+        return require(path.join(tConfig.home, "modules", "graphman.js"))
+            .isSchemaVersionAtLeast(tConfig.schemaVersion, "v11.2.2");
+    },
+
+    standardMutationsTest: function (...args) {
+        return (module.exports.supportsStandardMutations() ? test : test.skip)(...args);
+    },
+
     expectArray: function (actual) {
         return {
             toContainEqual: function (...expected) {

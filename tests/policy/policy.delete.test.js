@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete policy using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete policy using input.ref.goid", () => {
     const entity = entityByName("global-pre-service");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ test("delete policy using input.ref.goid", () => {
     expectPolicyDeleted(entity);
 });
 
-test("delete policies using name and policyType (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete policies using name and policyType (with and without ref) - with test option", () => {
     const entity1 = entityByName("pbip-fragment");
     const entity2 = entityByName("some-fragment");
 
@@ -69,7 +69,7 @@ test("delete policies using name and policyType (with and without ref) - with te
     expectPolicyNotDeleted(entity2);
 });
 
-test("delete policies using name and policyType (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete policies using name and policyType (with and without ref) - without test option", () => {
     const entity1 = entityByName("pbip-fragment");
     const entity2 = entityByName("some-fragment");
 
@@ -96,7 +96,7 @@ test("delete policies using name and policyType (with and without ref) - without
     expectPolicyDeleted(entity2);
 });
 
-test("delete policy fails when required name/policyType fields are missing", () => {
+tUtils.standardMutationsTest("delete policy fails when required name/policyType fields are missing", () => {
     const output = graphman("import",
         "--using", "deletePolicies",
         "--variables.policies.+.checksum", "irrelevant",
@@ -110,7 +110,7 @@ test("delete policy fails when required name/policyType fields are missing", () 
     ]));
 });
 
-test("delete policy that does not exist", () => {
+tUtils.standardMutationsTest("delete policy that does not exist", () => {
     const output = graphman("import",
         "--using", "deletePolicies",
         "--variables.policies.+.ref.name", "does-not-exist-policy",

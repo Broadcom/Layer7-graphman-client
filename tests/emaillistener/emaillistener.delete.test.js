@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete email listener using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete email listener using input.ref.goid", () => {
     const entity = entityByName("some-email-listener");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ test("delete email listener using input.ref.goid", () => {
     expectEmailListenerDeleted(entity);
 });
 
-test("delete email listeners using names (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete email listeners using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("delete-by-input-email-listener-1");
     const entity2 = entityByName("delete-by-input-email-listener-2");
 
@@ -69,7 +69,7 @@ test("delete email listeners using names (with and without ref) - with test opti
     expectEmailListenerNotDeleted(entity2);
 });
 
-test("delete email listeners using names (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete email listeners using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("delete-by-input-email-listener-1");
     const entity2 = entityByName("delete-by-input-email-listener-2");
 
@@ -94,7 +94,7 @@ test("delete email listeners using names (with and without ref) - without test o
     expectEmailListenerDeleted(entity2);
 });
 
-test("delete email listener fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete email listener fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteEmailListeners",
         "--variables.emailListeners.+.enabled", "true",
@@ -108,7 +108,7 @@ test("delete email listener fails when required name field is missing", () => {
     ]));
 });
 
-test("delete email listener that does not exist", () => {
+tUtils.standardMutationsTest("delete email listener that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteEmailListeners",
         "--variables.emailListeners.+.name", "does-not-exist-email-listener",

@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete trustedCert using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete trustedCert using input.ref.goid", () => {
     const entity = entityByName("some-third-trusted-cert");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ test("delete trustedCert using input.ref.goid", () => {
     expectTrustedCertDeleted(entity);
 });
 
-test("delete trustedCerts using name (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete trustedCerts using name (with and without ref) - with test option", () => {
     const entity1 = entityByName("some-trusted-cert");
     const entity2 = entityByName("some-other-trusted-cert");
 
@@ -67,7 +67,7 @@ test("delete trustedCerts using name (with and without ref) - with test option",
     expectTrustedCertNotDeleted(entity2);
 });
 
-test("delete trustedCerts using name (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete trustedCerts using name (with and without ref) - without test option", () => {
     const entity1 = entityByName("some-trusted-cert");
     const entity2 = entityByName("some-other-trusted-cert");
 
@@ -92,7 +92,7 @@ test("delete trustedCerts using name (with and without ref) - without test optio
     expectTrustedCertDeleted(entity2);
 });
 
-test("delete trustedCert fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete trustedCert fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteTrustedCerts",
         "--variables.trustedCerts.+.verifyHostname", "false",
@@ -106,7 +106,7 @@ test("delete trustedCert fails when required name field is missing", () => {
     ]));
 });
 
-test("delete trustedCert that does not exist", () => {
+tUtils.standardMutationsTest("delete trustedCert that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteTrustedCerts",
         "--variables.trustedCerts.+.ref.name", "does-not-exist-cert",

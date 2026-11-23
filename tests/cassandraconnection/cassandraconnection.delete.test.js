@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete cassandra connection using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete cassandra connection using input.ref.goid", () => {
     const entity = entityByName("some-cassandra-connection");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ test("delete cassandra connection using input.ref.goid", () => {
     expectCassandraConnectionDeleted(entity);
 });
 
-test("delete cassandra connections using names (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete cassandra connections using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("some-cassandra-connection-delete-by-input-1");
     const entity2 = entityByName("some-cassandra-connection-delete-by-input-2");
 
@@ -69,7 +69,7 @@ test("delete cassandra connections using names (with and without ref) - with tes
     expectCassandraConnectionNotDeleted(entity2);
 });
 
-test("delete cassandra connections using names (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete cassandra connections using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("some-cassandra-connection-delete-by-input-1");
     const entity2 = entityByName("some-cassandra-connection-delete-by-input-2");
 
@@ -94,7 +94,7 @@ test("delete cassandra connections using names (with and without ref) - without 
     expectCassandraConnectionDeleted(entity2);
 });
 
-test("delete cassandra connection fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete cassandra connection fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteCassandraConnections",
         "--variables.cassandraConnections.+.enabled", "true",
@@ -108,7 +108,7 @@ test("delete cassandra connection fails when required name field is missing", ()
     ]));
 });
 
-test("delete cassandra connection that does not exist", () => {
+tUtils.standardMutationsTest("delete cassandra connection that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteCassandraConnections",
         "--variables.cassandraConnections.+.name", "does-not-exist-cassandra-connection",

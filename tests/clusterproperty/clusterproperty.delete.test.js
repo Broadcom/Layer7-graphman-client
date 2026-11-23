@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete cluster property using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete cluster property using input.ref.goid", () => {
     const entity = entityByName("some-cwp");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ test("delete cluster property using input.ref.goid", () => {
     expectClusterPropertyDeleted(entity);
 });
 
-test("delete cluster properties using names (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete cluster properties using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("some-other-cwp");
     const entity2 = entityByName("some-cwp-by-name");
 
@@ -69,7 +69,7 @@ test("delete cluster properties using names (with and without ref) - with test o
     expectClusterPropertyNotDeleted(entity2);
 });
 
-test("delete cluster properties using names (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete cluster properties using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("some-other-cwp");
     const entity2 = entityByName("some-cwp-by-name");
 
@@ -94,7 +94,7 @@ test("delete cluster properties using names (with and without ref) - without tes
     expectClusterPropertyDeleted(entity2);
 });
 
-test("delete cluster property fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete cluster property fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteClusterProperties",
         "--variables.clusterProperties.+.value", "irrelevant",
@@ -108,7 +108,7 @@ test("delete cluster property fails when required name field is missing", () => 
     ]));
 });
 
-test("delete cluster property that does not exist", () => {
+tUtils.standardMutationsTest("delete cluster property that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteClusterProperties",
         "--variables.clusterProperties.+.name", "does-not-exist-cwp",

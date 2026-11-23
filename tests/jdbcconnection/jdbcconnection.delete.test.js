@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete jdbc connection using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete jdbc connection using input.ref.goid", () => {
     const entity = entityByName("some-jdbc-connection");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ test("delete jdbc connection using input.ref.goid", () => {
     expectJdbcConnectionDeleted(entity);
 });
 
-test("delete jdbc connections using names (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete jdbc connections using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("some-jdbc-connection-delete-by-input-1");
     const entity2 = entityByName("some-jdbc-connection-delete-by-input-2");
 
@@ -69,7 +69,7 @@ test("delete jdbc connections using names (with and without ref) - with test opt
     expectJdbcConnectionNotDeleted(entity2);
 });
 
-test("delete jdbc connections using names (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete jdbc connections using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("some-jdbc-connection-delete-by-input-1");
     const entity2 = entityByName("some-jdbc-connection-delete-by-input-2");
 
@@ -94,7 +94,7 @@ test("delete jdbc connections using names (with and without ref) - without test 
     expectJdbcConnectionDeleted(entity2);
 });
 
-test("delete jdbc connection fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete jdbc connection fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteJdbcConnections",
         "--variables.jdbcConnections.+.enabled", "true",
@@ -108,7 +108,7 @@ test("delete jdbc connection fails when required name field is missing", () => {
     ]));
 });
 
-test("delete jdbc connection that does not exist", () => {
+tUtils.standardMutationsTest("delete jdbc connection that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteJdbcConnections",
         "--variables.jdbcConnections.+.name", "does-not-exist-jdbc-connection",

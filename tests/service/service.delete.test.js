@@ -23,7 +23,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete service using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete service using input.ref.goid", () => {
     const entity = entityByResolutionPath("/some-web-api-3");
 
     const output = graphman("import",
@@ -41,7 +41,7 @@ test("delete service using input.ref.goid", () => {
     expectServiceDeleted(entity);
 });
 
-test("delete services using resolutionPath and serviceType (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete services using resolutionPath and serviceType (with and without ref) - with test option", () => {
     const entity1 = entityByResolutionPath("/some-web-api");
     const entity2 = entityByResolutionPath("/some-web-api-2");
 
@@ -69,7 +69,7 @@ test("delete services using resolutionPath and serviceType (with and without ref
     expectServiceNotDeleted(entity2);
 });
 
-test("delete services using resolutionPath and serviceType (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete services using resolutionPath and serviceType (with and without ref) - without test option", () => {
     const entity1 = entityByResolutionPath("/some-web-api");
     const entity2 = entityByResolutionPath("/some-web-api-2");
 
@@ -96,7 +96,7 @@ test("delete services using resolutionPath and serviceType (with and without ref
     expectServiceDeleted(entity2);
 });
 
-test("delete service fails when required resolutionPath/serviceType fields are missing", () => {
+tUtils.standardMutationsTest("delete service fails when required resolutionPath/serviceType fields are missing", () => {
     const output = graphman("import",
         "--using", "deleteServices",
         "--variables.services.+.checksum", "irrelevant",
@@ -110,7 +110,7 @@ test("delete service fails when required resolutionPath/serviceType fields are m
     ]));
 });
 
-test("delete service that does not exist", () => {
+tUtils.standardMutationsTest("delete service that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteServices",
         "--variables.services.+.ref.resolutionPath", "/does-not-exist-service",

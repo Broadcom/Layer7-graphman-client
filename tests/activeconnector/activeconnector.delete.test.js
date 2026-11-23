@@ -25,7 +25,7 @@ beforeAll(() => {
     graphman("import", "--input", SAMPLE_BUNDLE, "--gateway", "target-gateway");
 });
 
-test("delete active connector using input.ref.goid", () => {
+tUtils.standardMutationsTest("delete active connector using input.ref.goid", () => {
     const entity = entityByName("mq-inbound-customize-1");
 
     const output = graphman("import",
@@ -43,7 +43,7 @@ test("delete active connector using input.ref.goid", () => {
     expectActiveConnectorDeleted(entity);
 });
 
-test("delete active connectors using names (with and without ref) - with test option", () => {
+tUtils.standardMutationsTest("delete active connectors using names (with and without ref) - with test option", () => {
     const entity1 = entityByName("mq-outbound-customized-2");
     const entity2 = entityByName("mq-outbound-customized-3");
 
@@ -69,7 +69,7 @@ test("delete active connectors using names (with and without ref) - with test op
     expectActiveConnectorNotDeleted(entity2);
 });
 
-test("delete active connectors using names (with and without ref) - without test option", () => {
+tUtils.standardMutationsTest("delete active connectors using names (with and without ref) - without test option", () => {
     const entity1 = entityByName("mq-outbound-customized-2");
     const entity2 = entityByName("mq-outbound-customized-3");
 
@@ -94,7 +94,7 @@ test("delete active connectors using names (with and without ref) - without test
     expectActiveConnectorDeleted(entity2);
 });
 
-test("delete active connector fails when required name field is missing", () => {
+tUtils.standardMutationsTest("delete active connector fails when required name field is missing", () => {
     const output = graphman("import",
         "--using", "deleteActiveConnectors",
         "--variables.activeConnectors.+.enabled", "true",
@@ -108,7 +108,7 @@ test("delete active connector fails when required name field is missing", () => 
     ]));
 });
 
-test("delete active connector that does not exist", () => {
+tUtils.standardMutationsTest("delete active connector that does not exist", () => {
     const output = graphman("import",
         "--using", "deleteActiveConnectors",
         "--variables.activeConnectors.+.name", "does-not-exist-activeconnector",

@@ -146,9 +146,11 @@ function printAvailableQueries() {
     });
     utils.print();
 
-    utils.info("available in-built mutations:");
-    metadata.types["Mutation"].fields.forEach(fieldInfo => {
-        utils.print(`         ${fieldInfo.name}`);
-    });
-    utils.print();
+    if (graphman.supportsFeature("standard-mutations")) {
+        utils.info("available in-built mutations:");
+        metadata.types["Mutation"].fields.forEach(fieldInfo => {
+            utils.print(`         ${fieldInfo.name}`);
+        });
+        utils.print();
+    }
 }

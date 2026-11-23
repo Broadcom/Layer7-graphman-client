@@ -191,7 +191,7 @@ describe("describe command", () => {
         expect((output.stdout.match(/\$includePolicyRevisions: Boolean/g) || []).length).toBe(1);
     });
 
-    test("should describe a composite mutation built from multiple mutation names", () => {
+    tUtils.standardMutationsTest("should describe a composite mutation built from multiple mutation names", () => {
         const output = graphman("describe", "--queries", "setFolders", "deleteKeys");
 
         expect(output.stdout).toEqual(expect.stringContaining("mutation composite"));
@@ -200,7 +200,7 @@ describe("describe command", () => {
         expect(output.stdout).toEqual(expect.stringContaining("deleteKeys(input: $keys)"));
     });
 
-    test("should auto-disambiguate colliding argument names across composed mutations", () => {
+    tUtils.standardMutationsTest("should auto-disambiguate colliding argument names across composed mutations", () => {
         const output = graphman("describe", "--queries", "setFolders", "deleteFolders");
 
         expect(output.stdout).toEqual(expect.stringContaining("$folders:"));
@@ -209,7 +209,7 @@ describe("describe command", () => {
         expect(output.stdout).toEqual(expect.stringContaining("deleteFolders(input: $folders2)"));
     });
 
-    test("should reject combining a query name with a mutation name", () => {
+    tUtils.standardMutationsTest("should reject combining a query name with a mutation name", () => {
         const output = graphman("describe", "--queries", "all", "setFolders");
 
         expect(output.stdout).toEqual(expect.stringContaining(

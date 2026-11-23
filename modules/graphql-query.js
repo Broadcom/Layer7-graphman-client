@@ -126,6 +126,11 @@ function buildGraphQLQuery(queryPrefix, querySuffix) {
  * @returns {{query: string, args: string[]}}
  */
 function buildGraphQLMutation(mutationPrefix) {
+    if (!graphman.supportsFeature("standard-mutations")) {
+        utils.warn(`standard mutations are supported from the schema v11.2.2 onwards, current schema is ${graphman.configuration().schemaVersion}`);
+        throw "unrecognized mutation " + mutationPrefix;
+    }
+
     const fieldInfo = graphman.mutationFieldInfo(mutationPrefix);
     const inputArg = fieldInfo && fieldInfo.args && fieldInfo.args.find(arg => arg.name === "input");
     const pluralName = inputArg && pluralNameForMutation(mutationPrefix);
