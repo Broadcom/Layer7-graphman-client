@@ -13,35 +13,6 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>SSL</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                    <l7:TimeStamp>2026-02-28T12:29:57.343Z</l7:TimeStamp>
-                    <l7:Resource>
-                        <l7:PrivateKey alias="SSL" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:SSL">
-                            <l7:CertificateChain>
-<l7:CertificateData>
-    <l7:IssuerName>CN%3D10.52.38.140</l7:IssuerName>
-    <l7:SerialNumber>18087412404910475147</l7:SerialNumber>
-    <l7:SubjectName>CN%3D10.52.38.140</l7:SubjectName>
-    <l7:Encoded>MIIC8zCCAdugAwIBAgIJAPsDZcBErseLMA0GCSqGSIb3DQEBDAUAMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDAeFw0yNjAyMTkwNjAzMDJaFw0zNjAyMTcwNjAzMDJaMBcxFTATBgNVBAMTDDEwLjUyLjM4LjE0MDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ9M31+A08I1p/BV27d3Tug1GM8HX8EGWBGPZCP+3F4LuGH0hU8Q3C866MfOHX0gjTMboZQiuJYHh5lIutrzTsKmfG202YiXclYRZOf93SCl+4Modz7vOJXraAgfN74S3qO5QnD2BEqeMyThgnJjcQ3MEJQq9lsjTuYaQtwAKRRUuju0bMNCVUI7UYTxX3r52EtubSPRF5S7IZKSgMBGVP5jCTVhGVSC+UX1m4xoT9VJ4NQ7ml9D0mY+X6xnXgXRkLYZwWzdbGftoCrpfFJqcb1W7ssLoVTXILpI4RmP+/WN4E1B1e1nOb1QbDzqNP5w6EDYpX4YUNWnuMtpgeSr3JkCAwEAAaNCMEAwHQYDVR0OBBYEFKJ69hD1gfUa0MfN6VLgwV9xHn0zMB8GA1UdIwQYMBaAFKJ69hD1gfUa0MfN6VLgwV9xHn0zMA0GCSqGSIb3DQEBDAUAA4IBAQBipqs1Y8m7ajlxntVF4F4L0z8pvb2bQT5FJjs4MIHx152w866k88AvVnANSUcLmG7Ze89vpKwvh67nyz7NoRYPQ0Ia29UAD/ZIMYF6dnfVv2wTi03Z4CMXVgMM1H6+2SWGg5kd9rHl+/GxdbbfDyZRLsTu1tvQ/n7TE4G13qZMFY08gwUTvCaRNAYXtnT2o0Hm6jeeuXFoJs4sdY81dolj1DFmVJhEbEa2J0z0v+Bce8j88jXAJsdBRidA8WiufeHAE/qT5qdA0xV3F9dNsIo/VeyXIsXstsJcz2JpxYvvhKkiJY9Ze1au6FgJknld/OhOWv0sZzWsw2fZgBmsAeMc</l7:Encoded>
-</l7:CertificateData>
-                            </l7:CertificateChain>
-                            <l7:Properties>
-<l7:Property key="keyAlgorithm">
-    <l7:StringValue>RSA</l7:StringValue>
-</l7:Property>
-<l7:Property key="keyData">
-    <l7:StringValue bundleKey="$L7C2$9fa1f,x40RmbaBeu/+aEQQNMFu3k5uFjFefV5moNxLfL71xL0=$8z+Jrm0v2MJQZpDNrw6jHhVet69lVuR0Wajk9L7S1k+F+llOCK+KhwlQSBnwxEc7a6+EpHtJ9yyd3N83i8herdxM4XxgJdCLpsJ+xdTfUogocZlmJu16cV7JvhFyh+i0" algorithm="RSA">$L7C2$1,NO0FMKmSrbuYDfMTASwo8eVnteAoV1CJkW2iop++6P4=$K/M2MHCTszVxkFsQwxOsKRys428fntlsPtdTDqCG6jR6mhhc3FV8/abECbRJ1XO2LYsEESiqIE6aqaFJGIwtAlzLiil87ogAll3eFlmZ2ghbH0c8nmczZS9HJXjzYz0Ge2Wgvnw1cn0ZDO/90jx1SHECAlvYJHe5NyJrmRBRdTxXZe76bbH5IVON22/R0pahl7j4KYQRJxdVRwfIODQwdkDlluOcLSmxsG40b9aQ/85qrNcVTNHmnkLLRIFRayF+DDE5uk/9cm8mB+Wc3ge4abFH6tJ0RFOwK3bwjenbJJ2OPgK7W1L9jGtMrX7zEY4V4wzojvfh07C74kuv7oAryi2kNWcO8GGvXJ06qinoci5MMMVTYBoVupcX3x8+L0L8cZr3OykCiO84EDMvsuZu0s1FRudh+bI3ZRyhXmQCJK5SXKnVG7+63iTzn4/x+jrNwgu2Z35F0XjqZwUqsKkH/dtK7qYzrrdmlD0ZWJ2XLPMTt4JDGVLdJnqssh67zuoRZTplUsjnkBoBKdO1HdfFWY8gzyvaaNGudHgVhIziyb/odeQWEertAHcc3QFHkefat6xr3qoSXXuwbRn9LufmP0RZXU5ubwkHD45sAbtBFRN43YBwGW+bl5qsGiKQhTNa9+Ok+WA6F8az3a+pEZW4N/YaBUuEBb2z9FPM1uIAu1Bgb77OdhjMI8MsxErCPLvLwozfRV5zsAd8c8OFBGjdRYy4TCOCIv8MJHJUZmdvL//s6os4kSn7+wXS/EMsysFChMNNK1DSv/9cy5NyQC1agpvdXJvK0QhwhPYwMWD8F36/fd3EDSPd16puRZdCQFAULCh0MXBNoeSOPiLp1+X1qeHcxhmVDZXVrSQvSuNngI5GfqHbYY1Fn8ozlv2rsK9mptaz4ffF1oUi8/Cd0x48wKgngK1S5wANuFTLoUy0DgMwapZCF4zV56GdQ4jNcHZKOjd6BPh6VeACtrJtVDBsWfcyvd9kv7/INNA0STP7NuTyQ3r3S88VcMX98UQBmh96r5VjXEoXMfcu5cE0yhLs8Acou42Y6mJDMRPDd3hQUsSHD/q1iv2UqoBRrHcE8XjN6HGbranzOKMG3TK7onpANjMcuuYRXZQTRdJjSpFwLbkOBaDPm7/XYiENIru7xPI7/vvkEAk6ZnHXRvNPL8F5b7+vrb6SxcdjqmQ53oTvoI0yLyO+PA++PGpdJ2BD7eyeRoRKRu40DGVImSeJNfQ8Jh8OCluKcb9K7Cesc+enyP761Ov555r+pHfPJsPE2N7TehOB8PYq/6Wqr//bsjYVRy3h0YT5nmj5GK5wxKhtNE+iyuzUaB9J3R2ls7X8mRuk7GUVI8bIWWSOGEaXkVy1WoF5cEocmzwJXnxGX3IwAkMGfVi96fDJU69TKIH2K0fQCv3+NdoWJUYmlED0HmLsKuZvPFt20f/kdPIBbzDu2R47d2v5/CwRUSGlA2LQXMpVJJru+zUPId3J6fwC3CxMcsejJ3XYwoQaIXdTDYXWM23fDT8rTkgGavtUnZWantnwUy30EN1sJRGlxL5ZYteUAt5/seYyZpxc4zjE9x9wQyQ+2WGhsJ66hYdWMJwn1B4ZzPDBWVoD0SeqCtb4hAehk3R04iOl0EjBpZiyGyJ5Nh4sXanVXBruS3OH+9JpJZfG8Jqyeoh8fnzqcwzraoiypcdPXsM3IOHt4RTBrolRufE=</l7:StringValue>
-</l7:Property>
-<l7:Property key="specialPurposes">
-    <l7:StringValue>Default SSL Key,Default Server SSL Key,Default Client SSL Key</l7:StringValue>
-</l7:Property>
-                            </l7:Properties>
-                        </l7:PrivateKey>
-                    </l7:Resource>
-                </l7:Item>
-                <l7:Item>
                     <l7:Name>example.net</l7:Name>
                     <l7:Id>00000000000000000000000000000002:example.net</l7:Id>
                     <l7:Type>SSG_KEY_ENTRY</l7:Type>
@@ -616,7 +587,6 @@
                     </l7:Properties>
                 </l7:Mapping>
                 <l7:Mapping action="NewOrExisting" srcId="72adab14b763f12efb51ebb737d5fd02" srcUri="https://example.net:28443/restman/1.0/folders/72adab14b763f12efb51ebb737d5fd02" type="FOLDER"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
                 <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
                 <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>
                 <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:example.net" srcUri="https://example.net:28443/restman/1.0/privateKeys/00000000000000000000000000000002:example.net" type="SSG_KEY_ENTRY"/>

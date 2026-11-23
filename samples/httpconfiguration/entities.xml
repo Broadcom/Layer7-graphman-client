@@ -27,32 +27,6 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
-                    <l7:Name>SSL</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                    <l7:TimeStamp>2026-09-10T17:32:52.006Z</l7:TimeStamp>
-                    <l7:Resource>
-                        <l7:PrivateKey alias="SSL" keystoreId="00000000000000000000000000000002" id="00000000000000000000000000000002:SSL">
-                            <l7:CertificateChain>
-<l7:CertificateData>
-    <l7:IssuerName>CN%3Dsource.gateway</l7:IssuerName>
-    <l7:SerialNumber>7650945460828512785</l7:SerialNumber>
-    <l7:SubjectName>CN%3Dsource.gateway</l7:SubjectName>
-    <l7:Encoded>MIIC9jCCAd6gAwIBAgIIai2eXDSSIhEwDQYJKoZIhvcNAQEMBQAwGTEXMBUGA1UEAxMOc291cmNlLmdhdGV3YXkwHhcNMjYwOTEwMTYwNjQ3WhcNMzYwOTA3MTYwNjQ3WjAZMRcwFQYDVQQDEw5zb3VyY2UuZ2F0ZXdheTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKh6gbnA0ATpXVJhz53R9jSTRVN9FRWynxshm+bmtnhN0PdNY/B7CHW1OJbxlsmXGkf+S3kA6dyIUv6wALGzvhjFlNyKQ1ewj59jWUK3394gEiljD6a38PQr90rLo+Kv6Mi1e4dR+iBfFBpIL8OHX4RERXFBA7oGvsVOz5hbN2FTOV7TYiTzqT2wDq893wFUSPeL8qKrYFcsjhXORq46xNPklN4v619ixlFpOxRDzXaBT/JiLmw30bLTFjJPNVmI81uPsHqAH1DkiLp86ttkMeKhSmPFW3q8T9dqZXI/bsy3ilOuo67OdMaBrO+hghD/F8MDh9z4p8WqZdXtEloGFEkCAwEAAaNCMEAwHQYDVR0OBBYEFBOyZ7HnFmf+n+J8pTvCEchooiZ0MB8GA1UdIwQYMBaAFBOyZ7HnFmf+n+J8pTvCEchooiZ0MA0GCSqGSIb3DQEBDAUAA4IBAQASZL5c7BZiGEEKUXpa6GQ5m6oQpEycxuOYmeljpHWcoJzHqvff0MprZApL/gLgbhoNeorYFcALwxnTZHen2WtjtsafVKP6E0o1bAVgsHv4451ZXGJCWkgEVL0NKDi+StfFp0HF7GZNVYrWYPA0Jm2ED72mETBkh22L/Fi9TkQt3V6kv6iKntHqAxavlG0BhiSXtuKBzysQmLFRENQ3jbEXZWhRrOJACey7ECTdl0tNcXrrpai7EQvs9WLWP3A+mdZPwNu7CjeBs5eauLvNtPqMN8vXGC4+9vavxXSOfmZA1bH1vqc0hRlsfAgtAH6ujlbgGL2xWmBk5Rk4rlkYzLh6</l7:Encoded>
-</l7:CertificateData>
-                            </l7:CertificateChain>
-                            <l7:Properties>
-<l7:Property key="keyAlgorithm">
-    <l7:StringValue>RSA</l7:StringValue>
-</l7:Property>
-<l7:Property key="keyData">
-    <l7:StringValue bundleKey="$L7C2$9fa1f,x4FoeQc7LZGhZQjlw4SZo2JO78FXySPycm8Q38quGEE=$Q9HVsklSsZzQmvRhaKdo8c/wHg4b2P1RgO3VWzJ8NMsfcHbGztMZ4JkhECvv6rBssldZzX8mIW6e+EyFcV8uIuRoK7256tgM+a1gu4Szs7ITX+JFcqa/R/lY6YLIu6Rh" algorithm="RSA">$L7C2$1,6Z47/9I8A05Gg+gczDVzG5QUO1+A15imzV4Fx5Gd5SA=$PJgw5klz3uD/RrcUDacF3odpH0LWM2fEST61C/BLeqU0XhciPJ2BQczcqhU/sf0gS0+7/XMPZ0F0DF+A2dqR8ouj6eNlcxh9XMdendGxDibfO6FFepiU7Cy3te4ryIlx3u7xc09/ORHmq2Yr362i+sxdL5tfMKEWrsd/Y9qHj252QMVgTYt42Cw9jUyjU6TfhQGizQP5No37YnbgoiSIQYj+rwKYLWwAlZMY7AXpYyNB4tG32kgZrZzH9zl1f1G3zHTqdKHwvguvdD5+h7SaAmQ1FP0dLU0kJpMjBbHj9d1XyiDKJQmmEr401WUAPl0sEsX5DHF7z/5CfcAt/M3Bj+iaG7F42B8vkqp/vq7AWMct/DCFLUDjktJSbwVeRctPpfGox2TzSWovk9IFyhWM5F+bfltkPxOl2omN9Tr+UC6ynid0zsIXavAf7FoqjtZsakEpfgekTVcIWCFSes/5ZTLItiGs2eW+HoBVR7rsEU+zgK04rjzr41svfqL3p6eVRb8MrUO7cL9GAmW8YCRMnqftc9aRqDj7na1SgdcLpMxv+xnqyFowEbkOMqgAY6WDrkj6sQG8Xag493OpNpYv24cHIsQXBRJstNdjMOG/v5v9061N1sv0waifalwAadmeFOgtZMG74aGm00/JBaZkLyGL3XbcoHHDVo1rKbA3l2V6bBEHXPeE8SyNPrrBArBzkHDWIYJmoVkVbBS0D4LvKcE8hOP1ozxlccgi9f4Cyl8cx2D8LaJs8lIjkCr65JrJRNw4ngWOWDYdqz7uz76tKC35cRLB37uQPjHKpAwqrMB0+ST5kM3vBHjLDwR5lRue5++uEqSBHUGM7SHaXu+1+pSZDCYX8j7qv1e/Z41gP0res+JOIWkBzIeuBTXQL2BmvKSrf5kBxFHG75vzJt13V5DutKhrxHa36vin01YpUufm9vZ81I5FufYtq4hl+T1JJ5B9hjUWRF6FAcACiOolMnnSxzB9FxqVCO40BJgHhQmi+ao50tlM/IxwYMuchdd4HIiWmmYGDoXGOYxzYMIKGv+4oRD0llF+4zT6BnTQJMIhMI45oDoIFtecsSrNV1thAkVCV5mOLr7QOnF9O+W7ptnKCMMaTWCvuBgrRQ62NVbOUPvSJFBErokPwI50L0V8ARuvQkT+X6X1Be9WcJT2JBZmdYJ1ax2AAHcpuRQ3fMOpCHAnkyGhxqtjUotC/Vb1IzYBLLlKYW3nYkp4u64mYDx2+KGrcd5dLrG76Yg9u25J+Z1XRwsfn7zF/jmZ/s5NxDndJpQ12VGoZMOcnPzTX/tArQlKG8i74Q402ZWDWMkG4JX3sSgxeJ3V80Sww4IylA+8yvUwaXVzY+dx0kc44okNO7P8phQxy7kEs48rWNTM2FCHNWOM9+WEdX6GZ2wFsXdUAkLlxTLfzM62AV6v1xa2qOqYw5KnS/rLseWsaxWgnvWkY6zWDhYHT4UA51y4p9lhOTgudexnrA03FbQE7IA5REHQPpsY6GvoYDhKkXAjr0FHP3yPRPcMOnQdkVsr0E8sZ1a+9q4N528MXSGapNyeNZTeWMguc/34PhunRtbH6innvAe6r9LiejImhWO2cP7ko3KOzav7XyQzojkPufI9+//LUkn8GehbuiexXXbOSTd/Ry30Cgh+cfDwahrDYUYc/aH/LrMZXefCDxqXozyr8fUAS7ldPA2W9a9LtpY=</l7:StringValue>
-</l7:Property>
-                            </l7:Properties>
-                        </l7:PrivateKey>
-                    </l7:Resource>
-                </l7:Item>
-                <l7:Item>
                     <l7:Name>http-config-custom-1</l7:Name>
                     <l7:Id>768c830e4b11dbcdb48644425c431adf</l7:Id>
                     <l7:Type>HTTP_CONFIGURATION</l7:Type>
@@ -281,7 +255,6 @@
             </l7:References>
             <l7:Mappings>
                 <l7:Mapping action="NewOrExisting" srcId="a3db3565871da28840b21d286c9f108a" srcUri="https://example.net:18443/restman/1.0/passwords/a3db3565871da28840b21d286c9f108a" type="SECURE_PASSWORD"/>
-                <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://example.net:18443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
                 <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431adf" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431adf" type="HTTP_CONFIGURATION"/>
                 <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae0" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae0" type="HTTP_CONFIGURATION"/>
                 <l7:Mapping action="NewOrExisting" srcId="768c830e4b11dbcdb48644425c431ae1" srcUri="https://example.net:18443/restman/1.0/httpConfigurations/768c830e4b11dbcdb48644425c431ae1" type="HTTP_CONFIGURATION"/>
