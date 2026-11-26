@@ -24,7 +24,15 @@ module.exports = {
         gql.variables = Object.assign(gql.variables || {}, variables);
         gql.options = Object.assign({}, options);
 
-        const {modes} = parseQuerySuffix(querySuffix);
+        const {modes, revisions} = parseQuerySuffix(querySuffix);
+
+        if (modes.has("revisions")) {
+            gql.revisions = revisions;
+            // includes the policy revisions, as the includePolicyRevisions option does; never for the dependencies
+            gql.options.includePolicyRevisions = true;
+            gql.options.revisionsMode = true; // carried along with the summary mode
+            gql.variables.includePolicyRevisions = true;
+        }
 
         if (modes.has("full")) {
             gql.variables.includeAllDependencies = true;
@@ -39,7 +47,8 @@ module.exports = {
         }
 
         if (modes.has("summary")) {
-            gql.variables.includePolicyRevisions = false;
+            // the summary mode turns the revisions off, unless the revisions mode is requested too
+            if (!modes.has("revisions")) gql.variables.includePolicyRevisions = false;
             gql.options.summary = true;
         }
 
@@ -616,9 +625,28 @@ function declaredVariableNames(query) {
 function expandGraphQLQuery(gql) {
     gql.query = expandGraphQLSubQuery(gql, gql.query);
     gql.query = substituteGraphQLSubQueryFields(gql, gql.query);
+    gql.query = selectPolicyRevisions(gql, gql.query);
     gql.query = beautifyGraphQLQuery(gql, gql.query);
 
     return gql;
+}
+
+/**
+ * Applies the inline revision selection (revisions[0;-1;3] in the query suffix) to the policyRevisions fields
+ * that don't have the arguments yet; 0 is the active revision and -1 is the latest one.
+ * Policy dependencies never carry the policy revisions, so there is nothing to select there.
+ */
+function selectPolicyRevisions(gql, query) {
+    const selection = gql.revisions;
+    if (selection === undefined || selection === null || selection === true || selection === false || selection === "") return query;
+
+    const ordinals = (Array.isArray(selection) ? selection : String(selection).split(",")).map(item => String(item).trim());
+    const invalid = ordinals.find(item => !/^-?\d+$/.test(item));
+    if (invalid !== undefined) {
+        throw utils.newError(`invalid policy revision '${invalid}'; expected comma separated ordinals, 0 for the active and -1 for the latest revision`);
+    }
+
+    return query.replaceAll(/\bpolicyRevisions\b(?!\s*\()/g, `policyRevisions(selected: [${ordinals.map(Number).join(", ")}])`);
 }
 
 function expandGraphQLSubQuery(gql, query) {
@@ -634,9 +662,10 @@ function expandGraphQLSubQuery(gql, query) {
 }
 
 function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
-    if (typeInfo.typeName === "PolicyDependency" && gql.options.dependencies) {
-        // dependencies of dependencies are not expanded, to avoid the recursion
-        gql = Object.assign({}, gql, {options: Object.assign({}, gql.options, {dependencies: false})});
+    if (typeInfo.typeName === "PolicyDependency") {
+        // dependencies of dependencies are not expanded, to avoid the recursion;
+        // and the policy revisions are never included for the dependencies
+        gql = Object.assign({}, gql, {options: Object.assign({}, gql.options, {dependencies: false, includePolicyRevisions: false, revisionsMode: false})});
     }
 
     let query = "";
@@ -654,11 +683,13 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
         else includedFields.push(item);
     });
 
-    if (!summary && !none && gql.options && fields.length === 0) {
-        if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions")) {
+    if (!summary && !none && gql.options) {
+        // the policy revisions are honored with the explicit field list too, unless the user excluded them
+        if (gql.options.includePolicyRevisions && !includedFields.includes("policyRevisions") &&
+            !excludedFields.includes("policyRevisions") && !excludedFields.includes("*")) {
             includedFields.push("policyRevisions");
         }
-        if (gql.options.includeMultipartFields && !includedFields.includes("filePartName")) {
+        if (fields.length === 0 && gql.options.includeMultipartFields && !includedFields.includes("filePartName")) {
             includedFields.push("filePartName");
         }
     }
@@ -668,7 +699,8 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
         let included;
 
         if (summary) {
-            included = typeInfo.summaryFields.length === 0 || typeInfo.summaryFields.includes(name);
+            included = summaryFieldsOf(typeInfo).includes(name) || summaryFieldsOf(typeInfo).length === 0 ||
+                (name === "policyRevisions" && gql.options.revisionsMode === true && !excludedFields.includes(name));
         } else if (none) {
             included = false;
         } else {
@@ -698,6 +730,14 @@ function expandGraphQLSubQueryUsingTypeInfo(gql, typeInfo, suffix) {
     }
 
     return query.indexOf("{{") !== -1 ? expandGraphQLSubQuery(gql, query) : query;
+}
+
+// the revisions carry the policy code, which is left out of their summary
+const POLICY_REVISION_SUMMARY_FIELDS = ["goid", "ordinal", "active", "comment", "author", "time"];
+
+function summaryFieldsOf(typeInfo) {
+    return typeInfo.summaryFields.length === 0 && typeInfo.typeName === "PolicyRevision" ?
+        POLICY_REVISION_SUMMARY_FIELDS : typeInfo.summaryFields;
 }
 
 function substituteGraphQLSubQueryFields(gql, query) {
@@ -746,7 +786,7 @@ function beautifyGraphQLQuery(gql, query) {
 
 // entity types referred from the policy dependencies, which are fetched separately
 const POLICY_DEPENDENCY_SUFFIX = "-policyFragments,-dtds,-schemas,-internalIdps,-internalUsers,-internalGroups,-fips,-fipUsers,-fipGroups,-federatedIdps,-federatedUsers,-federatedGroups,-ldaps,-ldapIdps,-simpleLdapIdps,-policyBackedIdps";
-const QUERY_MODES = ["summary", "all", "dependencies", "full", "none"];
+const QUERY_MODES = ["summary", "all", "dependencies", "full", "revisions", "none"];
 
 function splitOnFirst(text, delimiter) {
     const index = text.indexOf(delimiter);
@@ -758,18 +798,26 @@ function splitOnFirst(text, delimiter) {
  * from QUERY_MODES and fields are comma separated field filters (-name, +name or name).
  * A first stage starting with -* is treated as "none". A first stage containing anything other than
  * known modes is treated as a legacy single-stage field list.
- * @returns {{modes: Set<string>, fields: string}}
+ * The revisions mode may carry the revision selection, e.g. revisions[0;-1].
+ * @returns {{modes: Set<string>, fields: string, revisions: (string|undefined)}}
  */
 function parseQuerySuffix(suffix) {
     const modes = new Set();
     if (!suffix) return {modes: modes, fields: ""};
 
     const [stage1, stage2] = splitOnFirst(suffix, ":");
-    const tokens = splitTokens(stage1);
+    let revisions;
+    const tokens = splitTokens(stage1).map(item => {
+        // revisions[<ordinal>;<ordinal>...] is the revisions mode along with the revision selection
+        const match = /^revisions\[([^\]]*)\]$/.exec(item);
+        if (!match) return item;
+        revisions = match[1].split(";").map(ordinal => ordinal.trim()).join(",");
+        return "revisions";
+    });
 
     if (stage1.trim().startsWith("-*")) {
         modes.add("none");
-        return {modes: modes, fields: tokens.slice(1).concat(splitTokens(stage2)).join(",")};
+        return {modes: modes, fields: tokens.slice(1).concat(splitTokens(stage2)).join(","), revisions: revisions};
     }
 
     const unknownModes = tokens.filter(item => !QUERY_MODES.includes(item));
@@ -780,7 +828,7 @@ function parseQuerySuffix(suffix) {
     if (tokens.length > 0 && unknownModes.length === 0) {
         tokens.forEach(item => modes.add(item));
         if (modes.has("full")) modes.add("dependencies");
-        return {modes: modes, fields: splitTokens(stage2).join(",")};
+        return {modes: modes, fields: splitTokens(stage2).join(","), revisions: revisions};
     }
 
     return {modes: modes, fields: suffix};
