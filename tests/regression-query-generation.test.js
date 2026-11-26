@@ -8,6 +8,7 @@ const path = require("path");
 const tUtils = require("./utils");
 const graphman = tUtils.load("graphman");
 const gql = tUtils.load("graphql-query");
+const utils = tUtils.load("graphman-utils");
 
 const home = tUtils.config().home;
 const defaultSchema = tUtils.config().schemaVersion;
@@ -21,6 +22,16 @@ afterAll(() => graphman.init(home, {options: {schema: defaultSchema}}));
 
 describe.each(schemas)("schema %s", version => {
     beforeAll(() => graphman.init(home, {options: {schema: version}}));
+
+    test("revisions mode is supported with all the schemas, its selector from v11.2.2 onwards", () => {
+        expect(generate("policies:revisions").query).toContain("policyRevisions");
+
+        if (utils.isSchemaVersionAtLeast(version, "v11.2.2")) {
+            expect(generate("policies:revisions[0]").query).toContain("policyRevisions(selected: [0])");
+        } else {
+            expect(() => generate("policies:revisions[0]")).toThrow(/revision selection is supported from the schema v11.2.2/);
+        }
+    });
 
     test.each(["all", "all:summary", "all:full", "encass", "folder", "policy", "service", "sysinfo",
         "services", "services:summary", "policies:full", "clusterProperties:summary", "keys",
@@ -39,6 +50,7 @@ describe.each(schemas)("schema %s", version => {
 
 describe("generated query contents", () => {
     beforeAll(() => graphman.init(home, {options: {schema: defaultSchema}}));
+    const revisionsModeTest = utils.isSchemaVersionAtLeast(defaultSchema, "v11.2.2") ? test : test.skip;
 
     const selectedFields = (query, root) => {
         // top level field names selected under the root field
@@ -103,7 +115,7 @@ describe("generated query contents", () => {
         expect(generate("policies:full:-folderPath").query).not.toContain("policyRevisions");
     });
 
-    test("revisions mode includes the policy revisions and combines with other modes", () => {
+    revisionsModeTest("revisions mode includes the policy revisions and combines with other modes", () => {
         expect(generate("policies:revisions").query).toContain("policyRevisions");
         expect(generate("policies:revisions:-folderPath").query).toContain("policyRevisions");
         expect(generate("policies:summary").query).not.toContain("policyRevisions");
@@ -112,13 +124,13 @@ describe("generated query contents", () => {
         expect(generate("policies:full,revisions[-1]").query).toContain("policyRevisions(selected: [-1])");
     });
 
-    test("revisions mode carries the inline revision selection", () => {
+    revisionsModeTest("revisions mode carries the inline revision selection", () => {
         expect(generate("policies:revisions[0;-1]").query).toContain("policyRevisions(selected: [0, -1])");
         expect(generate("policies:full,revisions[2]:-folderPath").query).toContain("policyRevisions(selected: [2])");
         expect(() => generate("policies:revisions[x]")).toThrow(/invalid policy revision/);
     });
 
-    test("revisions mode is carried along with the summary mode", () => {
+    revisionsModeTest("revisions mode is carried along with the summary mode", () => {
         const query = generate("policies:summary,revisions").query;
         const revisions = query.substring(query.indexOf("policyRevisions"));
 
@@ -154,7 +166,7 @@ describe("generated query contents", () => {
         expect(revisions).not.toMatch(/\bxml\b/);
     });
 
-    test("inline revision selection applies to the predefined queries", () => {
+    revisionsModeTest("inline revision selection applies to the predefined queries", () => {
         expect(generate("policy:revisions[0;-1]").query).toContain("policyRevisions(selected: [0, -1])");
     });
 

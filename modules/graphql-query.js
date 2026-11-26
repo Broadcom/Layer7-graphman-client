@@ -26,6 +26,10 @@ module.exports = {
 
         const {modes, revisions} = parseQuerySuffix(querySuffix);
 
+        if (revisions !== undefined && !graphman.supportsFeature("revisions-selector")) {
+            throw utils.newError(`the revision selection is supported from the schema ${utils.REVISIONS_SELECTOR_SINCE} onwards, current schema is ${graphman.configuration().schemaVersion}`);
+        }
+
         if (modes.has("revisions")) {
             gql.revisions = revisions;
             // includes the policy revisions, as the includePolicyRevisions option does; never for the dependencies

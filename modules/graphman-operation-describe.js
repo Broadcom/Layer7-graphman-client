@@ -48,7 +48,7 @@ module.exports = {
         console.log("    when no query name is specified, it lists out all the available queries")
         console.log("    the query name of a standard query may carry the modes and fields, <query>[:<modes>[:<fields>]]");
         console.log("      supported modes (comma separated): summary, all, dependencies, full, revisions, none");
-        console.log("      revisions mode may select the policy revisions inline, e.g. policies:revisions[0;-1]");
+        console.log("      revisions mode may select the policy revisions inline (from schema v11.2.2), e.g. policies:revisions[0;-1]");
         console.log();
         console.log("  --queries <query-name> <query-name> ...");
         console.log("    specify two or more concrete query names (no wild-cards) to preview the composite query built by combining them");
