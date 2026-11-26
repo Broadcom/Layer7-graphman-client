@@ -1,0 +1,59 @@
+{
+    "primitiveTypes": [
+        "String",
+        "NonEmptyString",
+        "AnyObject",
+        "Boolean",
+        "ID",
+        "PositiveInt",
+        "NonNegativeInt",
+        "Int",
+        "Long",
+        "Date",
+        "DateTime",
+        "JSON"
+    ],
+
+    "deprecatedTypes": [
+        "WebApiService",
+        "SoapService",
+        "InternalWebApiService",
+        "InternalSoapService",
+        "PolicyFragment",
+        "GlobalPolicy",
+        "BackgroundTaskPolicy",
+        "Fip",
+        "FipUser",
+        "FipGroup",
+        "Ldap"
+    ],
+
+    "goidRefTypes": [
+        "Fip",
+        "FipUser",
+        "FipGroup",
+        "FederatedIdp",
+        "FederatedUser",
+        "FederatedGroup",
+        "InternalUser",
+        "InternalGroup",
+        "Ldap",
+        "LdapIdp",
+        "Certificate",
+        "PasswordPolicy",
+        "ServiceResolutionConfig",
+        "AuditConfiguration"
+    ],
+
+    "singleQueryMethods": [
+        ["AuditConfiguration", "auditConfigurations"],
+        ["HttpConfiguration", "httpConfigurationsByHost"],
+        ["Certificate", "trustedCertByThumbprint"],
+        ["FederatedUser", "federatedUserByName"],
+        ["FipUser", "fipUserByName"],
+        ["InternalIdp", "internalIdps"],
+        ["SoapService", "soapServiceByResolver"],
+        ["InternalSoapService", "internalSoapServiceByResolver"],
+        ["L7Service", "serviceByResolvers"]
+    ]
+}

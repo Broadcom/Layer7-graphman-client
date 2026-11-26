@@ -1,0 +1,5770 @@
+#
+# Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all active connectors"
+  activeConnectors: [ActiveConnector!]!
+  "Get the active connector by goid"
+  activeConnectorByGoid(goid : ID!) : ActiveConnector
+  "Get the active connector by name"
+  activeConnectorByName(name : String!) : ActiveConnector
+  "Get the active connectors by type"
+  activeConnectorsByType(connectorType : String!) : [ActiveConnector!]!
+}
+
+extend type Mutation {
+  """
+  Create or update existing active connector.
+  Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+  """
+  setActiveConnectors(input: [ActiveConnectorInput!]!): ActiveConnectorsPayload!
+
+  "Delete existing active connector. Match is carried by name."
+  deleteActiveConnectors(names: [String!]!): ActiveConnectorsPayload!
+}
+
+"""
+An active connector retrieves messages from external systems, perhaps by polling or by registering for notifications.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,connectorType,checksum
+> @l7-excluded-fields hardwiredService
+"""
+type ActiveConnector {
+    "The goid for the active connector"
+    goid : ID!
+    "The active connector name"
+    name : String!
+    "The active connector type Examples:- KAFKA, SFTP_POLLING_LISTENER, MQ_NATIVE"
+    connectorType: String!
+    "The configuration checksum of this active connector"
+    checksum : String!
+
+    "Whether this active connector is enabled"
+    enabled : Boolean!
+    "The name of the published service hardwired to the active connector"
+    hardwiredServiceName: String
+    "The active connector Properties"
+    properties: [EntityProperty!]
+    "The advanced properties for active connector"
+    advancedProperties: [EntityProperty!]
+
+    "The published service hardwired to the active connector"
+    hardwiredService: HardwiredService
+}
+
+input ActiveConnectorInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The active connector name"
+    name: String!
+    "Whether this active connector is enabled"
+    enabled: Boolean!
+    "The active connector type Examples:- KAFKA, SFTP_POLLING_LISTENER, MQ_NATIVE"
+    connectorType: String!
+    "The name of the published service hardwired to the active connector"
+    hardwiredServiceName: String
+    "The active connector properties"
+    properties: [EntityPropertyInput!]
+    "The advanced properties for active connector"
+    advancedProperties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type ActiveConnectorsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The mutated active connectors"
+    activeConnectors: [ActiveConnector]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all administrative user account properties : logonMaxAllowableAttempts, logonLockoutTime, logonSessionExpiry, logonInactivityPeriod"
+    administrativeUserAccountProperties : [AdministrativeUserAccountProperty!]!
+}
+
+extend type Mutation {
+    """
+    Create or update existing Administrative User Account Minimum cluster properties.
+    If Administrative User Account Minimum cluster property with the given name does not exist, one will be created, otherwise the existing one will be updated.
+    This returns the list of entities created and/or updated.
+    Below are the allowed Administrative User Account Minimum properties
+    logonMaxAllowableAttempts : Logon attempts must be between 1 and 20
+    logonLockoutTime : Lockout period must be between 1 and 86400 seconds
+    logonSessionExpiry : Expiry period must be between 1 and 86400 seconds
+    logonInactivityPeriod : Inactivity period must be between 1 and 365 days
+    """
+    setAdministrativeUserAccountProperties(input: [AdministrativeUserAccountPropertyInput!]!): AdministrativeUserAccountPropertiesPayload!
+
+}
+
+"""
+An administrative user account property.
+Supported properties are logonMaxAllowableAttempts, logonLockoutTime, logonSessionExpiry, logonInactivityPeriod.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type AdministrativeUserAccountProperty {
+    "The administrative user account property unique identifier"
+    goid: ID!
+    "The name of administrative user account property"
+    name: String!
+    "The value of the administrative user account property"
+    value: String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"The inputs sent with the setClusterProperty Mutation"
+input AdministrativeUserAccountPropertyInput {
+    "The administrative user account property unique identifier"
+    goid: ID
+    "The name of administrative user account property"
+    name: String!
+    "The value of the administrative user account property"
+    value: String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type AdministrativeUserAccountPropertiesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    administrativeUserAccountProperties: [AdministrativeUserAccountProperty]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get All AuditConfigurations"
+    auditConfigurations: [AuditConfiguration!]!
+}
+
+extend type Mutation {
+    setAuditConfigurations(input : [AuditConfigurationInput!]!): AuditConfigurationsPayload!
+}
+"""
+An Audit Configuration.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type AuditConfiguration {
+    "The internal entity unique identifier"
+    goid: ID!
+    "audit configuration unique name"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+    "Whether to save the audit records always to the internal database"
+    alwaysSaveInternal: Boolean!
+    "Lookup Policy Name"
+    lookupPolicyName: String
+    "Sink Policy Name"
+    sinkPolicyName: String
+    "FTP Client Configuration"
+    ftpConfig: AuditFtpConfiguration
+}
+
+
+input AuditConfigurationInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "log sink unique name"
+    name: String!
+    "Lookup Policy Name"
+    lookupPolicyName: String
+    "The configuration checksum"
+    checksum: String
+    "Whether to save the audit records always to the internal database"
+    alwaysSaveInternal: Boolean
+    "Sink Policy Name"
+    sinkPolicyName: String
+    "FTP Client Configuration"
+    ftpConfig: AuditFtpConfigurationInput
+}
+
+
+type AuditFtpConfiguration {
+    "Host of FTP Server"
+    host: String!
+    "Port of FTP Server"
+    port: Int!
+    "FTP connection timeout"
+    timeout: Int!
+    "FTP user"
+    user: String!
+    "FTP password"
+    password: String
+    "Directory in FTP Server"
+    directory: String
+    "To verify server certification"
+    verifyServerCert: Boolean!
+    "Security Type"
+    security: AuditFtpSecurityType!
+    "Whether this Audit Configuration is enabled"
+    enabled: Boolean!
+}
+
+input AuditFtpConfigurationInput {
+    "Host of FTP Server"
+    host: String!
+    "Port of FTP Server"
+    port: Int!
+    "FTP connection timeout"
+    timeout: Int!
+    "FTP user"
+    user: String!
+    "FTP password"
+    password: String
+    "Directory in FTP Server"
+    directory: String
+    "To verify server certification"
+    verifyServerCert: Boolean = false
+    "Security Type"
+    security: AuditFtpSecurityType!
+    "Whether this Audit Configuration is enabled"
+    enabled: Boolean!
+}
+
+"Indicates the Sink Category"
+enum AuditFtpSecurityType {
+    FTP_UNSECURED,
+    FTPS_EXPLICIT,
+    FTPS_IMPLICIT
+}
+
+type AuditConfigurationsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    auditConfigurations: [AuditConfiguration]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+input BundlePropertiesInput {
+    "Bundle Meta information should be any key value pair form ex: id, name, author, hostname, timestamp"
+    meta: AnyObject
+    "Default action should be applied to entity if no action defined inside entities"
+    defaultAction: EntityMutationAction!
+    "Mapping Instructions of all entities"
+    mappings: BundleEntityMappingsInput
+}
+
+input BundleEntityMappingsInput {
+    activeConnectors: [NamedEntityMappingInstructionInput!]
+    administrativeUserAccountProperties: [NamedEntityMappingInstructionInput!]
+    cassandraConnections:[NamedEntityMappingInstructionInput!]
+    clusterProperties:[NamedEntityMappingInstructionInput!]
+    customKeyValues:[CustomKeyValueMappingInstructionInput!]
+    emailListeners:[NamedEntityMappingInstructionInput!]
+    encassConfigs:[NamedEntityMappingInstructionInput!]
+    schemas:[SchemaMappingInstructionInput!]
+    dtds:[DtdMappingInstructionInput!]
+    httpConfigurations:[HttpConfigurationMappingInstructionInput!]
+    ldaps:[NamedEntityMappingInstructionInput!]
+    ldapIdps:[NamedEntityMappingInstructionInput!]
+    simpleLdapIdps:[NamedEntityMappingInstructionInput!]
+    fips:[NamedEntityMappingInstructionInput!]
+    fipGroups:[FipGroupMappingInstructionInput!]
+    fipUsers:[FipUserMappingInstructionInput!]
+    federatedIdps:[NamedEntityMappingInstructionInput!]
+    federatedGroups:[FederatedGroupMappingInstructionInput!]
+    federatedUsers:[FederatedUserMappingInstructionInput!]
+    folders:[FolderMappingInstructionInput!]
+    internalIdps:[NamedEntityMappingInstructionInput!]
+    internalGroups:[NamedEntityMappingInstructionInput!]
+    internalUsers:[InternalUserMappingInstructionInput!]
+    jdbcConnections:[NamedEntityMappingInstructionInput!]
+    jmsDestinations:[JmsDestinationMappingInstructionInput!]
+    keys:[KeyMappingInstructionInput!]
+    listenPorts:[NamedEntityMappingInstructionInput!]
+    logSinks:[NamedEntityMappingInstructionInput!]
+    backgroundTaskPolicies:[NamedEntityMappingInstructionInput!]
+    policies:[PolicyMappingInstructionInput!]
+    policyBackedIdps:[NamedEntityMappingInstructionInput!]
+    policyFragments:[NamedEntityMappingInstructionInput!]
+    passwordPolicies:[PasswordPolicyMappingInstructionInput!]
+    globalPolicies:[GlobalPolicyMappingInstructionInput!]
+    serviceResolutionConfigs:[ServiceResolutionConfigsMappingInstructionInput!]
+    revocationCheckPolicies:[NamedEntityMappingInstructionInput!]
+    serverModuleFiles:[NamedEntityMappingInstructionInput!]
+    scheduledTasks:[NamedEntityMappingInstructionInput!]
+    secrets:[NamedEntityMappingInstructionInput!]
+    services:[ServiceMappingInstructionInput!]
+    smConfigs:[NamedEntityMappingInstructionInput!]
+    internalSoapServices:[SoapServiceMappingInstructionInput!]
+    soapServices:[SoapServiceMappingInstructionInput!]
+    trustedCerts:[TrustedCertsMappingInstructionInput!]
+    webApiServices:[WebApiServiceMappingInstructionInput!]
+    internalWebApiServices:[WebApiServiceMappingInstructionInput!]
+    genericEntities:[NamedEntityMappingInstructionInput!]
+    roles:[NamedEntityMappingInstructionInput!]
+    auditConfigurations:[NamedEntityMappingInstructionInput!]
+}
+
+input NamedEntityMappingInstructionInput {
+    "The mutation action for the matching entity"
+    action: EntityMutationAction = NEW_OR_UPDATE
+    "If true, instruction is marked as default one for the non matching entities"
+    default: Boolean
+    "If true, instruction triggers the mutation failure when the matching entity is not found"
+    failOnNew: Boolean
+    "If true, instruction triggers the mutation failure when the matching entity is found"
+    failOnExisting: Boolean
+    "If true, instruction will be used to derive the partial entity definition when required"
+    nodef: Boolean
+    "one or more name-value pairs to identify a bundled entity uniquely"
+    source: NamedEntityRefInput
+}
+
+input NamedEntityRefInput {
+    """
+    The name of the entity belongs to one of the given Entities
+      ActiveConnector
+      AdministrativeUserAccount
+      CassandraConnection
+      ClusterProperty
+      EmailListener
+      EncassConfig
+      Ldap
+      LdapIdp
+      SimpleLdap
+      Fip
+      FederatedIdp
+      InternalIdp
+      InternalGroup
+      JdbcConnection
+      ListenPort
+      LogSink
+      BackgroundTaskPolicy
+      PolicyBackedIdp
+      PolicyFragment
+      RevocationCheckPolicy
+      ServerModuleFile
+      ScheduledTask
+      Secret
+      SmConfig
+      GenericEntity
+      Role
+      AuditConfiguration
+
+    """
+    name: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all Cassandra Connections"
+    cassandraConnections : [CassandraConnection!]!
+    "Get Cassandra Connection by name"
+    cassandraConnectionByName(name: String!) : CassandraConnection
+    "Get Cassandra Connection by goid"
+    cassandraConnectionByGoid(goid: ID!) : CassandraConnection
+}
+
+extend type Mutation {
+    """
+    Create or update Cassandra connections.
+    If Cassandra connection with the same name exist, the Cassandra connection will be updated.
+    If no Cassandra connection with the name exist, a new Cassandra connection will be created.
+    """
+    setCassandraConnections(input: [CassandraConnectionInput!]!): CassandraConnectionsPayload!
+
+    """
+    Deletes Cassandra connections.
+    """
+    deleteCassandraConnections(
+        "The names of the Cassandra connection to delete"
+        names: [String!]!): CassandraConnectionsPayload!
+}
+
+enum CassandraCompression {
+    NONE
+    LZ4
+}
+
+"""
+A Cassandra connection.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type CassandraConnection {
+    "The goid for the Cassandra Connection"
+    goid : ID!
+    "The Cassandra Connection name"
+    name : String!
+    "The configuration checksum of this Cassandra connection"
+    checksum: String!
+
+    "Whether this Cassandra connection is enabled"
+    enabled: Boolean!
+    "The Cassandra keyspace name"
+    keyspace: String!
+    "The Cassandra connection points"
+    contactPoints : [String!]!
+    "The Cassandra server port"
+    port: PositiveInt!
+    "The Cassandra connection compression type"
+    compression: CassandraCompression!
+    "The username"
+    username: String
+    "The secure password reference."
+    securePasswordName: String
+    "Whether this Cassandra connection is SSL enabled"
+    sslEnabled: Boolean!
+    "Cipher suites used for SSL connection"
+    cipherSuites: [String!]
+    "The Cassandra connection properties"
+    properties: [EntityProperty!]
+}
+
+input CassandraConnectionInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The Cassandra Connection name"
+    name : String!
+    "The Cassandra keyspace name"
+    keyspace: String! = ""
+    "The Cassandra connection points"
+    contactPoints : [String!]!
+    "The Cassandra server port"
+    port: PositiveInt!
+    "The username"
+    username: String! = ""
+    "The secure password reference."
+    securePasswordName: String
+    "The Cassandra connection compression type"
+    compression: CassandraCompression = NONE
+    "Whether this Cassandra connection is SSL enabled"
+    sslEnabled: Boolean!
+    "Cipher suites used for SSL connection"
+    cipherSuites: [String!]
+    "Whether this Cassandra connection is enabled"
+    enabled: Boolean!
+    "The Cassandra connection properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type CassandraConnectionsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The mutated Cassandra connections."
+    cassandraConnections: [CassandraConnection]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all cluster nodes information"
+    clusterInfo : ClusterInfo!
+}
+
+type ClusterInfo {
+    "cluster Name"
+    name : String
+    "cluster Nodes Info"
+    nodes : [ClusterNodeInfo!]!
+}
+
+type ClusterNodeInfo {
+    "cluster node id"
+    nodeId : String!
+    "cluster node name"
+    name : String!
+    "cluster node IP Address"
+    address : String!
+    "cluster node uptime"
+    uptime : Long!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all cluster properties"
+  clusterProperties : [ClusterProperty!]!
+  "Get the cluster property by goid"
+  clusterPropertyByGoid(goid : ID!) : ClusterProperty
+  "Get the cluster property with the given name"
+  clusterPropertyByName(name : String!) : ClusterProperty
+}
+
+extend type Mutation {
+  """
+  Create or update existing cluster properties.  If a cluster property with the given name does not
+  exist, one will be created, otherwise the existing one will be updated. This returns the list of
+  entities created and/or updated
+  """
+  setClusterProperties(input: [ClusterPropertyInput!]!): ClusterPropertiesPayload!
+
+  "Delete existing cluster properties"
+  deleteClusterProperties(names: [String!]!): ClusterPropertiesPayload!
+}
+
+"""
+Cluster properties are used to set global properties.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type ClusterProperty {
+    "The goid for the cluster property"
+    goid : ID!
+    "The cluster property name"
+    name : String!
+    "The configuration checksum of this cluster prop"
+    checksum: String!
+
+    "The cluster property description"
+    description : String
+    "Whether this is a hidden property"
+    hiddenProperty : Boolean!
+    "The cluster property value"
+    value : String!
+}
+
+"The inputs sent with the setClusterProperty Mutation"
+input ClusterPropertyInput {
+    "The internal entity unique identifier"
+    goid: ID
+  "The name of the cluster property"
+  name: String!
+  "The value of the cluster property to set"
+  value: String!
+  "The cluster property description"
+  description : String
+  "Whether this is a hidden property. (Note that, this field has no effect on the mutation)"
+  hiddenProperty : Boolean
+  "Ignored at creation time but can be used to compare bundle with gw state"
+  checksum : String
+}
+
+type ClusterPropertiesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    clusterProperties: [ClusterProperty]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  customKeyValues: [CustomKeyValue!]!
+  "Get the Custom Key value by goid"
+  customKeyValueByGoid(goid : ID!) : CustomKeyValue
+  "Get the Custom Key value with the given key name"
+  customKeyValueByKey(key : String!) : CustomKeyValue
+}
+
+extend type Mutation {
+  """
+  Create or update existing custom key values data.  If a custom key value with the given key does not
+  exist, one will be created, otherwise the existing one will be updated. This returns the list of
+  entities created and/or updated
+  """
+  setCustomKeyValues(input: [CustomKeyValueInput!]!): CustomKeyValuePayload!
+
+  "Delete existing cluster properties"
+  deleteCustomKeyValues(keys: [String!]!): CustomKeyValuePayload!
+}
+
+"""
+A custom key value pair.
+> @l7-entity
+> @l7-identity-fields key
+> @l7-summary-fields goid,key,checksum
+> @l7-excluded-fields
+"""
+type CustomKeyValue {
+    "The goid for the custom key value"
+    goid : ID!
+    "The custom key"
+    key : String!
+    "The configuration checksum of this custom key value"
+    checksum: String!
+
+    "The custom value in Base64 encoded format"
+    value : String!
+}
+
+"The inputs sent with the setCustomKeyValue Mutation"
+input CustomKeyValueInput {
+   "The goid for the custom key value"
+    goid : ID
+    "The custom key"
+    key : String!
+    "The custom value in Base64 encoded format"
+    value : String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type CustomKeyValuePayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    customKeyValues: [CustomKeyValue]!
+}
+
+input CustomKeyValueMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a CustomKeyValue entity uniquely"
+    source: CustomKeyValueRefInput
+}
+input CustomKeyValueRefInput{
+    "The custom key"
+    key: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all email listeners"
+  emailListeners : [EmailListener!]!
+  "Get the email listener by goid"
+  emailListenerByGoid(goid : ID!) : EmailListener
+  "Get the email listener by name"
+  emailListenerByName(name : String!) : EmailListener
+}
+
+extend type Mutation {
+  """
+  Create or update existing email listeners.
+  Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+  """
+  setEmailListeners(input: [EmailListenerInput!]!): EmailListenersPayload!
+
+  "Delete existing email listeners. Match is carried by name."
+  deleteEmailListeners(names: [String!]!): EmailListenersPayload!
+}
+
+enum EmailServerType {
+    IMAP
+    POP3
+}
+
+"""
+An email listener.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields hardwiredService
+"""
+type EmailListener {
+    "The goid for the email listener Connection"
+    goid : ID!
+    "The name of the email listener. If you are creating several listeners, make sure the name is descriptive"
+    name : String!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether this email listener is enabled(active)"
+    enabled : Boolean!
+    "The type of email server (IMAP or POP3)"
+    serverType: EmailServerType!
+    "The hostname of the email server. This name is verified against the X.509 certificate"
+    hostname: String!
+    "The port number to monitor"
+    port : PositiveInt!
+    "The folder name to check for emails (Only for IMAP)"
+    folder: String!
+    "Whether delete the messages on the mail server after retrieving"
+    deleteOnReceive: Boolean!
+    "Email account name"
+    username: String!
+    "Email account password. The password could be in plain text or secure password reference"
+    password: String!
+    "The name of the published service hardwired to the email listener"
+    hardwiredServiceName: String
+    "Whether email server connection (POP3S or IMAPS) is SSL enabled"
+    sslEnabled: Boolean!
+    "The listener will check for email after the specified number of seconds"
+    pollInterval: PositiveInt!
+    "Permitted maximum size of the message"
+    sizeLimit: NonNegativeInt
+    "The email listener properties excluding sizeLimit and HardwiredServiceName"
+    properties: [EntityProperty!]
+
+    "The published service hardwired to the email listener"
+    hardwiredService: HardwiredService
+}
+
+input EmailListenerInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The name of the email listener. If you are creating several listeners, make sure the name is descriptive"
+    name: String!
+    "Whether this email listener is enabled(active)"
+    enabled: Boolean!
+    "The hostname of the email server. This name is verified against the X.509 certificate"
+    hostname: NonEmptyString!
+    "The port number to monitor"
+    port: PositiveInt!
+    "The type of email server (IMAP or POP3)"
+    serverType: EmailServerType!
+    "Whether email server connection (POP3S or IMAPS) is SSL enabled"
+    sslEnabled: Boolean!
+    "Whether delete the messages on the mail server after retrieving"
+    deleteOnReceive: Boolean!
+    "The folder name to check for emails (Only for IMAP)"
+    folder: String!
+    "The listener will check for email after the specified number of seconds"
+    pollInterval: PositiveInt!
+    "Email account name"
+    username: String!
+    "Email account password. The password could be in plain text or secure password reference"
+    password: String!
+    "The name of the published service hardwired to the email listener"
+    hardwiredServiceName: String
+    "Permitted maximum size of the message"
+    sizeLimit: NonNegativeInt
+    "[Optional] The Email listener Properties excluding sizeLimit and HardwiredServiceName. When specified, will replace existing properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type EmailListenersPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The mutated email listener connections."
+    emailListeners: [EmailListener]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all Encapsulated Assertion Configurations"
+    encassConfigs : [EncassConfig!]!
+    "Get all Encapsulated Assertion Configurations by folder path"
+    encassConfigsByFolderPath(folderPath: String!) : [EncassConfig!]!
+    "Get Encapsulated Assertion Configuration by name"
+    encassConfigByName(name: String!) : EncassConfig
+    "Get Encapsulated Assertion Configuration by goid"
+    encassConfigByGoid(goid: ID!) : EncassConfig
+    "Get Encapsulated Assertion Configuration by guid"
+    encassConfigByGuid(guid: ID!) : EncassConfig
+}
+
+extend type Mutation {
+    "Create or update Encapsulated Assertion Configurations"
+    setEncassConfigs(input: [EncassConfigInput!]!) : EncassConfigsPayload
+    "Delete existing Encapsulated Assertion Configurations"
+    deleteEncassConfigs(names: [String!]!) : EncassConfigsPayload
+}
+
+"""
+An encapsulated assertion configuration.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,guid,name,checksum
+> @l7-excluded-fields
+"""
+type EncassConfig {
+    "The goid for this encass config"
+    goid : ID!
+    "The guid for this encass config"
+    guid : ID!
+    "The name of the encass config"
+    name: String!
+    "The configuration checksum of this encass"
+    checksum: String!
+
+    description: String
+    "The policy it points to and its dependencies"
+    policyName: String!
+    "the input argument descriptions for this encass"
+    encassArgs : [EncassArg!]
+    "the output descriptions"
+    encassResults : [EncassResult!]
+    properties: [EntityProperty!]
+}
+
+"The description of an input argument for an encapsulated assertion"
+type EncassArg {
+    "The name of the input"
+    name: String!
+    # com.l7tech.policy.variable.DataType
+    "The type of input"
+    type : DataType!
+    "The order of the argument in the admin gui"
+    ordinal : Int
+    "The prompt in the admin gui for this encass argument"
+    guiPrompt : Boolean
+    "The label in the admin gui associated with this encass argument"
+    guiLabel : String
+}
+
+"The description of an output from the encapsulated assertion"
+type EncassResult {
+    "The name of the output"
+    name: String!
+    # com.l7tech.policy.variable.DataType
+    "The type of the output"
+    type : DataType!
+}
+
+enum DataType {
+    STRING
+    CERTIFICATE
+    INTEGER
+    DECIMAL
+    FLOAT
+    ELEMENT
+    BOOLEAN
+    BINARY
+    DATE_TIME
+    MESSAGE
+    BLOB
+    CLOB
+    UNKNOWN
+}
+
+"The description of a new encapsulated assertion configuration being created"
+input EncassConfigInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The guid for this encass config, can be omitted and a new one is assigned"
+    guid : ID
+    "The name of the encass config"
+    name: String!
+    description: String
+    "The policy it points to and its dependencies"
+    policyName: String!
+    "the input argument descriptions for this encass"
+    encassArgs : [EncassArgInput!]
+    "the output descriptions"
+    encassResults : [EncassResultInput!]
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"The description of an input argument for an encapsulated assertion for use when creating or updating an existing encass config"
+input EncassArgInput {
+    "The name of the input"
+    name: String!
+    # com.l7tech.policy.variable.DataType
+    "The type of input"
+    type : DataType!
+    "The order of the argument in the admin gui"
+    ordinal : Int
+    "The prompt in the admin gui for this encass argument"
+    guiPrompt : Boolean = false
+    "The label in the admin gui associated with this encass argument"
+    guiLabel : String
+}
+
+"The description of an output from the encapsulated assertion for use when creating or updating an existing encass config"
+input EncassResultInput {
+    "The name of the output"
+    name: String!
+    # com.l7tech.policy.variable.DataType
+    "The type of the output"
+    type : DataType!
+}
+
+type EncassConfigsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    encassConfigs: [EncassConfig]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all Folders"
+  folders: [Folder!]!
+  "Get the folder by goid"
+  folderByGoid(goid: ID!) : Folder
+  "Get the folder identified by path"
+  folderByPath(path: String!) : Folder
+  "Get the folders matches by path (i.e., folder itself and the folders in it)"
+  foldersByPath(path: String!) : [Folder!]!
+}
+
+extend type Mutation {
+    "Set the Folders"
+    setFolders(input : [FolderInput!]!) : FoldersPayload!
+    "Delete the Folders by Path"
+    deleteFolders(paths : [String!]!) : FoldersPayload!
+}
+
+input FolderInput {
+    "The goid for the folder"
+    goid : ID
+    "The folder name"
+    name : String
+    "The folder Path"
+    path : String!
+    "The configuration checksum of this folder"
+    checksum : String
+}
+
+"""
+A folder that is used to group services, policies, and other folders.
+> @l7-entity
+> @l7-identity-fields path
+> @l7-summary-fields goid,name,path,checksum
+> @l7-excluded-fields
+"""
+type Folder {
+    "The goid for the folder"
+    goid : ID!
+    "The folder name"
+    name : String!
+    "The folder Path"
+    path : String!
+    "The configuration checksum of this folder"
+    checksum : String!
+}
+
+type FoldersPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    folders: [Folder]!
+}
+
+input FolderMappingInstructionInput {
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a Folder entity uniquely"
+    source: FolderRefInput
+}
+
+input FolderRefInput {
+    "The folder Path"
+    path: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all generic entities"
+    genericEntities: [GenericEntity!]!
+    "Retrieves a role by goid"
+    genericEntityByGoid(goid: ID!) : GenericEntity
+    "Retrieves a generic entity by name"
+    genericEntityByName(name: String!): GenericEntity
+}
+
+extend type Mutation {
+  """
+  Create or update existing generic entities.
+  Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+  """
+  setGenericEntities(input: [GenericEntityInput!]!): GenericEntitiesPayload!
+
+  "Delete existing generic entity. Match is carried by name."
+  deleteGenericEntities(names: [String!]!): GenericEntitiesPayload!
+}
+
+"""
+Generic entity details.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type GenericEntity {
+    goid : ID!
+    " unique name"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "description"
+    description: String
+    "Whether this Generic entity is enabled"
+    enabled: Boolean!
+    "Absolute entity class name of Generic Entity"
+    entityClassName: String!
+    "XML representation of underlying entity details"
+    valueXml: String
+}
+
+input GenericEntityInput {
+    goid : ID
+    " unique name"
+    name: String!
+    "The configuration checksum"
+    checksum: String
+    "description"
+    description: String
+    "XML representation of underlying entity details"
+    valueXml: String!
+    "Whether this Generic entity is enabled"
+    enabled: Boolean!
+    "Absolute entity class name of Generic Entity"
+    entityClassName: String!
+}
+
+type GenericEntitiesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The mutated generic entities"
+    genericEntities: [GenericEntity]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get xml schemas configured on this gateway"
+    schemas : [Schema!]!
+    "The schema by goid"
+    schemaByGoid(goid : ID!) : Schema
+    "The schema given its system id"
+    schemaBySystemId(systemId : String!) : Schema
+    "The dtds configured on this gateway"
+    dtds : [Dtd!]!
+    "The dtd by goid"
+    dtdByGoid(goid : ID!) : Dtd
+    "The dtd given its system id"
+    dtdBySystemId(systemId : String!) : Dtd
+    "Get internal schemas, for reference only"
+    internalSchemas : [Schema!]!
+    "Get internal dtds, for reference only"
+    internalDtds : [Dtd!]!
+}
+
+extend type Mutation {
+    "Create or Update multiple XML schemas"
+    setSchemas(input: [SchemaInput!]!) : SchemasPayload
+    "Delete multiple XML schemas"
+    deleteSchemas(systemIds: [String!]!) : SchemasPayload
+
+    "Create or Update multiple DTD resources"
+    setDtds(input: [DtdInput!]!) : DtdsPayload
+    "Delete multiple DTD resources"
+    deleteDtds(systemIds: [String!]!) : DtdsPayload
+}
+
+"""
+An XML Schema which can be referred to in policy, for example in the validate xml schema assertion.
+> @l7-entity
+> @l7-identity-fields systemId
+> @l7-summary-fields goid,systemId,checksum
+> @l7-excluded-fields
+"""
+type Schema {
+    "Internal goid for this schema"
+    goid : ID!
+    "A reference to the schema. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId : String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The target namespace in the xml schema"
+    targetNs : String
+    "An optional description for the schema"
+    description : String
+    "The content of XML schema"
+    content : String!
+}
+
+"""
+A Document Type Definition (DTD) which can be referred to in policy.
+> @l7-entity
+> @l7-identity-fields systemId
+> @l7-summary-fields goid,systemId,checksum
+> @l7-excluded-fields
+"""
+type Dtd {
+    "Internal goid for this DTD"
+    goid : ID!
+    "A reference to the DTD. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId : String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The public id for the DTD"
+    publicId : String
+    "An optional description"
+    description : String
+    "The content of DTD itself"
+    content : String!
+}
+
+input SchemaInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "A reference to the schema. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId : String!
+    "The target namespace in the XML schema"
+    targetNs : String
+    "An optional description for the schema"
+    description : String
+    "The content of XML schema"
+    content : String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input DtdInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "A reference to the dtd. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId : String!
+    "The public id for the dtd"
+    publicId : String
+    "An optional description"
+    description : String
+    "The actual dtd itself"
+    content : String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type DtdsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    dtds: [Dtd]!
+}
+
+type SchemasPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    schemas: [Schema]!
+}
+
+input DtdMappingInstructionInput {
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a DTD entity uniquely"
+    source: DtdRefInput
+}
+
+input DtdRefInput {
+    "A reference to the schema. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId: String!
+}
+
+input SchemaMappingInstructionInput {
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a Schema entity uniquely"
+    source: SchemaRefInput
+}
+
+input SchemaRefInput {
+    "A reference to the schema. This id is what is referred to in policy and is often mirror of the target namespace"
+    systemId: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all http configuration"
+    httpConfigurations : [HttpConfiguration!]!
+    "Get the http configuration by goid"
+    httpConfigurationByGoid(goid : ID!) : HttpConfiguration
+    "Get the http configurations with the given host"
+    httpConfigurationsByHost(host : String!) : [HttpConfiguration!]!
+}
+
+extend type Mutation {
+    "Create or update existing http configuration."
+    setHttpConfigurations(input: [HttpConfigurationInput!]!): HttpConfigurationsPayload!
+
+    "Delete existing http configuration"
+    deleteHttpConfigurations(input: [HttpConfigurationPartialInput!]!): HttpConfigurationsPayload!
+}
+
+"""
+An HTTP configuration.
+> @l7-entity
+> @l7-identity-fields host,port,protocol,path
+> @l7-summary-fields goid,host,port,protocol,path,checksum
+> @l7-excluded-fields
+"""
+type HttpConfiguration {
+    "The goid for the http configuration"
+    goid : ID!
+    "The host of the http configuration"
+    host: String!
+    "The port of the http configuration"
+    port: Int
+    "The protocol of the http configuration"
+    protocol : HttpScheme
+    "The path of the http configuration"
+    path : String
+    "The configuration checksum of this http configuration"
+    checksum : String!
+    "The username of the http configuration"
+    username : String
+    "The securePasswordName of the http configuration"
+    securePasswordName : String
+    "The ntlmHost of the http configuration"
+    ntlmHost : String
+    "The ntlmDomain of the http configuration"
+    ntlmDomain : String
+    "The tlsVersion of the http configuration"
+    tlsVersion : String
+    "The tlsKeyUse of the http configuration"
+    tlsKeyUse : EntityFieldOption!
+    "The tlsKeystoreId of the http configuration"
+    tlsKeystoreId : String
+    "The tlsKeyAlias of the http configuration"
+    tlsKeyAlias : String
+    "The tlsCipherSuites of the http configuration"
+    tlsCipherSuites : [String!]
+    "The connectTimeout of the http configuration"
+    connectTimeout : Int
+    "The readTimeout of the http configuration"
+    readTimeout : Int
+    "The followRedirects of the http configuration"
+    followRedirects : Boolean
+    "The proxyUse of the http configuration"
+    proxyUse : EntityFieldOption!
+    "The HttpProxyConfiguration of the http configuration"
+    proxyConfiguration : HttpProxyConfiguration
+}
+
+enum HttpScheme {
+    HTTP
+    HTTPS
+    ANY
+}
+
+type HttpProxyConfiguration {
+    "The proxyHost of the http proxy configuration"
+    host : String
+    "The proxyPort of the http proxy configuration"
+    port : Int
+    "The proxyUsername of the http proxy configuration"
+    username : String
+    "The securePasswordName of the http proxy configuration"
+    securePasswordName : String
+}
+input HttpConfigurationInput{
+    "The goid for the http configuration"
+    goid : ID
+    "The host of the http configuration"
+    host: String!
+    "The port of the http configuration"
+    port: Int = 0
+    "The protocol of the http configuration"
+    protocol : HttpScheme = ANY
+    "The path of the http configuration"
+    path : String
+    "The username of the http configuration"
+    username : String
+    "The securePasswordName of the http configuration"
+    securePasswordName : String
+    "The ntlmHost of the http configuration"
+    ntlmHost : String
+    "The ntlmDomain of the http configuration"
+    ntlmDomain : String
+    "The tlsVersion of the http configuration"
+    tlsVersion : String
+    "The tlsKeyUse of the http configuration"
+    tlsKeyUse : EntityFieldOption = DEFAULT
+    "The tlsKeystoreId of the http configuration"
+    tlsKeystoreId : String = "00000000000000000000000000000000"
+    "The tlsKeyAlias of the http configuration"
+    tlsKeyAlias : String
+    "The tlsCipherSuites of the http configuration"
+    tlsCipherSuites : [String!]
+    "The connectTimeout of the http configuration"
+    connectTimeout : Int
+    "The readTimeout of the http configuration"
+    readTimeout : Int
+    "The followRedirects of the http configuration"
+    followRedirects : Boolean
+    "The proxyUse of the http configuration"
+    proxyUse : EntityFieldOption = DEFAULT
+    "The HttpProxyConfiguration of the http configuration"
+    proxyConfiguration : HttpProxyConfigurationInput
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type HttpConfigurationsPayload implements EntityMutationsPayload{
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    httpConfigurations: [HttpConfiguration]!
+}
+
+input HttpProxyConfigurationInput {
+    "The proxyHost of the http proxy configuration"
+    host : String!
+    "The proxyPort of the http proxy configuration"
+    port : Int!
+    "The proxyUsername of the http proxy configuration"
+    username : String
+    "The securePasswordName of the http proxy configuration"
+    securePasswordName : String
+}
+
+ input HttpConfigurationPartialInput{
+     "The goid for the http configuration"
+     goid : ID
+     "The host of the http configuration"
+     host: String!
+     "The port of the http configuration"
+     port: Int = 0
+     "The protocol of the http configuration"
+     protocol : HttpScheme = ANY
+     "The path of the http configuration"
+     path : String
+ }
+
+ input HttpConfigurationMappingInstructionInput{
+     action: EntityMutationAction!
+     default: Boolean
+     failOnNew: Boolean
+     failOnExisting: Boolean
+     nodef: Boolean
+     "one or more name-value pairs to identify a HttpConfiguration entity uniquely"
+     source: HttpConfigurationRefInput
+ }
+
+ input HttpConfigurationRefInput {
+     "The host of the http configuration"
+     host: String!
+     "The port of the http configuration"
+     port: Int = 0
+     "The protocol of the http configuration"
+     protocol: HttpScheme = ANY
+     "The path of the http configuration"
+     path: String
+ }
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all fips configurations"
+    fips : [Fip!]! @deprecated(reason: "Use 'federatedIdps' instead.")
+    "Get all fip users"
+    fipUsers : [FipUser!]! @deprecated(reason: "Use 'federatedUsers' instead.")
+    "Get all fip groups"
+    fipGroups : [FipGroup!]! @deprecated(reason: "Use 'federatedGroups' instead.")
+    "Get fip configuration by name"
+    fipByName(name: String!) : Fip @deprecated(reason: "Use 'federatedIdpByName' instead.")
+    "Get fip user by name"
+    fipUserByName(providerName: String!, name: String!) : FipUser @deprecated(reason: "Use 'federatedUserByName' instead.")
+    "Get fip group by name"
+    fipGroupByName(providerName: String!, name: String!) : FipGroup @deprecated(reason: "Use 'federatedGroupByName' instead.")
+    searchFip(filter: IdpFilter!) : FipSearchResult! @deprecated(reason: "Use 'searchFederatedIdp' instead.")
+    "Get internal users and groups"
+    searchInternal(filter: IdpFilter!) : InternalSearchResult! @deprecated(reason: "Use 'searchInternalIdp' instead.")
+    "Get all ldap configurations"
+    ldaps : [Ldap!]! @deprecated(reason: "Use 'ldapIdps' instead.")
+    "Get ldap configuration by name"
+    ldapByName(name: String!) : Ldap @deprecated(reason: "Use 'ldapIdpByName' instead.")
+}
+
+extend type Mutation {
+    "Creates or updates one or more fips"
+    setFips(input: [FipInput!]!) : FipsPayload @deprecated(reason: "Use 'setFederatedIdps' instead.")
+    "Creates or updates one or more ldaps"
+    setLdaps(input: [LdapInput!]!) : LdapsPayload @deprecated(reason: "Use 'setLdapIdps' instead.")
+    "Deletes one or more existing fips"
+    deleteFips(names: [String!]!) : FipsPayload @deprecated(reason: "Use 'deleteFederatedIdps' instead.")
+    "Deletes one or more existing ldaps"
+    deleteLdaps(names: [String!]!) : LdapsPayload @deprecated(reason: "Use 'deleteLdapIdps' instead.")
+
+    """
+    Creates or updates one or more fip users.
+    NOTE: Existing user will be found by either login or subjectDn or name.
+    """
+    setFipUsers(input: [FipUserInput!]!) : FipUsersPayload @deprecated(reason: "Use 'setFederatedUsers' instead.")
+    "Creates or updates one or more fip groups"
+    setFipGroups(input: [FipGroupInput!]!) : FipGroupsPayload @deprecated(reason: "Use 'setFederatedGroups' instead.")
+    """
+    Deletes one or more existing fip users.
+    NOTE: Here, name can be either login or subjectDn or name.
+    """
+    deleteFipUsers(providerName: String!, names: [String!]!) : FipUsersPayload @deprecated(reason: "Use 'deleteFederatedUsers' instead.")
+    "Deletes one or more existing fip groups"
+    deleteFipGroups(providerName: String!, names: [String!]!) : FipGroupsPayload @deprecated(reason: "Use 'deleteFederatedGroups' instead.")
+}
+
+type FipSearchResult {
+    fipUsers : [FipUser!]!
+    fipGroups : [FipGroup!]!
+}
+
+input FipUserInput {
+    name : String!
+    "If provided, will try to honour at creation time"
+    goid : ID
+    " The name of the FiP this user is defined as part of "
+    providerName : String!
+    "The list of fip group details (names) that this user is member of. If you pass empty array, will reset memberships. If absent, does not affect memberships for current user."
+    memberOf : [MembershipInput!]
+    login : String
+    subjectDn : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    firstName : String
+    lastName : String
+    email : String
+    checksum : String
+}
+
+input FipGroupInput {
+    name : String!
+    "If provided, will try to honour at creation time"
+    goid : ID
+    " The name of the FiP this group is defined in "
+    providerName : String!
+    description : String
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"""
+A group defined in a federated identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,providerName,checksum
+> @l7-excluded-fields members
+> @l7-deprecated Use 'FederatedGroup' instead.
+"""
+type FipGroup {
+    goid : ID!
+    name : String!
+    " The name of the FiP this group is defined in "
+    providerName : String!
+    "A checksum of the name, description and member names properties of the group"
+    checksum : String!
+
+    description : String
+    " Fip users that member of this group "
+    members : [FipUser!]!
+}
+# Note FIP also has concept of virtual group with name, description, subjectDnPattern, emailPattern, isRegex
+
+"""
+A user defined in a federated identity provider..
+> @l7-entity
+> @l7-identity-fields login,name,providerName
+> @l7-summary-fields goid,name,login,providerName,checksum
+> @l7-excluded-fields memberOf.*
+> @l7-included-fields memberOf.providerName,memberOf.name
+> @l7-deprecated Use 'FederatedUser' instead.
+"""
+type FipUser {
+    goid : ID!
+    name : String!
+    login : String
+    " The name of the FiP this user is defined as part of "
+    providerName : String!
+    checksum : String!
+
+    subjectDn : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    firstName : String
+    lastName : String
+    email : String
+    " The list of Fip groups this user belongs to "
+    memberOf : [FipGroup!]!
+}
+
+"""
+A federated identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields certificateReferences.*
+> @l7-included-fields certificateReferences.name,certificateReferences.subjectDn,certificateReferences.thumbprintSha1
+> @l7-deprecated Use 'FederatedIdp' instead.
+"""
+type Fip {
+    goid : ID!
+    name : String!
+    checksum : String!
+
+    enableCredentialTypeSaml : Boolean!
+    enableCredentialTypeX509 : Boolean!
+    certificateValidation: CertificateValidationType
+    " The certificates in the trusted certificate table that establish the trust for this FIP "
+    certificateReferences : [Certificate!]!
+}
+
+input FipInput {
+    name : String!
+    "Will try to match goid if provided"
+    goid : ID
+    enableCredentialTypeSaml : Boolean!
+    enableCredentialTypeX509 : Boolean!
+    certificateValidation: CertificateValidationType
+    " The certificates in the trusted certificate table that establish the trust for this FIP "
+    certificateReferences : [FipCertInput!]!
+    "The optional checksum is ignored during the mutation but can be used to compare bundle content"
+    checksum : String
+}
+
+input LdapInput {
+    name : String!
+    "Will try to match goid if provided"
+    goid : ID
+    ldapUrls : [String!]!
+    "Whether or not the gateway presents a client cert when connecting at those ldap urls (only relevant when ldaps url)"
+    ldapsClientAuthEnabled : Boolean!
+    "The ID of the gateway keystore where the key is located"
+    ldapsClientKeystoreId: ID
+    "The alias of the key in the gateway keystore that is used when doing ldaps client cert authentication"
+    ldapsClientKeyAlias : String
+    searchBase : String!
+    writable : Boolean!
+    bindDn : String!
+    bindPassword : String!
+    userMappings : [UserMappingInput!]!
+    groupMappings : [GroupMappingInput!]!
+    "The optional checksum is ignored during the mutation but can be used to compare bundle content"
+    checksum : String
+}
+
+input FipCertInput {
+    "The thumbprint of the cert to use as trust for a federated identity provider"
+    thumbprintSha1 : String!
+
+    "The internal entity unique identifier. (Note that, this field has no effect on the mutation)"
+    goid: ID
+    "The name of the trusted certificate. (Note that, this field has no effect on the mutation)"
+    name: String
+    "The base 64 encoded string of the certificate. (Note that, this field has no effect on the mutation)"
+    certBase64: String
+    "Whether to perform hostname verification with this certificate. (Note that, this field has no effect on the mutation)"
+    verifyHostname: Boolean
+    "Whether this certificate is a trust anchor. (Note that, this field has no effect on the mutation)"
+    trustAnchor: Boolean
+    "What the certificate is trusted for. (Note that, this field has no effect on the mutation)"
+    trustedFor: [TrustedForType!]
+    "The revocation check policy type. (Note that, this field has no effect on the mutation)"
+    revocationCheckPolicyType : PolicyUsageType
+    "The name of revocation policy. (Note that, this field has no effect on the mutation)"
+    revocationCheckPolicyName : String
+    "The Subject DN of this certificate. (Note that, this field has no effect on the mutation)"
+    subjectDn : String
+    "The start date of the validity period. (Note that, this field has no effect on the mutation)"
+    notBefore : String
+    "the end date of the validity period. (Note that, this field has no effect on the mutation)"
+    notAfter : String
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type FipsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    fips: [Fip]!
+}
+
+type LdapsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    ldaps: [Ldap]!
+}
+
+type FipUsersPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    fipUsers : [FipUser]!
+}
+
+type FipGroupsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    fipGroups : [FipGroup]!
+}
+
+"""
+LdapIdp config itself is provided. Graphman wont get to
+underlying users and groups in the ldap since they are not
+part of the gateway configuration itself. When l7 policies
+refer to these ldap users and groups, thee references are
+interpreted by the ldap directory itself.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'LdapIdp' instead.
+"""
+type Ldap {
+    goid : ID!
+    name : String!
+    checksum : String!
+
+    ldapUrls : [String!]!
+    "Whether or not the gateway presents a client cert when connecting at those ldap urls (only relevant when ldaps url)"
+    ldapsClientAuthEnabled : Boolean!
+    "The ID of the gateway keystore where the key is located"
+    ldapsClientKeystoreId: ID
+    "The alias of the key in the gateway keystore that is used when doing ldaps client cert authentication"
+    ldapsClientKeyAlias : String
+    searchBase : String!
+    writable : Boolean!
+    bindDn : String!
+    bindPassword : String!
+    userMappings : [UserMapping!]!
+    groupMappings : [GroupMapping!]!
+#   consider these advanced ldap configuration:
+#   userCertificateUseType : UserCertificateUseType!
+#   ntlm stuff, 8 settings and additional arbitrary props
+#   6 additional user cert settings
+}
+
+# enum UserCertificateUseType {
+#    NONE
+#    INDEX
+#    INDEX_CUSTOM
+#    SEARCH
+# }
+
+type GroupMapping {
+    objClass : String!
+    nameAttrName : String!
+    memberAttrName : String!
+    memberStrategy : MemberStrategy!
+}
+
+input GroupMappingInput {
+    objClass : String!
+    nameAttrName : String!
+    memberAttrName : String!
+    memberStrategy : MemberStrategyInput!
+}
+
+type MemberStrategy {
+    "Possible values are 0 for MEMBERS_ARE_DN, 1 MEMBERS_ARE_LOGIN, 2 MEMBERS_ARE_NVPAIR, 3 MEMBERS_BY_OU"
+    val : Int!
+}
+
+input MemberStrategyInput {
+    "Possible values are 0 for MEMBERS_ARE_DN, 1 MEMBERS_ARE_LOGIN, 2 MEMBERS_ARE_NVPAIR, 3 MEMBERS_BY_OU"
+    val : Int!
+}
+
+type UserMapping {
+    objClass : String!
+    nameAttrName : String!
+    loginAttrName : String!
+    passwdAttrName : String
+    firstNameAttrName : String
+    lastNameAttrName : String
+    emailNameAttrName : String
+    kerberosAttrName : String
+    kerberosEnterpriseAttrName : String
+	userCertAttrName : String
+    passwdType : PasswdStrategy
+}
+
+input UserMappingInput {
+    objClass : String!
+    nameAttrName : String!
+    loginAttrName : String!
+    passwdAttrName : String
+    firstNameAttrName : String
+    lastNameAttrName : String
+    emailNameAttrName : String
+    kerberosAttrName : String
+    kerberosEnterpriseAttrName : String
+	userCertAttrName : String
+    passwdType : PasswdStrategyInput
+}
+
+type PasswdStrategy {
+    "Possible values are 0 for CLEAR, 1 for HASHED"
+    val : Int!
+}
+
+input PasswdStrategyInput {
+    "Possible values are 0 for CLEAR, 1 for HASHED"
+    val : Int!
+}
+
+input FipGroupMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a FipGroup entity uniquely"
+    source: FipGroupRefInput
+}
+
+input FipGroupRefInput {
+    name: String!
+    " The name of the FiP this group is defined in "
+    providerName: String!
+}
+
+input FipUserMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a FipUser entity uniquely"
+    source: FipUserRefInput
+}
+
+input FipUserRefInput {
+    login: String
+    "The Subject DN of this certificate. (Note that, this field has no effect on the mutation)"
+    subjectDn: String
+    name: String!
+    " The name of the FiP this user is defined as part of "
+    providerName: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get internal IDPs."
+    internalIdps: [InternalIdp!]!
+    "Get all internal users"
+    internalUsers : [InternalUser!]!
+    "Get all internal groups"
+    internalGroups : [InternalGroup!]!
+    "Get internal user by login"
+    internalUserByLogin(login: String!) : InternalUser
+    "Get internal group by name"
+    internalGroupByName(name: String!) : InternalGroup
+    "Get internal users and groups"
+    searchInternalIdp(filter: IdpFilter!) : InternalSearchResult!
+
+    "Get all federated IDP configurations"
+    federatedIdps : [FederatedIdp!]!
+    "Get all federated users"
+    federatedUsers : [FederatedUser!]!
+    "Get all federated groups"
+    federatedGroups : [FederatedGroup!]!
+    "Get federated IDP configuration by goid"
+    federatedIdpByGoid(goid: ID!) : FederatedIdp
+    "Get federated IDP configuration by name"
+    federatedIdpByName(name: String!) : FederatedIdp
+    "Get federated user by name"
+    federatedUserByName(providerName: String!, name: String!) : FederatedUser
+    "Get federated group by name"
+    federatedGroupByName(providerName: String!, name: String!) : FederatedGroup
+    "Get federated users and groups"
+    searchFederatedIdp(filter: IdpFilter!) : FederatedSearchResult!
+
+    "Get all simple simple ldap configurations"
+    simpleLdapIdps : [SimpleLdapIdp!]!
+    "Get simple ldap configuration by goid"
+    simpleLdapIdpByGoid(goid: ID!) : SimpleLdapIdp
+    "Get simple ldap configuration by name"
+    simpleLdapIdpByName(name: String!) : SimpleLdapIdp
+    "Get all policy backed ldap configurations"
+    policyBackedIdps : [PolicyBackedIdp!]!
+    "Get policy backed ldap configuration by goid"
+    policyBackedIdpByGoid(goid: ID!) : PolicyBackedIdp
+    "Get policy backed ldap configuration by name"
+    policyBackedIdpByName(name: String!) : PolicyBackedIdp
+    "Get all ldap configurations"
+    ldapIdps : [LdapIdp!]!
+    "Get ldap configuration by goid"
+    ldapIdpByGoid(goid: ID!) : LdapIdp
+    "Get ldap configuration by name"
+    ldapIdpByName(name: String!) : LdapIdp
+}
+
+extend type Mutation {
+    "Creates or updates one ore more internal IDP configurations"
+    setInternalIdps(input: [InternalIdpInput!]!): InternalIdpsPayload
+    "Creates or updates one or more internal users"
+    setInternalUsers(input: [InternalUserInput!]!) : InternalUsersPayload
+    "Creates or updates one or more internal groups"
+    setInternalGroups(input: [InternalGroupInput!]!) : InternalGroupsPayload
+    "Deletes one or more existing internal users"
+    deleteInternalUsers(logins: [String!]!) : InternalUsersPayload
+    "Deletes one or more existing internal groups"
+    deleteInternalGroups(names: [String!]!) : InternalGroupsPayload
+
+    "Creates or updates one or more fips"
+    setFederatedIdps(input: [FederatedIdpInput!]!) : FederatedIdpsPayload
+    "Deletes one or more existing fips"
+    deleteFederatedIdps(names: [String!]!) : FederatedIdpsPayload
+    """
+    Creates or updates one or more fip users.
+    NOTE: Existing user will be found by either login or subjectDn or name.
+    """
+    setFederatedUsers(input: [FederatedUserInput!]!) : FederatedUsersPayload
+    "Creates or updates one or more fip groups"
+    setFederatedGroups(input: [FederatedGroupInput!]!) : FederatedGroupsPayload
+    """
+    Deletes one or more existing fip users.
+    NOTE: Here, name can be either login or subjectDn or name.
+    """
+    deleteFederatedUsers(providerName: String!, names: [String!]!) : FederatedUsersPayload
+    "Deletes one or more existing fip groups"
+    deleteFederatedGroups(providerName: String!, names: [String!]!) : FederatedGroupsPayload
+
+    "Creates or updates one or more simple ldaps"
+    setSimpleLdapIdps(input: [SimpleLdapIdpInput!]!) : SimpleLdapIdpsPayload
+    "Deletes one or more existing simple ldaps"
+    deleteSimpleLdapIdps(names: [String!]!) : SimpleLdapIdpsPayload
+    "Creates or updates one or more policy backed ldaps"
+    setPolicyBackedIdps(input: [PolicyBackedIdpInput!]!) : PolicyBackedIdpsPayload
+    "Deletes one or more existing policy backed ldaps"
+    deletePolicyBackedIdps(names: [String!]!) : PolicyBackedIdpsPayload
+    "Creates or updates one or more ldaps"
+    setLdapIdps(input: [LdapIdpInput!]!) : LdapIdpsPayload
+    "Deletes one or more existing ldaps"
+    deleteLdapIdps(names: [String!]!) : LdapIdpsPayload
+}
+
+enum IdpType {
+    INTERNAL
+    FEDERATED
+    LDAP
+    SIMPLE_LDAP
+    POLICY_BACKED
+}
+
+" Indicate how to search for group or user. Provide either a name pattern, a subject dn and or a goid. "
+input IdpFilter {
+    " The name of the FiP provider, or 'Internal' "
+    providerName : String!
+    "Finds users and groups whose name matches the specified pattern. May include wildcard such as * character"
+    namePattern : String
+    " SubjectDN of a FIP user "
+    subjectDn : String
+    " Get entity by goid "
+    goid : ID
+}
+
+type InternalSearchResult {
+    internalUsers : [InternalUser!]!
+    internalGroups : [InternalGroup!]!
+}
+
+"""
+An internal identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type InternalIdp {
+    goid: ID!
+    name: String!
+    checksum: String!
+    certValidation: CertValidationType!
+}
+
+"""
+A group of users defined in the internal identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields members
+"""
+type InternalGroup {
+    goid : ID!
+    name : String!
+    "A checksum of the name, description and member names properties of the group"
+    checksum : String!
+
+    description : String
+    " The list of internal users that are part of this group "
+    members : [InternalUser!]!
+}
+
+"""
+A user in the internal identity provider.
+> @l7-entity
+> @l7-identity-fields login
+> @l7-summary-fields goid,name,login,checksum
+> @l7-excluded-fields memberOf.*
+> @l7-included-fields memberOf.name
+"""
+type InternalUser {
+    goid : ID!
+    name : String
+    login : String!
+    checksum : String!
+
+    enabled : Boolean!
+    "The hashed password of the user if defined"
+    password : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    "SSH public key"
+    sshPublicKey : String
+    firstName : String
+    lastName : String
+    email : String
+
+    "Whether to replace existing group memberships or not"
+    replaceGroupMemberships: Boolean
+    "List of groups this is member of "
+    memberOf : [InternalGroup!]!
+
+    # possible future expansion expiration, accountExpiration
+}
+
+input InternalIdpInput {
+    goid: ID
+    name: String!
+    checksum: String
+    certValidation: CertValidationType = USE_DEFAULT
+}
+
+input InternalGroupInput {
+    name : String!
+    "If provided, will try to honour at creation time"
+    goid : ID
+    description : String
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input InternalUserInput {
+    name : String
+    "If provided, will try to honour at creation time"
+    goid : ID
+    "Whether to replace existing group memberships or not"
+    replaceGroupMemberships: Boolean = false
+    "The list of internal group details (names) that this user is member of. If you pass empty array, will reset memberships. If absent, does not affect memberships for current users."
+    memberOf : [MembershipInput!]
+    login : String!
+    "You can either pass in the hashed password which comes back in queries or the raw passwd directly"
+    password : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    "SSH public key"
+    sshPublicKey : String
+    firstName : String
+    lastName : String
+    email : String
+    "Is user enabled or not!"
+    enabled : Boolean = true
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input MembershipInput {
+    "The name of group to which the membership is defined"
+    name: String!
+    goid : ID
+    description : String
+    providerName : String
+    checksum : String
+}
+
+type InternalIdpsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    internalIdps: [InternalIdp]!
+}
+
+type InternalUsersPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    internalUsers: [InternalUser]!
+}
+
+type InternalGroupsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    internalGroups: [InternalGroup]!
+}
+
+"""
+A federated identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type FederatedIdp {
+    goid : ID!
+    name : String!
+    checksum : String!
+
+    supportsSAML : Boolean!
+    supportsX509 : Boolean!
+    certValidation: CertValidationType!
+    " The certificates in the trusted certificate table that establish the trust for this FIP "
+    trustedCerts : [TrustedCertRef!]
+}
+
+"""
+A group defined in a federated identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,providerName,checksum
+> @l7-excluded-fields members
+"""
+type FederatedGroup {
+    goid : ID!
+    name : String!
+    " The name of the FiP this group is defined in "
+    providerName : String!
+    "A checksum of the name, description and member names properties of the group"
+    checksum : String!
+
+    description : String
+    " Federated users that member of this group "
+    members : [FederatedUser!]!
+}
+
+# Note FIP also has concept of virtual group with name, description, subjectDnPattern, emailPattern, isRegex
+
+"""
+A user defined in a federated identity provider..
+> @l7-entity
+> @l7-identity-fields login,name,providerName
+> @l7-summary-fields goid,name,login,providerName,checksum
+> @l7-excluded-fields memberOf.*
+> @l7-included-fields memberOf.providerName,memberOf.name
+"""
+type FederatedUser {
+    goid : ID!
+    name : String!
+    login : String
+    " The name of the FiP this user is defined as part of "
+    providerName : String!
+    checksum : String!
+
+    subjectDn : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    firstName : String
+    lastName : String
+    email : String
+    "Whether to replace existing group memberships or not"
+    replaceGroupMemberships: Boolean
+    "The list of Federated groups this user belongs to "
+    memberOf : [FederatedGroup!]!
+}
+
+type FederatedSearchResult {
+    federatedUsers : [FederatedUser!]!
+    federatedGroups : [FederatedGroup!]!
+}
+
+type FederatedIdpsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    federatedIdps: [FederatedIdp]!
+}
+
+type FederatedUsersPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    federatedUsers : [FederatedUser]!
+}
+
+type FederatedGroupsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    federatedGroups : [FederatedGroup]!
+}
+
+input FederatedIdpInput {
+    name : String!
+    "Will try to match goid if provided"
+    goid : ID
+    supportsSAML : Boolean!
+    supportsX509 : Boolean!
+    certValidation: CertValidationType = USE_DEFAULT
+    " The certificates in the trusted certificate table that establish the trust for this FIP "
+    trustedCerts : [TrustedCertPartialInput!]
+    "The optional checksum is ignored during the mutation but can be used to compare bundle content"
+    checksum : String
+}
+
+input FederatedUserInput {
+    name : String!
+    "If provided, will try to honour at creation time"
+    goid : ID
+    " The name of the FiP this user is defined as part of "
+    providerName : String!
+    "Whether to replace existing group memberships or not"
+    replaceGroupMemberships: Boolean = false
+    "The list of fip group details (names) that this user is member of. If you pass empty array, will reset memberships. If absent, does not affect memberships for current user."
+    memberOf : [MembershipInput!]
+    login : String
+    subjectDn : String
+    "A client-side certificate associated with this user to use for pki type authentication"
+    certBase64 : String
+    firstName : String
+    lastName : String
+    email : String
+    checksum : String
+}
+
+input FederatedGroupInput {
+    name : String!
+    "If provided, will try to honour at creation time"
+    goid : ID
+    " The name of the FiP this group is defined in "
+    providerName : String!
+    description : String
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"""
+A simple LDAP based identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type SimpleLdapIdp {
+    "The internal entity unique identifier"
+    goid : ID!
+    "Name of the simple ldap identity provider"
+    name : String!
+    "A checksum of the properties"
+    checksum : String!
+    "simple ldap server urls"
+    serverUrls : [String!]!
+    "Whether to use client certificate authentication"
+    useSslClientAuth : Boolean
+    "Client key Alias"
+    sslClientKeyAlias : String
+    "Bind DN prefix"
+    bindDnPatternPrefix : String
+    "Bind DN suffix"
+    bindDnPatternSuffix : String
+    "Simple Ldap properties"
+    properties : [EntityProperty!]
+}
+
+input SimpleLdapIdpInput {
+    "The internal entity unique identifier"
+    goid : ID
+    "Name of the simple ldap identity provider"
+    name : String!
+    "A checksum of the properties"
+    checksum : String
+    "simple ldap server urls"
+    serverUrls : [String!]!
+    "Whether to use client certificate authentication"
+    useSslClientAuth : Boolean
+    "Client key Alias"
+    sslClientKeyAlias : String
+    "Bind DN prefix"
+    bindDnPatternPrefix : String
+    "Bind DN suffix"
+    bindDnPatternSuffix : String
+    "Simple Ldap properties"
+    properties : [EntityPropertyInput!]
+}
+
+type SimpleLdapIdpsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    simpleLdapIdps: [SimpleLdapIdp]!
+}
+
+"""
+A policy backed identity provider.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type PolicyBackedIdp {
+    "The internal entity unique identifier"
+    goid : ID!
+    "Name of the simple ldap identity provider"
+    name : String!
+    "A checksum of the properties"
+    checksum : String!
+    "Authentication Policy Name"
+    authPolicyName : String
+    "Default Role"
+    defaultRoleName : String
+    "Additional properties"
+    properties : [EntityProperty!]
+}
+
+input PolicyBackedIdpInput {
+    "The internal entity unique identifier"
+    goid : ID
+    "Name of the simple ldap identity provider"
+    name : String!
+    "A checksum of the properties"
+    checksum : String
+    "Authentication Policy Name"
+    authPolicyName : String!
+    "Default Role"
+    defaultRoleName : String
+    "Additional properties"
+    properties : [EntityPropertyInput!]
+}
+
+type PolicyBackedIdpsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    policyBackedIdps: [PolicyBackedIdp]!
+}
+
+"""
+An LDAP based identity provider. Graphman wont get to
+underlying users and groups in the ldap since they are not
+part of the gateway configuration itself. When l7 policies
+refer to these ldap users and groups, thee references are
+interpreted by the ldap directory itself.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,ldapType,checksum
+> @l7-excluded-fields
+"""
+type LdapIdp {
+    goid : ID!
+    name : String!
+    "Ldap type"
+    ldapType : String!
+    checksum : String!
+    "Ldap server urls"
+    serverUrls : [String!]!
+    "Whether or not the gateway presents a client cert when connecting at those ldap urls (only relevant when ldaps url)"
+    useSslClientAuth : Boolean!
+    "The alias of the key in the gateway keystore that is used when doing ldaps client cert authentication"
+    sslClientKeyAlias : String
+    searchBase : String!
+    bindDn : String
+    bindPassword : String
+    writable : Boolean!
+    writeBase : String
+    specifiedAttributes: [String!]
+    userMappings : [UserMapping!]!
+    groupMappings : [GroupMapping!]!
+    ntlmProperties: [EntityProperty!]
+    "Additional properties"
+    properties : [EntityProperty!]
+}
+
+input LdapIdpInput {
+    goid : ID
+    name : String!
+    checksum : String
+    "Ldap type"
+    ldapType : String!
+    "Ldap server urls"
+    serverUrls : [String!]!
+    "Whether or not the gateway presents a client cert when connecting at those ldap urls (only relevant when ldaps url)"
+    useSslClientAuth : Boolean!
+    "The alias of the key in the gateway keystore that is used when doing ldaps client cert authentication"
+    sslClientKeyAlias : String
+    searchBase : String!
+    bindDn : String
+    bindPassword : String
+    writable : Boolean!
+    writeBase : String
+    specifiedAttributes: [String!]
+    userMappings : [UserMappingInput!]!
+    groupMappings : [GroupMappingInput!]!
+    ntlmProperties: [EntityPropertyInput!]
+    "Additional properties"
+    properties : [EntityPropertyInput!]
+}
+
+type LdapIdpsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    ldapIdps: [LdapIdp]!
+}
+
+input FederatedGroupMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    source: FederatedGroupRefInput
+}
+
+input FederatedGroupRefInput {
+    name: String!
+    " The name of the FiP this group is defined in "
+    providerName: String!
+}
+
+input FederatedUserMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    source: FederatedUserRefInput
+}
+
+input FederatedUserRefInput {
+    login: String
+    subjectDn: String
+    name: String!
+    " The name of the FiP this user is defined as part of "
+    providerName: String!
+}
+
+input InternalUserMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a InternalUser entity uniquely"
+    source: InternalUserRefInput
+}
+
+input InternalUserRefInput {
+    login: String!
+}
+#
+# Copyright (c) 2025. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all JDBC Connections"
+    jdbcConnections : [JdbcConnection!]!
+    "Get JDBC Connection by name"
+    jdbcConnectionByName(name: String!) : JdbcConnection
+    "Get JDBC Connection by goid"
+    jdbcConnectionByGoid(goid: ID!) : JdbcConnection
+}
+
+extend type Mutation {
+    """
+    Create a JDBC connection.
+    If a JDBC connection with the same name already exists, the creation will fail.
+    NOTE: This is experimental method, likely to be removed or revised in future.
+    """
+    createJdbcConnection(input : JdbcConnectionInput!): JdbcConnectionPayload!
+
+    """
+    Update an existing JDBC connection. Match is carried by refInput
+    """
+    updateJdbcConnection(refInput: JdbcConnectionRefInput!, input: JdbcConnectionPartialInput!): JdbcConnectionPayload!
+
+    """
+    Update an existing JDBC connection with new properties. Match is carried by refInput.
+    If a property is new, it will be added; if the value is new, it will be updated.
+    If only the property name is specified without a value, the property will be deleted.
+    Providing empty input properties will preserve the current properties and will not delete any existing ones.
+    """
+    updateJdbcConnectionProperties(refInput: JdbcConnectionRefInput!,  properties: [EntityPropertyPartialInput!]!): JdbcConnectionPayload!
+    """
+    Create or update JDBC connections.
+    If JDBC connection with the same name exist, the JDBC connection will be updated.
+    If no JDBC connection with the name exist, a new JDBC connection will be created.
+    """
+    setJdbcConnections(input: [JdbcConnectionInput!]!): JdbcConnectionsPayload!
+
+    """
+    Deletes JDBC connections.
+    """
+    deleteJdbcConnections(
+        "The names of the JDBC connection to delete"
+        names: [String!]!): JdbcConnectionsPayload
+}
+
+"""
+A JDBC connection.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type JdbcConnection {
+    "The goid for the JDBC Connection"
+    goid : ID!
+    "The JDBC Connection name"
+    name : String!
+    "The configuration checksum of this JDBC connection"
+    checksum: String!
+
+    "Whether this JDBC connection is enabled"
+    enabled: Boolean!
+    "The JDBC driver class name"
+    driverClass: String!
+    "The JDBC url"
+    jdbcUrl : String!
+    "The username"
+    username: String!
+    "The password or the secure password reference."
+    password: String!
+    "The minimum connection pool size"
+    minPoolSize: NonNegativeInt!
+    "The maximum connection pool size"
+    maxPoolSize: PositiveInt!
+    "The JDBC connection properties excluding 'user' and 'password'"
+    properties: [EntityProperty!]
+}
+
+input JdbcConnectionInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The JDBC Connection name"
+    name : String!
+    "The JDBC driver class name"
+    driverClass: String!
+    "The JDBC url"
+    jdbcUrl : String!
+    "Whether this JDBC connection is enabled"
+    enabled: Boolean! = true
+    "The username"
+    username: String!
+    "The password or the secured password reference"
+    password: String!
+    "The minimum connection pool size"
+    minPoolSize: NonNegativeInt! = 3
+    "The maximum connection pool size"
+    maxPoolSize: PositiveInt! = 15
+    "The JDBC connection properties excluding 'user' and 'password'"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input JdbcConnectionPartialInput {
+    "The JDBC Connection name"
+    name : String
+    "The JDBC driver class name"
+    driverClass: String
+    "The JDBC url"
+    jdbcUrl : String
+    "Whether this JDBC connection is enabled"
+    enabled: Boolean
+    "The username"
+    username: String
+    "The password or the secured password reference"
+    password: String
+    "The minimum connection pool size"
+    minPoolSize: NonNegativeInt
+    "The maximum connection pool size"
+    maxPoolSize: PositiveInt
+    "The JDBC connection properties excluding 'user' and 'password'.  When specified, will replace all existing properties"
+    properties: [EntityPropertyInput!]
+}
+
+"Reference input to identify the entity"
+input JdbcConnectionRefInput {
+    "The JDBC Connection name"
+    name: String!
+}
+
+type JdbcConnectionPayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    "The created JDBC connection."
+    jdbcConnection: JdbcConnection
+}
+
+type JdbcConnectionsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The created/updated JDBC connections."
+    jdbcConnections: [JdbcConnection]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all JMS Destinations"
+    jmsDestinations : [JmsDestination!]!
+    "Get JMS Destination by goid"
+    jmsDestinationByGoid(goid: ID!) : JmsDestination
+    """
+    Get JMS Destination by name.
+    Here, name can be fully qualified to select JMS destination uniquely.
+    Fully qualified name can be composed as: <JMS DIRECTION>.<JMS PROVIDER TYPE>.<NAME>
+    """
+    jmsDestinationByName(name: String!) : JmsDestination
+    """
+    Get JMS Destinations by name.
+    Here, name can be fully qualified to select JMS destinations accurately.
+    Fully qualified name can be composed as: <JMS DIRECTION>.<JMS PROVIDER TYPE>.<NAME>
+    """
+    jmsDestinationsByName(name: String!) : [JmsDestination!]!
+}
+
+extend type Mutation {
+    """
+    Create or update JMS destinations.
+    If JMS destination exists, the JMS destination will be updated.
+    If no JMS destination with given name, direction, providerType exist, a new JMS destination will be created.
+    """
+    setJmsDestinations(input: [JmsDestinationInput!]!): JmsDestinationsPayload!
+
+    """
+    Deletes JMS destinations. Use simple name or fully qualified name of JMS destinations to delete.
+    """
+    deleteJmsDestinations(
+        names: [String!]!): JmsDestinationsPayload
+}
+
+"""
+A JMS destination (queue or topic).
+> @l7-entity
+> @l7-identity-fields name,direction,providerType
+> @l7-summary-fields goid,name,direction,providerType,checksum
+> @l7-excluded-fields
+"""
+type JmsDestination {
+    "The goid for the JMS Destination"
+    goid : ID!
+    "The goid for the JMS Connection"
+    connectionGoid : ID!
+    "The JMS Destination name"
+    name : String!
+    "The JMS Destination direction (INBOUND or OUTBOUND)"
+    direction: String!
+    "The JMS provider type (GENERIC JMS or TIBCO EMS or WEBSPHERE MQ OVER LDAP or WEBLOGIC JMS"
+    providerType : String!
+    "The configuration checksum of this JMS destination"
+    checksum: String!
+
+    "Whether this JMS destination is enabled"
+    enabled: Boolean!
+    "Whether this JMS destination is template"
+    template: Boolean!
+    "The initial context factory class name"
+    initialContextFactoryClassname: String
+    "The connection factory name"
+    connectionFactoryName: String
+    "The JNDI URL"
+    jndiUrl: String
+    "The JNDI username"
+    jndiUsername: String
+    "The JNDI password"
+    jndiPassword: String
+    "The JNDI SSL details"
+    jndiSslDetails: JmsSslDetails!
+
+    "The destination type"
+    destinationType: String!
+    "The destination name"
+    destinationName: String
+    "The username for destination connection"
+    destinationUsername: String
+    "The password for destination connection"
+    destinationPassword: String
+    "The destination SSL details"
+    destinationSslDetails: JmsSslDetails!
+
+    "The remaining JMS Destination properties that include inbound options or outbound options or additional properties"
+    properties: [EntityProperty!]
+}
+
+"A JMS SSL Details"
+type JmsSslDetails {
+    "Whether SSL is enabled"
+    sslEnabled: Boolean!
+    "Whether SSL is used for Authentication only"
+    sslForAuthenticationOnly: Boolean!
+    "Whether SSL Server Certificate is to be verified"
+    sslVerifyServerCertificate: Boolean!
+    "Whether SSL Server Hostname is to be verified"
+    sslVerifyServerHostname: Boolean!
+    "Private Key Alias for SSL Client Authentication"
+    sslClientKeyAlias: String
+}
+
+input JmsDestinationInput {
+    "The internal entity unique identifier"
+    goid: ID
+    connectionGoid: ID
+    "The JMS Destination name"
+    name : String!
+    "The JMS Destination direction (inbound or outbound)"
+    direction: String!
+    "The JMS provider type"
+    providerType : String!
+    "The initial context factory class name"
+    initialContextFactoryClassname: String
+    "The connection factory name"
+    connectionFactoryName: String
+    "The JNDI URL"
+    jndiUrl: String
+    "The JNDI username"
+    jndiUsername: String
+    "The JNDI password"
+    jndiPassword: String
+    "The JNDI SSL details"
+    jndiSslDetails: JmsSslDetailsInput
+    "The destination type"
+    destinationType: String!
+    "The destination name"
+    destinationName: String
+    "The username for destination connection"
+    destinationUsername: String
+    "The password for destination connection"
+    destinationPassword: String
+    "The destination SSL details"
+    destinationSslDetails: JmsSslDetailsInput
+    "Whether this JMS destination is template"
+    template: Boolean!
+    "Whether this JMS destination is enabled"
+    enabled: Boolean!
+    "The remaining JMS Destination properties that include inbound options or outbound options or additional properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input JmsSslDetailsInput {
+    "Whether SSL is enabled"
+    sslEnabled: Boolean!
+    "Whether SSL is used for Authentication only"
+    sslForAuthenticationOnly: Boolean!
+    "Whether SSL Server Certificate is to be verified"
+    sslVerifyServerCertificate: Boolean!
+    "Whether SSL Server Hostname is to be verified"
+    sslVerifyServerHostname: Boolean!
+    "Private Key Alias for SSL Client Authentication"
+    sslClientKeyAlias: String
+}
+
+type JmsDestinationsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The created/updated JMS destinations."
+    jmsDestinations: [JmsDestination]!
+}
+
+input JmsDestinationMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a JmsDestination entity uniquely"
+    source: JmsDestinationRefInput
+}
+
+input JmsDestinationRefInput {
+    "The JMS Destination name"
+    name: String!
+    "The JMS Destination direction (inbound or outbound)"
+    direction: String!
+    "The JMS provider type"
+    providerType: String!
+}
+extend type Query {
+    """
+    (Experimental)
+    Get the Kerberos configurations.
+    """
+    kerberosConfigs: [KerberosConfig!]!
+}
+
+extend type Mutation {
+    """
+    (Experimental)
+    Create/update the Kerberos configurations.
+    Automatically generates the Kerberos login config file, "login.config", and Kerberos config file, "krb5.conf" (unless the cluster-wide property kerberos.krb5Config.overwrite=false and it is set in the mutation).
+    """
+    setKerberosConfigs(input: [KerberosConfigInput!]!): KerberosConfigPayload
+
+    """
+    (Experimental)
+    Delete the Kerberos keytab. The config files "krb5.conf" and "login.config" are not deleted.
+    """
+    deleteKerberosConfigs(names: [String]): KerberosConfigPayload
+}
+
+"""
+A Kerberos configuration.
+> @l7-entity
+> @l7-identity-fields conf
+> @l7-summary-fields conf
+> @l7-excluded-fields
+"""
+type KerberosConfig {
+    """
+    The encrypted Kerberos keytab.
+    """
+    keytab: String
+
+    """
+    The Kerberos configuration, "krb5.conf".
+    """
+    conf: String
+}
+
+type KerberosConfigPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    kerberosConfigs: [KerberosConfig]!
+}
+
+input KerberosConfigInput {
+    """
+    The encrypted Kerberos keytab.
+    """
+    keytab: String
+
+    """
+    The Kerberos configuration, "krb5.conf" in its INI format.
+    """
+    conf: String
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Mutation {
+   "Generate Certificate Signing Request"
+    generateCSR(alias: String!, params: CSRGenerateParamsInput!) : KeyCSRPayload
+    "Sign CSR"
+    signCSR(alias: String!, params: CSRSignParamsInput!) : KeyCertChainPayload
+    "Replace Certificate Chain"
+    replaceCertChain(alias: String!, params: KeyCertChainParamsInput!) : ReplaceCertChainPayload
+}
+
+"""
+The certificate signing request parameters
+"""
+input CSRGenerateParamsInput {
+    "The CSR subject dn to use. It defaults to the key's subject dn if none is specified."
+    subjectDn : String
+    "The subject alternative names"
+    subjectAlternativeNames : [EntityPropertyInput!]
+    "The signature hash to use"
+    hashAlgorithm : HashAlgorithm
+    "The signing algorithm to use"
+    signatureAlgorithm: SignatureAlgorithm
+    "Expiry age in days"
+    expiryAge: PositiveInt
+    "Not before"
+    notBefore: Date
+}
+
+enum HashAlgorithm {
+    "SHA1 hash algorithm"
+    SHA1,
+    "SHA256 hash algorithm"
+    SHA256,
+    "SHA384 hash algorithm"
+    SHA384,
+    "SHA512 hash algorithm"
+    SHA512
+}
+enum SignatureAlgorithm {
+    "RSASSA-PSS signing Algorithm"
+    RSASSA_PSS
+}
+
+type KeyCSRPayload {
+    "Key CSR"
+    csr: KeyCSR
+
+}
+
+type KeyCSR {
+    "Key for which csr is generated"
+    issuedTo : String
+    "CSR data in pem format."
+    pem : String
+}
+
+type KeyCertChainPayload {
+     "Key Certificate chain"
+     chain : KeyCertChain
+}
+
+type KeyCertChain {
+     "Key for which cert chain is created"
+     issuedTo : String
+     "Signer Key"
+     issuedBy : String
+     "Signed Cert chain in pem format."
+     certChain : [String!]
+}
+
+input KeyCSRInput {
+    "CSR data in pem format."
+    pem : String!
+    "Key for which csr is generated"
+    issuedTo : String
+}
+
+input CSRSignParamsInput {
+    "The CSR subject dn to use. It defaults to the key's subject dn if none is specified."
+    subjectDn : String
+    "The signature hash to use"
+    hashAlgorithm : HashAlgorithm
+    "The signing algorithm to use"
+    signatureAlgorithm: SignatureAlgorithm
+    "Expiry age in days"
+    expiryAge: PositiveInt
+    "Not before"
+    notBefore: Date
+    "Key CSR"
+    csr: KeyCSRInput!
+}
+
+input KeyCertChainParamsInput {
+    "Certificate chain to be replaced"
+    certChain: [String!]!
+    "Replace All matching certificates flag"
+    replaceAllMatchingCerts: Boolean
+}
+
+type ReplaceCertChainPayload {
+    "List of updated key aliases"
+    affectedKeyAliases : [String!]
+}
+
+input KeyMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a Key entity uniquely"
+    source: KeyRefInput
+}
+
+input KeyRefInput {
+    "The alias of Keystore"
+    alias: String!
+    "The KeyStoreId"
+    keystoreId: String!
+}
+#
+# Copyright (c) 2025. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all listen ports"
+    listenPorts : [ListenPort!]!
+    "Get the listen port by goid"
+    listenPortByGoid(goid : ID!) : ListenPort
+    "Get the listen port by name"
+    listenPortByName(name : String!) : ListenPort
+    "Get the listen ports by protocol"
+    listenPortsByProtocol(protocol: String!) : [ListenPort!]!
+}
+
+extend type Mutation {
+    #Create or update existing listen ports.
+    #Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+    """
+    Create or update Listen Ports.
+    If Listen Port with the same name exist, the Listen Port will be updated.
+    If no Listen Port with the name exist, a new Listen Port will be created.
+    """
+    setListenPorts(input: [ListenPortInput!]!): ListenPortsPayload!
+
+    "Delete existing listen ports. Match is carried by name."
+    deleteListenPorts(names: [String!]!): ListenPortsPayload!
+
+    """
+    Update an existing ListenPort. Match is carried by refInput.
+    """
+    updateListenPort(refInput: ListenPortRefInput!, input: ListenPortPartialInput!): ListenPortPayload!
+
+    """
+    Update an existing ListenPort with new properties. Match is carried by refInput.
+    If a property is new, it will be added; if the value is new, it will be updated.
+    If only the property name is specified without a value, the property will be deleted.
+    Providing empty input properties will preserve the current properties and will not delete any existing ones.
+    """
+    updateListenPortProperties(refInput: ListenPortRefInput!, properties: [EntityPropertyPartialInput!]!): ListenPortPayload!
+}
+
+enum ListenPortFeature {
+    PUBLISHED_SERVICE_MESSAGE_INPUT
+    POLICY_MANAGER_ACCESS
+    ENTERPRISE_MANAGER_ACCESS
+    ADMINISTRATIVE_ACCESS
+    BROWSER_BASED_ADMINISTRATION
+    POLICY_DOWNLOAD_SERVICE
+    PING_SERVICE
+    WS_TRUST_SECURITY_TOKEN_SERVICE
+    CERTIFICATE_SIGNING_SERVICE
+    PASSWORD_CHANGING_SERVICE
+    WSDL_DOWNLOAD_SERVICE
+    SNMP_QUERY_SERVICE
+    BUILT_IN_SERVICES
+    NODE_CONTROL
+    INTER_NODE_COMMUNICATION
+}
+
+enum ListenPortClientAuth {
+    NONE
+    OPTIONAL
+    REQUIRED
+}
+
+type ListenPortTlsSettings {
+    "Specify whether the client must present a certificate to authenticate: NONE/OPTIONAL/REQUIRED"
+    clientAuthentication: ListenPortClientAuth!
+    "Keystore ID"
+    keystoreId: ID
+    "Key alias configured for listen port"
+    keyAlias: String
+    "TLS versions to be enabled for the listen port"
+    tlsVersions: [String!]!
+    "Cipher suites that will be enabled on the SSL listen port"
+    cipherSuites: [String!]
+    "Enforces cipher suites usage in the order of preference"
+    useCipherSuitesOrder: Boolean!
+}
+
+"""
+A listen port (Layer7 Gateway connector).
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,protocol,port,checksum
+> @l7-excluded-fields hardwiredService
+"""
+type ListenPort {
+    "The internal entity unique identifier"
+    goid : ID!
+    "The listen port configuration name"
+    name : String!
+    """
+    Protocol (scheme). Possible values are:
+        HTTP
+        HTTPS
+        HTTP2
+        HTTP2 (Secure)
+        FTP
+        FTPS
+        l7.raw.tcp
+        SSH2
+    """
+    protocol: String!
+    """
+    The ListenPort's port number
+    Note: If the listen port is using the SSH2 protocol, avoid using port 22, as it may conflict with the default SSH port 22 on Linux or Unix systems.
+    """
+    port : PositiveInt!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether this listen port configuration is enabled"
+    enabled : Boolean!
+    "The name of the published service hardwired to the listen port"
+    hardwiredServiceName: String
+    "Which Gateway services can be accessed through this listen port"
+    enabledFeatures: [ListenPortFeature!]!
+    "The listen port tls settings"
+    tlsSettings: ListenPortTlsSettings
+    "The listen port properties"
+    properties: [EntityProperty!]
+
+    "The published service hardwired to the listen port"
+    hardwiredService: HardwiredService
+}
+
+input ListenPortInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The listen port configuration name"
+    name: String!
+    "Whether this listen port configuration is enabled to listen for traffic on the specified port"
+    enabled: Boolean!
+    """
+    Protocol (scheme). Possible values are:
+    HTTP
+    HTTPS
+    HTTP2
+    HTTP2 (Secure)
+    FTP
+    FTPS
+    l7.raw.tcp
+    SSH2
+    """
+    protocol: String!
+    """
+    The ListenPort's port number
+    Note: If the listen port is using the SSH2 protocol, avoid using port 22, as it may conflict with the default SSH port 22 on Linux or Unix systems.
+    """
+    port : PositiveInt!
+    "The name of the published service hardwired to the listen port"
+    hardwiredServiceName: String
+    "Which Gateway services can be accessed through this listen port"
+    enabledFeatures: [ListenPortFeature!]!
+    "The listen port tls settings"
+    tlsSettings: ListenPortTlsSettingsInput
+    "The listen port properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"Reference input to identify the entity"
+input ListenPortRefInput {
+    "The listen port configuration name"
+    name: String!
+}
+
+input ListenPortPartialInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The listen port configuration name"
+    name: String
+    "Whether this listen port configuration is enabled to listen for traffic on the specified port"
+    enabled: Boolean
+    """
+    Protocol (scheme). Possible values are:
+    HTTP
+    HTTPS
+    HTTP2
+    HTTP2 (Secure)
+    FTP
+    FTPS
+    l7.raw.tcp
+    SSH2
+    """
+    protocol: String
+    """
+    The ListenPort's port number
+    Note: If the listen port is using the SSH2 protocol, avoid using port 22, as it may conflict with the default SSH port 22 on Linux or Unix systems.
+    """
+    port : PositiveInt
+    "The name of the published service hardwired to the listen port"
+    hardwiredServiceName: String
+    "Which Gateway services can be accessed through this listen port"
+    enabledFeatures: [ListenPortFeature!]
+    "The listen port tls settings"
+    tlsSettings: ListenPortTlsSettingsInput
+    "The listen port properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input ListenPortTlsSettingsInput {
+    "Specify whether the client must present a certificate to authenticate: NONE/OPTIONAL/REQUIRED"
+    clientAuthentication: ListenPortClientAuth!
+    "Keystore ID"
+    keystoreId: ID
+    "Key alias configured for listen port"
+    keyAlias: String
+    "TLS versions to be enabled for the listen port"
+    tlsVersions: [String!]!
+    "Cipher suites that will be enabled on the SSL listen port"
+    cipherSuites: [String!]
+    "Enforces cipher suites usage in the order of preference"
+    useCipherSuitesOrder: Boolean!
+}
+
+type ListenPortPayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    listenPort: ListenPort
+}
+
+type ListenPortsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    listenPorts: [ListenPort]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get All LogSinks"
+    logSinks: [LogSink!]!
+    "Get the LogSink by goid"
+    logSinkByGoid(goid : ID!): LogSink
+    "Get the LogSink with the given name"
+    logSinkByName(name : String!): LogSink
+}
+
+extend type Mutation {
+    """
+    Create or update Log Sinks.
+    If Log Sink with the same name exist, the Log Sink will be updated.
+    If no Log Sink with the name exist, a new Log Sink will be created.
+    """
+    setLogSinks(input: [LogSinkInput!]!): LogSinksPayload!
+
+    "Delete existing log sinks. Match is carried by name."
+    deleteLogSinks(names: [String!]!): LogSinksPayload!
+}
+
+"""
+A Log sink.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type LogSink {
+    "The internal entity unique identifier"
+    goid : ID!
+    "log sink unique name"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+    "description of log sink"
+    description: String
+    "defines whether its a file based log Or sysLog"
+    type: LogSinkType!
+    "Whether this log sink is enabled"
+    enabled: Boolean!
+    "defines the severity threshold of log Sink"
+    severity: LogSeverityThreshold!
+    "defines list of categories"
+    categories: [LogSinkCategory!]!
+    "defines syslog host list"
+    syslogHosts: [String!]
+    "defines list of Log sink filters"
+    filters: [LogSinkFilter!]
+    "defines list of log Sink properties"
+    properties: [EntityProperty!]!
+}
+
+input LogSinkInput {
+    "The internal entity unique identifier"
+    goid : ID
+    "log sink unique name"
+    name: String!
+    "description of log sink"
+    description: String
+    "defines whether its a file based log or sysLog"
+    type: LogSinkType!
+    "Whether this log sink is enabled"
+    enabled: Boolean!
+    "defines the severity threshold of log Sink"
+    severity: LogSeverityThreshold!
+    "defines list of categories"
+    categories: [LogSinkCategory!]!
+    "defines syslog host list"
+    syslogHosts: [String!]
+    "defines list of Log sink filters"
+    filters: [LogSinkFilterInput!]
+    "defines list of log Sink properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"Indicates severity threshold of the log sink"
+enum LogSeverityThreshold {
+    ALL,
+    FINEST,
+    FINER,
+    FINE,
+    CONFIG,
+    INFO,
+    WARNING,
+    SEVERE
+}
+
+"Indicates the type of sink . File Based Or SYSLOG based"
+enum LogSinkType {
+    FILE,
+    SYSLOG
+}
+
+"Indicates the Sink Category"
+enum LogSinkCategory{
+    LOG,
+    TRAFFIC,
+    AUDIT,
+    SSPC
+}
+"Indicate the long sink filter, consist of a type and list of values"
+type LogSinkFilter {
+    "defines the type of log sink"
+    type: String!
+    "defines the list of values"
+    values: [String!]!
+}
+
+"Indicate the long sink filter, consist of a type and list of values"
+input LogSinkFilterInput {
+    "defines the type of log sink"
+    type: String!
+    "defines the list of values"
+    values: [String!]!
+}
+
+type LogSinksPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    logSinks: [LogSink]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get Password Policy"
+    passwordPolicy : PasswordPolicy!
+    "Get Password Policies"
+    passwordPolicies : [PasswordPolicy!]!
+}
+
+"""
+An identity provider's password policy.
+> @l7-entity
+> @l7-identity-fields goid
+> @l7-summary-fields goid,checksum
+> @l7-excluded-fields
+"""
+type PasswordPolicy {
+    "The internal entity unique identifier"
+    goid : ID!
+    "The configuration checksum"
+    checksum : String!
+    "Force password change for new user and reset"
+    forcePasswordChangeNewUser : Boolean!
+    "To enable/disable no repeating characters"
+    noRepeatingCharacters : Boolean!
+    "Minimum Password Length - Enter the minimum number of characters ranging from 3 to 128 required for the password."
+    minPasswordLength : Int!
+    "Maximum Password Length - Enter the maximum number of characters ranging from 3 to 128 required for the password."
+    maxPasswordLength : Int!
+    "Set the number of uppercase letters that are required for the password. ranging from 1 to 128"
+    upperMinimum : Int!
+    "Set the number of lowercase letters that are required for the password. ranging from 1 to 128"
+    lowerMinimum : Int!
+    "Sets how many numbers (0-9) are required for the password. ranging from 1 to 128"
+    numberMinimum : Int!
+    "Sets how many symbol characters are required for the password. ranging from 1 to 128"
+    symbolMinimum : Int!
+    "Sets how many non numeric characters are required for the password. ranging from 1 to 128"
+    nonNumericMinimum : Int!
+    "Sets how many characters are required for the password. ranging from 1 to 128"
+    charDiffMinimum : Int!
+    "Enter the number of times, between 1 and 50, that a new password must be different from the current password"
+    repeatFrequency : Int!
+    "Days required for the password to be expired. ranging from 1 to 1825"
+    passwordExpiry : Int!
+    "Allow One Password Change Per 24 Hours"
+    allowableChangesPerDay : Boolean!
+}
+
+extend type Mutation {
+    "Set/Update the Password Policies"
+    setPasswordPolicies(input : [PasswordPolicyInput!]!) : PasswordPoliciesPayLoad!
+}
+
+type PasswordPoliciesPayLoad {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    passwordPolicies: [PasswordPolicy]!
+}
+
+input PasswordPolicyInput {
+    "The internal entity unique identifier"
+    goid : ID
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+    "Force password change for new user and reset"
+    forcePasswordChangeNewUser : Boolean!
+    "To enable/disable no repeating characters"
+    noRepeatingCharacters : Boolean!
+    "Minimum Password Length - Enter the minimum number of characters ranging from 3 to 128 required for the password."
+    minPasswordLength : Int!
+    "Maximum Password Length - Enter the maximum number of characters ranging from 3 to 128 required for the password."
+    maxPasswordLength : Int! = 32
+    "Set the number of uppercase letters that are required for the password. ranging from 1 to 128"
+    upperMinimum : Int! = 1
+    "Set the number of lowercase letters that are required for the password. ranging from 1 to 128"
+    lowerMinimum : Int! = 1
+    "Sets how many numbers (0-9) are required for the password. ranging from 1 to 128"
+    numberMinimum : Int! = 1
+    "Sets how many symbol characters are required for the password. ranging from 1 to 128"
+    symbolMinimum : Int! = 1
+    "Sets how many non numeric characters are required for the password. ranging from 1 to 128"
+    nonNumericMinimum : Int! = -1
+    "Sets how many characters are required for the password. ranging from 1 to 128"
+    charDiffMinimum : Int! = 4
+    "Enter the number of times, between 1 and 50, that a new password must be different from the current password"
+    repeatFrequency : Int! = 10
+    "Days required for the password to be expired. ranging from 1 to 1825"
+    passwordExpiry : Int! = 90
+    "Allow One Password Change Per 24 Hours"
+    allowableChangesPerDay : Boolean!
+}
+
+input PasswordPolicyMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a PasswordPolicy entity uniquely"
+    source: PasswordPolicyRefInput
+}
+
+input PasswordPolicyRefInput {
+    "The internal entity unique identifier"
+    goid: ID!
+}
+#
+# Copyright (c) 2025. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all policies"
+    policies : [L7Policy!]!
+
+    "Get policies inside a folder"
+    policiesByFolderPath(folderPath: String!) : [L7Policy!]!
+
+    "Get specified type policies"
+    policiesByType(policyType: L7PolicyType!, tag: String, subTag: String) : [L7Policy!]!
+
+    "Get specified type policies inside a folder"
+     policiesByFolderPathAndType(folderPath: String!, policyType: L7PolicyType!, tag: String, subTag: String) : [L7Policy!]!
+
+    "Get policy by goid"
+    policyByGoid(goid: ID!) : L7Policy
+
+    "Get policy by name"
+    policyByName(name: String!) : L7Policy
+
+    "Get policy by guid"
+    policyByGuid(guid: ID!) : L7Policy
+
+    "Get policy and it's revision by name and revision ordinal"
+    policyByNameAndRevision(name: String!, revision: Long!) : L7Policy
+}
+
+extend type Mutation {
+    "Create or update policies"
+    setPolicies(input: [L7PolicyInput!]!) : L7PoliciesPayload!
+
+    """"
+    Set active revision for the policies.
+    By default, it chooses the latest revision as active. If the latest revision available is already active, does nothing.
+    """
+    setPolicyRevisions(input: [L7PolicyPartialInput!]!) : L7PoliciesPayload!
+
+    "Delete policies"
+    deletePolicies(names: [String!]!) : L7PoliciesPayload!
+
+    "Update existing revision (comment and/or active) for the specified policy"
+    updatePolicyRevision(refInput: PolicyRefInput!, revision: Long!, activate: Boolean!, comment: String) : L7PolicyPayload!
+
+    "Update existing revision (comment and/or active) for the policies"
+    updatePoliciesRevision(input: [L7PolicyPartialInput!]!, activate: Boolean!, comment: String) : L7PoliciesPayload!
+}
+
+ """
+ A Layer7 gateway policy
+> @l7-entity policy|policies
+> @l7-identity-fields name,policyType
+> @l7-summary-fields goid,guid,name,policyType,tag,subTag,checksum
+> @l7-excluded-fields policyRevision,policyRevisions
+ """
+ type L7Policy {
+    "The goid for this policy"
+    goid : ID!
+    "The guid for this policy"
+    guid : ID!
+    "The name of the policy (policies are unique by name)"
+    name: String!
+    "The type of policy"
+    policyType: L7PolicyType!
+    "The policy tag"
+    tag: String
+    "The policy sub-tag"
+    subTag: String
+    "The configuration checksum"
+    checksum: String!
+
+    "The folder path to the policy"
+    folderPath: String!
+    soap: Boolean
+
+    "The actual policy and dependencies"
+    policy: Policy!
+    "The policy revision. It can be either the active revision or the specific one when queried explicitly."
+    policyRevision: PolicyRevision
+    policyRevisions: [PolicyRevision!]!
+ }
+
+  type L7PolicyPayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    policy: L7Policy
+  }
+
+  type L7PoliciesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    policies: [L7Policy]!
+  }
+
+ enum L7PolicyType {
+    FRAGMENT
+    PRE_ROUTING_FRAGMENT
+    SUCCESSFUL_ROUTING_FRAGMENT
+    FAILED_ROUTING_FRAGMENT
+    AUTHENTICATION_SUCCESS_FRAGMENT
+    AUTHENTICATION_FAILURE_FRAGMENT
+    AUTHORIZATION_SUCCESS_FRAGMENT
+    AUTHORIZATION_FAILURE_FRAGMENT
+    GLOBAL
+    INTERNAL
+    POLICY_BACKED_IDP
+    POLICY_BACKED_OPERATION
+    POLICY_BACKED_BACKGROUND_TASK
+    POLICY_BACKED_SERVICE_METRICS
+ }
+
+ """
+ Wrapper for the policy XML and the dependencies they include
+ > @l7-excluded-fields json,yaml,code,directDependencies,allDependencies
+ """
+ type Policy {
+    "The policy XML"
+    xml: String
+    "The policy JSON"
+    json: String
+    "The policy YAML"
+    yaml: String
+    "The policy code"
+    code: JSON
+    "Entities that are directly referred to inside the policy XML"
+    directDependencies: PolicyDependency
+    "Entities that are directly referred to inside the policy XML in addition to ones in policy dependencies. More than second level, this keep going as deep as needed until no dependencies are found"
+    allDependencies: PolicyDependency
+ }
+
+ """
+ Wrapper for the policy revision
+ > @l7-excluded-fields json,yaml,code
+ """
+ type PolicyRevision {
+    goid: ID!
+    ordinal: Long!
+    active: Boolean!
+    comment: String
+    author: String
+    time: DateTime!
+    "The policy XML"
+    xml: String
+    "The policy JSON"
+    json: String
+    "The policy YAML"
+    yaml: String
+    "The policy code"
+    code: JSON
+ }
+
+ """
+ Policy Dependency contains all dependencies that may be referred to from the policy XML this is associated with
+ """
+ type PolicyDependency {
+    "Active Connectors (SFTP, MQ Native, Kafka)"
+    activeConnectors: [ActiveConnector]
+    "Cassandra connections"
+    cassandraConnections: [CassandraConnection]
+    "Cluster properties"
+    clusterProperties : [ClusterProperty]
+    "Custom key values"
+    customKeyValues: [CustomKeyValue]
+    "DTDs in global resources"
+    dtds: [Dtd]
+    "Email Listeners"
+    emailListeners: [EmailListener]
+    "Encass Configs"
+    encassConfigs : [EncassConfig]
+
+    "Federated identity provider configurations"
+    fips : [Fip]
+    "Federated identity provider groups"
+    fipGroups : [FipGroup]
+    "Federated identity provider users"
+    fipUsers : [FipUser]
+    "Federated identity provider configurations"
+    federatedIdps : [FederatedIdp]
+    "Federated identity provider groups"
+    federatedGroups : [FederatedGroup]
+    "Federated identity provider users"
+    federatedUsers : [FederatedUser]
+    "Internal IDP providers"
+    internalIdps: [InternalIdp]
+    "Internal idp groups"
+    internalGroups : [InternalGroup]
+    "Internal idp users"
+    internalUsers : [InternalUser]
+
+    "JDBC connections"
+    jdbcConnections: [JdbcConnection]
+    "JMS destinations"
+    jmsDestinations: [JmsDestination]
+    "Private Keys"
+    keys : [Key]
+    "Ldap identity provider configurations"
+    ldaps : [Ldap]
+    "Ldap identity provider configurations"
+    ldapIdps : [LdapIdp]
+    "Listen Ports"
+    listenPorts: [ListenPort]
+    "Layer7 Policies"
+    policies: [L7Policy]
+    "Policy Fragments"
+    policyFragments : [PolicyFragment]
+    "Revocation Check Polices"
+    revocationCheckPolicies: [RevocationCheckPolicy]
+    "Schemas in global resources"
+    schemas: [Schema]
+    secrets : [Secret]
+    "Server module files (signed modular or custom assertions)"
+    serverModuleFiles: [ServerModuleFile]
+    "Siteminder Configurations"
+    smConfigs: [SMConfig]
+    "Trusted certificates"
+    trustedCerts : [Certificate]
+    "Simple Ldaps"
+    simpleLdapIdps : [SimpleLdapIdp]
+    "Policy Backed Idps"
+    policyBackedIdps : [PolicyBackedIdp]
+    "Generic Entities"
+    genericEntities : [GenericEntity]
+ }
+
+ input PolicyInput {
+   "The policy xml"
+   xml: String
+   "The policy JSON"
+   json: String
+   "The policy YAML"
+   yaml: String
+   "The policy code"
+   code: JSON
+ }
+
+ input L7PolicyInput {
+   "The internal entity unique identifier"
+   goid: ID
+   "The folder path where to create this policy.  If the path does not exist, it will be created"
+   folderPath: String!
+   "The name of the policy. Policies are unique by name."
+   name: String!
+   "The guid for this policy, if none provided, assigned at creation"
+   guid : ID
+   "The policy"
+   policy: PolicyInput!
+   policyRevision: PolicyRevisionInput
+   policyRevisions: [PolicyRevisionInput!]
+
+   soap: Boolean = false
+   policyType: L7PolicyType!
+   tag: String
+   subTag: String
+
+   "Ignored at creation time but can be used to compare bundle with gw state"
+   checksum : String
+ }
+
+  input L7PolicyPartialInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The folder path where to create this policy.  If the path does not exist, it will be created"
+    folderPath: String
+    "The name of the policy. Policies are unique by name."
+    name: String!
+    "The guid for this policy, if none provided, assigned at creation"
+    guid : ID
+    "The policy"
+    policy: PolicyInput
+    policyRevision: PolicyRevisionInput
+    policyRevisions: [PolicyRevisionInput!]
+
+    soap: Boolean = false
+    policyType: L7PolicyType!
+    tag: String
+    subTag: String
+
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+  }
+
+ input PolicyRevisionInput {
+    goid: ID
+    ordinal: Long!
+    active: Boolean
+    comment: String
+    author: String
+    time: DateTime
+    "The policy XML"
+    xml: String
+    "The policy JSON"
+    json: String
+    "The policy YAML"
+    yaml: String
+    "The policy code"
+    code: JSON
+ }
+
+input PolicyMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a Policy entity uniquely"
+    source: PolicyRefInput
+}
+
+input PolicyRefInput {
+    "The name of the policy. Policies are unique by name."
+    name: String!
+    policyType: L7PolicyType!
+    tag: String
+    subTag: String
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all policy fragments"
+    policyFragments : [PolicyFragment!]! @deprecated(reason: "Use 'policies' instead.")
+    "Get policy fragment by name"
+    policyFragmentByName(name: String!) : PolicyFragment @deprecated(reason: "Use 'policyByName' instead.")
+    "Get policy fragments inside a folder"
+    policyFragmentsByFolderPath(folderPath: String!) : [PolicyFragment!]! @deprecated(reason: "Use 'policiesByFolderPath' instead.")
+    "Get policy fragment by goid"
+    policyFragmentByGoid(goid: ID!) : PolicyFragment
+    "Get policy fragment by guid"
+    policyFragmentByGuid(guid: ID!) : PolicyFragment @deprecated(reason: "Use 'policyByGuid' instead.")
+    "Get all global policies"
+    globalPolicies : [GlobalPolicy!]! @deprecated(reason: "Use 'policies' instead.")
+    "Get global policy by tag"
+    globalPolicyByTag(tag: String!) : GlobalPolicy
+    "Get global policies inside a folder"
+    globalPoliciesByFolderPath(folderPath: String!) : [GlobalPolicy!]! @deprecated(reason: "Use 'policiesByFolderPath' instead.")
+}
+
+extend type Mutation {
+    "Create or update policy fragments"
+    setPolicyFragments(input: [PolicyFragmentInput!]!) : PolicyFragmentsPayload! @deprecated(reason: "Use 'setPolicies' instead.")
+    "Delete policy fragments"
+    deletePolicyFragments(names: [String!]!) : PolicyFragmentsPayload! @deprecated(reason: "Use 'deletePolicies' instead.")
+    "Create or update global policies"
+    setGlobalPolicies(input: [GlobalPolicyInput!]!) : GlobalPoliciesPayload! @deprecated(reason: "Use 'setPolicies' instead.")
+    "Delete global policies"
+    deleteGlobalPolicies(tags: [String!]!) : GlobalPoliciesPayload! @deprecated(reason: "Use 'deletePolicies' instead.")
+}
+
+"""
+A Global policy.
+> @l7-entity
+> @l7-identity-fields tag
+> @l7-summary-fields goid,guid,name,tag,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Policy' instead.
+"""
+type GlobalPolicy {
+    "The goid for this policy"
+    goid : ID!
+    "The guid for this policy"
+    guid : ID!
+    "The name of the policy (policies are unique by name)"
+    name: String!
+    """
+    Global policy tag. Possible values are :
+      message-completed
+      message-received
+      post-security
+      post-service
+      pre-security
+      pre-service
+    """
+    tag: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The folder path where this policy is located"
+    folderPath: String!
+    "The actual policy and dependencies"
+    policy: Policy!
+}
+
+ """
+ A policy fragment that can be included in another policy.
+ > @l7-entity
+ > @l7-identity-fields name
+ > @l7-summary-fields goid,guid,name,checksum
+ > @l7-excluded-fields
+ > @l7-deprecated Use 'L7Policy' instead.
+ """
+ type PolicyFragment {
+    "The goid for this policy"
+    goid : ID!
+    "The guid for this policy"
+    guid : ID!
+    "The name of the policy (policies are unique by name)"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The folder path to the policy"
+    folderPath: String!
+    soap: Boolean
+    "The actual policy and dependencies"
+    policy: Policy!
+ }
+
+ input PolicyFragmentInput {
+   "The internal entity unique identifier"
+   goid: ID
+   "The folder path where to create this policy.  If the path does not exist, it will be created"
+   folderPath: String!
+   "The name of the policy. Policies are unique by name."
+   name: String!
+   "The guid for this policy, if none provided, assigned at creation"
+   guid : ID
+   "The policy"
+   policy: PolicyInput!
+   soap: Boolean = false
+   "Ignored at creation time but can be used to compare bundle with gw state"
+   checksum : String
+ }
+
+input GlobalPolicyInput {
+    "The name of the policy. Policies are unique by name."
+    name: String!
+    "The folder path where to create this policy.  If the path does not exist, it will be created"
+    folderPath: String!
+    "The goid for this policy"
+    goid : ID
+    "The guid for this service, if none provided, assigned at creation"
+    guid : ID
+    """
+    Global policy tag. Possible values are :
+      message-completed
+      message-received
+      post-security
+      post-service
+      pre-security
+      pre-service
+    """
+    tag: String!
+    "The policy"
+    policy: PolicyInput!
+    soap: Boolean = false
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+ type PolicyFragmentsPayload implements EntityMutationsPayload {
+   status: [EntityMutationStatus!]!
+   detailedStatus: [EntityMutationDetailedStatus!]!
+   policyFragments: [PolicyFragment]!
+ }
+
+type GlobalPoliciesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    globalPolicies: [GlobalPolicy]!
+}
+
+input GlobalPolicyMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a GlobalPolicy entity uniquely"
+    source: GlobalPolicyRefInput
+}
+
+input GlobalPolicyRefInput {
+    """
+    Global policy tag. Possible values are :
+      message-completed
+      message-received
+      post-security
+      post-service
+      pre-security
+      pre-service
+    """
+    tag: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get Service Resolution Config"
+    serviceResolutionConfig : ServiceResolutionConfig!
+    "Get Service Resolution Configs"
+    serviceResolutionConfigs : [ServiceResolutionConfig!]!
+}
+
+input ServiceResolutionConfigInput {
+    "The internal entity unique identifier"
+    goid : ID
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+    "Only Services with a resolution path are accessible"
+    resolutionPathRequired : Boolean!
+    "Resolution paths are case sensitive"
+    resolutionPathCaseSensitive : Boolean!
+    "Allow resolution by L7-Original-URL header"
+    useL7OriginalUrl : Boolean!
+    "Allow resolution by Service GOID/OID in URLs"
+    useServiceGoid : Boolean!
+    "Use SOAP action"
+    useSoapAction : Boolean!
+    "Use SOAP body child namespace"
+    useSoapBodyChildNamespace : Boolean!
+}
+
+extend type Mutation {
+    "Update Service Resolution Configs"
+    setServiceResolutionConfigs(input : [ServiceResolutionConfigInput!]!) : ServiceResolutionConfigsPayLoad!
+}
+
+type ServiceResolutionConfigsPayLoad {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    serviceResolutionConfigs: [ServiceResolutionConfig]!
+}
+
+"""
+A Layer7 service resolution configuration.
+> @l7-entity
+> @l7-identity-fields goid
+> @l7-summary-fields goid,checksum
+> @l7-excluded-fields
+"""
+type ServiceResolutionConfig {
+    "The internal entity unique identifier"
+    goid : ID!
+    "The configuration checksum"
+    checksum : String!
+    "Only Services with a resolution path are accessible"
+    resolutionPathRequired : Boolean!
+    "Resolution paths are case sensitive"
+    resolutionPathCaseSensitive : Boolean!
+    "Allow resolution by L7-Original-URL header"
+    useL7OriginalUrl : Boolean!
+    "Allow resolution by Service GOID/OID in URLs"
+    useServiceGoid : Boolean!
+    "Use SOAP action"
+    useSoapAction : Boolean!
+    "Use SOAP body child namespace"
+    useSoapBodyChildNamespace : Boolean!
+}
+
+input ServiceResolutionConfigsMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a ServiceResolutionConfig entity uniquely"
+    source: ServiceResolutionConfigRefInput
+}
+
+input ServiceResolutionConfigRefInput {
+    "The internal entity unique identifier"
+    goid: ID!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all RevocationCheckPolicies"
+    revocationCheckPolicies: [RevocationCheckPolicy!]!
+    "Get the RevocationCheckPolicy by goid"
+    revocationCheckPolicyByGoid(goid : ID!) : RevocationCheckPolicy
+    "Get the RevocationCheckPolicy by name"
+    revocationCheckPolicyByName(name : String!) : RevocationCheckPolicy
+}
+
+extend type Mutation {
+    """
+    Create or update existing revocation check policies.
+    Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+    """
+    setRevocationCheckPolicies(input: [RevocationCheckPolicyInput!]!): RevocationCheckPoliciesPayload!
+
+    "Delete existing revocation policies. Match is carried by name."
+    deleteRevocationCheckPolicies(names: [String!]!): RevocationCheckPoliciesPayload!
+}
+
+enum CertRevocationCheckPropertyType {
+    "Type for checking against a CRL from a URL contained in an X.509 Certificate"
+    CRL_FROM_CERTIFICATE
+    "Type for checking against a CRL from a specified URL"
+    CRL_FROM_URL
+    "Type for OCSP check against a responder URL contained in an X.509 Certificate"
+    OCSP_FROM_CERTIFICATE
+    "Type for OCSP check against a specified responder URL"
+    OCSP_FROM_URL
+}
+
+enum OcspNonceUsage {
+    "To include nonce in OCSP requests"
+    INCLUDE_NONCE
+    "Do not include nonce in OCSP requests"
+    EXCLUDE_NONCE
+    "Let pkix.ocsp.useNonce cluster wide property decide"
+    USE_NONCE_CONDITIONALLY
+}
+
+type RevocationCheckPolicyItem {
+    "Type for Checking OCSP or CRL"
+    type: CertRevocationCheckPropertyType!
+    "If the CRL from URL or OCSP from URL option was selected, enter the URL"
+    url: String
+    "If user permitting the entity that issued the certificate"
+    allowIssuerSignature: Boolean!
+    "Whether to include a nonce in OCSP request"
+    nonceUsage: OcspNonceUsage
+    "The sha1 thumbprint of the certificate"
+    signerThumbprintSha1s: [String!]
+}
+
+"""
+A trusted certificate revocation check policy.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type RevocationCheckPolicy {
+    "The goid for this revocation check policy"
+    goid : ID!
+    "Name that describes the revocation checking policy"
+    name: String!
+    "The configuration checksum of this Revocation check policy"
+    checksum : String!
+    "Use as default revocation check policy"
+    defaultPolicy: Boolean!
+    "Succeed if revocation status is unknown"
+    defaultSuccess: Boolean!
+    "Continue processing if server is unavailable"
+    continueOnServerUnavailable: Boolean!
+    "Certificate revocation check properties"
+    revocationCheckPolicyItems: [RevocationCheckPolicyItem!]!
+}
+
+type RevocationCheckPoliciesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    revocationCheckPolicies: [RevocationCheckPolicy]!
+}
+
+input RevocationCheckPolicyItemInput {
+    "Type for Checking OCSP or CRL"
+    type: CertRevocationCheckPropertyType!
+    """
+    If the CRL from URL or OCSP from URL option was selected, enter the URL Otherwise provide regex.
+    CRL_FROM_CERTIFICATE &  OCSP_FROM_CERTIFICATE options uses URL Regex &
+    CRL_FROM_URL & OCSP_FROM_URL options uses URLs.
+    This is caller's responsibility to provide valid URL or Regex, Graphman won't validate it.
+    """
+    url: String!
+    "If user permitting the entity that issued the certificate"
+    allowIssuerSignature: Boolean!
+    "Whether to include a nonce in OCSP request, default is to set INCLUDE_NONCE"
+    nonceUsage: OcspNonceUsage = INCLUDE_NONCE
+    "The sha1 thumbprint of the certificate"
+    signerThumbprintSha1s: [String]
+}
+
+input RevocationCheckPolicyInput {
+    "The goid for this revocation check policy"
+    goid : ID
+    "Name that describes the revocation checking policy"
+    name: String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+    "Use as default revocation check policy"
+    defaultPolicy: Boolean!
+    "Succeed if revocation status is unknown"
+    defaultSuccess: Boolean!
+    "Continue processing if server is unavailable"
+    continueOnServerUnavailable: Boolean!
+    "Certificate revocation check properties"
+    revocationCheckPolicyItems: [RevocationCheckPolicyItemInput!]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all roles"
+    roles : [Role!]!
+    "Retrieves a role by goid"
+    roleByGoid(goid: ID!) : Role
+    "Retrieves a role by name"
+    roleByName(name: String!) : Role
+
+    "Get all users"
+    idpUsers(providerType: IdpType!, providerName: String!): [UserRef]
+    "Get user by login id"
+    idpUserByLogin(providerType: IdpType!, providerName: String!, login: String!): UserRef
+    "Get user by SubjectDn"
+    idpUserBySubjectDn(providerType: IdpType!, providerName: String!, subjectDn: String!): UserRef
+
+    "Get all groups"
+    idpGroups(providerType: IdpType!, providerName: String!): [GroupRef]
+    "Get group by name"
+    idpGroupByName(providerType: IdpType!, providerName: String!, name: String!): GroupRef
+    "Get group by subjectDn"
+    idpGroupBySubjectDn(providerType: IdpType!, providerName: String!, subjectDn: String!): GroupRef
+}
+
+extend type Mutation {
+    """
+    Update Roles with user/group assignees.
+    Note: Creating a role is unsupported.
+    """
+    setRoles(input: [RoleInput!]!): RolesPayload
+
+    """
+    Deletes roles. Only custom roles can be deleted.
+    """
+    deleteRoles(roles: [String!]!): RolesPayload
+
+    "Adds user to the role"
+    addUserToRole(role: String!, user: UserRefInput!): RolePayload
+
+    "Removes user from the role"
+    removeUserFromRole(role: String!, user: UserRefInput!): RolePayload
+
+    "Adds group to the role"
+    addGroupToRole(role: String!, group: GroupRefInput!): RolePayload
+
+    "Removes group from the role"
+    removeGroupFromRole(role: String!, group: GroupRefInput!): RolePayload
+
+    "Adds user to the group"
+    addUserToGroup(group: String!, user: UserRefInput!): GroupRefPayload
+
+    "Removes user to the group"
+    removeUserFromGroup(group: String!, user: UserRefInput!): GroupRefPayload
+}
+
+enum Tag {
+    ADMIN
+}
+
+enum RoleType {
+    SYSTEM,
+    CUSTOM
+}
+
+"""
+A Role Configuration.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type Role {
+    "The goid for the Role"
+    goid : ID!
+    "Name of a role"
+    name : String!
+    "The configuration checksum"
+    checksum: String
+
+    "Type of a role"
+    roleType: RoleType!
+    "Description of the role. This is optional"
+    description : String
+    "Tag: Either Admin or Null"
+    tag: Tag
+
+    "Whether to replace the existing assignees with the specified users/groups"
+    replaceAssignees: Boolean
+    "One or more users assigned to the role"
+    userAssignees: [UserRef!]
+    "One or more groups assigned to the role"
+    groupAssignees: [GroupRef!]
+}
+
+"Role configuration"
+input RoleInput {
+    "The goid for the Role"
+    goid : ID
+    "Name of a Role"
+    name : String!
+    "The configuration checksum"
+    checksum: String
+
+    "Type of a role"
+    roleType: RoleType!
+    "Description of the role. This is optional"
+    description : String
+    "Tag: Either Admin or Null"
+    tag: Tag
+    "Whether to replace the existing assignees with the specified users/groups"
+    replaceAssignees: Boolean = false
+    "One or more users assigned to the role"
+    userAssignees: [UserRefInput!] = []
+    "One or more groups assigned to the role"
+    groupAssignees: [GroupRefInput!] = []
+}
+
+type RolePayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    role: Role
+}
+
+type GroupRefPayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    group: GroupRef
+}
+
+type RolesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    roles: [Role]!
+}
+
+"IDP User Reference"
+type UserRef {
+    "The name of user"
+    name: String
+    "The login identity of user"
+    login: String
+    "The DN of user"
+    subjectDn: String
+    "The name of identity provider that the user belongs to"
+    providerName: String!
+    "The type of identity provider that the user belongs to"
+    providerType: IdpType!
+}
+
+"IDP Group Reference"
+type GroupRef {
+    "The name of group"
+    name: String
+    "The subject dn of group"
+    subjectDn: String
+    "The name of identity provider that the group belongs to"
+    providerName: String!
+    "The type of identity provider that the group belongs to"
+    providerType: IdpType!
+}
+
+"IDP User Reference input"
+input UserRefInput {
+    "The name of user"
+    name: String
+    "The login identity of user"
+    login: String
+    "The DN of user"
+    subjectDn: String
+    "The name of identity provider that the user belongs to"
+    providerName: String!
+    "The type of identity provider that the user belongs to"
+    providerType: IdpType!
+}
+
+"IDP Group Reference input"
+input GroupRefInput {
+    "The name of group"
+    name: String
+    "The subjectDn of group"
+    subjectDn: String
+    "The name of identity provider that the group belongs to"
+    providerName: String!
+    "The type of identity provider that the group belongs to"
+    providerType: IdpType!
+}
+#
+# Copyright (c) 2025. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+type Query {
+}
+
+type Mutation {
+    "Installs bundle of entities using set-based mutation operations"
+    installBundleEntities: BundleEntitiesPayload
+
+    "Deletes bundle of entities using set-based mutation operations"
+    deleteBundleEntities: BundleEntitiesPayload
+
+    "Validate entities mapping instruction"
+    initializeBundleContext(input: BundlePropertiesInput): BundleContextPayload
+}
+
+scalar NonEmptyString
+scalar AnyObject
+
+type BundleEntitiesPayload {
+    summary: Boolean
+    full: Boolean
+}
+
+type BundleContextPayload {
+    summary: Boolean
+    full: Boolean
+}
+
+type AnyProperty {
+    "The name of property"
+    name: String!
+    "The value of the property"
+    value: AnyObject
+}
+
+
+"An Entity Property"
+type EntityProperty {
+    "The name of property"
+    name: String!
+    "The value of the property"
+    value: String!
+}
+
+input EntityPropertyInput {
+    name: String!
+    value: String!
+}
+
+input EntityPropertyPartialInput {
+    name: String!
+    value: String
+}
+
+enum EntityMutationAction {
+    NEW_OR_UPDATE,
+    NEW_OR_EXISTING,
+    ALWAYS_CREATE_NEW,
+    IGNORE,
+    DELETE
+}
+
+enum EntityMutationStatus {
+    NONE
+    CREATED
+    UPDATED
+    DELETED
+    USED_EXISTING
+    IGNORED
+    ERROR
+}
+
+type EntityMutationDetailedStatus {
+    action: EntityMutationAction
+    status: EntityMutationStatus!
+    description: String
+
+    source: [AnyProperty!]
+    target: [AnyProperty!]
+}
+
+interface EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+}
+
+interface EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+}
+
+interface PublishedService {
+    "The name of the published service"
+    name: String!
+    "The resolution path for published service"
+    resolutionPath: String
+    "The folder path for published service"
+    folderPath: String!
+    "Which HTTP methods are permitted for incoming requests"
+    methodsAllowed: [HttpMethod!]!
+    "Whether published service is enabled"
+    enabled: Boolean!
+}
+
+union HardwiredService = L7Service
+
+"Service resource (document) details"
+type ServiceResource {
+    "The uniform resource identifier for the document."
+    uri: String!
+    "The content of the document"
+    content: String!
+}
+
+input ServiceResourceInput {
+    uri: String!
+    content: String!
+}
+
+"Support Http methods for Web API Service"
+enum HttpMethod {
+    DELETE
+    HEAD
+    GET
+    POST
+    PUT
+    OPTIONS
+    PATCH
+    OTHER
+}
+
+enum EntityFieldOption {
+    DEFAULT
+    NONE
+    CUSTOM
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+"An RFC-3339 compliant date time scalar that accepts string values like `1996-12-19T16:39:57-08:00`"
+scalar DateTime
+"An RFC-3339 compliant Full Date Scalar"
+scalar Date
+"An Integer that MUST be greater than or equal to zero"
+scalar NonNegativeInt
+
+"An Integer that MUST be greater than zero"
+scalar PositiveInt
+
+"A Long Integer"
+scalar Long
+
+"A JSON object"
+scalar JSON
+
+#"A File part information from the multi-part message"
+#"This scalar implementation is partial, hence commenting for now"
+#scalar FilePart
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Retrieves all scheduled tasks"
+    scheduledTasks: [ScheduledTask!]!
+    "Retrieves all background task policies"
+    backgroundTaskPolicies: [BackgroundTaskPolicy!]! @deprecated(reason: "Use 'policies' instead.")
+    "Retrieves a scheduled task by goid"
+    scheduledTaskByGoid(goid: ID!): ScheduledTask
+    "Retrieves a scheduled task by name"
+    scheduledTaskByName(name: String!): ScheduledTask
+    "Retrieves a background task policy by name"
+    backgroundTaskPolicyByName(name: String!): BackgroundTaskPolicy @deprecated(reason: "Use 'policyByName' instead.")
+    "Retrieves background task policies by folder path"
+    backgroundTaskPoliciesByFolderPath(folderPath: String!): [BackgroundTaskPolicy!]! @deprecated(reason: "Use 'policiesByFolderPath' instead.")
+}
+
+extend type Mutation {
+    "Creates or updates one or more scheduled tasks"
+    setScheduledTasks(input: [ScheduledTaskInput!]!): ScheduledTasksPayload!
+    "Creates or updates one or more background task policies"
+    setBackgroundTaskPolicies(input: [BackgroundTaskPolicyInput!]!): BackgroundTaskPoliciesPayload! @deprecated(reason: "Use 'setPolicies' instead.")
+    "Deletes one or more existing scheduled tasks"
+    deleteScheduledTasks(names: [String!]!) : ScheduledTasksPayload!
+    "Deletes an existing background task policy"
+    deleteBackgroundTaskPolicies(names: [String!]!) : BackgroundTaskPoliciesPayload! @deprecated(reason: "Use 'deletePolicies' instead.")
+}
+
+"Defines a current status of a given scheduled task"
+enum JobStatus {
+    SCHEDULED
+    COMPLETED
+    DISABLED
+}
+
+"Defines a scheduled task type"
+enum JobType {
+    ONE_TIME
+    RECURRING
+}
+
+"""
+A scheduled task.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type ScheduledTask {
+    "The internal entity unique identifier"
+    goid: ID!
+    "The name of the scheduled task"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The name of the policy for scheduled task"
+    policyName: String!
+    "Scheduled task type"
+    jobType: JobType!
+    "The cron job expression"
+    cronExpression: String
+    "Whether to execute on single node"
+    executeOnSingleNode: Boolean!
+    "Whether to execute the RECURRING task now?"
+    executeOnCreation: Boolean!
+    "Execution date of a ONE_TIME task"
+    executionDate: DateTime
+    "The scheduled task status"
+    status: JobStatus!
+    runAsUser: String
+    runAsUserProviderName: String
+}
+
+"""
+A background task policy that is associated with a scheduled task to be run.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,guid,name,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Policy' instead.
+"""
+type BackgroundTaskPolicy {
+    "The internal entity unique identifier"
+    goid: ID!
+    "The internal entity unique identifier"
+    guid: ID!
+    "The name of the background task policy"
+    name: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "The folder path of the background task policy"
+    folderPath: String!
+    soap: Boolean
+    "The background task policy"
+    policy: Policy!
+}
+
+input ScheduledTaskInput {
+  "The internal entity unique identifier"
+  goid: ID
+  "The name of the scheduled task"
+  name: String!
+  "The name of the policy for scheduled task"
+  policyName: String!
+  jobType: JobType!
+  "The cron job expression"
+  cronExpression: String
+  "Whether to execute on single node"
+  executeOnSingleNode: Boolean!
+  "Whether to execute the RECURRING task now?"
+  executeOnCreation: Boolean!
+  "Specify a future execution date for a ONE_TIME task"
+  executionDate: DateTime
+  "The scheduled task status"
+  status: JobStatus = SCHEDULED
+  runAsUser: String
+  runAsUserProviderName: String
+  "The configuration checksum"
+  checksum: String
+}
+
+input BackgroundTaskPolicyInput {
+  "The internal entity unique identifier"
+  goid: ID
+  "The name of the background task policy"
+  name: String!
+  "The internal entity unique identifier"
+  guid: ID
+  "The folder path background task policy"
+  folderPath: String!
+  "The background task policy"
+  policy: PolicyInput!
+  soap: Boolean = false
+  "The configuration checksum"
+  checksum: String
+}
+
+type ScheduledTasksPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    scheduledTasks: [ScheduledTask]!
+}
+
+type BackgroundTaskPoliciesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    backgroundTaskPolicies: [BackgroundTaskPolicy]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Retrieves all secrets"
+    secrets : [Secret!]!
+    "Retrieves all keys"
+    keys : [Key!]!
+    "Retrieves a secret by goid"
+    secretByGoid(goid: ID!) : Secret
+    "Retrieves a secret by name"
+    secretByName(name: String!) : Secret
+    "Retrieves a key by goid"
+    keyByGoid(goid: ID!) : Key
+    "Retrieves a key by name"
+    keyByAlias(alias: String!) : Key
+}
+
+extend type Mutation {
+    "Creates or updates one or more secrets"
+    setSecrets(input: [SecretInput!]!) : SecretsPayload
+    "Creates or updates one or more keys"
+    setKeys(input: [KeyInput!]!) : KeysPayload
+    "Deletes one or more existing secrets"
+    deleteSecrets(names: [String!]!) : SecretsPayload
+    "Deletes one or more existing keys"
+    deleteKeys(aliases: [String!]!) : KeysPayload
+}
+
+"""
+A secret (password or private key) which is used by gateway policies and other configurations.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type Secret {
+    "The goid for the Secret"
+    goid: ID!
+    """
+    Identify the password being stored. You may use letters, numbers, dashes, and underscores.
+    Names that contain spaces or periods are valid, but the resulting stored password cannot be referenced via context variable.
+    Names that contain @ or $ are valid, but the resulting stored password cannot be referenced via context variable.
+    """
+    name : String!
+    "The configuration checksum"
+    checksum : String!
+
+    "Description of the password. This is optional"
+    description : String
+    """
+    Base64 encrypted secret. The encryption is compatible with openssl secret encryption
+    using cypher AES/CBC/PKCS5Padding. You can decrypt these values at command line
+    using this command:
+    > echo <secret> | openssl enc -d -aes-256-cbc -md sha256 -pass pass:<passphrase> -a
+    """
+    secret : String!
+    "Password or PEM Private Key"
+    secretType : SecretType!
+    "Whether this secret can be referred to in policy via context variable ${secpass... "
+    variableReferencable : Boolean!
+}
+
+enum SecretType {
+    "Stored password for example used in the jdbc connection"
+    PASSWORD
+    "Secure pem key for example used in the route via ssh assertion"
+    PEM_PRIVATE_KEY
+}
+
+enum KeyUsageType {
+    "Represents a key marked as the default SSL key"
+    SSL,
+    "Represents a key marked as the default CA key"
+    CA,
+    "Represents a key marked as the default audit viewer/decryption key"
+    AUDIT_VIEWER,
+    "Represents a key marked as the default audit signing key"
+    AUDIT_SIGNING
+}
+
+"""
+A key entry in the gateway keystore. These entries combine a private
+key and associated certificate and are used for example by listener ports.
+> @l7-entity key|keys
+> @l7-identity-fields alias,keystoreId
+> @l7-summary-fields goid,keystoreId,alias,checksum
+> @l7-excluded-fields pem
+"""
+type Key {
+    "The internal entity unique identifier"
+    goid: ID!
+    "The gateway keystore identifier"
+    keystoreId: ID!
+    "The name assigned to the key"
+    alias : String!
+    "The configuration checksum"
+    checksum : String!
+
+    "The type of the private key"
+    keyType : String!
+    "The Key usage types"
+    usageTypes: [KeyUsageType!]
+    "The subjectDN"
+    subjectDn : String!
+    """
+    Base64 encoded PKCS12 keystore containing the private key and cert chain for the key entry.
+    The keystore is password-protected using the transaction encryption passphrase provided.
+    """
+    p12 : String
+    "The private key data in PEM format"
+    pem: String
+    "The certificate chain in PEM format"
+    certChain : [String!]
+}
+
+input SecretInput {
+    """
+    Identify the password being stored. You may use letters, numbers, dashes, and underscores.
+    Names that contain spaces or periods are valid, but the resulting stored password cannot be referenced via context variable.
+    Names that contain @ or $ are valid, but the resulting stored password cannot be referenced via context variable.
+    """
+    name : String!
+    "Password or PEM Private Key"
+    secretType : SecretType!
+    "The goid for the Secret"
+    goid: ID
+    "Ignored at entity creation time but declared here so you can embed checksums in graphman bundles"
+    checksum : String
+    "Whether this secret can be referred to in policy via context variable ${secpass... "
+    variableReferencable : Boolean!
+    """
+    Base64 encrypted secret. The encryption is compatible with openssl secret encryption
+    using cypher AES/CBC/PKCS5Padding. You can create this value at command line:
+    > echo -n "<clear text secret>" | openssl enc -aes-256-cbc -md sha256 -pass pass:<password> -a
+    """
+    secret : String!
+    "Description of the password. This is optional"
+    description : String
+}
+
+input KeyInput {
+    keystoreId: ID = "00000000000000000000000000000002"
+    alias : String!
+    """
+    Base64 encoded PKCS12 keystore containing the private key and cert chain for the key entry.
+    The keystore is password-protected using the transaction encryption passphrase provided.
+    """
+    p12 : String
+    "The private key data in PEM format"
+    pem: String
+    "Will try to match at creation time is specified"
+    goid: ID
+    "SubjectDn of the certificate associated with the key. (Note that, this field has no effect on the mutation)"
+    subjectDn : String
+    "Key type. (Note that, this field has no effect on the mutation)"
+    keyType : String
+    "The Key usage types. (Note that, the key usage will not be reset when this field is not specified)"
+    usageTypes: [KeyUsageType!]
+    "The certificate chain in PEM format. (Note that, this field has no effect on the mutation)"
+    certChain : [String!]
+    "Ignored at entity creation time but declared here so you can embed checksums in graphman bundles"
+    checksum : String
+}
+
+type SecretsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    secrets : [Secret]!
+}
+
+type KeysPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    keys : [Key]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all Server module files"
+    serverModuleFiles : [ServerModuleFile!]!
+    "Get Server module file by goid"
+    serverModuleFileByGoid(goid: ID!) : ServerModuleFile
+    "Get Server module file by name"
+    serverModuleFileByName(name: String!) : ServerModuleFile
+}
+
+extend type Mutation {
+    """
+    Sets Server module files. Updating the existing server module file is unsupported.
+    """
+    setServerModuleFiles(
+        input: [ServerModuleFileInput!]!): ServerModuleFilesPayload
+
+    """
+    Deletes Server module files.
+    """
+    deleteServerModuleFiles(
+        "The names of the Server module file to delete"
+        names: [String!]!): ServerModuleFilesPayload
+}
+
+enum ModuleType {
+    MODULAR_ASSERTION
+    CUSTOM_ASSERTION
+}
+
+"""
+A Server module file.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields filePartName, moduleStates, moduleStateSummary
+"""
+type ServerModuleFile {
+    "The goid for the Server module file"
+    goid: ID!
+    "The Server module name"
+    name: String!
+    "The configuration checksum of this Server module file"
+    checksum: String!
+
+    "The Server module type"
+    moduleType: ModuleType!
+    "The Server module SHA256 digest value"
+    moduleSha256: String!
+    "The Server module signature"
+    signature: String!
+    "The base64 encoded signer certificate"
+    signerCertBase64: String!
+    "The Server module file properties"
+    properties: [EntityProperty!]!
+
+    "The Server module file state per node in the cluster"
+    moduleStates: [ServerModuleFileState!]!
+    moduleStateSummary: ServerModuleFileStateSummary!
+    "The dummy field, is used to get the Server module file content in separate part"
+    filePartName: String!
+}
+
+type ServerModuleFileStateSummary {
+    state: ModuleStateSummary!
+    description: String
+}
+
+type ServerModuleFileState {
+    nodeId: String!
+    nodeName: String!
+    state: ModuleState!
+    description: String
+}
+
+enum ModuleStateSummary {
+    LOADING
+    LOADED
+    ERROR
+}
+
+enum ModuleState {
+    UPLOADED
+    ACCEPTED
+    REJECTED
+    LOADED
+    ERROR
+}
+
+input ServerModuleFileInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The Server module name"
+    name: String!
+    "The Server module type"
+    moduleType: ModuleType
+    "The Server module SHA256 digest value"
+    moduleSha256: String
+    "The Server module signature"
+    signature: String
+    "The base64 encoded signer certificate"
+    signerCertBase64: String
+    "The Server module file properties"
+    properties: [EntityPropertyInput!]
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum: String
+}
+
+type ServerModuleFilesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The created Server module files."
+    serverModuleFiles: [ServerModuleFile]!
+}
+#
+# Copyright (c) 2025. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all services"
+    services : [L7Service!]!
+
+    "Get services inside a folder"
+    servicesByFolderPath(folderPath: String!) : [L7Service!]!
+
+    "Get specified type services"
+    servicesByType(serviceType: L7ServiceType!) : [L7Service!]!
+
+    "Get specified type services inside a folder"
+    servicesByFolderPathAndType(folderPath: String!, serviceType: L7ServiceType!) : [L7Service!]!
+
+    "Get services by goid"
+    serviceByGoid(goid: ID!) : L7Service
+
+    "Get services by name"
+    servicesByName(name: String!) : [L7Service!]!
+
+    "Get services by resolutionPath"
+    servicesByResolutionPath(resolutionPath: String!) : [L7Service !]!
+
+    "Get service by name. Returns none if more than one are found."
+    serviceByName(name: String!) : L7Service
+
+    "Get service by resolutionPath. Returns none if more than one are found."
+    serviceByResolutionPath(resolutionPath: String!) : L7Service
+
+    "Get service by resolvers"
+    serviceByResolvers(resolvers: ServiceResolversInput!) : L7Service
+
+    "Get services by resolvers"
+    servicesByResolvers(resolvers: ServiceResolversInput!) : [L7Service!]!
+
+    "Get service and it's revision by resolvers and revision ordinal"
+    serviceByResolversAndRevision(resolvers: ServiceResolversInput!, revision: Long!) : L7Service
+}
+
+extend type Mutation {
+    "Create or update services"
+    setServices(input: [L7ServiceInput!]!) : L7ServicesPayload!
+
+    """"
+    Set active revision for the services.
+    By default, it chooses the latest revision as active. If the latest revision available is already active, does nothing.
+    """
+    setServiceRevisions(input: [L7ServicePartialInput!]!) : L7ServicesPayload!
+
+    "Update an existing service.Match is carried by refInput"
+
+    updateService(refInput: ServiceRefInput!,  input: L7ServicePartialInput!) : L7ServicePayload!
+
+    """
+    Update an existing Service with new properties. Match is carried by refInput.
+    If a property is new, it will be added; if the value is new, it will be updated.
+    If only the property name is specified without a value, the property will be deleted.
+    Providing empty input properties will preserve the current properties and will not delete any existing ones.
+    """
+    updateServiceProperties(refInput: ServiceRefInput!, properties: [EntityPropertyPartialInput!]!) : L7ServicePayload!
+
+    "Delete services"
+    deleteServices(resolvers: [ServiceResolversInput!]!) : L7ServicesPayload!
+
+    "Update existing revision (comment and/or active) for the specified service"
+    updateServiceRevision(refInput: ServiceRefInput!, revision: Long!, activate: Boolean!, comment: String) : L7ServicePayload!
+
+    "Update existing revision (comment and/or active) for the services"
+    updateServicesRevision(input: [L7ServicePartialInput!]!, activate: Boolean!, comment: String) : L7ServicesPayload!
+}
+
+"""
+A Layer7 service.
+> @l7-entity service|services
+> @l7-identity-fields resolutionPath,resolvers,serviceType
+> @l7-summary-fields goid,guid,name,resolutionPath,resolvers,serviceType,checksum
+> @l7-excluded-fields policyRevision,policyRevisions
+"""
+type L7Service implements PublishedService {
+    "The goid for this service"
+    goid : ID!
+    "The guid for this service"
+    guid : ID!
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String!
+    "The service resolvers. They can be used to identify services."
+    resolvers: ServiceResolvers
+    "The type of service"
+    serviceType: L7ServiceType!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean!
+    "The folder path to the service"
+    folderPath: String!
+    "Which SOAP version"
+    soapVersion: SoapVersion
+    "Which http methods are allowed"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean!
+    wssProcessingEnabled: Boolean!
+    "Allow requests intended for operations not supported by the WSDL"
+    laxResolution: Boolean
+    properties: [EntityProperty!]
+
+    "URL for the protected service WSDL document"
+    wsdlUrl: String
+    "The WSDL of the soap service"
+    wsdl: String
+    "One or more additional WSDL resources"
+    wsdlResources: [ServiceResource!]
+
+    "The actual service and dependencies"
+    policy: Policy!
+    "The service policy revision. It can be either the active revision or the specific one when queried explicitly."
+    policyRevision: PolicyRevision
+    policyRevisions: [PolicyRevision!]!
+}
+
+type ServiceResolvers {
+    "The soap actions referred to in the wsdl"
+    soapActions: [String!]
+    "Base uri from the wsdl of the service. This is used for service resolution"
+    baseUri: String
+    "The resolution path to the service. It will be defaulted to /ssg/soap for SOAP services when not specified"
+    resolutionPath: String
+}
+
+input ServiceResolversInput {
+    "The soap action referred to in the wsdl"
+    soapAction: String
+    "The soap actions referred to in the wsdl"
+    soapActions: [String!]
+    "Base uri from the wsdl of the service. This is used for service resolution"
+    baseUri: String
+    "The resolution path to the service."
+    resolutionPath: String
+}
+
+type L7ServicesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    services: [L7Service]!
+}
+
+type L7ServicePayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    service: L7Service
+}
+
+enum L7ServiceType {
+    WEB_API
+    SOAP
+    INTERNAL_WEB_API
+    INTERNAL_SOAP
+}
+
+enum SoapVersion {
+    SOAP_1_1
+    SOAP_1_2
+    UNKNOWN
+}
+
+input L7ServiceInput {
+    "The goid for this service"
+    goid : ID
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String!
+    "The service resolvers. They can be used to identify services."
+    resolvers: ServiceResolversInput
+    "The type of service"
+    serviceType: L7ServiceType!
+    "The configuration checksum"
+    checksum: String
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean = true
+    "The folder path where to create this service.  If the path does not exist, it will be created"
+    folderPath: String!
+    "Which SOAP version"
+    soapVersion: SoapVersion = UNKNOWN
+    "Which http methods are allowed"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean = false
+    wssProcessingEnabled: Boolean = false
+    "Allow requests intended for operations not supported by the WSDL"
+    laxResolution: Boolean = false
+    properties: [EntityPropertyInput!]
+
+    "The WSDL of the soap service"
+    wsdl: String
+    "URL for the protected service WSDL document"
+    wsdlUrl: String
+    "One or more additional WSDL resources"
+    wsdlResources: [ServiceResourceInput!]
+    "The service policy"
+    policy: PolicyInput!
+    "This will be ignored during the mutation"
+    policyRevision: PolicyRevisionInput
+    "This will be ignored during the mutation"
+    policyRevisions: [PolicyRevisionInput!]
+}
+
+input L7ServicePartialInput {
+    "The goid for this service"
+    goid : ID
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String
+    "The resolution path to the service"
+    resolutionPath: String
+    "The service resolvers. They can be used to identify services."
+    resolvers: ServiceResolversInput
+    "The type of service"
+    serviceType: L7ServiceType
+    "The configuration checksum"
+    checksum: String
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean
+    "The folder path where to create this service.  If the path does not exist, it will be created"
+    folderPath: String
+    "Which SOAP version"
+    soapVersion: SoapVersion
+    "Which http methods are allowed"
+    methodsAllowed: [HttpMethod!]
+    tracingEnabled: Boolean
+    wssProcessingEnabled: Boolean
+    "Allow requests intended for operations not supported by the WSDL"
+    laxResolution: Boolean
+    properties: [EntityPropertyInput!]
+
+    "The WSDL of the soap service"
+    wsdl: String
+    "URL for the protected service WSDL document"
+    wsdlUrl: String
+    "One or more additional WSDL resources"
+    wsdlResources: [ServiceResourceInput!]
+    "The service policy"
+    policy: PolicyInput
+    "This will be ignored during the mutation"
+    policyRevision: PolicyRevisionInput
+    "This will be ignored during the mutation"
+    policyRevisions: [PolicyRevisionInput!]
+}
+
+input ServiceMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a Service entity uniquely"
+    source: ServiceRefInput
+}
+
+input ServiceRefInput {
+    "The resolution path to the service"
+    resolutionPath: String!
+    "The type of service"
+    serviceType: L7ServiceType!
+    "The service resolvers. They can be used to identify services."
+    resolvers: ServiceResolversInput
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all siteminder configurations"
+    smConfigs : [SMConfig!]!
+    "Get the siteminder configuration by goid"
+    smConfigByGoid(goid : ID!) : SMConfig
+    "Get the siteminder configuration by name"
+    smConfigByName(name : String!) : SMConfig
+}
+
+extend type Mutation {
+    """
+    Create or update existing siteminder configurations.
+    Match is carried by name. If match is found, it will be updated. Otherwise, it will be created
+    """
+    setSMConfigs(input: [SMConfigInput!]!): SMConfigsPayload!
+
+    "Delete existing siteminder configurations. Match is carried by name"
+    deleteSMConfigs(names: [String!]!): SMConfigsPayload!
+}
+
+enum SMCryptoMode {
+    COMPAT
+    MIGRATE
+    FIPS
+}
+
+"""
+A siteminder configuration.
+> @l7-entity smConfig|smConfigs
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,checksum
+> @l7-excluded-fields
+"""
+type SMConfig {
+    "The goid for the CA SSO connection"
+    goid : ID!
+    "Name of the CA SSO configuration"
+    name : String!
+    "The configuration checksum"
+    checksum: String!
+
+    "Indicates whether the specified configuration is currently enabled or disabled"
+    enabled : Boolean!
+    "Name of the host registered with the CA SSO Policy Server"
+    agentHost: String!
+    "The IP address of the CA SSO agent. This field is required if the Check IP check box is selected"
+    agentIP: String!
+    "CA SSO Policy Server host configuration used by the agent"
+    agentHostConfig: String!
+    "CA SSO shared secret used by the agent to establish communication with the Policy Server"
+    agentSecret: String!
+    "Choose the FIPS mode supported by the CA SSO Policy Server. The available values are: COMPAT(default)/MIGRATE/ONLY"
+    cryptoMode: SMCryptoMode!
+    "The CA SSO Policy Server compare the client IP against the address stored in the SSO Token"
+    ipCheckEnabled: Boolean!
+    "Whether to update the SSO Token after successful authentication/authorization"
+    updateSSOToken: Boolean!
+    "The percentage of servers within a cluster that must be available for Policy Server requests"
+    clusterFailoverThreshold: PositiveInt!
+    nonClusterFailover: Boolean!
+    "User name of the CA SSO administrator"
+    username: String!
+    "The secure password reference"
+    securePasswordName: String!
+    "The Siteminder configuration properties"
+    properties: [EntityProperty!]
+}
+
+input SMConfigInput {
+    "The goid for the CA SSO connection"
+    goid: ID
+    "Name of the CA SSO configuration"
+    name: String!
+    "Indicates whether the specified configuration is currently enabled or disabled"
+    enabled: Boolean!
+    "Name of the host registered with the CA SSO Policy Server"
+    agentHost: String!
+    "The IP address of the CA SSO agent. This field is required if the Check IP check box is selected"
+    agentIP: String!
+    "CA SSO Policy Server host configuration used by the agent"
+    agentHostConfig: String!
+    "CA SSO shared secret used by the agent to establish communication with the Policy Server"
+    agentSecret: String!
+    "Choose the FIPS mode supported by the CA SSO Policy Server. The available values are: COMPAT(default)/MIGRATE/ONLY"
+    cryptoMode: SMCryptoMode!
+    "The CA SSO Policy Server compare the client IP against the address stored in the SSO Token"
+    ipCheckEnabled: Boolean!
+    "Whether to update the SSO Token after successful authentication/authorization"
+    updateSSOToken: Boolean!
+    "The percentage of servers within a cluster that must be available for Policy Server requests"
+    clusterFailoverThreshold: PositiveInt!
+    nonClusterFailover: Boolean!
+    "User name of the CA SSO administrator"
+    username: String!
+    "The secure password reference"
+    securePasswordName: String!
+    "The Siteminder configuration properties"
+    properties: [EntityPropertyInput!]
+    "The configuration checksum"
+    checksum : String
+}
+
+type SMConfigsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    smConfigs: [SMConfig]!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Get all soap services"
+    soapServices : [SoapService]! @deprecated(reason: "Use 'services' instead.")
+    "Get all Internal soap services"
+    internalSoapServices : [InternalSoapService]! @deprecated(reason: "Use 'services' instead.")
+    "Get soap services by name"
+    soapServicesByName(name: String!) : [SoapService]! @deprecated(reason: "Use 'servicesByName' instead.")
+    "Get soap service by name. Returns none if more than one are found."
+    soapServiceByName(name: String!) : SoapService @deprecated(reason: "Use 'serviceByName' instead.")
+    "Get Internal soap service by name. Returns none if more than one are found."
+    internalSoapServiceByName(name: String!) : InternalSoapService @deprecated(reason: "Use 'serviceByName' instead.")
+    "Get soap services inside a folder"
+    soapServicesByFolderPath(folderPath: String!) : [SoapService]! @deprecated(reason: "Use 'servicesByFolderPath' instead.")
+    "Get Internal soap services inside a folder"
+    internalSoapServicesByFolderPath(folderPath: String!) : [InternalSoapService]! @deprecated(reason: "Use 'servicesByFolderPath' instead.")
+    "Get soap service by goid"
+    soapServiceByGoid(goid: ID!) : SoapService
+    "Get soap service by resolver"
+    soapServiceByResolver(resolver: SoapServiceResolverInput!) : SoapService @deprecated(reason: "Use 'serviceByResolvers' instead.")
+}
+
+extend type Mutation {
+    "Create or update soap services"
+    setSoapServices(input: [SoapServiceInput!]!) : SoapServicesPayload @deprecated(reason: "Use 'setServices' instead.")
+    "Create or update Internal soap services"
+    setInternalSoapServices(input: [SoapServiceInput!]!) : InternalSoapServicesPayload @deprecated(reason: "Use 'setServices' instead.")
+    "Delete existing soap services given their resolution details"
+    deleteSoapServices(resolvers: [SoapServiceResolverInput!]!) : SoapServicesPayload @deprecated(reason: "Use 'deleteServices' instead.")
+    "Delete existing Internal soap services given their resolution details"
+    deleteInternalSoapServices(resolvers: [SoapServiceResolverInput!]!) : InternalSoapServicesPayload @deprecated(reason: "Use 'deleteServices' instead.")
+}
+
+"""
+A Soap service published on the Layer7 Gateway
+> @l7-entity
+> @l7-identity-fields resolutionPath,resolvers
+> @l7-summary-fields goid,guid,name,resolutionPath,resolvers,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Service' instead.
+"""
+type SoapService implements PublishedService {
+    "The goid for this service"
+    goid : ID!
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String
+    "Soap service resolvers"
+    resolvers: SoapResolvers!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean!
+    "The folder path to the service"
+    folderPath: String!
+    "Which SOAP version"
+    soapVersion: SoapVersion!
+    "Which http methods are allowed if not just POST"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean!
+    wssProcessingEnabled: Boolean!
+    "Allow requests intended for operations not supported by the WSDL"
+    laxResolution: Boolean
+    properties: [EntityProperty!]
+
+    "The WSDL of the soap service"
+    wsdl: String!
+    "URL for the protected service WSDL document"
+    wsdlUrl: String
+    "One or more additional WSDL resources"
+    wsdlResources: [ServiceResource!]
+    "The policy and dependencies"
+    policy: Policy!
+}
+
+"""
+A Internal Soap service published on the Layer7 Gateway
+> @l7-entity
+> @l7-identity-fields resolutionPath,resolvers
+> @l7-summary-fields goid,guid,name,resolutionPath,resolvers,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Service' instead.
+"""
+type InternalSoapService implements PublishedService {
+    "The goid for this service"
+    goid : ID!
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String
+    "Soap service resolvers"
+    resolvers: SoapResolvers!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean!
+    "The folder path to the service"
+    folderPath: String!
+    "Which SOAP version"
+    soapVersion: SoapVersion!
+    "Which http methods are allowed if not just POST"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean!
+    wssProcessingEnabled: Boolean!
+    "Allow requests intended for operations not supported by the WSDL"
+    laxResolution: Boolean
+    properties: [EntityProperty!]
+
+    "The WSDL of the soap service"
+    wsdl: String!
+    "URL for the protected service WSDL document"
+    wsdlUrl: String
+    "One or more additional WSDL resources"
+    wsdlResources: [ServiceResource!]
+    "The policy and dependencies"
+    policy: Policy!
+}
+
+" Must have minimum (1 soapAction + baseUri) OR resolutionPath. You can have both too. "
+type SoapResolvers {
+    "The soap actions referred to in the wsdl"
+    soapActions: [String!]!
+    "Base uri from the wsdl of the service. This is used for service resolution"
+    baseUri: String
+    "The resolution path to the service if not default /ssg/soap"
+    resolutionPath: String
+}
+
+" Must have minimum (1 soapAction + baseUri) OR resolutionPath. You can have both too. "
+input SoapServiceResolverInput {
+   "One of the SoapAction of the service to resolved. This must be specified along with a base ns from the WSDL"
+   soapAction: String
+   "One or more soap actions of the service to resolved. This must be specified in the absence of soapAction field."
+   soapActions: [String!]
+   "Base uri from the wsdl of the service. Use this alongside the soapaction property to resolve a soap service without resolutionUri"
+   baseUri: String
+   "The resolution path of the service if that is how the soap service is resolved"
+   resolutionPath: String
+}
+
+input SoapServiceInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The guid for this service, if none provided, assigned at creation"
+    guid: ID
+   "The folder path where to create this service.  If the path does not exist, it will be created"
+   folderPath: String!
+   "The name of the service"
+   name: String!
+   "The WSDL of the soap service"
+   wsdl: String!
+   "URL for the protected service WSDL document"
+   wsdlUrl: String
+   "One or more additional WSDL resources"
+   wsdlResources: [ServiceResourceInput!]
+   "The resolution path of the service"
+   resolutionPath: String = "/ssg/soap"
+   "Soap service resolvers"
+   resolvers: SoapServiceResolverInput
+   "The policy"
+   policy: PolicyInput!
+   "Whether the service is enabled (optional, default true)"
+   enabled: Boolean = true
+   "The http methods allowed for this service"
+   methodsAllowed: [HttpMethod!]!
+   "Which SOAP version"
+   soapVersion: SoapVersion = UNKNOWN
+   "Whether or not the gateway should process incoming ws-security soap headers"
+   wssProcessingEnabled: Boolean!
+   tracingEnabled: Boolean = false
+   "Allow requests intended for operations not supported by the WSDL"
+   laxResolution: Boolean = false
+   properties: [EntityPropertyInput!]
+   "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+type SoapServicesPayload implements EntityMutationsPayload {
+  status: [EntityMutationStatus!]!
+  detailedStatus: [EntityMutationDetailedStatus!]!
+  soapServices: [SoapService]!
+}
+
+type InternalSoapServicesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    internalSoapServices: [InternalSoapService]!
+}
+
+input SoapServiceMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a SoapService entity uniquely"
+    source: SoapServiceRefInput
+}
+
+input SoapServiceRefInput {
+    "The resolution path of the service"
+    resolutionPath: String!
+    "Soap service resolvers"
+    resolvers: SoapServiceResolverInput
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+    "Retrieves all trusted certificates"
+    trustedCerts : [Certificate!]!
+    "The trusted certificate by goid"
+    trustedCertByGoid(goid: ID!) : Certificate
+    "Retrieves a list of trusted certificates with the matching subject dn"
+    trustedCertsByDn(subjectDn : String!) : [Certificate]!
+    "The trusted certificate associated with this unique thumbprint"
+    trustedCertByThumbprint(thumbprintSha1: String!) : Certificate
+}
+
+extend type Mutation {
+    """
+    Create or update trusted certificates.
+    If a certificate with the same sha1 thumbprint already exist, it will be updated.
+    """
+    setTrustedCerts(input: [TrustedCertInput!]!): TrustedCertsPayload!
+
+    "Delete an existing certificates"
+    deleteTrustedCerts(thumbprintSha1s: [String!]!): TrustedCertsPayload!
+}
+
+"Input sent with createTrustedCert mutation"
+input TrustedCertInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The name of the trusted certificate"
+    name: String!
+    "The base 64 encoded string of the certificate"
+    certBase64: String!
+    "Whether to perform hostname verification with this certificate"
+    verifyHostname: Boolean!
+    "Whether this certificate is a trust anchor"
+    trustAnchor: Boolean!
+    "What the certificate is trusted for"
+    trustedFor: [TrustedForType!]!
+    "The revocation check policy type"
+    revocationCheckPolicyType : PolicyUsageType!
+    "The name of revocation policy.  Required if revocationCheckPolicyType is PolicyUsageType.SPECIFIED"
+    revocationCheckPolicyName : String
+    "The Subject DN of this certificate. (Note that, this field has no effect on the mutation)"
+    subjectDn : String
+    "The start date of the validity period. (Note that, this field has no effect on the mutation)"
+    notBefore : String
+    "the end date of the validity period. (Note that, this field has no effect on the mutation)"
+    notAfter : String
+    "The sha1 thumbprint of the certificate. (Note that, this field has no effect on the mutation)"
+    thumbprintSha1 : String
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+"Partial TrustedCert input for updates"
+input TrustedCertPartialInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The name of the trusted certificate"
+    name: String!
+    "The base 64 encoded string of the certificate"
+    certBase64: String
+    "Whether to perform hostname verification with this certificate"
+    verifyHostname: Boolean
+    "Whether this certificate is a trust anchor"
+    trustAnchor: Boolean
+    "What the certificate is trusted for"
+    trustedFor: [TrustedForType!]
+    "The revocation check policy type"
+    revocationCheckPolicyType : PolicyUsageType
+    "The name of revocation policy.  Required if revocationCheckPolicyType is PolicyUsageType.SPECIFIED"
+    revocationCheckPolicyName : String
+    "The Subject DN of this certificate. (Note that, this field has no effect on the mutation)"
+    subjectDn : String
+    "The start date of the validity period. (Note that, this field has no effect on the mutation)"
+    notBefore : String
+    "the end date of the validity period. (Note that, this field has no effect on the mutation)"
+    notAfter : String
+    "The sha1 thumbprint of the certificate. This field is used to find the existing record."
+    thumbprintSha1 : String!
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+interface TrustedCertRef {
+    "The name"
+    name: String
+    "The Subject DN of this certificate"
+    subjectDn : String
+    "The sha1 thumbprint of the certificate"
+    thumbprintSha1 : String!
+}
+
+"""
+A trusted certificate in the gateway truststore.
+> @l7-entity trustedCert|trustedCerts
+> @l7-identity-fields thumbprintSha1
+> @l7-summary-fields goid,name,subjectDn,thumbprintSha1,checksum
+> @l7-excluded-fields revocationCheckPolicy
+"""
+type Certificate implements TrustedCertRef {
+    "The goid for this certificate"
+    goid : ID!
+    "The name"
+    name: String!
+    "The Subject DN of this certificate"
+    subjectDn : String!
+    "The sha1 thumbprint of the certificate"
+    thumbprintSha1 : String!
+    "The configuration checksum of this trusted certificate"
+    checksum: String!
+
+    "Whether to perform hostname verification with this certificate"
+    verifyHostname : Boolean!
+    "Whether this certificate is a trust anchor"
+    trustAnchor : Boolean!
+    "The certificate is trusted for"
+    trustedFor : [TrustedForType!]!
+    "The revocation check policy type"
+    revocationCheckPolicyType : PolicyUsageType!
+    "The name of revocation policy.  Required if revocationCheckPolicyType is PolicyUsageType.SPECIFIED"
+    revocationCheckPolicyName : String
+    "The specified revocation policy"
+    revocationCheckPolicy : RevocationCheckPolicy
+    "The start date of the validity period"
+    notBefore : DateTime!
+    "the end date of the validity period"
+    notAfter : DateTime!
+    "The base 64 encoded string of this certificate"
+    certBase64 : String!
+}
+
+enum PolicyUsageType {
+    "Do not perform revocation check"
+    NONE
+    "Use the default revocation check policy"
+    USE_DEFAULT
+    "Use the specified revocation check policy"
+    SPECIFIED
+}
+
+"Defines what a certificate is trusted for"
+enum TrustedForType {
+    "Is trusted as an SSL server cert"
+    SSL
+    "Is trusted as a CA that signs SSL server certs"
+    SIGNING_SERVER_CERTS
+    "Is trusted as a CA that signs SSL client certs"
+    SIGNING_CLIENT_CERTS
+    "Is trusted to sign SAML tokens"
+    SAML_ISSUER
+    "Is trusted as a SAML attesting entity"
+    SAML_ATTESTING_ENTITY
+}
+
+enum CertificateValidationType {
+    CERTIFICATE_ONLY
+    PATH_VALIDATION
+    REVOCATION
+}
+
+enum CertValidationType {
+    USE_DEFAULT
+    CERTIFICATE_ONLY
+    PATH_VALIDATION
+    REVOCATION
+}
+
+type TrustedCertsPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    trustedCerts: [Certificate]!
+}
+
+input TrustedCertsMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a TrustedCert entity uniquely"
+    source: TrustedCertRefInput
+}
+
+input TrustedCertRefInput {
+    "The sha1 thumbprint of the certificate. (Note that, this field has no effect on the mutation)"
+    thumbprintSha1: String!
+}
+#
+# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all webApi services"
+  webApiServices : [WebApiService]! @deprecated(reason: "Use 'services' instead.")
+  internalWebApiServices : [InternalWebApiService]! @deprecated(reason: "Use 'services' instead.")
+  "Get webApi services by name"
+  webApiServicesByName(name: String!) : [WebApiService!]! @deprecated(reason: "Use 'servicesByName' instead.")
+  "Get webApi service by name. Returns none if more than one are found."
+  webApiServiceByName(name: String!) : WebApiService @deprecated(reason: "Use 'serviceByName' instead.")
+  "Get Internal webApi Service by name"
+  internalWebApiServiceByName(name: String!) : InternalWebApiService @deprecated(reason: "Use 'serviceByName' instead.")
+  "Get webApi services by resolutionPath"
+  webApiServicesByResolutionPath(resolutionPath: String!) : [WebApiService !]! @deprecated(reason: "Use 'servicesByResolutionPath' instead.")
+  "Get webApi service by resolutionPath. Returns none if more than one are found."
+  webApiServiceByResolutionPath(resolutionPath: String!) : WebApiService @deprecated(reason: "Use 'serviceByResolutionPath' instead.")
+  "Get Internal webApi Services by resolutionPath"
+  internalWebApiServiceByResolutionPath(resolutionPath: String!) : InternalWebApiService @deprecated(reason: "Use 'servicesByResolutionPath' instead.")
+  "Get webApi services inside a folder"
+  webApiServicesByFolderPath(folderPath: String!) : [WebApiService]! @deprecated(reason: "Use 'servicesByFolderPath' instead.")
+  "Get Internal webApi services inside a folder"
+  internalWebApiServicesByFolderPath(folderPath: String!) : [InternalWebApiService]! @deprecated(reason: "Use 'servicesByFolderPath' instead.")
+  "Get webApi services by goid"
+  webApiServiceByGoid(goid: ID!) : WebApiService
+}
+
+extend type Mutation {
+  "Create or update web api services"
+  setWebApiServices(input: [WebApiServiceInput!]!) : WebApiServicesPayload  @deprecated(reason: "Use 'setServices' instead.")
+  "Create or update Internal web api services"
+  setInternalWebApiServices(input: [WebApiServiceInput!]!) : InternalWebApiServicesPayload  @deprecated(reason: "Use 'setServices' instead.")
+  "Delete existing web api services given their resolution paths"
+  deleteWebApiServices(resolutionPaths: [String!]!) : WebApiServicesPayload  @deprecated(reason: "Use 'deleteServices' instead.")
+  "Delete existing Internal web api services given their resolution paths"
+  deleteInternalWebApiServices(resolutionPaths: [String!]!) : InternalWebApiServicesPayload @deprecated(reason: "Use 'deleteServices' instead.")
+}
+
+"""
+A Web API service published on the Layer7 Gateway
+> @l7-entity
+> @l7-identity-fields resolutionPath
+> @l7-summary-fields goid,guid,name,resolutionPath,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Service' instead.
+"""
+type WebApiService implements PublishedService {
+    "The goid for this service"
+    goid : ID!
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean!
+    "The folder path to the service"
+    folderPath: String!
+    "Which http methods are allowed"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean!
+    wssProcessingEnabled: Boolean!
+    properties: [EntityProperty!]
+
+    "The policy and dependencies"
+    policy: Policy!
+}
+
+"""
+A Internal Web API service published on the Layer7 Gateway
+> @l7-entity
+> @l7-identity-fields resolutionPath
+> @l7-summary-fields goid,guid,name,resolutionPath,checksum
+> @l7-excluded-fields
+> @l7-deprecated Use 'L7Service' instead.
+"""
+type InternalWebApiService implements PublishedService {
+    "The goid for this service"
+    goid : ID!
+    "The guid for this service"
+    guid : ID
+    "The name of the service"
+    name: String!
+    "The resolution path to the service"
+    resolutionPath: String!
+    "The configuration checksum"
+    checksum: String!
+
+    "Whether or not the published service is enabled"
+    enabled: Boolean!
+    "The folder path to the service"
+    folderPath: String!
+    "Which http methods are allowed"
+    methodsAllowed: [HttpMethod!]!
+    tracingEnabled: Boolean!
+    wssProcessingEnabled: Boolean!
+    properties: [EntityProperty!]
+
+    "The policy and dependencies"
+    policy: Policy!
+}
+
+input WebApiServiceInput {
+  "The internal entity unique identifier"
+  goid: ID
+  "The guid for this service, if none provided, assigned at creation"
+  guid: ID
+  "The folder path where to create this service.  If the path does not exist, it will be created"
+  folderPath: NonEmptyString!
+  "The name of the service"
+  name: String!
+  "The resolution path of the service"
+  resolutionPath: String!
+  "The policy"
+  policy: PolicyInput!
+  "Whether the service is enabled (optional, default to true)"
+  enabled: Boolean = true
+  "The http methods allowed for this service"
+  methodsAllowed: [HttpMethod!]!
+  tracingEnabled: Boolean = false
+  wssProcessingEnabled: Boolean = false
+  properties: [EntityPropertyInput!]
+  "Ignored at creation time but can be used to compare bundle with gw state"
+  checksum : String
+}
+
+type WebApiServicesPayload implements EntityMutationsPayload {
+  status: [EntityMutationStatus!]!
+  detailedStatus: [EntityMutationDetailedStatus!]!
+  webApiServices: [WebApiService]!
+}
+
+type InternalWebApiServicesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    internalWebApiServices: [InternalWebApiService]!
+}
+
+input WebApiServiceMappingInstructionInput{
+    action: EntityMutationAction!
+    default: Boolean
+    failOnNew: Boolean
+    failOnExisting: Boolean
+    nodef: Boolean
+    "one or more name-value pairs to identify a WebApiService entity uniquely"
+    source: WebApiServiceRefInput
+}
+
+input WebApiServiceRefInput {
+    "The resolution path to the service"
+    resolutionPath: String!
+}

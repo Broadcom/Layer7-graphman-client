@@ -1,0 +1,5591 @@
+{
+  "types": {
+    "HardwiredService": {
+      "category": "union",
+      "fields": []
+    },
+    "AliasedService": {
+      "category": "union",
+      "fields": []
+    },
+    "AliasedPolicy": {
+      "category": "union",
+      "fields": []
+    },
+    "ActiveConnector": {
+      "category": "type",
+      "typeName": "ActiveConnector",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "connectorType",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "advancedProperties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "hardwiredService",
+          "dataType": "HardwiredService"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "activeConnector",
+      "pluralName": "activeConnectors",
+      "summaryFields": [
+        "goid",
+        "name",
+        "connectorType",
+        "checksum"
+      ],
+      "excludedFields": [
+        "hardwiredService"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "AdministrativeUserAccountProperty": {
+      "category": "type",
+      "typeName": "AdministrativeUserAccountProperty",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "administrativeUserAccountProperty",
+      "pluralName": "administrativeUserAccountProperties",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "AuditConfiguration": {
+      "category": "type",
+      "typeName": "AuditConfiguration",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "alwaysSaveInternal",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "lookupPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "sinkPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "ftpConfig",
+          "dataType": "AuditFtpConfiguration"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "auditConfiguration",
+      "pluralName": "auditConfigurations",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true,
+      "singleQueryMethod": "auditConfigurations"
+    },
+    "CassandraConnection": {
+      "category": "type",
+      "typeName": "CassandraConnection",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "keyspace",
+          "dataType": "String"
+        },
+        {
+          "name": "contactPoints",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "compression",
+          "dataType": "CassandraCompression"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "sslEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "cipherSuites",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "cassandraConnection",
+      "pluralName": "cassandraConnections",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "ClusterProperty": {
+      "category": "type",
+      "typeName": "ClusterProperty",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "hiddenProperty",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "clusterProperty",
+      "pluralName": "clusterProperties",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "CustomKeyValue": {
+      "category": "type",
+      "typeName": "CustomKeyValue",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "key",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "customKeyValue",
+      "pluralName": "customKeyValues",
+      "summaryFields": [
+        "goid",
+        "key",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "key"
+      ],
+      "deprecatedFields": []
+    },
+    "EmailListener": {
+      "category": "type",
+      "typeName": "EmailListener",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "serverType",
+          "dataType": "EmailServerType"
+        },
+        {
+          "name": "hostname",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "folder",
+          "dataType": "String"
+        },
+        {
+          "name": "deleteOnReceive",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "sslEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "pollInterval",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "sizeLimit",
+          "dataType": "NonNegativeInt"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "hardwiredService",
+          "dataType": "HardwiredService"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "emailListener",
+      "pluralName": "emailListeners",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [
+        "hardwiredService"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "EncassConfig": {
+      "category": "type",
+      "typeName": "EncassConfig",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "policyName",
+          "dataType": "String"
+        },
+        {
+          "name": "encassArgs",
+          "dataType": "EncassArg"
+        },
+        {
+          "name": "encassResults",
+          "dataType": "EncassResult"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "encassConfig",
+      "pluralName": "encassConfigs",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "Folder": {
+      "category": "type",
+      "typeName": "Folder",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "folder",
+      "pluralName": "folders",
+      "summaryFields": [
+        "goid",
+        "name",
+        "path",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "path"
+      ],
+      "deprecatedFields": []
+    },
+    "GenericEntity": {
+      "category": "type",
+      "typeName": "GenericEntity",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "entityClassName",
+          "dataType": "String"
+        },
+        {
+          "name": "valueXml",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "genericEntity",
+      "pluralName": "genericEntities",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "Schema": {
+      "category": "type",
+      "typeName": "Schema",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "systemId",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "targetNs",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "schema",
+      "pluralName": "schemas",
+      "summaryFields": [
+        "goid",
+        "systemId",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "systemId"
+      ],
+      "deprecatedFields": []
+    },
+    "Dtd": {
+      "category": "type",
+      "typeName": "Dtd",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "systemId",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "publicId",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "dtd",
+      "pluralName": "dtds",
+      "summaryFields": [
+        "goid",
+        "systemId",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "systemId"
+      ],
+      "deprecatedFields": []
+    },
+    "HttpConfiguration": {
+      "category": "type",
+      "typeName": "HttpConfiguration",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "protocol",
+          "dataType": "HttpScheme"
+        },
+        {
+          "name": "path",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "ntlmHost",
+          "dataType": "String"
+        },
+        {
+          "name": "ntlmDomain",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsVersion",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsKeyUse",
+          "dataType": "EntityFieldOption"
+        },
+        {
+          "name": "tlsKeystoreId",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsKeyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsCipherSuites",
+          "dataType": "String"
+        },
+        {
+          "name": "connectTimeout",
+          "dataType": "Int"
+        },
+        {
+          "name": "readTimeout",
+          "dataType": "Int"
+        },
+        {
+          "name": "followRedirects",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "proxyUse",
+          "dataType": "EntityFieldOption"
+        },
+        {
+          "name": "proxyConfiguration",
+          "dataType": "HttpProxyConfiguration"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "httpConfiguration",
+      "pluralName": "httpConfigurations",
+      "summaryFields": [
+        "goid",
+        "host",
+        "port",
+        "protocol",
+        "path",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "host",
+        "port",
+        "protocol",
+        "path"
+      ],
+      "deprecatedFields": [],
+      "singleQueryMethod": "httpConfigurationsByHost"
+    },
+    "FipGroup": {
+      "category": "type",
+      "typeName": "FipGroup",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "members",
+          "dataType": "FipUser"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "fipGroup",
+      "pluralName": "fipGroups",
+      "summaryFields": [
+        "goid",
+        "name",
+        "providerName",
+        "checksum"
+      ],
+      "excludedFields": [
+        "members"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "FipUser": {
+      "category": "type",
+      "typeName": "FipUser",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "login",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        },
+        {
+          "name": "firstName",
+          "dataType": "String"
+        },
+        {
+          "name": "lastName",
+          "dataType": "String"
+        },
+        {
+          "name": "email",
+          "dataType": "String"
+        },
+        {
+          "name": "memberOf",
+          "dataType": "FipGroup",
+          "suffix": ":-*,+providerName,+name"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "fipUser",
+      "pluralName": "fipUsers",
+      "summaryFields": [
+        "goid",
+        "name",
+        "login",
+        "providerName",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "login",
+        "name",
+        "providerName"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true,
+      "singleQueryMethod": "fipUserByName"
+    },
+    "Fip": {
+      "category": "type",
+      "typeName": "Fip",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enableCredentialTypeSaml",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "enableCredentialTypeX509",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "certificateValidation",
+          "dataType": "CertificateValidationType"
+        },
+        {
+          "name": "certificateReferences",
+          "dataType": "Certificate",
+          "suffix": ":-*,+name,+subjectDn,+thumbprintSha1"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "fip",
+      "pluralName": "fips",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "Ldap": {
+      "category": "type",
+      "typeName": "Ldap",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "ldapUrls",
+          "dataType": "String"
+        },
+        {
+          "name": "ldapsClientAuthEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "ldapsClientKeystoreId",
+          "dataType": "ID"
+        },
+        {
+          "name": "ldapsClientKeyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "searchBase",
+          "dataType": "String"
+        },
+        {
+          "name": "writable",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "bindDn",
+          "dataType": "String"
+        },
+        {
+          "name": "bindPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "userMappings",
+          "dataType": "UserMapping"
+        },
+        {
+          "name": "groupMappings",
+          "dataType": "GroupMapping"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "ldap",
+      "pluralName": "ldaps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "InternalIdp": {
+      "category": "type",
+      "typeName": "InternalIdp",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "certValidation",
+          "dataType": "CertValidationType"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "internalIdp",
+      "pluralName": "internalIdps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "singleQueryMethod": "internalIdps"
+    },
+    "InternalGroup": {
+      "category": "type",
+      "typeName": "InternalGroup",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "members",
+          "dataType": "InternalUser"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "internalGroup",
+      "pluralName": "internalGroups",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [
+        "members"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "InternalUser": {
+      "category": "type",
+      "typeName": "InternalUser",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "login",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        },
+        {
+          "name": "sshPublicKey",
+          "dataType": "String"
+        },
+        {
+          "name": "firstName",
+          "dataType": "String"
+        },
+        {
+          "name": "lastName",
+          "dataType": "String"
+        },
+        {
+          "name": "email",
+          "dataType": "String"
+        },
+        {
+          "name": "replaceGroupMemberships",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "memberOf",
+          "dataType": "InternalGroup",
+          "suffix": ":-*,+name"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "internalUser",
+      "pluralName": "internalUsers",
+      "summaryFields": [
+        "goid",
+        "name",
+        "login",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "login"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "FederatedIdp": {
+      "category": "type",
+      "typeName": "FederatedIdp",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "supportsSAML",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "supportsX509",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "certValidation",
+          "dataType": "CertValidationType"
+        },
+        {
+          "name": "trustedCerts",
+          "dataType": "TrustedCertRef"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "federatedIdp",
+      "pluralName": "federatedIdps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "FederatedGroup": {
+      "category": "type",
+      "typeName": "FederatedGroup",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "members",
+          "dataType": "FederatedUser"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "federatedGroup",
+      "pluralName": "federatedGroups",
+      "summaryFields": [
+        "goid",
+        "name",
+        "providerName",
+        "checksum"
+      ],
+      "excludedFields": [
+        "members"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "FederatedUser": {
+      "category": "type",
+      "typeName": "FederatedUser",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "login",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        },
+        {
+          "name": "firstName",
+          "dataType": "String"
+        },
+        {
+          "name": "lastName",
+          "dataType": "String"
+        },
+        {
+          "name": "email",
+          "dataType": "String"
+        },
+        {
+          "name": "replaceGroupMemberships",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "memberOf",
+          "dataType": "FederatedGroup",
+          "suffix": ":-*,+providerName,+name"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "federatedUser",
+      "pluralName": "federatedUsers",
+      "summaryFields": [
+        "goid",
+        "name",
+        "login",
+        "providerName",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "login",
+        "name",
+        "providerName"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true,
+      "singleQueryMethod": "federatedUserByName"
+    },
+    "SimpleLdapIdp": {
+      "category": "type",
+      "typeName": "SimpleLdapIdp",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "serverUrls",
+          "dataType": "String"
+        },
+        {
+          "name": "useSslClientAuth",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslClientKeyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "bindDnPatternPrefix",
+          "dataType": "String"
+        },
+        {
+          "name": "bindDnPatternSuffix",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "simpleLdapIdp",
+      "pluralName": "simpleLdapIdps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "PolicyBackedIdp": {
+      "category": "type",
+      "typeName": "PolicyBackedIdp",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "authPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "defaultRoleName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "policyBackedIdp",
+      "pluralName": "policyBackedIdps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "LdapIdp": {
+      "category": "type",
+      "typeName": "LdapIdp",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "ldapType",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "serverUrls",
+          "dataType": "String"
+        },
+        {
+          "name": "useSslClientAuth",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslClientKeyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "searchBase",
+          "dataType": "String"
+        },
+        {
+          "name": "bindDn",
+          "dataType": "String"
+        },
+        {
+          "name": "bindPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "writable",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "writeBase",
+          "dataType": "String"
+        },
+        {
+          "name": "specifiedAttributes",
+          "dataType": "String"
+        },
+        {
+          "name": "userMappings",
+          "dataType": "UserMapping"
+        },
+        {
+          "name": "groupMappings",
+          "dataType": "GroupMapping"
+        },
+        {
+          "name": "ntlmProperties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "ldapIdp",
+      "pluralName": "ldapIdps",
+      "summaryFields": [
+        "goid",
+        "name",
+        "ldapType",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "JdbcConnection": {
+      "category": "type",
+      "typeName": "JdbcConnection",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "driverClass",
+          "dataType": "String"
+        },
+        {
+          "name": "jdbcUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "minPoolSize",
+          "dataType": "NonNegativeInt"
+        },
+        {
+          "name": "maxPoolSize",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "jdbcConnection",
+      "pluralName": "jdbcConnections",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "JmsDestination": {
+      "category": "type",
+      "typeName": "JmsDestination",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "connectionGoid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "direction",
+          "dataType": "String"
+        },
+        {
+          "name": "providerType",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "template",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "initialContextFactoryClassname",
+          "dataType": "String"
+        },
+        {
+          "name": "connectionFactoryName",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiUsername",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "jndiSslDetails",
+          "dataType": "JmsSslDetails"
+        },
+        {
+          "name": "destinationType",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationName",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationUsername",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationPassword",
+          "dataType": "String"
+        },
+        {
+          "name": "destinationSslDetails",
+          "dataType": "JmsSslDetails"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "jmsDestination",
+      "pluralName": "jmsDestinations",
+      "summaryFields": [
+        "goid",
+        "name",
+        "direction",
+        "providerType",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name",
+        "direction",
+        "providerType"
+      ],
+      "deprecatedFields": []
+    },
+    "KerberosConfig": {
+      "category": "type",
+      "typeName": "KerberosConfig",
+      "fields": [
+        {
+          "name": "keytab",
+          "dataType": "String"
+        },
+        {
+          "name": "conf",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "kerberosConfig",
+      "pluralName": "kerberosConfigs",
+      "summaryFields": [
+        "conf"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "conf"
+      ],
+      "deprecatedFields": []
+    },
+    "ListenPort": {
+      "category": "type",
+      "typeName": "ListenPort",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "protocol",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "hardwiredServiceName",
+          "dataType": "String"
+        },
+        {
+          "name": "enabledFeatures",
+          "dataType": "ListenPortFeature"
+        },
+        {
+          "name": "tlsSettings",
+          "dataType": "ListenPortTlsSettings"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "hardwiredService",
+          "dataType": "HardwiredService"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "listenPort",
+      "pluralName": "listenPorts",
+      "summaryFields": [
+        "goid",
+        "name",
+        "protocol",
+        "port",
+        "checksum"
+      ],
+      "excludedFields": [
+        "hardwiredService"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "LogSink": {
+      "category": "type",
+      "typeName": "LogSink",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "type",
+          "dataType": "LogSinkType"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "severity",
+          "dataType": "LogSeverityThreshold"
+        },
+        {
+          "name": "categories",
+          "dataType": "LogSinkCategory"
+        },
+        {
+          "name": "syslogHosts",
+          "dataType": "String"
+        },
+        {
+          "name": "filters",
+          "dataType": "LogSinkFilter"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "logSink",
+      "pluralName": "logSinks",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "PasswordPolicy": {
+      "category": "type",
+      "typeName": "PasswordPolicy",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "forcePasswordChangeNewUser",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "noRepeatingCharacters",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "minPasswordLength",
+          "dataType": "Int"
+        },
+        {
+          "name": "maxPasswordLength",
+          "dataType": "Int"
+        },
+        {
+          "name": "upperMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "lowerMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "numberMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "symbolMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "nonNumericMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "charDiffMinimum",
+          "dataType": "Int"
+        },
+        {
+          "name": "repeatFrequency",
+          "dataType": "Int"
+        },
+        {
+          "name": "passwordExpiry",
+          "dataType": "Int"
+        },
+        {
+          "name": "allowableChangesPerDay",
+          "dataType": "Boolean"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "passwordPolicy",
+      "pluralName": "passwordPolicies",
+      "summaryFields": [
+        "goid",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "goid"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "L7Policy": {
+      "category": "type",
+      "typeName": "L7Policy",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "policyType",
+          "dataType": "L7PolicyType"
+        },
+        {
+          "name": "tag",
+          "dataType": "String"
+        },
+        {
+          "name": "subTag",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soap",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        },
+        {
+          "name": "policyRevision",
+          "dataType": "PolicyRevision"
+        },
+        {
+          "name": "policyRevisions",
+          "dataType": "PolicyRevision"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "policy",
+      "pluralName": "policies",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "policyType",
+        "tag",
+        "subTag",
+        "checksum"
+      ],
+      "excludedFields": [
+        "policyRevision",
+        "policyRevisions"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name",
+        "policyType"
+      ],
+      "deprecatedFields": []
+    },
+    "GlobalPolicy": {
+      "category": "type",
+      "typeName": "GlobalPolicy",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "tag",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "globalPolicy",
+      "pluralName": "globalPolicies",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "tag",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "tag"
+      ],
+      "deprecatedFields": []
+    },
+    "PolicyFragment": {
+      "category": "type",
+      "typeName": "PolicyFragment",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soap",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "policyFragment",
+      "pluralName": "policyFragments",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "ServiceResolutionConfig": {
+      "category": "type",
+      "typeName": "ServiceResolutionConfig",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPathRequired",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "resolutionPathCaseSensitive",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "useL7OriginalUrl",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "useServiceGoid",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "useSoapAction",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "useSoapBodyChildNamespace",
+          "dataType": "Boolean"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "serviceResolutionConfig",
+      "pluralName": "serviceResolutionConfigs",
+      "summaryFields": [
+        "goid",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "goid"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true
+    },
+    "RevocationCheckPolicy": {
+      "category": "type",
+      "typeName": "RevocationCheckPolicy",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "defaultPolicy",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "defaultSuccess",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "continueOnServerUnavailable",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "revocationCheckPolicyItems",
+          "dataType": "RevocationCheckPolicyItem"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "revocationCheckPolicy",
+      "pluralName": "revocationCheckPolicies",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "Role": {
+      "category": "type",
+      "typeName": "Role",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "roleType",
+          "dataType": "RoleType"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "tag",
+          "dataType": "Tag"
+        },
+        {
+          "name": "replaceAssignees",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "userAssignees",
+          "dataType": "UserRef"
+        },
+        {
+          "name": "groupAssignees",
+          "dataType": "GroupRef"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "role",
+      "pluralName": "roles",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "ScheduledTask": {
+      "category": "type",
+      "typeName": "ScheduledTask",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "policyName",
+          "dataType": "String"
+        },
+        {
+          "name": "jobType",
+          "dataType": "JobType"
+        },
+        {
+          "name": "cronExpression",
+          "dataType": "String"
+        },
+        {
+          "name": "executeOnSingleNode",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "executeOnCreation",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "executionDate",
+          "dataType": "DateTime"
+        },
+        {
+          "name": "status",
+          "dataType": "JobStatus"
+        },
+        {
+          "name": "runAsUser",
+          "dataType": "String"
+        },
+        {
+          "name": "runAsUserProviderName",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "scheduledTask",
+      "pluralName": "scheduledTasks",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "BackgroundTaskPolicy": {
+      "category": "type",
+      "typeName": "BackgroundTaskPolicy",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soap",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "backgroundTaskPolicy",
+      "pluralName": "backgroundTaskPolicies",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "Secret": {
+      "category": "type",
+      "typeName": "Secret",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        },
+        {
+          "name": "secret",
+          "dataType": "String"
+        },
+        {
+          "name": "secretType",
+          "dataType": "SecretType"
+        },
+        {
+          "name": "variableReferencable",
+          "dataType": "Boolean"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "secret",
+      "pluralName": "secrets",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "Key": {
+      "category": "type",
+      "typeName": "Key",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "keystoreId",
+          "dataType": "ID"
+        },
+        {
+          "name": "alias",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "keyType",
+          "dataType": "String"
+        },
+        {
+          "name": "usageTypes",
+          "dataType": "KeyUsageType"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "p12",
+          "dataType": "String"
+        },
+        {
+          "name": "pem",
+          "dataType": "String"
+        },
+        {
+          "name": "certChain",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "key",
+      "pluralName": "keys",
+      "summaryFields": [
+        "goid",
+        "keystoreId",
+        "alias",
+        "checksum"
+      ],
+      "excludedFields": [
+        "pem"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "alias",
+        "keystoreId"
+      ],
+      "deprecatedFields": []
+    },
+    "ServerModuleFile": {
+      "category": "type",
+      "typeName": "ServerModuleFile",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "moduleType",
+          "dataType": "ModuleType"
+        },
+        {
+          "name": "moduleSha256",
+          "dataType": "String"
+        },
+        {
+          "name": "signature",
+          "dataType": "String"
+        },
+        {
+          "name": "signerCertBase64",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "moduleStates",
+          "dataType": "ServerModuleFileState"
+        },
+        {
+          "name": "moduleStateSummary",
+          "dataType": "ServerModuleFileStateSummary"
+        },
+        {
+          "name": "filePartName",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "serverModuleFile",
+      "pluralName": "serverModuleFiles",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [
+        "filePartName",
+        "moduleStates",
+        "moduleStateSummary"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "L7Service": {
+      "category": "type",
+      "typeName": "L7Service",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "resolvers",
+          "dataType": "ServiceResolvers"
+        },
+        {
+          "name": "serviceType",
+          "dataType": "L7ServiceType"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soapVersion",
+          "dataType": "SoapVersion"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "laxResolution",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "wsdlUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlResources",
+          "dataType": "ServiceResource"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        },
+        {
+          "name": "policyRevision",
+          "dataType": "PolicyRevision"
+        },
+        {
+          "name": "policyRevisions",
+          "dataType": "PolicyRevision"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "service",
+      "pluralName": "services",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "resolutionPath",
+        "resolvers",
+        "serviceType",
+        "checksum"
+      ],
+      "excludedFields": [
+        "policyRevision",
+        "policyRevisions"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "resolutionPath",
+        "resolvers",
+        "serviceType"
+      ],
+      "deprecatedFields": [],
+      "singleQueryMethod": "serviceByResolvers"
+    },
+    "SMConfig": {
+      "category": "type",
+      "typeName": "SMConfig",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "agentHost",
+          "dataType": "String"
+        },
+        {
+          "name": "agentIP",
+          "dataType": "String"
+        },
+        {
+          "name": "agentHostConfig",
+          "dataType": "String"
+        },
+        {
+          "name": "agentSecret",
+          "dataType": "String"
+        },
+        {
+          "name": "cryptoMode",
+          "dataType": "SMCryptoMode"
+        },
+        {
+          "name": "ipCheckEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "updateSSOToken",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "clusterFailoverThreshold",
+          "dataType": "PositiveInt"
+        },
+        {
+          "name": "nonClusterFailover",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "smConfig",
+      "pluralName": "smConfigs",
+      "summaryFields": [
+        "goid",
+        "name",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
+    "SoapService": {
+      "category": "type",
+      "typeName": "SoapService",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "resolvers",
+          "dataType": "SoapResolvers"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soapVersion",
+          "dataType": "SoapVersion"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "laxResolution",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "wsdl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlResources",
+          "dataType": "ServiceResource"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "soapService",
+      "pluralName": "soapServices",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "resolutionPath",
+        "resolvers",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "resolutionPath",
+        "resolvers"
+      ],
+      "deprecatedFields": [],
+      "singleQueryMethod": "soapServiceByResolver"
+    },
+    "InternalSoapService": {
+      "category": "type",
+      "typeName": "InternalSoapService",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "resolvers",
+          "dataType": "SoapResolvers"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "soapVersion",
+          "dataType": "SoapVersion"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "laxResolution",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "wsdl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlUrl",
+          "dataType": "String"
+        },
+        {
+          "name": "wsdlResources",
+          "dataType": "ServiceResource"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "internalSoapService",
+      "pluralName": "internalSoapServices",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "resolutionPath",
+        "resolvers",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "resolutionPath",
+        "resolvers"
+      ],
+      "deprecatedFields": [],
+      "singleQueryMethod": "internalSoapServiceByResolver"
+    },
+    "Certificate": {
+      "category": "type",
+      "typeName": "Certificate",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprintSha1",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "verifyHostname",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "trustAnchor",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "trustedFor",
+          "dataType": "TrustedForType"
+        },
+        {
+          "name": "revocationCheckPolicyType",
+          "dataType": "PolicyUsageType"
+        },
+        {
+          "name": "revocationCheckPolicyName",
+          "dataType": "String"
+        },
+        {
+          "name": "revocationCheckPolicy",
+          "dataType": "RevocationCheckPolicy"
+        },
+        {
+          "name": "notBefore",
+          "dataType": "DateTime"
+        },
+        {
+          "name": "notAfter",
+          "dataType": "DateTime"
+        },
+        {
+          "name": "certBase64",
+          "dataType": "String"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "trustedCert",
+      "pluralName": "trustedCerts",
+      "summaryFields": [
+        "goid",
+        "name",
+        "subjectDn",
+        "thumbprintSha1",
+        "checksum"
+      ],
+      "excludedFields": [
+        "revocationCheckPolicy"
+      ],
+      "includedFields": [],
+      "identityFields": [
+        "thumbprintSha1"
+      ],
+      "deprecatedFields": [],
+      "goidRefEnabled": true,
+      "singleQueryMethod": "trustedCertByThumbprint"
+    },
+    "WebApiService": {
+      "category": "type",
+      "typeName": "WebApiService",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "webApiService",
+      "pluralName": "webApiServices",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "resolutionPath",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "resolutionPath"
+      ],
+      "deprecatedFields": []
+    },
+    "InternalWebApiService": {
+      "category": "type",
+      "typeName": "InternalWebApiService",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "guid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "folderPath",
+          "dataType": "String"
+        },
+        {
+          "name": "methodsAllowed",
+          "dataType": "HttpMethod"
+        },
+        {
+          "name": "tracingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "wssProcessingEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "properties",
+          "dataType": "EntityProperty"
+        },
+        {
+          "name": "policy",
+          "dataType": "Policy"
+        }
+      ],
+      "isL7Entity": true,
+      "deprecated": true,
+      "singularName": "internalWebApiService",
+      "pluralName": "internalWebApiServices",
+      "summaryFields": [
+        "goid",
+        "guid",
+        "name",
+        "resolutionPath",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "resolutionPath"
+      ],
+      "deprecatedFields": []
+    },
+    "Query": {
+      "category": "type",
+      "typeName": "Query",
+      "fields": [
+        {
+          "name": "activeConnectorByGoid",
+          "dataType": "ActiveConnector",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "activeConnectorByName",
+          "dataType": "ActiveConnector",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "activeConnectors",
+          "dataType": "ActiveConnector"
+        },
+        {
+          "name": "activeConnectorsByType",
+          "dataType": "ActiveConnector",
+          "args": [
+            {
+              "name": "connectorType",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "administrativeUserAccountProperties",
+          "dataType": "AdministrativeUserAccountProperty"
+        },
+        {
+          "name": "auditConfigurations",
+          "dataType": "AuditConfiguration"
+        },
+        {
+          "name": "backgroundTaskPolicies",
+          "dataType": "BackgroundTaskPolicy"
+        },
+        {
+          "name": "backgroundTaskPoliciesByFolderPath",
+          "dataType": "BackgroundTaskPolicy",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "backgroundTaskPolicyByName",
+          "dataType": "BackgroundTaskPolicy",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "cassandraConnectionByGoid",
+          "dataType": "CassandraConnection",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "cassandraConnectionByName",
+          "dataType": "CassandraConnection",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "cassandraConnections",
+          "dataType": "CassandraConnection"
+        },
+        {
+          "name": "clusterInfo",
+          "dataType": "ClusterInfo"
+        },
+        {
+          "name": "clusterProperties",
+          "dataType": "ClusterProperty"
+        },
+        {
+          "name": "clusterPropertyByGoid",
+          "dataType": "ClusterProperty",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "clusterPropertyByName",
+          "dataType": "ClusterProperty",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "customKeyValueByGoid",
+          "dataType": "CustomKeyValue",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "customKeyValueByKey",
+          "dataType": "CustomKeyValue",
+          "args": [
+            {
+              "name": "key",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "customKeyValues",
+          "dataType": "CustomKeyValue"
+        },
+        {
+          "name": "dtdByGoid",
+          "dataType": "Dtd",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "dtdBySystemId",
+          "dataType": "Dtd",
+          "args": [
+            {
+              "name": "systemId",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "dtds",
+          "dataType": "Dtd"
+        },
+        {
+          "name": "emailListenerByGoid",
+          "dataType": "EmailListener",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "emailListenerByName",
+          "dataType": "EmailListener",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "emailListeners",
+          "dataType": "EmailListener"
+        },
+        {
+          "name": "encassConfigByGoid",
+          "dataType": "EncassConfig",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "encassConfigByGuid",
+          "dataType": "EncassConfig",
+          "args": [
+            {
+              "name": "guid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "encassConfigByName",
+          "dataType": "EncassConfig",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "encassConfigs",
+          "dataType": "EncassConfig"
+        },
+        {
+          "name": "encassConfigsByFolderPath",
+          "dataType": "EncassConfig",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "federatedGroupByName",
+          "dataType": "FederatedGroup",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "federatedGroups",
+          "dataType": "FederatedGroup"
+        },
+        {
+          "name": "federatedIdpByGoid",
+          "dataType": "FederatedIdp",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "federatedIdpByName",
+          "dataType": "FederatedIdp",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "federatedIdps",
+          "dataType": "FederatedIdp"
+        },
+        {
+          "name": "federatedUserByName",
+          "dataType": "FederatedUser",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "federatedUsers",
+          "dataType": "FederatedUser"
+        },
+        {
+          "name": "fipByName",
+          "dataType": "Fip",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "fipGroupByName",
+          "dataType": "FipGroup",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "fipGroups",
+          "dataType": "FipGroup"
+        },
+        {
+          "name": "fipUserByName",
+          "dataType": "FipUser",
+          "args": [
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "fipUsers",
+          "dataType": "FipUser"
+        },
+        {
+          "name": "fips",
+          "dataType": "Fip"
+        },
+        {
+          "name": "folderByGoid",
+          "dataType": "Folder",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "folderByPath",
+          "dataType": "Folder",
+          "args": [
+            {
+              "name": "path",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "folders",
+          "dataType": "Folder"
+        },
+        {
+          "name": "foldersByPath",
+          "dataType": "Folder",
+          "args": [
+            {
+              "name": "path",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "genericEntities",
+          "dataType": "GenericEntity"
+        },
+        {
+          "name": "genericEntityByGoid",
+          "dataType": "GenericEntity",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "genericEntityByName",
+          "dataType": "GenericEntity",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "globalPolicies",
+          "dataType": "GlobalPolicy"
+        },
+        {
+          "name": "globalPoliciesByFolderPath",
+          "dataType": "GlobalPolicy",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "globalPolicyByTag",
+          "dataType": "GlobalPolicy",
+          "args": [
+            {
+              "name": "tag",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "httpConfigurationByGoid",
+          "dataType": "HttpConfiguration",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "httpConfigurations",
+          "dataType": "HttpConfiguration"
+        },
+        {
+          "name": "httpConfigurationsByHost",
+          "dataType": "HttpConfiguration",
+          "args": [
+            {
+              "name": "host",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpGroupByName",
+          "dataType": "GroupRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpGroupBySubjectDn",
+          "dataType": "GroupRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "subjectDn",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpGroups",
+          "dataType": "GroupRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpUserByLogin",
+          "dataType": "UserRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "login",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpUserBySubjectDn",
+          "dataType": "UserRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            },
+            {
+              "name": "subjectDn",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "idpUsers",
+          "dataType": "UserRef",
+          "args": [
+            {
+              "name": "providerType",
+              "dataType": "IdpType!"
+            },
+            {
+              "name": "providerName",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalDtds",
+          "dataType": "Dtd"
+        },
+        {
+          "name": "internalGroupByName",
+          "dataType": "InternalGroup",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalGroups",
+          "dataType": "InternalGroup"
+        },
+        {
+          "name": "internalIdps",
+          "dataType": "InternalIdp"
+        },
+        {
+          "name": "internalSchemas",
+          "dataType": "Schema"
+        },
+        {
+          "name": "internalSoapServiceByName",
+          "dataType": "InternalSoapService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalSoapServices",
+          "dataType": "InternalSoapService"
+        },
+        {
+          "name": "internalSoapServicesByFolderPath",
+          "dataType": "InternalSoapService",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalUserByLogin",
+          "dataType": "InternalUser",
+          "args": [
+            {
+              "name": "login",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalUsers",
+          "dataType": "InternalUser"
+        },
+        {
+          "name": "internalWebApiServiceByName",
+          "dataType": "InternalWebApiService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalWebApiServiceByResolutionPath",
+          "dataType": "InternalWebApiService",
+          "args": [
+            {
+              "name": "resolutionPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "internalWebApiServices",
+          "dataType": "InternalWebApiService"
+        },
+        {
+          "name": "internalWebApiServicesByFolderPath",
+          "dataType": "InternalWebApiService",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "jdbcConnectionByGoid",
+          "dataType": "JdbcConnection",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "jdbcConnectionByName",
+          "dataType": "JdbcConnection",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "jdbcConnections",
+          "dataType": "JdbcConnection"
+        },
+        {
+          "name": "jmsDestinationByGoid",
+          "dataType": "JmsDestination",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "jmsDestinationByName",
+          "dataType": "JmsDestination",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "jmsDestinations",
+          "dataType": "JmsDestination"
+        },
+        {
+          "name": "jmsDestinationsByName",
+          "dataType": "JmsDestination",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "kerberosConfigs",
+          "dataType": "KerberosConfig"
+        },
+        {
+          "name": "keyByAlias",
+          "dataType": "Key",
+          "args": [
+            {
+              "name": "alias",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "keyByGoid",
+          "dataType": "Key",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "keys",
+          "dataType": "Key"
+        },
+        {
+          "name": "ldapByName",
+          "dataType": "Ldap",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "ldapIdpByGoid",
+          "dataType": "LdapIdp",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "ldapIdpByName",
+          "dataType": "LdapIdp",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "ldapIdps",
+          "dataType": "LdapIdp"
+        },
+        {
+          "name": "ldaps",
+          "dataType": "Ldap"
+        },
+        {
+          "name": "listenPortByGoid",
+          "dataType": "ListenPort",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "listenPortByName",
+          "dataType": "ListenPort",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "listenPorts",
+          "dataType": "ListenPort"
+        },
+        {
+          "name": "listenPortsByProtocol",
+          "dataType": "ListenPort",
+          "args": [
+            {
+              "name": "protocol",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "logSinkByGoid",
+          "dataType": "LogSink",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "logSinkByName",
+          "dataType": "LogSink",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "logSinks",
+          "dataType": "LogSink"
+        },
+        {
+          "name": "passwordPolicies",
+          "dataType": "PasswordPolicy"
+        },
+        {
+          "name": "passwordPolicy",
+          "dataType": "PasswordPolicy"
+        },
+        {
+          "name": "policies",
+          "dataType": "L7Policy"
+        },
+        {
+          "name": "policiesByFolderPath",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "policiesByFolderPathAndType",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            },
+            {
+              "name": "policyType",
+              "dataType": "L7PolicyType!"
+            },
+            {
+              "name": "tag",
+              "dataType": "String"
+            },
+            {
+              "name": "subTag",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "policiesByType",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "policyType",
+              "dataType": "L7PolicyType!"
+            },
+            {
+              "name": "tag",
+              "dataType": "String"
+            },
+            {
+              "name": "subTag",
+              "dataType": "String"
+            }
+          ]
+        },
+        {
+          "name": "policyBackedIdpByGoid",
+          "dataType": "PolicyBackedIdp",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyBackedIdpByName",
+          "dataType": "PolicyBackedIdp",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "policyBackedIdps",
+          "dataType": "PolicyBackedIdp"
+        },
+        {
+          "name": "policyByGoid",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyByGuid",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "guid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyByName",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "policyByNameAndRevision",
+          "dataType": "L7Policy",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            },
+            {
+              "name": "revision",
+              "dataType": "Long!"
+            }
+          ]
+        },
+        {
+          "name": "policyFragmentByGoid",
+          "dataType": "PolicyFragment",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyFragmentByGuid",
+          "dataType": "PolicyFragment",
+          "args": [
+            {
+              "name": "guid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyFragmentByName",
+          "dataType": "PolicyFragment",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "policyFragments",
+          "dataType": "PolicyFragment"
+        },
+        {
+          "name": "policyFragmentsByFolderPath",
+          "dataType": "PolicyFragment",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "revocationCheckPolicies",
+          "dataType": "RevocationCheckPolicy"
+        },
+        {
+          "name": "revocationCheckPolicyByGoid",
+          "dataType": "RevocationCheckPolicy",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "revocationCheckPolicyByName",
+          "dataType": "RevocationCheckPolicy",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "roleByGoid",
+          "dataType": "Role",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "roleByName",
+          "dataType": "Role",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "roles",
+          "dataType": "Role"
+        },
+        {
+          "name": "scheduledTaskByGoid",
+          "dataType": "ScheduledTask",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "scheduledTaskByName",
+          "dataType": "ScheduledTask",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "scheduledTasks",
+          "dataType": "ScheduledTask"
+        },
+        {
+          "name": "schemaByGoid",
+          "dataType": "Schema",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "schemaBySystemId",
+          "dataType": "Schema",
+          "args": [
+            {
+              "name": "systemId",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "schemas",
+          "dataType": "Schema"
+        },
+        {
+          "name": "searchFederatedIdp",
+          "dataType": "FederatedSearchResult",
+          "args": [
+            {
+              "name": "filter",
+              "dataType": "IdpFilter!"
+            }
+          ]
+        },
+        {
+          "name": "searchFip",
+          "dataType": "FipSearchResult",
+          "args": [
+            {
+              "name": "filter",
+              "dataType": "IdpFilter!"
+            }
+          ]
+        },
+        {
+          "name": "searchInternal",
+          "dataType": "InternalSearchResult",
+          "args": [
+            {
+              "name": "filter",
+              "dataType": "IdpFilter!"
+            }
+          ]
+        },
+        {
+          "name": "searchInternalIdp",
+          "dataType": "InternalSearchResult",
+          "args": [
+            {
+              "name": "filter",
+              "dataType": "IdpFilter!"
+            }
+          ]
+        },
+        {
+          "name": "secretByGoid",
+          "dataType": "Secret",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "secretByName",
+          "dataType": "Secret",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "secrets",
+          "dataType": "Secret"
+        },
+        {
+          "name": "serverModuleFileByGoid",
+          "dataType": "ServerModuleFile",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "serverModuleFileByName",
+          "dataType": "ServerModuleFile",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "serverModuleFiles",
+          "dataType": "ServerModuleFile"
+        },
+        {
+          "name": "serviceByGoid",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "serviceByName",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "serviceByResolutionPath",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "resolutionPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "serviceByResolvers",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "resolvers",
+              "dataType": "ServiceResolversInput!"
+            }
+          ]
+        },
+        {
+          "name": "serviceByResolversAndRevision",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "resolvers",
+              "dataType": "ServiceResolversInput!"
+            },
+            {
+              "name": "revision",
+              "dataType": "Long!"
+            }
+          ]
+        },
+        {
+          "name": "serviceResolutionConfig",
+          "dataType": "ServiceResolutionConfig"
+        },
+        {
+          "name": "serviceResolutionConfigs",
+          "dataType": "ServiceResolutionConfig"
+        },
+        {
+          "name": "services",
+          "dataType": "L7Service"
+        },
+        {
+          "name": "servicesByFolderPath",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "servicesByFolderPathAndType",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            },
+            {
+              "name": "serviceType",
+              "dataType": "L7ServiceType!"
+            }
+          ]
+        },
+        {
+          "name": "servicesByName",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "servicesByResolutionPath",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "resolutionPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "servicesByResolvers",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "resolvers",
+              "dataType": "ServiceResolversInput!"
+            }
+          ]
+        },
+        {
+          "name": "servicesByType",
+          "dataType": "L7Service",
+          "args": [
+            {
+              "name": "serviceType",
+              "dataType": "L7ServiceType!"
+            }
+          ]
+        },
+        {
+          "name": "simpleLdapIdpByGoid",
+          "dataType": "SimpleLdapIdp",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "simpleLdapIdpByName",
+          "dataType": "SimpleLdapIdp",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "simpleLdapIdps",
+          "dataType": "SimpleLdapIdp"
+        },
+        {
+          "name": "smConfigByGoid",
+          "dataType": "SMConfig",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "smConfigByName",
+          "dataType": "SMConfig",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "smConfigs",
+          "dataType": "SMConfig"
+        },
+        {
+          "name": "soapServiceByGoid",
+          "dataType": "SoapService",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "soapServiceByName",
+          "dataType": "SoapService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "soapServiceByResolver",
+          "dataType": "SoapService",
+          "args": [
+            {
+              "name": "resolver",
+              "dataType": "SoapServiceResolverInput!"
+            }
+          ]
+        },
+        {
+          "name": "soapServices",
+          "dataType": "SoapService"
+        },
+        {
+          "name": "soapServicesByFolderPath",
+          "dataType": "SoapService",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "soapServicesByName",
+          "dataType": "SoapService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "trustedCertByGoid",
+          "dataType": "Certificate",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "trustedCertByThumbprint",
+          "dataType": "Certificate",
+          "args": [
+            {
+              "name": "thumbprintSha1",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "trustedCerts",
+          "dataType": "Certificate"
+        },
+        {
+          "name": "trustedCertsByDn",
+          "dataType": "Certificate",
+          "args": [
+            {
+              "name": "subjectDn",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServiceByGoid",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServiceByName",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServiceByResolutionPath",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "resolutionPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServices",
+          "dataType": "WebApiService"
+        },
+        {
+          "name": "webApiServicesByFolderPath",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "folderPath",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServicesByName",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "webApiServicesByResolutionPath",
+          "dataType": "WebApiService",
+          "args": [
+            {
+              "name": "resolutionPath",
+              "dataType": "String!"
+            }
+          ]
+        }
+      ],
+      "singularName": "query",
+      "pluralName": "queries",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "AuditFtpConfiguration": {
+      "category": "type",
+      "typeName": "AuditFtpConfiguration",
+      "fields": [
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "timeout",
+          "dataType": "Int"
+        },
+        {
+          "name": "user",
+          "dataType": "String"
+        },
+        {
+          "name": "password",
+          "dataType": "String"
+        },
+        {
+          "name": "directory",
+          "dataType": "String"
+        },
+        {
+          "name": "verifyServerCert",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "security",
+          "dataType": "AuditFtpSecurityType"
+        },
+        {
+          "name": "enabled",
+          "dataType": "Boolean"
+        }
+      ],
+      "singularName": "auditFtpConfiguration",
+      "pluralName": "auditFtpConfigurations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EncassArg": {
+      "category": "type",
+      "typeName": "EncassArg",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "type",
+          "dataType": "DataType"
+        },
+        {
+          "name": "ordinal",
+          "dataType": "Int"
+        },
+        {
+          "name": "guiPrompt",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "guiLabel",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "encassArg",
+      "pluralName": "encassArgs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EncassResult": {
+      "category": "type",
+      "typeName": "EncassResult",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "type",
+          "dataType": "DataType"
+        }
+      ],
+      "singularName": "encassResult",
+      "pluralName": "encassResults",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "HttpProxyConfiguration": {
+      "category": "type",
+      "typeName": "HttpProxyConfiguration",
+      "fields": [
+        {
+          "name": "host",
+          "dataType": "String"
+        },
+        {
+          "name": "port",
+          "dataType": "Int"
+        },
+        {
+          "name": "username",
+          "dataType": "String"
+        },
+        {
+          "name": "securePasswordName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "httpProxyConfiguration",
+      "pluralName": "httpProxyConfigurations",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GroupMapping": {
+      "category": "type",
+      "typeName": "GroupMapping",
+      "fields": [
+        {
+          "name": "objClass",
+          "dataType": "String"
+        },
+        {
+          "name": "nameAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "memberAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "memberStrategy",
+          "dataType": "MemberStrategy"
+        }
+      ],
+      "singularName": "groupMapping",
+      "pluralName": "groupMappings",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "MemberStrategy": {
+      "category": "type",
+      "typeName": "MemberStrategy",
+      "fields": [
+        {
+          "name": "val",
+          "dataType": "Int"
+        }
+      ],
+      "singularName": "memberStrategy",
+      "pluralName": "memberStrategies",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "UserMapping": {
+      "category": "type",
+      "typeName": "UserMapping",
+      "fields": [
+        {
+          "name": "objClass",
+          "dataType": "String"
+        },
+        {
+          "name": "nameAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "loginAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "passwdAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "firstNameAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "lastNameAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "emailNameAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "kerberosAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "kerberosEnterpriseAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "userCertAttrName",
+          "dataType": "String"
+        },
+        {
+          "name": "passwdType",
+          "dataType": "PasswdStrategy"
+        }
+      ],
+      "singularName": "userMapping",
+      "pluralName": "userMappings",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PasswdStrategy": {
+      "category": "type",
+      "typeName": "PasswdStrategy",
+      "fields": [
+        {
+          "name": "val",
+          "dataType": "Int"
+        }
+      ],
+      "singularName": "passwdStrategy",
+      "pluralName": "passwdStrategies",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "JmsSslDetails": {
+      "category": "type",
+      "typeName": "JmsSslDetails",
+      "fields": [
+        {
+          "name": "sslEnabled",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslForAuthenticationOnly",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslVerifyServerCertificate",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslVerifyServerHostname",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "sslClientKeyAlias",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "jmsSslDetails",
+      "pluralName": "jmsSslDetailss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ListenPortTlsSettings": {
+      "category": "type",
+      "typeName": "ListenPortTlsSettings",
+      "fields": [
+        {
+          "name": "clientAuthentication",
+          "dataType": "ListenPortClientAuth"
+        },
+        {
+          "name": "keystoreId",
+          "dataType": "ID"
+        },
+        {
+          "name": "keyAlias",
+          "dataType": "String"
+        },
+        {
+          "name": "tlsVersions",
+          "dataType": "String"
+        },
+        {
+          "name": "cipherSuites",
+          "dataType": "String"
+        },
+        {
+          "name": "useCipherSuitesOrder",
+          "dataType": "Boolean"
+        }
+      ],
+      "singularName": "listenPortTlsSettings",
+      "pluralName": "listenPortTlsSettingss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "LogSinkFilter": {
+      "category": "type",
+      "typeName": "LogSinkFilter",
+      "fields": [
+        {
+          "name": "type",
+          "dataType": "String"
+        },
+        {
+          "name": "values",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "logSinkFilter",
+      "pluralName": "logSinkFilters",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "Policy": {
+      "category": "type",
+      "typeName": "Policy",
+      "fields": [
+        {
+          "name": "xml",
+          "dataType": "String"
+        },
+        {
+          "name": "json",
+          "dataType": "String"
+        },
+        {
+          "name": "yaml",
+          "dataType": "String"
+        },
+        {
+          "name": "code",
+          "dataType": "JSON"
+        },
+        {
+          "name": "directDependencies",
+          "dataType": "PolicyDependency"
+        },
+        {
+          "name": "allDependencies",
+          "dataType": "PolicyDependency"
+        }
+      ],
+      "singularName": "policy",
+      "pluralName": "policies",
+      "summaryFields": [],
+      "excludedFields": [
+        "json",
+        "yaml",
+        "code",
+        "directDependencies",
+        "allDependencies"
+      ],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyRevision": {
+      "category": "type",
+      "typeName": "PolicyRevision",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "ordinal",
+          "dataType": "Long"
+        },
+        {
+          "name": "active",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "comment",
+          "dataType": "String"
+        },
+        {
+          "name": "author",
+          "dataType": "String"
+        },
+        {
+          "name": "time",
+          "dataType": "DateTime"
+        },
+        {
+          "name": "xml",
+          "dataType": "String"
+        },
+        {
+          "name": "json",
+          "dataType": "String"
+        },
+        {
+          "name": "yaml",
+          "dataType": "String"
+        },
+        {
+          "name": "code",
+          "dataType": "JSON"
+        }
+      ],
+      "singularName": "policyRevision",
+      "pluralName": "policyRevisions",
+      "summaryFields": [],
+      "excludedFields": [
+        "json",
+        "yaml",
+        "code"
+      ],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyDependency": {
+      "category": "type",
+      "typeName": "PolicyDependency",
+      "fields": [
+        {
+          "name": "activeConnectors",
+          "dataType": "ActiveConnector"
+        },
+        {
+          "name": "cassandraConnections",
+          "dataType": "CassandraConnection"
+        },
+        {
+          "name": "clusterProperties",
+          "dataType": "ClusterProperty"
+        },
+        {
+          "name": "customKeyValues",
+          "dataType": "CustomKeyValue"
+        },
+        {
+          "name": "dtds",
+          "dataType": "Dtd"
+        },
+        {
+          "name": "emailListeners",
+          "dataType": "EmailListener"
+        },
+        {
+          "name": "encassConfigs",
+          "dataType": "EncassConfig"
+        },
+        {
+          "name": "fips",
+          "dataType": "Fip"
+        },
+        {
+          "name": "fipGroups",
+          "dataType": "FipGroup"
+        },
+        {
+          "name": "fipUsers",
+          "dataType": "FipUser"
+        },
+        {
+          "name": "federatedIdps",
+          "dataType": "FederatedIdp"
+        },
+        {
+          "name": "federatedGroups",
+          "dataType": "FederatedGroup"
+        },
+        {
+          "name": "federatedUsers",
+          "dataType": "FederatedUser"
+        },
+        {
+          "name": "internalIdps",
+          "dataType": "InternalIdp"
+        },
+        {
+          "name": "internalGroups",
+          "dataType": "InternalGroup"
+        },
+        {
+          "name": "internalUsers",
+          "dataType": "InternalUser"
+        },
+        {
+          "name": "jdbcConnections",
+          "dataType": "JdbcConnection"
+        },
+        {
+          "name": "jmsDestinations",
+          "dataType": "JmsDestination"
+        },
+        {
+          "name": "keys",
+          "dataType": "Key"
+        },
+        {
+          "name": "ldaps",
+          "dataType": "Ldap"
+        },
+        {
+          "name": "ldapIdps",
+          "dataType": "LdapIdp"
+        },
+        {
+          "name": "listenPorts",
+          "dataType": "ListenPort"
+        },
+        {
+          "name": "policies",
+          "dataType": "L7Policy"
+        },
+        {
+          "name": "policyFragments",
+          "dataType": "PolicyFragment"
+        },
+        {
+          "name": "revocationCheckPolicies",
+          "dataType": "RevocationCheckPolicy"
+        },
+        {
+          "name": "schemas",
+          "dataType": "Schema"
+        },
+        {
+          "name": "secrets",
+          "dataType": "Secret"
+        },
+        {
+          "name": "serverModuleFiles",
+          "dataType": "ServerModuleFile"
+        },
+        {
+          "name": "smConfigs",
+          "dataType": "SMConfig"
+        },
+        {
+          "name": "trustedCerts",
+          "dataType": "Certificate"
+        },
+        {
+          "name": "simpleLdapIdps",
+          "dataType": "SimpleLdapIdp"
+        },
+        {
+          "name": "policyBackedIdps",
+          "dataType": "PolicyBackedIdp"
+        },
+        {
+          "name": "genericEntities",
+          "dataType": "GenericEntity"
+        }
+      ],
+      "singularName": "policyDependency",
+      "pluralName": "policyDependencies",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "RevocationCheckPolicyItem": {
+      "category": "type",
+      "typeName": "RevocationCheckPolicyItem",
+      "fields": [
+        {
+          "name": "type",
+          "dataType": "CertRevocationCheckPropertyType"
+        },
+        {
+          "name": "url",
+          "dataType": "String"
+        },
+        {
+          "name": "allowIssuerSignature",
+          "dataType": "Boolean"
+        },
+        {
+          "name": "nonceUsage",
+          "dataType": "OcspNonceUsage"
+        },
+        {
+          "name": "signerThumbprintSha1s",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "revocationCheckPolicyItem",
+      "pluralName": "revocationCheckPolicyItems",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "UserRef": {
+      "category": "type",
+      "typeName": "UserRef",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "login",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "providerType",
+          "dataType": "IdpType"
+        }
+      ],
+      "singularName": "userRef",
+      "pluralName": "userRefs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "GroupRef": {
+      "category": "type",
+      "typeName": "GroupRef",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "providerName",
+          "dataType": "String"
+        },
+        {
+          "name": "providerType",
+          "dataType": "IdpType"
+        }
+      ],
+      "singularName": "groupRef",
+      "pluralName": "groupRefs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "EntityProperty": {
+      "category": "type",
+      "typeName": "EntityProperty",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "value",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "entityProperty",
+      "pluralName": "entityProperties",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ServiceResource": {
+      "category": "type",
+      "typeName": "ServiceResource",
+      "fields": [
+        {
+          "name": "uri",
+          "dataType": "String"
+        },
+        {
+          "name": "content",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serviceResource",
+      "pluralName": "serviceResources",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ServerModuleFileStateSummary": {
+      "category": "type",
+      "typeName": "ServerModuleFileStateSummary",
+      "fields": [
+        {
+          "name": "state",
+          "dataType": "ModuleStateSummary"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serverModuleFileStateSummary",
+      "pluralName": "serverModuleFileStateSummaries",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ServerModuleFileState": {
+      "category": "type",
+      "typeName": "ServerModuleFileState",
+      "fields": [
+        {
+          "name": "nodeId",
+          "dataType": "String"
+        },
+        {
+          "name": "nodeName",
+          "dataType": "String"
+        },
+        {
+          "name": "state",
+          "dataType": "ModuleState"
+        },
+        {
+          "name": "description",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serverModuleFileState",
+      "pluralName": "serverModuleFileStates",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "ServiceResolvers": {
+      "category": "type",
+      "typeName": "ServiceResolvers",
+      "fields": [
+        {
+          "name": "soapActions",
+          "dataType": "String"
+        },
+        {
+          "name": "baseUri",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "serviceResolvers",
+      "pluralName": "serviceResolverss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "SoapResolvers": {
+      "category": "type",
+      "typeName": "SoapResolvers",
+      "fields": [
+        {
+          "name": "soapActions",
+          "dataType": "String"
+        },
+        {
+          "name": "baseUri",
+          "dataType": "String"
+        },
+        {
+          "name": "resolutionPath",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "soapResolvers",
+      "pluralName": "soapResolverss",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "TrustedCertRef": {
+      "category": "interface",
+      "typeName": "TrustedCertRef",
+      "fields": [
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "subjectDn",
+          "dataType": "String"
+        },
+        {
+          "name": "thumbprintSha1",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "trustedCertRef",
+      "pluralName": "trustedCertRefs",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    }
+  },
+  "primitiveTypes": [
+    "String",
+    "NonEmptyString",
+    "AnyObject",
+    "Boolean",
+    "ID",
+    "PositiveInt",
+    "NonNegativeInt",
+    "Int",
+    "Long",
+    "Date",
+    "DateTime",
+    "JSON",
+    "AuditFtpSecurityType",
+    "CassandraCompression",
+    "EmailServerType",
+    "DataType",
+    "HttpScheme",
+    "IdpType",
+    "HashAlgorithm",
+    "SignatureAlgorithm",
+    "ListenPortFeature",
+    "ListenPortClientAuth",
+    "LogSeverityThreshold",
+    "LogSinkType",
+    "LogSinkCategory",
+    "L7PolicyType",
+    "CertRevocationCheckPropertyType",
+    "OcspNonceUsage",
+    "Tag",
+    "RoleType",
+    "EntityMutationAction",
+    "EntityMutationStatus",
+    "HttpMethod",
+    "EntityFieldOption",
+    "JobStatus",
+    "JobType",
+    "SecretType",
+    "KeyUsageType",
+    "ModuleType",
+    "ModuleStateSummary",
+    "ModuleState",
+    "L7ServiceType",
+    "SoapVersion",
+    "SMCryptoMode",
+    "PolicyUsageType",
+    "TrustedForType",
+    "CertificateValidationType",
+    "CertValidationType"
+  ],
+  "version": "v2.0.0",
+  "schemaVersion": "v11.1.4"
+}
