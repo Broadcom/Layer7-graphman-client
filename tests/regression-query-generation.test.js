@@ -12,7 +12,7 @@ const utils = tUtils.load("graphman-utils");
 
 const home = tUtils.config().home;
 const defaultSchema = tUtils.config().schemaVersion;
-const schemas = ["v11.1.1", "v11.1.2", "v11.1.3", "v11.1.4", "v11.2.0", "v11.2.1", "v11.2.2"]
+const schemas = ["v11.1.1", "v11.1.2", "v11.1.3", "v11.1.4", "v11.1.5", "v11.2.0", "v11.2.1", "v11.2.2"]
     .filter(version => fs.existsSync(path.join(home, "schema", version, "schema.graphql")));
 
 const generate = (query, options) =>

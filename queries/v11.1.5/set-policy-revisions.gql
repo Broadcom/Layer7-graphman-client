@@ -1,0 +1,8 @@
+mutation setServiceAndPolicyRevisions($services: [L7ServicePartialInput!]! = [], $policies: [L7PolicyPartialInput!]! = []) {
+  setPolicyRevisions(input: $policies) {
+    detailedStatus {status description source{name value} target{name value}}
+  }
+  setServiceRevisions(input: $services) {
+    detailedStatus {status description source{name value} target{name value}}
+  }
+}

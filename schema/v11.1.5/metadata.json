@@ -1981,6 +1981,47 @@
       ],
       "deprecatedFields": []
     },
+    "PolicyBackedService": {
+      "category": "type",
+      "typeName": "PolicyBackedService",
+      "fields": [
+        {
+          "name": "goid",
+          "dataType": "ID"
+        },
+        {
+          "name": "name",
+          "dataType": "String"
+        },
+        {
+          "name": "interfaceName",
+          "dataType": "String"
+        },
+        {
+          "name": "checksum",
+          "dataType": "String"
+        },
+        {
+          "name": "operations",
+          "dataType": "PolicyBackedServiceOperation"
+        }
+      ],
+      "isL7Entity": true,
+      "singularName": "policyBackedService",
+      "pluralName": "policyBackedServices",
+      "summaryFields": [
+        "goid",
+        "name",
+        "interfaceName",
+        "checksum"
+      ],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [
+        "name"
+      ],
+      "deprecatedFields": []
+    },
     "GlobalPolicy": {
       "category": "type",
       "typeName": "GlobalPolicy",
@@ -3989,6 +4030,10 @@
           "dataType": "LogSink"
         },
         {
+          "name": "nodeInfo",
+          "dataType": "ClusterNodeInfo"
+        },
+        {
           "name": "passwordPolicies",
           "dataType": "PasswordPolicy"
         },
@@ -4073,6 +4118,30 @@
         {
           "name": "policyBackedIdps",
           "dataType": "PolicyBackedIdp"
+        },
+        {
+          "name": "policyBackedServiceByGoid",
+          "dataType": "PolicyBackedService",
+          "args": [
+            {
+              "name": "goid",
+              "dataType": "ID!"
+            }
+          ]
+        },
+        {
+          "name": "policyBackedServiceByName",
+          "dataType": "PolicyBackedService",
+          "args": [
+            {
+              "name": "name",
+              "dataType": "String!"
+            }
+          ]
+        },
+        {
+          "name": "policyBackedServices",
+          "dataType": "PolicyBackedService"
         },
         {
           "name": "policyByGoid",
@@ -5263,10 +5332,35 @@
         {
           "name": "genericEntities",
           "dataType": "GenericEntity"
+        },
+        {
+          "name": "policyBackedServices",
+          "dataType": "PolicyBackedService"
         }
       ],
       "singularName": "policyDependency",
       "pluralName": "policyDependencies",
+      "summaryFields": [],
+      "excludedFields": [],
+      "includedFields": [],
+      "identityFields": [],
+      "deprecatedFields": []
+    },
+    "PolicyBackedServiceOperation": {
+      "category": "type",
+      "typeName": "PolicyBackedServiceOperation",
+      "fields": [
+        {
+          "name": "operationName",
+          "dataType": "String"
+        },
+        {
+          "name": "policyName",
+          "dataType": "String"
+        }
+      ],
+      "singularName": "policyBackedServiceOperation",
+      "pluralName": "policyBackedServiceOperations",
       "summaryFields": [],
       "excludedFields": [],
       "includedFields": [],
@@ -5551,6 +5645,7 @@
     "JSON",
     "AuditFtpSecurityType",
     "CassandraCompression",
+    "FormFactor",
     "EmailServerType",
     "DataType",
     "HttpScheme",
@@ -5587,5 +5682,5 @@
     "CertValidationType"
   ],
   "version": "v2.0.0",
-  "schemaVersion": "v11.1.4"
+  "schemaVersion": "v11.1.5"
 }

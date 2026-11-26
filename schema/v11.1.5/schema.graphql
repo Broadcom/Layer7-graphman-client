@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
+# Copyright © 2026. Broadcom Inc. and its subsidiaries. All Rights Reserved.
 #
 
 extend type Query {
@@ -309,6 +309,7 @@ input BundleEntityMappingsInput {
     webApiServices:[WebApiServiceMappingInstructionInput!]
     internalWebApiServices:[WebApiServiceMappingInstructionInput!]
     genericEntities:[NamedEntityMappingInstructionInput!]
+    policyBackedServices:[NamedEntityMappingInstructionInput!]
     roles:[NamedEntityMappingInstructionInput!]
     auditConfigurations:[NamedEntityMappingInstructionInput!]
 }
@@ -469,18 +470,22 @@ type CassandraConnectionsPayload implements EntityMutationsPayload {
     cassandraConnections: [CassandraConnection]!
 }
 #
-# Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+# Copyright (c) 2026 Broadcom Inc. and its subsidiaries. All Rights Reserved.
 #
 
 extend type Query {
     "Get all cluster nodes information"
-    clusterInfo : ClusterInfo!
+    clusterInfo : ClusterInfo
+    "Get cluster node info"
+    nodeInfo: ClusterNodeInfo
 }
 
 type ClusterInfo {
-    "cluster Name"
+    "Name of the cluster"
     name : String
-    "cluster Nodes Info"
+    "checksum"
+    checksum: String
+    "Cluster nodes"
     nodes : [ClusterNodeInfo!]!
 }
 
@@ -493,8 +498,162 @@ type ClusterNodeInfo {
     address : String!
     "cluster node uptime"
     uptime : Long!
+    "cluster node boot time"
+    bootTime : DateTime!
+    "cluster node lastUpdatedTime"
+    lastUpdatedTime : DateTime!
+    "cluster node status"
+    nodeStatus : String
+    "node formFactor"
+    formFactor : FormFactor!
+    "supportsDBUpgrade on the node"
+    supportsDBUpgrade : Boolean!
+    "failoverDBConfigured on the node"
+    failoverDBConfigured : Boolean!
+    "checksum"
+    checksum: String
+
+    operatingSystem : OSInfo
+    "JVM Info"
+    jvm : JVMInfo
+    "java command line arguments"
+    jvmArguments : [EntityProperty!]
+
+    "Product name"
+    productName: String
+    "Product Version"
+    productVersion : ProductVersion
+
+    "license information"
+    licenses : [LicenseInfo]
+    "Patches Info"
+    patches : [PatchInfo]
+
+    "Configured System Properties"
+    systemProperties: [EntityProperty!]
+    "Configured Telemetry Properties"
+    telemetryProperties : [EntityProperty!]
+    "Configured Node Properties"
+    nodeProperties : [EntityProperty!]
 }
-#
+
+type OSInfo {
+    "Operating System Name"
+    name : String
+    "Operating System architecture"
+    architecture : String
+    "Operating System version"
+    version : String
+}
+
+type JVMInfo {
+    "Java Virtual Machine vendor"
+    vendor : String
+    "Java Virtual Machine name"
+    name : String
+    "Java Virtual Machine version"
+    version : String
+}
+
+type ProductVersion {
+    "Major version of the product"
+    major : String!
+    "Minor version of the product"
+    minor: String!
+    "Sub minor version of the product"
+    subMinor : String!
+    "Build number of the GW"
+    buildNumber: String!
+    "Build date of the GW"
+    buildDate: DateTime!
+    "formal string of the GW, complete version"
+    formalString : String!
+    "GW Long build number"
+    longString : String!
+    "GW Short Build number"
+    shortString: String!
+}
+
+type PatchInfo {
+    "Patch ID"
+    patchId : String
+    "Patch Description"
+    description : String
+    "Patch status"
+    status : String
+    "Patch Type"
+    patchType : String
+    "Patch Version"
+    version : String
+    "Is This The Latest Installed Patch?"
+    latest : Boolean
+}
+
+"license information"
+type LicenseInfo {
+    "License Id"
+    licenseId : String
+    "License Status"
+    licenseStatus : String
+    "The start date of the validity period"
+    startDate : DateTime
+    "The expiry date of the validity period"
+    expiryDate : DateTime
+    "License Description"
+    description : String
+    "licensee Information"
+    licensee : Licensee
+    "License EULA Text"
+    eulaText : String
+    "License Feature Label"
+    featureLabel : String
+    "License Attributes"
+    attributes : [String]
+    "License Contents"
+    contents : String @deprecated(reason: "License document content cannot to queried")
+    "license Grants Information"
+    grants : LicenseGrants
+}
+
+type Licensee {
+    "Licensee Name"
+    name : String
+    "Licensee Contact Email"
+    contactEmail : String
+}
+
+type LicenseGrants {
+    "License HostName"
+    hostname : String
+    "License IP"
+    ip : String
+    "License product Name"
+    productName : String
+    "License FeatureSets"
+    featureSets : [String]
+    "license Product Information"
+    productVersion : LicenseProductVersion
+}
+
+type LicenseProductVersion {
+    "License Major Version"
+    major : String
+    "License Minor Version"
+    minor : String
+    "License Trusted Issuer"
+    issuer : String
+}
+
+enum FormFactor {
+    "Virtual Appliance"
+    APPLIANCE
+    "Software Installation"
+    SOFTWARE
+    "Container Deployment"
+    CONTAINER
+    "Unknown"
+    UNKNOWN
+}#
 # Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
 #
 
@@ -3558,6 +3717,8 @@ extend type Mutation {
     policyBackedIdps : [PolicyBackedIdp]
     "Generic Entities"
     genericEntities : [GenericEntity]
+    "Policy-backed services"
+    policyBackedServices: [PolicyBackedService]
  }
 
  input PolicyInput {
@@ -3650,6 +3811,129 @@ input PolicyRefInput {
     policyType: L7PolicyType!
     tag: String
     subTag: String
+}
+#
+# Copyright (c) 2026. Broadcom Inc. and its subsidiaries. All Rights Reserved.
+#
+
+extend type Query {
+  "Get all policy-backed services"
+  policyBackedServices: [PolicyBackedService!]!
+  "Get the policy-backed service by goid"
+  policyBackedServiceByGoid(goid : ID!) : PolicyBackedService
+  "Get the policy-backed service by name"
+  policyBackedServiceByName(name : String!) : PolicyBackedService
+}
+
+extend type Mutation {
+  """
+  Create or update existing policy-backed service.
+  Match is carried by name. If match is found, it will be updated. Otherwise, it will be created.
+  """
+  setPolicyBackedServices(input: [PolicyBackedServiceInput!]!): PolicyBackedServicesPayload!
+
+  """
+  Update an existing policy-backed service. Match is carried by refInput
+  """
+  updatePolicyBackedService(refInput: PolicyBackedServiceRefInput!, input: PolicyBackedServicePartialInput!): PolicyBackedServicePayload!
+
+  """
+  Delete one or more existing policy-backed services.
+
+  Matching can be done using either:
+  - refInputs: Array of PolicyBackedServiceRefInput objects (name) - recommended
+  - names: Array of policy-backed service names - deprecated
+
+  At least one of the parameters must be provided. If both are provided, refInputs takes precedence.
+  The operation returns the status of each deletion attempt.
+  """
+  deletePolicyBackedServices(refInputs: [PolicyBackedServiceRefInput!], names: [String!]): PolicyBackedServicesPayload!
+}
+
+"""
+A policy-backed service that represents one or more operations backed by a designated policy.
+> @l7-entity
+> @l7-identity-fields name
+> @l7-summary-fields goid,name,interfaceName,checksum
+> @l7-name-fields name
+> @l7-display-summary-fields name,interfaceName
+> @l7-foreign-fields operations.policyName|name|L7Policy
+"""
+type PolicyBackedService {
+    "The goid for the policy-backed service"
+    goid : ID!
+    "The policy-backed service name"
+    name : String!
+    "The policy-backed service interface name"
+    interfaceName: String!
+    "The configuration checksum of this policy-backed service"
+    checksum : String!
+
+    "The policy-backed service operations"
+    operations: [PolicyBackedServiceOperation!]!
+}
+
+"""
+A policy-backed service operation
+> @l7-foreign-fields policyName|name|L7Policy
+"""
+type PolicyBackedServiceOperation {
+    "An operation associated with a policy-backed service"
+    operationName: String!
+    "A backed policy defining the operation"
+    policyName: String!
+}
+
+input PolicyBackedServiceInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The policy-backed service name"
+    name: String!
+    "The policy-backed service interface name"
+    interfaceName: String!
+    "The policy-backed service operations"
+    operations: [PolicyBackedServiceOperationInput!]!
+
+    "Ignored at creation time but can be used to compare bundle with gw state"
+    checksum : String
+}
+
+input PolicyBackedServicePartialInput {
+    "The internal entity unique identifier"
+    goid: ID
+    "The policy-backed service name"
+    name: String
+    "The policy-backed service interface name"
+    interfaceName: String
+    "The policy-backed service operations"
+    operations: [PolicyBackedServiceOperationInput!]
+}
+
+input PolicyBackedServiceOperationInput {
+    "An operation associated with a policy-backed service"
+    operationName: String!
+    "A backed policy defining the operation"
+    policyName: String!
+}
+
+"Reference input to identify the entity"
+input PolicyBackedServiceRefInput {
+    "The policy-backed service name"
+    name: String!
+}
+
+type PolicyBackedServicePayload implements EntityMutationPayload {
+    status: EntityMutationStatus!
+    detailedStatus: EntityMutationDetailedStatus!
+    "The mutated policy-backed service"
+    policyBackedService: PolicyBackedService
+}
+
+type PolicyBackedServicesPayload implements EntityMutationsPayload {
+    status: [EntityMutationStatus!]!
+    detailedStatus: [EntityMutationDetailedStatus!]!
+    "The mutated policy-backed services"
+    policyBackedServices: [PolicyBackedService]!
 }
 #
 # Copyright © 2024. Broadcom Inc. and its subsidiaries. All Rights Reserved.
