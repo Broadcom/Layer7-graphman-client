@@ -156,6 +156,17 @@ module.exports = {
         console.log();
         console.log("  --query <query>");
         console.log("    specify the name of query used to export");
+        console.log("    the query name of a standard query may carry the modes and fields, <query>[:<modes>[:<fields>]]");
+        console.log("      <modes> are comma separated, supported modes are");
+        console.log("        summary, only the summary fields");
+        console.log("        all, all the fields, which is the default");
+        console.log("        dependencies, include the policy dependencies");
+        console.log("        full, same as dependencies, along with the policy revisions when .includePolicyRevisions is true");
+        console.log("        revisions, include the policy revisions; select them inline (from schema v11.2.2) with revisions[<ordinal>;<ordinal>...],");
+        console.log("          0 for the active and -1 for the latest revision, e.g. policies:revisions[0;-1]");
+        console.log("        none, no fields except the ones specified in <fields>");
+        console.log("      <fields> are comma separated field names to be included (+name or name) or excluded (-name)");
+        console.log("      e.g. policies:summary, policies:full,revisions:-folderPath");
         console.log();
         console.log("  --queries <query> <query> ...");
         console.log("    specify two or more query names to be combined into a single composite query, and export using it");
@@ -208,6 +219,7 @@ module.exports = {
         console.log("        default mapping action at the bundle level.");
         console.log("      .includePolicyRevisions false|true");
         console.log("        use this option to include policy revisions for the exported service/policy entities.");
+        console.log("        policy dependencies never include the policy revisions.");
         console.log("      .includeMultipartFields false|true");
         console.log("        use this option to include multipart fields (filePartName) so that server module file will be fully exported.");
         console.log("      .excludeRolesIfRequired false|true");

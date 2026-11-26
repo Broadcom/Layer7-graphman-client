@@ -38,7 +38,8 @@ const utils = require("./graphman-utils");
 
 // features that are available from the given schema version onwards
 const SCHEMA_FEATURE_SINCE = {
-    "standard-mutations": utils.STANDARD_MUTATIONS_SINCE
+    "standard-mutations": utils.STANDARD_MUTATIONS_SINCE,
+    "revisions-selector": utils.REVISIONS_SELECTOR_SINCE
 }
 const hutils = require("./http-utils");
 const gqlschema = require("./graphql-schema");
