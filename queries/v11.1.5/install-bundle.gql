@@ -1,0 +1,111 @@
+mutation installBundle (
+    $activeConnectors: [ActiveConnectorInput!]!=[],
+    $administrativeUserAccountProperties: [AdministrativeUserAccountPropertyInput!]!=[],
+    $backgroundTaskPolicies:[BackgroundTaskPolicyInput!]!=[],
+    $cassandraConnections:[CassandraConnectionInput!]!=[],
+    $clusterProperties: [ClusterPropertyInput!]!=[],
+    $dtds:[DtdInput!]!=[],
+    $emailListeners: [EmailListenerInput!]!=[],
+    $encassConfigs:[EncassConfigInput!]!=[],
+    $fipGroups:[FipGroupInput!]!=[],
+    $fipUsers:[FipUserInput!]!=[],
+    $fips:[FipInput!]!=[],
+    $federatedGroups:[FederatedGroupInput!]!=[],
+    $federatedUsers:[FederatedUserInput!]!=[],
+    $internalIdps:[InternalIdpInput!]=[],
+    $federatedIdps:[FederatedIdpInput!]!=[],
+    $ldapIdps:[LdapIdpInput!]=[],
+    $simpleLdapIdps:[SimpleLdapIdpInput!]=[],
+    $policyBackedIdps:[PolicyBackedIdpInput!]=[],
+    $globalPolicies:[GlobalPolicyInput!]!=[],
+    $internalGroups:[InternalGroupInput!]!=[],
+    $internalSoapServices:[SoapServiceInput!]!=[],
+    $internalUsers:[InternalUserInput!]!=[],
+    $internalWebApiServices: [WebApiServiceInput!]!=[],
+    $jdbcConnections:[JdbcConnectionInput!]!=[],
+    $jmsDestinations:[JmsDestinationInput!]!=[],
+    $kerberosConfigs:[KerberosConfigInput!]!=[],
+    $keys: [KeyInput!]!=[],
+    $ldaps:[LdapInput!]!=[],
+    $roles: [RoleInput!]!=[],
+    $listenPorts: [ListenPortInput!]!=[],
+    $passwordPolicies:[PasswordPolicyInput!]!=[],
+    $policies: [L7PolicyInput!]!=[],
+    $policyFragments: [PolicyFragmentInput!]!=[],
+    $revocationCheckPolicies:[RevocationCheckPolicyInput!]!=[],
+    $scheduledTasks:[ScheduledTaskInput!]!=[],
+    $logSinks: [LogSinkInput!]!=[],
+    $schemas:[SchemaInput!]!=[],
+    $secrets: [SecretInput!]!=[],
+    $httpConfigurations: [HttpConfigurationInput!]!=[],
+    $customKeyValues: [CustomKeyValueInput!]!=[],
+    $serverModuleFiles:[ServerModuleFileInput!]!=[],
+    $serviceResolutionConfigs:[ServiceResolutionConfigInput!]!=[],
+    $folders: [FolderInput!]!=[],
+    $smConfigs: [SMConfigInput!]!=[],
+    $services: [L7ServiceInput!]!=[],
+    $soapServices:[SoapServiceInput!]!=[],
+    $trustedCerts:[TrustedCertInput!]!=[],
+    $webApiServices: [WebApiServiceInput!]!=[],
+    $genericEntities: [GenericEntityInput!]!=[]
+    $policyBackedServices: [PolicyBackedServiceInput!]!=[]
+    $auditConfigurations: [AuditConfigurationInput!]!=[]
+    ) {
+    setServerModuleFiles(input: $serverModuleFiles){detailedStatus {action status description source {name value} target {name value}}}
+    setClusterProperties (input: $clusterProperties){detailedStatus {action status description source {name value} target {name value}}}
+    setServiceResolutionConfigs (input: $serviceResolutionConfigs){detailedStatus {action status description source {name value} target {name value}}}
+    setPasswordPolicies (input: $passwordPolicies){detailedStatus {action status description source {name value} target {name value}}}
+    setAdministrativeUserAccountProperties (input: $administrativeUserAccountProperties){detailedStatus {action status description source {name value} target {name value}}}
+
+    setFolders(input: $folders){detailedStatus {action status description source {name value} target {name value}}}
+    setRevocationCheckPolicies (input: $revocationCheckPolicies){detailedStatus {action status description source {name value} target {name value}}}
+    setTrustedCerts (input: $trustedCerts){detailedStatus {action status description source {name value} target {name value}}}
+    setSecrets (input: $secrets){detailedStatus {action status description source {name value} target {name value}}}
+    setHttpConfigurations(input: $httpConfigurations){detailedStatus {action status description source {name value} target {name value}}}
+    setCustomKeyValues(input: $customKeyValues){detailedStatus {action status description source {name value} target {name value}}}
+    setSchemas (input: $schemas){detailedStatus {action status description source {name value} target {name value}}}
+    setDtds (input: $dtds){detailedStatus {action status description source {name value} target {name value}}}
+    setJdbcConnections (input: $jdbcConnections){detailedStatus {action status description source {name value} target {name value}}}
+    setInternalIdps (input: $internalIdps){detailedStatus {action status description source {name value} target {name value}}}
+    setFederatedIdps (input: $federatedIdps){detailedStatus {action status description source {name value} target {name value}}}
+    setLdapIdps (input: $ldapIdps){detailedStatus {action status description source {name value} target {name value}}}
+    setSimpleLdapIdps (input: $simpleLdapIdps){detailedStatus {action status description source {name value} target {name value}}}
+
+    setFips (input: $fips){detailedStatus {action status description source {name value} target {name value}}}
+    setLdaps (input: $ldaps){detailedStatus {action status description source {name value} target {name value}}}
+    setFederatedGroups (input: $federatedGroups){detailedStatus {action status description source {name value} target {name value}}}
+    setFipGroups (input: $fipGroups){detailedStatus {action status description source {name value} target {name value}}}
+    setInternalGroups (input: $internalGroups){detailedStatus {action status description source {name value} target {name value}}}
+    setFederatedUsers (input: $federatedUsers){detailedStatus {action status description source {name value} target {name value}}}
+    setFipUsers (input: $fipUsers){detailedStatus {action status description source {name value} target {name value}}}
+    setInternalUsers (input: $internalUsers){detailedStatus {action status description source {name value} target {name value}}}
+    setCassandraConnections (input: $cassandraConnections){detailedStatus {action status description source {name value} target {name value}}}
+    setSMConfigs (input: $smConfigs){detailedStatus {action status description source {name value} target {name value}}}
+
+    setPolicies (input: $policies){detailedStatus {action status description source {name value} target {name value}}}
+    setPolicyFragments (input: $policyFragments){detailedStatus {action status description source {name value} target {name value}}}
+    setEncassConfigs (input: $encassConfigs){detailedStatus {action status description source {name value} target {name value}}}
+    setGlobalPolicies (input: $globalPolicies){detailedStatus {action status description source {name value} target {name value}}}
+    setBackgroundTaskPolicies (input: $backgroundTaskPolicies){detailedStatus {action status description source {name value} target {name value}}}
+    setServices(input: $services){detailedStatus {action status description source {name value} target {name value}}}
+    setWebApiServices (input: $webApiServices){detailedStatus {action status description source {name value} target {name value}}}
+    setSoapServices (input: $soapServices){detailedStatus {action status description source {name value} target {name value}}}
+    setInternalWebApiServices (input: $internalWebApiServices){detailedStatus {action status description source {name value} target {name value}}}
+    setInternalSoapServices (input: $internalSoapServices){detailedStatus {action status description source {name value} target {name value}}}
+
+    setPolicyBackedIdps (input: $policyBackedIdps){detailedStatus {action status description source {name value} target {name value}}}
+    setJmsDestinations (input: $jmsDestinations){detailedStatus {action status description source {name value} target {name value}}}
+    setKerberosConfigs (input: $kerberosConfigs){detailedStatus {action status description source {name value} target {name value}}}
+    setEmailListeners (input: $emailListeners){detailedStatus {action status description source {name value} target {name value}}}
+    setListenPorts (input: $listenPorts){detailedStatus {action status description source {name value} target {name value}}}
+    setActiveConnectors (input: $activeConnectors){detailedStatus {action status description source {name value} target {name value}}}
+    setScheduledTasks (input: $scheduledTasks){detailedStatus {action status description source {name value} target {name value}}}
+    setLogSinks(input: $logSinks){detailedStatus {action status description source {name value} target {name value}}}
+    setGenericEntities(input: $genericEntities){detailedStatus {action status description source {name value} target {name value}}}
+    setPolicyBackedServices(input: $policyBackedServices){detailedStatus {action status description source {name value} target {name value}}}
+    setRoles (input: $roles) {detailedStatus {action status description source {name value} target {name value}}}
+    setAuditConfigurations(input: $auditConfigurations){detailedStatus {action status description source {name value} target {name value}}}
+
+    # Keys must be mutated at the end
+    setKeys (input: $keys) {detailedStatus {action status description source {name value} target {name value}}}
+}

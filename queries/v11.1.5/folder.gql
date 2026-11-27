@@ -1,0 +1,31 @@
+query folderContents ($folderPath: String!, $includeAllDependencies: Boolean = false, $includePolicyRevisions: Boolean = false) {
+    servicesByFolderPath (folderPath: $folderPath) {
+        {{L7Service:-policy}}
+        policy {
+            xml
+            allDependencies @include (if: $includeAllDependencies) {
+                {{PolicyDependency:-policyFragments,-ldaps,-fips,-fipUsers,-fipGroups}}
+            }
+        }
+        policyRevisions @include (if: $includePolicyRevisions) {
+            {{PolicyRevision}}
+        }
+    }
+
+	encassConfigsByFolderPath (folderPath: $folderPath) {
+        {{EncassConfig}}
+    }
+
+	policiesByFolderPath (folderPath: $folderPath) {
+        {{L7Policy:-policy}}
+        policy {
+            xml
+            allDependencies @include (if: $includeAllDependencies) {
+                {{PolicyDependency:-policyFragments,-ldaps,-fips,-fipUsers,-fipGroups}}
+            }
+        }
+        policyRevisions @include (if: $includePolicyRevisions) {
+            {{PolicyRevision}}
+        }
+    }
+}

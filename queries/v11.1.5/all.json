@@ -1,0 +1,8 @@
+{
+  "query": "{{all.gql}}",
+  "variables": {
+    "includePolicyRevision": false,
+    "includePolicyRevisions": false,
+    "includeRoles": false
+  }
+}

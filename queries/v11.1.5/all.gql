@@ -1,0 +1,116 @@
+query all($includePolicyRevisions: Boolean = false, $includeRoles: Boolean = false) {
+    services {
+        {{L7Service}}
+        policyRevisions @include (if: $includePolicyRevisions) {
+            {{PolicyRevision}}
+        }
+    }
+    encassConfigs {
+        {{EncassConfig}}
+    }
+    policies {
+        {{L7Policy}}
+        policyRevisions @include (if: $includePolicyRevisions) {
+            {{PolicyRevision}}
+        }
+    }
+    activeConnectors {
+        {{ActiveConnector}}
+    }
+    auditConfigurations {
+        {{AuditConfiguration}}
+    }
+    cassandraConnections {
+        {{CassandraConnection}}
+    }
+    clusterProperties {
+        {{ClusterProperty}}
+    }
+    customKeyValues {
+        {{CustomKeyValue}}
+    }
+    dtds {
+        {{Dtd}}
+    }
+    emailListeners {
+        {{EmailListener}}
+    }
+    federatedIdps {
+        {{FederatedIdp}}
+    }
+    federatedGroups {
+        {{FederatedGroup}}
+    }
+    federatedUsers {
+        {{FederatedUser}}
+    }
+    genericEntities {
+        {{GenericEntity}}
+    }
+    httpConfigurations {
+        {{HttpConfiguration}}
+    }
+    internalIdps {
+        {{InternalIdp}}
+    }
+    internalGroups {
+        {{InternalGroup}}
+    }
+    internalUsers {
+        {{InternalUser}}
+    }
+    jdbcConnections {
+        {{JdbcConnection}}
+    }
+    jmsDestinations {
+        {{JmsDestination}}
+    }
+    keys {
+        {{Key}}
+    }
+    ldapIdps {
+        {{LdapIdp}}
+    }
+    listenPorts {
+        {{ListenPort}}
+    }
+    logSinks {
+        {{LogSink}}
+    }
+    policyBackedIdps {
+        {{PolicyBackedIdp}}
+    }
+    revocationCheckPolicies {
+        {{RevocationCheckPolicy}}
+    }
+    roles @include (if: $includeRoles){
+        {{Role}}
+    }
+    scheduledTasks {
+        {{ScheduledTask}}
+    }
+    schemas {
+        {{Schema}}
+    }
+    secrets {
+        {{Secret}}
+    }
+    serverModuleFiles {
+        {{ServerModuleFile}}
+    }
+    simpleLdapIdps {
+        {{SimpleLdapIdp}}
+    }
+    smConfigs {
+        {{SMConfig}}
+    }
+    trustedCerts {
+        {{Certificate}}
+    }
+    policyBackedServices {
+        {{PolicyBackedService}}
+    }
+    kerberosConfigs {
+        {{KerberosConfig}}
+    }
+}

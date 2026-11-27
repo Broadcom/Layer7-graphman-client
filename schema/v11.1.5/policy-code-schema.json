@@ -1,0 +1,264 @@
+{
+    "definitions": {
+        "assertion": {
+            "$id": "schema:assertion",
+            "type": "object",
+            "properties": {
+                ".properties": {
+                    "type": "object",
+                    "properties": {
+                        ".enabled": {
+                            "type": "boolean"
+                        },
+                        ".left.comment": {
+                            "type": "string"
+                        },
+                        ".right.comment": {
+                            "type": "string"
+                        }
+                    },
+                    "unevaluatedProperties": false
+                }
+            }
+        },
+        "assertionTypes": {
+            "$id": "schema:assertionTypes",
+            "oneOf": [
+                {
+                    "$ref": "schema:setVariable"
+                },
+                {
+                    "$ref": "schema:comment"
+                },
+                {
+                    "$ref": "schema:encass"
+                },
+                {
+                    "$ref": "schema:all"
+                },
+                {
+                    "$ref": "schema:oneOrMore"
+                },
+                {
+                    "$ref": "schema:include"
+                }
+            ]
+        },
+        "oneOrMore": {
+            "type": "object",
+            "$id": "schema:oneOrMore",
+            "$ref": "schema:assertion",
+            "properties": {
+                "OneOrMore": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "setVariable": {
+            "type": "object",
+            "$id": "schema:setVariable",
+            "$ref": "schema:assertion",
+            "properties": {
+                "SetVariable": {
+                    "type": "object",
+                    "properties": {
+                        "expression": {
+                            "type": "string"
+                        },
+                        "contentType": {
+                            "type": "string"
+                        },
+                        "dataType": {
+                            "type": "string",
+                            "enum": [
+                                "message",
+                                "dateTime",
+                                "int"
+                            ]
+                        },
+                        "dateFormat": {
+                            "type": "string",
+                            "enum": [
+                                "<Timestamp>",
+                                "<Millisecond Timestamp>",
+                                "<Second Timestamp>",
+                                "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+                                "yyyy-MM-dd'T'HH:mm:ss.SSXXX",
+                                "yyyy-MM-dd'T'HH:mm:ss.SXXX",
+                                "yyyy-MM-dd'T'HH:mm:ssXXX",
+                                "yyyy-MM-dd'T'HH:mmXXX",
+                                "yyyy-MM-dd",
+                                "yyyy-MM",
+                                "yyyy",
+                                "EEE, dd MMM yyyy HH:mm:ss z",
+                                "EEE, dd MMM yy HH:mm:ss Z",
+                                "EEE, dd-MMM-yy HH:mm:ss z",
+                                "EEE MMM dd HH:mm:ss yyyy"
+                            ]
+                        },
+                        "dateOffsetExpression": {
+                            "type": "string"
+                        },
+                        "dateOffsetField": {
+                            "type": "integer",
+                            "enum": [
+                                2,
+                                3,
+                                5,
+                                11,
+                                12,
+                                14
+                            ]
+                        },
+                        "lineBreak": {
+                            "type": "string",
+                            "enum": [
+                                "LF",
+                                "CR"
+                            ]
+                        },
+                        "variable": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "expression",
+                        "variable"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "comment": {
+            "type": "object",
+            "$id": "schema:comment",
+            "$ref": "schema:assertion",
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "include": {
+            "type": "object",
+            "$id": "schema:include",
+            "$ref": "schema:assertion",
+            "properties": {
+                "Include": {
+                    "type": "object",
+                    "properties": {
+                        "policyGuid": {
+                            "type": "string"
+                        },
+                        "policyName": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "policyName"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "encass": {
+            "type": "object",
+            "$id": "schema:encass",
+            "$ref": "schema:assertion",
+            "properties": {
+                "Encapsulated": {
+                    "type": "object",
+                    "properties": {
+                        "encassGuid": {
+                            "type": "string"
+                        },
+                        "encassName": {
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "encassName"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "all": {
+            "type": "object",
+            "$id": "schema:all",
+            "$ref": "schema:assertion",
+            "properties": {
+                "All": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "hardcodedResponse": {
+            "type": "object",
+            "$id": "schema:hardcodedResponse",
+            "$ref": "schema:assertion",
+            "properties": {
+                "HardcodedResponse": {
+                    "type": "object",
+                    "properties": {
+                        "body": {
+                            "type": "string"
+                        },
+                        "contentType": {
+                            "type": "string"
+                        },
+                        "earlyResponse": {
+                            "type": "boolean"
+                        },
+                        "responseStatus": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "body"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            },
+            "unevaluatedProperties": false
+        }
+    },
+    "oneOf": [
+        {
+            "$ref": "schema:all"
+        },
+        {
+            "$ref": "schema:oneOrMore"
+        },
+        {
+            "$ref": "schema:setVariable"
+        },
+        {
+            "$ref": "schema:comment"
+        },
+        {
+            "$ref": "schema:include"
+        },
+        {
+            "$ref": "schema:encass"
+        },
+        {
+            "$ref": "schema:hardcodedResponse"
+        }
+    ]
+}

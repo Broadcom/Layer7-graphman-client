@@ -11,6 +11,7 @@ describe("schema version comparison", () => {
         ["v12.0.0", true],
         ["v11.2.1", false],
         ["v11.2.0", false],
+        ["v11.1.5", false],
         ["v11.1.4", false],
         ["v11.1.00", false],
         ["v11.0.00-CR03", false],
@@ -73,7 +74,7 @@ describe("standard mutation details in the schema metadata", () => {
 
     const hasPartialInputs = metadata => Object.keys(metadata.types).some(name => name.endsWith("PartialInput"));
 
-    test.each(["v11.1.4", "v11.2.0", "v11.2.1"])("%s metadata does not capture the mutation details", version => {
+    test.each(["v11.1.4", "v11.1.5", "v11.2.0", "v11.2.1"])("%s metadata does not capture the mutation details", version => {
         const metadata = rebuild(version);
 
         expect(metadata.types["Mutation"]).toBeUndefined();

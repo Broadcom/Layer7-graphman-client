@@ -1,0 +1,4 @@
+{
+  "query": "{{set-policy-revisions.gql}}",
+  "variables": {}
+}
