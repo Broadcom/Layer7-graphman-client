@@ -7,6 +7,8 @@ pipeline {
     environment {
         GRAPHMAN_HOME = "${env.WORKSPACE}"
         GRAPHMAN_ENTRYPOINT = "${env.WORKSPACE}/graphman.sh"
+        // the tests must use the same schema as the one configured for the client (empty means the default schema)
+        GRAPHMAN_SCHEMA = "${params.VAR_schema_version}"
         ARTIFACTORY_CREDS = credentials('ARTIFACTORY_USERNAME_TOKEN')
     }
     options {

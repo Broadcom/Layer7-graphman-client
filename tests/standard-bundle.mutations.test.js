@@ -53,7 +53,7 @@ test("import using deprecated --using still works and warns", () => {
     expect(op.detailedStatus.length).toBeGreaterThan(0);
 });
 
-test("import entities using a composite mutation built from multiple mutation names", () => {
+tUtils.standardMutationsTest("import entities using a composite mutation built from multiple mutation names", () => {
     const output = graphman("import",
         "--gateway", "target-gateway",
         "--queries", "setKeys", "setSecrets",
