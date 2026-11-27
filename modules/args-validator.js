@@ -8,6 +8,7 @@ const parser = require("./args-parser");
 const COMMON_SCHEMA = {
     help: "boolean",
     gateways: "opaque",
+    credentials: "opaque",
     options: {
         log: "string",
         logSink: "string",
