@@ -48,8 +48,8 @@ mutation deleteBundle (
     $trustedCerts:[TrustedCertInput!]!=[],
     $webApiServices: [WebApiServiceInput!]!=[],
     $genericEntities: [GenericEntityInput!]!=[]
-    $auditConfigurations: [AuditConfigurationInput!]!=[],
     $policyBackedServices: [PolicyBackedServiceInput!]!=[]
+    $auditConfigurations: [AuditConfigurationInput!]!=[]
     ) {
     setAuditConfigurations(input: $auditConfigurations){detailedStatus {action status description source {name value} target {name value}}}
     setRoles (input: $roles) {detailedStatus {action status description source {name value} target {name value}}}
@@ -62,6 +62,7 @@ mutation deleteBundle (
     setJmsDestinations (input: $jmsDestinations){detailedStatus {action status description source {name value} target {name value}}}
     setPolicyBackedIdps (input: $policyBackedIdps){detailedStatus {action status description source {name value} target {name value}}}
     setGenericEntities (input: $genericEntities){detailedStatus {action status description source {name value} target {name value}}}
+    setPolicyBackedServices(input: $policyBackedServices){detailedStatus {action status description source {name value} target {name value}}}
 
     setServices(input: $services){detailedStatus {action status description source {name value} target {name value}}}
     setInternalSoapServices (input: $internalSoapServices){detailedStatus {action status description source {name value} target {name value}}}
@@ -107,5 +108,4 @@ mutation deleteBundle (
 
     # Keys must be mutated at the end
     setKeys (input: $keys) {detailedStatus {action status description source {name value} target {name value}}}
-    setPolicyBackedServices(input: $policyBackedServices){detailedStatus {action status description source {name value} target {name value}}}
 }

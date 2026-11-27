@@ -48,8 +48,8 @@ mutation installBundle (
     $trustedCerts:[TrustedCertInput!]!=[],
     $webApiServices: [WebApiServiceInput!]!=[],
     $genericEntities: [GenericEntityInput!]!=[]
-    $auditConfigurations: [AuditConfigurationInput!]!=[],
     $policyBackedServices: [PolicyBackedServiceInput!]!=[]
+    $auditConfigurations: [AuditConfigurationInput!]!=[]
     ) {
     setServerModuleFiles(input: $serverModuleFiles){detailedStatus {action status description source {name value} target {name value}}}
     setClusterProperties (input: $clusterProperties){detailedStatus {action status description source {name value} target {name value}}}
@@ -102,10 +102,10 @@ mutation installBundle (
     setScheduledTasks (input: $scheduledTasks){detailedStatus {action status description source {name value} target {name value}}}
     setLogSinks(input: $logSinks){detailedStatus {action status description source {name value} target {name value}}}
     setGenericEntities(input: $genericEntities){detailedStatus {action status description source {name value} target {name value}}}
+    setPolicyBackedServices(input: $policyBackedServices){detailedStatus {action status description source {name value} target {name value}}}
     setRoles (input: $roles) {detailedStatus {action status description source {name value} target {name value}}}
     setAuditConfigurations(input: $auditConfigurations){detailedStatus {action status description source {name value} target {name value}}}
 
     # Keys must be mutated at the end
     setKeys (input: $keys) {detailedStatus {action status description source {name value} target {name value}}}
-    setPolicyBackedServices(input: $policyBackedServices){detailedStatus {action status description source {name value} target {name value}}}
 }
