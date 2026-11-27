@@ -3,6 +3,10 @@
 const tUtils = require("./utils");
 const {graphman} = tUtils;
 
+// the identity field of the trusted certificates depends on the schema in use (thumbprintSha1 until v11.2.0, thumbprint from v11.2.2)
+const certIdentityField = tUtils.load("graphman").typeInfoByPluralName("trustedCerts").identityFields[0];
+const certIdentity = {[certIdentityField]: "MXAEyUit8a29J+JDoWfGY6lam34="};
+
 test("generate diff bundle using existing report - with default options", () => {
     const output = graphman("diff",
         "--input-report", "samples/diff-report.sample.json");
@@ -123,7 +127,7 @@ test("generate diff bundle using existing report - with includeDeletes only opti
     ]));
 
     expect(output.properties.mappings.trustedCerts).toEqual(expect.arrayContaining([
-        expect.objectContaining({action: "DELETE", source: {thumbprint: "MXAEyUit8a29J+JDoWfGY6lam34="}}),
+        expect.objectContaining({action: "DELETE", source: certIdentity}),
         expect.not.objectContaining({nodef: expect.anything()})
     ]));
 });
@@ -151,6 +155,6 @@ test("generate diff bundle using existing report - with includeDeletes only  and
     ]));
 
     expect(output.properties.mappings.trustedCerts).toEqual(expect.arrayContaining([
-        expect.objectContaining({nodef: true, action: "DELETE", source: {thumbprint: "MXAEyUit8a29J+JDoWfGY6lam34="}})
+        expect.objectContaining({nodef: true, action: "DELETE", source: certIdentity})
     ]));
 });

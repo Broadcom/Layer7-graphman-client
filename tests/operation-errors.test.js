@@ -21,7 +21,7 @@ describe("export works with the GraphQL query fields", () => {
         expect(run("export", "--queries", "services", "unknown-query")).toContain("unrecognized query unknown-query");
     });
 
-    test("a mutation is reported as a mismatch", () => {
+    tUtils.standardMutationsTest("a mutation is reported as a mismatch", () => {
         expect(run("export", "--query", "setFolders")).toContain(
             "export operation works with the GraphQL query fields, but the specified one is a mutation");
     });
@@ -40,7 +40,7 @@ describe("import works with the GraphQL mutation fields", () => {
         expect(output).not.toContain("unrecognized query");
     });
 
-    test("unknown mutation in the composite is reported as an unrecognized mutation", () => {
+    tUtils.standardMutationsTest("unknown mutation in the composite is reported as an unrecognized mutation", () => {
         expect(run("import", "--queries", "setFolders", "unknown-mutation", ...IMPORT_INPUT)).toContain(
             "unrecognized mutation unknown-mutation");
     });

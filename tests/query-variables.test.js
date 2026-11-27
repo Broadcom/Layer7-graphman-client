@@ -47,7 +47,7 @@ describe("only the variables declared by the operation are sent, along with the 
         expect(query.variables.folders2).toEqual(refs);
     });
 
-    test("a bundle section is not duplicated under the disambiguated name", () => {
+    tUtils.standardMutationsTest("a bundle section is not duplicated under the disambiguated name", () => {
         const query = gql.generateComposite(["setFolders", "deleteFolders"], bundle(), {}, {}, "mutation");
 
         expect(query.variables.folders2).toBeUndefined();
